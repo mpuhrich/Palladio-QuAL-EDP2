@@ -11,4 +11,4 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.edp2.visualization;bundle-version="1.0.0",
  org.jfree.jfreechart;bundle-version="1.0.9"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

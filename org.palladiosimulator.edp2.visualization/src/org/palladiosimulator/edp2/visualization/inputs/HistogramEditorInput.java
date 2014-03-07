@@ -169,6 +169,7 @@ public class HistogramEditorInput extends
 	 * @see
 	 * org.palladiosimulator.edp2.visualization.IVisualizationInput#updateInputData()
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void updateInputData() {
 		logger.log(Level.INFO, "Transformation : BEGIN");
@@ -220,7 +221,7 @@ public class HistogramEditorInput extends
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @seede.uka.ipd.sdq.edp2.models.ExperimentData.presentation.IDataSink#
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#
 	 * getMetricRoles()
 	 */
 	@Override
@@ -253,6 +254,7 @@ public class HistogramEditorInput extends
 	 * 
 	 * @see org.palladiosimulator.edp2.visualization.IDataFlow#getProperties()
 	 */
+	@Override
 	public HashMap<String, Object> getProperties() {
 		properties.put(ElementFactory.ELEMENT_KEY, ELEMENT_NAME);
 		properties.put(RANGE_AXIS_LABEL_KEY, getRangeAxisLabel());
@@ -389,6 +391,7 @@ public class HistogramEditorInput extends
 	 * org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput#getChart
 	 * ()
 	 */
+	@Override
 	public JFreeChart getChart() {
 		// create the axes for the chart; if an axis is not to be displayed, it
 		// must be null

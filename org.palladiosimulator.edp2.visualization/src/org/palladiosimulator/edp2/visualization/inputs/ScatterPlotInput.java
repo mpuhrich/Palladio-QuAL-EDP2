@@ -115,7 +115,7 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @seede.uka.ipd.sdq.edp2.models.ExperimentData.presentation.IDataSink#
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#
 	 * getMetricRoles()
 	 */
 	@Override

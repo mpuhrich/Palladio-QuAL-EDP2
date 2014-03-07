@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uka.ipd.sdq.edp2.editor" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.palladiosimulator.edp2.editor" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="de.uka.ipd.sdq.edp2.editor" id="visualizations" name="Visualizations"/>
+         <meta.schema plugin="org.palladiosimulator.edp2.editor" id="visualizations" name="Visualizations"/>
       </appInfo>
       <documentation>
          Allows to add visualizations for displaying experiment data.
@@ -55,7 +55,7 @@
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":de.uka.ipd.sdq.edp2.editor.visualization.editors.IVisualization"/>
+                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.editor.visualization.editors.IVisualization"/>
                </appInfo>
             </annotation>
          </attribute>

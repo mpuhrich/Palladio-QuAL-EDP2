@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uka.ipd.sdq.edp2.visualization" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.palladiosimulator.edp2.visualization" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uka.ipd.sdq.edp2.visualization" id="datasink" name="Data Sink"/>
+         <meta.schema plugin="org.palladiosimulator.edp2.visualization" id="datasink" name="Data Sink"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -55,7 +55,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.uka.ipd.sdq.edp2.visualization.IDataSink"/>
+                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.visualization.IDataSink"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -65,7 +65,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="de.uka.ipd.sdq.edp2.visualization.datasource.ElementFactory:"/>
+                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.datasource.ElementFactory:"/>
                </appinfo>
             </annotation>
          </attribute>

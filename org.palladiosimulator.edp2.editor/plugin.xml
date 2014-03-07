@@ -17,9 +17,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uka.ipd.sdq.edp2.models.ExperimentData.presentation.ExperimentDataModelWizardID"
+            id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataModelWizardID"
             name="%_UI_ExperimentDataModelWizard_label"
-            class="de.uka.ipd.sdq.edp2.models.ExperimentData.presentation.ExperimentDataModelWizard"
+            class="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ExperimentDataModelFile.gif">
          <description>%_UI_ExperimentDataModelWizard_description</description>
@@ -29,19 +29,19 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="de.uka.ipd.sdq.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
+            id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
             name="%_UI_ExperimentDataEditor_label"
             icon="icons/full/obj16/ExperimentDataModelFile.gif"
             extensions="edp2"
-            class="de.uka.ipd.sdq.edp2.models.ExperimentData.presentation.ExperimentDataEditor"
-            contributorClass="de.uka.ipd.sdq.edp2.models.ExperimentData.presentation.ExperimentDataActionBarContributor">
+            class="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditor"
+            contributorClass="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataActionBarContributor">
       </editor>
       <editor
-            class="de.uka.ipd.sdq.edp2.models.Repository.presentation.RepositoryEditor"
-            contributorClass="de.uka.ipd.sdq.edp2.models.Repository.presentation.RepositoryActionBarContributor"
+            class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditor"
+            contributorClass="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryActionBarContributor"
             extensions="repository"
             icon="icons/full/obj16/RepositoryModelFile.gif"
-            id="de.uka.ipd.sdq.edp2.models.Repository.presentation.RepositoryEditorID"
+            id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditorID"
             name="%_UI_RepositoryEditor_label">
       </editor>
    </extension>
@@ -51,9 +51,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uka.ipd.sdq.edp2.models.Repository.presentation.RepositoryModelWizardID"
+            id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizardID"
             name="%_UI_RepositoryModelWizard_label"
-            class="de.uka.ipd.sdq.edp2.models.Repository.presentation.RepositoryModelWizard"
+            class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RepositoryModelFile.gif">
          <description>%_UI_RepositoryModelWizard_description</description>

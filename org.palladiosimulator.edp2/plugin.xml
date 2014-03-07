@@ -10,7 +10,7 @@
       <!-- @generated EDP2 -->
       <package
             uri="http://sdq.ipd.uka.de/EDP2/ExperimentData/0.9.1"
-            class="de.uka.ipd.sdq.edp2.models.ExperimentData.ExperimentDataPackage"
+            class="org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage"
             genModel="model/EDP2.genmodel"/>
    </extension>
 
@@ -18,7 +18,7 @@
       <!-- @generated EDP2 -->
       <package
             uri="http://sdq.ipd.uka.de/EDP2/Repository/0.9.1"
-            class="de.uka.ipd.sdq.edp2.models.Repository.RepositoryPackage"
+            class="org.palladiosimulator.edp2.models.Repository.RepositoryPackage"
             genModel="model/EDP2.genmodel"/>
    </extension>
 

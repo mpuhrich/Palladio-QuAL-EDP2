@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.uka.ipd.sdq.edp2.visualization" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.palladiosimulator.edp2.visualization" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.uka.ipd.sdq.edp2.visualization" id="de.uka.ipd.sdq.edp2.adapter" name="Adapter"/>
+         <meta.schema plugin="org.palladiosimulator.edp2.visualization" id="org.palladiosimulator.edp2.adapter" name="Adapter"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -60,7 +60,7 @@
                   The actual Adapter. A class which implements the IAdapter Interface.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="de.uka.ipd.sdq.edp2.visualization.IAdapter:"/>
+                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.IAdapter:"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -80,7 +80,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.uka.ipd.sdq.edp2.visualization.wizards.IAdapterWizard"/>
+                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.visualization.wizards.IAdapterWizard"/>
                </appinfo>
             </annotation>
          </attribute>

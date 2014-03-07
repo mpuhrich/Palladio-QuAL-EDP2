@@ -2,21 +2,21 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="de.uka.ipd.sdq.edp2.visualization.filter">
+         point="org.palladiosimulator.edp2.visualization.filter">
       <filter
-            class="de.uka.ipd.sdq.edp2.transformation.filter.WarmupFilter"
-            factory="de.uka.ipd.sdq.edp2.transformation.filter.WarmupFilterFactory"
-            id="de.uka.ipd.sdq.edp2.transformation.WarmupFilter"
-            wizard="de.uka.ipd.sdq.edp2.transformation.filter.WarmupFilterWizard">
+            class="org.palladiosimulator.edp2.transformation.filter.WarmupFilter"
+            factory="org.palladiosimulator.edp2.transformation.filter.WarmupFilterFactory"
+            id="org.palladiosimulator.edp2.transformation.WarmupFilter"
+            wizard="org.palladiosimulator.edp2.transformation.filter.WarmupFilterWizard">
       </filter>
    </extension>
    <extension
-         point="de.uka.ipd.sdq.edp2.visualization.adapter">
+         point="org.palladiosimulator.edp2.visualization.adapter">
       <adapter
-            class="de.uka.ipd.sdq.edp2.transformation.adapter.HistogramFrequencyAdapter"
-            factory="de.uka.ipd.sdq.edp2.transformation.adapter.HistogramFrequencyAdapterFactory"
-            id="de.uka.ipd.sdq.edp2.transformation.HistogramFrequencyAdapter"
-            wizard="de.uka.ipd.sdq.edp2.transformation.adapter.HistogramFrequencyAdapterWizard">
+            class="org.palladiosimulator.edp2.transformation.adapter.HistogramFrequencyAdapter"
+            factory="org.palladiosimulator.edp2.transformation.adapter.HistogramFrequencyAdapterFactory"
+            id="org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter"
+            wizard="org.palladiosimulator.edp2.transformation.adapter.HistogramFrequencyAdapterWizard">
       </adapter>
    </extension>
 

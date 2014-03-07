@@ -47,7 +47,7 @@ public interface RepositoryPackage extends EPackage {
 	 * <!-- end-user-doc -->
      * @generated
      */
-	String eNS_URI = "http://sdq.ipd.uka.de/EDP2/Repository/0.9.1";
+	String eNS_URI = "http://palladiosimulator.org/EDP2/Repository/0.9.1";
 
 	/**
      * The package namespace name.

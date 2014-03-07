@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="models" nsURI="http://sdq.ipd.uka.de/EDP2/0.9.2" nsPrefix="org.palladiosimulator.edp2">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="models" nsURI="http://palladiosimulator.org/EDP2/0.9.2" nsPrefix="org.palladiosimulator.edp2">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="Experiment Data Persistency and Presentation"/>
   </eAnnotations>
-  <eSubpackages name="ExperimentData" nsURI="http://sdq.ipd.uka.de/EDP2/ExperimentData/0.9.1"
+  <eSubpackages name="ExperimentData" nsURI="http://palladiosimulator.org/EDP2/ExperimentData/0.9.1"
       nsPrefix="org.palladiosimulator.edp2.models">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Contains the model elements for the meta data of the experiments.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>It covers the areas ExperimentsView, MeasureDefinitionView, and DescriptionsView.&lt;/font>&#xD;&#xA;&lt;/p>"/>
@@ -544,7 +544,7 @@
       <eLiterals name="Qualitative" value="1"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="Repository" nsURI="http://sdq.ipd.uka.de/EDP2/Repository/0.9.1"
+  <eSubpackages name="Repository" nsURI="http://palladiosimulator.org/EDP2/Repository/0.9.1"
       nsPrefix="org.palladiosimulator.edp2.models">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    Contains&amp;nbsp;all&amp;nbsp;elements&amp;nbsp;to&amp;nbsp;handle&amp;nbsp;repositories.&amp;nbsp;Repositories&amp;nbsp;are&amp;nbsp;responsible&amp;nbsp;to&amp;nbsp;load/store&amp;nbsp;experiment&amp;nbsp;data.&#xD;&#xA;&lt;/p>"/>

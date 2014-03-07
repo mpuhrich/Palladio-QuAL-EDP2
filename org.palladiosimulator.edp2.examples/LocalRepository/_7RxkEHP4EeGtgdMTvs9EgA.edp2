@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.palladiosimulator.edp2.models:ExperimentGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.palladiosimulator.edp2.models="http://sdq.ipd.uka.de/EDP2/ExperimentData/0.9.1" uuid="_7RxkEHP4EeGtgdMTvs9EgA" purpose="Exemplary use of EDP2">
+<org.palladiosimulator.edp2.models:ExperimentGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/ExperimentData/0.9.1" uuid="_7RxkEHP4EeGtgdMTvs9EgA" purpose="Exemplary use of EDP2">
   <experimentSettings uuid="_7RyLIHP4EeGtgdMTvs9EgA" description="Experiment Setting #1" measure="_7Rw9AHP4EeGtgdMTvs9EgA _7Rw9AXP4EeGtgdMTvs9EgA _7Rw9AnP4EeGtgdMTvs9EgA">
     <experimentRuns uuid="_7RzZQHP4EeGtgdMTvs9EgA" startTime="2012-03-22T09:27:56.511+0100">
       <measurements uuid="_7RyyMHP4EeGtgdMTvs9EgA" measure="_7Rw9AHP4EeGtgdMTvs9EgA">

@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://sdq.ipd.uka.de/EDP2/ExperimentData/0.9.1"
+            uri="http://palladiosimulator.org/EDP2/ExperimentData/0.9.1"
             class="org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -24,7 +24,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://sdq.ipd.uka.de/EDP2/Repository/0.9.1"
+            uri="http://palladiosimulator.org/EDP2/Repository/0.9.1"
             class="org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

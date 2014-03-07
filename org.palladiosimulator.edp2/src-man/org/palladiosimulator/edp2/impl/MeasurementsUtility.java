@@ -20,7 +20,6 @@ import org.palladiosimulator.edp2.internal.EmfmodelDataSeriesFromReferenceSwitch
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
-import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
@@ -117,6 +116,10 @@ public class MeasurementsUtility {
 	public static void storeMeasurement(Measurements measurements, Measurement measurement) {
 		MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory().getDaoRegistry();
 		int size = measurements.getMeasurementsRanges().size();
+		if (size == 0) {
+			throw new IllegalArgumentException("Measurements have to include measurements ranges");
+		}
+		
 		MeasurementsRange lastRange = measurements.getMeasurementsRanges().get(size - 1);
 		RawMeasurements rm = lastRange.getRawMeasurements();
 		if (rm != null) { // Add raw measurements

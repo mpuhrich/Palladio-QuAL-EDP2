@@ -64,7 +64,7 @@ public class MeasurementsUtility {
 			while (iter.hasNext()) {
 				FixedWidthAggregatedMeasurements fwam = factory.createFixedWidthAggregatedMeasurements();
 				FixedWidthAggregatedMeasurements fwtemplate = (FixedWidthAggregatedMeasurements) iter.next();
-				fwam.setIntervals((FixedIntervals) EcoreUtil.copy(fwtemplate.getIntervals()));
+				fwam.setIntervals(EcoreUtil.copy(fwtemplate.getIntervals()));
 				fwam.setAggregationOn(fwtemplate.getAggregationOn());
 				Iterator<DataSeries> iter2 = fwtemplate.getDataSeries().iterator();
 				while (iter2.hasNext()) {
@@ -131,12 +131,12 @@ public class MeasurementsUtility {
 			}
 			Iterator<DataSeries> iter = rm.getDataSeries().iterator();
 			DataSeries ds;
-			int dimension = -1;
+			int index = -1;
 			EmfmodelAddMeasurementToDataSeriesSwitch addMmt = new EmfmodelAddMeasurementToDataSeriesSwitch(daoRegistry);
 			while (iter.hasNext()) {
 				ds = iter.next();
-				dimension++;
-				addMmt.setMeasurementToAdd(measurement.getMeasuredValue(dimension));
+				index++;
+				addMmt.setMeasurementToAdd(measurement.getMeasuredValue(index));
 				addMmt.doSwitch(ds);
 				// invalidate statistics as they do not include the added value
 				if (ds.getNumericalStatistics() != null) {
@@ -166,19 +166,23 @@ public class MeasurementsUtility {
 			return (NominalMeasurementsDao) daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
 		} else {
 			NominalMeasurementsDao nmd = new ExperimentDataSwitch<NominalMeasurementsDao>() {
+				@Override
 				public NominalMeasurementsDao caseIdentifierBasedMeasurements(org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
 					return daoFactory.createNominalMeasurementsDao(ds.getValuesUuid());
 				};
+				@Override
 				public NominalMeasurementsDao caseJSXmlMeasurements(org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements object) {
 					String msg = "Tried to request nominal measurements for a data series which should contain ordinal measurements.";
 					logger.log(Level.WARNING, msg);
 					throw new IllegalArgumentException(msg);
 				};
+				@Override
 				public NominalMeasurementsDao caseDoubleBinaryMeasurements(org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements object) {
 					String msg = "Tried to request nominal measurements for a data series which should contain ordinal measurements.";
 					logger.log(Level.WARNING, msg);
 					throw new IllegalArgumentException(msg);
 				};
+				@Override
 				public NominalMeasurementsDao caseLongBinaryMeasurements(org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements object) {
 					String msg = "Tried to request nominal measurements for a data series which should contain ordinal measurements.";
 					logger.log(Level.WARNING, msg);
@@ -213,19 +217,23 @@ public class MeasurementsUtility {
 			return (OrdinalMeasurementsDao<?,Q>) daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
 		} else {
 			OrdinalMeasurementsDao<?,Q> omd = new ExperimentDataSwitch<OrdinalMeasurementsDao<?,Q>>() {
+				@Override
 				public OrdinalMeasurementsDao<?,Q> caseIdentifierBasedMeasurements(org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
 					String msg = "Tried to request ordinal measurements for a data series which should contain nominal measurements.";
 					logger.log(Level.WARNING, msg);
 					throw new IllegalArgumentException(msg);
 				};
+				@Override
 				public OrdinalMeasurementsDao<?,Q> caseJSXmlMeasurements(org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements object) {
 					return daoFactory.createJScienceXmlMeasurementsDao(ds.getValuesUuid());
 				};
+				@Override
 				public OrdinalMeasurementsDao<?,Q> caseDoubleBinaryMeasurements(org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements object) {
 					BinaryMeasurementsDao<Double,Q> bmd = daoFactory.createDoubleMeasurementsDao(ds.getValuesUuid());
 					bmd.setUnit(object.getStorageUnit());
 					return bmd;
 				};
+				@Override
 				public OrdinalMeasurementsDao<?,Q> caseLongBinaryMeasurements(org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements object) {
 					BinaryMeasurementsDao<Long,Q> bmd = daoFactory.createLongMeasurementsDao(ds.getValuesUuid());
 					bmd.setUnit(object.getStorageUnit());

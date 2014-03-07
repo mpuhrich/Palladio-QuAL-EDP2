@@ -1,40 +1,28 @@
-/**
- * 
- */
 package org.palladiosimulator.edp2.impl;
 
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
 
-/**A single measurement for a measure (definition).
- * @author groenda
- *
+/**
+ * A single measurement for a measure (definition).
+ * 
+ * @author groenda, Sebastian Lehrig
  */
 public class Measurement {
-	/** Flag allowing to control if data stored in an instance of this class is checked 
-	 * to obey the corresponding specification in the metric definition. */
-	private boolean validateData;
-
-	/** A single measurement with a value for each element specified in the metric definition. */
-	private Object[] measuredValue;
 	
 	/** The definition of the metric which is used to gather the measured values. */
-	private MetricDescription metric;
+	private final MetricDescription metric;
 	
 	/** The base metric definitions of the provided metric. This depends on metric. */
-	BaseMetricDescription[] descriptions;
+	private final BaseMetricDescription[] descriptions;
+	
+	/** A single measurement with a value for each element specified in the metric definition. */
+	private final Object[] measuredValue;
 	
 	public Measurement(MetricDescription metric) {
-		validateData = true;
-		prepareForMetric(metric);
-	}
-
-	/**Prepares the measuredValue object for storing values of the set metric.
-	 */
-	private void prepareForMetric(MetricDescription metric) {
 		this.metric = metric;
-		descriptions = MetricDescriptionUtility.toBaseMetricDescriptions(metric);
-		measuredValue = new Object[descriptions.length];
+		this.descriptions = MetricDescriptionUtility.toBaseMetricDescriptions(metric);
+		this.measuredValue = new Object[descriptions.length];
 	}
 
 	/**Set the value of the specified index.
@@ -52,11 +40,10 @@ public class Measurement {
 		if (value == null) {
 			throw new IllegalArgumentException("Provided value must not be null.");
 		}
-		if (validateData) {
-			if (!MetricDescriptionUtility.isValidValue(descriptions[measuredValueIndex], value)) {
-				throw new IllegalArgumentException("Type of provided value was not valid. BaseMetricDescription is " + descriptions[measuredValueIndex] + ", value was " + value);
-			}
+		if (!MetricDescriptionUtility.isValidValue(descriptions[measuredValueIndex], value)) {
+			throw new IllegalArgumentException("Type of provided value was not valid. BaseMetricDescription is " + descriptions[measuredValueIndex] + ", value was " + value);
 		}
+
 		measuredValue[measuredValueIndex] = value;
 	}
 	
@@ -69,25 +56,11 @@ public class Measurement {
 		return measuredValue[index];
 	}
 
-	/**Returns if data is validated at the point it is stored for an index.
-	 * @return the validateData
-	 */
-	public boolean isDataValidatedIfStored() {
-		return validateData;
-	}
-
-	/**Sets it data is validated if the value for an index is set.
-	 * @param validateData the validateData to set
-	 */
-	public void setValidateData(boolean validateData) {
-		this.validateData = validateData;
-	}
-
 	/**Returns the metric associated with the measure value stored in this instance.
 	 * @return the metric
 	 */
 	public MetricDescription getMetric() {
-		return metric;
+		return this.metric;
 	}
 	
 }

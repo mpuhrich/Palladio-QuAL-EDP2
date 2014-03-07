@@ -114,7 +114,6 @@ public class MeasurementsUtility {
 	 * @param data The measurement (data) itself.
 	 */
 	public static void storeMeasurement(Measurements measurements, Measurement measurement) {
-		MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory().getDaoRegistry();
 		int size = measurements.getMeasurementsRanges().size();
 		if (size == 0) {
 			throw new IllegalArgumentException("Measurements have to include measurements ranges");
@@ -135,6 +134,7 @@ public class MeasurementsUtility {
 			Iterator<DataSeries> iter = rm.getDataSeries().iterator();
 			DataSeries ds;
 			int index = -1;
+			MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory().getDaoRegistry();
 			EmfmodelAddMeasurementToDataSeriesSwitch addMmt = new EmfmodelAddMeasurementToDataSeriesSwitch(daoRegistry);
 			while (iter.hasNext()) {
 				ds = iter.next();

@@ -28,172 +28,173 @@ import org.palladiosimulator.edp2.models.impl.EmfModelXMIResourceFactoryImpl;
  * @author groenda
  */
 public class LocalDirectoryMeasurementsDaoFactory extends org.palladiosimulator.edp2.impl.MeasurementsDaoFactory {
-	/** Logger for this class. */
-	private static final Logger logger = Logger
-			.getLogger(LocalDirectoryMeasurementsDaoFactory.class.getCanonicalName());
-	
-	/** File suffix for uuid-referenced data files. */
-	private static final String FILE_SUFFIX = "edp2bin";
-	
-	/**
-	 * Resource set for all handled EMF models. Must be the same to allow
-	 * correct linking.
-	 */
-	private static final ResourceSet emfResourceSet = new ResourceSetImpl();
-	/** Determines where newly created DAOs are registered. */
-	private MeasurementsDaoRegistry daoRegistry;
+    /** Logger for this class. */
+    private static final Logger logger = Logger
+            .getLogger(LocalDirectoryMeasurementsDaoFactory.class.getCanonicalName());
 
-	/** Map containing the existing FileDaoFactories. */
-	private static ConcurrentMap<String, MeasurementsDaoFactory> existingFileDaoFactories = new ConcurrentHashMap<String, MeasurementsDaoFactory>();
+    /** File suffix for uuid-referenced data files. */
+    private static final String FILE_SUFFIX = "edp2bin";
 
-	/** Directory which is handled by this instance of the file dao factory. */
-	private File storageDirectory = null;
+    /**
+     * Resource set for all handled EMF models. Must be the same to allow
+     * correct linking.
+     */
+    private static final ResourceSet emfResourceSet = new ResourceSetImpl();
+    /** Determines where newly created DAOs are registered. */
+    private final MeasurementsDaoRegistry daoRegistry;
 
-	/**
-	 * Creates a new instance of a DaoFactory for files.
-	 * 
-	 * @param storageDirectory
-	 *            The directory for which this instance is responsible.
-	 */
-	public LocalDirectoryMeasurementsDaoFactory(File storageDirectory) {
-		if (existingFileDaoFactories
-				.containsKey(fileToMapKey(storageDirectory))) {
-			logger.log(Level.SEVERE,
-					"There is already an existing FileDaoFactory instance for "
-							+ fileToMapKey(storageDirectory) + ".");
-			throw new IllegalArgumentException();
-		} else {
-			existingFileDaoFactories.put(fileToMapKey(storageDirectory), this);
-		}
-		this.storageDirectory = storageDirectory;
-		this.daoRegistry = new MeasurementsDaoRegistryImpl();
-	}
+    /** Map containing the existing FileDaoFactories. */
+    private static ConcurrentMap<String, MeasurementsDaoFactory> existingFileDaoFactories = new ConcurrentHashMap<String, MeasurementsDaoFactory>();
 
-	/**
-	 * Converts a file/directory name to a valid key of the
-	 * existingFileDaoFactories map.
-	 * 
-	 * @param directory
-	 *            The file to convert.
-	 * @return The key for the map.
-	 */
-	private static String fileToMapKey(File directory) {
-		String result = null;
-		try {
-			result = directory.getCanonicalPath();
-		} catch (IOException e) {
-			logger.log(Level.WARNING, "Could not resolve file name to String.",
-					e);
-		}
-		return result;
-	}
+    /** Directory which is handled by this instance of the file dao factory. */
+    private File storageDirectory = null;
 
-	/**
-	 * returns the absolute path to a uuid-referenced data file.
-	 * 
-	 * @param uuid
-	 *            Identifier of the data (file).
-	 * @return aboslute path to the file.
-	 */
-	private String getAbsolutePathToUuidFile(String uuid, String suffix) {
-		return new File(storageDirectory.getAbsolutePath() + File.separator
-				+ uuid).getAbsolutePath()
-				+ "." + suffix;
-	}
+    /**
+     * Creates a new instance of a DaoFactory for files.
+     * 
+     * @param storageDirectory
+     *            The directory for which this instance is responsible.
+     */
+    public LocalDirectoryMeasurementsDaoFactory(final File storageDirectory) {
+        if (existingFileDaoFactories
+                .containsKey(fileToMapKey(storageDirectory))) {
+            logger.log(Level.SEVERE,
+                    "There is already an existing FileDaoFactory instance for "
+                            + fileToMapKey(storageDirectory) + ".");
+            throw new IllegalArgumentException();
+        } else {
+            existingFileDaoFactories.put(fileToMapKey(storageDirectory), this);
+        }
+        this.storageDirectory = storageDirectory;
+        this.daoRegistry = new MeasurementsDaoRegistryImpl();
+    }
 
-	@Override
-	public JScienceXmlMeasurementsDao<?,Quantity> createJScienceXmlMeasurementsDao(String uuid) {
-		super.createJScienceXmlMeasurementsDao(uuid);
-		
-		// TODO Implement JScienceXmlMeasurements
-		logger.log(Level.SEVERE,"Unsupported Operation: JScience Measurements.");
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * Converts a file/directory name to a valid key of the
+     * existingFileDaoFactories map.
+     * 
+     * @param directory
+     *            The file to convert.
+     * @return The key for the map.
+     */
+    private static String fileToMapKey(final File directory) {
+        String result = null;
+        try {
+            result = directory.getCanonicalPath();
+        } catch (final IOException e) {
+            logger.log(Level.WARNING, "Could not resolve file name to String.",
+                    e);
+        }
+        return result;
+    }
 
-	@Override
-	public <Q extends Quantity> BinaryMeasurementsDao<Double,Q> createDoubleMeasurementsDao(String uuid) {
-		super.createDoubleMeasurementsDao(uuid);
-		FileBinaryMeasurementsDaoImpl<Double,Q> fbmDao = new FileBinaryMeasurementsDaoImpl<Double,Q>();
-		fbmDao.setBinaryRepresentation(BinaryRepresentation.DOUBLE);
-		fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
-				FILE_SUFFIX)));
-		fbmDao.setSerializer(new DoubleSerializer());
-		daoRegistry.register(fbmDao, uuid);
-		return fbmDao;
-	}
+    /**
+     * returns the absolute path to a uuid-referenced data file.
+     * 
+     * @param uuid
+     *            Identifier of the data (file).
+     * @return aboslute path to the file.
+     */
+    private String getAbsolutePathToUuidFile(final String uuid, final String suffix) {
+        return new File(storageDirectory.getAbsolutePath() + File.separator
+                + uuid).getAbsolutePath()
+                + "." + suffix;
+    }
 
-	@Override
-	public <Q extends Quantity> BinaryMeasurementsDao<Long,Q> createLongMeasurementsDao(String uuid) {
-		super.createLongMeasurementsDao(uuid);
-		FileBinaryMeasurementsDaoImpl<Long,Q> fbmDao = new FileBinaryMeasurementsDaoImpl<Long,Q>();
-		fbmDao.setBinaryRepresentation(BinaryRepresentation.LONG);
-		fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
-				FILE_SUFFIX)));
-		fbmDao.setSerializer(new LongSerializer());
-		daoRegistry.register(fbmDao, uuid);
-		return fbmDao;
-	}
+    @Override
+    public JScienceXmlMeasurementsDao<?,Quantity> createJScienceXmlMeasurementsDao(final String uuid) {
+        super.createJScienceXmlMeasurementsDao(uuid);
 
-	@Override
-	public NominalMeasurementsDao createNominalMeasurementsDao(String uuid) {
-		super.createNominalMeasurementsDao(uuid);
-		FileNominalMeasurementsDaoImpl fnmDao = new FileNominalMeasurementsDaoImpl();
-		fnmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
-				EmfModelXMIResourceFactoryImpl.EDP2_NOMINALMEASUREMENTS_EXTENSION)));
-		fnmDao.setResourceSet(emfResourceSet);
-		daoRegistry.register(fnmDao, uuid);
-		return fnmDao;
-	}
+        // TODO Implement JScienceXmlMeasurements
+        logger.log(Level.SEVERE,"Unsupported Operation: JScience Measurements.");
+        throw new UnsupportedOperationException();
+    }
 
-	@Override
-	public MeasurementsDaoRegistry getDaoRegistry() {
-		return daoRegistry;
-	}
+    @Override
+    public <Q extends Quantity> BinaryMeasurementsDao<Double,Q> createDoubleMeasurementsDao(final String uuid) {
+        super.createDoubleMeasurementsDao(uuid);
+        final FileBinaryMeasurementsDaoImpl<Double,Q> fbmDao = new FileBinaryMeasurementsDaoImpl<Double,Q>();
+        fbmDao.setBinaryRepresentation(BinaryRepresentation.DOUBLE);
+        fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
+                FILE_SUFFIX)));
+        fbmDao.setSerializer(new DoubleSerializer());
+        daoRegistry.register(fbmDao, uuid);
+        return fbmDao;
+    }
 
-	@Override
-	public void setActive(boolean newValue) {
-		super.setActive(newValue);
-		Set<String> registeredUuids = daoRegistry.getRegisteredUuids();
-		for (String uuid : registeredUuids) {
-			try {
-				if (!isActive()) {
-					if (!daoRegistry.getMeasurementsDao(uuid).isDeleted()) {
-						if (daoRegistry.getMeasurementsDao(uuid).isOpen()) {
-							daoRegistry.getMeasurementsDao(uuid).close();
-						}
-					}
-					daoRegistry.deregister(uuid);
-				} else {
-					daoRegistry.getMeasurementsDao(uuid).open();
-				}
-			} catch (DataNotAccessibleException e) {
-				logger.log(Level.SEVERE, "Could not close DAO.", e);
-			}
-		}
-	}
+    @Override
+    public <Q extends Quantity> BinaryMeasurementsDao<Long,Q> createLongMeasurementsDao(final String uuid) {
+        super.createLongMeasurementsDao(uuid);
+        final FileBinaryMeasurementsDaoImpl<Long,Q> fbmDao = new FileBinaryMeasurementsDaoImpl<Long,Q>();
+        fbmDao.setBinaryRepresentation(BinaryRepresentation.LONG);
+        fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
+                FILE_SUFFIX)));
+        fbmDao.setSerializer(new LongSerializer());
+        daoRegistry.register(fbmDao, uuid);
+        return fbmDao;
+    }
 
-	/**Returns a registered factory for a given location.
-	 * @param directory Local directory for which the factory is requested.
-	 * @return <code>null</code> if there is no factory registered. The registered factory otherwise.
-	 */
-	public static MeasurementsDaoFactory getRegisteredFactory(File directory) {
-		return existingFileDaoFactories.get(fileToMapKey(directory));
-	}
+    @Override
+    public NominalMeasurementsDao createNominalMeasurementsDao(final String uuid) {
+        super.createNominalMeasurementsDao(uuid);
+        final FileNominalMeasurementsDaoImpl fnmDao = new FileNominalMeasurementsDaoImpl();
+        fnmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
+                EmfModelXMIResourceFactoryImpl.EDP2_NOMINALMEASUREMENTS_EXTENSION)));
+        fnmDao.setResourceSet(emfResourceSet);
+        daoRegistry.register(fnmDao, uuid);
+        return fnmDao;
+    }
 
-	@Override
-	public <Q extends Quantity> BinaryMeasurementsDao<Double,Q> createDoubleMeasurementsDao(
-			String uuid, Unit<Q> storageUnit) {
-		BinaryMeasurementsDao<Double,Q> bmd = createDoubleMeasurementsDao(uuid);
-		bmd.setUnit(storageUnit);
-		return bmd;
-	}
+    @Override
+    public MeasurementsDaoRegistry getDaoRegistry() {
+        return daoRegistry;
+    }
 
-	@Override
+    @Override
+    public void setActive(final boolean newValue) {
+        super.setActive(newValue);
+        final Set<String> registeredUuids = daoRegistry.getRegisteredUuids();
+        for (final String uuid : registeredUuids) {
+            try {
+                if (!isActive()) {
+                    if (!daoRegistry.getMeasurementsDao(uuid).isDeleted()) {
+                        if (daoRegistry.getMeasurementsDao(uuid).isOpen()) {
+                            daoRegistry.getMeasurementsDao(uuid).close();
+                        }
+                    }
+                    daoRegistry.deregister(uuid);
+                } else {
+                    daoRegistry.getMeasurementsDao(uuid).open();
+                }
+            } catch (final DataNotAccessibleException e) {
+                logger.log(Level.SEVERE, "Could not close DAO.", e);
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    /**Returns a registered factory for a given location.
+     * @param directory Local directory for which the factory is requested.
+     * @return <code>null</code> if there is no factory registered. The registered factory otherwise.
+     */
+    public static MeasurementsDaoFactory getRegisteredFactory(final File directory) {
+        return existingFileDaoFactories.get(fileToMapKey(directory));
+    }
+
+    @Override
+    public <Q extends Quantity> BinaryMeasurementsDao<Double,Q> createDoubleMeasurementsDao(
+            final String uuid, final Unit<Q> storageUnit) {
+        final BinaryMeasurementsDao<Double,Q> bmd = createDoubleMeasurementsDao(uuid);
+        bmd.setUnit(storageUnit);
+        return bmd;
+    }
+
+    @Override
     public <Q extends Quantity> BinaryMeasurementsDao<Long,Q> createLongMeasurementsDao(
-            String uuid, Unit<Q> storageUnit) {
-	    BinaryMeasurementsDao<Long,Q> bmd = createLongMeasurementsDao(uuid);
-		bmd.setUnit(storageUnit);
-		return bmd;
-	}
+            final String uuid, final Unit<Q> storageUnit) {
+        final BinaryMeasurementsDao<Long,Q> bmd = createLongMeasurementsDao(uuid);
+        bmd.setUnit(storageUnit);
+        return bmd;
+    }
 
 }

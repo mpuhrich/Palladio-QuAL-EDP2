@@ -200,11 +200,11 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
             }
             else if(uri.isPlatformResource()) {
                 logger.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
-                throw new UnsupportedOperationException("Platform resource deletion currently only partly supported!");
+                //throw new UnsupportedOperationException("Platform resource deletion currently only partly supported!");
             }
             else {
                 logger.log(Level.WARNING, "Unsupported URI format.");
-                throw new UnsupportedOperationException("Unsupported URI format.");
+                //throw new UnsupportedOperationException("Unsupported URI format.");
             }
 
             if(mmtDaoFactory.isActive()) {

@@ -40,7 +40,7 @@ public class CloseDataSourceHandler extends AbstractHandler implements IHandler 
                 // TODO Auto-generated catch block
             }
         } else {
-
+            // TODO Error message
         }
         return null;
     }

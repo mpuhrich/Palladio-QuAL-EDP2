@@ -25,133 +25,149 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitc
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 
 public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
-	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 
-	private IMapChangeListener mapChangeListener = new IMapChangeListener() {
-		public void handleMapChange(MapChangeEvent event) {
-			Set<?> affectedElements = event.diff.getChangedKeys();
-			if (!affectedElements.isEmpty()) {
-				LabelProviderChangedEvent newEvent = new LabelProviderChangedEvent(
-						NavigatorTreeLabelProviderImpl.this, affectedElements.toArray());
-				fireLabelProviderChanged(newEvent);
-			}
-		}
-	};
+    private final IMapChangeListener mapChangeListener = new IMapChangeListener() {
+        @Override
+        public void handleMapChange(final MapChangeEvent event) {
+            final Set<?> affectedElements = event.diff.getChangedKeys();
+            if (!affectedElements.isEmpty()) {
+                final LabelProviderChangedEvent newEvent = new LabelProviderChangedEvent(
+                        NavigatorTreeLabelProviderImpl.this, affectedElements.toArray());
+                fireLabelProviderChanged(newEvent);
+            }
+        }
+    };
 
-	public NavigatorTreeLabelProviderImpl(IObservableMap[] attributeMaps) {
-		for (int i = 0; i < attributeMaps.length; i++) {
-			attributeMaps[i].addMapChangeListener(mapChangeListener);
-		}
-	}
+    public NavigatorTreeLabelProviderImpl(final IObservableMap[] attributeMaps) {
+        for (int i = 0; i < attributeMaps.length; i++) {
+            attributeMaps[i].addMapChangeListener(mapChangeListener);
+        }
+    }
 
-	@Override
-	public String getToolTipText(Object element) {
-		return "#dummy#";
-	}
+    @Override
+    public String getToolTipText(final Object element) {
+        return "#dummy#";
+    }
 
-	@Override
-	public void update(ViewerCell cell) {
-		if (cell.getElement() instanceof EObject) {
-			EObject eObject = (EObject) cell.getElement();
-			StyledString styledString = null;
-			styledString = new ExperimentDataSwitch<StyledString>() {
-				public StyledString caseExperimentGroup(ExperimentGroup object) {
-					StyledString styledString = new StyledString("Experiment Group");
-					String decoration = " " + object.getPurpose() + " (" +object.getUuid() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseExperimentSetting(ExperimentSetting object) {
-					StyledString styledString = new StyledString(object.getDescription());
-					return styledString;
-				};
-				public StyledString caseExperimentRun(ExperimentRun object) {
-					StyledString styledString = new StyledString("Experiment Run " + dateFormat.format(object.getStartTime()));
-					String decoration = " (" + object.getUuid() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseMeasurementsRange(MeasurementsRange object) {
-					StyledString styledString = new StyledString("Range");
-					if (object.getStartTime() != null && object.getEndTime() != null) {
-						String decoration = " (" + object.getStartTime() + "-" + object.getEndTime() + ")";
-						styledString.append(decoration, StyledString.COUNTER_STYLER);
-					}
-					return styledString;
-				};
-				public StyledString caseRawMeasurements(RawMeasurements object) {
-					StyledString styledString = new StyledString("Raw");
-					String decoration = " (" + object.getDataSeries().size() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseAggregatedMeasurements(AggregatedMeasurements object) {
-					StyledString styledString = new StyledString("Aggregated");
-					return styledString;
-				};
-				public StyledString caseEdp2Measure(org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure object) {
-					StyledString styledString = new StyledString(object.getMeasuredObject()==null ? "Measure" : object.getMeasuredObject());
-					String decoration = " (" + object.getMetric().getName() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseMeasurements(Measurements object) {
-					StyledString styledString = new StyledString("Measurement");
-					return styledString;
-				};
-				public StyledString caseBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription object) {
-					StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
-					String decoration = " (" + object.getScale() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseNumericalBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription object) {
-					StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
-					String decoration = " (" + object.getScale() + ", " + object.getDefaultUnit() + ")";
-					styledString.append(decoration, StyledString.COUNTER_STYLER);
-					return styledString;
-				};
-				public StyledString caseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.MetricDescription object) {
-					StyledString styledString = new StyledString(object.getName()==null ? "Metric Set" : object.getName());
-					return styledString;
-				};
-			}.doSwitch(eObject);
-			if (styledString == null) { 
-				styledString = new RepositorySwitch<StyledString>() {
-					public StyledString caseLocalDirectoryRepository(org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository object) {
-						StyledString styledString = new StyledString("Local File");
-						String decoration = " (" + object.getUri() + ")";
-						styledString.append(decoration, StyledString.COUNTER_STYLER);
-						return styledString;
-					};
-					public StyledString caseLocalMemoryRepository(org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository object) {
-						StyledString styledString = new StyledString("Local Memory");
-						String decoration = " (" + object.getDomain() + ")";
-						styledString.append(decoration, StyledString.COUNTER_STYLER);
-						return styledString;
-					};
-					public StyledString caseRemoteCdoRepository(org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository object) {
-						StyledString styledString = new StyledString("Remote");
-						String decoration = " (" + object.getUrl() + ")";
-						styledString.append(decoration, StyledString.COUNTER_STYLER);
-						return styledString;
-					};
-					public StyledString caseLocalSensorFrameworkRepository(org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository object) {
-						StyledString styledString = new StyledString("Local Sensor Framework V1");
-						String decoration = " (" + object.getUri() + ")";
-						styledString.append(decoration, StyledString.COUNTER_STYLER);
-						return styledString;
-					};
-				}.doSwitch(eObject);
-			}
-			if (styledString == null) {
-				Logger.getLogger(NavigatorTreeLabelProviderImpl.class.getCanonicalName()).log(Level.SEVERE, "Could not create label for " + eObject);
-			} else {
-				cell.setText(styledString.getString());
-				//cell.setImage();
-				cell.setStyleRanges(styledString.getStyleRanges());
-			}
-		}
-	}
+    @Override
+    public void update(final ViewerCell cell) {
+        if (cell.getElement() instanceof EObject) {
+            final EObject eObject = (EObject) cell.getElement();
+            StyledString styledString = null;
+            styledString = new ExperimentDataSwitch<StyledString>() {
+                @Override
+                public StyledString caseExperimentGroup(final ExperimentGroup object) {
+                    final StyledString styledString = new StyledString("Experiment Group");
+                    final String decoration = " " + object.getPurpose() + " (" +object.getUuid() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseExperimentSetting(final ExperimentSetting object) {
+                    final StyledString styledString = new StyledString(object.getDescription() == null ? "" : object.getDescription());
+                    return styledString;
+                };
+                @Override
+                public StyledString caseExperimentRun(final ExperimentRun object) {
+                    final StyledString styledString = new StyledString("Experiment Run " + dateFormat.format(object.getStartTime()));
+                    final String decoration = " (" + object.getUuid() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseMeasurementsRange(final MeasurementsRange object) {
+                    final StyledString styledString = new StyledString("Range");
+                    if (object.getStartTime() != null && object.getEndTime() != null) {
+                        final String decoration = " (" + object.getStartTime() + "-" + object.getEndTime() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    }
+                    return styledString;
+                };
+                @Override
+                public StyledString caseRawMeasurements(final RawMeasurements object) {
+                    final StyledString styledString = new StyledString("Raw");
+                    final String decoration = " (" + object.getDataSeries().size() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseAggregatedMeasurements(final AggregatedMeasurements object) {
+                    final StyledString styledString = new StyledString("Aggregated");
+                    return styledString;
+                };
+                @Override
+                public StyledString caseEdp2Measure(final org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure object) {
+                    final StyledString styledString = new StyledString(object.getMeasuredObject()==null ? "Measure" : object.getMeasuredObject());
+                    final String decoration = " (" + object.getMetric().getName() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseMeasurements(final Measurements object) {
+                    final StyledString styledString = new StyledString("Measurement");
+                    return styledString;
+                };
+                @Override
+                public StyledString caseBaseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription object) {
+                    final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
+                    final String decoration = " (" + object.getScale() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseNumericalBaseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription object) {
+                    final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
+                    final String decoration = " (" + object.getScale() + ", " + object.getDefaultUnit() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+                @Override
+                public StyledString caseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.MetricDescription object) {
+                    final StyledString styledString = new StyledString(object.getName()==null ? "Metric Set" : object.getName());
+                    return styledString;
+                };
+            }.doSwitch(eObject);
+            if (styledString == null) {
+                styledString = new RepositorySwitch<StyledString>() {
+                    @Override
+                    public StyledString caseLocalDirectoryRepository(final org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository object) {
+                        final StyledString styledString = new StyledString("Local File");
+                        final String decoration = " (" + object.getUri() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                    @Override
+                    public StyledString caseLocalMemoryRepository(final org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository object) {
+                        final StyledString styledString = new StyledString("Local Memory");
+                        final String decoration = " (" + object.getDomain() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                    @Override
+                    public StyledString caseRemoteCdoRepository(final org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository object) {
+                        final StyledString styledString = new StyledString("Remote");
+                        final String decoration = " (" + object.getUrl() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                    @Override
+                    public StyledString caseLocalSensorFrameworkRepository(final org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository object) {
+                        final StyledString styledString = new StyledString("Local Sensor Framework V1");
+                        final String decoration = " (" + object.getUri() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                }.doSwitch(eObject);
+            }
+            if (styledString == null) {
+                Logger.getLogger(NavigatorTreeLabelProviderImpl.class.getCanonicalName()).log(Level.SEVERE, "Could not create label for " + eObject);
+            } else {
+                cell.setText(styledString.getString());
+                //cell.setImage();
+                cell.setStyleRanges(styledString.getStyleRanges());
+            }
+        }
+    }
 }

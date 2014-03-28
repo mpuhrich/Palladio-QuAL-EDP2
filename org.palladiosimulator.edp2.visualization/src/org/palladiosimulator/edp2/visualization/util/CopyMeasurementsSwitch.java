@@ -5,10 +5,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.measure.Measure;
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.NominalMeasurementsDao;
 import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
+import org.palladiosimulator.edp2.impl.IdentifierMeasure;
 import org.palladiosimulator.edp2.impl.Measurement;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
@@ -31,79 +33,82 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitc
  */
 public class CopyMeasurementsSwitch extends ExperimentDataSwitch<Boolean> {
 
-	/**
-	 * Logger for this class
-	 */
-	private final static Logger logger = Logger
-			.getLogger(CopyMeasurementsSwitch.class.getSimpleName());
-	
-	/**
-	 * The {@link RawMeasurements} containing the original data, which are to be copied.
-	 */
-	private RawMeasurements rawMeasurementsToCopy;
-	/**
-	 * The index of the item in the data series to be copied.
-	 */
-	private int index;
-	/**
-	 * The dimension, i.e. the index of the data series to be copied.
-	 */
-	private int dimension;
-	/**
-	 * The {@link Measurement} to which the value is copied.
-	 */
-	private Measurement measurement;
+    /**
+     * Logger for this class
+     */
+    private final static Logger logger = Logger
+            .getLogger(CopyMeasurementsSwitch.class.getSimpleName());
 
-	public CopyMeasurementsSwitch(RawMeasurements rawMeasurementsToCopy,
-			int index, int dimension, Measurement measurement) {
-		this.rawMeasurementsToCopy = rawMeasurementsToCopy;
-		this.index = index;
-		this.dimension = dimension;
-		this.measurement = measurement;
-	}
+    /**
+     * The {@link RawMeasurements} containing the original data, which are to be copied.
+     */
+    private final RawMeasurements rawMeasurementsToCopy;
+    /**
+     * The index of the item in the data series to be copied.
+     */
+    private final int index;
+    /**
+     * The dimension, i.e. the index of the data series to be copied.
+     */
+    private final int dimension;
+    /**
+     * The {@link Measurement} to which the value is copied.
+     */
+    private final Measurement measurement;
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseNumericalBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription)
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public Boolean caseNumericalBaseMetricDescription(
-			NumericalBaseMetricDescription object) {
-		OrdinalMeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
-				.getOrdinalMeasurementsDao(rawMeasurementsToCopy
-						.getDataSeries().get(dimension));
-		List<?> measures = dao.getMeasurements();
-		Measure measure = (Measure) measures.get(index);
-		measurement.setMeasuredValue(dimension, measure);
-		return true;
-	}
+    public CopyMeasurementsSwitch(final RawMeasurements rawMeasurementsToCopy,
+            final int index, final int dimension, final Measurement measurement) {
+        this.rawMeasurementsToCopy = rawMeasurementsToCopy;
+        this.index = index;
+        this.dimension = dimension;
+        this.measurement = measurement;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseTextualBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription)
-	 */
-	public Boolean caseTextualBaseMetricDescription(
-			TextualBaseMetricDescription object) {
-		NominalMeasurementsDao dao = MeasurementsUtility
-				.getNominalMeasurementsDao(rawMeasurementsToCopy
-						.getDataSeries().get(dimension));
-		ObservedIdentifierBasedMeasurements mms = dao
-				.getObservedIdentifierBasedMeasurements();
-		List<ObservedIdentifier> obsId = mms.getObservedIdentifiers();
-		measurement.setMeasuredValue(dimension, obsId.get(index)
-				.getIdentifier());
-		return true;
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription)
-	 */
-	public Boolean caseBaseMetricDescription(BaseMetricDescription object) {
-		logger.log(
-				Level.SEVERE,
-				"Unsupported Base Metric: the selected measurements could not be opened, because it is neither described by a TextualBaseMetricDescription nor a NumericalBaseMetricDescription.");
-		throw new RuntimeException("Unsupported Base Metric.");
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseNumericalBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription)
+     */
+    @Override
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public Boolean caseNumericalBaseMetricDescription(
+            final NumericalBaseMetricDescription object) {
+        final OrdinalMeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
+                .getOrdinalMeasurementsDao(rawMeasurementsToCopy
+                        .getDataSeries().get(dimension));
+        final List<?> measures = dao.getMeasurements();
+        final Measure measure = (Measure) measures.get(index);
+        measurement.setMeasuredValue(dimension, measure);
+        return true;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseTextualBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription)
+     */
+    @Override
+    public Boolean caseTextualBaseMetricDescription(
+            final TextualBaseMetricDescription object) {
+        final NominalMeasurementsDao dao = MeasurementsUtility
+                .getNominalMeasurementsDao(rawMeasurementsToCopy
+                        .getDataSeries().get(dimension));
+        final ObservedIdentifierBasedMeasurements mms = dao
+                .getObservedIdentifierBasedMeasurements();
+        final List<ObservedIdentifier> obsId = mms.getObservedIdentifiers();
+        measurement.setMeasuredValue(dimension, IdentifierMeasure.valueOf(obsId.get(index)
+                .getIdentifier(),Dimensionless.UNIT));
+        return true;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch#caseBaseMetricDescription(org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription)
+     */
+    @Override
+    public Boolean caseBaseMetricDescription(final BaseMetricDescription object) {
+        logger.log(
+                Level.SEVERE,
+                "Unsupported Base Metric: the selected measurements could not be opened, because it is neither described by a TextualBaseMetricDescription nor a NumericalBaseMetricDescription.");
+        throw new RuntimeException("Unsupported Base Metric.");
+    }
 
 }

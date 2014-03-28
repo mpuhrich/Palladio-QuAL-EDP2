@@ -105,14 +105,14 @@
             id="utilization"
             name="Utilization">
          <inputMetric
-               UUID="_MenvIiUREd6gmLudJva2Dw"
+               UUID="_BoroIZMbEd6Vw8NDgVSYcgLehr6"
                description="2-dimensional data with repeating values">
          </inputMetric>
          <adapter
                adapterID="org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter">
             <property
                   key="dataSeriesIndex"
-                  value="1">
+                  value="0">
             </property>
          </adapter>
          <datasink

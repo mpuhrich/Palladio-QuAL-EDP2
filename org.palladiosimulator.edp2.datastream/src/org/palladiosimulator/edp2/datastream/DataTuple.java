@@ -12,7 +12,7 @@ public class DataTuple extends MetricEntity {
 
     private final List<Measure<?,?>> myDataTuple;
 
-    DataTuple(final List<Measure<?,?>> dataTuple, final MetricSetDescription metricDescription) {
+    public DataTuple(final List<Measure<?,?>> dataTuple, final MetricSetDescription metricDescription) {
         super(metricDescription);
         this.myDataTuple = Collections.unmodifiableList(dataTuple);
     }

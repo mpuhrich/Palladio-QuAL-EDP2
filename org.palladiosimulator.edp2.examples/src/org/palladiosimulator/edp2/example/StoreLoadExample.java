@@ -1,12 +1,19 @@
 package org.palladiosimulator.edp2.example;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.measure.Measure;
+import javax.measure.quantity.Duration;
+import javax.measure.unit.SI;
 
 import org.palladiosimulator.edp2.datastream.DataTuple;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2ListDataSource;
+import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
@@ -96,7 +103,20 @@ public class StoreLoadExample {
             // stream
             final IDataSource dataSource = new Edp2ListDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements(),
                     (MetricSetDescription) ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric());
-            final IDataStream<DataTuple> dataStream = dataSource.getDataStream();
+            final AbstractAdapter<DataTuple,DataTuple> adapter = new AbstractAdapter<DataTuple,DataTuple>(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
+
+                @Override
+                protected DataTuple computeOutputFromInput(final DataTuple data) {
+                    final List<Measure<?,?>> next = new ArrayList<Measure<?,?>>(2);
+                    for (final Measure m : data.asList()) {
+                        final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
+                        next.add(newM);
+                    }
+                    return new DataTuple(next,(MetricSetDescription) data.getMetricDesciption());
+                }
+
+            };
+            final IDataStream<DataTuple> dataStream = adapter.getDataStream();
             for (final DataTuple tuple : dataStream) {
                 System.out.println(tuple);
             }

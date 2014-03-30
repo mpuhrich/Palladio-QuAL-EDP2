@@ -7,6 +7,8 @@ import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 
+import javax.measure.unit.Unit;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.palladiosimulator.edp2.local.file.LocalDirectoryMeasurementsDaoFactory;
@@ -14,8 +16,8 @@ import org.palladiosimulator.edp2.local.file.LocalDirectoryMeasurementsDaoFactor
 /**JUnit test for file-backed LongBinaryMeasurementsDao.
  * @author groenda
  */
-public class FileLongBinaryMeasurementsDaoTest extends
-LongBinaryMeasurementsDaoTest {
+public class IdentifierBinaryMeasurementsDaoTest extends
+NominalMeasurementsDaoTest {
     @Before
     public void setUpBefore() throws Exception {
         final File tempFile = File.createTempFile("delete", "me");
@@ -25,9 +27,9 @@ LongBinaryMeasurementsDaoTest {
             tempFile.deleteOnExit();
             df = new LocalDirectoryMeasurementsDaoFactory(tempFile.getAbsoluteFile());
             assertNotNull("DaoFactory must not be null.", df);
-            dao = bmDao = df.createLongMeasurementsDao(uuid);
-            bmDao.setUnit(unit);
-            assertNotNull("LongBinaryMeasurementsDao must not be null.", bmDao);
+            dao = this.onmDao = df.createNominalMeasurementsDao(uuid);
+            onmDao.setUnit(Unit.ONE);
+            assertNotNull("LongBinaryMeasurementsDao must not be null.", onmDao);
         }
     }
 }

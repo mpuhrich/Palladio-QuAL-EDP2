@@ -357,20 +357,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	private EClass observedIdentifierEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass observedIdentifierBasedMeasurementsEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	private EClass numericalRatioStatisticsEClass = null;
 
 	/**
@@ -1702,51 +1688,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getObservedIdentifier() {
-        return observedIdentifierEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getObservedIdentifier_Identifier() {
-        return (EReference)observedIdentifierEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getObservedIdentifier_ObservedIdentifierBasedMeasurements() {
-        return (EReference)observedIdentifierEClass.getEStructuralFeatures().get(1);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getObservedIdentifierBasedMeasurements() {
-        return observedIdentifierBasedMeasurementsEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getObservedIdentifierBasedMeasurements_ObservedIdentifiers() {
-        return (EReference)observedIdentifierBasedMeasurementsEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	public EClass getNumericalRatioStatistics() {
         return numericalRatioStatisticsEClass;
     }
@@ -2052,13 +1993,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         identifierBasedMeasurementsEClass = createEClass(IDENTIFIER_BASED_MEASUREMENTS);
 
-        observedIdentifierEClass = createEClass(OBSERVED_IDENTIFIER);
-        createEReference(observedIdentifierEClass, OBSERVED_IDENTIFIER__IDENTIFIER);
-        createEReference(observedIdentifierEClass, OBSERVED_IDENTIFIER__OBSERVED_IDENTIFIER_BASED_MEASUREMENTS);
-
-        observedIdentifierBasedMeasurementsEClass = createEClass(OBSERVED_IDENTIFIER_BASED_MEASUREMENTS);
-        createEReference(observedIdentifierBasedMeasurementsEClass, OBSERVED_IDENTIFIER_BASED_MEASUREMENTS__OBSERVED_IDENTIFIERS);
-
         numericalRatioStatisticsEClass = createEClass(NUMERICAL_RATIO_STATISTICS);
         createEAttribute(numericalRatioStatisticsEClass, NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION);
         createEAttribute(numericalRatioStatisticsEClass, NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN);
@@ -2168,8 +2102,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         longBinaryMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         metricSetDescriptionEClass.getESuperTypes().add(this.getMetricDescription());
         identifierBasedMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
-        observedIdentifierEClass.getESuperTypes().add(this.getIdentifiable());
-        observedIdentifierBasedMeasurementsEClass.getESuperTypes().add(this.getIdentifiable());
         numericalRatioStatisticsEClass.getESuperTypes().add(this.getNumericalIntervalStatistics());
         sensorFrameworkV1DoubleBinaryMeasurementsEClass.getESuperTypes().add(this.getDoubleBinaryMeasurements());
         sensorFrameworkV1IdentifierBasedMeasurementsEClass.getESuperTypes().add(this.getIdentifierBasedMeasurements());
@@ -2335,13 +2267,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         initEReference(getMetricSetDescription_SubsumedMetrics(), this.getMetricDescription(), null, "subsumedMetrics", null, 1, -1, MetricSetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(identifierBasedMeasurementsEClass, IdentifierBasedMeasurements.class, "IdentifierBasedMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(observedIdentifierEClass, ObservedIdentifier.class, "ObservedIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getObservedIdentifier_Identifier(), this.getIdentifier(), null, "identifier", null, 1, 1, ObservedIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getObservedIdentifier_ObservedIdentifierBasedMeasurements(), this.getObservedIdentifierBasedMeasurements(), this.getObservedIdentifierBasedMeasurements_ObservedIdentifiers(), "observedIdentifierBasedMeasurements", null, 1, 1, ObservedIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(observedIdentifierBasedMeasurementsEClass, ObservedIdentifierBasedMeasurements.class, "ObservedIdentifierBasedMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getObservedIdentifierBasedMeasurements_ObservedIdentifiers(), this.getObservedIdentifier(), this.getObservedIdentifier_ObservedIdentifierBasedMeasurements(), "observedIdentifiers", null, 0, -1, ObservedIdentifierBasedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(numericalRatioStatisticsEClass, NumericalRatioStatistics.class, "NumericalRatioStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getNumericalRatioStatistics_CoefficientOfVariation(), this.getEJSMeasure(), "coefficientOfVariation", null, 1, 1, NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

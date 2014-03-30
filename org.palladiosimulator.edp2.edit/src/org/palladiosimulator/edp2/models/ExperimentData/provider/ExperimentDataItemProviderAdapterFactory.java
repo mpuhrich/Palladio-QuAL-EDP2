@@ -36,958 +36,910 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapt
  */
 public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the root adapter factory that delegates to this adapter factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
+     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
+     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
+     * This constructs an instance.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ExperimentDataItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected MeasurementsRangeItemProvider measurementsRangeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createMeasurementsRangeAdapter() {
-		if (measurementsRangeItemProvider == null) {
-			measurementsRangeItemProvider = new MeasurementsRangeItemProvider(this);
-		}
+        if (measurementsRangeItemProvider == null) {
+            measurementsRangeItemProvider = new MeasurementsRangeItemProvider(this);
+        }
 
-		return measurementsRangeItemProvider;
-	}
+        return measurementsRangeItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected EStringtoEObjectMapEntryItemProvider eStringtoEObjectMapEntryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link java.util.Map.Entry}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link java.util.Map.Entry}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createEStringtoEObjectMapEntryAdapter() {
-		if (eStringtoEObjectMapEntryItemProvider == null) {
-			eStringtoEObjectMapEntryItemProvider = new EStringtoEObjectMapEntryItemProvider(this);
-		}
+        if (eStringtoEObjectMapEntryItemProvider == null) {
+            eStringtoEObjectMapEntryItemProvider = new EStringtoEObjectMapEntryItemProvider(this);
+        }
 
-		return eStringtoEObjectMapEntryItemProvider;
-	}
+        return eStringtoEObjectMapEntryItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected RawMeasurementsItemProvider rawMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createRawMeasurementsAdapter() {
-		if (rawMeasurementsItemProvider == null) {
-			rawMeasurementsItemProvider = new RawMeasurementsItemProvider(this);
-		}
+        if (rawMeasurementsItemProvider == null) {
+            rawMeasurementsItemProvider = new RawMeasurementsItemProvider(this);
+        }
 
-		return rawMeasurementsItemProvider;
-	}
+        return rawMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalNominalStatisticsItemProvider numericalNominalStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalNominalStatisticsAdapter() {
-		if (numericalNominalStatisticsItemProvider == null) {
-			numericalNominalStatisticsItemProvider = new NumericalNominalStatisticsItemProvider(this);
-		}
+        if (numericalNominalStatisticsItemProvider == null) {
+            numericalNominalStatisticsItemProvider = new NumericalNominalStatisticsItemProvider(this);
+        }
 
-		return numericalNominalStatisticsItemProvider;
-	}
+        return numericalNominalStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalMassDistributionItemProvider numericalMassDistributionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalMassDistributionAdapter() {
-		if (numericalMassDistributionItemProvider == null) {
-			numericalMassDistributionItemProvider = new NumericalMassDistributionItemProvider(this);
-		}
+        if (numericalMassDistributionItemProvider == null) {
+            numericalMassDistributionItemProvider = new NumericalMassDistributionItemProvider(this);
+        }
 
-		return numericalMassDistributionItemProvider;
-	}
+        return numericalMassDistributionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected FixedWidthAggregatedMeasurementsItemProvider fixedWidthAggregatedMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createFixedWidthAggregatedMeasurementsAdapter() {
-		if (fixedWidthAggregatedMeasurementsItemProvider == null) {
-			fixedWidthAggregatedMeasurementsItemProvider = new FixedWidthAggregatedMeasurementsItemProvider(this);
-		}
+        if (fixedWidthAggregatedMeasurementsItemProvider == null) {
+            fixedWidthAggregatedMeasurementsItemProvider = new FixedWidthAggregatedMeasurementsItemProvider(this);
+        }
 
-		return fixedWidthAggregatedMeasurementsItemProvider;
-	}
+        return fixedWidthAggregatedMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected FixedIntervalsItemProvider fixedIntervalsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createFixedIntervalsAdapter() {
-		if (fixedIntervalsItemProvider == null) {
-			fixedIntervalsItemProvider = new FixedIntervalsItemProvider(this);
-		}
+        if (fixedIntervalsItemProvider == null) {
+            fixedIntervalsItemProvider = new FixedIntervalsItemProvider(this);
+        }
 
-		return fixedIntervalsItemProvider;
-	}
+        return fixedIntervalsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected TextualNominalStatisticsItemProvider textualNominalStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createTextualNominalStatisticsAdapter() {
-		if (textualNominalStatisticsItemProvider == null) {
-			textualNominalStatisticsItemProvider = new TextualNominalStatisticsItemProvider(this);
-		}
+        if (textualNominalStatisticsItemProvider == null) {
+            textualNominalStatisticsItemProvider = new TextualNominalStatisticsItemProvider(this);
+        }
 
-		return textualNominalStatisticsItemProvider;
-	}
+        return textualNominalStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected TextualMassDistributionItemProvider textualMassDistributionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createTextualMassDistributionAdapter() {
-		if (textualMassDistributionItemProvider == null) {
-			textualMassDistributionItemProvider = new TextualMassDistributionItemProvider(this);
-		}
+        if (textualMassDistributionItemProvider == null) {
+            textualMassDistributionItemProvider = new TextualMassDistributionItemProvider(this);
+        }
 
-		return textualMassDistributionItemProvider;
-	}
+        return textualMassDistributionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected IdentifierItemProvider identifierItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createIdentifierAdapter() {
-		if (identifierItemProvider == null) {
-			identifierItemProvider = new IdentifierItemProvider(this);
-		}
+        if (identifierItemProvider == null) {
+            identifierItemProvider = new IdentifierItemProvider(this);
+        }
 
-		return identifierItemProvider;
-	}
+        return identifierItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected TextualBaseMetricDescriptionItemProvider textualBaseMetricDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createTextualBaseMetricDescriptionAdapter() {
-		if (textualBaseMetricDescriptionItemProvider == null) {
-			textualBaseMetricDescriptionItemProvider = new TextualBaseMetricDescriptionItemProvider(this);
-		}
+        if (textualBaseMetricDescriptionItemProvider == null) {
+            textualBaseMetricDescriptionItemProvider = new TextualBaseMetricDescriptionItemProvider(this);
+        }
 
-		return textualBaseMetricDescriptionItemProvider;
-	}
+        return textualBaseMetricDescriptionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ExperimentGroupItemProvider experimentGroupItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createExperimentGroupAdapter() {
-		if (experimentGroupItemProvider == null) {
-			experimentGroupItemProvider = new ExperimentGroupItemProvider(this);
-		}
+        if (experimentGroupItemProvider == null) {
+            experimentGroupItemProvider = new ExperimentGroupItemProvider(this);
+        }
 
-		return experimentGroupItemProvider;
-	}
+        return experimentGroupItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ExperimentSettingItemProvider experimentSettingItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createExperimentSettingAdapter() {
-		if (experimentSettingItemProvider == null) {
-			experimentSettingItemProvider = new ExperimentSettingItemProvider(this);
-		}
+        if (experimentSettingItemProvider == null) {
+            experimentSettingItemProvider = new ExperimentSettingItemProvider(this);
+        }
 
-		return experimentSettingItemProvider;
-	}
+        return experimentSettingItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ExperimentRunItemProvider experimentRunItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createExperimentRunAdapter() {
-		if (experimentRunItemProvider == null) {
-			experimentRunItemProvider = new ExperimentRunItemProvider(this);
-		}
+        if (experimentRunItemProvider == null) {
+            experimentRunItemProvider = new ExperimentRunItemProvider(this);
+        }
 
-		return experimentRunItemProvider;
-	}
+        return experimentRunItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected MeasurementsItemProvider measurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createMeasurementsAdapter() {
-		if (measurementsItemProvider == null) {
-			measurementsItemProvider = new MeasurementsItemProvider(this);
-		}
+        if (measurementsItemProvider == null) {
+            measurementsItemProvider = new MeasurementsItemProvider(this);
+        }
 
-		return measurementsItemProvider;
-	}
+        return measurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected Edp2MeasureItemProvider edp2MeasureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createEdp2MeasureAdapter() {
-		if (edp2MeasureItemProvider == null) {
-			edp2MeasureItemProvider = new Edp2MeasureItemProvider(this);
-		}
+        if (edp2MeasureItemProvider == null) {
+            edp2MeasureItemProvider = new Edp2MeasureItemProvider(this);
+        }
 
-		return edp2MeasureItemProvider;
-	}
+        return edp2MeasureItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Descriptions} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Descriptions} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DescriptionsItemProvider descriptionsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Descriptions}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Descriptions}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createDescriptionsAdapter() {
-		if (descriptionsItemProvider == null) {
-			descriptionsItemProvider = new DescriptionsItemProvider(this);
-		}
+        if (descriptionsItemProvider == null) {
+            descriptionsItemProvider = new DescriptionsItemProvider(this);
+        }
 
-		return descriptionsItemProvider;
-	}
+        return descriptionsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected AggregationFunctionDescriptionItemProvider aggregationFunctionDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createAggregationFunctionDescriptionAdapter() {
-		if (aggregationFunctionDescriptionItemProvider == null) {
-			aggregationFunctionDescriptionItemProvider = new AggregationFunctionDescriptionItemProvider(this);
-		}
+        if (aggregationFunctionDescriptionItemProvider == null) {
+            aggregationFunctionDescriptionItemProvider = new AggregationFunctionDescriptionItemProvider(this);
+        }
 
-		return aggregationFunctionDescriptionItemProvider;
-	}
+        return aggregationFunctionDescriptionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected AggregationStatisticsItemProvider aggregationStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createAggregationStatisticsAdapter() {
-		if (aggregationStatisticsItemProvider == null) {
-			aggregationStatisticsItemProvider = new AggregationStatisticsItemProvider(this);
-		}
+        if (aggregationStatisticsItemProvider == null) {
+            aggregationStatisticsItemProvider = new AggregationStatisticsItemProvider(this);
+        }
 
-		return aggregationStatisticsItemProvider;
-	}
+        return aggregationStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DoubleBinaryMeasurementsItemProvider doubleBinaryMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createDoubleBinaryMeasurementsAdapter() {
-		if (doubleBinaryMeasurementsItemProvider == null) {
-			doubleBinaryMeasurementsItemProvider = new DoubleBinaryMeasurementsItemProvider(this);
-		}
+        if (doubleBinaryMeasurementsItemProvider == null) {
+            doubleBinaryMeasurementsItemProvider = new DoubleBinaryMeasurementsItemProvider(this);
+        }
 
-		return doubleBinaryMeasurementsItemProvider;
-	}
+        return doubleBinaryMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalIntervalStatisticsItemProvider numericalIntervalStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalIntervalStatisticsAdapter() {
-		if (numericalIntervalStatisticsItemProvider == null) {
-			numericalIntervalStatisticsItemProvider = new NumericalIntervalStatisticsItemProvider(this);
-		}
+        if (numericalIntervalStatisticsItemProvider == null) {
+            numericalIntervalStatisticsItemProvider = new NumericalIntervalStatisticsItemProvider(this);
+        }
 
-		return numericalIntervalStatisticsItemProvider;
-	}
+        return numericalIntervalStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalOrdinalStatisticsItemProvider numericalOrdinalStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalOrdinalStatisticsAdapter() {
-		if (numericalOrdinalStatisticsItemProvider == null) {
-			numericalOrdinalStatisticsItemProvider = new NumericalOrdinalStatisticsItemProvider(this);
-		}
+        if (numericalOrdinalStatisticsItemProvider == null) {
+            numericalOrdinalStatisticsItemProvider = new NumericalOrdinalStatisticsItemProvider(this);
+        }
 
-		return numericalOrdinalStatisticsItemProvider;
-	}
+        return numericalOrdinalStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalPercentileItemProvider numericalPercentileItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalPercentileAdapter() {
-		if (numericalPercentileItemProvider == null) {
-			numericalPercentileItemProvider = new NumericalPercentileItemProvider(this);
-		}
+        if (numericalPercentileItemProvider == null) {
+            numericalPercentileItemProvider = new NumericalPercentileItemProvider(this);
+        }
 
-		return numericalPercentileItemProvider;
-	}
+        return numericalPercentileItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected JSXmlMeasurementsItemProvider jsXmlMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createJSXmlMeasurementsAdapter() {
-		if (jsXmlMeasurementsItemProvider == null) {
-			jsXmlMeasurementsItemProvider = new JSXmlMeasurementsItemProvider(this);
-		}
+        if (jsXmlMeasurementsItemProvider == null) {
+            jsXmlMeasurementsItemProvider = new JSXmlMeasurementsItemProvider(this);
+        }
 
-		return jsXmlMeasurementsItemProvider;
-	}
+        return jsXmlMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected LongBinaryMeasurementsItemProvider longBinaryMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createLongBinaryMeasurementsAdapter() {
-		if (longBinaryMeasurementsItemProvider == null) {
-			longBinaryMeasurementsItemProvider = new LongBinaryMeasurementsItemProvider(this);
-		}
+        if (longBinaryMeasurementsItemProvider == null) {
+            longBinaryMeasurementsItemProvider = new LongBinaryMeasurementsItemProvider(this);
+        }
 
-		return longBinaryMeasurementsItemProvider;
-	}
+        return longBinaryMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected MetricSetDescriptionItemProvider metricSetDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createMetricSetDescriptionAdapter() {
-		if (metricSetDescriptionItemProvider == null) {
-			metricSetDescriptionItemProvider = new MetricSetDescriptionItemProvider(this);
-		}
+        if (metricSetDescriptionItemProvider == null) {
+            metricSetDescriptionItemProvider = new MetricSetDescriptionItemProvider(this);
+        }
 
-		return metricSetDescriptionItemProvider;
-	}
+        return metricSetDescriptionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected IdentifierBasedMeasurementsItemProvider identifierBasedMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createIdentifierBasedMeasurementsAdapter() {
-		if (identifierBasedMeasurementsItemProvider == null) {
-			identifierBasedMeasurementsItemProvider = new IdentifierBasedMeasurementsItemProvider(this);
-		}
+        if (identifierBasedMeasurementsItemProvider == null) {
+            identifierBasedMeasurementsItemProvider = new IdentifierBasedMeasurementsItemProvider(this);
+        }
 
-		return identifierBasedMeasurementsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObservedIdentifierItemProvider observedIdentifierItemProvider;
+        return identifierBasedMeasurementsItemProvider;
+    }
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier}.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createObservedIdentifierAdapter() {
-		if (observedIdentifierItemProvider == null) {
-			observedIdentifierItemProvider = new ObservedIdentifierItemProvider(this);
-		}
-
-		return observedIdentifierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObservedIdentifierBasedMeasurementsItemProvider observedIdentifierBasedMeasurementsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createObservedIdentifierBasedMeasurementsAdapter() {
-		if (observedIdentifierBasedMeasurementsItemProvider == null) {
-			observedIdentifierBasedMeasurementsItemProvider = new ObservedIdentifierBasedMeasurementsItemProvider(this);
-		}
-
-		return observedIdentifierBasedMeasurementsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalRatioStatisticsItemProvider numericalRatioStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalRatioStatisticsAdapter() {
-		if (numericalRatioStatisticsItemProvider == null) {
-			numericalRatioStatisticsItemProvider = new NumericalRatioStatisticsItemProvider(this);
-		}
+        if (numericalRatioStatisticsItemProvider == null) {
+            numericalRatioStatisticsItemProvider = new NumericalRatioStatisticsItemProvider(this);
+        }
 
-		return numericalRatioStatisticsItemProvider;
-	}
+        return numericalRatioStatisticsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected SensorFrameworkV1DoubleBinaryMeasurementsItemProvider sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createSensorFrameworkV1DoubleBinaryMeasurementsAdapter() {
-		if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider == null) {
-			sensorFrameworkV1DoubleBinaryMeasurementsItemProvider = new SensorFrameworkV1DoubleBinaryMeasurementsItemProvider(this);
-		}
+        if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider == null) {
+            sensorFrameworkV1DoubleBinaryMeasurementsItemProvider = new SensorFrameworkV1DoubleBinaryMeasurementsItemProvider(this);
+        }
 
-		return sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
-	}
+        return sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected SensorFrameworkV1IdentifierBasedMeasurementsItemProvider sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createSensorFrameworkV1IdentifierBasedMeasurementsAdapter() {
-		if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider == null) {
-			sensorFrameworkV1IdentifierBasedMeasurementsItemProvider = new SensorFrameworkV1IdentifierBasedMeasurementsItemProvider(this);
-		}
+        if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider == null) {
+            sensorFrameworkV1IdentifierBasedMeasurementsItemProvider = new SensorFrameworkV1IdentifierBasedMeasurementsItemProvider(this);
+        }
 
-		return sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
-	}
+        return sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalBaseMetricDescriptionItemProvider numericalBaseMetricDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createNumericalBaseMetricDescriptionAdapter() {
-		if (numericalBaseMetricDescriptionItemProvider == null) {
-			numericalBaseMetricDescriptionItemProvider = new NumericalBaseMetricDescriptionItemProvider(this);
-		}
+        if (numericalBaseMetricDescriptionItemProvider == null) {
+            numericalBaseMetricDescriptionItemProvider = new NumericalBaseMetricDescriptionItemProvider(this);
+        }
 
-		return numericalBaseMetricDescriptionItemProvider;
-	}
+        return numericalBaseMetricDescriptionItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected TextualOrdinalStatisticsItemProvider textualOrdinalStatisticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createTextualOrdinalStatisticsAdapter() {
-		if (textualOrdinalStatisticsItemProvider == null) {
-			textualOrdinalStatisticsItemProvider = new TextualOrdinalStatisticsItemProvider(this);
-		}
+        if (textualOrdinalStatisticsItemProvider == null) {
+            textualOrdinalStatisticsItemProvider = new TextualOrdinalStatisticsItemProvider(this);
+        }
 
-		return textualOrdinalStatisticsItemProvider;
-	}
+        return textualOrdinalStatisticsItemProvider;
+    }
 
 	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+     * This returns the root adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-	}
+        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+    }
 
 	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+     * This sets the composed adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
 	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
+     * This implementation substitutes the factory itself as the key for the adapter.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+        return super.adapt(notifier, this);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+        if (isFactoryForType(type)) {
+            Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
+     * This adds a listener.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
 	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
+     * This removes a listener.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
 	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
+     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
+     * This disposes all of the item providers created by this factory. 
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void dispose() {
-		if (measurementsRangeItemProvider != null) measurementsRangeItemProvider.dispose();
-		if (eStringtoEObjectMapEntryItemProvider != null) eStringtoEObjectMapEntryItemProvider.dispose();
-		if (rawMeasurementsItemProvider != null) rawMeasurementsItemProvider.dispose();
-		if (numericalNominalStatisticsItemProvider != null) numericalNominalStatisticsItemProvider.dispose();
-		if (numericalMassDistributionItemProvider != null) numericalMassDistributionItemProvider.dispose();
-		if (fixedWidthAggregatedMeasurementsItemProvider != null) fixedWidthAggregatedMeasurementsItemProvider.dispose();
-		if (fixedIntervalsItemProvider != null) fixedIntervalsItemProvider.dispose();
-		if (textualNominalStatisticsItemProvider != null) textualNominalStatisticsItemProvider.dispose();
-		if (textualMassDistributionItemProvider != null) textualMassDistributionItemProvider.dispose();
-		if (identifierItemProvider != null) identifierItemProvider.dispose();
-		if (textualBaseMetricDescriptionItemProvider != null) textualBaseMetricDescriptionItemProvider.dispose();
-		if (experimentGroupItemProvider != null) experimentGroupItemProvider.dispose();
-		if (experimentSettingItemProvider != null) experimentSettingItemProvider.dispose();
-		if (experimentRunItemProvider != null) experimentRunItemProvider.dispose();
-		if (measurementsItemProvider != null) measurementsItemProvider.dispose();
-		if (edp2MeasureItemProvider != null) edp2MeasureItemProvider.dispose();
-		if (descriptionsItemProvider != null) descriptionsItemProvider.dispose();
-		if (aggregationFunctionDescriptionItemProvider != null) aggregationFunctionDescriptionItemProvider.dispose();
-		if (aggregationStatisticsItemProvider != null) aggregationStatisticsItemProvider.dispose();
-		if (doubleBinaryMeasurementsItemProvider != null) doubleBinaryMeasurementsItemProvider.dispose();
-		if (numericalIntervalStatisticsItemProvider != null) numericalIntervalStatisticsItemProvider.dispose();
-		if (numericalOrdinalStatisticsItemProvider != null) numericalOrdinalStatisticsItemProvider.dispose();
-		if (numericalPercentileItemProvider != null) numericalPercentileItemProvider.dispose();
-		if (jsXmlMeasurementsItemProvider != null) jsXmlMeasurementsItemProvider.dispose();
-		if (longBinaryMeasurementsItemProvider != null) longBinaryMeasurementsItemProvider.dispose();
-		if (metricSetDescriptionItemProvider != null) metricSetDescriptionItemProvider.dispose();
-		if (identifierBasedMeasurementsItemProvider != null) identifierBasedMeasurementsItemProvider.dispose();
-		if (observedIdentifierItemProvider != null) observedIdentifierItemProvider.dispose();
-		if (observedIdentifierBasedMeasurementsItemProvider != null) observedIdentifierBasedMeasurementsItemProvider.dispose();
-		if (numericalRatioStatisticsItemProvider != null) numericalRatioStatisticsItemProvider.dispose();
-		if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null) sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
-		if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null) sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
-		if (numericalBaseMetricDescriptionItemProvider != null) numericalBaseMetricDescriptionItemProvider.dispose();
-		if (textualOrdinalStatisticsItemProvider != null) textualOrdinalStatisticsItemProvider.dispose();
-	}
+        if (measurementsRangeItemProvider != null) measurementsRangeItemProvider.dispose();
+        if (eStringtoEObjectMapEntryItemProvider != null) eStringtoEObjectMapEntryItemProvider.dispose();
+        if (rawMeasurementsItemProvider != null) rawMeasurementsItemProvider.dispose();
+        if (numericalNominalStatisticsItemProvider != null) numericalNominalStatisticsItemProvider.dispose();
+        if (numericalMassDistributionItemProvider != null) numericalMassDistributionItemProvider.dispose();
+        if (fixedWidthAggregatedMeasurementsItemProvider != null) fixedWidthAggregatedMeasurementsItemProvider.dispose();
+        if (fixedIntervalsItemProvider != null) fixedIntervalsItemProvider.dispose();
+        if (textualNominalStatisticsItemProvider != null) textualNominalStatisticsItemProvider.dispose();
+        if (textualMassDistributionItemProvider != null) textualMassDistributionItemProvider.dispose();
+        if (identifierItemProvider != null) identifierItemProvider.dispose();
+        if (textualBaseMetricDescriptionItemProvider != null) textualBaseMetricDescriptionItemProvider.dispose();
+        if (experimentGroupItemProvider != null) experimentGroupItemProvider.dispose();
+        if (experimentSettingItemProvider != null) experimentSettingItemProvider.dispose();
+        if (experimentRunItemProvider != null) experimentRunItemProvider.dispose();
+        if (measurementsItemProvider != null) measurementsItemProvider.dispose();
+        if (edp2MeasureItemProvider != null) edp2MeasureItemProvider.dispose();
+        if (descriptionsItemProvider != null) descriptionsItemProvider.dispose();
+        if (aggregationFunctionDescriptionItemProvider != null) aggregationFunctionDescriptionItemProvider.dispose();
+        if (aggregationStatisticsItemProvider != null) aggregationStatisticsItemProvider.dispose();
+        if (doubleBinaryMeasurementsItemProvider != null) doubleBinaryMeasurementsItemProvider.dispose();
+        if (numericalIntervalStatisticsItemProvider != null) numericalIntervalStatisticsItemProvider.dispose();
+        if (numericalOrdinalStatisticsItemProvider != null) numericalOrdinalStatisticsItemProvider.dispose();
+        if (numericalPercentileItemProvider != null) numericalPercentileItemProvider.dispose();
+        if (jsXmlMeasurementsItemProvider != null) jsXmlMeasurementsItemProvider.dispose();
+        if (longBinaryMeasurementsItemProvider != null) longBinaryMeasurementsItemProvider.dispose();
+        if (metricSetDescriptionItemProvider != null) metricSetDescriptionItemProvider.dispose();
+        if (identifierBasedMeasurementsItemProvider != null) identifierBasedMeasurementsItemProvider.dispose();
+        if (numericalRatioStatisticsItemProvider != null) numericalRatioStatisticsItemProvider.dispose();
+        if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null) sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
+        if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null) sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
+        if (numericalBaseMetricDescriptionItemProvider != null) numericalBaseMetricDescriptionItemProvider.dispose();
+        if (textualOrdinalStatisticsItemProvider != null) textualOrdinalStatisticsItemProvider.dispose();
+    }
 
 }

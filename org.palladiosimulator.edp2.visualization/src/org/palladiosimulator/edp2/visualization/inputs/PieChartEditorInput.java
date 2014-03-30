@@ -8,13 +8,14 @@ import java.util.logging.Logger;
 
 import javax.measure.Measure;
 
+import org.apache.commons.collections15.Bag;
+import org.apache.commons.collections15.bag.HashBag;
 import org.eclipse.ui.IMemento;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
-import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
+import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
-import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
 import org.palladiosimulator.edp2.visualization.AbstractDataSource;
@@ -25,12 +26,10 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
 public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset> {
 
     /**
-     * Name constant, which is used to identify this class in properties and
-     * persistence.
+     * Name constant, which is used to identify this class in properties and persistence.
      */
 
-    private final static Logger logger = Logger
-            .getLogger(PieChartEditorInput.class.getCanonicalName());
+    private final static Logger logger = Logger.getLogger(PieChartEditorInput.class.getCanonicalName());
 
     private static final String ELEMENT_NAME = "PieChartEditorInput";
 
@@ -42,8 +41,6 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     private boolean showRelativeAmount;
     private boolean showAbsoluteAmount;
-
-    private HashMap<Double, Integer> data;
 
     public PieChartEditorInput() {
         this(null);
@@ -57,6 +54,7 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IDataSink#getMetricRoles()
      */
     @Override
@@ -66,7 +64,9 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.IDataSink#canAccept(org.palladiosimulator.edp2.visualization.AbstractDataSource)
+     * 
+     * @see org.palladiosimulator.edp2.visualization.IDataSink#canAccept(org.palladiosimulator.edp2.
+     * visualization.AbstractDataSource)
      */
     @Override
     public boolean canAccept(final AbstractDataSource source) {
@@ -75,7 +75,10 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.IDataSink#createCopyForSource(org.palladiosimulator.edp2.visualization.AbstractDataSource)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.IDataSink#createCopyForSource(org.palladiosimulator
+     * .edp2.visualization.AbstractDataSource)
      */
     @Override
     public IDataSink createCopyForSource(final AbstractDataSource source) {
@@ -85,6 +88,7 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IDataFlow#getProperties()
      */
     @Override
@@ -98,17 +102,16 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IDataFlow#setProperties(java.util.HashMap)
      */
     @Override
     public void setProperties(final HashMap<String, Object> newProperties) {
         if (newProperties.get(SHOW_RELATIVE_AMOUNT_KEY) != null) {
-            setShowRelativeAmount(Boolean.parseBoolean((newProperties
-                    .get(SHOW_RELATIVE_AMOUNT_KEY).toString())));
+            setShowRelativeAmount(Boolean.parseBoolean((newProperties.get(SHOW_RELATIVE_AMOUNT_KEY).toString())));
         }
         if (newProperties.get(SHOW_ABSOLUTE_AMOUNT_KEY) != null) {
-            setShowAbsoluteAmount(Boolean.parseBoolean((newProperties
-                    .get(SHOW_ABSOLUTE_AMOUNT_KEY).toString())));
+            setShowAbsoluteAmount(Boolean.parseBoolean((newProperties.get(SHOW_ABSOLUTE_AMOUNT_KEY).toString())));
         }
         if (newProperties.get(COLOR_KEY) != null) {
             setColor(newProperties.get(COLOR_KEY).toString());
@@ -117,6 +120,7 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IDataFlow#getName()
      */
     @Override
@@ -126,16 +130,18 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistableElement#getFactoryId()
      */
     @Override
     public String getFactoryId() {
-        //not used
+        // not used
         return null;
     }
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -145,20 +151,21 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput#getChart()
      */
     @Override
     public JFreeChart getChart() {
         final PiePlot plot = new PiePlot(getDataset());
         plot.setNoDataMessage("No data available.");
-        final JFreeChart chart = new JFreeChart(
-                getHandle().isShowTitle() ? getHandle().getTitle() : null,
-                        JFreeChart.DEFAULT_TITLE_FONT, plot, getHandle().isShowLegend());
+        final JFreeChart chart = new JFreeChart(getHandle().isShowTitle() ? getHandle().getTitle() : null,
+                JFreeChart.DEFAULT_TITLE_FONT, plot, getHandle().isShowLegend());
         return chart;
     }
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput#getDefaultTitle()
      */
     @Override
@@ -168,60 +175,38 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IVisualizationInput#getData()
      */
     @Override
     public HashMap<Double, Integer> getData() {
-        return data;
+        return null;
     }
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IVisualizationInput#updateInputData()
      */
     @Override
     public void updateInputData() {
         logger.log(Level.INFO, "Transformation : BEGIN");
         dataset = new DefaultPieDataset();
+        final DataSeries series = getSource().getOutput().get(0);
+        final MeasurementsDao dao = MeasurementsUtility.getMeasurementsDao(series);
+        final List<Measure> dataList = dao.getMeasurements();
+        final Bag<Comparable> bins = new HashBag<Comparable>();
 
-        final ArrayList<OrdinalMeasurementsDao> listOfDaos = new ArrayList<OrdinalMeasurementsDao>();
-        final ArrayList<List<Measure>> listOfMeasures = new ArrayList<List<Measure>>();
-        for (final DataSeries series : getSource().getOutput()) {
-            listOfDaos.add(MeasurementsUtility
-                    .getOrdinalMeasurementsDao(series));
-        }
-        for (final OrdinalMeasurementsDao dao : listOfDaos) {
-            listOfMeasures.add(dao.getMeasurements());
+        for (final Measure m : dataList) {
+            bins.add((Comparable) m.getValue());
         }
 
-        final MetricDescription[] metrics = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getSource().getMeasurementsRange()
-                        .getMeasurements().getMeasure().getMetric());
-
-        data = new HashMap<Double, Integer>();
-
-        final double[] rawData = new double[listOfMeasures.get(0).size()];
-        for (int i = 0; i < listOfMeasures.get(0).size(); i++) {
-            rawData[i] = listOfMeasures.get(0).get(i)
-                    .doubleValue(listOfMeasures.get(0).get(i).getUnit());
-            if (!data.containsKey(rawData[i])) {
-                data.put(rawData[i], 1);
-            } else {
-                data.put(rawData[i], data.get(rawData[i]) + 1);
-            }
+        //data = new HashMap<Double, Integer>();
+        for (final Comparable<?> o : bins) {
+            dataset.setValue(o, bins.getCount(o));
         }
 
-
-        /* data.put(20.0, 15);
-		data.put(25.0, 10);
-		data.put(30.0, 14);
-         */
-
-        for (final double key : data.keySet()) {
-            dataset.setValue(Double.valueOf(key), data.get(key));
-        }
-
-        logger.log(Level.INFO, data.toString());
+        // logger.log(Level.INFO, data.toString());
 
         setChanged();
         notifyObservers();
@@ -247,6 +232,7 @@ public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IVisualizationInput#supportsMultipleInputs()
      */
     @Override

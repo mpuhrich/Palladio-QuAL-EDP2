@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
@@ -15,13 +16,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.palladiosimulator.edp2.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.MeasurementsDaoRegistry;
-import org.palladiosimulator.edp2.NominalMeasurementsDao;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.JScienceXmlMeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsDaoRegistryImpl;
 import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepresentation;
-import org.palladiosimulator.edp2.models.impl.EmfModelXMIResourceFactoryImpl;
+import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 
 /**This {@link MeasurementsDaoFactory} implementation stores data in file on background storage.
  * 
@@ -135,14 +135,15 @@ public class LocalDirectoryMeasurementsDaoFactory extends org.palladiosimulator.
     }
 
     @Override
-    public NominalMeasurementsDao createNominalMeasurementsDao(final String uuid) {
+    public BinaryMeasurementsDao<Identifier,Dimensionless> createNominalMeasurementsDao(final String uuid) {
         super.createNominalMeasurementsDao(uuid);
-        final FileNominalMeasurementsDaoImpl fnmDao = new FileNominalMeasurementsDaoImpl();
-        fnmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,
-                EmfModelXMIResourceFactoryImpl.EDP2_NOMINALMEASUREMENTS_EXTENSION)));
-        fnmDao.setResourceSet(emfResourceSet);
-        daoRegistry.register(fnmDao, uuid);
-        return fnmDao;
+        final FileBinaryMeasurementsDaoImpl<Identifier,Dimensionless> fbmDao = new FileBinaryMeasurementsDaoImpl<Identifier,Dimensionless>();
+        fbmDao.setBinaryRepresentation(BinaryRepresentation.IDENTIFIER);
+        fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,FILE_SUFFIX)));
+        fbmDao.setSerializer(new IdentifierSerializer());
+        fbmDao.setUnit(Unit.ONE);
+        daoRegistry.register(fbmDao, uuid);
+        return fbmDao;
     }
 
     @Override

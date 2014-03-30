@@ -6,18 +6,18 @@ package org.palladiosimulator.edp2.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 
+import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.MeasurementsDaoRegistry;
-import org.palladiosimulator.edp2.NominalMeasurementsDao;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.edp2.impl.IdentifierMeasure;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
+import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 
 /**Switch class to add a provided measurement to a data series.
@@ -39,7 +39,8 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
 
     @Override
     public Boolean caseIdentifierBasedMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
-        final NominalMeasurementsDao dao = (NominalMeasurementsDao) daoRegistry.getMeasurementsDao(object.getValuesUuid());
+        @SuppressWarnings("unchecked")
+        final MeasurementsDao<Identifier,Dimensionless> dao = daoRegistry.getMeasurementsDao(object.getValuesUuid());
         if (!dao.isOpen()) {
             try {
                 dao.open();
@@ -48,11 +49,8 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
                 return false;
             }
         }
-        final ObservedIdentifier observedIdentifier = factory.createObservedIdentifier(dao.getObservedIdentifierBasedMeasurements(), ((IdentifierMeasure<?>) measurementToAdd).getValue());
-        if (observedIdentifier != null) {
-            dao.getObservedIdentifierBasedMeasurements().getObservedIdentifiers().add(observedIdentifier);
-        }
-        return observedIdentifier != null;
+        dao.getMeasurements().add((javax.measure.Measure<Identifier,Dimensionless>)measurementToAdd);
+        return true;
     }
 
     @Override

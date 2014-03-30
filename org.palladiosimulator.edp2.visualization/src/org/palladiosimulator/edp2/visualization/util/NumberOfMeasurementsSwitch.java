@@ -6,14 +6,11 @@ import java.util.logging.Logger;
 
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.edp2.NominalMeasurementsDao;
-import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
+import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
@@ -28,43 +25,44 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitc
  */
 public class NumberOfMeasurementsSwitch extends ExperimentDataSwitch<Integer> {
 
-	/**
-	 * Logger for this class.
-	 */
-	private final static Logger logger = Logger
-			.getLogger(NumberOfMeasurementsSwitch.class.getSimpleName());
+    /**
+     * Logger for this class.
+     */
+    private final static Logger logger = Logger
+            .getLogger(NumberOfMeasurementsSwitch.class.getSimpleName());
 
-	private RawMeasurements rawMeasurements;
+    private final RawMeasurements rawMeasurements;
 
-	public NumberOfMeasurementsSwitch(RawMeasurements rawMeasurements) {
-		this.rawMeasurements = rawMeasurements;
-	}
+    public NumberOfMeasurementsSwitch(final RawMeasurements rawMeasurements) {
+        this.rawMeasurements = rawMeasurements;
+    }
 
-	@SuppressWarnings({ "unchecked" })
-	public Integer caseNumericalBaseMetricDescription(
-			NumericalBaseMetricDescription object) {
-		OrdinalMeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
-				.getOrdinalMeasurementsDao(rawMeasurements.getDataSeries().get(
-						0));
-		List<?> measures = dao.getMeasurements();
-		return measures.size();
-	}
+    @Override
+    @SuppressWarnings({ "unchecked" })
+    public Integer caseNumericalBaseMetricDescription(
+            final NumericalBaseMetricDescription object) {
+        final MeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
+                .getMeasurementsDao(rawMeasurements.getDataSeries().get(
+                        0));
+        final List<?> measures = dao.getMeasurements();
+        return measures.size();
+    }
 
-	public Integer caseTextualBaseMetricDescription(
-			TextualBaseMetricDescription object) {
-		NominalMeasurementsDao dao = MeasurementsUtility
-				.getNominalMeasurementsDao(rawMeasurements.getDataSeries().get(
-						0));
-		ObservedIdentifierBasedMeasurements mms = dao
-				.getObservedIdentifierBasedMeasurements();
-		List<ObservedIdentifier> obsId = mms.getObservedIdentifiers();
-		return obsId.size();
-	}
+    @Override
+    public Integer caseTextualBaseMetricDescription(
+            final TextualBaseMetricDescription object) {
+        final MeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
+                .getMeasurementsDao(rawMeasurements.getDataSeries().get(
+                        0));
+        final List<?> measures = dao.getMeasurements();
+        return measures.size();
+    }
 
-	public Integer caseBaseMetricDescription(BaseMetricDescription object) {
-		logger.log(
-				Level.SEVERE,
-				"Unsupported Base Metric: the selected measurements could not be opened, because it is neither described by a TextualBaseMetricDescription nor a NumericalBaseMetricDescription.");
-		throw new RuntimeException("Unsupported Base Metric.");
-	}
+    @Override
+    public Integer caseBaseMetricDescription(final BaseMetricDescription object) {
+        logger.log(
+                Level.SEVERE,
+                "Unsupported Base Metric: the selected measurements could not be opened, because it is neither described by a TextualBaseMetricDescription nor a NumericalBaseMetricDescription.");
+        throw new RuntimeException("Unsupported Base Metric.");
+    }
 }

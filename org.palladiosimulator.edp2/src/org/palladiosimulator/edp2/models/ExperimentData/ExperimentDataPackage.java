@@ -1572,7 +1572,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSDuration()
      * @generated
      */
-	int IJS_DURATION = 39;
+	int IJS_DURATION = 37;
 
 	/**
      * The meta object id for the '{@link javax.measure.quantity.Quantity <em>IJS Quantity</em>}' class.
@@ -1582,7 +1582,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSQuantity()
      * @generated
      */
-	int IJS_QUANTITY = 40;
+	int IJS_QUANTITY = 38;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionsImpl <em>Descriptions</em>}' class.
@@ -2311,89 +2311,6 @@ public interface ExperimentDataPackage extends EPackage {
 	int IDENTIFIER_BASED_MEASUREMENTS_FEATURE_COUNT = DATA_SERIES_FEATURE_COUNT + 0;
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierImpl <em>Observed Identifier</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getObservedIdentifier()
-     * @generated
-     */
-	int OBSERVED_IDENTIFIER = 34;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER__UUID = IDENTIFIABLE__UUID;
-
-	/**
-     * The feature id for the '<em><b>Identifier</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER__IDENTIFIER = IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Observed Identifier Based Measurements</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER__OBSERVED_IDENTIFIER_BASED_MEASUREMENTS = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-	/**
-     * The number of structural features of the '<em>Observed Identifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 2;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierBasedMeasurementsImpl <em>Observed Identifier Based Measurements</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierBasedMeasurementsImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getObservedIdentifierBasedMeasurements()
-     * @generated
-     */
-	int OBSERVED_IDENTIFIER_BASED_MEASUREMENTS = 35;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER_BASED_MEASUREMENTS__UUID = IDENTIFIABLE__UUID;
-
-	/**
-     * The feature id for the '<em><b>Observed Identifiers</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER_BASED_MEASUREMENTS__OBSERVED_IDENTIFIERS = IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
-     * The number of structural features of the '<em>Observed Identifier Based Measurements</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int OBSERVED_IDENTIFIER_BASED_MEASUREMENTS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalRatioStatisticsImpl <em>Numerical Ratio Statistics</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2401,7 +2318,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalRatioStatistics()
      * @generated
      */
-	int NUMERICAL_RATIO_STATISTICS = 36;
+	int NUMERICAL_RATIO_STATISTICS = 34;
 
 	/**
      * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2555,7 +2472,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1DoubleBinaryMeasurements()
      * @generated
      */
-	int SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS = 37;
+	int SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS = 35;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2628,7 +2545,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1IdentifierBasedMeasurements()
      * @generated
      */
-	int SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS = 38;
+	int SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS = 36;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2710,7 +2627,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEComparable()
      * @generated
      */
-	int ECOMPARABLE = 41;
+	int ECOMPARABLE = 39;
 
 	/**
      * The number of structural features of the '<em>EComparable</em>' class.
@@ -2729,7 +2646,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalBaseMetricDescription()
      * @generated
      */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION = 42;
+	int NUMERICAL_BASE_METRIC_DESCRIPTION = 40;
 
 	/**
      * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2847,7 +2764,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualOrdinalStatistics()
      * @generated
      */
-	int TEXTUAL_ORDINAL_STATISTICS = 43;
+	int TEXTUAL_ORDINAL_STATISTICS = 41;
 
 	/**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
@@ -2920,7 +2837,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPersistenceKindOptions()
      * @generated
      */
-	int PERSISTENCE_KIND_OPTIONS = 47;
+	int PERSISTENCE_KIND_OPTIONS = 45;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.CaptureType <em>Capture Type</em>}' enum.
@@ -2930,7 +2847,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getCaptureType()
      * @generated
      */
-	int CAPTURE_TYPE = 44;
+	int CAPTURE_TYPE = 42;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.DataType <em>Data Type</em>}' enum.
@@ -2940,7 +2857,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataType()
      * @generated
      */
-	int DATA_TYPE = 48;
+	int DATA_TYPE = 46;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Scale <em>Scale</em>}' enum.
@@ -2950,7 +2867,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getScale()
      * @generated
      */
-	int SCALE = 45;
+	int SCALE = 43;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Monotonic <em>Monotonic</em>}' enum.
@@ -2960,7 +2877,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMonotonic()
      * @generated
      */
-	int MONOTONIC = 46;
+	int MONOTONIC = 44;
 
 	/**
      * The meta object id for the '<em>EJS Measure</em>' data type.
@@ -2970,7 +2887,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSMeasure()
      * @generated
      */
-	int EJS_MEASURE = 49;
+	int EJS_MEASURE = 47;
 
 	/**
      * The meta object id for the '<em>EJS Duration Measure</em>' data type.
@@ -2980,7 +2897,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSDurationMeasure()
      * @generated
      */
-	int EJS_DURATION_MEASURE = 50;
+	int EJS_DURATION_MEASURE = 48;
 
 	/**
      * The meta object id for the '<em>EJS Unit</em>' data type.
@@ -2990,7 +2907,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSUnit()
      * @generated
      */
-	int EJS_UNIT = 51;
+	int EJS_UNIT = 49;
 
 
 	/**
@@ -4412,59 +4329,6 @@ public interface ExperimentDataPackage extends EPackage {
 	EClass getIdentifierBasedMeasurements();
 
 	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier <em>Observed Identifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Observed Identifier</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier
-     * @generated
-     */
-	EClass getObservedIdentifier();
-
-	/**
-     * Returns the meta object for the reference '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier#getIdentifier <em>Identifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Identifier</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier#getIdentifier()
-     * @see #getObservedIdentifier()
-     * @generated
-     */
-	EReference getObservedIdentifier_Identifier();
-
-	/**
-     * Returns the meta object for the container reference '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier#getObservedIdentifierBasedMeasurements <em>Observed Identifier Based Measurements</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Observed Identifier Based Measurements</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier#getObservedIdentifierBasedMeasurements()
-     * @see #getObservedIdentifier()
-     * @generated
-     */
-	EReference getObservedIdentifier_ObservedIdentifierBasedMeasurements();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements <em>Observed Identifier Based Measurements</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Observed Identifier Based Measurements</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements
-     * @generated
-     */
-	EClass getObservedIdentifierBasedMeasurements();
-
-	/**
-     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements#getObservedIdentifiers <em>Observed Identifiers</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Observed Identifiers</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements#getObservedIdentifiers()
-     * @see #getObservedIdentifierBasedMeasurements()
-     * @generated
-     */
-	EReference getObservedIdentifierBasedMeasurements_ObservedIdentifiers();
-
-	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics <em>Numerical Ratio Statistics</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5765,50 +5629,6 @@ public interface ExperimentDataPackage extends EPackage {
          * @generated
          */
 		EClass IDENTIFIER_BASED_MEASUREMENTS = eINSTANCE.getIdentifierBasedMeasurements();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierImpl <em>Observed Identifier</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getObservedIdentifier()
-         * @generated
-         */
-		EClass OBSERVED_IDENTIFIER = eINSTANCE.getObservedIdentifier();
-
-		/**
-         * The meta object literal for the '<em><b>Identifier</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference OBSERVED_IDENTIFIER__IDENTIFIER = eINSTANCE.getObservedIdentifier_Identifier();
-
-		/**
-         * The meta object literal for the '<em><b>Observed Identifier Based Measurements</b></em>' container reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference OBSERVED_IDENTIFIER__OBSERVED_IDENTIFIER_BASED_MEASUREMENTS = eINSTANCE.getObservedIdentifier_ObservedIdentifierBasedMeasurements();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierBasedMeasurementsImpl <em>Observed Identifier Based Measurements</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ObservedIdentifierBasedMeasurementsImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getObservedIdentifierBasedMeasurements()
-         * @generated
-         */
-		EClass OBSERVED_IDENTIFIER_BASED_MEASUREMENTS = eINSTANCE.getObservedIdentifierBasedMeasurements();
-
-		/**
-         * The meta object literal for the '<em><b>Observed Identifiers</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference OBSERVED_IDENTIFIER_BASED_MEASUREMENTS__OBSERVED_IDENTIFIERS = eINSTANCE.getObservedIdentifierBasedMeasurements_ObservedIdentifiers();
 
 		/**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalRatioStatisticsImpl <em>Numerical Ratio Statistics</em>}' class.

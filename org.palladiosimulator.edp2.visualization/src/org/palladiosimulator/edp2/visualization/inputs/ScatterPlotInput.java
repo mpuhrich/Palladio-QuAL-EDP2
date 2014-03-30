@@ -20,7 +20,7 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.DefaultXYItemRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
-import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
+import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
@@ -270,10 +270,10 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
         //for (DataSeries data : getSource().getOutput()) {
         //	list.add(MeasurementsUtility.getOrdinalMeasurementsDao(data));
         //}
-        final OrdinalMeasurementsDao<?,? extends Quantity> omdSeries1 = MeasurementsUtility
-                .getOrdinalMeasurementsDao(getSource().getOutput().get(0));
-        final OrdinalMeasurementsDao<?,? extends Quantity> omdSeries2 = MeasurementsUtility
-                .getOrdinalMeasurementsDao(getSource().getOutput().get(1));
+        final MeasurementsDao<?,? extends Quantity> omdSeries1 = MeasurementsUtility
+                .getMeasurementsDao(getSource().getOutput().get(0));
+        final MeasurementsDao<?,? extends Quantity> omdSeries2 = MeasurementsUtility
+                .getMeasurementsDao(getSource().getOutput().get(1));
         final List<?> list1 = omdSeries1.getMeasurements();
 
         final List<?> list2 = omdSeries2.getMeasurements();

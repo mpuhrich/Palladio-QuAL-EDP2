@@ -323,20 +323,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ExperimentDataPackage.OBSERVED_IDENTIFIER: {
-                ObservedIdentifier observedIdentifier = (ObservedIdentifier)theEObject;
-                T result = caseObservedIdentifier(observedIdentifier);
-                if (result == null) result = caseIdentifiable(observedIdentifier);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case ExperimentDataPackage.OBSERVED_IDENTIFIER_BASED_MEASUREMENTS: {
-                ObservedIdentifierBasedMeasurements observedIdentifierBasedMeasurements = (ObservedIdentifierBasedMeasurements)theEObject;
-                T result = caseObservedIdentifierBasedMeasurements(observedIdentifierBasedMeasurements);
-                if (result == null) result = caseIdentifiable(observedIdentifierBasedMeasurements);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS: {
                 NumericalRatioStatistics numericalRatioStatistics = (NumericalRatioStatistics)theEObject;
                 T result = caseNumericalRatioStatistics(numericalRatioStatistics);
@@ -909,36 +895,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
 	public T caseIdentifierBasedMeasurements(IdentifierBasedMeasurements object) {
-        return null;
-    }
-
-	/**
-     * Returns the result of interpreting the object as an instance of '<em>Observed Identifier</em>'.
-     * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Observed Identifier</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-	public T caseObservedIdentifier(ObservedIdentifier object) {
-        return null;
-    }
-
-	/**
-     * Returns the result of interpreting the object as an instance of '<em>Observed Identifier Based Measurements</em>'.
-     * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Observed Identifier Based Measurements</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-	public T caseObservedIdentifierBasedMeasurements(ObservedIdentifierBasedMeasurements object) {
         return null;
     }
 

@@ -112,7 +112,7 @@
                adapterID="org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter">
             <property
                   key="dataSeriesIndex"
-                  value="0">
+                  value="1">
             </property>
          </adapter>
          <datasink

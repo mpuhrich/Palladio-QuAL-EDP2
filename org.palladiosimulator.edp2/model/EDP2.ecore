@@ -476,19 +476,6 @@
           lowerBound="1" upperBound="-1" eType="#//ExperimentData/MetricDescription"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IdentifierBasedMeasurements" eSuperTypes="#//ExperimentData/DataSeries"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ObservedIdentifier" eSuperTypes="#//ExperimentData/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/Identifier"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="observedIdentifierBasedMeasurements"
-          ordered="false" lowerBound="1" eType="#//ExperimentData/ObservedIdentifierBasedMeasurements"
-          eOpposite="#//ExperimentData/ObservedIdentifierBasedMeasurements/observedIdentifiers"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObservedIdentifierBasedMeasurements"
-        eSuperTypes="#//ExperimentData/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="observedIdentifiers"
-          upperBound="-1" eType="#//ExperimentData/ObservedIdentifier" containment="true"
-          eOpposite="#//ExperimentData/ObservedIdentifier/observedIdentifierBasedMeasurements"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NumericalRatioStatistics" eSuperTypes="#//ExperimentData/NumericalIntervalStatistics">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="coefficientOfVariation"
           ordered="false" lowerBound="1" eType="#//ExperimentData/EJSMeasure">

@@ -5,7 +5,6 @@ package org.palladiosimulator.edp2.local.file;
 
 import org.palladiosimulator.edp2.models.ExperimentData.Descriptions;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.impl.EmfModelXMIResourceFactoryImpl;
 
@@ -15,19 +14,14 @@ import org.palladiosimulator.edp2.models.impl.EmfModelXMIResourceFactoryImpl;
  * @author groenda
  */
 public class EmfmodelExtensionSwitch extends ExperimentDataSwitch<String> {
-	@Override
-	public String caseExperimentGroup(ExperimentGroup object) {
-		return EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
-	}
-	
-	@Override
-	public String caseDescriptions(Descriptions object) {
-		return EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION;
-	}
+    @Override
+    public String caseExperimentGroup(final ExperimentGroup object) {
+        return EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
+    }
 
-	@Override
-	public String caseObservedIdentifierBasedMeasurements(
-			ObservedIdentifierBasedMeasurements object) {
-		return EmfModelXMIResourceFactoryImpl.EDP2_NOMINALMEASUREMENTS_EXTENSION;
-	}
+    @Override
+    public String caseDescriptions(final Descriptions object) {
+        return EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION;
+    }
+
 }

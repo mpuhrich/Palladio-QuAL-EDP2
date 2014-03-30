@@ -23,139 +23,143 @@ import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepr
  * @author groenda
  * @author S. Becker
  */
-public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAccessDao implements BinaryMeasurementsDao<V,Q> {
-	/** Error logger for this class. */
-	protected static final Logger logger = Logger.getLogger(FileBinaryMeasurementsDaoImpl.class.getCanonicalName());
+public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAccessDao<V,Q> implements BinaryMeasurementsDao<V,Q> {
+    /** Error logger for this class. */
+    protected static final Logger logger = Logger.getLogger(FileBinaryMeasurementsDaoImpl.class.getCanonicalName());
 
-	/** Serializer to use for the background list. */
-	private Serializer<V> serializer = null;
-	/** Background memory list used to actually handle the list. */
-	private BackgroundMemoryList<V,Q> backgroundMemoryList;
-	/** Binary format of stored Measures. */
-	private BinaryRepresentation binaryRepresentation = null;
-	/** Unit in which all measurements are stored. */
-	private Unit<Q> unit;
-	
-	public void open() throws DataNotAccessibleException {
-		super.open();
-		if (unit == null) {
-			String msg = "A unit must be set before a call to open() is made.";
-			logger.log(Level.SEVERE, msg);
-			throw new IllegalStateException(msg, null);
-		}
-		if (binaryRepresentation == null) {
-			String msg = "A binary representation must be set before a call to open() is made.";
-			logger.log(Level.SEVERE, msg);
-			throw new IllegalStateException(msg, null);
-		}
-		if (serializer == null) {
-			String msg = "Initialization must have failed. Serializer is null.";
-			logger.log(Level.SEVERE, msg);
-			throw new IllegalStateException(msg, null);
-		}
-		try {
-			this.backgroundMemoryList = new BackgroundMemoryListImpl<V,Q>(
-					resourceFile.getAbsolutePath(),	serializer, binaryRepresentation, unit);
-			setOpen();
-		} catch (IOException ioe) {
-			String msg = "Error accessing file on background storage.";
-			logger.log(Level.SEVERE, msg, ioe);
-			throw new DataNotAccessibleException(msg, ioe);
-		}
-	}
-	
-	public void close() throws DataNotAccessibleException {
-		super.close();
-		try {
-			backgroundMemoryList.close();
-			setClosed();
-		} catch (IOException ioe) {
-			String msg = "Error accessing file on background storage.";
-			logger.log(Level.SEVERE, msg, ioe);
-			throw new DataNotAccessibleException(msg, ioe);
-		}
-	}
-	
-	public Serializer<V> getSerializer() {
-		return serializer;
-	}
+    /** Serializer to use for the background list. */
+    private Serializer<V> serializer = null;
+    /** Background memory list used to actually handle the list. */
+    private BackgroundMemoryList<V,Q> backgroundMemoryList;
+    /** Binary format of stored Measures. */
+    private BinaryRepresentation binaryRepresentation = null;
+    /** Unit in which all measurements are stored. */
+    private Unit<Q> unit;
 
-	public void setSerializer(Serializer<V> serializer) {
-		this.serializer = serializer;
-	}
-
-	@Override
-	public List<Measure<V,Q>> getMeasurements() {
-		if (!isOpen()) {
-			String msg = "Binary measurements can only be requested if state is open.";
-			logger.log(Level.WARNING, msg);
-			throw new IllegalStateException(msg);
-		}
-		return backgroundMemoryList;
-	}
-
-	/**
-	 * @return the binaryRepresentation
-	 */
-	public BinaryRepresentation getBinaryRepresentation() {
-		return binaryRepresentation;
-	}
-
-	/**
-	 * @param binaryRepresentation the binaryRepresentation to set
-	 */
-	public void setBinaryRepresentation(BinaryRepresentation binaryRepresentation) {
-		if (this.binaryRepresentation != null) {
-			String msg = "It is not allowed to set the binary representation more than once.";
-			logger.log(Level.SEVERE, msg);
-			throw new IllegalStateException(msg);
-		}
-		this.binaryRepresentation = binaryRepresentation;
-	}
-
-	/**
-	 * @return the unit
-	 */
-    public Unit<Q> getUnit() {
-		return unit;
-	}
-
-	/**
-	 * @param unit the unit to set
-	 */
-    public void setUnit(Unit<Q> unit) {
-		if (this.unit != null) {
-			String msg = "It is not allowed to set the unit more than once.";
-			logger.log(Level.SEVERE, msg);
-			throw new IllegalStateException(msg);
-		}
-		this.unit = unit;
-	}
-	
-	@Override
-	public synchronized void serialize(ExtendedDataOutputStream output)
-			throws DataNotAccessibleException {
-		try {
-			super.serialize(output);
-			ExtendedIOUtil.writeString(output, getUnit().toString());
-		} catch (IOException e) {
-			String msg = "Could not put unit name on stream.";
-			logger.log(Level.SEVERE, msg, e);
-			throw new DataNotAccessibleException(msg, e);
-		}
-	}
-	
-	@SuppressWarnings("unchecked")
     @Override
-	public synchronized void deserialize(ExtendedDataInputStream input)
-			throws DataNotAccessibleException {
-		try {
-			super.deserialize(input);
-			unit = (Unit<Q>) Unit.valueOf(ExtendedIOUtil.readString(input));
-		} catch (IOException e) {
-			String msg = "Could not put unit name on stream.";
-			logger.log(Level.SEVERE, msg, e);
-			throw new DataNotAccessibleException(msg, e);
-		}
-	}
+    public void open() throws DataNotAccessibleException {
+        super.open();
+        if (unit == null) {
+            final String msg = "A unit must be set before a call to open() is made.";
+            logger.log(Level.SEVERE, msg);
+            throw new IllegalStateException(msg, null);
+        }
+        if (binaryRepresentation == null) {
+            final String msg = "A binary representation must be set before a call to open() is made.";
+            logger.log(Level.SEVERE, msg);
+            throw new IllegalStateException(msg, null);
+        }
+        if (serializer == null) {
+            final String msg = "Initialization must have failed. Serializer is null.";
+            logger.log(Level.SEVERE, msg);
+            throw new IllegalStateException(msg, null);
+        }
+        try {
+            this.backgroundMemoryList = new BackgroundMemoryListImpl<V,Q>(
+                    resourceFile.getAbsolutePath(),	serializer, binaryRepresentation, unit);
+            setOpen();
+        } catch (final IOException ioe) {
+            final String msg = "Error accessing file on background storage.";
+            logger.log(Level.SEVERE, msg, ioe);
+            throw new DataNotAccessibleException(msg, ioe);
+        }
+    }
+
+    @Override
+    public void close() throws DataNotAccessibleException {
+        super.close();
+        try {
+            backgroundMemoryList.close();
+            setClosed();
+        } catch (final IOException ioe) {
+            final String msg = "Error accessing file on background storage.";
+            logger.log(Level.SEVERE, msg, ioe);
+            throw new DataNotAccessibleException(msg, ioe);
+        }
+    }
+
+    public Serializer<V> getSerializer() {
+        return serializer;
+    }
+
+    public void setSerializer(final Serializer<V> serializer) {
+        this.serializer = serializer;
+    }
+
+    @Override
+    public List<Measure<V,Q>> getMeasurements() {
+        if (!isOpen()) {
+            final String msg = "Binary measurements can only be requested if state is open.";
+            logger.log(Level.WARNING, msg);
+            throw new IllegalStateException(msg);
+        }
+        return backgroundMemoryList;
+    }
+
+    /**
+     * @return the binaryRepresentation
+     */
+    public BinaryRepresentation getBinaryRepresentation() {
+        return binaryRepresentation;
+    }
+
+    /**
+     * @param binaryRepresentation the binaryRepresentation to set
+     */
+    public void setBinaryRepresentation(final BinaryRepresentation binaryRepresentation) {
+        if (this.binaryRepresentation != null) {
+            final String msg = "It is not allowed to set the binary representation more than once.";
+            logger.log(Level.SEVERE, msg);
+            throw new IllegalStateException(msg);
+        }
+        this.binaryRepresentation = binaryRepresentation;
+    }
+
+    /**
+     * @return the unit
+     */
+    @Override
+    public Unit<Q> getUnit() {
+        return unit;
+    }
+
+    /**
+     * @param unit the unit to set
+     */
+    @Override
+    public void setUnit(final Unit<Q> unit) {
+        if (this.unit != null) {
+            final String msg = "It is not allowed to set the unit more than once.";
+            logger.log(Level.SEVERE, msg);
+            throw new IllegalStateException(msg);
+        }
+        this.unit = unit;
+    }
+
+    @Override
+    public synchronized void serialize(final ExtendedDataOutputStream output)
+            throws DataNotAccessibleException {
+        try {
+            super.serialize(output);
+            ExtendedIOUtil.writeString(output, getUnit().toString());
+        } catch (final IOException e) {
+            final String msg = "Could not put unit name on stream.";
+            logger.log(Level.SEVERE, msg, e);
+            throw new DataNotAccessibleException(msg, e);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public synchronized void deserialize(final ExtendedDataInputStream input)
+            throws DataNotAccessibleException {
+        try {
+            super.deserialize(input);
+            unit = (Unit<Q>) Unit.valueOf(ExtendedIOUtil.readString(input));
+        } catch (final IOException e) {
+            final String msg = "Could not put unit name on stream.";
+            logger.log(Level.SEVERE, msg, e);
+            throw new DataNotAccessibleException(msg, e);
+        }
+    }
 }

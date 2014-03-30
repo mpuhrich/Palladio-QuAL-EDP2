@@ -204,14 +204,6 @@
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MetricSetDescription/subsumedMetrics"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/IdentifierBasedMeasurements"/>
-      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ObservedIdentifier">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ObservedIdentifier/identifier"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ObservedIdentifier/observedIdentifierBasedMeasurements"/>
-      </genClasses>
-      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ObservedIdentifierBasedMeasurements">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ObservedIdentifierBasedMeasurements/observedIdentifiers"/>
-      </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/NumericalRatioStatistics">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/NumericalRatioStatistics/coefficientOfVariation"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/NumericalRatioStatistics/geometricMean"/>

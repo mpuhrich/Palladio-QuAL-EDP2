@@ -5,18 +5,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.edp2.NominalMeasurementsDao;
-import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
-import org.palladiosimulator.edp2.impl.IdentifierMeasure;
+import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.impl.Measurement;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
@@ -72,8 +67,8 @@ public class CopyMeasurementsSwitch extends ExperimentDataSwitch<Boolean> {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public Boolean caseNumericalBaseMetricDescription(
             final NumericalBaseMetricDescription object) {
-        final OrdinalMeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
-                .getOrdinalMeasurementsDao(rawMeasurementsToCopy
+        final MeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
+                .getMeasurementsDao(rawMeasurementsToCopy
                         .getDataSeries().get(dimension));
         final List<?> measures = dao.getMeasurements();
         final Measure measure = (Measure) measures.get(index);
@@ -88,14 +83,12 @@ public class CopyMeasurementsSwitch extends ExperimentDataSwitch<Boolean> {
     @Override
     public Boolean caseTextualBaseMetricDescription(
             final TextualBaseMetricDescription object) {
-        final NominalMeasurementsDao dao = MeasurementsUtility
-                .getNominalMeasurementsDao(rawMeasurementsToCopy
+        final MeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility
+                .getMeasurementsDao(rawMeasurementsToCopy
                         .getDataSeries().get(dimension));
-        final ObservedIdentifierBasedMeasurements mms = dao
-                .getObservedIdentifierBasedMeasurements();
-        final List<ObservedIdentifier> obsId = mms.getObservedIdentifiers();
-        measurement.setMeasuredValue(dimension, IdentifierMeasure.valueOf(obsId.get(index)
-                .getIdentifier(),Dimensionless.UNIT));
+        final List<?> measures = dao.getMeasurements();
+        final Measure measure = (Measure) measures.get(index);
+        measurement.setMeasuredValue(dimension, measure);
         return true;
     }
 

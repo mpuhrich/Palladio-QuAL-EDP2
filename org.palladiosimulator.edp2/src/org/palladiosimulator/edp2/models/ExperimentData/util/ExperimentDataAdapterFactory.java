@@ -210,14 +210,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
                 return createIdentifierBasedMeasurementsAdapter();
             }
             @Override
-            public Adapter caseObservedIdentifier(ObservedIdentifier object) {
-                return createObservedIdentifierAdapter();
-            }
-            @Override
-            public Adapter caseObservedIdentifierBasedMeasurements(ObservedIdentifierBasedMeasurements object) {
-                return createObservedIdentifierBasedMeasurementsAdapter();
-            }
-            @Override
             public Adapter caseNumericalRatioStatistics(NumericalRatioStatistics object) {
                 return createNumericalRatioStatisticsAdapter();
             }
@@ -742,34 +734,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
 	public Adapter createIdentifierBasedMeasurementsAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier <em>Observed Identifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier
-     * @generated
-     */
-	public Adapter createObservedIdentifierAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements <em>Observed Identifier Based Measurements</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements
-     * @generated
-     */
-	public Adapter createObservedIdentifierBasedMeasurementsAdapter() {
         return null;
     }
 

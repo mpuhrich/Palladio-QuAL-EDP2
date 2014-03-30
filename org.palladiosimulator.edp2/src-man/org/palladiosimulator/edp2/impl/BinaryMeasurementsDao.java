@@ -3,22 +3,22 @@ package org.palladiosimulator.edp2.impl;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
-import org.palladiosimulator.edp2.OrdinalMeasurementsDao;
+import org.palladiosimulator.edp2.MeasurementsDao;
 
 /**Interface used to access a list of measurements of a certain type.
  * An example is a list of double values measured for a sensor in an experiment run.
  * @author groenda
  * @param <T> Data type of measurements.
  */
-public interface BinaryMeasurementsDao<V,Q extends Quantity> extends OrdinalMeasurementsDao<V,Q> {
-	
-	/**Returns the unit in which all measurements are stored.
-	 * @return The unit.
-	 */
-	public Unit<Q> getUnit();
+public interface BinaryMeasurementsDao<V,Q extends Quantity> extends MeasurementsDao<V,Q> {
 
-	/**Sets the unit in which all measurements are stored.
-	 * @param unit The unit.
-	 */
-	public void setUnit(Unit<Q> unit);
+    /**Returns the unit in which all measurements are stored.
+     * @return The unit.
+     */
+    public Unit<Q> getUnit();
+
+    /**Sets the unit in which all measurements are stored.
+     * @param unit The unit.
+     */
+    public void setUnit(Unit<Q> unit);
 }

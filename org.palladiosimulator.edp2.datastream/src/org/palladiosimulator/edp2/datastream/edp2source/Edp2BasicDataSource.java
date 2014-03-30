@@ -1,8 +1,8 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
+import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.edp2.datastream.DataStream;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.metricentity.MetricEntity;
@@ -14,8 +14,9 @@ public class Edp2BasicDataSource<V,Q extends Quantity> extends MetricEntity impl
         super(metricDescription);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public <M extends DataStream<M>> IDataStream<M> getDataStream() {
+    public IDataStream<Measure<V,Q>> getDataStream() {
         return new Edp2BasicDataStream<V,Q>(null, null);
     }
 

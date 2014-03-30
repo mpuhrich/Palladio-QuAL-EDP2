@@ -28,4 +28,18 @@ public class DataTuple extends MetricEntity {
         }
         return result;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("DataTuple [");
+        for (final Measure<?,?> m : myDataTuple) {
+            sb.append(m.toString() + " ");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }

@@ -6,30 +6,29 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 
-public class DataList<V,Q extends Quantity> extends DataStream<DataTuple> {
+public class DataList extends DataStream<DataTuple> {
 
-    private final List<BasicDataStream<V,Q>> childLists;
+    private final List<BasicDataStream<?,?>> childLists;
 
-    public DataList(final List<BasicDataStream<V,Q>> childLists, final MetricSetDescription metricSetDescription) {
+    public DataList(final List<BasicDataStream<?,?>> childLists, final MetricSetDescription metricSetDescription) {
         super(metricSetDescription);
         this.childLists = Collections.unmodifiableList(childLists);
     }
 
     @Override
     public Iterator<DataTuple> iterator() {
-        final List<Iterator<Measure<V,Q>>> subIterators = new ArrayList<Iterator<Measure<V,Q>>>(childLists.size());
-        for (final BasicDataStream<V,Q> childList : childLists) {
+        final List<Iterator<Measure<?,?>>> subIterators = new ArrayList<Iterator<Measure<?,?>>>(childLists.size());
+        for (final BasicDataStream childList : childLists) {
             subIterators.add(childList.iterator());
         }
         return new Iterator<DataTuple>() {
 
             @Override
             public boolean hasNext() {
-                for (final Iterator<Measure<V,Q>> subIterator : subIterators) {
+                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
                     if (!subIterator.hasNext()) {
                         return false;
                     }
@@ -40,7 +39,7 @@ public class DataList<V,Q extends Quantity> extends DataStream<DataTuple> {
             @Override
             public DataTuple next() {
                 final List<Measure<?,?>> result = new ArrayList<Measure<?,?>>(subIterators.size());
-                for (final Iterator<Measure<V,Q>> subIterator : subIterators) {
+                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
                     result.add(subIterator.next());
                 }
                 return new DataTuple(result,(MetricSetDescription) DataList.this.getMetricDesciption());
@@ -48,7 +47,7 @@ public class DataList<V,Q extends Quantity> extends DataStream<DataTuple> {
 
             @Override
             public void remove() {
-                for (final Iterator<Measure<V,Q>> subIterator : subIterators) {
+                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
                     subIterator.remove();
                 }
             }

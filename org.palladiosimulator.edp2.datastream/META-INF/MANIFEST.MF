@@ -7,3 +7,5 @@ Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.palladiosimulator.edp2;bundle-version="2.0.0",
  org.jscience;bundle-version="4.1.3"
+Export-Package: org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.edp2.datastream.edp2source

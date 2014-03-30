@@ -9,6 +9,7 @@
   <rm:locator searchPathRef="localresources" failOnError="false"/>
   <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
   <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.jfree\..*" />
+  <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.apache\..*" />
   <rm:locator searchPathRef="orbit" failOnError="true" />
   
   <rm:searchPath name="SDQ_Commons">

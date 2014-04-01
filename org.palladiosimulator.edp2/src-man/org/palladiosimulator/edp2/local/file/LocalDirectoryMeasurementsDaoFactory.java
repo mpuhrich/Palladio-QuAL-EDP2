@@ -141,7 +141,6 @@ public class LocalDirectoryMeasurementsDaoFactory extends org.palladiosimulator.
         fbmDao.setBinaryRepresentation(BinaryRepresentation.IDENTIFIER);
         fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,FILE_SUFFIX)));
         fbmDao.setSerializer(new IdentifierSerializer());
-        fbmDao.setUnit(Unit.ONE);
         daoRegistry.register(fbmDao, uuid);
         return fbmDao;
     }

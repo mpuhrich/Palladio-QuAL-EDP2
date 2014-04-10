@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.impl.JScienceXmlMeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsDaoRegistryImpl;
 import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepresentation;
 import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 
 /**This {@link MeasurementsDaoFactory} implementation stores data in file on background storage.
  * 
@@ -135,12 +136,12 @@ public class LocalDirectoryMeasurementsDaoFactory extends org.palladiosimulator.
     }
 
     @Override
-    public BinaryMeasurementsDao<Identifier,Dimensionless> createNominalMeasurementsDao(final String uuid) {
-        super.createNominalMeasurementsDao(uuid);
+    public BinaryMeasurementsDao<Identifier,Dimensionless> createNominalMeasurementsDao(final String uuid, final TextualBaseMetricDescription metric) {
+        super.createNominalMeasurementsDao(uuid, metric);
         final FileBinaryMeasurementsDaoImpl<Identifier,Dimensionless> fbmDao = new FileBinaryMeasurementsDaoImpl<Identifier,Dimensionless>();
         fbmDao.setBinaryRepresentation(BinaryRepresentation.IDENTIFIER);
         fbmDao.setResourceFile(new File(getAbsolutePathToUuidFile(uuid,FILE_SUFFIX)));
-        fbmDao.setSerializer(new IdentifierSerializer());
+        fbmDao.setSerializer(new IdentifierSerializer(metric));
         daoRegistry.register(fbmDao, uuid);
         return fbmDao;
     }
@@ -193,6 +194,14 @@ public class LocalDirectoryMeasurementsDaoFactory extends org.palladiosimulator.
     public <Q extends Quantity> BinaryMeasurementsDao<Long,Q> createLongMeasurementsDao(
             final String uuid, final Unit<Q> storageUnit) {
         final BinaryMeasurementsDao<Long,Q> bmd = createLongMeasurementsDao(uuid);
+        bmd.setUnit(storageUnit);
+        return bmd;
+    }
+
+    @Override
+    public BinaryMeasurementsDao<Identifier,Dimensionless> createNominalMeasurementsDao(
+            final String uuid, final TextualBaseMetricDescription metric, final Unit<Dimensionless> storageUnit) {
+        final BinaryMeasurementsDao<Identifier, Dimensionless> bmd = createNominalMeasurementsDao(uuid,metric);
         bmd.setUnit(storageUnit);
         return bmd;
     }

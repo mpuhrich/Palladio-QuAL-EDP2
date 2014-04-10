@@ -4,6 +4,7 @@ import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 
 /**
  * @author groenda
@@ -51,7 +52,7 @@ public abstract class MeasurementsDaoFactory implements org.palladiosimulator.ed
      * @see org.palladiosimulator.edp2.IMeasurementsDaoFactory#createNominalMeasurementsDao(java.lang.String)
      */
     @Override
-    public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(final String uuid) {
+    public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(final String uuid, final TextualBaseMetricDescription metric) {
         if (!active) {
             throw new IllegalStateException("Must be in active state to create DAOs.");
         }

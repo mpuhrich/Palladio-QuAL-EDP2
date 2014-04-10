@@ -7,7 +7,9 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
+import javax.measure.unit.Unit;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.MeasurementsDao;
@@ -19,11 +21,17 @@ import org.palladiosimulator.edp2.internal.EmfmodelDataSeriesFromReferenceSwitch
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
+import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
+import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
+import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 
@@ -172,7 +180,9 @@ public class MeasurementsUtility {
             final MeasurementsDao<?,Q> omd = new ExperimentDataSwitch<MeasurementsDao<?,Q>>() {
                 @Override
                 public MeasurementsDao<?,Q> caseIdentifierBasedMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
-                    return (MeasurementsDao<?, Q>) daoFactory.createNominalMeasurementsDao(ds.getValuesUuid());
+                    final BinaryMeasurementsDao<Identifier, Dimensionless> bmd = daoFactory.createNominalMeasurementsDao(ds.getValuesUuid(), getTextualBaseMetricDescriptionFromIdentifierMeasurement(object));
+                    bmd.setUnit(Unit.ONE);
+                    return (MeasurementsDao<?, Q>) bmd;
                 };
                 @Override
                 public MeasurementsDao<?,Q> caseJSXmlMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements object) {
@@ -199,6 +209,19 @@ public class MeasurementsUtility {
                 }
             }
             return omd;
+        }
+    }
+
+    public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(final IdentifierBasedMeasurements idBasedMeasurement) {
+        final RawMeasurements rawMeasurements = idBasedMeasurement.getRawMeasurements();
+        final int position = rawMeasurements.getDataSeries().indexOf(idBasedMeasurement);
+        final Edp2Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
+        final MetricDescription metricDescription = measure.getMetric();
+        if (metricDescription instanceof MetricSetDescription) {
+            final MetricSetDescription msd = (MetricSetDescription) metricDescription;
+            return (TextualBaseMetricDescription) msd.getDescriptions().getDescription().get(position);
+        } else {
+            return (TextualBaseMetricDescription) metricDescription;
         }
     }
 

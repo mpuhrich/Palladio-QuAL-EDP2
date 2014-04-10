@@ -10,6 +10,7 @@ import javax.measure.unit.Unit;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.JScienceXmlMeasurementsDao;
 import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 
 /**Factory for creating DataAccessObjects (DAOs) for measurement data.
  * @author groenda
@@ -47,9 +48,11 @@ public interface MeasurementsDaoFactory {
 
     /**Creates a DAO to access measured data of type nominal measurement.
      * @param uuid UUID of the Measurement.
+     * @param one
      * @return DAO for the measurements with the specified uuid.
      */
-    public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(String uuid);
+    public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(String uuid, TextualBaseMetricDescription metric, Unit<Dimensionless> one);
+    public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(String uuid, TextualBaseMetricDescription metric);
 
     /**Creates a DAO to access measured data of type nominal measurement.
      * @param uuid UUID of the Measurement.

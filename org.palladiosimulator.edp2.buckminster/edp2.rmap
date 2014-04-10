@@ -6,7 +6,6 @@
   <rm:locator pattern="^de\.uka\.ipd\.sdq\..*" searchPathRef="ProbeSpec" failOnError="false"/>
   <rm:locator pattern="^org\.jscience*" searchPathRef="ProbeSpec" failOnError="false"/>
   <rm:locator searchPathRef="kepler" failOnError="true" pattern="^org\.eclipse\..*" />
-  <rm:locator searchPathRef="localresources" failOnError="false"/>
   <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
   <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.jfree\..*" />
   <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.apache\..*" />

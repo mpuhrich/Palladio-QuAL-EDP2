@@ -14,6 +14,7 @@ import javax.measure.Measure;
 import javax.measure.quantity.Dimensionless;
 import javax.measure.unit.Unit;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
@@ -36,6 +37,21 @@ public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
     @SuppressWarnings("unchecked")
     protected BinaryMeasurementsDao<Identifier,Dimensionless> onmDao = (BinaryMeasurementsDao<Identifier,Dimensionless>) dao;
     private final ExperimentDataFactory experimentDataFactory = ExperimentDataFactory.eINSTANCE;
+    protected TextualBaseMetricDescription metric;
+    protected Identifier identifier;
+
+    @Before
+    public void setup() {
+        metric = experimentDataFactory.createTextualBaseMetricDescription(
+                "Test Enum",
+                "Test Enum",
+                Scale.NOMINAL, // time is generally Scale.INTERVAL but for our time metrics, we have an absolute 0-point (-> Scale.RATIO!)
+                DataType.QUALITATIVE,
+                Monotonic.NO);
+        identifier = experimentDataFactory.createIdentifier("TEST ID");
+        identifier.setTextualBaseMetricDescription(metric);
+        metric.getIdentifiers().add(identifier);
+    }
 
     /**
      * Test method for
@@ -73,15 +89,7 @@ public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
     public void testDataRetainedIfReopened() throws DataNotAccessibleException {
         onmDao.open();
         List<Measure<Identifier, Dimensionless>> bmd = onmDao.getMeasurements();
-        final TextualBaseMetricDescription metric = experimentDataFactory.createTextualBaseMetricDescription(
-                "Test Enum",
-                "Test Enum",
-                Scale.NOMINAL, // time is generally Scale.INTERVAL but for our time metrics, we have an absolute 0-point (-> Scale.RATIO!)
-                DataType.QUALITATIVE,
-                Monotonic.NO);
-        final Identifier identifier = experimentDataFactory.createIdentifier("TEST ID");
-        identifier.setTextualBaseMetricDescription(metric);
-        metric.getIdentifiers().add(identifier);
+
         final IdentifierMeasure<Dimensionless> testValue = IdentifierMeasure.valueOf(identifier, Unit.ONE);
         bmd.add(testValue);
         bmd = null;

@@ -27,7 +27,7 @@ NominalMeasurementsDaoTest {
             tempFile.deleteOnExit();
             df = new LocalDirectoryMeasurementsDaoFactory(tempFile.getAbsoluteFile());
             assertNotNull("DaoFactory must not be null.", df);
-            dao = this.onmDao = df.createNominalMeasurementsDao(uuid);
+            dao = this.onmDao = df.createNominalMeasurementsDao(uuid,metric);
             onmDao.setUnit(Unit.ONE);
             assertNotNull("LongBinaryMeasurementsDao must not be null.", onmDao);
         }

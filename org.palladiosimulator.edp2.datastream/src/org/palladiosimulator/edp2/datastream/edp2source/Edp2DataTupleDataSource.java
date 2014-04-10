@@ -6,13 +6,13 @@ import org.palladiosimulator.edp2.metricentity.MetricEntity;
 import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 
-public class Edp2ListDataSource extends MetricEntity implements IDataSource {
+public class Edp2DataTupleDataSource extends MetricEntity implements IDataSource {
 
-    private final Edp2DataListForRawMeasurements dataStream;
+    private final Edp2DataTupleStreamForRawMeasurements dataStream;
 
-    public Edp2ListDataSource(final RawMeasurements measurements, final MetricSetDescription metricDesciption) {
+    public Edp2DataTupleDataSource(final RawMeasurements measurements, final MetricSetDescription metricDesciption) {
         super(metricDesciption);
-        this.dataStream = new Edp2DataListForRawMeasurements(measurements, metricDesciption);
+        this.dataStream = new Edp2DataTupleStreamForRawMeasurements(measurements, metricDesciption);
     }
 
     @Override

@@ -9,19 +9,19 @@ import javax.measure.Measure;
 
 import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 
-public class DataList extends DataStream<DataTuple> {
+public class DataTupleStream extends DataStream<DataTuple> {
 
-    private final List<BasicDataStream<?,?>> childLists;
+    private final List<BasicDataStream<?,?>> childStreams;
 
-    public DataList(final List<BasicDataStream<?,?>> childLists, final MetricSetDescription metricSetDescription) {
+    public DataTupleStream(final List<BasicDataStream<?,?>> childLists, final MetricSetDescription metricSetDescription) {
         super(metricSetDescription);
-        this.childLists = Collections.unmodifiableList(childLists);
+        this.childStreams = Collections.unmodifiableList(childLists);
     }
 
     @Override
     public Iterator<DataTuple> iterator() {
-        final List<Iterator<Measure<?,?>>> subIterators = new ArrayList<Iterator<Measure<?,?>>>(childLists.size());
-        for (final BasicDataStream childList : childLists) {
+        final List<Iterator<Measure<?,?>>> subIterators = new ArrayList<Iterator<Measure<?,?>>>(childStreams.size());
+        for (final BasicDataStream childList : childStreams) {
             subIterators.add(childList.iterator());
         }
         return new Iterator<DataTuple>() {
@@ -42,7 +42,7 @@ public class DataList extends DataStream<DataTuple> {
                 for (final Iterator<Measure<?,?>> subIterator : subIterators) {
                     result.add(subIterator.next());
                 }
-                return new DataTuple(result,(MetricSetDescription) DataList.this.getMetricDesciption());
+                return new DataTuple(result,(MetricSetDescription) DataTupleStream.this.getMetricDesciption());
             }
 
             @Override
@@ -52,6 +52,13 @@ public class DataList extends DataStream<DataTuple> {
                 }
             }
         };
+    }
+
+    @Override
+    public void close() {
+        for (final BasicDataStream<?,?> childStream : childStreams) {
+            childStream.close();
+        }
     }
 
 }

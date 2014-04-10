@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.palladiosimulator.edp2.datastream.BasicDataStream;
-import org.palladiosimulator.edp2.datastream.DataList;
+import org.palladiosimulator.edp2.datastream.DataTupleStream;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 
-public class Edp2DataListForRawMeasurements extends DataList {
+public class Edp2DataTupleStreamForRawMeasurements extends DataTupleStream {
 
-    public Edp2DataListForRawMeasurements(
+    public Edp2DataTupleStreamForRawMeasurements(
             final RawMeasurements measurements,
             final MetricSetDescription metricSetDescription) {
         super(getChildDataStreams(measurements, metricSetDescription), metricSetDescription);

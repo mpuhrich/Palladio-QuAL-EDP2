@@ -64,6 +64,11 @@ implements IDataSink, IDataSource
             public boolean isCompatibleWith(final MetricDescription other) {
                 return AbstractAdapter.this.isCompatibleWith(other);
             }
+
+            @Override
+            public void close() {
+                inputDataStream.close();
+            }
         };
     }
 

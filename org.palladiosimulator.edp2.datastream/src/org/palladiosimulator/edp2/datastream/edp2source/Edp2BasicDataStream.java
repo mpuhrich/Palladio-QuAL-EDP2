@@ -7,6 +7,7 @@ import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.datastream.BasicDataStream;
+import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
@@ -26,6 +27,15 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
     @Override
     public Iterator<Measure<V, Q>> iterator() {
         return measurementsDao.getMeasurements().iterator();
+    }
+
+    @Override
+    public void close() {
+        try {
+            measurementsDao.close();
+        } catch (final DataNotAccessibleException e) {
+            throw new RuntimeException("Failed to close EDP2 data stream",e);
+        }
     }
 
 }

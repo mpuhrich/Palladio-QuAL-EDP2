@@ -12,7 +12,7 @@ import javax.measure.unit.SI;
 import org.palladiosimulator.edp2.datastream.DataTuple;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
-import org.palladiosimulator.edp2.datastream.edp2source.Edp2ListDataSource;
+import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
@@ -96,12 +96,12 @@ public class StoreLoadExample {
             MeasurementsUtility.ensureOpenRepository(ldRepo);
             final String readData = exampleData.printStoredMeasurements(ldRepo);
             if (readData != null && !readData.equals(storedData)) {
-                // throw new IllegalStateException("Stored and loaded data is not equal. Stored: " + storedData + "\nLoaded: " + readData);
+                throw new IllegalStateException("Stored and loaded data is not equal. Stored: " + storedData + "\nLoaded: " + readData);
             }
             System.out.println(readData);
 
             // stream
-            final IDataSource dataSource = new Edp2ListDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements(),
+            final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements(),
                     (MetricSetDescription) ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric());
             final AbstractAdapter<DataTuple,DataTuple> adapter = new AbstractAdapter<DataTuple,DataTuple>(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
 
@@ -120,6 +120,7 @@ public class StoreLoadExample {
             for (final DataTuple tuple : dataStream) {
                 System.out.println(tuple);
             }
+            dataStream.close();
             MeasurementsUtility.ensureClosedRepository(ldRepo);
         } catch (final DataNotAccessibleException e) {
             logger.log(Level.SEVERE, "Error while accessing the datastore.", e);

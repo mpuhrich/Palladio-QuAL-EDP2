@@ -212,17 +212,24 @@ public class MeasurementsUtility {
         }
     }
 
+    public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {
+        final Edp2Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
+        final MetricDescription metricDescription = measure.getMetric();
+
+        return metricDescription;
+    }
+
     public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(final IdentifierBasedMeasurements idBasedMeasurement) {
         final RawMeasurements rawMeasurements = idBasedMeasurement.getRawMeasurements();
         final int position = rawMeasurements.getDataSeries().indexOf(idBasedMeasurement);
-        final Edp2Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
-        final MetricDescription metricDescription = measure.getMetric();
+        final MetricDescription metricDescription = getMetricDescriptionFromRawMeasurements(rawMeasurements);
         if (metricDescription instanceof MetricSetDescription) {
             final MetricSetDescription msd = (MetricSetDescription) metricDescription;
             return (TextualBaseMetricDescription) msd.getDescriptions().getDescription().get(position);
         } else {
             return (TextualBaseMetricDescription) metricDescription;
         }
+
     }
 
     /**

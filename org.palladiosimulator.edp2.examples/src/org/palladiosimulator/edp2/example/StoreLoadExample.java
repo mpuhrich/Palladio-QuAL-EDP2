@@ -13,7 +13,7 @@ import org.palladiosimulator.edp2.datastream.DataTuple;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
-import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
+import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
@@ -101,9 +101,8 @@ public class StoreLoadExample {
             System.out.println(readData);
 
             // stream
-            final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements(),
-                    (MetricSetDescription) ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric());
-            final AbstractAdapter<DataTuple,DataTuple> adapter = new AbstractAdapter<DataTuple,DataTuple>(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
+            final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements());
+            final AbstractFilter<DataTuple> adapter = new AbstractFilter<DataTuple>(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
 
                 @Override
                 protected DataTuple computeOutputFromInput(final DataTuple data) {

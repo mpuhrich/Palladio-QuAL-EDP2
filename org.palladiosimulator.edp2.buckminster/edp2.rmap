@@ -6,9 +6,9 @@
   <rm:locator pattern="^de\.uka\.ipd\.sdq\..*" searchPathRef="ProbeSpec" failOnError="false"/>
   <rm:locator pattern="^org\.jscience*" searchPathRef="ProbeSpec" failOnError="false"/>
   <rm:locator searchPathRef="kepler" failOnError="true" pattern="^org\.eclipse\..*" />
-  <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
   <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.jfree\..*" />
   <rm:locator searchPathRef="thirdpartysvn" failOnError="false" pattern="^org\.apache\..*" />
+  <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
   <rm:locator searchPathRef="orbit" failOnError="true" />
   
   <rm:searchPath name="SDQ_Commons">
@@ -43,17 +43,17 @@
     </rm:provider>
   </rm:searchPath>
     
-  <rm:searchPath name="edp2svn">
+  <rm:searchPath name="thirdpartysvn">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" source="true">
-      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/EDP2/trunk#{0}">
+      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/ThirdPartyWrapper/trunk#{0}">
       	<bc:propertyRef key="buckminster.component" />
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
 
-  <rm:searchPath name="thirdpartysvn">
+  <rm:searchPath name="edp2svn">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" source="true">
-      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/ThirdPartyWrapper/trunk#{0}">
+      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/EDP2/trunk#{0}">
       	<bc:propertyRef key="buckminster.component" />
       </rm:uri>
     </rm:provider>

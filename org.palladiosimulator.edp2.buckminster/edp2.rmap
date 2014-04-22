@@ -44,10 +44,10 @@
   </rm:searchPath>
     
   <rm:searchPath name="thirdpartysvn">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" source="true">
-      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/ThirdPartyWrapper/trunk#{0}">
-      	<bc:propertyRef key="buckminster.component" />
-      </rm:uri>
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
     </rm:provider>
   </rm:searchPath>
 

@@ -46,13 +46,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.palladiosimulator.edp2.transformation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.palladiosimulator.edp2.datastream"
          download-size="0"
          install-size="0"

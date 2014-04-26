@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
+import org.palladiosimulator.metricspec.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,17 +107,17 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setMinimum(Identifier newMinimum) {
+    public void setMinimum(Identifier newMinimum) {
         Identifier oldMinimum = minimum;
         minimum = newMinimum;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, oldMinimum, minimum));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -145,17 +145,17 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setMaximum(Identifier newMaximum) {
+    public void setMaximum(Identifier newMaximum) {
         Identifier oldMaximum = maximum;
         maximum = newMaximum;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, oldMaximum, maximum));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -183,17 +183,17 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setMedian(Identifier newMedian) {
+    public void setMedian(Identifier newMedian) {
         Identifier oldMedian = median;
         median = newMedian;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, oldMedian, median));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

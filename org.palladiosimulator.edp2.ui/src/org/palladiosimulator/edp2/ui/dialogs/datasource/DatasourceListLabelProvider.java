@@ -10,26 +10,27 @@ import org.palladiosimulator.edp2.ui.dialogs.DialogsImages;
 
 public class DatasourceListLabelProvider extends LabelProvider {
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.jface.viewers.LabelProvider#getText(java.lang.Object)
-	 */
-	@Override
-	public String getText(Object element) {
-		if (element instanceof Repository) {
-		    Repository repository = (Repository) element;
-			return repository.toString() + " [" + repository.getUuid()+ "]";
-		}
-		return super.getText(element);
-	}
+    /* (non-Javadoc)
+     * @see org.eclipse.jface.viewers.LabelProvider#getText(java.lang.Object)
+     */
+    @Override
+    public String getText(final Object element) {
+        if (element instanceof Repository) {
+            final Repository repository = (Repository) element;
+            return repository.toString() + " [" + repository.getId()+ "]";
+        }
+        return super.getText(element);
+    }
 
-	@Override
-	public Image getImage(Object element) {
-		if (element instanceof Repository)
-			return DialogsImages.imageRegistry.get(DialogsImages.TREEROOT);
-		return super.getImage(element);
-	}
-	
-	public static String dataSetRepresentation(Repository repository){
-		return repository.toString() + " [" + repository.getUuid()+ "]";
-	}
+    @Override
+    public Image getImage(final Object element) {
+        if (element instanceof Repository) {
+            return DialogsImages.imageRegistry.get(DialogsImages.TREEROOT);
+        }
+        return super.getImage(element);
+    }
+
+    public static String dataSetRepresentation(final Repository repository){
+        return repository.toString() + " [" + repository.getId()+ "]";
+    }
 }

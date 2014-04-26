@@ -23,6 +23,10 @@ import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
+import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 
 public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
     private final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -60,7 +64,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 @Override
                 public StyledString caseExperimentGroup(final ExperimentGroup object) {
                     final StyledString styledString = new StyledString("Experiment Group");
-                    final String decoration = " " + object.getPurpose() + " (" +object.getUuid() + ")";
+                    final String decoration = " " + object.getPurpose() + " (" +object.getId() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;
                 };
@@ -72,7 +76,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 @Override
                 public StyledString caseExperimentRun(final ExperimentRun object) {
                     final StyledString styledString = new StyledString("Experiment Run " + dateFormat.format(object.getStartTime()));
-                    final String decoration = " (" + object.getUuid() + ")";
+                    final String decoration = " (" + object.getId() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;
                 };
@@ -109,26 +113,30 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     final StyledString styledString = new StyledString("Measurement");
                     return styledString;
                 };
-                @Override
-                public StyledString caseBaseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription object) {
-                    final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
-                    final String decoration = " (" + object.getScale() + ")";
-                    styledString.append(decoration, StyledString.COUNTER_STYLER);
-                    return styledString;
-                };
-                @Override
-                public StyledString caseNumericalBaseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription object) {
-                    final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
-                    final String decoration = " (" + object.getScale() + ", " + object.getDefaultUnit() + ")";
-                    styledString.append(decoration, StyledString.COUNTER_STYLER);
-                    return styledString;
-                };
-                @Override
-                public StyledString caseMetricDescription(final org.palladiosimulator.edp2.models.ExperimentData.MetricDescription object) {
-                    final StyledString styledString = new StyledString(object.getName()==null ? "Metric Set" : object.getName());
-                    return styledString;
-                };
             }.doSwitch(eObject);
+            if (styledString == null) {
+                styledString = new MetricSpecSwitch<StyledString>() {
+                    @Override
+                    public final StyledString caseBaseMetricDescription(final BaseMetricDescription object) {
+                        final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
+                        final String decoration = " (" + object.getScale() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                    @Override
+                    public final StyledString caseNumericalBaseMetricDescription(final NumericalBaseMetricDescription object) {
+                        final StyledString styledString = new StyledString(object.getName()==null? "Base Metric" : object.getName());
+                        final String decoration = " (" + object.getScale() + ", " + object.getDefaultUnit() + ")";
+                        styledString.append(decoration, StyledString.COUNTER_STYLER);
+                        return styledString;
+                    };
+                    @Override
+                    public final StyledString caseMetricDescription(final MetricDescription object) {
+                        final StyledString styledString = new StyledString(object.getName()==null ? "Metric Set" : object.getName());
+                        return styledString;
+                    };
+                }.doSwitch(eObject);
+            }
             if (styledString == null) {
                 styledString = new RepositorySwitch<StyledString>() {
                     @Override

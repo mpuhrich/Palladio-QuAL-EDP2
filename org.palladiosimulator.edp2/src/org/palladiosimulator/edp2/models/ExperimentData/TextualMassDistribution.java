@@ -7,6 +7,7 @@
 package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.metricspec.Identifier;
 
 /**
  * <!-- begin-user-doc -->

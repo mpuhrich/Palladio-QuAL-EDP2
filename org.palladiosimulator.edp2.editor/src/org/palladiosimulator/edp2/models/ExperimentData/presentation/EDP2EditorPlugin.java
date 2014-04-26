@@ -10,6 +10,9 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
+import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
+
 /**
  * This is the central singleton for the EDP2 editor plugin.
  * <!-- begin-user-doc -->
@@ -42,6 +45,8 @@ public final class EDP2EditorPlugin extends EMFPlugin {
 	public EDP2EditorPlugin() {
         super
             (new ResourceLocator [] {
+                IdentifierEditPlugin.INSTANCE,
+                MetricSpecEditPlugin.INSTANCE,
             });
     }
 

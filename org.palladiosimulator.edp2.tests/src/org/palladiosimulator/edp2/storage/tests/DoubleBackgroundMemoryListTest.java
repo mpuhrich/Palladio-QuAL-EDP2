@@ -1,5 +1,7 @@
 package org.palladiosimulator.edp2.storage.tests;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -8,13 +10,11 @@ import javax.measure.quantity.Duration;
 import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl;
-import org.palladiosimulator.edp2.local.file.DoubleSerializer;
 import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepresentation;
+import org.palladiosimulator.edp2.local.file.DoubleSerializer;
 
 
 /**Tests the behavior of the BackgroundMemoryList and DoubleSerialiser.

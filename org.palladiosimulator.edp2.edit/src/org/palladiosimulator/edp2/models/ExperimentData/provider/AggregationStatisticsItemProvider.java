@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,6 +25,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics} object.
  * <!-- begin-user-doc -->
@@ -31,7 +34,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class AggregationStatisticsItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -128,7 +131,7 @@ public class AggregationStatisticsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((AggregationStatistics)object).getUuid();
+        String label = ((AggregationStatistics)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_AggregationStatistics_type") :
             getString("_UI_AggregationStatistics_type") + " " + label;
@@ -164,6 +167,17 @@ public class AggregationStatisticsItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

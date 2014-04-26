@@ -105,7 +105,7 @@ public class RemoteCdoRepositoryItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((RemoteCdoRepository)object).getUuid();
+        String label = ((RemoteCdoRepository)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_RemoteCdoRepository_type") :
             getString("_UI_RemoteCdoRepository_type") + " " + label;

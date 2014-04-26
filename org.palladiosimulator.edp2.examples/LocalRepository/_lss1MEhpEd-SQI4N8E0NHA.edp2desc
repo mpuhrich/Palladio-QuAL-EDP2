@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<metricspec:TextualBaseMetricDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:metricspec="http://palladiosimulator.org/MetricSpec/1.0" id="_lss1MEhpEd-SQI4N8E0NHA" name="Architecture Quality Estimation" textualDescription="Expresses a subjective expert estimation on a software architecture's overall quality." dataType="Qualitative" scale="Ordinal">
+  <identifiers id="_BRpvcEigEd-uCvl0Z-GteQ" literal="Low"/>
+  <identifiers id="_JYesoEigEd-4XZQqGmj8Pg" literal="Medium"/>
+  <identifiers id="_LCpvcEigEd-s193kEND-BA" literal="High"/>
+</metricspec:TextualBaseMetricDescription>

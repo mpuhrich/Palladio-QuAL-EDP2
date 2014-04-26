@@ -15,7 +15,38 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.palladiosimulator.edp2.models.ExperimentData.*;
+import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
+import org.palladiosimulator.edp2.models.ExperimentData.Descriptions;
+import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
+import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
+import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
+import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
+import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
+import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,10 +109,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
                 return createAggregatedMeasurementsAdapter();
             }
             @Override
-            public Adapter caseIdentifiable(Identifiable object) {
-                return createIdentifiableAdapter();
-            }
-            @Override
             public Adapter caseMeasurementsRange(MeasurementsRange object) {
                 return createMeasurementsRangeAdapter();
             }
@@ -126,26 +153,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
                 return createTextualMassDistributionAdapter();
             }
             @Override
-            public Adapter caseIdentifier(Identifier object) {
-                return createIdentifierAdapter();
-            }
-            @Override
-            public Adapter caseTextualBaseMetricDescription(TextualBaseMetricDescription object) {
-                return createTextualBaseMetricDescriptionAdapter();
-            }
-            @Override
-            public Adapter caseBaseMetricDescription(BaseMetricDescription object) {
-                return createBaseMetricDescriptionAdapter();
-            }
-            @Override
-            public Adapter caseMetricDescription(MetricDescription object) {
-                return createMetricDescriptionAdapter();
-            }
-            @Override
-            public Adapter caseDescription(Description object) {
-                return createDescriptionAdapter();
-            }
-            @Override
             public Adapter caseExperimentGroup(ExperimentGroup object) {
                 return createExperimentGroupAdapter();
             }
@@ -168,10 +175,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseDescriptions(Descriptions object) {
                 return createDescriptionsAdapter();
-            }
-            @Override
-            public Adapter caseAggregationFunctionDescription(AggregationFunctionDescription object) {
-                return createAggregationFunctionDescriptionAdapter();
             }
             @Override
             public Adapter caseAggregationStatistics(AggregationStatistics object) {
@@ -202,10 +205,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
                 return createLongBinaryMeasurementsAdapter();
             }
             @Override
-            public Adapter caseMetricSetDescription(MetricSetDescription object) {
-                return createMetricSetDescriptionAdapter();
-            }
-            @Override
             public Adapter caseIdentifierBasedMeasurements(IdentifierBasedMeasurements object) {
                 return createIdentifierBasedMeasurementsAdapter();
             }
@@ -226,20 +225,16 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
                 return createIJSDurationAdapter();
             }
             @Override
-            public Adapter caseIJSQuantity(Quantity object) {
-                return createIJSQuantityAdapter();
-            }
-            @Override
             public Adapter caseEComparable(Comparable object) {
                 return createEComparableAdapter();
             }
             @Override
-            public Adapter caseNumericalBaseMetricDescription(NumericalBaseMetricDescription object) {
-                return createNumericalBaseMetricDescriptionAdapter();
-            }
-            @Override
             public Adapter caseTextualOrdinalStatistics(TextualOrdinalStatistics object) {
                 return createTextualOrdinalStatisticsAdapter();
+            }
+            @Override
+            public Adapter caseIdentifier(Identifier object) {
+                return createIdentifierAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -272,20 +267,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
 	public Adapter createAggregatedMeasurementsAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifiable <em>Identifiable</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifiable
-     * @generated
-     */
-	public Adapter createIdentifiableAdapter() {
         return null;
     }
 
@@ -514,48 +495,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.Description <em>Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description
-     * @generated
-     */
-	public Adapter createDescriptionAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.MetricDescription <em>Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MetricDescription
-     * @generated
-     */
-	public Adapter createMetricDescriptionAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription <em>Aggregation Function Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription
-     * @generated
-     */
-	public Adapter createAggregationFunctionDescriptionAdapter() {
-        return null;
-    }
-
-	/**
      * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics <em>Aggregation Statistics</em>}'.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -566,48 +505,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
 	public Adapter createAggregationStatisticsAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription <em>Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription
-     * @generated
-     */
-	public Adapter createBaseMetricDescriptionAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifier <em>Identifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifier
-     * @generated
-     */
-	public Adapter createIdentifierAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription <em>Textual Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription
-     * @generated
-     */
-	public Adapter createTextualBaseMetricDescriptionAdapter() {
         return null;
     }
 
@@ -710,20 +607,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription <em>Metric Set Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription
-     * @generated
-     */
-	public Adapter createMetricSetDescriptionAdapter() {
-        return null;
-    }
-
-	/**
      * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements <em>Identifier Based Measurements</em>}'.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -794,20 +677,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
-     * Creates a new adapter for an object of class '{@link javax.measure.quantity.Quantity <em>IJS Quantity</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see javax.measure.quantity.Quantity
-     * @generated
-     */
-	public Adapter createIJSQuantityAdapter() {
-        return null;
-    }
-
-	/**
      * Creates a new adapter for an object of class '{@link java.lang.Comparable <em>EComparable</em>}'.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -818,20 +687,6 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
 	public Adapter createEComparableAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription <em>Numerical Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription
-     * @generated
-     */
-	public Adapter createNumericalBaseMetricDescriptionAdapter() {
         return null;
     }
 
@@ -850,6 +705,20 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
+     * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier <em>Identifier</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.uka.ipd.sdq.identifier.Identifier
+     * @generated
+     */
+    public Adapter createIdentifierAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null.

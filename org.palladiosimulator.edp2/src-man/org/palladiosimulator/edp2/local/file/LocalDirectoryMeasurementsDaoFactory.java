@@ -21,8 +21,8 @@ import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.JScienceXmlMeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsDaoRegistryImpl;
 import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepresentation;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**This {@link MeasurementsDaoFactory} implementation stores data in file on background storage.
  * 

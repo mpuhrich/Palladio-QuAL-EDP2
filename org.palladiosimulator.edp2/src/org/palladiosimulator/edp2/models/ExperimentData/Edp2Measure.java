@@ -7,6 +7,9 @@
 package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.common.util.EList;
+import org.palladiosimulator.metricspec.MetricDescription;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Edp2Measure extends Identifiable {
+public interface Edp2Measure extends Identifier {
 	/**
      * Returns the value of the '<em><b>Experiment Group</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasure <em>Measure</em>}'.

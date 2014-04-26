@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,6 +27,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup} object.
  * <!-- begin-user-doc -->
@@ -33,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
  * @generated
  */
 public class ExperimentGroupItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -162,7 +165,7 @@ public class ExperimentGroupItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((ExperimentGroup)object).getUuid();
+        String label = ((ExperimentGroup)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_ExperimentGroup_type") :
             getString("_UI_ExperimentGroup_type") + " " + label;
@@ -217,6 +220,17 @@ public class ExperimentGroupItemProvider
             (createChildParameter
                 (ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURE,
                  ExperimentDataFactory.eINSTANCE.createEdp2Measure()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

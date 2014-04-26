@@ -10,26 +10,18 @@ import java.util.Map;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Duration;
-import javax.measure.quantity.Quantity;
-import javax.measure.unit.Unit;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.CaptureType;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
-import org.palladiosimulator.edp2.models.ExperimentData.DataType;
-import org.palladiosimulator.edp2.models.ExperimentData.Description;
 import org.palladiosimulator.edp2.models.ExperimentData.Descriptions;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
@@ -40,37 +32,29 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.Monotonic;
-import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifier;
-import org.palladiosimulator.edp2.models.ExperimentData.ObservedIdentifierBasedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions;
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Scale;
 import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl;
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,13 +69,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      * @generated
      */
 	private EClass aggregatedMeasurementsEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass identifiableEClass = null;
 
 	/**
      * <!-- begin-user-doc -->
@@ -210,48 +187,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	private EClass baseMetricDescriptionEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass identifierEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass textualBaseMetricDescriptionEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass metricDescriptionEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass descriptionEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass aggregationFunctionDescriptionEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	private EClass aggregationStatisticsEClass = null;
 
 	/**
@@ -308,21 +243,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	private EClass ijsQuantityEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	private EClass eComparableEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass numericalBaseMetricDescriptionEClass = null;
 
 	/**
      * <!-- begin-user-doc -->
@@ -337,13 +258,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      * @generated
      */
 	private EClass descriptionsEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EClass metricSetDescriptionEClass = null;
 
 	/**
      * <!-- begin-user-doc -->
@@ -378,41 +292,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	private EEnum persistenceKindOptionsEEnum = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EEnum captureTypeEEnum = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EEnum dataTypeEEnum = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EEnum scaleEEnum = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EEnum monotonicEEnum = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	private EDataType ejsMeasureEDataType = null;
 
 	/**
@@ -421,13 +300,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      * @generated
      */
 	private EDataType ejsDurationMeasureEDataType = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	private EDataType ejsUnitEDataType = null;
 
 	/**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -474,6 +346,9 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExperimentDataPackageImpl());
 
         isInited = true;
+
+        // Initialize simple dependencies
+        MetricSpecPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
@@ -556,24 +431,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      */
 	public EReference getAggregatedMeasurements_Metric() {
         return (EReference)aggregatedMeasurementsEClass.getEStructuralFeatures().get(5);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getIdentifiable() {
-        return identifiableEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getIdentifiable_Uuid() {
-        return (EAttribute)identifiableEClass.getEStructuralFeatures().get(0);
     }
 
 	/**
@@ -1193,159 +1050,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getBaseMetricDescription() {
-        return baseMetricDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getBaseMetricDescription_CaptureType() {
-        return (EAttribute)baseMetricDescriptionEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getBaseMetricDescription_DataType() {
-        return (EAttribute)baseMetricDescriptionEClass.getEStructuralFeatures().get(1);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getBaseMetricDescription_Scale() {
-        return (EAttribute)baseMetricDescriptionEClass.getEStructuralFeatures().get(2);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getBaseMetricDescription_Monotonic() {
-        return (EAttribute)baseMetricDescriptionEClass.getEStructuralFeatures().get(3);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getIdentifier() {
-        return identifierEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getIdentifier_Literal() {
-        return (EAttribute)identifierEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getIdentifier_TextualBaseMetricDescription() {
-        return (EReference)identifierEClass.getEStructuralFeatures().get(1);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getTextualBaseMetricDescription() {
-        return textualBaseMetricDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getTextualBaseMetricDescription_Identifiers() {
-        return (EReference)textualBaseMetricDescriptionEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getMetricDescription() {
-        return metricDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getDescription() {
-        return descriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getDescription_Name() {
-        return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getDescription_TextualDescription() {
-        return (EAttribute)descriptionEClass.getEStructuralFeatures().get(1);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getDescription_Repository() {
-        return (EReference)descriptionEClass.getEStructuralFeatures().get(2);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getDescription_Descriptions() {
-        return (EReference)descriptionEClass.getEStructuralFeatures().get(3);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getAggregationFunctionDescription() {
-        return aggregationFunctionDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	public EClass getAggregationStatistics() {
         return aggregationStatisticsEClass;
     }
@@ -1562,44 +1266,8 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getIJSQuantity() {
-        return ijsQuantityEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	public EClass getEComparable() {
         return eComparableEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getNumericalBaseMetricDescription() {
-        return numericalBaseMetricDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getNumericalBaseMetricDescription_DefaultUnit() {
-        return (EAttribute)numericalBaseMetricDescriptionEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EAttribute getNumericalBaseMetricDescription_PersistenceKind() {
-        return (EAttribute)numericalBaseMetricDescriptionEClass.getEStructuralFeatures().get(1);
     }
 
 	/**
@@ -1654,24 +1322,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      */
 	public EReference getDescriptions_Description() {
         return (EReference)descriptionsEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EClass getMetricSetDescription() {
-        return metricSetDescriptionEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EReference getMetricSetDescription_SubsumedMetrics() {
-        return (EReference)metricSetDescriptionEClass.getEStructuralFeatures().get(0);
     }
 
 	/**
@@ -1742,51 +1392,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public EEnum getPersistenceKindOptions() {
-        return persistenceKindOptionsEEnum;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EEnum getCaptureType() {
-        return captureTypeEEnum;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EEnum getDataType() {
-        return dataTypeEEnum;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EEnum getScale() {
-        return scaleEEnum;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EEnum getMonotonic() {
-        return monotonicEEnum;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	public EDataType getEJSMeasure() {
         return ejsMeasureEDataType;
     }
@@ -1798,15 +1403,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      */
 	public EDataType getEJSDurationMeasure() {
         return ejsDurationMeasureEDataType;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public EDataType getEJSUnit() {
-        return ejsUnitEDataType;
     }
 
 	/**
@@ -1844,9 +1440,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         createEReference(aggregatedMeasurementsEClass, AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS);
         createEReference(aggregatedMeasurementsEClass, AGGREGATED_MEASUREMENTS__AGGREGATION_ON);
         createEReference(aggregatedMeasurementsEClass, AGGREGATED_MEASUREMENTS__METRIC);
-
-        identifiableEClass = createEClass(IDENTIFIABLE);
-        createEAttribute(identifiableEClass, IDENTIFIABLE__UUID);
 
         measurementsRangeEClass = createEClass(MEASUREMENTS_RANGE);
         createEReference(measurementsRangeEClass, MEASUREMENTS_RANGE__RAW_MEASUREMENTS);
@@ -1903,27 +1496,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         createEReference(textualMassDistributionEClass, TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER);
         createEReference(textualMassDistributionEClass, TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS);
 
-        identifierEClass = createEClass(IDENTIFIER);
-        createEAttribute(identifierEClass, IDENTIFIER__LITERAL);
-        createEReference(identifierEClass, IDENTIFIER__TEXTUAL_BASE_METRIC_DESCRIPTION);
-
-        textualBaseMetricDescriptionEClass = createEClass(TEXTUAL_BASE_METRIC_DESCRIPTION);
-        createEReference(textualBaseMetricDescriptionEClass, TEXTUAL_BASE_METRIC_DESCRIPTION__IDENTIFIERS);
-
-        baseMetricDescriptionEClass = createEClass(BASE_METRIC_DESCRIPTION);
-        createEAttribute(baseMetricDescriptionEClass, BASE_METRIC_DESCRIPTION__CAPTURE_TYPE);
-        createEAttribute(baseMetricDescriptionEClass, BASE_METRIC_DESCRIPTION__DATA_TYPE);
-        createEAttribute(baseMetricDescriptionEClass, BASE_METRIC_DESCRIPTION__SCALE);
-        createEAttribute(baseMetricDescriptionEClass, BASE_METRIC_DESCRIPTION__MONOTONIC);
-
-        metricDescriptionEClass = createEClass(METRIC_DESCRIPTION);
-
-        descriptionEClass = createEClass(DESCRIPTION);
-        createEAttribute(descriptionEClass, DESCRIPTION__NAME);
-        createEAttribute(descriptionEClass, DESCRIPTION__TEXTUAL_DESCRIPTION);
-        createEReference(descriptionEClass, DESCRIPTION__REPOSITORY);
-        createEReference(descriptionEClass, DESCRIPTION__DESCRIPTIONS);
-
         experimentGroupEClass = createEClass(EXPERIMENT_GROUP);
         createEReference(experimentGroupEClass, EXPERIMENT_GROUP__EXPERIMENT_SETTINGS);
         createEReference(experimentGroupEClass, EXPERIMENT_GROUP__MEASURE);
@@ -1956,8 +1528,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         descriptionsEClass = createEClass(DESCRIPTIONS);
         createEReference(descriptionsEClass, DESCRIPTIONS__DESCRIPTION);
 
-        aggregationFunctionDescriptionEClass = createEClass(AGGREGATION_FUNCTION_DESCRIPTION);
-
         aggregationStatisticsEClass = createEClass(AGGREGATION_STATISTICS);
         createEAttribute(aggregationStatisticsEClass, AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION);
         createEAttribute(aggregationStatisticsEClass, AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION);
@@ -1988,9 +1558,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         longBinaryMeasurementsEClass = createEClass(LONG_BINARY_MEASUREMENTS);
         createEAttribute(longBinaryMeasurementsEClass, LONG_BINARY_MEASUREMENTS__STORAGE_UNIT);
 
-        metricSetDescriptionEClass = createEClass(METRIC_SET_DESCRIPTION);
-        createEReference(metricSetDescriptionEClass, METRIC_SET_DESCRIPTION__SUBSUMED_METRICS);
-
         identifierBasedMeasurementsEClass = createEClass(IDENTIFIER_BASED_MEASUREMENTS);
 
         numericalRatioStatisticsEClass = createEClass(NUMERICAL_RATIO_STATISTICS);
@@ -2004,30 +1571,16 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         ijsDurationEClass = createEClass(IJS_DURATION);
 
-        ijsQuantityEClass = createEClass(IJS_QUANTITY);
-
         eComparableEClass = createEClass(ECOMPARABLE);
-
-        numericalBaseMetricDescriptionEClass = createEClass(NUMERICAL_BASE_METRIC_DESCRIPTION);
-        createEAttribute(numericalBaseMetricDescriptionEClass, NUMERICAL_BASE_METRIC_DESCRIPTION__DEFAULT_UNIT);
-        createEAttribute(numericalBaseMetricDescriptionEClass, NUMERICAL_BASE_METRIC_DESCRIPTION__PERSISTENCE_KIND);
 
         textualOrdinalStatisticsEClass = createEClass(TEXTUAL_ORDINAL_STATISTICS);
         createEReference(textualOrdinalStatisticsEClass, TEXTUAL_ORDINAL_STATISTICS__MINIMUM);
         createEReference(textualOrdinalStatisticsEClass, TEXTUAL_ORDINAL_STATISTICS__MAXIMUM);
         createEReference(textualOrdinalStatisticsEClass, TEXTUAL_ORDINAL_STATISTICS__MEDIAN);
 
-        // Create enums
-        captureTypeEEnum = createEEnum(CAPTURE_TYPE);
-        scaleEEnum = createEEnum(SCALE);
-        monotonicEEnum = createEEnum(MONOTONIC);
-        persistenceKindOptionsEEnum = createEEnum(PERSISTENCE_KIND_OPTIONS);
-        dataTypeEEnum = createEEnum(DATA_TYPE);
-
         // Create data types
         ejsMeasureEDataType = createEDataType(EJS_MEASURE);
         ejsDurationMeasureEDataType = createEDataType(EJS_DURATION_MEASURE);
-        ejsUnitEDataType = createEDataType(EJS_UNIT);
     }
 
 	/**
@@ -2054,71 +1607,59 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
+        IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
+        MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage)EPackage.Registry.INSTANCE.getEPackage(MetricSpecPackage.eNS_URI);
         RepositoryPackage theRepositoryPackage = (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
 
         // Create type parameters
         ETypeParameter doubleBinaryMeasurementsEClass_Q = addETypeParameter(doubleBinaryMeasurementsEClass, "Q");
         addETypeParameter(ejsMeasureEDataType, "V");
         ETypeParameter ejsMeasureEDataType_Q = addETypeParameter(ejsMeasureEDataType, "Q");
-        ETypeParameter ejsUnitEDataType_Q = addETypeParameter(ejsUnitEDataType, "Q");
 
         // Set bounds for type parameters
-        EGenericType g1 = createEGenericType(this.getIJSQuantity());
+        EGenericType g1 = createEGenericType(theMetricSpecPackage.getIJSQuantity());
         doubleBinaryMeasurementsEClass_Q.getEBounds().add(g1);
-        g1 = createEGenericType(this.getIJSQuantity());
+        g1 = createEGenericType(theMetricSpecPackage.getIJSQuantity());
         ejsMeasureEDataType_Q.getEBounds().add(g1);
-        g1 = createEGenericType(this.getIJSQuantity());
-        ejsUnitEDataType_Q.getEBounds().add(g1);
 
         // Add supertypes to classes
-        aggregatedMeasurementsEClass.getESuperTypes().add(this.getIdentifiable());
+        aggregatedMeasurementsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         measurementsRangeEClass.getESuperTypes().add(this.getPropertyable());
-        rawMeasurementsEClass.getESuperTypes().add(this.getIdentifiable());
-        numericalNominalStatisticsEClass.getESuperTypes().add(this.getIdentifiable());
+        rawMeasurementsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        numericalNominalStatisticsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         fixedWidthAggregatedMeasurementsEClass.getESuperTypes().add(this.getAggregatedMeasurements());
-        fixedIntervalsEClass.getESuperTypes().add(this.getIdentifiable());
-        identifierEClass.getESuperTypes().add(this.getIdentifiable());
-        textualBaseMetricDescriptionEClass.getESuperTypes().add(this.getBaseMetricDescription());
-        baseMetricDescriptionEClass.getESuperTypes().add(this.getMetricDescription());
-        metricDescriptionEClass.getESuperTypes().add(this.getDescription());
-        descriptionEClass.getESuperTypes().add(this.getIdentifiable());
-        experimentGroupEClass.getESuperTypes().add(this.getIdentifiable());
+        fixedIntervalsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        experimentGroupEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         experimentGroupEClass.getESuperTypes().add(this.getPropertyable());
-        experimentSettingEClass.getESuperTypes().add(this.getIdentifiable());
+        experimentSettingEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         experimentSettingEClass.getESuperTypes().add(this.getPropertyable());
-        experimentRunEClass.getESuperTypes().add(this.getIdentifiable());
+        experimentRunEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         experimentRunEClass.getESuperTypes().add(this.getPropertyable());
-        measurementsEClass.getESuperTypes().add(this.getIdentifiable());
+        measurementsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         measurementsEClass.getESuperTypes().add(this.getPropertyable());
-        edp2MeasureEClass.getESuperTypes().add(this.getIdentifiable());
-        descriptionsEClass.getESuperTypes().add(this.getIdentifiable());
-        aggregationFunctionDescriptionEClass.getESuperTypes().add(this.getDescription());
-        aggregationStatisticsEClass.getESuperTypes().add(this.getIdentifiable());
+        edp2MeasureEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        descriptionsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        aggregationStatisticsEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         doubleBinaryMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         numericalIntervalStatisticsEClass.getESuperTypes().add(this.getNumericalOrdinalStatistics());
         numericalOrdinalStatisticsEClass.getESuperTypes().add(this.getNumericalNominalStatistics());
-        numericalPercentileEClass.getESuperTypes().add(this.getIdentifiable());
+        numericalPercentileEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         jsXmlMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         longBinaryMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
-        metricSetDescriptionEClass.getESuperTypes().add(this.getMetricDescription());
         identifierBasedMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         numericalRatioStatisticsEClass.getESuperTypes().add(this.getNumericalIntervalStatistics());
         sensorFrameworkV1DoubleBinaryMeasurementsEClass.getESuperTypes().add(this.getDoubleBinaryMeasurements());
         sensorFrameworkV1IdentifierBasedMeasurementsEClass.getESuperTypes().add(this.getIdentifierBasedMeasurements());
-        numericalBaseMetricDescriptionEClass.getESuperTypes().add(this.getBaseMetricDescription());
         textualOrdinalStatisticsEClass.getESuperTypes().add(this.getTextualNominalStatistics());
 
         // Initialize classes and features; add operations and parameters
         initEClass(aggregatedMeasurementsEClass, AggregatedMeasurements.class, "AggregatedMeasurements", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getAggregatedMeasurements_MeasurementsRange(), this.getMeasurementsRange(), this.getMeasurementsRange_AggregatedMeasurements(), "measurementsRange", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEAttribute(getAggregatedMeasurements_Valid(), ecorePackage.getEBoolean(), "valid", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getAggregatedMeasurements_Function(), this.getAggregationFunctionDescription(), null, "function", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getAggregatedMeasurements_Function(), theMetricSpecPackage.getAggregationFunctionDescription(), null, "function", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEReference(getAggregatedMeasurements_AggregationStatistics(), this.getAggregationStatistics(), this.getAggregationStatistics_AggregatedMeasurements(), "aggregationStatistics", null, 0, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getAggregatedMeasurements_AggregationOn(), this.getBaseMetricDescription(), null, "aggregationOn", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getAggregatedMeasurements_Metric(), this.getMetricDescription(), null, "metric", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(identifiableEClass, Identifiable.class, "Identifiable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getIdentifiable_Uuid(), ecorePackage.getEString(), "uuid", null, 1, 1, Identifiable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getAggregatedMeasurements_AggregationOn(), theMetricSpecPackage.getBaseMetricDescription(), null, "aggregationOn", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getAggregatedMeasurements_Metric(), theMetricSpecPackage.getMetricDescription(), null, "metric", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(measurementsRangeEClass, MeasurementsRange.class, "MeasurementsRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getMeasurementsRange_RawMeasurements(), this.getRawMeasurements(), this.getRawMeasurements_MeasurementsRange(), "rawMeasurements", null, 0, 1, MeasurementsRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2172,29 +1713,8 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         initEClass(textualMassDistributionEClass, TextualMassDistribution.class, "TextualMassDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getTextualMassDistribution_Frequency(), ecorePackage.getELong(), "frequency", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getTextualMassDistribution_Identifier(), this.getIdentifier(), null, "identifier", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getTextualMassDistribution_Identifier(), theMetricSpecPackage.getIdentifier(), null, "identifier", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEReference(getTextualMassDistribution_TextualNominalStatistics(), this.getTextualNominalStatistics(), this.getTextualNominalStatistics_MassDistribution(), "textualNominalStatistics", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(identifierEClass, Identifier.class, "Identifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getIdentifier_Literal(), ecorePackage.getEString(), "literal", null, 1, 1, Identifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getIdentifier_TextualBaseMetricDescription(), this.getTextualBaseMetricDescription(), this.getTextualBaseMetricDescription_Identifiers(), "textualBaseMetricDescription", null, 1, 1, Identifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(textualBaseMetricDescriptionEClass, TextualBaseMetricDescription.class, "TextualBaseMetricDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getTextualBaseMetricDescription_Identifiers(), this.getIdentifier(), this.getIdentifier_TextualBaseMetricDescription(), "identifiers", null, 1, -1, TextualBaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(baseMetricDescriptionEClass, BaseMetricDescription.class, "BaseMetricDescription", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getBaseMetricDescription_CaptureType(), this.getCaptureType(), "captureType", null, 1, 1, BaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getBaseMetricDescription_DataType(), this.getDataType(), "dataType", null, 1, 1, BaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getBaseMetricDescription_Scale(), this.getScale(), "scale", null, 1, 1, BaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getBaseMetricDescription_Monotonic(), this.getMonotonic(), "monotonic", null, 1, 1, BaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(metricDescriptionEClass, MetricDescription.class, "MetricDescription", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(descriptionEClass, Description.class, "Description", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getDescription_TextualDescription(), ecorePackage.getEString(), "textualDescription", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getDescription_Repository(), theRepositoryPackage.getRepository(), theRepositoryPackage.getRepository_Descriptions(), "repository", null, 0, 1, Description.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getDescription_Descriptions(), this.getDescriptions(), this.getDescriptions_Description(), "descriptions", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(experimentGroupEClass, ExperimentGroup.class, "ExperimentGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getExperimentGroup_ExperimentSettings(), this.getExperimentSetting(), this.getExperimentSetting_ExperimentGroup(), "experimentSettings", null, 0, -1, ExperimentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2223,12 +1743,10 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         initEReference(getEdp2Measure_ExperimentGroup(), this.getExperimentGroup(), this.getExperimentGroup_Measure(), "experimentGroup", null, 1, 1, Edp2Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEReference(getEdp2Measure_ExperimentSettings(), this.getExperimentSetting(), this.getExperimentSetting_Measure(), "experimentSettings", null, 0, -1, Edp2Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEAttribute(getEdp2Measure_MeasuredObject(), ecorePackage.getEString(), "measuredObject", null, 1, 1, Edp2Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getEdp2Measure_Metric(), this.getMetricDescription(), null, "metric", null, 1, 1, Edp2Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getEdp2Measure_Metric(), theMetricSpecPackage.getMetricDescription(), null, "metric", null, 1, 1, Edp2Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(descriptionsEClass, Descriptions.class, "Descriptions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getDescriptions_Description(), this.getDescription(), this.getDescription_Descriptions(), "description", null, 0, -1, Descriptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(aggregationFunctionDescriptionEClass, AggregationFunctionDescription.class, "AggregationFunctionDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getDescriptions_Description(), theMetricSpecPackage.getDescription(), null, "description", null, 0, -1, Descriptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(aggregationStatisticsEClass, AggregationStatistics.class, "AggregationStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAggregationStatistics_DistinctValuesBeforeAggregation(), ecorePackage.getELong(), "distinctValuesBeforeAggregation", null, 1, 1, AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2236,7 +1754,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         initEReference(getAggregationStatistics_AggregatedMeasurements(), this.getAggregatedMeasurements(), this.getAggregatedMeasurements_AggregationStatistics(), "aggregatedMeasurements", null, 1, 1, AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(doubleBinaryMeasurementsEClass, DoubleBinaryMeasurements.class, "DoubleBinaryMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        g1 = createEGenericType(this.getEJSUnit());
+        g1 = createEGenericType(theMetricSpecPackage.getEJSUnit());
         EGenericType g2 = createEGenericType(doubleBinaryMeasurementsEClass_Q);
         g1.getETypeArguments().add(g2);
         initEAttribute(getDoubleBinaryMeasurements_StorageUnit(), g1, "storageUnit", null, 1, 1, DoubleBinaryMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2261,10 +1779,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         initEClass(jsXmlMeasurementsEClass, JSXmlMeasurements.class, "JSXmlMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(longBinaryMeasurementsEClass, LongBinaryMeasurements.class, "LongBinaryMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getLongBinaryMeasurements_StorageUnit(), this.getEJSUnit(), "storageUnit", null, 1, 1, LongBinaryMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        initEClass(metricSetDescriptionEClass, MetricSetDescription.class, "MetricSetDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getMetricSetDescription_SubsumedMetrics(), this.getMetricDescription(), null, "subsumedMetrics", null, 1, -1, MetricSetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getLongBinaryMeasurements_StorageUnit(), theMetricSpecPackage.getEJSUnit(), "storageUnit", null, 1, 1, LongBinaryMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(identifierBasedMeasurementsEClass, IdentifierBasedMeasurements.class, "IdentifierBasedMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2279,48 +1794,16 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         initEClass(ijsDurationEClass, Duration.class, "IJSDuration", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(ijsQuantityEClass, Quantity.class, "IJSQuantity", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(eComparableEClass, Comparable.class, "EComparable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(numericalBaseMetricDescriptionEClass, NumericalBaseMetricDescription.class, "NumericalBaseMetricDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getNumericalBaseMetricDescription_DefaultUnit(), this.getEJSUnit(), "defaultUnit", null, 0, 1, NumericalBaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getNumericalBaseMetricDescription_PersistenceKind(), this.getPersistenceKindOptions(), "persistenceKind", null, 1, 1, NumericalBaseMetricDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
         initEClass(textualOrdinalStatisticsEClass, TextualOrdinalStatistics.class, "TextualOrdinalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getTextualOrdinalStatistics_Minimum(), this.getIdentifier(), null, "minimum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getTextualOrdinalStatistics_Maximum(), this.getIdentifier(), null, "maximum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getTextualOrdinalStatistics_Median(), this.getIdentifier(), null, "median", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        // Initialize enums and add enum literals
-        initEEnum(captureTypeEEnum, CaptureType.class, "CaptureType");
-        addEEnumLiteral(captureTypeEEnum, CaptureType.IDENTIFIER);
-        addEEnumLiteral(captureTypeEEnum, CaptureType.INTEGER_NUMBER);
-        addEEnumLiteral(captureTypeEEnum, CaptureType.REAL_NUMBER);
-
-        initEEnum(scaleEEnum, Scale.class, "Scale");
-        addEEnumLiteral(scaleEEnum, Scale.NOMINAL);
-        addEEnumLiteral(scaleEEnum, Scale.ORDINAL);
-        addEEnumLiteral(scaleEEnum, Scale.INTERVAL);
-        addEEnumLiteral(scaleEEnum, Scale.RATIO);
-
-        initEEnum(monotonicEEnum, Monotonic.class, "Monotonic");
-        addEEnumLiteral(monotonicEEnum, Monotonic.NO);
-        addEEnumLiteral(monotonicEEnum, Monotonic.YES);
-        addEEnumLiteral(monotonicEEnum, Monotonic.STRONG);
-
-        initEEnum(persistenceKindOptionsEEnum, PersistenceKindOptions.class, "PersistenceKindOptions");
-        addEEnumLiteral(persistenceKindOptionsEEnum, PersistenceKindOptions.BINARY_PREFERRED);
-        addEEnumLiteral(persistenceKindOptionsEEnum, PersistenceKindOptions.JS_XML_PREFERRED);
-
-        initEEnum(dataTypeEEnum, DataType.class, "DataType");
-        addEEnumLiteral(dataTypeEEnum, DataType.QUANTITATIVE);
-        addEEnumLiteral(dataTypeEEnum, DataType.QUALITATIVE);
+        initEReference(getTextualOrdinalStatistics_Minimum(), theMetricSpecPackage.getIdentifier(), null, "minimum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getTextualOrdinalStatistics_Maximum(), theMetricSpecPackage.getIdentifier(), null, "maximum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getTextualOrdinalStatistics_Median(), theMetricSpecPackage.getIdentifier(), null, "median", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         // Initialize data types
         initEDataType(ejsMeasureEDataType, Measure.class, "EJSMeasure", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
         initEDataType(ejsDurationMeasureEDataType, Measure.class, "EJSDurationMeasure", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(ejsUnitEDataType, Unit.class, "EJSUnit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         createResource(eNS_URI);

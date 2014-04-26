@@ -5,7 +5,6 @@ package org.palladiosimulator.edp2.ui.wizards.datasource;
 
 import java.util.HashMap;
 
-import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.jface.fieldassist.ControlDecoration;
 import org.eclipse.jface.fieldassist.FieldDecoration;
 import org.eclipse.jface.fieldassist.FieldDecorationRegistry;

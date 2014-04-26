@@ -105,7 +105,7 @@ public class LocalMemoryRepositoryItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((LocalMemoryRepository)object).getUuid();
+        String label = ((LocalMemoryRepository)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_LocalMemoryRepository_type") :
             getString("_UI_LocalMemoryRepository_type") + " " + label;

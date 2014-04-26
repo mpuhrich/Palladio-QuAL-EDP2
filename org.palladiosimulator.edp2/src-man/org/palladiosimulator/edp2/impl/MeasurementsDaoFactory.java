@@ -3,8 +3,8 @@ package org.palladiosimulator.edp2.impl;
 import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**
  * @author groenda

@@ -26,7 +26,7 @@ import javax.measure.unit.Unit;
  * </p>
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDoubleBinaryMeasurements()
- * @model QBounds="org.palladiosimulator.edp2.models.ExperimentData.IJSQuantity"
+ * @model QBounds="org.palladiosimulator.metricspec.IJSQuantity"
  * @generated
  */
 public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries {
@@ -41,7 +41,7 @@ public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries
      * @return the value of the '<em>Storage Unit</em>' attribute.
      * @see #setStorageUnit(Unit)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDoubleBinaryMeasurements_StorageUnit()
-     * @model dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSUnit<Q>" required="true" ordered="false"
+     * @model dataType="org.palladiosimulator.metricspec.EJSUnit<Q>" required="true" ordered="false"
      * @generated
      */
 	Unit<Q> getStorageUnit();

@@ -183,7 +183,7 @@ public class NumericalOrdinalStatisticsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((NumericalOrdinalStatistics)object).getUuid();
+        String label = ((NumericalOrdinalStatistics)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_NumericalOrdinalStatistics_type") :
             getString("_UI_NumericalOrdinalStatistics_type") + " " + label;

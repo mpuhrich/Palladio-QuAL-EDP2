@@ -151,7 +151,7 @@ public class NumericalRatioStatisticsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((NumericalRatioStatistics)object).getUuid();
+        String label = ((NumericalRatioStatistics)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_NumericalRatioStatistics_type") :
             getString("_UI_NumericalRatioStatistics_type") + " " + label;

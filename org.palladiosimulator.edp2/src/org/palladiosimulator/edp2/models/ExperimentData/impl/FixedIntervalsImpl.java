@@ -18,6 +18,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Fixed Intervals</b></em>'.
@@ -34,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeas
  *
  * @generated
  */
-public class FixedIntervalsImpl extends IdentifiableImpl implements FixedIntervals {
+public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals {
 	/**
      * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
      * <!-- begin-user-doc -->

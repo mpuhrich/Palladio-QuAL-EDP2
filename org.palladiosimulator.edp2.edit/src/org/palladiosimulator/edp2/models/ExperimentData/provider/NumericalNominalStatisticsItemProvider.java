@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,6 +27,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics} object.
  * <!-- begin-user-doc -->
@@ -33,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatisti
  * @generated
  */
 public class NumericalNominalStatisticsItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -137,7 +140,7 @@ public class NumericalNominalStatisticsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((NumericalNominalStatistics)object).getUuid();
+        String label = ((NumericalNominalStatistics)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_NumericalNominalStatistics_type") :
             getString("_UI_NumericalNominalStatistics_type") + " " + label;
@@ -180,6 +183,17 @@ public class NumericalNominalStatisticsItemProvider
             (createChildParameter
                 (ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
                  ExperimentDataFactory.eINSTANCE.createNumericalMassDistribution()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

@@ -6,6 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
+import org.palladiosimulator.metricspec.Identifier;
+
 
 /**
  * <!-- begin-user-doc -->

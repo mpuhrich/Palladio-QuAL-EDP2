@@ -23,9 +23,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
-import org.palladiosimulator.edp2.models.ExperimentData.provider.IdentifiableItemProvider;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.Repository.Repository} object.
@@ -34,7 +35,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class RepositoryItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -143,7 +144,7 @@ public class RepositoryItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((Repository)object).getUuid();
+        String label = ((Repository)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_Repository_type") :
             getString("_UI_Repository_type") + " " + label;

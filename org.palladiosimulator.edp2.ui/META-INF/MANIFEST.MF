@@ -20,7 +20,9 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.edp2.edit;bundle-version="1.0.0",
  org.palladiosimulator.edp2.visualization;bundle-version="1.0.0",
  org.jfree.jfreechart;bundle-version="1.0.9",
- org.eclipse.emf.common
+ org.eclipse.emf.common,
+ org.palladiosimulator.measurementspec;bundle-version="1.0.0",
+ org.palladiosimulator.edp2.datastream;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.palladiosimulator.edp2.ui.EDP2UIPlugin
 Export-Package: org.palladiosimulator.edp2.ui.dialogs.datasource

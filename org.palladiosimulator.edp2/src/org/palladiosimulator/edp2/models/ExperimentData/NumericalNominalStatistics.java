@@ -10,6 +10,8 @@ import javax.measure.Measure;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Numerical Nominal Statistics</b></em>'.
@@ -32,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface NumericalNominalStatistics extends Identifiable {
+public interface NumericalNominalStatistics extends Identifier {
 	/**
      * Returns the value of the '<em><b>Number Measurements</b></em>' attribute.
      * <!-- begin-user-doc -->

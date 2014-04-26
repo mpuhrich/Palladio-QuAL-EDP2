@@ -18,13 +18,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.edp2.impl.IdentifierMeasure;
-import org.palladiosimulator.edp2.models.ExperimentData.DataType;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.Monotonic;
-import org.palladiosimulator.edp2.models.ExperimentData.Scale;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.measurementspec.IdentifierMeasure;
+import org.palladiosimulator.metricspec.DataType;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.Monotonic;
+import org.palladiosimulator.metricspec.Scale;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.util.builder.IdentifierBuilder;
+import org.palladiosimulator.metricspec.util.builder.TextualBaseMetricDescriptionBuilder;
 
 /**
  * JUnit test for classes with NominalMeasurementsDao interface. Subclass and test for all different
@@ -42,13 +44,17 @@ public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
 
     @Before
     public void setup() {
-        metric = experimentDataFactory.createTextualBaseMetricDescription(
-                "Test Enum",
-                "Test Enum",
-                Scale.NOMINAL, // time is generally Scale.INTERVAL but for our time metrics, we have an absolute 0-point (-> Scale.RATIO!)
-                DataType.QUALITATIVE,
-                Monotonic.NO);
-        identifier = experimentDataFactory.createIdentifier("TEST ID");
+        metric = TextualBaseMetricDescriptionBuilder.
+                newTextualBaseMetricDescriptionBuilder().
+                name("Test Enum").
+                textualDescription("Test Enum").
+                scale(Scale.NOMINAL).
+                dataType(DataType.QUALITATIVE).
+                monotonic(Monotonic.NO).
+                build();
+        identifier = IdentifierBuilder.newIdentifierBuilder().literal("TEST ID").
+                textualBaseMetricDescription(metric).
+                build();
         identifier.setTextualBaseMetricDescription(metric);
         metric.getIdentifiers().add(identifier);
     }

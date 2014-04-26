@@ -27,6 +27,9 @@ import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -150,6 +153,9 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RepositoryPackageImpl());
 
         isInited = true;
+
+        // Initialize simple dependencies
+        MetricSpecPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
@@ -444,7 +450,9 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
+        IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
         ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage)EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI);
+        MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage)EPackage.Registry.INSTANCE.getEPackage(MetricSpecPackage.eNS_URI);
 
         // Create type parameters
 
@@ -455,7 +463,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         localMemoryRepositoryEClass.getESuperTypes().add(this.getRepository());
         remoteCdoRepositoryEClass.getESuperTypes().add(this.getRepository());
         localSensorFrameworkRepositoryEClass.getESuperTypes().add(this.getRepository());
-        repositoryEClass.getESuperTypes().add(theExperimentDataPackage.getIdentifiable());
+        repositoryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         repositoryEClass.getESuperTypes().add(this.getMetaDao());
 
         // Initialize classes and features; add operations and parameters
@@ -491,11 +499,9 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         initEReference(getRepository_Repositories(), this.getRepositories(), this.getRepositories_AvailableRepositories(), "repositories", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEReference(getRepository_ExperimentGroups(), theExperimentDataPackage.getExperimentGroup(), theExperimentDataPackage.getExperimentGroup_Repository(), "experimentGroups", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         initEAttribute(getRepository_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getRepository_Descriptions(), theExperimentDataPackage.getDescription(), theExperimentDataPackage.getDescription_Repository(), "descriptions", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getRepository_Descriptions(), theMetricSpecPackage.getDescription(), null, "descriptions", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         addEOperation(repositoryEClass, null, "resetExperimentGroups", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-        addEOperation(repositoryEClass, null, "resetDescriptions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

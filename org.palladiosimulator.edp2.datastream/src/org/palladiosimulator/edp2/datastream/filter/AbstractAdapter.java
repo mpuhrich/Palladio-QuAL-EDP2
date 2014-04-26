@@ -5,15 +5,16 @@ import java.util.Iterator;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
-import org.palladiosimulator.edp2.metricentity.MetricEntity;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
+import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.metricentity.MetricEntity;
 
-public abstract class AbstractAdapter<InputType,OutputType>
+public abstract class AbstractAdapter
 extends MetricEntity
 implements IDataSink, IDataSource
 {
 
-    protected final IDataStream<InputType> inputDataStream;
+    protected final IDataStream<Measurement> inputDataStream;
     private final IDataSource datasource;
 
     public AbstractAdapter(final IDataSource datasource, final MetricDescription metricDescription) {
@@ -31,13 +32,13 @@ implements IDataSink, IDataSource
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getDataStream()
      */
     @Override
-    public <OutputType> IDataStream<OutputType> getDataStream() {
-        final Iterator<InputType> inputIterator = this.inputDataStream.iterator();
-        return new IDataStream<OutputType>() {
+    public IDataStream<Measurement> getDataStream() {
+        final Iterator<Measurement> inputIterator = this.inputDataStream.iterator();
+        return new IDataStream<Measurement>() {
 
             @Override
-            public Iterator<OutputType> iterator() {
-                return new Iterator<OutputType>() {
+            public Iterator<Measurement> iterator() {
+                return new Iterator<Measurement>() {
 
                     @Override
                     public boolean hasNext() {
@@ -45,8 +46,8 @@ implements IDataSink, IDataSource
                     }
 
                     @Override
-                    public OutputType next() {
-                        return (OutputType) AbstractAdapter.this.computeOutputFromInput(inputIterator.next());
+                    public Measurement next() {
+                        return AbstractAdapter.this.computeOutputFromInput(inputIterator.next());
                     }
 
                     @Override
@@ -72,6 +73,6 @@ implements IDataSink, IDataSource
         };
     }
 
-    protected abstract OutputType computeOutputFromInput(InputType next);
+    protected abstract Measurement computeOutputFromInput(Measurement next);
 
 }

@@ -22,6 +22,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Raw Measurements</b></em>'.
@@ -36,7 +38,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
  *
  * @generated
  */
-public class RawMeasurementsImpl extends IdentifiableImpl implements RawMeasurements {
+public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasurements {
 	/**
      * The cached value of the '{@link #getDataSeries() <em>Data Series</em>}' containment reference list.
      * <!-- begin-user-doc -->

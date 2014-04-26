@@ -9,7 +9,6 @@ import javax.measure.Measure;
 import javax.measure.quantity.Duration;
 import javax.measure.unit.SI;
 
-import org.palladiosimulator.edp2.datastream.DataTuple;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
@@ -17,8 +16,10 @@ import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.measurementspec.MeasurementTupple;
+import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
  * 
@@ -102,21 +103,21 @@ public class StoreLoadExample {
 
             // stream
             final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements());
-            final AbstractFilter<DataTuple> adapter = new AbstractFilter<DataTuple>(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
+            final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
 
                 @Override
-                protected DataTuple computeOutputFromInput(final DataTuple data) {
-                    final List<Measure<?,?>> next = new ArrayList<Measure<?,?>>(2);
+                protected Measurement computeOutputFromInput(final Measurement data) {
+                    final List<Measure> next = new ArrayList<Measure>(2);
                     for (final Measure m : data.asList()) {
                         final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
                         next.add(newM);
                     }
-                    return new DataTuple(next,(MetricSetDescription) data.getMetricDesciption());
+                    return new MeasurementTupple((MetricSetDescription) data.getMetricDesciption(), next);
                 }
 
             };
-            final IDataStream<DataTuple> dataStream = adapter.getDataStream();
-            for (final DataTuple tuple : dataStream) {
+            final IDataStream<Measurement> dataStream = adapter.getDataStream();
+            for (final Measurement tuple : dataStream) {
                 System.out.println(tuple);
             }
             dataStream.close();

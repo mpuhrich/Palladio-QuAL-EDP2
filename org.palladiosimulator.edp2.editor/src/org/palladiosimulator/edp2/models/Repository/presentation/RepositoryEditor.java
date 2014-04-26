@@ -123,7 +123,10 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.palladiosimulator.edp2.models.ExperimentData.presentation.EDP2EditorPlugin;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
+import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
+
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 
 
 /**
@@ -670,6 +673,8 @@ implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerPro
         adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
         // Create the command stack that will notify this editor as commands are executed.

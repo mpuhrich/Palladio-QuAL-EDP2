@@ -2,18 +2,18 @@ package org.palladiosimulator.edp2.datastream;
 
 import java.util.Iterator;
 
-import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
+import org.palladiosimulator.measurementspec.BasicMeasurement;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
 
-public abstract class BasicDataStream<V,Q extends Quantity> extends DataStream<Measure<V,Q>> {
+public abstract class BasicDataStream<V,Q extends Quantity> extends DataStream<BasicMeasurement<V,Q>> {
 
     public BasicDataStream(final BaseMetricDescription metricDescription) {
         super(metricDescription);
     }
 
     @Override
-    public abstract Iterator<Measure<V, Q>> iterator();
+    public abstract Iterator<BasicMeasurement<V, Q>> iterator();
 
 }

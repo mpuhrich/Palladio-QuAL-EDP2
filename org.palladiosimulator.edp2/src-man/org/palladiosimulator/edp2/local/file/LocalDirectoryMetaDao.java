@@ -28,13 +28,14 @@ import org.palladiosimulator.edp2.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MetaDaoImpl;
 import org.palladiosimulator.edp2.internal.SerializationUtil;
-import org.palladiosimulator.edp2.models.ExperimentData.Description;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.impl.EmfModelXMIResourceFactoryImpl;
+import org.palladiosimulator.metricspec.Description;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * DAO to access the meta data stored in a local directory.
@@ -212,7 +213,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
             }
             // Warning: Cannot clear lists as this would affect data on background storage
             // TODO: FIXME
-            managedRepo.resetDescriptions();
+            managedRepo.getDescriptions().clear();
             managedRepo.resetExperimentGroups();
             setClosed();
         } catch (final IllegalArgumentException e) {
@@ -399,7 +400,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
      */
     private void saveDescription(final File directory, final Description desc) {
         final String descFileLocation = directory.getAbsoluteFile() + File.separator
-                + desc.getUuid() + "."
+                + desc.getId() + "."
                 + EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION;
         final Resource resource = getResourceForURI(URI.createFileURI(descFileLocation));
         if (resource == null) {
@@ -446,7 +447,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
      */
     private void saveExperimentGroup(final File directory, final ExperimentGroup expGroup) {
         final String egFileLocation = directory.getAbsoluteFile() + File.separator
-                + expGroup.getUuid() + "."
+                + expGroup.getId() + "."
                 + EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
         final Resource resource = getResourceForURI(URI.createFileURI(egFileLocation));
         if (resource == null) {
@@ -482,21 +483,10 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
             if (resource != null) {
                 if (resource.getContents().size() == 1
                         && resource.getWarnings().size() == 0
-                        && resource.getErrors().size() == 0) {
-                    if (new ExperimentDataSwitch<Boolean>() {
-                        @Override
-                        public Boolean caseDescription(final Description object) {
-                            return true;
-                        }
-                        @Override
-                        public Boolean defaultCase(final EObject object) {
-                            return false;
-                        }
-                    }.doSwitch(resource.getContents().get(0)) == true) {
-                        managedRepo.getDescriptions().add((Description) resource.getContents().get(0));
-                    } else {
-                        errorMessage = "Root model element was not of type Description.";
-                    }
+                        && resource.getErrors().size() == 0
+                        && resource.getContents().get(0) instanceof Description)
+                {
+                    managedRepo.getDescriptions().add((Description) resource.getContents().get(0));
                 } else {
                     errorMessage = "There was more or less than one root element or there were errors parsing the file.";
                 }
@@ -602,21 +592,21 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
         public void notifyChanged(final Notification msg) {
             if (msg.getFeature().equals(feature)) {
                 if (msg.getEventType() == Notification.ADD) {
-                    final Identifiable id = (Identifiable) msg.getNewValue();
+                    final Identifier id = (Identifier) msg.getNewValue();
                     assignResource(id);
                 }
                 if (msg.getEventType() == Notification.ADD_MANY) {
-                    for (final Identifiable id : (Collection<Identifiable>) msg
+                    for (final Identifier id : (Collection<Identifier>) msg
                             .getNewValue()) {
                         assignResource(id);
                     }
                 }
                 if (msg.getEventType() == Notification.REMOVE) {
-                    final Identifiable id = (Identifiable) msg.getOldValue();
+                    final Identifier id = (Identifier) msg.getOldValue();
                     removeResource(id);
                 }
                 if (msg.getEventType() == Notification.REMOVE_MANY) {
-                    for (final Identifiable id : (Collection<Identifiable>) msg
+                    for (final Identifier id : (Collection<Identifier>) msg
                             .getOldValue()) {
                         removeResource(id);
                     }
@@ -627,11 +617,11 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
         /**Assigns a resource to the identifiable (if is does not have a resource yet).
          * @param id Identifiable.
          */
-        private void assignResource(final Identifiable id) {
+        private void assignResource(final Identifier id) {
             if (id.eResource() == null) {
                 final URI uri = URI
                         .createURI(repo.getUri())
-                        .appendSegment(id.getUuid())
+                        .appendSegment(id.getId())
                         .appendFileExtension(fileExtension);
                 final Resource resource = repo.getRepositories()
                         .getCommonResourceSet().createResource(uri);
@@ -643,7 +633,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl {
         /**Removes a resource from an identifiable (if it has a resource).
          * @param id Identifiable.
          */
-        private void removeResource(final Identifiable id) {
+        private void removeResource(final Identifier id) {
             if (id.eResource() != null) {
                 try {
                     id.eResource().delete(null);

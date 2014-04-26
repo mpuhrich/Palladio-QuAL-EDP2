@@ -128,7 +128,7 @@ public class LocalSensorFrameworkRepositoryItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((LocalSensorFrameworkRepository)object).getUuid();
+        String label = ((LocalSensorFrameworkRepository)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_LocalSensorFrameworkRepository_type") :
             getString("_UI_LocalSensorFrameworkRepository_type") + " " + label;

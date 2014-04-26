@@ -21,10 +21,6 @@
          id="org.palladiosimulator.edp2.feature"
          version="0.0.0"/>
 
-   <includes
-         id="org.palladiosimulator.edp2.ui.feature"
-         version="0.0.0"/>
-
    <plugin
          id="org.palladiosimulator.edp2.tests"
          download-size="0"

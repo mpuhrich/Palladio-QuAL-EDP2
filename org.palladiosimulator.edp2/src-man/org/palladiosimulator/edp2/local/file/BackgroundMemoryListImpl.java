@@ -10,8 +10,8 @@ import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
-import org.palladiosimulator.edp2.impl.IdentifierMeasure;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
+import org.palladiosimulator.measurementspec.IdentifierMeasure;
+import org.palladiosimulator.metricspec.Identifier;
 
 /**
  * A generic list implementation that consumes a constant amount of main memory regardless of the number of elements in the

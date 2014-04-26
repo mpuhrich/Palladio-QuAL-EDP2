@@ -15,10 +15,10 @@ import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
+import org.palladiosimulator.metricspec.Identifier;
 
 /**Switch class to add a provided measurement to a data series.
  * @author groenda

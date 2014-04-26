@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,6 +27,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting} object.
  * <!-- begin-user-doc -->
@@ -33,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
  * @generated
  */
 public class ExperimentSettingItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -161,7 +164,7 @@ public class ExperimentSettingItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((ExperimentSetting)object).getUuid();
+        String label = ((ExperimentSetting)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_ExperimentSetting_type") :
             getString("_UI_ExperimentSetting_type") + " " + label;
@@ -210,6 +213,17 @@ public class ExperimentSettingItemProvider
             (createChildParameter
                 (ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
                  ExperimentDataFactory.eINSTANCE.createExperimentRun()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

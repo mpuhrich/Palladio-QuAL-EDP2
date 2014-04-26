@@ -24,16 +24,17 @@ import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
 import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.MetricSetDescription;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**
  * This class provides utility functions to handle measurements.
@@ -130,11 +131,11 @@ public class MeasurementsUtility {
         final MeasurementsRange lastRange = measurements.getMeasurementsRanges().get(size - 1);
         final RawMeasurements rm = lastRange.getRawMeasurements();
         if (rm != null) { // Add raw measurements
-            if (!measurement.getMetric().equals(measurements.getMeasure().getMetric())) {
+            if (!measurement.getMetricDesciption().equals(measurements.getMeasure().getMetric())) {
                 final String msg = "Tried to store measurement with a wrong metric. Expected: "
                         + measurements.getMeasure().getMetric()
                         + ", provided: "
-                        + measurement.getMetric()
+                        + measurement.getMetricDesciption()
                         + ".";
                 logger.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
@@ -147,7 +148,7 @@ public class MeasurementsUtility {
             while (iter.hasNext()) {
                 ds = iter.next();
                 index++;
-                addMmt.setMeasurementToAdd(measurement.getMeasuredValue(index));
+                addMmt.setMeasurementToAdd(measurement.asList().get(index));
                 addMmt.doSwitch(ds);
                 // invalidate statistics as they do not include the added value
                 if (ds.getNumericalStatistics() != null) {
@@ -225,7 +226,8 @@ public class MeasurementsUtility {
         final MetricDescription metricDescription = getMetricDescriptionFromRawMeasurements(rawMeasurements);
         if (metricDescription instanceof MetricSetDescription) {
             final MetricSetDescription msd = (MetricSetDescription) metricDescription;
-            return (TextualBaseMetricDescription) msd.getDescriptions().getDescription().get(position);
+            throw new UnsupportedOperationException();
+            // TDOD FIXME return (TextualBaseMetricDescription) msd.getDescriptions().getDescription().get(position);
         } else {
             return (TextualBaseMetricDescription) metricDescription;
         }

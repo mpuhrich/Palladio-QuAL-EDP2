@@ -10,6 +10,7 @@ import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
 import org.eclipse.emf.ecore.EFactory;
+import org.palladiosimulator.metricspec.MetricDescription;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,40 +147,6 @@ public interface ExperimentDataFactory extends EFactory {
     ExperimentRun createExperimentRun();
 
     /**
-     * Returns a new object of class '<em>Identifier</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Identifier</em>'.
-     * @generated
-     */
-    Identifier createIdentifier();
-
-    /**
-     * Returns a new object of class '<em>Textual Base Metric Description</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Textual Base Metric Description</em>'.
-     * @generated
-     */
-    TextualBaseMetricDescription createTextualBaseMetricDescription();
-
-    /**Factory method to create a new identifier.
-     * @param literal The literal of the identifier.
-     * @return New identifier.
-     * @generated NOT
-     */
-    Identifier createIdentifier(String literal);
-
-    /**
-     * Returns a new object of class '<em>Aggregation Function Description</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Aggregation Function Description</em>'.
-     * @generated
-     */
-    AggregationFunctionDescription createAggregationFunctionDescription();
-
-    /**
      * Returns a new object of class '<em>Aggregation Statistics</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -252,15 +219,6 @@ public interface ExperimentDataFactory extends EFactory {
     Descriptions createDescriptions();
 
     /**
-     * Returns a new object of class '<em>Metric Set Description</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Metric Set Description</em>'.
-     * @generated
-     */
-    MetricSetDescription createMetricSetDescription();
-
-    /**
      * Returns a new object of class '<em>Identifier Based Measurements</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -306,15 +264,6 @@ public interface ExperimentDataFactory extends EFactory {
     SensorFrameworkV1IdentifierBasedMeasurements createSensorFrameworkV1IdentifierBasedMeasurements();
 
     /**
-     * Returns a new object of class '<em>Numerical Base Metric Description</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Numerical Base Metric Description</em>'.
-     * @generated
-     */
-    NumericalBaseMetricDescription createNumericalBaseMetricDescription();
-
-    /**
      * Returns a new object of class '<em>Textual Ordinal Statistics</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -322,54 +271,6 @@ public interface ExperimentDataFactory extends EFactory {
      * @generated
      */
     TextualOrdinalStatistics createTextualOrdinalStatistics();
-
-    /**Factory method to create a new numerical base metric description with the given arguments.
-     * @param uuid Universal unique identifier of the description.
-     * @param name Name of the description.
-     * @param textualDescription Textual description of the description.
-     * @param captureType Capture type of the description.
-     * @param scale Scale of the description.
-     * @param dataType Data type of the description.
-     * @param defaultUnit Default unit of the description.
-     * @param monotonic Monotonic property of the description.
-     * @param persistenceKind Preferred persistence kind for the metric.
-     * @return New numerical base metric description.
-     * @generated NOT
-     */
-    @SuppressWarnings("unchecked")
-    public NumericalBaseMetricDescription createNumericalBaseMetricDescription(
-            final String name, final String textualDescription,
-            final CaptureType captureType, final Scale scale,
-            final DataType dataType, final Unit defaultUnit,
-            final Monotonic monotonic,
-            final PersistenceKindOptions persistenceKind);
-
-    /**Factory method to create a new textual base metric description with the given arguments.
-     * @param uuid Universal unique identifier of the description.
-     * @param name Name of the description.
-     * @param textualDescription Textual description of the description.
-     * @param captureType Capture type of the description.
-     * @param scale Scale of the description.
-     * @param dataType Data type of the description.
-     * @param defaultUnit Default unit of the description.
-     * @param monotonic Monotonic property of the description.
-     * @return New textual base metric description.
-     * @generated NOT
-     */
-    public TextualBaseMetricDescription createTextualBaseMetricDescription(
-            final String name, final String textualDescription,
-            final Scale scale, final DataType dataType,
-            final Monotonic monotonic);
-
-    /**Factory method to create a new metric set description with the given arguments.
-     * @param uuid Universal unique identifier of the description.
-     * @param name Name of the description.
-     * @param textualDescription Textual description of the description.
-     * @return New metric set description.
-     * @generated NOT
-     */
-    public MetricSetDescription createMetricSetDescription(String name,
-            String textualDescription);
 
     /**Factory method to create a new number-based measure with the given arguments.
      * @param persistenceOptions Persistence kind options of the measure.

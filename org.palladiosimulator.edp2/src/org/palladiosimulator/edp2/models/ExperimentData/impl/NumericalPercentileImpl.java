@@ -18,6 +18,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Numerical Percentile</b></em>'.
@@ -33,7 +35,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
  *
  * @generated
  */
-public class NumericalPercentileImpl extends IdentifiableImpl implements NumericalPercentile {
+public class NumericalPercentileImpl extends IdentifierImpl implements NumericalPercentile {
 	/**
      * The default value of the '{@link #getPercentile() <em>Percentile</em>}' attribute.
      * <!-- begin-user-doc -->

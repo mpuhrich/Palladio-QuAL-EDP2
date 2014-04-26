@@ -7,6 +7,9 @@
 package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.common.util.EList;
+import org.palladiosimulator.metricspec.Description;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,11 +27,10 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Descriptions extends Identifiable {
+public interface Descriptions extends Identifier {
 	/**
      * Returns the value of the '<em><b>Description</b></em>' containment reference list.
-     * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.Description}.
-     * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getDescriptions <em>Descriptions</em>}'.
+     * The list contents are of type {@link org.palladiosimulator.metricspec.Description}.
      * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Description</em>' containment reference list isn't clear,
@@ -37,8 +39,7 @@ public interface Descriptions extends Identifiable {
 	 * <!-- end-user-doc -->
      * @return the value of the '<em>Description</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDescriptions_Description()
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getDescriptions
-     * @model opposite="descriptions" containment="true"
+     * @model containment="true"
      * @generated
      */
 	EList<Description> getDescription();

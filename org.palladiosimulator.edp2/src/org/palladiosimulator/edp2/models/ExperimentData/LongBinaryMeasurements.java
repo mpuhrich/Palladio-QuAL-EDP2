@@ -40,7 +40,7 @@ public interface LongBinaryMeasurements extends DataSeries {
      * @return the value of the '<em>Storage Unit</em>' attribute.
      * @see #setStorageUnit(Unit)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getLongBinaryMeasurements_StorageUnit()
-     * @model dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSUnit" required="true" ordered="false"
+     * @model dataType="org.palladiosimulator.metricspec.EJSUnit" required="true" ordered="false"
      * @generated
      */
 	Unit getStorageUnit();

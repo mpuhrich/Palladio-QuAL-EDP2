@@ -15,8 +15,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.edp2.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.MetaDao;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
-import org.palladiosimulator.edp2.models.Repository.*;
+import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
+import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
+import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
+import org.palladiosimulator.edp2.models.Repository.Repositories;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,8 +122,8 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
                 return createRepositoryAdapter();
             }
             @Override
-            public Adapter caseIdentifiable(Identifiable object) {
-                return createIdentifiableAdapter();
+            public Adapter caseIdentifier(Identifier object) {
+                return createIdentifierAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -279,20 +286,20 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifiable <em>Identifiable</em>}'.
+     * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier <em>Identifier</em>}'.
      * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifiable
+     * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
      */
-	public Adapter createIdentifiableAdapter() {
+    public Adapter createIdentifierAdapter() {
         return null;
     }
 
-	/**
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null.

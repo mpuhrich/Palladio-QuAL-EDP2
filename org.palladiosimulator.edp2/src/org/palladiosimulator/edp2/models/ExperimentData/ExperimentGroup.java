@@ -9,6 +9,8 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 import org.eclipse.emf.common.util.EList;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Experiment Group</b></em>'.
@@ -34,7 +36,7 @@ import org.palladiosimulator.edp2.models.Repository.Repository;
  * @model
  * @generated
  */
-public interface ExperimentGroup extends Identifiable, Propertyable {
+public interface ExperimentGroup extends Identifier, Propertyable {
 	/**
      * Returns the value of the '<em><b>Experiment Settings</b></em>' containment reference list.
      * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting}.

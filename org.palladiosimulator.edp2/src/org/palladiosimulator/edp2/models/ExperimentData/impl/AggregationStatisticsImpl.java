@@ -16,6 +16,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Aggregation Statistics</b></em>'.
@@ -31,7 +33,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  *
  * @generated
  */
-public class AggregationStatisticsImpl extends IdentifiableImpl implements AggregationStatistics {
+public class AggregationStatisticsImpl extends IdentifierImpl implements AggregationStatistics {
 	/**
      * The default value of the '{@link #getDistinctValuesBeforeAggregation() <em>Distinct Values Before Aggregation</em>}' attribute.
      * <!-- begin-user-doc -->

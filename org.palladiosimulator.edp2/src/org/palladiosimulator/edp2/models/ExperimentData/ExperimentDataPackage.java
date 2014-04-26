@@ -9,9 +9,10 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,34 +71,6 @@ public interface ExperimentDataPackage extends EPackage {
 	ExperimentDataPackage eINSTANCE = org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl.init();
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifiableImpl <em>Identifiable</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifiableImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifiable()
-     * @generated
-     */
-	int IDENTIFIABLE = 1;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIABLE__UUID = 0;
-
-	/**
-     * The number of structural features of the '<em>Identifiable</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIABLE_FEATURE_COUNT = 1;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl <em>Aggregated Measurements</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,22 +81,22 @@ public interface ExperimentDataPackage extends EPackage {
 	int AGGREGATED_MEASUREMENTS = 0;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__UUID = IDENTIFIABLE__UUID;
+    int AGGREGATED_MEASUREMENTS__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Measurements Range</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__MEASUREMENTS_RANGE = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int AGGREGATED_MEASUREMENTS__MEASUREMENTS_RANGE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Valid</b></em>' attribute.
@@ -132,7 +105,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__VALID = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int AGGREGATED_MEASUREMENTS__VALID = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Function</b></em>' reference.
@@ -141,7 +114,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__FUNCTION = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int AGGREGATED_MEASUREMENTS__FUNCTION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Aggregation Statistics</b></em>' containment reference.
@@ -150,7 +123,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Aggregation On</b></em>' reference.
@@ -159,7 +132,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__AGGREGATION_ON = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int AGGREGATED_MEASUREMENTS__AGGREGATION_ON = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The feature id for the '<em><b>Metric</b></em>' reference.
@@ -168,7 +141,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS__METRIC = IDENTIFIABLE_FEATURE_COUNT + 5;
+	int AGGREGATED_MEASUREMENTS__METRIC = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
 
 	/**
      * The number of structural features of the '<em>Aggregated Measurements</em>' class.
@@ -177,7 +150,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATED_MEASUREMENTS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 6;
+	int AGGREGATED_MEASUREMENTS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 6;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DataSeriesImpl <em>Data Series</em>}' class.
@@ -187,7 +160,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataSeries()
      * @generated
      */
-	int DATA_SERIES = 6;
+	int DATA_SERIES = 5;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.FixedIntervalsImpl <em>Fixed Intervals</em>}' class.
@@ -197,7 +170,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedIntervals()
      * @generated
      */
-	int FIXED_INTERVALS = 10;
+	int FIXED_INTERVALS = 9;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl <em>Propertyable</em>}' class.
@@ -207,7 +180,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPropertyable()
      * @generated
      */
-	int PROPERTYABLE = 3;
+	int PROPERTYABLE = 2;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -235,7 +208,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurementsRange()
      * @generated
      */
-	int MEASUREMENTS_RANGE = 2;
+	int MEASUREMENTS_RANGE = 1;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -308,7 +281,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEStringtoEObjectMapEntry()
      * @generated
      */
-	int ESTRINGTO_EOBJECT_MAP_ENTRY = 4;
+	int ESTRINGTO_EOBJECT_MAP_ENTRY = 3;
 
 	/**
      * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -345,25 +318,25 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getRawMeasurements()
      * @generated
      */
-	int RAW_MEASUREMENTS = 5;
+	int RAW_MEASUREMENTS = 4;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int RAW_MEASUREMENTS__UUID = IDENTIFIABLE__UUID;
+    int RAW_MEASUREMENTS__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Data Series</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int RAW_MEASUREMENTS__DATA_SERIES = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int RAW_MEASUREMENTS__DATA_SERIES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Measurements Range</b></em>' container reference.
@@ -372,7 +345,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RAW_MEASUREMENTS__MEASUREMENTS_RANGE = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int RAW_MEASUREMENTS__MEASUREMENTS_RANGE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Raw Measurements</em>' class.
@@ -381,7 +354,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RAW_MEASUREMENTS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int RAW_MEASUREMENTS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -445,25 +418,25 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalNominalStatistics()
      * @generated
      */
-	int NUMERICAL_NOMINAL_STATISTICS = 7;
+	int NUMERICAL_NOMINAL_STATISTICS = 6;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_NOMINAL_STATISTICS__UUID = IDENTIFIABLE__UUID;
+    int NUMERICAL_NOMINAL_STATISTICS__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Numerical Mass Distribution</b></em>' containment reference list.
@@ -472,7 +445,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Data Series</b></em>' container reference.
@@ -481,7 +454,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Numerical Nominal Statistics</em>' class.
@@ -490,7 +463,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_NOMINAL_STATISTICS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int NUMERICAL_NOMINAL_STATISTICS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalMassDistributionImpl <em>Numerical Mass Distribution</em>}' class.
@@ -500,7 +473,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalMassDistribution()
      * @generated
      */
-	int NUMERICAL_MASS_DISTRIBUTION = 8;
+	int NUMERICAL_MASS_DISTRIBUTION = 7;
 
 	/**
      * The feature id for the '<em><b>Frequency</b></em>' attribute.
@@ -546,18 +519,18 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedWidthAggregatedMeasurements()
      * @generated
      */
-	int FIXED_WIDTH_AGGREGATED_MEASUREMENTS = 9;
+	int FIXED_WIDTH_AGGREGATED_MEASUREMENTS = 8;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int FIXED_WIDTH_AGGREGATED_MEASUREMENTS__UUID = AGGREGATED_MEASUREMENTS__UUID;
+    int FIXED_WIDTH_AGGREGATED_MEASUREMENTS__ID = AGGREGATED_MEASUREMENTS__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Measurements Range</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -638,14 +611,14 @@ public interface ExperimentDataPackage extends EPackage {
      */
 	int FIXED_WIDTH_AGGREGATED_MEASUREMENTS_FEATURE_COUNT = AGGREGATED_MEASUREMENTS_FEATURE_COUNT + 2;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS__UUID = IDENTIFIABLE__UUID;
+    int FIXED_INTERVALS__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -654,7 +627,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS__LOWER_BOUND = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int FIXED_INTERVALS__LOWER_BOUND = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -663,7 +636,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS__WIDTH = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int FIXED_INTERVALS__WIDTH = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Number Of Intervals</b></em>' attribute.
@@ -672,7 +645,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS__NUMBER_OF_INTERVALS = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int FIXED_INTERVALS__NUMBER_OF_INTERVALS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Aggregated Measurements</b></em>' container reference.
@@ -681,7 +654,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS__AGGREGATED_MEASUREMENTS = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int FIXED_INTERVALS__AGGREGATED_MEASUREMENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Fixed Intervals</em>' class.
@@ -690,7 +663,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIXED_INTERVALS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int FIXED_INTERVALS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualNominalStatisticsImpl <em>Textual Nominal Statistics</em>}' class.
@@ -700,7 +673,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualNominalStatistics()
      * @generated
      */
-	int TEXTUAL_NOMINAL_STATISTICS = 11;
+	int TEXTUAL_NOMINAL_STATISTICS = 10;
 
 	/**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
@@ -746,7 +719,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualMassDistribution()
      * @generated
      */
-	int TEXTUAL_MASS_DISTRIBUTION = 12;
+	int TEXTUAL_MASS_DISTRIBUTION = 11;
 
 	/**
      * The feature id for the '<em><b>Frequency</b></em>' attribute.
@@ -792,7 +765,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurements()
      * @generated
      */
-	int MEASUREMENTS = 21;
+	int MEASUREMENTS = 15;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupImpl <em>Experiment Group</em>}' class.
@@ -802,9 +775,18 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentGroup()
      * @generated
      */
-	int EXPERIMENT_GROUP = 18;
+	int EXPERIMENT_GROUP = 12;
 
 	/**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPERIMENT_GROUP__ID = IdentifierPackage.IDENTIFIER__ID;
+
+    /**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentSettingImpl <em>Experiment Setting</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -812,7 +794,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentSetting()
      * @generated
      */
-	int EXPERIMENT_SETTING = 19;
+	int EXPERIMENT_SETTING = 13;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentRunImpl <em>Experiment Run</em>}' class.
@@ -822,37 +804,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentRun()
      * @generated
      */
-	int EXPERIMENT_RUN = 20;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionImpl <em>Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDescription()
-     * @generated
-     */
-	int DESCRIPTION = 17;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MetricDescriptionImpl <em>Metric Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MetricDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMetricDescription()
-     * @generated
-     */
-	int METRIC_DESCRIPTION = 16;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.BaseMetricDescriptionImpl <em>Base Metric Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.BaseMetricDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getBaseMetricDescription()
-     * @generated
-     */
-	int BASE_METRIC_DESCRIPTION = 15;
+	int EXPERIMENT_RUN = 14;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.Edp2MeasureImpl <em>Edp2 Measure</em>}' class.
@@ -862,17 +814,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEdp2Measure()
      * @generated
      */
-	int EDP2_MEASURE = 22;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationFunctionDescriptionImpl <em>Aggregation Function Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationFunctionDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregationFunctionDescription()
-     * @generated
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION = 24;
+	int EDP2_MEASURE = 16;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl <em>Aggregation Statistics</em>}' class.
@@ -882,369 +824,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregationStatistics()
      * @generated
      */
-	int AGGREGATION_STATISTICS = 25;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualBaseMetricDescriptionImpl <em>Textual Base Metric Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualBaseMetricDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualBaseMetricDescription()
-     * @generated
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION = 14;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierImpl <em>Identifier</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifier()
-     * @generated
-     */
-	int IDENTIFIER = 13;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIER__UUID = IDENTIFIABLE__UUID;
-
-	/**
-     * The feature id for the '<em><b>Literal</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIER__LITERAL = IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Textual Base Metric Description</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIER__TEXTUAL_BASE_METRIC_DESCRIPTION = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-	/**
-     * The number of structural features of the '<em>Identifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IDENTIFIER_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 2;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION__UUID = IDENTIFIABLE__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION__NAME = IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION__TEXTUAL_DESCRIPTION = IDENTIFIABLE_FEATURE_COUNT + 1;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION__REPOSITORY = IDENTIFIABLE_FEATURE_COUNT + 2;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION__DESCRIPTIONS = IDENTIFIABLE_FEATURE_COUNT + 3;
-
-	/**
-     * The number of structural features of the '<em>Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DESCRIPTION_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 4;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION__UUID = DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION__NAME = DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION = DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION__REPOSITORY = DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION__DESCRIPTIONS = DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The number of structural features of the '<em>Metric Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_DESCRIPTION_FEATURE_COUNT = DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__UUID = METRIC_DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__NAME = METRIC_DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION = METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__REPOSITORY = METRIC_DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__DESCRIPTIONS = METRIC_DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The feature id for the '<em><b>Capture Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__CAPTURE_TYPE = METRIC_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Data Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__DATA_TYPE = METRIC_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
-     * The feature id for the '<em><b>Scale</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__SCALE = METRIC_DESCRIPTION_FEATURE_COUNT + 2;
-
-	/**
-     * The feature id for the '<em><b>Monotonic</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION__MONOTONIC = METRIC_DESCRIPTION_FEATURE_COUNT + 3;
-
-	/**
-     * The number of structural features of the '<em>Base Metric Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int BASE_METRIC_DESCRIPTION_FEATURE_COUNT = METRIC_DESCRIPTION_FEATURE_COUNT + 4;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__UUID = BASE_METRIC_DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__NAME = BASE_METRIC_DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION = BASE_METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__REPOSITORY = BASE_METRIC_DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__DESCRIPTIONS = BASE_METRIC_DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The feature id for the '<em><b>Capture Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__CAPTURE_TYPE = BASE_METRIC_DESCRIPTION__CAPTURE_TYPE;
-
-	/**
-     * The feature id for the '<em><b>Data Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__DATA_TYPE = BASE_METRIC_DESCRIPTION__DATA_TYPE;
-
-	/**
-     * The feature id for the '<em><b>Scale</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__SCALE = BASE_METRIC_DESCRIPTION__SCALE;
-
-	/**
-     * The feature id for the '<em><b>Monotonic</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__MONOTONIC = BASE_METRIC_DESCRIPTION__MONOTONIC;
-
-	/**
-     * The feature id for the '<em><b>Identifiers</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION__IDENTIFIERS = BASE_METRIC_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The number of structural features of the '<em>Textual Base Metric Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TEXTUAL_BASE_METRIC_DESCRIPTION_FEATURE_COUNT = BASE_METRIC_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int EXPERIMENT_GROUP__UUID = IDENTIFIABLE__UUID;
+	int AGGREGATION_STATISTICS = 18;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -1253,7 +833,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP__ADDITIONAL_INFORMATION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int EXPERIMENT_GROUP__ADDITIONAL_INFORMATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Experiment Settings</b></em>' containment reference list.
@@ -1262,7 +842,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP__EXPERIMENT_SETTINGS = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int EXPERIMENT_GROUP__EXPERIMENT_SETTINGS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Measure</b></em>' containment reference list.
@@ -1271,7 +851,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP__MEASURE = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int EXPERIMENT_GROUP__MEASURE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Purpose</b></em>' attribute.
@@ -1280,7 +860,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP__PURPOSE = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int EXPERIMENT_GROUP__PURPOSE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Repository</b></em>' reference.
@@ -1289,7 +869,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP__REPOSITORY = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int EXPERIMENT_GROUP__REPOSITORY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The number of structural features of the '<em>Experiment Group</em>' class.
@@ -1298,16 +878,16 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_GROUP_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 5;
+	int EXPERIMENT_GROUP_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__UUID = IDENTIFIABLE__UUID;
+    int EXPERIMENT_SETTING__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -1316,7 +896,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__ADDITIONAL_INFORMATION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int EXPERIMENT_SETTING__ADDITIONAL_INFORMATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1325,7 +905,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__DESCRIPTION = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int EXPERIMENT_SETTING__DESCRIPTION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Experiment Runs</b></em>' containment reference list.
@@ -1334,7 +914,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__EXPERIMENT_RUNS = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int EXPERIMENT_SETTING__EXPERIMENT_RUNS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Measure</b></em>' reference list.
@@ -1343,7 +923,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__MEASURE = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int EXPERIMENT_SETTING__MEASURE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Experiment Group</b></em>' container reference.
@@ -1352,7 +932,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING__EXPERIMENT_GROUP = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int EXPERIMENT_SETTING__EXPERIMENT_GROUP = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The number of structural features of the '<em>Experiment Setting</em>' class.
@@ -1361,16 +941,16 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_SETTING_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 5;
+	int EXPERIMENT_SETTING_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__UUID = IDENTIFIABLE__UUID;
+    int EXPERIMENT_RUN__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -1379,7 +959,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__ADDITIONAL_INFORMATION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int EXPERIMENT_RUN__ADDITIONAL_INFORMATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Measurements</b></em>' containment reference list.
@@ -1388,7 +968,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__MEASUREMENTS = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int EXPERIMENT_RUN__MEASUREMENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Start Time</b></em>' attribute.
@@ -1397,7 +977,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__START_TIME = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int EXPERIMENT_RUN__START_TIME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1406,7 +986,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__DURATION = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int EXPERIMENT_RUN__DURATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Experiment Setting</b></em>' container reference.
@@ -1415,7 +995,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN__EXPERIMENT_SETTING = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int EXPERIMENT_RUN__EXPERIMENT_SETTING = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The number of structural features of the '<em>Experiment Run</em>' class.
@@ -1424,16 +1004,16 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPERIMENT_RUN_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 5;
+	int EXPERIMENT_RUN_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int MEASUREMENTS__UUID = IDENTIFIABLE__UUID;
+    int MEASUREMENTS__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Additional Information</b></em>' map.
@@ -1442,7 +1022,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEASUREMENTS__ADDITIONAL_INFORMATION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int MEASUREMENTS__ADDITIONAL_INFORMATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Measure</b></em>' reference.
@@ -1451,7 +1031,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEASUREMENTS__MEASURE = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int MEASUREMENTS__MEASURE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Measurements Ranges</b></em>' containment reference list.
@@ -1460,7 +1040,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEASUREMENTS__MEASUREMENTS_RANGES = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int MEASUREMENTS__MEASUREMENTS_RANGES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Experiment Run</b></em>' container reference.
@@ -1469,7 +1049,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEASUREMENTS__EXPERIMENT_RUN = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int MEASUREMENTS__EXPERIMENT_RUN = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Measurements</em>' class.
@@ -1478,16 +1058,16 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEASUREMENTS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int MEASUREMENTS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE__UUID = IDENTIFIABLE__UUID;
+    int EDP2_MEASURE__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Experiment Group</b></em>' container reference.
@@ -1496,7 +1076,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE__EXPERIMENT_GROUP = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int EDP2_MEASURE__EXPERIMENT_GROUP = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Experiment Settings</b></em>' reference list.
@@ -1505,7 +1085,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE__EXPERIMENT_SETTINGS = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int EDP2_MEASURE__EXPERIMENT_SETTINGS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Measured Object</b></em>' attribute.
@@ -1514,7 +1094,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE__MEASURED_OBJECT = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int EDP2_MEASURE__MEASURED_OBJECT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Metric</b></em>' reference.
@@ -1523,7 +1103,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE__METRIC = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int EDP2_MEASURE__METRIC = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Edp2 Measure</em>' class.
@@ -1532,7 +1112,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EDP2_MEASURE_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 4;
+	int EDP2_MEASURE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.LongBinaryMeasurementsImpl <em>Long Binary Measurements</em>}' class.
@@ -1542,7 +1122,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getLongBinaryMeasurements()
      * @generated
      */
-	int LONG_BINARY_MEASUREMENTS = 31;
+	int LONG_BINARY_MEASUREMENTS = 24;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DoubleBinaryMeasurementsImpl <em>Double Binary Measurements</em>}' class.
@@ -1552,7 +1132,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDoubleBinaryMeasurements()
      * @generated
      */
-	int DOUBLE_BINARY_MEASUREMENTS = 26;
+	int DOUBLE_BINARY_MEASUREMENTS = 19;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.JSXmlMeasurementsImpl <em>JS Xml Measurements</em>}' class.
@@ -1562,7 +1142,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getJSXmlMeasurements()
      * @generated
      */
-	int JS_XML_MEASUREMENTS = 30;
+	int JS_XML_MEASUREMENTS = 23;
 
 	/**
      * The meta object id for the '{@link javax.measure.quantity.Duration <em>IJS Duration</em>}' class.
@@ -1572,17 +1152,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSDuration()
      * @generated
      */
-	int IJS_DURATION = 37;
-
-	/**
-     * The meta object id for the '{@link javax.measure.quantity.Quantity <em>IJS Quantity</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see javax.measure.quantity.Quantity
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSQuantity()
-     * @generated
-     */
-	int IJS_QUANTITY = 38;
+	int IJS_DURATION = 29;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionsImpl <em>Descriptions</em>}' class.
@@ -1592,25 +1162,25 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDescriptions()
      * @generated
      */
-	int DESCRIPTIONS = 23;
+	int DESCRIPTIONS = 17;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int DESCRIPTIONS__UUID = IDENTIFIABLE__UUID;
+    int DESCRIPTIONS__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Description</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int DESCRIPTIONS__DESCRIPTION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int DESCRIPTIONS__DESCRIPTION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The number of structural features of the '<em>Descriptions</em>' class.
@@ -1619,70 +1189,16 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DESCRIPTIONS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int DESCRIPTIONS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int AGGREGATION_FUNCTION_DESCRIPTION__UUID = DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION__NAME = DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION__TEXTUAL_DESCRIPTION = DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION__REPOSITORY = DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION__DESCRIPTIONS = DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The number of structural features of the '<em>Aggregation Function Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_FUNCTION_DESCRIPTION_FEATURE_COUNT = DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int AGGREGATION_STATISTICS__UUID = IDENTIFIABLE__UUID;
+    int AGGREGATION_STATISTICS__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Distinct Values Before Aggregation</b></em>' attribute.
@@ -1691,7 +1207,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Distinct Values After Aggregation</b></em>' attribute.
@@ -1700,7 +1216,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Aggregated Measurements</b></em>' container reference.
@@ -1709,7 +1225,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Aggregation Statistics</em>' class.
@@ -1718,7 +1234,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int AGGREGATION_STATISTICS_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int AGGREGATION_STATISTICS_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -1791,18 +1307,18 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalOrdinalStatistics()
      * @generated
      */
-	int NUMERICAL_ORDINAL_STATISTICS = 28;
+	int NUMERICAL_ORDINAL_STATISTICS = 21;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_ORDINAL_STATISTICS__UUID = NUMERICAL_NOMINAL_STATISTICS__UUID;
+    int NUMERICAL_ORDINAL_STATISTICS__ID = NUMERICAL_NOMINAL_STATISTICS__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1882,18 +1398,18 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalIntervalStatistics()
      * @generated
      */
-	int NUMERICAL_INTERVAL_STATISTICS = 27;
+	int NUMERICAL_INTERVAL_STATISTICS = 20;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_INTERVAL_STATISTICS__UUID = NUMERICAL_ORDINAL_STATISTICS__UUID;
+    int NUMERICAL_INTERVAL_STATISTICS__ID = NUMERICAL_ORDINAL_STATISTICS__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2009,25 +1525,25 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalPercentile()
      * @generated
      */
-	int NUMERICAL_PERCENTILE = 29;
+	int NUMERICAL_PERCENTILE = 22;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_PERCENTILE__UUID = IDENTIFIABLE__UUID;
+    int NUMERICAL_PERCENTILE__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Percentile</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_PERCENTILE__PERCENTILE = IDENTIFIABLE_FEATURE_COUNT + 0;
+	int NUMERICAL_PERCENTILE__PERCENTILE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2036,7 +1552,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_PERCENTILE__VALUE = IDENTIFIABLE_FEATURE_COUNT + 1;
+	int NUMERICAL_PERCENTILE__VALUE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Ordinal Statistics</b></em>' container reference.
@@ -2045,7 +1561,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_PERCENTILE__ORDINAL_STATISTICS = IDENTIFIABLE_FEATURE_COUNT + 2;
+	int NUMERICAL_PERCENTILE__ORDINAL_STATISTICS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Numerical Percentile</em>' class.
@@ -2054,7 +1570,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NUMERICAL_PERCENTILE_FEATURE_COUNT = IDENTIFIABLE_FEATURE_COUNT + 3;
+	int NUMERICAL_PERCENTILE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2064,16 +1580,6 @@ public interface ExperimentDataPackage extends EPackage {
      * @ordered
      */
 	int JS_XML_MEASUREMENTS__NUMERICAL_STATISTICS = DATA_SERIES__NUMERICAL_STATISTICS;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MetricSetDescriptionImpl <em>Metric Set Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MetricSetDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMetricSetDescription()
-     * @generated
-     */
-	int METRIC_SET_DESCRIPTION = 32;
 
 	/**
      * The feature id for the '<em><b>Aggregated Measurements</b></em>' container reference.
@@ -2184,69 +1690,6 @@ public interface ExperimentDataPackage extends EPackage {
 	int LONG_BINARY_MEASUREMENTS_FEATURE_COUNT = DATA_SERIES_FEATURE_COUNT + 1;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__UUID = METRIC_DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__NAME = METRIC_DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__TEXTUAL_DESCRIPTION = METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__REPOSITORY = METRIC_DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__DESCRIPTIONS = METRIC_DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The feature id for the '<em><b>Subsumed Metrics</b></em>' reference list.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION__SUBSUMED_METRICS = METRIC_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The number of structural features of the '<em>Metric Set Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METRIC_SET_DESCRIPTION_FEATURE_COUNT = METRIC_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierBasedMeasurementsImpl <em>Identifier Based Measurements</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2254,7 +1697,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifierBasedMeasurements()
      * @generated
      */
-	int IDENTIFIER_BASED_MEASUREMENTS = 33;
+	int IDENTIFIER_BASED_MEASUREMENTS = 25;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2318,18 +1761,18 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalRatioStatistics()
      * @generated
      */
-	int NUMERICAL_RATIO_STATISTICS = 34;
+	int NUMERICAL_RATIO_STATISTICS = 26;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NUMERICAL_RATIO_STATISTICS__UUID = NUMERICAL_INTERVAL_STATISTICS__UUID;
+    int NUMERICAL_RATIO_STATISTICS__ID = NUMERICAL_INTERVAL_STATISTICS__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2472,7 +1915,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1DoubleBinaryMeasurements()
      * @generated
      */
-	int SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS = 35;
+	int SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS = 27;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2545,7 +1988,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1IdentifierBasedMeasurements()
      * @generated
      */
-	int SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS = 36;
+	int SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS = 28;
 
 	/**
      * The feature id for the '<em><b>Numerical Statistics</b></em>' containment reference.
@@ -2611,15 +2054,6 @@ public interface ExperimentDataPackage extends EPackage {
 	int IJS_DURATION_FEATURE_COUNT = 0;
 
 	/**
-     * The number of structural features of the '<em>IJS Quantity</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int IJS_QUANTITY_FEATURE_COUNT = 0;
-
-	/**
      * The meta object id for the '{@link java.lang.Comparable <em>EComparable</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2627,7 +2061,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEComparable()
      * @generated
      */
-	int ECOMPARABLE = 39;
+	int ECOMPARABLE = 30;
 
 	/**
      * The number of structural features of the '<em>EComparable</em>' class.
@@ -2639,124 +2073,6 @@ public interface ExperimentDataPackage extends EPackage {
 	int ECOMPARABLE_FEATURE_COUNT = 0;
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalBaseMetricDescriptionImpl <em>Numerical Base Metric Description</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalBaseMetricDescriptionImpl
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalBaseMetricDescription()
-     * @generated
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION = 40;
-
-	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__UUID = BASE_METRIC_DESCRIPTION__UUID;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__NAME = BASE_METRIC_DESCRIPTION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Textual Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION = BASE_METRIC_DESCRIPTION__TEXTUAL_DESCRIPTION;
-
-	/**
-     * The feature id for the '<em><b>Repository</b></em>' reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__REPOSITORY = BASE_METRIC_DESCRIPTION__REPOSITORY;
-
-	/**
-     * The feature id for the '<em><b>Descriptions</b></em>' container reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__DESCRIPTIONS = BASE_METRIC_DESCRIPTION__DESCRIPTIONS;
-
-	/**
-     * The feature id for the '<em><b>Capture Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__CAPTURE_TYPE = BASE_METRIC_DESCRIPTION__CAPTURE_TYPE;
-
-	/**
-     * The feature id for the '<em><b>Data Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__DATA_TYPE = BASE_METRIC_DESCRIPTION__DATA_TYPE;
-
-	/**
-     * The feature id for the '<em><b>Scale</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__SCALE = BASE_METRIC_DESCRIPTION__SCALE;
-
-	/**
-     * The feature id for the '<em><b>Monotonic</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__MONOTONIC = BASE_METRIC_DESCRIPTION__MONOTONIC;
-
-	/**
-     * The feature id for the '<em><b>Default Unit</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__DEFAULT_UNIT = BASE_METRIC_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-     * The feature id for the '<em><b>Persistence Kind</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION__PERSISTENCE_KIND = BASE_METRIC_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
-     * The number of structural features of the '<em>Numerical Base Metric Description</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NUMERICAL_BASE_METRIC_DESCRIPTION_FEATURE_COUNT = BASE_METRIC_DESCRIPTION_FEATURE_COUNT + 2;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualOrdinalStatisticsImpl <em>Textual Ordinal Statistics</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2764,7 +2080,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualOrdinalStatistics()
      * @generated
      */
-	int TEXTUAL_ORDINAL_STATISTICS = 41;
+	int TEXTUAL_ORDINAL_STATISTICS = 31;
 
 	/**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute.
@@ -2830,56 +2146,6 @@ public interface ExperimentDataPackage extends EPackage {
 	int TEXTUAL_ORDINAL_STATISTICS_FEATURE_COUNT = TEXTUAL_NOMINAL_STATISTICS_FEATURE_COUNT + 3;
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions <em>Persistence Kind Options</em>}' enum.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPersistenceKindOptions()
-     * @generated
-     */
-	int PERSISTENCE_KIND_OPTIONS = 45;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.CaptureType <em>Capture Type</em>}' enum.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.CaptureType
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getCaptureType()
-     * @generated
-     */
-	int CAPTURE_TYPE = 42;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.DataType <em>Data Type</em>}' enum.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.DataType
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataType()
-     * @generated
-     */
-	int DATA_TYPE = 46;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Scale <em>Scale</em>}' enum.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Scale
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getScale()
-     * @generated
-     */
-	int SCALE = 43;
-
-	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Monotonic <em>Monotonic</em>}' enum.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Monotonic
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMonotonic()
-     * @generated
-     */
-	int MONOTONIC = 44;
-
-	/**
      * The meta object id for the '<em>EJS Measure</em>' data type.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2887,7 +2153,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSMeasure()
      * @generated
      */
-	int EJS_MEASURE = 47;
+	int EJS_MEASURE = 32;
 
 	/**
      * The meta object id for the '<em>EJS Duration Measure</em>' data type.
@@ -2897,18 +2163,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSDurationMeasure()
      * @generated
      */
-	int EJS_DURATION_MEASURE = 48;
-
-	/**
-     * The meta object id for the '<em>EJS Unit</em>' data type.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see javax.measure.unit.Unit
-     * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSUnit()
-     * @generated
-     */
-	int EJS_UNIT = 49;
-
+	int EJS_DURATION_MEASURE = 33;
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements <em>Aggregated Measurements</em>}'.
@@ -2985,27 +2240,6 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
 	EReference getAggregatedMeasurements_Metric();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifiable <em>Identifiable</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Identifiable</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifiable
-     * @generated
-     */
-	EClass getIdentifiable();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifiable#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifiable#getUuid()
-     * @see #getIdentifiable()
-     * @generated
-     */
-	EAttribute getIdentifiable_Uuid();
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange <em>Measurements Range</em>}'.
@@ -3742,187 +2976,6 @@ public interface ExperimentDataPackage extends EPackage {
 	EReference getExperimentRun_ExperimentSetting();
 
 	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription <em>Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Base Metric Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription
-     * @generated
-     */
-	EClass getBaseMetricDescription();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getCaptureType <em>Capture Type</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Capture Type</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getCaptureType()
-     * @see #getBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getBaseMetricDescription_CaptureType();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getDataType <em>Data Type</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Data Type</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getDataType()
-     * @see #getBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getBaseMetricDescription_DataType();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getScale <em>Scale</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Scale</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getScale()
-     * @see #getBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getBaseMetricDescription_Scale();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getMonotonic <em>Monotonic</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Monotonic</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription#getMonotonic()
-     * @see #getBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getBaseMetricDescription_Monotonic();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifier <em>Identifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Identifier</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifier
-     * @generated
-     */
-	EClass getIdentifier();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifier#getLiteral <em>Literal</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Literal</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifier#getLiteral()
-     * @see #getIdentifier()
-     * @generated
-     */
-	EAttribute getIdentifier_Literal();
-
-	/**
-     * Returns the meta object for the container reference '{@link org.palladiosimulator.edp2.models.ExperimentData.Identifier#getTextualBaseMetricDescription <em>Textual Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Textual Base Metric Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Identifier#getTextualBaseMetricDescription()
-     * @see #getIdentifier()
-     * @generated
-     */
-	EReference getIdentifier_TextualBaseMetricDescription();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription <em>Textual Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Textual Base Metric Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription
-     * @generated
-     */
-	EClass getTextualBaseMetricDescription();
-
-	/**
-     * Returns the meta object for the containment reference list '{@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription#getIdentifiers <em>Identifiers</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Identifiers</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription#getIdentifiers()
-     * @see #getTextualBaseMetricDescription()
-     * @generated
-     */
-	EReference getTextualBaseMetricDescription_Identifiers();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.MetricDescription <em>Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Metric Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MetricDescription
-     * @generated
-     */
-	EClass getMetricDescription();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.Description <em>Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description
-     * @generated
-     */
-	EClass getDescription();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getName()
-     * @see #getDescription()
-     * @generated
-     */
-	EAttribute getDescription_Name();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getTextualDescription <em>Textual Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Textual Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getTextualDescription()
-     * @see #getDescription()
-     * @generated
-     */
-	EAttribute getDescription_TextualDescription();
-
-	/**
-     * Returns the meta object for the reference '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getRepository <em>Repository</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Repository</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getRepository()
-     * @see #getDescription()
-     * @generated
-     */
-	EReference getDescription_Repository();
-
-	/**
-     * Returns the meta object for the container reference '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getDescriptions <em>Descriptions</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Descriptions</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getDescriptions()
-     * @see #getDescription()
-     * @generated
-     */
-	EReference getDescription_Descriptions();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription <em>Aggregation Function Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Aggregation Function Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription
-     * @generated
-     */
-	EClass getAggregationFunctionDescription();
-
-	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics <em>Aggregation Statistics</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4180,17 +3233,6 @@ public interface ExperimentDataPackage extends EPackage {
 	EClass getIJSDuration();
 
 	/**
-     * Returns the meta object for class '{@link javax.measure.quantity.Quantity <em>IJS Quantity</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>IJS Quantity</em>'.
-     * @see javax.measure.quantity.Quantity
-     * @model instanceClass="javax.measure.quantity.Quantity"
-     * @generated
-     */
-	EClass getIJSQuantity();
-
-	/**
      * Returns the meta object for class '{@link java.lang.Comparable <em>EComparable</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4200,38 +3242,6 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
 	EClass getEComparable();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription <em>Numerical Base Metric Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Numerical Base Metric Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription
-     * @generated
-     */
-	EClass getNumericalBaseMetricDescription();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription#getDefaultUnit <em>Default Unit</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Default Unit</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription#getDefaultUnit()
-     * @see #getNumericalBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getNumericalBaseMetricDescription_DefaultUnit();
-
-	/**
-     * Returns the meta object for the attribute '{@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription#getPersistenceKind <em>Persistence Kind</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Persistence Kind</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription#getPersistenceKind()
-     * @see #getNumericalBaseMetricDescription()
-     * @generated
-     */
-	EAttribute getNumericalBaseMetricDescription_PersistenceKind();
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics <em>Textual Ordinal Statistics</em>}'.
@@ -4296,27 +3306,6 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
 	EReference getDescriptions_Description();
-
-	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription <em>Metric Set Description</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Metric Set Description</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription
-     * @generated
-     */
-	EClass getMetricSetDescription();
-
-	/**
-     * Returns the meta object for the reference list '{@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription#getSubsumedMetrics <em>Subsumed Metrics</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Subsumed Metrics</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription#getSubsumedMetrics()
-     * @see #getMetricSetDescription()
-     * @generated
-     */
-	EReference getMetricSetDescription_SubsumedMetrics();
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements <em>Identifier Based Measurements</em>}'.
@@ -4392,62 +3381,12 @@ public interface ExperimentDataPackage extends EPackage {
 	EClass getSensorFrameworkV1IdentifierBasedMeasurements();
 
 	/**
-     * Returns the meta object for enum '{@link org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions <em>Persistence Kind Options</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>Persistence Kind Options</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions
-     * @generated
-     */
-	EEnum getPersistenceKindOptions();
-
-	/**
-     * Returns the meta object for enum '{@link org.palladiosimulator.edp2.models.ExperimentData.CaptureType <em>Capture Type</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>Capture Type</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.CaptureType
-     * @generated
-     */
-	EEnum getCaptureType();
-
-	/**
-     * Returns the meta object for enum '{@link org.palladiosimulator.edp2.models.ExperimentData.DataType <em>Data Type</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>Data Type</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.DataType
-     * @generated
-     */
-	EEnum getDataType();
-
-	/**
-     * Returns the meta object for enum '{@link org.palladiosimulator.edp2.models.ExperimentData.Scale <em>Scale</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>Scale</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Scale
-     * @generated
-     */
-	EEnum getScale();
-
-	/**
-     * Returns the meta object for enum '{@link org.palladiosimulator.edp2.models.ExperimentData.Monotonic <em>Monotonic</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>Monotonic</em>'.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Monotonic
-     * @generated
-     */
-	EEnum getMonotonic();
-
-	/**
      * Returns the meta object for data type '{@link javax.measure.Measure <em>EJS Measure</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @return the meta object for data type '<em>EJS Measure</em>'.
      * @see javax.measure.Measure
-     * @model instanceClass="javax.measure.Measure" typeParameters="V Q" QBounds="org.palladiosimulator.edp2.models.ExperimentData.IJSQuantity"
+     * @model instanceClass="javax.measure.Measure" typeParameters="V Q" QBounds="org.palladiosimulator.metricspec.IJSQuantity"
      * @generated
      */
 	EDataType getEJSMeasure();
@@ -4462,17 +3401,6 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
 	EDataType getEJSDurationMeasure();
-
-	/**
-     * Returns the meta object for data type '{@link javax.measure.unit.Unit <em>EJS Unit</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for data type '<em>EJS Unit</em>'.
-     * @see javax.measure.unit.Unit
-     * @model instanceClass="javax.measure.unit.Unit" typeParameters="Q" QBounds="org.palladiosimulator.edp2.models.ExperimentData.IJSQuantity"
-     * @generated
-     */
-	EDataType getEJSUnit();
 
 	/**
      * Returns the factory that creates the instances of the model.
@@ -4553,24 +3481,6 @@ public interface ExperimentDataPackage extends EPackage {
          * @generated
          */
 		EReference AGGREGATED_MEASUREMENTS__METRIC = eINSTANCE.getAggregatedMeasurements_Metric();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifiableImpl <em>Identifiable</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifiableImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifiable()
-         * @generated
-         */
-		EClass IDENTIFIABLE = eINSTANCE.getIdentifiable();
-
-		/**
-         * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute IDENTIFIABLE__UUID = eINSTANCE.getIdentifiable_Uuid();
 
 		/**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementsRangeImpl <em>Measurements Range</em>}' class.
@@ -5149,154 +4059,6 @@ public interface ExperimentDataPackage extends EPackage {
 		EReference EXPERIMENT_RUN__EXPERIMENT_SETTING = eINSTANCE.getExperimentRun_ExperimentSetting();
 
 		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.BaseMetricDescriptionImpl <em>Base Metric Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.BaseMetricDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getBaseMetricDescription()
-         * @generated
-         */
-		EClass BASE_METRIC_DESCRIPTION = eINSTANCE.getBaseMetricDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Capture Type</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute BASE_METRIC_DESCRIPTION__CAPTURE_TYPE = eINSTANCE.getBaseMetricDescription_CaptureType();
-
-		/**
-         * The meta object literal for the '<em><b>Data Type</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute BASE_METRIC_DESCRIPTION__DATA_TYPE = eINSTANCE.getBaseMetricDescription_DataType();
-
-		/**
-         * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute BASE_METRIC_DESCRIPTION__SCALE = eINSTANCE.getBaseMetricDescription_Scale();
-
-		/**
-         * The meta object literal for the '<em><b>Monotonic</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute BASE_METRIC_DESCRIPTION__MONOTONIC = eINSTANCE.getBaseMetricDescription_Monotonic();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierImpl <em>Identifier</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifier()
-         * @generated
-         */
-		EClass IDENTIFIER = eINSTANCE.getIdentifier();
-
-		/**
-         * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute IDENTIFIER__LITERAL = eINSTANCE.getIdentifier_Literal();
-
-		/**
-         * The meta object literal for the '<em><b>Textual Base Metric Description</b></em>' container reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference IDENTIFIER__TEXTUAL_BASE_METRIC_DESCRIPTION = eINSTANCE.getIdentifier_TextualBaseMetricDescription();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualBaseMetricDescriptionImpl <em>Textual Base Metric Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualBaseMetricDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualBaseMetricDescription()
-         * @generated
-         */
-		EClass TEXTUAL_BASE_METRIC_DESCRIPTION = eINSTANCE.getTextualBaseMetricDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Identifiers</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference TEXTUAL_BASE_METRIC_DESCRIPTION__IDENTIFIERS = eINSTANCE.getTextualBaseMetricDescription_Identifiers();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MetricDescriptionImpl <em>Metric Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MetricDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMetricDescription()
-         * @generated
-         */
-		EClass METRIC_DESCRIPTION = eINSTANCE.getMetricDescription();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionImpl <em>Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.DescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDescription()
-         * @generated
-         */
-		EClass DESCRIPTION = eINSTANCE.getDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute DESCRIPTION__NAME = eINSTANCE.getDescription_Name();
-
-		/**
-         * The meta object literal for the '<em><b>Textual Description</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute DESCRIPTION__TEXTUAL_DESCRIPTION = eINSTANCE.getDescription_TextualDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Repository</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference DESCRIPTION__REPOSITORY = eINSTANCE.getDescription_Repository();
-
-		/**
-         * The meta object literal for the '<em><b>Descriptions</b></em>' container reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference DESCRIPTION__DESCRIPTIONS = eINSTANCE.getDescription_Descriptions();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationFunctionDescriptionImpl <em>Aggregation Function Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationFunctionDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregationFunctionDescription()
-         * @generated
-         */
-		EClass AGGREGATION_FUNCTION_DESCRIPTION = eINSTANCE.getAggregationFunctionDescription();
-
-		/**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl <em>Aggregation Statistics</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5505,16 +4267,6 @@ public interface ExperimentDataPackage extends EPackage {
 		EClass IJS_DURATION = eINSTANCE.getIJSDuration();
 
 		/**
-         * The meta object literal for the '{@link javax.measure.quantity.Quantity <em>IJS Quantity</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see javax.measure.quantity.Quantity
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSQuantity()
-         * @generated
-         */
-		EClass IJS_QUANTITY = eINSTANCE.getIJSQuantity();
-
-		/**
          * The meta object literal for the '{@link java.lang.Comparable <em>EComparable</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5523,32 +4275,6 @@ public interface ExperimentDataPackage extends EPackage {
          * @generated
          */
 		EClass ECOMPARABLE = eINSTANCE.getEComparable();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalBaseMetricDescriptionImpl <em>Numerical Base Metric Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalBaseMetricDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalBaseMetricDescription()
-         * @generated
-         */
-		EClass NUMERICAL_BASE_METRIC_DESCRIPTION = eINSTANCE.getNumericalBaseMetricDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Default Unit</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute NUMERICAL_BASE_METRIC_DESCRIPTION__DEFAULT_UNIT = eINSTANCE.getNumericalBaseMetricDescription_DefaultUnit();
-
-		/**
-         * The meta object literal for the '<em><b>Persistence Kind</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute NUMERICAL_BASE_METRIC_DESCRIPTION__PERSISTENCE_KIND = eINSTANCE.getNumericalBaseMetricDescription_PersistenceKind();
 
 		/**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualOrdinalStatisticsImpl <em>Textual Ordinal Statistics</em>}' class.
@@ -5601,24 +4327,6 @@ public interface ExperimentDataPackage extends EPackage {
          * @generated
          */
 		EReference DESCRIPTIONS__DESCRIPTION = eINSTANCE.getDescriptions_Description();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MetricSetDescriptionImpl <em>Metric Set Description</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MetricSetDescriptionImpl
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMetricSetDescription()
-         * @generated
-         */
-		EClass METRIC_SET_DESCRIPTION = eINSTANCE.getMetricSetDescription();
-
-		/**
-         * The meta object literal for the '<em><b>Subsumed Metrics</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference METRIC_SET_DESCRIPTION__SUBSUMED_METRICS = eINSTANCE.getMetricSetDescription_SubsumedMetrics();
 
 		/**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierBasedMeasurementsImpl <em>Identifier Based Measurements</em>}' class.
@@ -5685,56 +4393,6 @@ public interface ExperimentDataPackage extends EPackage {
 		EClass SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS = eINSTANCE.getSensorFrameworkV1IdentifierBasedMeasurements();
 
 		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions <em>Persistence Kind Options</em>}' enum.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.PersistenceKindOptions
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPersistenceKindOptions()
-         * @generated
-         */
-		EEnum PERSISTENCE_KIND_OPTIONS = eINSTANCE.getPersistenceKindOptions();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.CaptureType <em>Capture Type</em>}' enum.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.CaptureType
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getCaptureType()
-         * @generated
-         */
-		EEnum CAPTURE_TYPE = eINSTANCE.getCaptureType();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.DataType <em>Data Type</em>}' enum.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.DataType
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataType()
-         * @generated
-         */
-		EEnum DATA_TYPE = eINSTANCE.getDataType();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Scale <em>Scale</em>}' enum.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.Scale
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getScale()
-         * @generated
-         */
-		EEnum SCALE = eINSTANCE.getScale();
-
-		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.ExperimentData.Monotonic <em>Monotonic</em>}' enum.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.models.ExperimentData.Monotonic
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMonotonic()
-         * @generated
-         */
-		EEnum MONOTONIC = eINSTANCE.getMonotonic();
-
-		/**
          * The meta object literal for the '<em>EJS Measure</em>' data type.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5753,16 +4411,6 @@ public interface ExperimentDataPackage extends EPackage {
          * @generated
          */
 		EDataType EJS_DURATION_MEASURE = eINSTANCE.getEJSDurationMeasure();
-
-		/**
-         * The meta object literal for the '<em>EJS Unit</em>' data type.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see javax.measure.unit.Unit
-         * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSUnit()
-         * @generated
-         */
-		EDataType EJS_UNIT = eINSTANCE.getEJSUnit();
 
 	}
 

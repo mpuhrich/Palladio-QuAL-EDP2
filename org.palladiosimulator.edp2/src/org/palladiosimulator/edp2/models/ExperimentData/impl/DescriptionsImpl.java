@@ -12,11 +12,13 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.palladiosimulator.edp2.models.ExperimentData.Description;
 import org.palladiosimulator.edp2.models.ExperimentData.Descriptions;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.metricspec.Description;
+
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  *
  * @generated
  */
-public class DescriptionsImpl extends IdentifiableImpl implements Descriptions {
+public class DescriptionsImpl extends IdentifierImpl implements Descriptions {
 	/**
      * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -68,24 +70,9 @@ public class DescriptionsImpl extends IdentifiableImpl implements Descriptions {
      */
 	public EList<Description> getDescription() {
         if (description == null) {
-            description = new EObjectContainmentWithInverseEList<Description>(Description.class, this, ExperimentDataPackage.DESCRIPTIONS__DESCRIPTION, ExperimentDataPackage.DESCRIPTION__DESCRIPTIONS);
+            description = new EObjectContainmentEList<Description>(Description.class, this, ExperimentDataPackage.DESCRIPTIONS__DESCRIPTION);
         }
         return description;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ExperimentDataPackage.DESCRIPTIONS__DESCRIPTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDescription()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
 	/**

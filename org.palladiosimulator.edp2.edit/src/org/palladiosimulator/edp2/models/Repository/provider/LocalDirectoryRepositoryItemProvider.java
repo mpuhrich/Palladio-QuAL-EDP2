@@ -105,7 +105,7 @@ public class LocalDirectoryRepositoryItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((LocalDirectoryRepository)object).getUuid();
+        String label = ((LocalDirectoryRepository)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_LocalDirectoryRepository_type") :
             getString("_UI_LocalDirectoryRepository_type") + " " + label;

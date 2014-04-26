@@ -21,7 +21,9 @@ import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
+import org.palladiosimulator.metricspec.MetricDescription;
+
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +41,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
  *
  * @generated
  */
-public class Edp2MeasureImpl extends IdentifiableImpl implements Edp2Measure {
+public class Edp2MeasureImpl extends IdentifierImpl implements Edp2Measure {
 	/**
      * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}' reference list.
      * <!-- begin-user-doc -->
@@ -201,17 +203,17 @@ public class Edp2MeasureImpl extends IdentifiableImpl implements Edp2Measure {
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setMetric(MetricDescription newMetric) {
+    public void setMetric(MetricDescription newMetric) {
         MetricDescription oldMetric = metric;
         metric = newMetric;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EDP2_MEASURE__METRIC, oldMetric, metric));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

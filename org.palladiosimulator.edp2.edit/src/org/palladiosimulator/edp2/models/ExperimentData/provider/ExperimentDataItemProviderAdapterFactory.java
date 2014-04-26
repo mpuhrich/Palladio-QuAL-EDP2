@@ -281,52 +281,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     }
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier} instances.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected IdentifierItemProvider identifierItemProvider;
-
-	/**
-     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Identifier}.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Adapter createIdentifierAdapter() {
-        if (identifierItemProvider == null) {
-            identifierItemProvider = new IdentifierItemProvider(this);
-        }
-
-        return identifierItemProvider;
-    }
-
-	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription} instances.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected TextualBaseMetricDescriptionItemProvider textualBaseMetricDescriptionItemProvider;
-
-	/**
-     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription}.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Adapter createTextualBaseMetricDescriptionAdapter() {
-        if (textualBaseMetricDescriptionItemProvider == null) {
-            textualBaseMetricDescriptionItemProvider = new TextualBaseMetricDescriptionItemProvider(this);
-        }
-
-        return textualBaseMetricDescriptionItemProvider;
-    }
-
-	/**
      * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup} instances.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -462,29 +416,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         }
 
         return descriptionsItemProvider;
-    }
-
-	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription} instances.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected AggregationFunctionDescriptionItemProvider aggregationFunctionDescriptionItemProvider;
-
-	/**
-     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription}.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Adapter createAggregationFunctionDescriptionAdapter() {
-        if (aggregationFunctionDescriptionItemProvider == null) {
-            aggregationFunctionDescriptionItemProvider = new AggregationFunctionDescriptionItemProvider(this);
-        }
-
-        return aggregationFunctionDescriptionItemProvider;
     }
 
 	/**
@@ -649,29 +580,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     }
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription} instances.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected MetricSetDescriptionItemProvider metricSetDescriptionItemProvider;
-
-	/**
-     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription}.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Adapter createMetricSetDescriptionAdapter() {
-        if (metricSetDescriptionItemProvider == null) {
-            metricSetDescriptionItemProvider = new MetricSetDescriptionItemProvider(this);
-        }
-
-        return metricSetDescriptionItemProvider;
-    }
-
-	/**
      * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements} instances.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -761,29 +669,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         }
 
         return sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
-    }
-
-	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription} instances.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected NumericalBaseMetricDescriptionItemProvider numericalBaseMetricDescriptionItemProvider;
-
-	/**
-     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription}.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Adapter createNumericalBaseMetricDescriptionAdapter() {
-        if (numericalBaseMetricDescriptionItemProvider == null) {
-            numericalBaseMetricDescriptionItemProvider = new NumericalBaseMetricDescriptionItemProvider(this);
-        }
-
-        return numericalBaseMetricDescriptionItemProvider;
     }
 
 	/**
@@ -917,15 +802,12 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         if (fixedIntervalsItemProvider != null) fixedIntervalsItemProvider.dispose();
         if (textualNominalStatisticsItemProvider != null) textualNominalStatisticsItemProvider.dispose();
         if (textualMassDistributionItemProvider != null) textualMassDistributionItemProvider.dispose();
-        if (identifierItemProvider != null) identifierItemProvider.dispose();
-        if (textualBaseMetricDescriptionItemProvider != null) textualBaseMetricDescriptionItemProvider.dispose();
         if (experimentGroupItemProvider != null) experimentGroupItemProvider.dispose();
         if (experimentSettingItemProvider != null) experimentSettingItemProvider.dispose();
         if (experimentRunItemProvider != null) experimentRunItemProvider.dispose();
         if (measurementsItemProvider != null) measurementsItemProvider.dispose();
         if (edp2MeasureItemProvider != null) edp2MeasureItemProvider.dispose();
         if (descriptionsItemProvider != null) descriptionsItemProvider.dispose();
-        if (aggregationFunctionDescriptionItemProvider != null) aggregationFunctionDescriptionItemProvider.dispose();
         if (aggregationStatisticsItemProvider != null) aggregationStatisticsItemProvider.dispose();
         if (doubleBinaryMeasurementsItemProvider != null) doubleBinaryMeasurementsItemProvider.dispose();
         if (numericalIntervalStatisticsItemProvider != null) numericalIntervalStatisticsItemProvider.dispose();
@@ -933,12 +815,10 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         if (numericalPercentileItemProvider != null) numericalPercentileItemProvider.dispose();
         if (jsXmlMeasurementsItemProvider != null) jsXmlMeasurementsItemProvider.dispose();
         if (longBinaryMeasurementsItemProvider != null) longBinaryMeasurementsItemProvider.dispose();
-        if (metricSetDescriptionItemProvider != null) metricSetDescriptionItemProvider.dispose();
         if (identifierBasedMeasurementsItemProvider != null) identifierBasedMeasurementsItemProvider.dispose();
         if (numericalRatioStatisticsItemProvider != null) numericalRatioStatisticsItemProvider.dispose();
         if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null) sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
         if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null) sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
-        if (numericalBaseMetricDescriptionItemProvider != null) numericalBaseMetricDescriptionItemProvider.dispose();
         if (textualOrdinalStatisticsItemProvider != null) textualOrdinalStatisticsItemProvider.dispose();
     }
 

@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
+import org.palladiosimulator.metricspec.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,17 +132,17 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setIdentifier(Identifier newIdentifier) {
+    public void setIdentifier(Identifier newIdentifier) {
         Identifier oldIdentifier = identifier;
         identifier = newIdentifier;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, identifier));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

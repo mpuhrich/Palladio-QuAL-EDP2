@@ -3,7 +3,6 @@
  */
 package org.palladiosimulator.edp2.ui.views.navigator;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.databinding.viewers.TreeStructureAdvisor;
 
 

@@ -113,7 +113,7 @@ public class FixedWidthAggregatedMeasurementsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((FixedWidthAggregatedMeasurements)object).getUuid();
+        String label = ((FixedWidthAggregatedMeasurements)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_FixedWidthAggregatedMeasurements_type") :
             getString("_UI_FixedWidthAggregatedMeasurements_type") + " " + label;

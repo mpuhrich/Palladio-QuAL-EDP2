@@ -24,6 +24,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Numerical Nominal Statistics</b></em>'.
@@ -39,7 +41,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatisti
  *
  * @generated
  */
-public class NumericalNominalStatisticsImpl extends IdentifiableImpl implements NumericalNominalStatistics {
+public class NumericalNominalStatisticsImpl extends IdentifierImpl implements NumericalNominalStatistics {
 	/**
      * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}' attribute.
      * <!-- begin-user-doc -->

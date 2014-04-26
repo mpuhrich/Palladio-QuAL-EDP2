@@ -8,6 +8,8 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Raw Measurements</b></em>'.
@@ -29,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RawMeasurements extends Identifiable {
+public interface RawMeasurements extends Identifier {
 	/**
      * Returns the value of the '<em><b>Data Series</b></em>' containment reference list.
      * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries}.

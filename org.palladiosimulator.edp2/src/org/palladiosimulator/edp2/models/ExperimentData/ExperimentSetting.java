@@ -8,6 +8,8 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Experiment Setting</b></em>'.
@@ -31,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ExperimentSetting extends Identifiable, Propertyable {
+public interface ExperimentSetting extends Identifier, Propertyable {
 	/**
      * Returns the value of the '<em><b>Description</b></em>' attribute.
      * <!-- begin-user-doc -->

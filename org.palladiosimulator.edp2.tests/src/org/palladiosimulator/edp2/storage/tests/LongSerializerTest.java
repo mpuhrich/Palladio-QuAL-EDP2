@@ -3,14 +3,15 @@
  */
 package org.palladiosimulator.edp2.storage.tests;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
 import org.junit.Test;
 import org.palladiosimulator.edp2.local.file.LongSerializer;
-
-import static org.junit.Assert.*;
 
 /**
  * Test the behavior of the LongSerializer.

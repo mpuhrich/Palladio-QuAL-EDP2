@@ -7,17 +7,22 @@
 package org.palladiosimulator.edp2.models.Repository.util;
 
 import java.io.File;
-import java.util.List;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.edp2.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.MetaDao;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
-import org.palladiosimulator.edp2.models.Repository.*;
+import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
+import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
+import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
+import org.palladiosimulator.edp2.models.Repository.Repositories;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,7 +85,7 @@ public class RepositorySwitch<T> extends Switch<T> {
                 LocalDirectoryRepository localDirectoryRepository = (LocalDirectoryRepository)theEObject;
                 T result = caseLocalDirectoryRepository(localDirectoryRepository);
                 if (result == null) result = caseRepository(localDirectoryRepository);
-                if (result == null) result = caseIdentifiable(localDirectoryRepository);
+                if (result == null) result = caseIdentifier(localDirectoryRepository);
                 if (result == null) result = caseMetaDao(localDirectoryRepository);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -95,7 +100,7 @@ public class RepositorySwitch<T> extends Switch<T> {
                 LocalMemoryRepository localMemoryRepository = (LocalMemoryRepository)theEObject;
                 T result = caseLocalMemoryRepository(localMemoryRepository);
                 if (result == null) result = caseRepository(localMemoryRepository);
-                if (result == null) result = caseIdentifiable(localMemoryRepository);
+                if (result == null) result = caseIdentifier(localMemoryRepository);
                 if (result == null) result = caseMetaDao(localMemoryRepository);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -104,7 +109,7 @@ public class RepositorySwitch<T> extends Switch<T> {
                 RemoteCdoRepository remoteCdoRepository = (RemoteCdoRepository)theEObject;
                 T result = caseRemoteCdoRepository(remoteCdoRepository);
                 if (result == null) result = caseRepository(remoteCdoRepository);
-                if (result == null) result = caseIdentifiable(remoteCdoRepository);
+                if (result == null) result = caseIdentifier(remoteCdoRepository);
                 if (result == null) result = caseMetaDao(remoteCdoRepository);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -113,7 +118,7 @@ public class RepositorySwitch<T> extends Switch<T> {
                 LocalSensorFrameworkRepository localSensorFrameworkRepository = (LocalSensorFrameworkRepository)theEObject;
                 T result = caseLocalSensorFrameworkRepository(localSensorFrameworkRepository);
                 if (result == null) result = caseRepository(localSensorFrameworkRepository);
-                if (result == null) result = caseIdentifiable(localSensorFrameworkRepository);
+                if (result == null) result = caseIdentifier(localSensorFrameworkRepository);
                 if (result == null) result = caseMetaDao(localSensorFrameworkRepository);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -145,7 +150,7 @@ public class RepositorySwitch<T> extends Switch<T> {
             case RepositoryPackage.REPOSITORY: {
                 Repository repository = (Repository)theEObject;
                 T result = caseRepository(repository);
-                if (result == null) result = caseIdentifiable(repository);
+                if (result == null) result = caseIdentifier(repository);
                 if (result == null) result = caseMetaDao(repository);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -305,21 +310,21 @@ public class RepositorySwitch<T> extends Switch<T> {
     }
 
 	/**
-     * Returns the result of interpreting the object as an instance of '<em>Identifiable</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
      * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Identifiable</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-	public T caseIdentifiable(Identifiable object) {
+    public T caseIdentifier(Identifier object) {
         return null;
     }
 
-	/**
+    /**
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
      * <!-- begin-user-doc -->
 	 * This implementation returns null;

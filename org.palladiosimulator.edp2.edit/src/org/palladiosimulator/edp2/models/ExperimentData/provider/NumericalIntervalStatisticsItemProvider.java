@@ -174,7 +174,7 @@ public class NumericalIntervalStatisticsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((NumericalIntervalStatistics)object).getUuid();
+        String label = ((NumericalIntervalStatistics)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_NumericalIntervalStatistics_type") :
             getString("_UI_NumericalIntervalStatistics_type") + " " + label;

@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.measure.Measure;
+import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.measurementspec.MeasurementTupple;
+import org.palladiosimulator.metricspec.MetricSetDescription;
 
-import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
-
-public class DataTupleStream extends DataStream<DataTuple> {
+public class DataTupleStream extends DataStream<MeasurementTupple> {
 
     private final List<BasicDataStream<?,?>> childStreams;
 
@@ -18,17 +18,18 @@ public class DataTupleStream extends DataStream<DataTuple> {
         this.childStreams = Collections.unmodifiableList(childLists);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Iterator<DataTuple> iterator() {
-        final List<Iterator<Measure<?,?>>> subIterators = new ArrayList<Iterator<Measure<?,?>>>(childStreams.size());
-        for (final BasicDataStream childList : childStreams) {
+    public Iterator<MeasurementTupple> iterator() {
+        final List<Iterator<Measurement>> subIterators = new ArrayList<Iterator<Measurement>>(childStreams.size());
+        for (@SuppressWarnings("rawtypes") final BasicDataStream childList : childStreams) {
             subIterators.add(childList.iterator());
         }
-        return new Iterator<DataTuple>() {
+        return new Iterator<MeasurementTupple>() {
 
             @Override
             public boolean hasNext() {
-                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
+                for (final Iterator<Measurement> subIterator : subIterators) {
                     if (!subIterator.hasNext()) {
                         return false;
                     }
@@ -37,17 +38,17 @@ public class DataTupleStream extends DataStream<DataTuple> {
             }
 
             @Override
-            public DataTuple next() {
-                final List<Measure<?,?>> result = new ArrayList<Measure<?,?>>(subIterators.size());
-                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
+            public MeasurementTupple next() {
+                final List<Measurement> result = new ArrayList<Measurement>(subIterators.size());
+                for (final Iterator<Measurement> subIterator : subIterators) {
                     result.add(subIterator.next());
                 }
-                return new DataTuple(result,(MetricSetDescription) DataTupleStream.this.getMetricDesciption());
+                return new MeasurementTupple(result,(MetricSetDescription) DataTupleStream.this.getMetricDesciption());
             }
 
             @Override
             public void remove() {
-                for (final Iterator<Measure<?,?>> subIterator : subIterators) {
+                for (final Iterator<Measurement> subIterator : subIterators) {
                     subIterator.remove();
                 }
             }

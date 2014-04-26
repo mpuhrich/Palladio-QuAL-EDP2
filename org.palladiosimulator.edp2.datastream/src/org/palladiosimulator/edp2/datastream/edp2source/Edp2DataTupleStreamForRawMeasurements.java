@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.palladiosimulator.edp2.datastream.BasicDataStream;
 import org.palladiosimulator.edp2.datastream.DataTupleStream;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricSetDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.MetricSetDescription;
 
 public class Edp2DataTupleStreamForRawMeasurements extends DataTupleStream {
 

@@ -10,7 +10,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,22 +77,22 @@ public interface RepositoryPackage extends EPackage {
 	int REPOSITORY = 9;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int REPOSITORY__UUID = ExperimentDataPackage.IDENTIFIABLE__UUID;
+    int REPOSITORY__ID = IdentifierPackage.IDENTIFIER__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int REPOSITORY__REPOSITORIES = ExperimentDataPackage.IDENTIFIABLE_FEATURE_COUNT + 0;
+	int REPOSITORY__REPOSITORIES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list.
@@ -100,7 +101,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REPOSITORY__EXPERIMENT_GROUPS = ExperimentDataPackage.IDENTIFIABLE_FEATURE_COUNT + 1;
+	int REPOSITORY__EXPERIMENT_GROUPS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Read Only</b></em>' attribute.
@@ -109,7 +110,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REPOSITORY__READ_ONLY = ExperimentDataPackage.IDENTIFIABLE_FEATURE_COUNT + 2;
+	int REPOSITORY__READ_ONLY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list.
@@ -118,7 +119,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REPOSITORY__DESCRIPTIONS = ExperimentDataPackage.IDENTIFIABLE_FEATURE_COUNT + 3;
+	int REPOSITORY__DESCRIPTIONS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Repository</em>' class.
@@ -127,7 +128,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REPOSITORY_FEATURE_COUNT = ExperimentDataPackage.IDENTIFIABLE_FEATURE_COUNT + 4;
+	int REPOSITORY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl <em>Local Directory Repository</em>}' class.
@@ -140,15 +141,15 @@ public interface RepositoryPackage extends EPackage {
 	int LOCAL_DIRECTORY_REPOSITORY = 0;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int LOCAL_DIRECTORY_REPOSITORY__UUID = REPOSITORY__UUID;
+    int LOCAL_DIRECTORY_REPOSITORY__ID = REPOSITORY__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -232,15 +233,15 @@ public interface RepositoryPackage extends EPackage {
 	int LOCAL_MEMORY_REPOSITORY = 2;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int LOCAL_MEMORY_REPOSITORY__UUID = REPOSITORY__UUID;
+    int LOCAL_MEMORY_REPOSITORY__ID = REPOSITORY__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,15 +306,15 @@ public interface RepositoryPackage extends EPackage {
 	int REMOTE_CDO_REPOSITORY = 3;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int REMOTE_CDO_REPOSITORY__UUID = REPOSITORY__UUID;
+    int REMOTE_CDO_REPOSITORY__ID = REPOSITORY__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,15 +379,15 @@ public interface RepositoryPackage extends EPackage {
 	int LOCAL_SENSOR_FRAMEWORK_REPOSITORY = 4;
 
 	/**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int LOCAL_SENSOR_FRAMEWORK_REPOSITORY__UUID = REPOSITORY__UUID;
+    int LOCAL_SENSOR_FRAMEWORK_REPOSITORY__ID = REPOSITORY__ID;
 
-	/**
+    /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

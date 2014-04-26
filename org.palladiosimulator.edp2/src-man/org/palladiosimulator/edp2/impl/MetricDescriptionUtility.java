@@ -6,11 +6,11 @@ package org.palladiosimulator.edp2.impl;
 import javax.measure.Measure;
 
 import org.palladiosimulator.edp2.internal.BaseMetricFromMetricSwitch;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.CaptureType;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.CaptureType;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**Utility class to handle MetricDescription(s).
  * 
@@ -36,7 +36,7 @@ public class MetricDescriptionUtility {
             if (value instanceof Measure && ((Measure)value).getValue() instanceof Identifier) {
                 boolean isDefinedAtMetric = false;
                 for (final Identifier ident : ((TextualBaseMetricDescription)description).getIdentifiers()) {
-                    if (ident.getUuid().equals(((Measure<Identifier,?>)value).getValue().getUuid())) {
+                    if (ident.getId().equals(((Measure<Identifier,?>)value).getValue().getId())) {
                         isDefinedAtMetric = true;
                         break;
                     }

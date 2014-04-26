@@ -27,6 +27,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Experiment Group</b></em>'.
@@ -44,7 +46,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  *
  * @generated
  */
-public class ExperimentGroupImpl extends IdentifiableImpl implements ExperimentGroup {
+public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGroup {
 	/**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}' map.
      * <!-- begin-user-doc -->

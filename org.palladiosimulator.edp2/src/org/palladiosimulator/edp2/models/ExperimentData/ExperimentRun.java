@@ -12,6 +12,8 @@ import javax.measure.Measure;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Experiment Run</b></em>'.
@@ -39,7 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ExperimentRun extends Identifiable, Propertyable {
+public interface ExperimentRun extends Identifier, Propertyable {
 	/**
      * Returns the value of the '<em><b>Measurements</b></em>' containment reference list.
      * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}.

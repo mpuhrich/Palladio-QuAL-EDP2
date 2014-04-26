@@ -13,12 +13,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.AggregationFunctionDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
+import org.palladiosimulator.metricspec.AggregationFunctionDescription;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.MetricDescription;
+
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +40,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
  *
  * @generated
  */
-public abstract class AggregatedMeasurementsImpl extends IdentifiableImpl implements AggregatedMeasurements {
+public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implements AggregatedMeasurements {
 	/**
      * The default value of the '{@link #isValid() <em>Valid</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -208,17 +210,17 @@ public abstract class AggregatedMeasurementsImpl extends IdentifiableImpl implem
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setFunction(AggregationFunctionDescription newFunction) {
+    public void setFunction(AggregationFunctionDescription newFunction) {
         AggregationFunctionDescription oldFunction = function;
         function = newFunction;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION, oldFunction, function));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -289,17 +291,17 @@ public abstract class AggregatedMeasurementsImpl extends IdentifiableImpl implem
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setAggregationOn(BaseMetricDescription newAggregationOn) {
+    public void setAggregationOn(BaseMetricDescription newAggregationOn) {
         BaseMetricDescription oldAggregationOn = aggregationOn;
         aggregationOn = newAggregationOn;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, oldAggregationOn, aggregationOn));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -327,17 +329,17 @@ public abstract class AggregatedMeasurementsImpl extends IdentifiableImpl implem
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setMetric(MetricDescription newMetric) {
+    public void setMetric(MetricDescription newMetric) {
         MetricDescription oldMetric = metric;
         metric = newMetric;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC, oldMetric, metric));
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

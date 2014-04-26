@@ -2,8 +2,8 @@ package org.palladiosimulator.edp2.local.file;
 
 import java.util.List;
 
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 public class IdentifierSerializer implements Serializer<Identifier> {
 

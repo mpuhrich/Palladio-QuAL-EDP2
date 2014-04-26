@@ -8,9 +8,10 @@ package org.palladiosimulator.edp2.models.Repository;
 
 import org.eclipse.emf.common.util.EList;
 import org.palladiosimulator.edp2.MetaDao;
-import org.palladiosimulator.edp2.models.ExperimentData.Description;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
+import org.palladiosimulator.metricspec.Description;
+
+import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,10 +37,10 @@ import org.palladiosimulator.edp2.models.ExperimentData.Identifiable;
  * </p>
  *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository()
- * @model abstract="true" superTypes="org.palladiosimulator.edp2.models.ExperimentData.Identifiable org.palladiosimulator.edp2.models.Repository.MetaDao"
+ * @model abstract="true" superTypes="de.uka.ipd.sdq.identifier.Identifier org.palladiosimulator.edp2.models.Repository.MetaDao"
  * @generated
  */
-public interface Repository extends Identifiable, MetaDao {
+public interface Repository extends Identifier, MetaDao {
 	/**
      * Returns the value of the '<em><b>Repositories</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories <em>Available Repositories</em>}'.
@@ -96,8 +97,7 @@ public interface Repository extends Identifiable, MetaDao {
 
 	/**
      * Returns the value of the '<em><b>Descriptions</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.Description}.
-     * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.Description#getRepository <em>Repository</em>}'.
+     * The list contents are of type {@link org.palladiosimulator.metricspec.Description}.
      * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Descriptions</em>' reference list isn't clear,
@@ -106,8 +106,7 @@ public interface Repository extends Identifiable, MetaDao {
 	 * <!-- end-user-doc -->
      * @return the value of the '<em>Descriptions</em>' reference list.
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Descriptions()
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Description#getRepository
-     * @model opposite="repository" transient="true" ordered="false"
+     * @model transient="true" ordered="false"
      * @generated
      */
 	EList<Description> getDescriptions();
@@ -137,13 +136,5 @@ public interface Repository extends Identifiable, MetaDao {
      * @generated
      */
 	void resetExperimentGroups();
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @model
-     * @generated
-     */
-	void resetDescriptions();
 
 } // Repository

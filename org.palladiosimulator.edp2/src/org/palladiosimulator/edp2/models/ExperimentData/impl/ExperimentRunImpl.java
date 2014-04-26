@@ -29,6 +29,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Experiment Run</b></em>'.
@@ -46,7 +48,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
  *
  * @generated
  */
-public class ExperimentRunImpl extends IdentifiableImpl implements ExperimentRun {
+public class ExperimentRunImpl extends IdentifierImpl implements ExperimentRun {
 	/**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}' map.
      * <!-- begin-user-doc -->

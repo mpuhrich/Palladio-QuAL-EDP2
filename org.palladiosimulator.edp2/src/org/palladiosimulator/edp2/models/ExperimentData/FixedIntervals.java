@@ -8,6 +8,8 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import javax.measure.Measure;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Fixed Intervals</b></em>'.
@@ -37,7 +39,7 @@ import javax.measure.Measure;
  * @model
  * @generated
  */
-public interface FixedIntervals extends Identifiable {
+public interface FixedIntervals extends Identifier {
 	/**
      * Returns the value of the '<em><b>Lower Bound</b></em>' attribute.
      * <!-- begin-user-doc -->

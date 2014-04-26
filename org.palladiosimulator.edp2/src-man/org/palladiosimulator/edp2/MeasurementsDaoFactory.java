@@ -9,8 +9,8 @@ import javax.measure.unit.Unit;
 
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.JScienceXmlMeasurementsDao;
-import org.palladiosimulator.edp2.models.ExperimentData.Identifier;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.Identifier;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**Factory for creating DataAccessObjects (DAOs) for measurement data.
  * @author groenda

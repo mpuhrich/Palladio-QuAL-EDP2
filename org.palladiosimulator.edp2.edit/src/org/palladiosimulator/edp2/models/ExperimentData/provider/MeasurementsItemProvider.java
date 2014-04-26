@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -25,6 +26,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements} object.
  * <!-- begin-user-doc -->
@@ -32,7 +35,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
  * @generated
  */
 public class MeasurementsItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -137,7 +140,7 @@ public class MeasurementsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((Measurements)object).getUuid();
+        String label = ((Measurements)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_Measurements_type") :
             getString("_UI_Measurements_type") + " " + label;
@@ -183,6 +186,17 @@ public class MeasurementsItemProvider
             (createChildParameter
                 (ExperimentDataPackage.Literals.MEASUREMENTS__MEASUREMENTS_RANGES,
                  ExperimentDataFactory.eINSTANCE.createMeasurementsRange()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

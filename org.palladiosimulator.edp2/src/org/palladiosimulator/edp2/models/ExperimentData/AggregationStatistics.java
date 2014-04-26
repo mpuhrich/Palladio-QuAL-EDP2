@@ -6,6 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +27,7 @@ package org.palladiosimulator.edp2.models.ExperimentData;
  * @model
  * @generated
  */
-public interface AggregationStatistics extends Identifiable {
+public interface AggregationStatistics extends Identifier {
 	/**
      * Returns the value of the '<em><b>Distinct Values Before Aggregation</b></em>' attribute.
      * <!-- begin-user-doc -->

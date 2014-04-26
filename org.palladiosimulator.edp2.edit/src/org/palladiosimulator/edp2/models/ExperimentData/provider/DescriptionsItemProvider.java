@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,8 +22,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.edp2.models.ExperimentData.Descriptions;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.metricspec.MetricSpecFactory;
+
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Descriptions} object.
@@ -31,7 +34,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class DescriptionsItemProvider
-	extends IdentifiableItemProvider
+	extends IdentifierItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -112,7 +115,7 @@ public class DescriptionsItemProvider
      */
 	@Override
 	public String getText(Object object) {
-        String label = ((Descriptions)object).getUuid();
+        String label = ((Descriptions)object).getId();
         return label == null || label.length() == 0 ?
             getString("_UI_Descriptions_type") :
             getString("_UI_Descriptions_type") + " " + label;
@@ -151,22 +154,33 @@ public class DescriptionsItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (ExperimentDataPackage.Literals.DESCRIPTIONS__DESCRIPTION,
-                 ExperimentDataFactory.eINSTANCE.createTextualBaseMetricDescription()));
+                 MetricSpecFactory.eINSTANCE.createTextualBaseMetricDescription()));
 
         newChildDescriptors.add
             (createChildParameter
                 (ExperimentDataPackage.Literals.DESCRIPTIONS__DESCRIPTION,
-                 ExperimentDataFactory.eINSTANCE.createAggregationFunctionDescription()));
+                 MetricSpecFactory.eINSTANCE.createAggregationFunctionDescription()));
 
         newChildDescriptors.add
             (createChildParameter
                 (ExperimentDataPackage.Literals.DESCRIPTIONS__DESCRIPTION,
-                 ExperimentDataFactory.eINSTANCE.createMetricSetDescription()));
+                 MetricSpecFactory.eINSTANCE.createMetricSetDescription()));
 
         newChildDescriptors.add
             (createChildParameter
                 (ExperimentDataPackage.Literals.DESCRIPTIONS__DESCRIPTION,
-                 ExperimentDataFactory.eINSTANCE.createNumericalBaseMetricDescription()));
+                 MetricSpecFactory.eINSTANCE.createNumericalBaseMetricDescription()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return EDP2EditPlugin.INSTANCE;
     }
 
 }

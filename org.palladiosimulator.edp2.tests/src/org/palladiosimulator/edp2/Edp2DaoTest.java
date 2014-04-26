@@ -7,8 +7,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.palladiosimulator.edp2.Edp2Dao;
-import org.palladiosimulator.edp2.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 
 /**JUnit test for classes with Edp2Dao interface. 

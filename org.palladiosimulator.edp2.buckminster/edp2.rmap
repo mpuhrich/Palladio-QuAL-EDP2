@@ -8,6 +8,8 @@
   <rm:locator searchPathRef="kepler" failOnError="true" pattern="^org\.eclipse\..*" />
   <rm:locator searchPathRef="thirdparty" failOnError="false" pattern="^org\.jfree\..*" />
   <rm:locator searchPathRef="thirdparty" failOnError="false" pattern="^org\.apache\..*" />
+  <rm:locator pattern="^org\.palladiosimulator\.metricspec.*" searchPathRef="metricspec" failOnError="false"/>
+  <rm:locator pattern="^org\.palladiosimulator\.measurementspec.*" searchPathRef="measurementspec" failOnError="false"/>
   <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
   <rm:locator searchPathRef="orbit" failOnError="true" />
   
@@ -56,6 +58,21 @@
       <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/EDP2/trunk#{0}">
       	<bc:propertyRef key="buckminster.component" />
       </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  
+    <rm:searchPath name="metricspec">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/metricspec/nightly/"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="measurementspec">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/measurementspec/nightly/"/>
     </rm:provider>
   </rm:searchPath>
 

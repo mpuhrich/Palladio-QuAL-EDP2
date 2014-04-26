@@ -19,5 +19,3 @@ Require-Bundle: org.palladiosimulator.edp2,
  org.palladiosimulator.measurementspec
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.palladiosimulator.edp2.models.ExperimentData.tests,
- org.palladiosimulator.edp2.models.Repository.tests

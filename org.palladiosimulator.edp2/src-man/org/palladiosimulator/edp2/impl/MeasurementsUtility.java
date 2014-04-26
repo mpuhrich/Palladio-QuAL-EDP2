@@ -226,8 +226,7 @@ public class MeasurementsUtility {
         final MetricDescription metricDescription = getMetricDescriptionFromRawMeasurements(rawMeasurements);
         if (metricDescription instanceof MetricSetDescription) {
             final MetricSetDescription msd = (MetricSetDescription) metricDescription;
-            throw new UnsupportedOperationException();
-            // TDOD FIXME return (TextualBaseMetricDescription) msd.getDescriptions().getDescription().get(position);
+            return (TextualBaseMetricDescription) msd.getSubsumedMetrics().get(position);
         } else {
             return (TextualBaseMetricDescription) metricDescription;
         }

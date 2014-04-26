@@ -34,7 +34,6 @@ import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
@@ -55,6 +54,7 @@ JFreeChartEditorInput<HistogramDataset> {
      * persistence.
      */
     private static final String ELEMENT_NAME = "HistogramEditorInput";
+
     /**
      * Keys for persistence of properties
      */
@@ -68,6 +68,7 @@ JFreeChartEditorInput<HistogramDataset> {
     public final static String BAR_MARGIN_KEY = "barMargin";
     public final static String ABSOLUTE_FREQUENCY_KEY = "absoluteFrequency";
     public final static String UNIT_KEY = "unit";
+
     /**
      * Default value for <code>numberOfBins</code>
      */
@@ -83,6 +84,7 @@ JFreeChartEditorInput<HistogramDataset> {
      * the measurements are counted.
      */
     private int numberOfBins;
+
     /**
      * Option to show the value for each bar in the histogram, i.e. the absolute
      * or relative number of items contained in each bin.
@@ -130,7 +132,7 @@ JFreeChartEditorInput<HistogramDataset> {
      * Always include zero in the diagram?
      */
     private boolean includeZero;
-    private Unit jscienceUnit;
+    private Unit<?> jscienceUnit;
     /**
      * Logger for this class
      */

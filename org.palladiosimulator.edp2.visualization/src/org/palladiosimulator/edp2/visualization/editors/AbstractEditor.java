@@ -19,6 +19,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.palladiosimulator.edp2.visualization.IVisualization;
+import org.palladiosimulator.edp2.visualization.IVisualizationInput;
 import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
 import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetAdapter;
 
@@ -29,194 +30,201 @@ import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetA
  * 
  * @author Dominik Ernst
  */
-public abstract class AbstractEditor extends EditorPart implements
-		IVisualization, ITabbedPropertySheetPageContributor {
+public abstract class AbstractEditor<T extends IVisualizationInput> extends EditorPart implements
+IVisualization<T>, ITabbedPropertySheetPageContributor {
 
-	/** This editor's ID, e.g. for Referencing in extension points. */
-	public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.AbstractEditor";
+    /** This editor's ID, e.g. for Referencing in extension points. */
+    public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.AbstractEditor";
 
-	/** The input for this Editor. */
-	protected IVisualizationInputHandle input;
-	
-	/** Reference on the current {@link TabbedPropertySheetPage}. */
-	protected TabbedPropertySheetPage propertySheetPage;
-	
-	/** The composite of the parent element, for reference if a new chart is added.*/
-	protected Composite parent;
+    /** The input for this Editor. */
+    protected IVisualizationInputHandle<T> input;
 
-	/** Default constructor. */
-	public AbstractEditor() {
-	}
+    /** Reference on the current {@link TabbedPropertySheetPage}. */
+    protected TabbedPropertySheetPage propertySheetPage;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @seeorg.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime.
-	 * IProgressMonitor)
-	 */
-	@Override
-	public void doSave(IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
+    /** The composite of the parent element, for reference if a new chart is added.*/
+    protected Composite parent;
 
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.part.EditorPart#doSaveAs()
-	 */
-	@Override
-	public void doSaveAs() {
-		// TODO Auto-generated method stub
-
-	}
-	@Override
-	protected void setInput(IEditorInput input) {
-		this.input = (IVisualizationInputHandle)input;
-		this.input.addObserver(this);
-		super.setInput(input);
+    /** Default constructor. */
+    public AbstractEditor() {
     }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.part.EditorPart#init(org.eclipse.ui.IEditorSite,
-	 * org.eclipse.ui.IEditorInput)
-	 */
-	@Override
-	public void init(IEditorSite site, IEditorInput input)
-			throws PartInitException {
-		setSite(site);
-		setInput(input);
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @seeorg.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime.
+     * IProgressMonitor)
+     */
+    @Override
+    public void doSave(final IProgressMonitor monitor) {
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.part.EditorPart#isDirty()
-	 */
-	@Override
-	public boolean isDirty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.ui.part.EditorPart#doSaveAs()
+     */
+    @Override
+    public void doSaveAs() {
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.part.EditorPart#isSaveAsAllowed()
-	 */
-	@Override
-	public boolean isSaveAsAllowed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @SuppressWarnings("unchecked")
+    @Override
+    protected void setInput(final IEditorInput input) {
+        this.input = (IVisualizationInputHandle<T>)input;
+        this.input.addObserver(this);
+        super.setInput(input);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
-	 */
-	public void saveState(IMemento memento) {
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.ui.part.EditorPart#init(org.eclipse.ui.IEditorSite,
+     * org.eclipse.ui.IEditorInput)
+     */
+    @Override
+    public void init(final IEditorSite site, final IEditorInput input)
+            throws PartInitException {
+        setSite(site);
+        setInput(input);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
-	 */
-	@Override
-	public void setFocus() {
-		parent.setFocus();
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.part.EditorPart#isDirty()
+     */
+    @Override
+    public boolean isDirty() {
+        return false;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.IPersistableEditor#restoreState(org.eclipse.ui.IMemento)
-	 */
-	public void restoreState(IMemento memento) {
-		
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.part.EditorPart#isSaveAsAllowed()
+     */
+    @Override
+    public boolean isSaveAsAllowed() {
+        return false;
+    }
 
-	/**
-	 * Creates a simple selection provider, which always returns just the input.
-	 * This selectionProvider is needed for displaying of the properties view
-	 * for this editor.
-	 * 
-	 * @return a selection provider which selection is always the the editor
-	 *         input in the attribute {@link #input}
-	 */
-	protected ISelectionProvider createSelectionProvider() {
-		return new ISelectionProvider() {
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
+     */
+    @Override
+    public void saveState(final IMemento memento) {
+    }
 
-			public void addSelectionChangedListener(
-					ISelectionChangedListener listener) {
-			}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
+     */
+    @Override
+    public void setFocus() {
+        parent.setFocus();
+    }
 
-			public ISelection getSelection() {
-				return (ISelection) input;
-			}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.IPersistableEditor#restoreState(org.eclipse.ui.IMemento)
+     */
+    @Override
+    public void restoreState(final IMemento memento) {
 
-			public void removeSelectionChangedListener(
-					ISelectionChangedListener listener) {
-			}
+    }
 
-			public void setSelection(ISelection selection) {
-			}
-		};
-	}
+    /**
+     * Creates a simple selection provider, which always returns just the input.
+     * This selectionProvider is needed for displaying of the properties view
+     * for this editor.
+     * 
+     * @return a selection provider which selection is always the the editor
+     *         input in the attribute {@link #input}
+     */
+    protected ISelectionProvider createSelectionProvider() {
+        return new ISelectionProvider() {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.part.WorkbenchPart#getAdapter(java.lang.Class)
-	 */
-	@SuppressWarnings("rawtypes")
-    public Object getAdapter(Class adapter) {
-		if (adapter == IPropertySheetPage.class)
-			return new TabbedPropertySheetPage(this);
-		return super.getAdapter(adapter);
-	}
+            @Override
+            public void addSelectionChangedListener(
+                    final ISelectionChangedListener listener) {
+            }
 
-	/**
-	 * Creates a new tabbed property sheet page if no page exits, otherwise it
-	 * returns the old one.
-	 * 
-	 * @return a property sheet, saved in {@link #propertySheetPage}
-	 */
-	public IPropertySheetPage getPropertySheetPage() {
-		if (propertySheetPage == null
-				|| propertySheetPage.getControl().isDisposed()) {
-			propertySheetPage = new TabbedPropertySheetPage(
-					AbstractEditor.this, false);
-		}
-		return propertySheetPage;
-	}
+            @Override
+            public ISelection getSelection() {
+                return input;
+            }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
-	 * #getContributorId()
-	 */
-	public String getContributorId() {
-		return EDITOR_ID;
-	}
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.part.EditorPart#getEditorInput()
-	 */
-	public IEditorInput getEditorInput(){
-		return getEditorInputHandle();
-	}
-	protected void addDropSupport(Control control) {
+            @Override
+            public void removeSelectionChangedListener(
+                    final ISelectionChangedListener listener) {
+            }
 
-		int operations = DND.DROP_LINK | DND.DROP_COPY;
-		DropTarget target = new DropTarget(control, operations);
+            @Override
+            public void setSelection(final ISelection selection) {
+            }
+        };
+    }
 
-		Transfer[] transferTypes = new Transfer[] { 
-			LocalSelectionTransfer.getTransfer()
-		};
-		target.setTransfer(transferTypes);
-		target.addDropListener(new DatasourceDropTargetAdapter(
-				getEditorInputHandle()));
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.ui.part.WorkbenchPart#getAdapter(java.lang.Class)
+     */
+    @Override
+    @SuppressWarnings("rawtypes")
+    public Object getAdapter(final Class adapter) {
+        if (adapter == IPropertySheetPage.class) {
+            return new TabbedPropertySheetPage(this);
+        }
+        return super.getAdapter(adapter);
+    }
 
+    /**
+     * Creates a new tabbed property sheet page if no page exits, otherwise it
+     * returns the old one.
+     * 
+     * @return a property sheet, saved in {@link #propertySheetPage}
+     */
+    public IPropertySheetPage getPropertySheetPage() {
+        if (propertySheetPage == null
+                || propertySheetPage.getControl().isDisposed()) {
+            propertySheetPage = new TabbedPropertySheetPage(
+                    AbstractEditor.this, false);
+        }
+        return propertySheetPage;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+     * #getContributorId()
+     */
+    @Override
+    public String getContributorId() {
+        return EDITOR_ID;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.part.EditorPart#getEditorInput()
+     */
+    @Override
+    public IEditorInput getEditorInput(){
+        return getEditorInputHandle();
+    }
+
+    protected void addDropSupport(final Control control) {
+
+        final int operations = DND.DROP_LINK | DND.DROP_COPY;
+        final DropTarget target = new DropTarget(control, operations);
+
+        final Transfer[] transferTypes = new Transfer[] {
+                LocalSelectionTransfer.getTransfer()
+        };
+        target.setTransfer(transferTypes);
+        target.addDropListener(new DatasourceDropTargetAdapter(
+                getEditorInputHandle()));
+    }
 }

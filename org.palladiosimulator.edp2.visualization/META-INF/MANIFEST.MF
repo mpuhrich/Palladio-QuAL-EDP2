@@ -18,7 +18,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface.databinding,
  com.ibm.icu,
  org.eclipse.emf.databinding,
- org.apache.commons.collections15
+ org.apache.commons.collections15,
+ org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.metricspec;bundle-version="1.0.0",
+ org.palladiosimulator.measurementspec;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.palladiosimulator.edp2.visualization;

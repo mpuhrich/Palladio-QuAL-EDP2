@@ -5,11 +5,10 @@ package org.palladiosimulator.edp2.visualization.editors;
 
 import java.awt.Color;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.jface.viewers.ISelection;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.Dataset;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.visualization.IVisualizationInput;
 
 /**
@@ -21,133 +20,123 @@ import org.palladiosimulator.edp2.visualization.IVisualizationInput;
  * 
  */
 public abstract class JFreeChartEditorInput<T extends Dataset> extends
-		IVisualizationInput implements ISelection {
+IVisualizationInput implements ISelection {
 
-	/**
-	 * Keys used for persistence of properties.
-	 */
-	public static final String COLOR_KEY = "color";
-	public final static String ALPHA_KEY = "alpha";
+    /**
+     * Keys used for persistence of properties.
+     */
+    public static final String COLOR_KEY = "color";
+    public final static String ALPHA_KEY = "alpha";
 
-	/**
-	 * Constant, describing that no color is used for this input (actually, it
-	 * is white).
-	 */
-	public final static String NO_COLOR = "#ffffff";
-	/**
-	 * Color for this {@link JFreeChartEditorInput}'s data in the graph.
-	 */
-	private String hexColor;
-	/**
-	 * The alpha value for this {@link JFreeChartEditorInput}'s color.
-	 */
-	private float alpha;
+    /**
+     * Constant, describing that no color is used for this input (actually, it
+     * is white).
+     */
+    public final static String NO_COLOR = "#ffffff";
 
-	private JFreeChartEditorInputHandle handle;
+    /**
+     * Color for this {@link JFreeChartEditorInput}'s data in the graph.
+     */
+    private String hexColor;
 
-	protected T dataset;
+    /**
+     * The alpha value for this {@link JFreeChartEditorInput}'s color.
+     */
+    private float alpha;
 
-	public JFreeChartEditorInput() {
-		// set default values
-		setColor(NO_COLOR);
-		setAlpha(1.0f);
-		// add to properties
-		properties.put(COLOR_KEY, NO_COLOR);
-		properties.put(ALPHA_KEY, getAlpha());
-	}
+    private JFreeChartEditorInputHandle<T> handle;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org
-	 * .eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 * java.lang.Object)
-	 */
-	@Override
-	public void setInitializationData(IConfigurationElement config,
-			String propertyName, Object data) throws CoreException {
-		// not used/needed so far
-	}
+    protected T dataset;
 
-	/**
-	 * Returns the JFreeChart, using the specific dataset, which is required by
-	 * the implementing class.
-	 * 
-	 * @return a newly created {@link JFreeChart}
-	 */
-	public abstract JFreeChart getChart();
+    public JFreeChartEditorInput(final IDataSource source) {
+        super(source);
+        // set default values
+        setColor(NO_COLOR);
+        setAlpha(1.0f);
+        // add to properties
+        properties.put(COLOR_KEY, NO_COLOR);
+        properties.put(ALPHA_KEY, getAlpha());
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.jface.viewers.ISelection#isEmpty()
-	 */
-	@Override
-	public boolean isEmpty() {
-		return this.source != null;
-	}
+    /**
+     * Returns the JFreeChart, using the specific dataset, which is required by
+     * the implementing class.
+     * 
+     * @return a newly created {@link JFreeChart}
+     */
+    public abstract JFreeChart getChart();
 
-	/**
-	 * Generic method which returns a typed instance of the wrapper for datasets
-	 * used by JFreeCharts.
-	 * 
-	 * @param handle
-	 *            reference to the handle for all inputs
-	 * @return a typed Dataset
-	 */
-	public T getDataset() {
-		return dataset;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.jface.viewers.ISelection#isEmpty()
+     */
+    @Override
+    public boolean isEmpty() {
+        return this.getSource() != null;
+    }
 
-	public String getColor() {
-		return hexColor;
-	}
+    /**
+     * Generic method which returns a typed instance of the wrapper for datasets
+     * used by JFreeCharts.
+     * 
+     * @param handle
+     *            reference to the handle for all inputs
+     * @return a typed Dataset
+     */
+    public T getDataset() {
+        return dataset;
+    }
 
-	public void setColor(String color) {
-		Color col = Color.decode(color);
-		setColor(col);
-	}
+    public String getColor() {
+        return hexColor;
+    }
 
-	public void setColor(Color color) {
-		this.hexColor = "#" + Integer.toHexString(color.getRGB()).substring(2);
-	}
+    public void setColor(final String color) {
+        final Color col = Color.decode(color);
+        setColor(col);
+    }
 
-	/**
-	 * Method to return a default-title for the specific chart as provided by
-	 * sub-classes. Typically used during chart creation in {@link #getChart()}.
-	 * 
-	 * @return a {@link String} used as the default chart title.
-	 */
-	public abstract String getDefaultTitle();
+    public void setColor(final Color color) {
+        this.hexColor = "#" + Integer.toHexString(color.getRGB()).substring(2);
+    }
 
-	public float getAlpha() {
-		return alpha;
-	}
+    /**
+     * Method to return a default-title for the specific chart as provided by
+     * sub-classes. Typically used during chart creation in {@link #getChart()}.
+     * 
+     * @return a {@link String} used as the default chart title.
+     */
+    public abstract String getDefaultTitle();
 
-	public void setAlpha(float alpha) {
-		if (alpha < 0) {
-			this.alpha = 0.0f;
-		} else if (alpha > 1) {
-			this.alpha = 1.0f;
-		} else {
-			this.alpha = alpha;
-		}
-	}
+    public float getAlpha() {
+        return alpha;
+    }
 
-	public void setHandle(JFreeChartEditorInputHandle toHandle) {
-		this.handle = toHandle;
-	}
+    public void setAlpha(final float alpha) {
+        if (alpha < 0) {
+            this.alpha = 0.0f;
+        } else if (alpha > 1) {
+            this.alpha = 1.0f;
+        } else {
+            this.alpha = alpha;
+        }
+    }
 
-	public boolean hasHandle() {
-		return handle != null;
-	}
+    public void setHandle(final JFreeChartEditorInputHandle<T> toHandle) {
+        this.handle = toHandle;
+    }
 
-	public JFreeChartEditorInputHandle getHandle() {
-		if (handle == null)
-			throw new RuntimeException(
-					"No Handle set for this JFreeChartEditorInput!");
-		return handle;
-	}
+    public boolean hasHandle() {
+        return handle != null;
+    }
+
+    public JFreeChartEditorInputHandle<T> getHandle() {
+        if (handle == null) {
+            throw new IllegalStateException(
+                    "No Handle set for this JFreeChartEditorInput!");
+        }
+        return handle;
+    }
 
 }

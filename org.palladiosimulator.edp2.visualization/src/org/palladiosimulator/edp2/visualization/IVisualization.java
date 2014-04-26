@@ -16,9 +16,7 @@ import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
  * @author Dominik Ernst
  * 
  */
-public interface IVisualization extends IPersistableEditor,
-		ITabbedPropertySheetPageContributor, Observer {
-	
-	public IVisualizationInputHandle getEditorInputHandle();
-	
+public interface IVisualization<T extends IVisualizationInput>
+extends IPersistableEditor, ITabbedPropertySheetPageContributor, Observer {
+    public IVisualizationInputHandle<T> getEditorInputHandle();
 }

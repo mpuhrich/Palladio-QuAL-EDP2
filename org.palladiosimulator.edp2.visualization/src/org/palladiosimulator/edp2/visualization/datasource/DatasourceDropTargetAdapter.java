@@ -21,41 +21,40 @@ import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
  */
 public class DatasourceDropTargetAdapter extends DropTargetAdapter {
 
-	private final static Logger logger = Logger.getLogger(DatasourceDropTargetAdapter.class.getName());
-	private IVisualizationInputHandle inputHandle;
-	
-	public DatasourceDropTargetAdapter(IVisualizationInputHandle inputHandle){
-		this.inputHandle = inputHandle;
-	}
-	
-	public void drop(DropTargetEvent event){
-		IStructuredSelection selection = (IStructuredSelection) LocalSelectionTransfer
-		.getTransfer().getSelection();
-		if (selection.getFirstElement() instanceof RawMeasurements){
-			EDP2Source newSource = new EDP2Source((RawMeasurements) selection.getFirstElement());
-			IVisualizationInput firstInput = (IVisualizationInput) inputHandle.getInputs().get(0);
-			inputHandle.addInput(firstInput.createTransformationsChainCopy(newSource));
-			logger.log(Level.INFO, "added new input:"+newSource.getRawMeasurementsUUID());
-		}
-		logger.log(Level.INFO, "dropped element: "+selection.getFirstElement().toString());
-	}
+    private final static Logger logger = Logger.getLogger(DatasourceDropTargetAdapter.class.getName());
+    private final IVisualizationInputHandle<?> inputHandle;
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.swt.dnd.DropTargetAdapter#dragOperationChanged(org.eclipse.swt.dnd.DropTargetEvent)
-	 */
-	@Override
-	public void dragOperationChanged(DropTargetEvent event) {
-		event.detail = DND.DROP_LINK;
-	}
+    public DatasourceDropTargetAdapter(final IVisualizationInputHandle<?> inputHandle){
+        this.inputHandle = inputHandle;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.swt.dnd.DropTargetAdapter#dragEnter(org.eclipse.swt.dnd.DropTargetEvent)
-	 */
-	@Override
-	public void dragEnter(DropTargetEvent event) {
-		event.detail = DND.DROP_LINK;
-	}
-	
-	
-	
+    @Override
+    public void drop(final DropTargetEvent event){
+        final IStructuredSelection selection =
+                (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
+        if (selection.getFirstElement() instanceof RawMeasurements){
+            final EDP2Source newSource = new EDP2Source(/*(RawMeasurements) selection.getFirstElement()*/);
+            final IVisualizationInput firstInput = inputHandle.getInputs().get(0);
+            // inputHandle.addInput(firstInput.createTransformationsChainCopy(newSource));
+            logger.log(Level.INFO, "added new input:"+newSource.getRawMeasurementsUUID());
+        }
+        logger.log(Level.INFO, "dropped element: "+selection.getFirstElement().toString());
+    }
+
+    /* (non-Javadoc)
+     * @see org.eclipse.swt.dnd.DropTargetAdapter#dragOperationChanged(org.eclipse.swt.dnd.DropTargetEvent)
+     */
+    @Override
+    public void dragOperationChanged(final DropTargetEvent event) {
+        event.detail = DND.DROP_LINK;
+    }
+
+    /* (non-Javadoc)
+     * @see org.eclipse.swt.dnd.DropTargetAdapter#dragEnter(org.eclipse.swt.dnd.DropTargetEvent)
+     */
+    @Override
+    public void dragEnter(final DropTargetEvent event) {
+        event.detail = DND.DROP_LINK;
+    }
+
 }

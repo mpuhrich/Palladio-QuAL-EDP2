@@ -4,14 +4,12 @@
 package org.palladiosimulator.edp2.visualization.inputs;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
 
 import org.eclipse.ui.IMemento;
 import org.jfree.chart.ChartColor;
@@ -20,14 +18,10 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.DefaultXYItemRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
-import org.palladiosimulator.edp2.MeasurementsDao;
-import org.palladiosimulator.edp2.impl.MeasurementsUtility;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.CaptureType;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
-import org.palladiosimulator.edp2.visualization.IDataSink;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
@@ -59,8 +53,6 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
      */
     private double[][] rawData;
 
-    private JFreeChart chart;
-
     /**
      * Label for the number axis (= horizontal axis)
      */
@@ -80,10 +72,6 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
     private DefaultXYItemRenderer renderer;
 
     public ScatterPlotInput() {
-        this(null);
-    }
-
-    public ScatterPlotInput(final AbstractDataSource source) {
         setShowDomainAxisLabel(true);
         setShowRangeAxisLabel(true);
     }
@@ -95,12 +83,9 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
      * org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#canAccept
      * (org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSource)
      */
-    @Override
-    public boolean canAccept(final AbstractDataSource source) {
+    public boolean canAccept(final IDataSource source) {
         final BaseMetricDescription[] mds = MetricDescriptionUtility
-                .toBaseMetricDescriptions(source.getOutput().get(0)
-                        .getRawMeasurements().getMeasurementsRange()
-                        .getMeasurements().getMeasure().getMetric());
+                .toBaseMetricDescriptions(source.getMetricDesciption());
         boolean allDataNumeric = true;
         for (final BaseMetricDescription md : mds) {
             if (!(md.getCaptureType().equals(CaptureType.INTEGER_NUMBER) || md
@@ -108,28 +93,7 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
                 allDataNumeric = false;
             }
         }
-        return allDataNumeric && source.getOutput().size() == 2;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#
-     * getMetricRoles()
-     */
-    @Override
-    public ArrayList<MetricDescription> getMetricRoles() {
-        throw new RuntimeException("Not implemented!");
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.ui.IPersistableElement#getFactoryId()
-     */
-    @Override
-    public String getFactoryId() {
-        return ScatterPlotInputFactory.getFactoryId();
+        return allDataNumeric && mds.length == 2;
     }
 
     /*
@@ -148,7 +112,7 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
      * @see org.palladiosimulator.edp2.visualization.IDataFlow#getProperties()
      */
     @Override
-    public HashMap<String, Object> getProperties() {
+    public Map<String, Object> getProperties() {
         properties.put(ElementFactory.ELEMENT_KEY, ELEMENT_NAME);
         properties.put(RANGE_AXIS_LABEL_KEY, getRangeAxisLabel());
         properties.put(DOMAIN_AXIS_LABEL_KEY, getDomainAxisLabel());
@@ -254,31 +218,8 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
     }
 
     @Override
-    public IDataSink createCopyForSource(final AbstractDataSource source) {
-        final ScatterPlotInput copy = new ScatterPlotInput();
-        copy.setProperties(this.getProperties());
-        copy.setSource(source);
-        return copy;
-    }
-
-    @Override
     public void updateInputData() {
         final DefaultXYDataset defaultDataset = new DefaultXYDataset();
-
-        logger.log(Level.INFO, "Editor input updateDataSet begin");
-        //ArrayList<OrdinalMeasurementsDao<?,? extends Quantity>> list = new ArrayList<OrdinalMeasurementsDao<?,? extends Quantity>>();
-        //for (DataSeries data : getSource().getOutput()) {
-        //	list.add(MeasurementsUtility.getOrdinalMeasurementsDao(data));
-        //}
-        final MeasurementsDao<?,? extends Quantity> omdSeries1 = MeasurementsUtility
-                .getMeasurementsDao(getSource().getOutput().get(0));
-        final MeasurementsDao<?,? extends Quantity> omdSeries2 = MeasurementsUtility
-                .getMeasurementsDao(getSource().getOutput().get(1));
-        final List<?> list1 = omdSeries1.getMeasurements();
-
-        final List<?> list2 = omdSeries2.getMeasurements();
-
-        rawData = new double[2][list1.size()];
 
         for (int i = 0; i < list1.size(); i++) {
             final Measure x = (Measure) list1.get(i);
@@ -289,14 +230,11 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
 
         defaultDataset.addSeries(getInputName(), rawData);
 
-        setChanged();
-        notifyObservers();
         logger.log(Level.INFO, "Editor input updateDataSet end");
 
     }
 
-    @Override
-    public String getName() {
+    public String getElementName() {
         return ELEMENT_NAME;
     }
 
@@ -307,23 +245,16 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
 
     public String getDefaultDomainAxisLabel() {
         final BaseMetricDescription metric = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getSource().getMeasurementsRange()
-                        .getMeasurements().getMeasure().getMetric())[0];
+                .toBaseMetricDescriptions(getSource().getMetricDesciption())[0];
         return metric.getName() + " ["
         + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
     }
 
     public String getDefaultRangeAxisLabel() {
         final BaseMetricDescription metric = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getSource().getMeasurementsRange()
-                        .getMeasurements().getMeasure().getMetric())[1];
+                .toBaseMetricDescriptions(getSource().getMetricDesciption())[1];
         return metric.getName() + " ["
         + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
-    }
-
-    @Override
-    public boolean supportsMultipleInputs() {
-        return true;
     }
 
     public String getDomainAxisLabel() {

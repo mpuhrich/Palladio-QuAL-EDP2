@@ -2,15 +2,15 @@ package org.palladiosimulator.edp2.datastream.filter;
 
 import java.util.Iterator;
 
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.measurementspec.Measurement;
 import org.palladiosimulator.metricspec.MetricDescription;
-import org.palladiosimulator.metricspec.metricentity.MetricEntity;
 
 public abstract class AbstractAdapter
-extends MetricEntity
+extends AbstractDataSource
 implements IDataSink, IDataSource
 {
 

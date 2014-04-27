@@ -115,6 +115,11 @@ public class StoreLoadExample {
                     return new MeasurementTupple((MetricSetDescription) data.getMetricDesciption(), next);
                 }
 
+                @Override
+                public String[] getKeys() {
+                    return new String[]{};
+                }
+
             };
             final IDataStream<Measurement> dataStream = adapter.getDataStream();
             for (final Measurement tuple : dataStream) {

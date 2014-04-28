@@ -11,5 +11,6 @@ Require-Bundle: org.palladiosimulator.edp2;bundle-version="2.0.0",
  org.palladiosimulator.measurementspec,
  org.palladiosimulator.commons
 Export-Package: org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.edp2.datastream.configurable,
  org.palladiosimulator.edp2.datastream.edp2source,
  org.palladiosimulator.edp2.datastream.filter

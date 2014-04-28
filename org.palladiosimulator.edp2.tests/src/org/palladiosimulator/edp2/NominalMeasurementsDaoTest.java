@@ -18,11 +18,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.measurementspec.IdentifierMeasure;
 import org.palladiosimulator.metricspec.DataType;
 import org.palladiosimulator.metricspec.Identifier;
-import org.palladiosimulator.metricspec.Monotonic;
 import org.palladiosimulator.metricspec.Scale;
 import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 import org.palladiosimulator.metricspec.util.builder.IdentifierBuilder;
@@ -38,7 +36,6 @@ public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
     /** The ExperimentGroupDao under test. */
     @SuppressWarnings("unchecked")
     protected BinaryMeasurementsDao<Identifier,Dimensionless> onmDao = (BinaryMeasurementsDao<Identifier,Dimensionless>) dao;
-    private final ExperimentDataFactory experimentDataFactory = ExperimentDataFactory.eINSTANCE;
     protected TextualBaseMetricDescription metric;
     protected Identifier identifier;
 
@@ -50,7 +47,6 @@ public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
                 textualDescription("Test Enum").
                 scale(Scale.NOMINAL).
                 dataType(DataType.QUALITATIVE).
-                monotonic(Monotonic.NO).
                 build();
         identifier = IdentifierBuilder.newIdentifierBuilder().literal("TEST ID").
                 textualBaseMetricDescription(metric).

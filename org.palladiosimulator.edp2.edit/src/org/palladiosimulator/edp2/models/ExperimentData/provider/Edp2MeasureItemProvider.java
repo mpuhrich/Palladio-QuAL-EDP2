@@ -42,164 +42,164 @@ public class Edp2MeasureItemProvider
 		IItemLabelProvider,
 		IItemPropertySource {
 	/**
-     * This constructs an instance from a factory and a notifier.
-     * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Edp2MeasureItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
-    }
+		super(adapterFactory);
+	}
 
 	/**
-     * This returns the property descriptors for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-            addExperimentSettingsPropertyDescriptor(object);
-            addMeasuredObjectPropertyDescriptor(object);
-            addMetricPropertyDescriptor(object);
-        }
-        return itemPropertyDescriptors;
-    }
+			addExperimentSettingsPropertyDescriptor(object);
+			addMeasuredObjectPropertyDescriptor(object);
+			addMetricPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
 	/**
-     * This adds a property descriptor for the Experiment Settings feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Experiment Settings feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addExperimentSettingsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Edp2Measure_experimentSettings_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_experimentSettings_feature", "_UI_Edp2Measure_type"),
-                 ExperimentDataPackage.Literals.EDP2_MEASURE__EXPERIMENT_SETTINGS,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Edp2Measure_experimentSettings_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_experimentSettings_feature", "_UI_Edp2Measure_type"),
+				 ExperimentDataPackage.Literals.EDP2_MEASURE__EXPERIMENT_SETTINGS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
 	/**
-     * This adds a property descriptor for the Measured Object feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Measured Object feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addMeasuredObjectPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Edp2Measure_measuredObject_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_measuredObject_feature", "_UI_Edp2Measure_type"),
-                 ExperimentDataPackage.Literals.EDP2_MEASURE__MEASURED_OBJECT,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Edp2Measure_measuredObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_measuredObject_feature", "_UI_Edp2Measure_type"),
+				 ExperimentDataPackage.Literals.EDP2_MEASURE__MEASURED_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
 	/**
-     * This adds a property descriptor for the Metric feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Metric feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addMetricPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Edp2Measure_metric_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_metric_feature", "_UI_Edp2Measure_type"),
-                 ExperimentDataPackage.Literals.EDP2_MEASURE__METRIC,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Edp2Measure_metric_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edp2Measure_metric_feature", "_UI_Edp2Measure_type"),
+				 ExperimentDataPackage.Literals.EDP2_MEASURE__METRIC,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
 	/**
-     * This returns Edp2Measure.gif.
-     * <!-- begin-user-doc -->
+	 * This returns Edp2Measure.gif.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Edp2Measure"));
-    }
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Edp2Measure"));
+	}
 
 	/**
-     * This returns the label text for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String getText(Object object) {
-        String label = ((Edp2Measure)object).getId();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Edp2Measure_type") :
-            getString("_UI_Edp2Measure_type") + " " + label;
-    }
+		String label = ((Edp2Measure)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Edp2Measure_type") :
+			getString("_UI_Edp2Measure_type") + " " + label;
+	}
 
 	/**
-     * This handles model notifications by calling {@link #updateChildren} to update any cached
-     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-     * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+		updateChildren(notification);
 
-        switch (notification.getFeatureID(Edp2Measure.class)) {
-            case ExperimentDataPackage.EDP2_MEASURE__MEASURED_OBJECT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-        }
-        super.notifyChanged(notification);
-    }
+		switch (notification.getFeatureID(Edp2Measure.class)) {
+			case ExperimentDataPackage.EDP2_MEASURE__MEASURED_OBJECT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
 	/**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-     * that can be created under this object.
-     * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
-    }
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
 
     /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
-    }
+		return EDP2EditPlugin.INSTANCE;
+	}
 
 }

@@ -35,47 +35,47 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  */
 public interface Repositories extends EObject {
 	/**
-     * Returns the value of the '<em><b>Available Repositories</b></em>' containment reference list.
-     * The list contents are of type {@link org.palladiosimulator.edp2.models.Repository.Repository}.
-     * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories <em>Repositories</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Available Repositories</b></em>' containment reference list.
+	 * The list contents are of type {@link org.palladiosimulator.edp2.models.Repository.Repository}.
+	 * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories <em>Repositories</em>}'.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Available Repositories</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Available Repositories</em>' containment reference list.
-     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_AvailableRepositories()
-     * @see org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
-     * @model opposite="repositories" containment="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Available Repositories</em>' containment reference list.
+	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_AvailableRepositories()
+	 * @see org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
+	 * @model opposite="repositories" containment="true" ordered="false"
+	 * @generated
+	 */
 	EList<Repository> getAvailableRepositories();
 
 	/**
-     * Returns the value of the '<em><b>Common Resource Set</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Common Resource Set</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Common Resource Set</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Common Resource Set</em>' reference.
-     * @see #setCommonResourceSet(ResourceSet)
-     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_CommonResourceSet()
-     * @model type="org.palladiosimulator.edp2.models.Repository.IResourceSet" required="true" transient="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Common Resource Set</em>' reference.
+	 * @see #setCommonResourceSet(ResourceSet)
+	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_CommonResourceSet()
+	 * @model type="org.palladiosimulator.edp2.models.Repository.IResourceSet" required="true" transient="true" ordered="false"
+	 * @generated
+	 */
 	ResourceSet getCommonResourceSet();
 
 	/**
-     * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet <em>Common Resource Set</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet <em>Common Resource Set</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Common Resource Set</em>' reference.
-     * @see #getCommonResourceSet()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Common Resource Set</em>' reference.
+	 * @see #getCommonResourceSet()
+	 * @generated
+	 */
 	void setCommonResourceSet(ResourceSet value);
 
 } // Repositories

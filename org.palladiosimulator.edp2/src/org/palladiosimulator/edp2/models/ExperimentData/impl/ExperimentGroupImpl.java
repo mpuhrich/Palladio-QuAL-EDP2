@@ -48,391 +48,391 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  */
 public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGroup {
 	/**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}' map.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}' map.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAdditionalInformation()
+	 * @generated
+	 * @ordered
+	 */
 	protected EMap<String, Object> additionalInformation;
 
 	/**
-     * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getExperimentSettings()
-     * @generated
-     * @ordered
-     */
+	 * @see #getExperimentSettings()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<ExperimentSetting> experimentSettings;
 
 	/**
-     * The cached value of the '{@link #getMeasure() <em>Measure</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMeasure() <em>Measure</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getMeasure()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMeasure()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<Edp2Measure> measure;
 
 	/**
-     * The default value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getPurpose()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPurpose()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String PURPOSE_EDEFAULT = null;
 
 	/**
-     * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getPurpose()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPurpose()
+	 * @generated
+	 * @ordered
+	 */
 	protected String purpose = PURPOSE_EDEFAULT;
 
 	/**
-     * The cached value of the '{@link #getRepository() <em>Repository</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRepository() <em>Repository</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getRepository()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRepository()
+	 * @generated
+	 * @ordered
+	 */
 	protected Repository repository;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected ExperimentGroupImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return ExperimentDataPackage.Literals.EXPERIMENT_GROUP;
-    }
+		return ExperimentDataPackage.Literals.EXPERIMENT_GROUP;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EMap<String, Object> getAdditionalInformation() {
-        if (additionalInformation == null) {
-            additionalInformation = new EcoreEMap<String,Object>(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION);
-        }
-        return additionalInformation;
-    }
+		if (additionalInformation == null) {
+			additionalInformation = new EcoreEMap<String,Object>(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION);
+		}
+		return additionalInformation;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<ExperimentSetting> getExperimentSettings() {
-        if (experimentSettings == null) {
-            experimentSettings = new EObjectContainmentWithInverseEList<ExperimentSetting>(ExperimentSetting.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS, ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP);
-        }
-        return experimentSettings;
-    }
+		if (experimentSettings == null) {
+			experimentSettings = new EObjectContainmentWithInverseEList<ExperimentSetting>(ExperimentSetting.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS, ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP);
+		}
+		return experimentSettings;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Repository getRepository() {
-        if (repository != null && repository.eIsProxy()) {
-            InternalEObject oldRepository = (InternalEObject)repository;
-            repository = (Repository)eResolveProxy(oldRepository);
-            if (repository != oldRepository) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, repository));
-            }
-        }
-        return repository;
-    }
+		if (repository != null && repository.eIsProxy()) {
+			InternalEObject oldRepository = (InternalEObject)repository;
+			repository = (Repository)eResolveProxy(oldRepository);
+			if (repository != oldRepository) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, repository));
+			}
+		}
+		return repository;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Repository basicGetRepository() {
-        return repository;
-    }
+		return repository;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetRepository(Repository newRepository, NotificationChain msgs) {
-        Repository oldRepository = repository;
-        repository = newRepository;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, newRepository);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Repository oldRepository = repository;
+		repository = newRepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, newRepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setRepository(Repository newRepository) {
-        if (newRepository != repository) {
-            NotificationChain msgs = null;
-            if (repository != null)
-                msgs = ((InternalEObject)repository).eInverseRemove(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
-            if (newRepository != null)
-                msgs = ((InternalEObject)newRepository).eInverseAdd(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
-            msgs = basicSetRepository(newRepository, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, newRepository, newRepository));
-    }
+		if (newRepository != repository) {
+			NotificationChain msgs = null;
+			if (repository != null)
+				msgs = ((InternalEObject)repository).eInverseRemove(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
+			if (newRepository != null)
+				msgs = ((InternalEObject)newRepository).eInverseAdd(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
+			msgs = basicSetRepository(newRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, newRepository, newRepository));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getPurpose() {
-        return purpose;
-    }
+		return purpose;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setPurpose(String newPurpose) {
-        String oldPurpose = purpose;
-        purpose = newPurpose;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE, oldPurpose, purpose));
-    }
+		String oldPurpose = purpose;
+		purpose = newPurpose;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE, oldPurpose, purpose));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<Edp2Measure> getMeasure() {
-        if (measure == null) {
-            measure = new EObjectContainmentWithInverseEList<Edp2Measure>(Edp2Measure.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE, ExperimentDataPackage.EDP2_MEASURE__EXPERIMENT_GROUP);
-        }
-        return measure;
-    }
+		if (measure == null) {
+			measure = new EObjectContainmentWithInverseEList<Edp2Measure>(Edp2Measure.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE, ExperimentDataPackage.EDP2_MEASURE__EXPERIMENT_GROUP);
+		}
+		return measure;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getExperimentSettings()).basicAdd(otherEnd, msgs);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getMeasure()).basicAdd(otherEnd, msgs);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                if (repository != null)
-                    msgs = ((InternalEObject)repository).eInverseRemove(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
-                return basicSetRepository((Repository)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExperimentSettings()).basicAdd(otherEnd, msgs);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMeasure()).basicAdd(otherEnd, msgs);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				if (repository != null)
+					msgs = ((InternalEObject)repository).eInverseRemove(this, RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
+				return basicSetRepository((Repository)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-                return ((InternalEList<?>)getAdditionalInformation()).basicRemove(otherEnd, msgs);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                return ((InternalEList<?>)getExperimentSettings()).basicRemove(otherEnd, msgs);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                return ((InternalEList<?>)getMeasure()).basicRemove(otherEnd, msgs);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                return basicSetRepository(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
+				return ((InternalEList<?>)getAdditionalInformation()).basicRemove(otherEnd, msgs);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				return ((InternalEList<?>)getExperimentSettings()).basicRemove(otherEnd, msgs);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				return ((InternalEList<?>)getMeasure()).basicRemove(otherEnd, msgs);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				return basicSetRepository(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-                if (coreType) return getAdditionalInformation();
-                else return getAdditionalInformation().map();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                return getExperimentSettings();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                return getMeasure();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
-                return getPurpose();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                if (resolve) return getRepository();
-                return basicGetRepository();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
+				if (coreType) return getAdditionalInformation();
+				else return getAdditionalInformation().map();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				return getExperimentSettings();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				return getMeasure();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
+				return getPurpose();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				if (resolve) return getRepository();
+				return basicGetRepository();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-                ((EStructuralFeature.Setting)getAdditionalInformation()).set(newValue);
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                getExperimentSettings().clear();
-                getExperimentSettings().addAll((Collection<? extends ExperimentSetting>)newValue);
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                getMeasure().clear();
-                getMeasure().addAll((Collection<? extends Edp2Measure>)newValue);
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
-                setPurpose((String)newValue);
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                setRepository((Repository)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
+				((EStructuralFeature.Setting)getAdditionalInformation()).set(newValue);
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				getExperimentSettings().clear();
+				getExperimentSettings().addAll((Collection<? extends ExperimentSetting>)newValue);
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				getMeasure().clear();
+				getMeasure().addAll((Collection<? extends Edp2Measure>)newValue);
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
+				setPurpose((String)newValue);
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				setRepository((Repository)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-                getAdditionalInformation().clear();
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                getExperimentSettings().clear();
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                getMeasure().clear();
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
-                setPurpose(PURPOSE_EDEFAULT);
-                return;
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                setRepository((Repository)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
+				getAdditionalInformation().clear();
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				getExperimentSettings().clear();
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				getMeasure().clear();
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
+				setPurpose(PURPOSE_EDEFAULT);
+				return;
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				setRepository((Repository)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-                return additionalInformation != null && !additionalInformation.isEmpty();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-                return experimentSettings != null && !experimentSettings.isEmpty();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
-                return measure != null && !measure.isEmpty();
-            case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
-                return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);
-            case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-                return repository != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
+				return additionalInformation != null && !additionalInformation.isEmpty();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
+				return experimentSettings != null && !experimentSettings.isEmpty();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+				return measure != null && !measure.isEmpty();
+			case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
+				return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);
+			case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
+				return repository != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (derivedFeatureID) {
-                case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION: return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
-                default: return -1;
-            }
-        }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
+		if (baseClass == Propertyable.class) {
+			switch (derivedFeatureID) {
+				case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION: return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (baseFeatureID) {
-                case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION: return ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
+		if (baseClass == Propertyable.class) {
+			switch (baseFeatureID) {
+				case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION: return ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (purpose: ");
-        result.append(purpose);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (purpose: ");
+		result.append(purpose);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ExperimentGroupImpl

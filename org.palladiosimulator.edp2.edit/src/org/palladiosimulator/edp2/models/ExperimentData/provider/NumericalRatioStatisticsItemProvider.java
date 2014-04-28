@@ -39,155 +39,155 @@ public class NumericalRatioStatisticsItemProvider
 		IItemLabelProvider,
 		IItemPropertySource {
 	/**
-     * This constructs an instance from a factory and a notifier.
-     * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NumericalRatioStatisticsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
-    }
+		super(adapterFactory);
+	}
 
 	/**
-     * This returns the property descriptors for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-            addCoefficientOfVariationPropertyDescriptor(object);
-            addGeometricMeanPropertyDescriptor(object);
-            addHarmonicMeanPropertyDescriptor(object);
-        }
-        return itemPropertyDescriptors;
-    }
+			addCoefficientOfVariationPropertyDescriptor(object);
+			addGeometricMeanPropertyDescriptor(object);
+			addHarmonicMeanPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
 	/**
-     * This adds a property descriptor for the Coefficient Of Variation feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Coefficient Of Variation feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addCoefficientOfVariationPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_NumericalRatioStatistics_coefficientOfVariation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_coefficientOfVariation_feature", "_UI_NumericalRatioStatistics_type"),
-                 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NumericalRatioStatistics_coefficientOfVariation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_coefficientOfVariation_feature", "_UI_NumericalRatioStatistics_type"),
+				 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
 	/**
-     * This adds a property descriptor for the Geometric Mean feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Geometric Mean feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addGeometricMeanPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_NumericalRatioStatistics_geometricMean_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_geometricMean_feature", "_UI_NumericalRatioStatistics_type"),
-                 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NumericalRatioStatistics_geometricMean_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_geometricMean_feature", "_UI_NumericalRatioStatistics_type"),
+				 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
 	/**
-     * This adds a property descriptor for the Harmonic Mean feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Harmonic Mean feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected void addHarmonicMeanPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_NumericalRatioStatistics_harmonicMean_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_harmonicMean_feature", "_UI_NumericalRatioStatistics_type"),
-                 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NumericalRatioStatistics_harmonicMean_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_harmonicMean_feature", "_UI_NumericalRatioStatistics_type"),
+				 ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
 	/**
-     * This returns NumericalRatioStatistics.gif.
-     * <!-- begin-user-doc -->
+	 * This returns NumericalRatioStatistics.gif.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/NumericalRatioStatistics"));
-    }
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/NumericalRatioStatistics"));
+	}
 
 	/**
-     * This returns the label text for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String getText(Object object) {
-        String label = ((NumericalRatioStatistics)object).getId();
-        return label == null || label.length() == 0 ?
-            getString("_UI_NumericalRatioStatistics_type") :
-            getString("_UI_NumericalRatioStatistics_type") + " " + label;
-    }
+		String label = ((NumericalRatioStatistics)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_NumericalRatioStatistics_type") :
+			getString("_UI_NumericalRatioStatistics_type") + " " + label;
+	}
 
 	/**
-     * This handles model notifications by calling {@link #updateChildren} to update any cached
-     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-     * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+		updateChildren(notification);
 
-        switch (notification.getFeatureID(NumericalRatioStatistics.class)) {
-            case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
-            case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN:
-            case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-        }
-        super.notifyChanged(notification);
-    }
+		switch (notification.getFeatureID(NumericalRatioStatistics.class)) {
+			case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
+			case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN:
+			case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
 	/**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-     * that can be created under this object.
-     * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
-    }
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
 
 }

@@ -1,7 +1,9 @@
 package org.palladiosimulator.edp2.example;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -116,8 +118,8 @@ public class StoreLoadExample {
                 }
 
                 @Override
-                public String[] getKeys() {
-                    return new String[]{};
+                public Set<String> getKeys() {
+                    return Collections.EMPTY_SET;
                 }
 
             };

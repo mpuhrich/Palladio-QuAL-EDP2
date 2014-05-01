@@ -3,6 +3,7 @@ package org.palladiosimulator.edp2.datastream.configurable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.palladiosimulator.commons.designpatterns.AbstractObservable;
 
@@ -11,7 +12,7 @@ extends AbstractObservable<IPropertyListener>
 implements IPropertyConfigurable {
 
     private final Map<String,Object> properties = new HashMap<String, Object>();
-    private final String[] keys;
+    private final Set<String> keys;
 
     public PropertyConfigurable() {
         super();
@@ -24,7 +25,7 @@ implements IPropertyConfigurable {
     }
 
     @Override
-    public abstract String[] getKeys();
+    public abstract Set<String> getKeys();
 
     @Override
     public Map<String, Object> getProperties() {

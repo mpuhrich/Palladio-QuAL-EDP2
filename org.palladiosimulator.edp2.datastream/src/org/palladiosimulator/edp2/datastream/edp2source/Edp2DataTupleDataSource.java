@@ -1,5 +1,8 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
+import java.util.Collections;
+import java.util.Set;
+
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
@@ -23,8 +26,8 @@ public class Edp2DataTupleDataSource extends AbstractDataSource implements IData
     }
 
     @Override
-    public String[] getKeys() {
-        return new String[] {};
+    public Set<String> getKeys() {
+        return Collections.emptySet();
     }
 
 }

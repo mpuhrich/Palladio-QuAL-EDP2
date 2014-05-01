@@ -1,6 +1,7 @@
 package org.palladiosimulator.edp2.datastream;
 
 import java.util.Map;
+import java.util.Set;
 
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.metricspec.MetricDescription;
@@ -11,7 +12,7 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
     private final PropertyConfigurable myProperties = new PropertyConfigurable() {
 
         @Override
-        public String[] getKeys() {
+        public Set<String> getKeys() {
             return AbstractDataSource.this.getKeys();
         }
     };

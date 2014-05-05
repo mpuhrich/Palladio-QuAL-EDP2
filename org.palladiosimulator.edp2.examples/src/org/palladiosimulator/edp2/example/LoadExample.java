@@ -1,8 +1,14 @@
 package org.palladiosimulator.edp2.example;
 import java.io.File;
+import java.net.URL;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
@@ -34,6 +40,8 @@ public class LoadExample {
      * @param directory Directory to be used to store measurements.
      */
     public LoadExample(final String directory) {
+        super();
+        initPathmaps();
         ldRepo = initializeRepository(directory);
         exampleData = new ExampleData(ldRepo.getDescriptions());
     }
@@ -51,6 +59,27 @@ public class LoadExample {
          * to be opened.*/
         RepositoryManager.addRepository(RepositoryManager.getCentralRepository(), repo);
         return repo;
+    }
+
+    private void initPathmaps() {
+        final String metricSpecModel = "models/commonMetrics.metricspec";
+        final URL url = getClass().getClassLoader().getResource(metricSpecModel);
+        if (url == null) {
+            throw new RuntimeException("Error getting common metric definitions");
+        }
+        String urlString = url.toString();
+        if (!urlString.endsWith(metricSpecModel)) {
+            throw new RuntimeException("Error getting common metric definitions. Got: " + urlString);
+        }
+        urlString = urlString.substring(0, urlString.length() - metricSpecModel.length() - 1);
+        final URI uri = URI.createURI(urlString);
+        final URI target = uri.appendSegment("models").appendSegment("");
+        URIConverter.URI_MAP.put(URI.createURI("pathmap://METRIC_SPEC_MODELS/"),
+                target);
+
+        final Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+        final Map<String, Object> m = reg.getExtensionToFactoryMap();
+        m.put("metricspec", new XMIResourceFactoryImpl());
     }
 
     /**Method body which executes all necessary steps to create and store an example.

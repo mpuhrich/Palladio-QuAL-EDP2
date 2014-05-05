@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<metricspec:MetricSetDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metricspec="http://palladiosimulator.org/MetricSpec/1.0" id="_tUkRciUREd6gmLudJva2Dw" name="Demanded Time (Simulated)" textualDescription="Demanded time determined in a simulation. Consists of the simulation time when the time was demanded and the demanded time itself.">
-  <subsumedMetrics xsi:type="metricspec:NumericalBaseMetricDescription" href="_38mSASUPEd6gmLudJva2Dw.edp2desc#_38mSASUPEd6gmLudJva2Dw"/>
-  <subsumedMetrics xsi:type="metricspec:NumericalBaseMetricDescription" href="_fvNrgCUQEd6gmLudJva2Dw.edp2desc#_fvNrgCUQEd6gmLudJva2Dw"/>
-</metricspec:MetricSetDescription>

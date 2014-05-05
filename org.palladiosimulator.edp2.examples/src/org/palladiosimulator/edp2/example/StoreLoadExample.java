@@ -1,8 +1,10 @@
 package org.palladiosimulator.edp2.example;
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,6 +13,10 @@ import javax.measure.Measure;
 import javax.measure.quantity.Duration;
 import javax.measure.unit.SI;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
@@ -24,38 +30,64 @@ import org.palladiosimulator.measurementspec.MeasurementTupple;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
- * 
- */
-
-/**Contains an example how data can be stored with EDP2.
+ * Contains an example how data can be stored with EDP2.
  * @author groenda
  */
 public class StoreLoadExample {
+
     /** (Relative) name of the directory in which the data of the example will be stored. */
-    public static String DEFAULT_DIRECTORY = "LocalRepository";
+    public static final String DEFAULT_DIRECTORY = "LocalRepository";
+
     /** Logger for this class. */
-    private static Logger logger = Logger.getLogger(StoreLoadExample.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger(StoreLoadExample.class.getCanonicalName());
 
     /** Repository which is used to store the data. */
     private final LocalDirectoryRepository ldRepo;
+
     /** Helper class used to process data for the example. */
     private final ExampleData exampleData;
 
-    /**Initializes an instance of this class with the default directory as target.
+    /**
+     * Initializes an instance of this class with the default directory as target.
      */
     public StoreLoadExample() {
         this(DEFAULT_DIRECTORY);
     }
 
-    /**Initializes an instance of this class.
+    /**
+     * Initializes an instance of this class.
      * @param directory Directory to be used to store measurements.
      */
     public StoreLoadExample(final String directory) {
+        super();
+        initPathmaps();
         ldRepo = initializeRepository(directory);
-        exampleData = new ExampleData();
+        exampleData = new ExampleData(ldRepo.getDescriptions());
     }
 
-    /**Initializes the repository in which the data will be stored.
+    private void initPathmaps() {
+        final String metricSpecModel = "models/commonMetrics.metricspec";
+        final URL url = getClass().getClassLoader().getResource(metricSpecModel);
+        if (url == null) {
+            throw new RuntimeException("Error getting common metric definitions");
+        }
+        String urlString = url.toString();
+        if (!urlString.endsWith(metricSpecModel)) {
+            throw new RuntimeException("Error getting common metric definitions. Got: " + urlString);
+        }
+        urlString = urlString.substring(0, urlString.length() - metricSpecModel.length() - 1);
+        final URI uri = URI.createURI(urlString);
+        final URI target = uri.appendSegment("models").appendSegment("");
+        URIConverter.URI_MAP.put(URI.createURI("pathmap://METRIC_SPEC_MODELS/"),
+                target);
+
+        final Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+        final Map<String, Object> m = reg.getExtensionToFactoryMap();
+        m.put("metricspec", new XMIResourceFactoryImpl());
+    }
+
+    /**
+     * Initializes the repository in which the data will be stored.
      * @param directory Path to directory in which the data should be stored.
      * @return the initialized repository.
      */
@@ -71,67 +103,85 @@ public class StoreLoadExample {
     }
 
     private void createExample() {
-        // create metric descriptions and experiment meta data
-        ldRepo.getDescriptions().addAll(
-                exampleData.createExampleBaseMetricDescriptions(ldRepo
-                        .getDescriptions()));
-        ldRepo.getDescriptions().addAll(
-                exampleData.createExampleMetricSetDescriptions(ldRepo
-                        .getDescriptions()));
         exampleData.createExampleExperimentMetadata();
         ldRepo.getExperimentGroups().add(exampleData.getExampleExperimentGroup());
         // create experiment data
         exampleData.simulateExperimentRun();
     }
 
-    /**Method body which executes all necessary steps to create and store an example.
+    /**
+     * Method body which executes all necessary steps to create and store an example.
      */
     public void run() {
         try {
-            // store
-            MeasurementsUtility.ensureOpenRepository(ldRepo);
-            createExample();
-            final String storedData = exampleData.printStoredMeasurements(ldRepo);
-            System.out.println(storedData);
-            MeasurementsUtility.ensureClosedRepository(ldRepo);
-
-            // load
-            MeasurementsUtility.ensureOpenRepository(ldRepo);
-            final String readData = exampleData.printStoredMeasurements(ldRepo);
+            final String storedData = storeExperimentRun();
+            final String readData = loadExperimentRun(storedData);
             if (readData != null && !readData.equals(storedData)) {
                 throw new IllegalStateException("Stored and loaded data is not equal. Stored: " + storedData + "\nLoaded: " + readData);
             }
-            System.out.println(readData);
-
-            // stream
-            final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements());
-            final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
-
-                @Override
-                protected Measurement computeOutputFromInput(final Measurement data) {
-                    final List<Measure> next = new ArrayList<Measure>(2);
-                    for (final Measure m : data.asList()) {
-                        final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
-                        next.add(newM);
-                    }
-                    return new MeasurementTupple((MetricSetDescription) data.getMetricDesciption(), next);
-                }
-
-                @Override
-                public Set<String> getKeys() {
-                    return Collections.EMPTY_SET;
-                }
-
-            };
-            final IDataStream<Measurement> dataStream = adapter.getDataStream();
-            for (final Measurement tuple : dataStream) {
-                System.out.println(tuple);
-            }
-            dataStream.close();
-            MeasurementsUtility.ensureClosedRepository(ldRepo);
+            streamResultData();
         } catch (final DataNotAccessibleException e) {
             logger.log(Level.SEVERE, "Error while accessing the datastore.", e);
         }
+    }
+
+    /**
+     * @throws DataNotAccessibleException
+     */
+    private void streamResultData() throws DataNotAccessibleException {
+        MeasurementsUtility.ensureOpenRepository(ldRepo);
+        final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements());
+        final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
+
+            @Override
+            protected Measurement computeOutputFromInput(final Measurement data) {
+                final List<Measure> next = new ArrayList<Measure>(2);
+                for (final Measure m : data.asList()) {
+                    final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
+                    next.add(newM);
+                }
+                return new MeasurementTupple((MetricSetDescription) data.getMetricDesciption(), next);
+            }
+
+            @Override
+            public Set<String> getKeys() {
+                return Collections.EMPTY_SET;
+            }
+
+        };
+        final IDataStream<Measurement> dataStream = adapter.getDataStream();
+        for (final Measurement tuple : dataStream) {
+            System.out.println(tuple);
+        }
+        dataStream.close();
+        MeasurementsUtility.ensureClosedRepository(ldRepo);
+    }
+
+    /**
+     * @param storedData
+     * @throws DataNotAccessibleException
+     */
+    private String loadExperimentRun(final String storedData) throws DataNotAccessibleException {
+        // load
+        MeasurementsUtility.ensureOpenRepository(ldRepo);
+        final String readData = exampleData.printStoredMeasurements(ldRepo);
+        System.out.println(readData);
+        MeasurementsUtility.ensureClosedRepository(ldRepo);
+
+        return readData;
+    }
+
+    /**
+     * @return
+     * @throws DataNotAccessibleException
+     */
+    private String storeExperimentRun() throws DataNotAccessibleException {
+        MeasurementsUtility.ensureOpenRepository(ldRepo);
+        createExample();
+        final String storedData = exampleData.printStoredMeasurements(ldRepo);
+        System.out.println(storedData);
+        MeasurementsUtility.ensureClosedRepository(ldRepo);
+        return storedData;
     }
 
     /**Main method to run the example.

@@ -35,7 +35,7 @@ public class LoadExample {
      */
     public LoadExample(final String directory) {
         ldRepo = initializeRepository(directory);
-        exampleData = new ExampleData();
+        exampleData = new ExampleData(ldRepo.getDescriptions());
     }
 
     /**Initializes the repository in which the data will be stored.

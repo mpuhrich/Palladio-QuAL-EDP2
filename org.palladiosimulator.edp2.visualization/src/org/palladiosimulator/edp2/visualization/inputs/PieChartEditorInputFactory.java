@@ -5,8 +5,7 @@ import java.util.HashMap;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
-import org.palladiosimulator.edp2.visualization.FactoryConnector;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 
 public class PieChartEditorInputFactory extends ElementFactory {

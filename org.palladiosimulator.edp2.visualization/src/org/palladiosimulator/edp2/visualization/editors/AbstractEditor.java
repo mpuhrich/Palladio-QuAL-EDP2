@@ -16,11 +16,10 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
-import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.IVisualization;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
 import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetAdapter;
 
 /**
@@ -30,14 +29,15 @@ import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetA
  * 
  * @author Dominik Ernst
  */
-public abstract class AbstractEditor<T extends IVisualizationInput> extends EditorPart implements
-IVisualization<T>, ITabbedPropertySheetPageContributor {
+public abstract class AbstractEditor<T extends AbstractVisualizationSingleDatastreamInput>
+extends EditorPart
+implements IVisualization<T> {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.AbstractEditor";
 
     /** The input for this Editor. */
-    protected IVisualizationInputHandle<T> input;
+    protected AbstractVisualizationInput<T> input;
 
     /** Reference on the current {@link TabbedPropertySheetPage}. */
     protected TabbedPropertySheetPage propertySheetPage;
@@ -71,8 +71,8 @@ IVisualization<T>, ITabbedPropertySheetPageContributor {
     @SuppressWarnings("unchecked")
     @Override
     protected void setInput(final IEditorInput input) {
-        this.input = (IVisualizationInputHandle<T>)input;
-        this.input.addObserver(this);
+        this.input = (AbstractVisualizationInput<T>)input;
+        // this.input.addObserver(this);
         super.setInput(input);
     }
 
@@ -212,7 +212,7 @@ IVisualization<T>, ITabbedPropertySheetPageContributor {
      */
     @Override
     public IEditorInput getEditorInput(){
-        return getEditorInputHandle();
+        return getVisualisationInput();
     }
 
     protected void addDropSupport(final Control control) {
@@ -225,6 +225,6 @@ IVisualization<T>, ITabbedPropertySheetPageContributor {
         };
         target.setTransfer(transferTypes);
         target.addDropListener(new DatasourceDropTargetAdapter(
-                getEditorInputHandle()));
+                getVisualisationInput()));
     }
 }

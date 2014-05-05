@@ -31,8 +31,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
-import org.palladiosimulator.edp2.visualization.AbstractFilter;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 
 /**
  * @author Dominik Ernst

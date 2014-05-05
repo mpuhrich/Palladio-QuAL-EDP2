@@ -10,7 +10,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 
 /**
  * A wizard which is opened upon selection/doubleclick on an element containing Experiment Data.

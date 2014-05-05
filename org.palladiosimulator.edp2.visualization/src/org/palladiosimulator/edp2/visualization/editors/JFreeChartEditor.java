@@ -1,6 +1,5 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
-import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -10,6 +9,7 @@ import org.eclipse.ui.part.EditorPart;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.Dataset;
 import org.jfree.experimental.chart.swt.ChartComposite;
+import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
 
 /**
  * Implementation of an {@link EditorPart}, which is responsible for showing
@@ -17,7 +17,9 @@ import org.jfree.experimental.chart.swt.ChartComposite;
  * 
  * @author Dominik Ernst
  */
-public class JFreeChartEditor<T extends Dataset> extends AbstractEditor<JFreeChartEditorInput<T>> {
+public class JFreeChartEditor<T extends Dataset>
+extends AbstractEditor<JFreeChartVisualisationSingleDatastreamInput<T>>
+implements IVisualisationInputListener {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor";
@@ -28,8 +30,7 @@ public class JFreeChartEditor<T extends Dataset> extends AbstractEditor<JFreeCha
     private final static String EDITOR_NAME = "JFreeChartEditor";
 
     /** Logger for this class */
-    private static Logger logger = Logger.getLogger(JFreeChartEditor.class
-            .getCanonicalName());
+    private static Logger logger = Logger.getLogger(JFreeChartEditor.class.getCanonicalName());
 
     /** The container in which a {@link JFreeChart} is contained. */
     protected ChartComposite chartContainer;
@@ -48,29 +49,29 @@ public class JFreeChartEditor<T extends Dataset> extends AbstractEditor<JFreeCha
         this.parent = parent;
         setPartName(EDITOR_NAME);
         setTitleToolTip(EDITOR_NAME);
-        chart = getEditorInputHandle().createChart();
+        chart = getVisualisationInput().createChart();
         chartContainer = new ChartComposite(parent, SWT.NONE, chart, false);
         getSite().setSelectionProvider(createSelectionProvider());
         addDropSupport(parent);
-        getEditorInputHandle().addObserver(this);
+        getVisualisationInput().addObserver(this);
     }
 
     /**
      * Method, which describes the default updating process of the current chart.
      */
     public void updateChart() {
-        chart = getEditorInputHandle().createChart();
+        chart = getVisualisationInput().createChart();
         chartContainer.setChart(chart);
         chartContainer.forceRedraw();
     }
 
     @Override
-    public JFreeChartEditorInputHandle<T> getEditorInputHandle() {
-        return (JFreeChartEditorInputHandle<T>)input;
+    public JFreeChartVisualisationInput<T> getVisualisationInput() {
+        return (JFreeChartVisualisationInput<T>)input;
     }
 
     @Override
-    public void update(final Observable o, final Object arg) {
+    public void visualisationInputChanged() {
         logger.log(Level.INFO, "update invoked");
         updateChart();
     }

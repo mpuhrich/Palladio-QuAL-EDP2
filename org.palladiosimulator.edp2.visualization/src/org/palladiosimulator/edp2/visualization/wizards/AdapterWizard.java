@@ -8,9 +8,9 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.visualization.AbstractAdapter;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
 
 /**
  * The main wizard, which shows available adapters for the currently selected {@link RawMeasurements}. 

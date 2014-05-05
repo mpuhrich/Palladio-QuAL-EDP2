@@ -8,12 +8,12 @@ import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.MeasurementsDao;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
-import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.TextualBaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
+import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 
 /**
  * Switch to retrieve the number of measurements contained in a
@@ -23,7 +23,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitc
  * @author Dominik Ernst
  * 
  */
-public class NumberOfMeasurementsSwitch extends ExperimentDataSwitch<Integer> {
+public class NumberOfMeasurementsSwitch extends MetricSpecSwitch<Integer> {
 
     /**
      * Logger for this class.
@@ -38,7 +38,6 @@ public class NumberOfMeasurementsSwitch extends ExperimentDataSwitch<Integer> {
     }
 
     @Override
-    @SuppressWarnings({ "unchecked" })
     public Integer caseNumericalBaseMetricDescription(
             final NumericalBaseMetricDescription object) {
         final MeasurementsDao<?,? extends Quantity> dao = MeasurementsUtility

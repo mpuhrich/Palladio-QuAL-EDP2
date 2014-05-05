@@ -37,15 +37,16 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.palladiosimulator.edp2.visualization.AbstractAdapter;
-import org.palladiosimulator.edp2.visualization.AbstractFilter;
-import org.palladiosimulator.edp2.visualization.AbstractTransformation;
+import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
+import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInputHandle;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.wizards.AdapterWizard;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultSequence;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultViewsWizard;
@@ -99,9 +100,9 @@ public class TransformationsPropertySection extends AbstractPropertySection
 	private AbstractTransformation selectedTransformation;
 
 	/**
-	 * The last selected {@link IVisualizationInput} in the {@link #treeViewer}.
+	 * The last selected {@link AbstractVisualizationSingleDatastreamInput} in the {@link #treeViewer}.
 	 */
-	private IVisualizationInput selectedInput;
+	private IVisualisationSingleDatastreamInput selectedInput;
 
 	/**
 	 * The parent container.
@@ -257,7 +258,7 @@ public class TransformationsPropertySection extends AbstractPropertySection
 												i - 1));
 					}
 
-					IVisualizationInput visualization = selection
+					IVisualisationSingleDatastreamInput visualization = selection
 							.getVisualization();
 					visualization.setProperties(selection
 							.getVisualizationProperties());
@@ -267,8 +268,8 @@ public class TransformationsPropertySection extends AbstractPropertySection
 					} else {
 						visualization.setSource(adapter);
 					}
-					JFreeChartEditorInputHandle input = new JFreeChartEditorInputHandle(
-							(JFreeChartEditorInput) visualization);
+					AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> input = new JFreeChartVisualisationInput(
+							(AbstractVisualizationSingleDatastreamInput) visualization);
 
 					try {
 						IWorkbenchPage page = Activator.getDefault()
@@ -473,7 +474,7 @@ public class TransformationsPropertySection extends AbstractPropertySection
 	 */
 	public void refresh() {
 		if (editorExists()) {
-			treeViewer.setInput(editor.getEditorInputHandle());
+			treeViewer.setInput(editor.getEditorInput());
 			treeViewer.refresh();
 			treeViewer.addSelectionChangedListener(this);
 		}
@@ -488,7 +489,7 @@ public class TransformationsPropertySection extends AbstractPropertySection
 					.getFirstElement();
 			refreshPropertiesTable();
 		} else {
-			selectedInput = (IVisualizationInput) selection.getFirstElement();
+			selectedInput = (IVisualisationSingleDatastreamInput) selection.getFirstElement();
 		}
 	}
 

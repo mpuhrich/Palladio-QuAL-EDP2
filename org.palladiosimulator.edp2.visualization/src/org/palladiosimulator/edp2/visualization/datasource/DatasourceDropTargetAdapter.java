@@ -12,8 +12,8 @@ import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTargetAdapter;
 import org.eclipse.swt.dnd.DropTargetEvent;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 
 /**
  * @author Dominik Ernst
@@ -22,9 +22,9 @@ import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
 public class DatasourceDropTargetAdapter extends DropTargetAdapter {
 
     private final static Logger logger = Logger.getLogger(DatasourceDropTargetAdapter.class.getName());
-    private final IVisualizationInputHandle<?> inputHandle;
+    private final IVisualisationInput<?> inputHandle;
 
-    public DatasourceDropTargetAdapter(final IVisualizationInputHandle<?> inputHandle){
+    public DatasourceDropTargetAdapter(final IVisualisationInput<?> inputHandle){
         this.inputHandle = inputHandle;
     }
 
@@ -34,7 +34,7 @@ public class DatasourceDropTargetAdapter extends DropTargetAdapter {
                 (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
         if (selection.getFirstElement() instanceof RawMeasurements){
             final EDP2Source newSource = new EDP2Source(/*(RawMeasurements) selection.getFirstElement()*/);
-            final IVisualizationInput firstInput = inputHandle.getInputs().get(0);
+            final IVisualisationSingleDatastreamInput firstInput = inputHandle.getInputs().get(0);
             // inputHandle.addInput(firstInput.createTransformationsChainCopy(newSource));
             logger.log(Level.INFO, "added new input:"+newSource.getRawMeasurementsUUID());
         }

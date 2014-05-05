@@ -15,15 +15,15 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 import org.palladiosimulator.edp2.MeasurementsDao;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
-import org.palladiosimulator.edp2.visualization.IDataSink;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
+import org.palladiosimulator.metricspec.MetricDescription;
 
-public class PieChartEditorInput extends JFreeChartEditorInput<DefaultPieDataset> {
+public class PieChartEditorInput extends JFreeChartVisualisationSingleDatastreamInput<DefaultPieDataset> {
 
     /**
      * Name constant, which is used to identify this class in properties and persistence.

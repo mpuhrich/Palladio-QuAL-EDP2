@@ -10,24 +10,26 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
 import org.palladiosimulator.edp2.datastream.IDataSink;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 
 /**
- * Factory class for {@link JFreeChartEditorInputHandle}. Invokes persistence of
+ * Factory class for {@link JFreeChartVisualisationInput}. Invokes persistence of
  * all {@link IDataSink} elements managed by this handle.
  * 
  * @author Dominik Ernst
  * 
  */
-public class JFreeChartEditorInputHandleFactory extends ElementFactory
+public class JFreeChartEditorInputHandleFactory
+extends ElementFactory
 implements IElementFactory {
 
     /**
      * Logger for this class.
      */
-    private static Logger logger = Logger
-            .getLogger(JFreeChartEditorInputHandleFactory.class
-                    .getCanonicalName());
+    private static Logger logger = Logger.getLogger(JFreeChartEditorInputHandleFactory.class
+            .getCanonicalName());
     /**
      * The factory's ID. Must match the ID specified in the extension point
      * "org.eclipse.ui.elementFactories".
@@ -65,7 +67,7 @@ implements IElementFactory {
      */
     @Override
     public IAdaptable createElement(IMemento memento) {
-        final JFreeChartEditorInputHandle handle = new JFreeChartEditorInputHandle();
+        final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> handle = new JFreeChartVisualisationInput();
         memento = memento.getChild(ELEMENT_NAME);
 
         // first restore the inputs managed by this handle (required that way
@@ -76,7 +78,7 @@ implements IElementFactory {
             final String elementName = subMemento.getString(INPUT_NAME_KEY);
             final Object inputFactory = FactoryConnector.instance.getAdapter(
                     elementName, IElementFactory.class);
-            final JFreeChartEditorInput createdInput = (JFreeChartEditorInput) ((IElementFactory) inputFactory)
+            final AbstractVisualizationSingleDatastreamInput createdInput = (AbstractVisualizationSingleDatastreamInput) ((IElementFactory) inputFactory)
                     .createElement(subMemento);
             handle.addInput(createdInput);
         }
@@ -89,7 +91,7 @@ implements IElementFactory {
     }
 
     public static void saveState(IMemento memento,
-            final JFreeChartEditorInputHandle<?> inputHandle) {
+            final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> inputHandle) {
         // get name of element to be persisted from its properties
         final Map<String, Object> props = inputHandle.getProperties();
         // create a new node in the memento named after the element

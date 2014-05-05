@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 
 import javax.measure.Measure;
 
-import org.eclipse.ui.IMemento;
 import org.jfree.chart.ChartColor;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -20,18 +19,18 @@ import org.jfree.chart.renderer.xy.DefaultXYItemRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
-import org.palladiosimulator.edp2.models.ExperimentData.BaseMetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.CaptureType;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.CaptureType;
 
 /**
  * Input for {@link ScatterPlotEditor} .
  * 
  * @author Dominik Ernst, Roland Richter
  */
-public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
+public class ScatterPlotInput extends JFreeChartVisualisationSingleDatastreamInput<DefaultXYDataset> {
 
     /**
      * Name constant, which is used to identify this class in properties.
@@ -45,11 +44,10 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
     /**
      * Logger for this class.
      */
-    private final static Logger logger = Logger
-            .getLogger(ScatterPlotInput.class.getCanonicalName());
+    private final static Logger logger = Logger.getLogger(ScatterPlotInput.class.getCanonicalName());
 
     /**
-     * The data provided by this {@link JFreeChartEditorInput}
+     * The data provided by this {@link JFreeChartVisualisationSingleDatastreamInput}
      */
     private double[][] rawData;
 
@@ -96,21 +94,6 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
         return allDataNumeric && mds.length == 2;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
-     */
-    @Override
-    public void saveState(final IMemento memento) {
-        ScatterPlotInputFactory.saveState(memento, this);
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.palladiosimulator.edp2.visualization.IDataFlow#getProperties()
-     */
     @Override
     public Map<String, Object> getProperties() {
         properties.put(ElementFactory.ELEMENT_KEY, ELEMENT_NAME);
@@ -182,14 +165,14 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
         // properties
         for (int i = 0; i < getHandle().getInputsSize(); i++) {
             final float alpha = Float.parseFloat(getHandle().getInputProperties()[i]
-                    .get(JFreeChartEditorInput.ALPHA_KEY).toString());
+                    .get(JFreeChartVisualisationSingleDatastreamInput.ALPHA_KEY).toString());
             if ((getHandle().getInputProperties()[i]
-                    .get(JFreeChartEditorInput.COLOR_KEY) != null)
+                    .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY) != null)
                     && !getHandle().getInputProperties()[i]
-                            .get(JFreeChartEditorInput.COLOR_KEY).toString()
+                            .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString()
                             .equals(NO_COLOR)) {
                 final Color opaque = Color.decode(getHandle().getInputProperties()[i]
-                        .get(JFreeChartEditorInput.COLOR_KEY).toString());
+                        .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString());
 
                 final float[] comp = opaque.getRGBColorComponents(null);
                 final Color col = new Color(comp[0], comp[1], comp[2], alpha);
@@ -231,7 +214,6 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
         defaultDataset.addSeries(getInputName(), rawData);
 
         logger.log(Level.INFO, "Editor input updateDataSet end");
-
     }
 
     public String getElementName() {
@@ -245,14 +227,14 @@ public class ScatterPlotInput extends JFreeChartEditorInput<DefaultXYDataset> {
 
     public String getDefaultDomainAxisLabel() {
         final BaseMetricDescription metric = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getSource().getMetricDesciption())[0];
+                .toBaseMetricDescriptions(getDataSource().getMetricDesciption())[0];
         return metric.getName() + " ["
         + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
     }
 
     public String getDefaultRangeAxisLabel() {
         final BaseMetricDescription metric = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getSource().getMetricDesciption())[1];
+                .toBaseMetricDescriptions(getDataSource().getMetricDesciption())[1];
         return metric.getName() + " ["
         + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
     }

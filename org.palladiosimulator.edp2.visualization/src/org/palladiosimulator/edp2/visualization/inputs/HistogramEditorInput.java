@@ -29,14 +29,15 @@ import org.jfree.data.statistics.HistogramDataset;
 import org.jfree.data.statistics.HistogramType;
 import org.jfree.ui.TextAnchor;
 import org.palladiosimulator.edp2.MeasurementsDao;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
-import org.palladiosimulator.edp2.models.ExperimentData.MetricDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.NumericalBaseMetricDescription;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
+import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 
 /**
  * A HistogramEditorInput displays the input data in a histogram either in
@@ -47,7 +48,7 @@ import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
  * 
  */
 public class HistogramEditorInput extends
-JFreeChartEditorInput<HistogramDataset> {
+JFreeChartVisualisationSingleDatastreamInput<HistogramDataset> {
 
     /**
      * Name constant, which is used to identify this class in properties and
@@ -104,7 +105,7 @@ JFreeChartEditorInput<HistogramDataset> {
      */
     private double barMargin;
     /**
-     * The specific type of data provided by this {@link JFreeChartEditorInput}.
+     * The specific type of data provided by this {@link JFreeChartVisualisationSingleDatastreamInput}.
      */
     private double[] data;
 
@@ -433,14 +434,14 @@ JFreeChartEditorInput<HistogramDataset> {
         // properties
         for (int i = 0; i < getHandle().getInputsSize(); i++) {
             final float alpha = Float.parseFloat(getHandle().getInputProperties()[i]
-                    .get(JFreeChartEditorInput.ALPHA_KEY).toString());
+                    .get(JFreeChartVisualisationSingleDatastreamInput.ALPHA_KEY).toString());
             if ((getHandle().getInputProperties()[i]
-                    .get(JFreeChartEditorInput.COLOR_KEY) != null)
+                    .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY) != null)
                     && !getHandle().getInputProperties()[i]
-                            .get(JFreeChartEditorInput.COLOR_KEY).toString()
+                            .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString()
                             .equals(NO_COLOR)) {
                 final Color opaque = Color.decode(getHandle().getInputProperties()[i]
-                        .get(JFreeChartEditorInput.COLOR_KEY).toString());
+                        .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString());
 
                 final float[] comp = opaque.getRGBColorComponents(null);
                 final Color col = new Color(comp[0], comp[1], comp[2], alpha);

@@ -26,11 +26,11 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.palladiosimulator.edp2.visualization.AbstractAdapter;
-import org.palladiosimulator.edp2.visualization.AbstractDataSource;
-import org.palladiosimulator.edp2.visualization.AbstractFilter;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
+import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 
 /**
  * Implementation of a {@link WizardPage} that contains a list of visualizations
@@ -50,7 +50,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements
 
 	/**
 	 * Extension points for registered {@link AbstractFilter}, {@link AbstractAdapter} and
-	 * {@link JFreeChartEditorInput}-elements
+	 * {@link JFreeChartVisualisationSingleDatastreamInput}-elements
 	 */
 	private final static String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
 	private final static String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
@@ -122,7 +122,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements
 
 	/**
 	 * Checks the registered plugins for filters {@link AbstractFilter}, adapters
-	 * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartEditorInput}. Then
+	 * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartVisualisationSingleDatastreamInput}. Then
 	 * creates the basic combinations, objects of the type
 	 * {@link DefaultSequence} from these.
 	 */
@@ -169,12 +169,12 @@ public class SelectDefaultCombinationsPage extends WizardPage implements
 		final IConfigurationElement[] visualizationExtensions = Platform
 				.getExtensionRegistry().getConfigurationElementsFor(
 						SINK_EXTENSION_POINT_ID);
-		HashMap<String, IVisualizationInput> charts = new HashMap<String, IVisualizationInput>();
+		HashMap<String, AbstractVisualizationSingleDatastreamInput> charts = new HashMap<String, AbstractVisualizationSingleDatastreamInput>();
 		for (IConfigurationElement e : visualizationExtensions) {
 			try {
 				id = e.getAttribute(ID_ATTRIBUTE);
 				o = e.createExecutableExtension(CLASS_ATTRIBUTE);
-				charts.put(id, (JFreeChartEditorInput) o);
+				charts.put(id, (AbstractVisualizationSingleDatastreamInput) o);
 			} catch (CoreException e1) {
 				logger
 						.log(Level.SEVERE,

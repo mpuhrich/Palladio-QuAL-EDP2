@@ -7,9 +7,8 @@ import java.util.ArrayList;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.palladiosimulator.edp2.visualization.AbstractTransformation;
-import org.palladiosimulator.edp2.visualization.IDataSink;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
+import org.palladiosimulator.edp2.datastream.IDataSink;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 
 /**
  * @author Dominik Ernst
@@ -43,7 +42,7 @@ public class InputSelectionContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		return ((IVisualizationInputHandle)inputElement).getInputs().toArray();
+		return ((IVisualisationInput)inputElement).getInputs().toArray();
 	}
 
 	@Override

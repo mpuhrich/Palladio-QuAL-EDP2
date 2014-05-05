@@ -1,7 +1,5 @@
 package org.palladiosimulator.edp2.visualization;
 
-import java.util.Observer;
-
 import org.eclipse.ui.IPersistableEditor;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
@@ -16,7 +14,8 @@ import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
  * @author Dominik Ernst
  * 
  */
-public interface IVisualization<T extends IVisualizationInput>
-extends IPersistableEditor, ITabbedPropertySheetPageContributor, Observer {
-    public IVisualizationInputHandle<T> getEditorInputHandle();
+public interface IVisualization<T extends IVisualisationSingleDatastreamInput>
+extends IPersistableEditor, ITabbedPropertySheetPageContributor
+{
+    public IVisualisationInput<T> getVisualisationInput();
 }

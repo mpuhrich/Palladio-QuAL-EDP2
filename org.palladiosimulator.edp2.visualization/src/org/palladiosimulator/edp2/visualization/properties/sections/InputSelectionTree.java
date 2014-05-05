@@ -9,9 +9,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Tree;
-import org.palladiosimulator.edp2.visualization.IDataSink;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
+import org.palladiosimulator.edp2.datastream.IDataSink;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 
 public class InputSelectionTree extends Composite {
 
@@ -30,8 +30,8 @@ public class InputSelectionTree extends Composite {
 		}
 
 		public String getText(Object element) {
-			if (element instanceof IVisualizationInput)
-				return ((IVisualizationInput) element).getInputName();
+			if (element instanceof IVisualisationSingleDatastreamInput)
+				return ((IVisualisationSingleDatastreamInput) element).getInputName();
 			else if (element instanceof IDataSink)
 				return ((IDataSink) element).getName();
 			return super.getText(element);
@@ -45,7 +45,7 @@ public class InputSelectionTree extends Composite {
 	 * @param style
 	 */
 	public InputSelectionTree(Composite parent, int style,
-			IVisualizationInputHandle inputHandle) {
+			IVisualisationInput inputHandle) {
 		super(parent, SWT.EMBEDDED);
 		setLayout(new GridLayout(1, false));
 

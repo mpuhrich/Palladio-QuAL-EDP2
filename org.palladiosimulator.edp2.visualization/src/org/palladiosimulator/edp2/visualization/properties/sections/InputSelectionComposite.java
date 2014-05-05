@@ -14,8 +14,9 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInputHandle;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 
 public class InputSelectionComposite extends Composite {
 
@@ -30,7 +31,7 @@ public class InputSelectionComposite extends Composite {
 	 * @param style
 	 */
 	public InputSelectionComposite(Composite parent, int style,
-			final JFreeChartEditorInputHandle inputHandle) {
+			final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> inputHandle) {
 		super(parent, SWT.EMBEDDED);
 		addDisposeListener(new DisposeListener() {
 			public void widgetDisposed(DisposeEvent e) {
@@ -71,7 +72,7 @@ public class InputSelectionComposite extends Composite {
 
 			@Override
 			public String getText(Object element) {
-				return ((JFreeChartEditorInput) element).getInputName();
+				return ((AbstractVisualizationSingleDatastreamInput) element).getInputName();
 			}
 
 			@Override
@@ -82,7 +83,7 @@ public class InputSelectionComposite extends Composite {
 		});
 		comboViewer.setContentProvider(new IStructuredContentProvider() {
 			public Object[] getElements(Object inputElement) {
-				return ((JFreeChartEditorInputHandle) inputElement).getInputs()
+				return ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>) inputElement).getInputs()
 						.toArray();
 			}
 
@@ -100,10 +101,10 @@ public class InputSelectionComposite extends Composite {
 
 	}
 
-	public JFreeChartEditorInput getInputSelection() {
+	public AbstractVisualizationSingleDatastreamInput getInputSelection() {
 		IStructuredSelection selection = (IStructuredSelection) comboViewer
 				.getSelection();
-		return (JFreeChartEditorInput) selection.getFirstElement();
+		return (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
 	}
 
 	/**

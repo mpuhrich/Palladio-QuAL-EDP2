@@ -9,18 +9,19 @@ import org.eclipse.jface.viewers.ISelection;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.Dataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 
 /**
- * Basic implementation of an {@link IVisualizationInput} for the
+ * Basic implementation of an {@link AbstractVisualizationSingleDatastreamInput} for the
  * {@link JFreeChartEditor}. Responsible for common properties of any subclass
- * of {@link JFreeChartEditorInput}.
+ * of {@link JFreeChartVisualisationSingleDatastreamInput}.
  * 
  * @author Dominik Ernst
  * 
  */
-public abstract class JFreeChartEditorInput<T extends Dataset> extends
-IVisualizationInput implements ISelection {
+public abstract class JFreeChartVisualisationSingleDatastreamInput<T extends Dataset>
+extends AbstractVisualizationSingleDatastreamInput
+implements ISelection {
 
     /**
      * Keys used for persistence of properties.
@@ -35,20 +36,22 @@ IVisualizationInput implements ISelection {
     public final static String NO_COLOR = "#ffffff";
 
     /**
-     * Color for this {@link JFreeChartEditorInput}'s data in the graph.
+     * Color for this {@link JFreeChartVisualisationSingleDatastreamInput}'s data in the graph.
      */
     private String hexColor;
 
     /**
-     * The alpha value for this {@link JFreeChartEditorInput}'s color.
+     * The alpha value for this {@link JFreeChartVisualisationSingleDatastreamInput}'s color.
      */
     private float alpha;
 
-    private JFreeChartEditorInputHandle<T> handle;
-
     protected T dataset;
 
-    public JFreeChartEditorInput(final IDataSource source) {
+    public JFreeChartVisualisationSingleDatastreamInput() {
+        this(null);
+    }
+
+    public JFreeChartVisualisationSingleDatastreamInput(final IDataSource source) {
         super(source);
         // set default values
         setColor(NO_COLOR);
@@ -73,14 +76,14 @@ IVisualizationInput implements ISelection {
      */
     @Override
     public boolean isEmpty() {
-        return this.getSource() != null;
+        return this.getDataSource() != null;
     }
 
     /**
      * Generic method which returns a typed instance of the wrapper for datasets
      * used by JFreeCharts.
      * 
-     * @param handle
+     * @param parentInput
      *            reference to the handle for all inputs
      * @return a typed Dataset
      */
@@ -121,22 +124,6 @@ IVisualizationInput implements ISelection {
         } else {
             this.alpha = alpha;
         }
-    }
-
-    public void setHandle(final JFreeChartEditorInputHandle<T> toHandle) {
-        this.handle = toHandle;
-    }
-
-    public boolean hasHandle() {
-        return handle != null;
-    }
-
-    public JFreeChartEditorInputHandle<T> getHandle() {
-        if (handle == null) {
-            throw new IllegalStateException(
-                    "No Handle set for this JFreeChartEditorInput!");
-        }
-        return handle;
     }
 
 }

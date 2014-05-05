@@ -5,7 +5,7 @@ package org.palladiosimulator.edp2.visualization.properties.sections;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 
 /**
  * @author Dominik Ernst
@@ -31,7 +31,7 @@ public class InputElementContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		return ((IVisualizationInputHandle)inputElement).getInputs().toArray();
+		return ((IVisualisationInput)inputElement).getInputs().toArray();
 	}
 
 	@Override

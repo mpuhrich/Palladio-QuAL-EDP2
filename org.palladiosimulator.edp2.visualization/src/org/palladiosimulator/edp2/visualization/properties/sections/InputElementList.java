@@ -8,8 +8,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.List;
-import org.palladiosimulator.edp2.visualization.IVisualizationInput;
-import org.palladiosimulator.edp2.visualization.IVisualizationInputHandle;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 
 public class InputElementList extends Composite {
 
@@ -28,8 +28,8 @@ public class InputElementList extends Composite {
 		}
 
 		public String getText(Object element) {
-			if (element instanceof IVisualizationInput)
-				return ((IVisualizationInput) element).getInputName();
+			if (element instanceof IVisualisationSingleDatastreamInput)
+				return ((IVisualisationSingleDatastreamInput) element).getInputName();
 			return super.getText(element);
 		}
 	}
@@ -41,7 +41,7 @@ public class InputElementList extends Composite {
 	 * @param style
 	 */
 	public InputElementList(Composite parent, int style,
-			IVisualizationInputHandle inputHandle) {
+			IVisualisationInput inputHandle) {
 		super(parent, SWT.EMBEDDED);
 		setLayout(new GridLayout(1, false));
 

@@ -66,7 +66,7 @@ public class StoreLoadExample {
     }
 
     private void initPathmaps() {
-        final String metricSpecModel = "models/commonMetrics.metricspec";
+        final String metricSpecModel = "commonMetrics.metricspec";
         final URL url = getClass().getClassLoader().getResource(metricSpecModel);
         if (url == null) {
             throw new RuntimeException("Error getting common metric definitions");
@@ -77,7 +77,7 @@ public class StoreLoadExample {
         }
         urlString = urlString.substring(0, urlString.length() - metricSpecModel.length() - 1);
         final URI uri = URI.createURI(urlString);
-        final URI target = uri.appendSegment("models").appendSegment("");
+        final URI target = uri.appendSegment("");
         URIConverter.URI_MAP.put(URI.createURI("pathmap://METRIC_SPEC_MODELS/"),
                 target);
 

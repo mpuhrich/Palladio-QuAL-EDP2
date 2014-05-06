@@ -9,6 +9,9 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
@@ -17,7 +20,8 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * 
  * @author Sebastian Lehrig
  */
-public class Navigator extends ViewPart{
+public class Navigator extends ViewPart implements ITabbedPropertySheetPageContributor {
+
     /** The shown tree. */
     private TreeViewer treeViewer;
 
@@ -67,5 +71,18 @@ public class Navigator extends ViewPart{
     @Override
     public void setFocus() {
         treeViewer.getTree().setFocus();
+    }
+
+    @Override
+    public String getContributorId() {
+        return "org.palladiosimulator.edp2.ui.propertyContributor";
+    }
+
+    @Override
+    public Object getAdapter(final Class adapter) {
+        if (adapter == IPropertySheetPage.class) {
+            return new TabbedPropertySheetPage(this);
+        }
+        return super.getAdapter(adapter);
     }
 }

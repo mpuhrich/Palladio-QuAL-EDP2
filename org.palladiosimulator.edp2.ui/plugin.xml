@@ -73,5 +73,40 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.palladiosimulator.edp2.ui.propertyContributor"
+            labelProvider="org.palladiosimulator.edp2.ui.properties.EMFLabelProvider">
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.palladiosimulator.edp2.ui.propertyContributor">
+         <propertyTab
+               category="advanced"
+               id="org.palladiosimulator.edp2.ui.advancedTab"
+               label="Advanced">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.palladiosimulator.edp2.ui.propertyContributor">
+         <propertySection
+               class="org.palladiosimulator.edp2.ui.properties.EMFPropertySection"
+               id="org.palladiosimulator.edp2.ui.advancedSection"
+               tab="org.palladiosimulator.edp2.ui.advancedTab">
+            <input
+                  type="org.eclipse.emf.ecore.EObject">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
 
 </plugin>

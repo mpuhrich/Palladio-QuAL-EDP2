@@ -6,10 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.palladiosimulator.measurementspec.Measurement;
-import org.palladiosimulator.measurementspec.MeasurementTupple;
+import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
-public class DataTupleStream extends DataStream<MeasurementTupple> {
+public class DataTupleStream extends DataStream<MeasurementTuple> {
 
     private final List<BasicDataStream<?,?>> childStreams;
 
@@ -20,12 +20,12 @@ public class DataTupleStream extends DataStream<MeasurementTupple> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public Iterator<MeasurementTupple> iterator() {
+    public Iterator<MeasurementTuple> iterator() {
         final List<Iterator<Measurement>> subIterators = new ArrayList<Iterator<Measurement>>(childStreams.size());
         for (@SuppressWarnings("rawtypes") final BasicDataStream childList : childStreams) {
             subIterators.add(childList.iterator());
         }
-        return new Iterator<MeasurementTupple>() {
+        return new Iterator<MeasurementTuple>() {
 
             @Override
             public boolean hasNext() {
@@ -38,12 +38,12 @@ public class DataTupleStream extends DataStream<MeasurementTupple> {
             }
 
             @Override
-            public MeasurementTupple next() {
+            public MeasurementTuple next() {
                 final List<Measurement> result = new ArrayList<Measurement>(subIterators.size());
                 for (final Iterator<Measurement> subIterator : subIterators) {
                     result.add(subIterator.next());
                 }
-                return new MeasurementTupple(result,(MetricSetDescription) DataTupleStream.this.getMetricDesciption());
+                return new MeasurementTuple(result,(MetricSetDescription) DataTupleStream.this.getMetricDesciption());
             }
 
             @Override

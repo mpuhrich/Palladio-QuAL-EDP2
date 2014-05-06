@@ -26,7 +26,7 @@ import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.measurementspec.Measurement;
-import org.palladiosimulator.measurementspec.MeasurementTupple;
+import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
@@ -140,7 +140,7 @@ public class StoreLoadExample {
                     final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
                     next.add(newM);
                 }
-                return new MeasurementTupple((MetricSetDescription) data.getMetricDesciption(), next);
+                return new MeasurementTuple((MetricSetDescription) data.getMetricDesciption(), next);
             }
 
             @Override

@@ -40,23 +40,23 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  */
 public class RepositoriesImpl extends EObjectImpl implements Repositories {
 	/**
-	 * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAvailableRepositories()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAvailableRepositories()
+     * @generated
+     * @ordered
+     */
 	protected EList<Repository> availableRepositories;
 
 	/**
-	 * The cached value of the '{@link #getCommonResourceSet() <em>Common Resource Set</em>}' reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getCommonResourceSet() <em>Common Resource Set</em>}' reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCommonResourceSet()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getCommonResourceSet()
+     * @generated
+     * @ordered
+     */
 	protected ResourceSet commonResourceSet;
 
 	/**
@@ -72,26 +72,26 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return RepositoryPackage.Literals.REPOSITORIES;
-	}
+        return RepositoryPackage.Literals.REPOSITORIES;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Repository> getAvailableRepositories() {
-		if (availableRepositories == null) {
-			availableRepositories = new EObjectContainmentWithInverseEList<Repository>(Repository.class, this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, RepositoryPackage.REPOSITORY__REPOSITORIES);
-		}
-		return availableRepositories;
-	}
+        if (availableRepositories == null) {
+            availableRepositories = new EObjectContainmentWithInverseEList<Repository>(Repository.class, this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, RepositoryPackage.REPOSITORY__REPOSITORIES);
+        }
+        return availableRepositories;
+    }
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,124 +112,124 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ResourceSet basicGetCommonResourceSet() {
-		return commonResourceSet;
-	}
+        return commonResourceSet;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setCommonResourceSet(ResourceSet newCommonResourceSet) {
-		ResourceSet oldCommonResourceSet = commonResourceSet;
-		commonResourceSet = newCommonResourceSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, commonResourceSet));
-	}
+        ResourceSet oldCommonResourceSet = commonResourceSet;
+        commonResourceSet = newCommonResourceSet;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, commonResourceSet));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAvailableRepositories()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getAvailableRepositories()).basicAdd(otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				return ((InternalEList<?>)getAvailableRepositories()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                return ((InternalEList<?>)getAvailableRepositories()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				return getAvailableRepositories();
-			case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-				if (resolve) return getCommonResourceSet();
-				return basicGetCommonResourceSet();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                return getAvailableRepositories();
+            case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
+                if (resolve) return getCommonResourceSet();
+                return basicGetCommonResourceSet();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				getAvailableRepositories().clear();
-				getAvailableRepositories().addAll((Collection<? extends Repository>)newValue);
-				return;
-			case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-				setCommonResourceSet((ResourceSet)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                getAvailableRepositories().clear();
+                getAvailableRepositories().addAll((Collection<? extends Repository>)newValue);
+                return;
+            case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
+                setCommonResourceSet((ResourceSet)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				getAvailableRepositories().clear();
-				return;
-			case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-				setCommonResourceSet((ResourceSet)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                getAvailableRepositories().clear();
+                return;
+            case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
+                setCommonResourceSet((ResourceSet)null);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-				return availableRepositories != null && !availableRepositories.isEmpty();
-			case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-				return commonResourceSet != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
+                return availableRepositories != null && !availableRepositories.isEmpty();
+            case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
+                return commonResourceSet != null;
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //RepositoriesImpl

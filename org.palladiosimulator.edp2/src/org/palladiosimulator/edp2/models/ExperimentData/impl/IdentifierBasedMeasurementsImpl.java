@@ -21,22 +21,22 @@ import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasureme
  */
 public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements IdentifierBasedMeasurements {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected IdentifierBasedMeasurementsImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ExperimentDataPackage.Literals.IDENTIFIER_BASED_MEASUREMENTS;
-	}
+        return ExperimentDataPackage.Literals.IDENTIFIER_BASED_MEASUREMENTS;
+    }
 
 } //IdentifierBasedMeasurementsImpl

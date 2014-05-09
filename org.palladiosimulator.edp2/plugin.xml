@@ -22,4 +22,12 @@
             genModel="model/EDP2.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated EDP2 -->
+      <package
+            uri="http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1"
+            class="org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage"
+            genModel="model/EDP2.genmodel"/>
+   </extension>
+
 </plugin>

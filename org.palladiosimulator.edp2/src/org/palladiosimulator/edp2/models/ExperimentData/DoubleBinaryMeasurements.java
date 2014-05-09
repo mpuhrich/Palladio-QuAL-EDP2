@@ -31,29 +31,29 @@ import javax.measure.unit.Unit;
  */
 public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries {
 	/**
-	 * Returns the value of the '<em><b>Storage Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Storage Unit</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Storage Unit</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Storage Unit</em>' attribute.
-	 * @see #setStorageUnit(Unit)
-	 * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDoubleBinaryMeasurements_StorageUnit()
-	 * @model dataType="org.palladiosimulator.metricspec.EJSUnit<Q>" required="true" ordered="false"
-	 * @generated
-	 */
+     * @return the value of the '<em>Storage Unit</em>' attribute.
+     * @see #setStorageUnit(Unit)
+     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDoubleBinaryMeasurements_StorageUnit()
+     * @model dataType="org.palladiosimulator.metricspec.EJSUnit<Q>" required="true" ordered="false"
+     * @generated
+     */
 	Unit<Q> getStorageUnit();
 
 	/**
-	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements#getStorageUnit <em>Storage Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements#getStorageUnit <em>Storage Unit</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Storage Unit</em>' attribute.
-	 * @see #getStorageUnit()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Storage Unit</em>' attribute.
+     * @see #getStorageUnit()
+     * @generated
+     */
     void setStorageUnit(Unit<Q> value);
 
 } // DoubleBinaryMeasurements

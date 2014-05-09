@@ -9,13 +9,22 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.palladiosimulator.edp2.models.ExperimentData.provider,
- org.palladiosimulator.edp2.models.Repository.provider
+ org.palladiosimulator.edp2.models.Repository.provider,
+ org.palladiosimulator.edp2.models.measuringpoint.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.edp2;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
  de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
  org.palladiosimulator.metricspec;visibility:=reexport,
- org.palladiosimulator.metricspec.edit;visibility:=reexport
+ org.palladiosimulator.metricspec.edit;visibility:=reexport,
+ de.uka.ipd.sdq.pcm;visibility:=reexport,
+ de.uka.ipd.sdq.pcm.edit;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction.edit;visibility:=reexport,
+ de.uka.ipd.sdq.stoex;visibility:=reexport,
+ de.uka.ipd.sdq.stoex.edit;visibility:=reexport,
+ de.uka.ipd.sdq.units;visibility:=reexport,
+ de.uka.ipd.sdq.units.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: javax.measure

@@ -32,256 +32,256 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatist
  */
 public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsImpl implements NumericalIntervalStatistics {
 	/**
-	 * The cached value of the '{@link #getArithmethicMean() <em>Arithmethic Mean</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getArithmethicMean() <em>Arithmethic Mean</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArithmethicMean()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getArithmethicMean()
+     * @generated
+     * @ordered
+     */
 	protected Measure arithmethicMean;
 
 	/**
-	 * The cached value of the '{@link #getVariance() <em>Variance</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getVariance() <em>Variance</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariance()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getVariance()
+     * @generated
+     * @ordered
+     */
 	protected Measure variance;
 
 	/**
-	 * The cached value of the '{@link #getStandardDeviation() <em>Standard Deviation</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getStandardDeviation() <em>Standard Deviation</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStandardDeviation()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getStandardDeviation()
+     * @generated
+     * @ordered
+     */
 	protected Measure standardDeviation;
 
 	/**
-	 * The cached value of the '{@link #getSum() <em>Sum</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getSum() <em>Sum</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSum()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getSum()
+     * @generated
+     * @ordered
+     */
 	protected Measure sum;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected NumericalIntervalStatisticsImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS;
-	}
+        return ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Measure getArithmethicMean() {
-		return arithmethicMean;
-	}
+        return arithmethicMean;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setArithmethicMean(Measure newArithmethicMean) {
-		Measure oldArithmethicMean = arithmethicMean;
-		arithmethicMean = newArithmethicMean;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN, oldArithmethicMean, arithmethicMean));
-	}
+        Measure oldArithmethicMean = arithmethicMean;
+        arithmethicMean = newArithmethicMean;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN, oldArithmethicMean, arithmethicMean));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Measure getVariance() {
-		return variance;
-	}
+        return variance;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setVariance(Measure newVariance) {
-		Measure oldVariance = variance;
-		variance = newVariance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE, oldVariance, variance));
-	}
+        Measure oldVariance = variance;
+        variance = newVariance;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE, oldVariance, variance));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Measure getStandardDeviation() {
-		return standardDeviation;
-	}
+        return standardDeviation;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setStandardDeviation(Measure newStandardDeviation) {
-		Measure oldStandardDeviation = standardDeviation;
-		standardDeviation = newStandardDeviation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION, oldStandardDeviation, standardDeviation));
-	}
+        Measure oldStandardDeviation = standardDeviation;
+        standardDeviation = newStandardDeviation;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION, oldStandardDeviation, standardDeviation));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Measure getSum() {
-		return sum;
-	}
+        return sum;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setSum(Measure newSum) {
-		Measure oldSum = sum;
-		sum = newSum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM, oldSum, sum));
-	}
+        Measure oldSum = sum;
+        sum = newSum;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM, oldSum, sum));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
-				return getArithmethicMean();
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
-				return getVariance();
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
-				return getStandardDeviation();
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
-				return getSum();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
+                return getArithmethicMean();
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
+                return getVariance();
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
+                return getStandardDeviation();
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
+                return getSum();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
-				setArithmethicMean((Measure)newValue);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
-				setVariance((Measure)newValue);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
-				setStandardDeviation((Measure)newValue);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
-				setSum((Measure)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
+                setArithmethicMean((Measure)newValue);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
+                setVariance((Measure)newValue);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
+                setStandardDeviation((Measure)newValue);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
+                setSum((Measure)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
-				setArithmethicMean((Measure)null);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
-				setVariance((Measure)null);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
-				setStandardDeviation((Measure)null);
-				return;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
-				setSum((Measure)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
+                setArithmethicMean((Measure)null);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
+                setVariance((Measure)null);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
+                setStandardDeviation((Measure)null);
+                return;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
+                setSum((Measure)null);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
-				return arithmethicMean != null;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
-				return variance != null;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
-				return standardDeviation != null;
-			case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
-				return sum != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
+                return arithmethicMean != null;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
+                return variance != null;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION:
+                return standardDeviation != null;
+            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__SUM:
+                return sum != null;
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (arithmethicMean: ");
-		result.append(arithmethicMean);
-		result.append(", variance: ");
-		result.append(variance);
-		result.append(", standardDeviation: ");
-		result.append(standardDeviation);
-		result.append(", sum: ");
-		result.append(sum);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (arithmethicMean: ");
+        result.append(arithmethicMean);
+        result.append(", variance: ");
+        result.append(variance);
+        result.append(", standardDeviation: ");
+        result.append(standardDeviation);
+        result.append(", sum: ");
+        result.append(sum);
+        result.append(')');
+        return result.toString();
+    }
 
 } //NumericalIntervalStatisticsImpl

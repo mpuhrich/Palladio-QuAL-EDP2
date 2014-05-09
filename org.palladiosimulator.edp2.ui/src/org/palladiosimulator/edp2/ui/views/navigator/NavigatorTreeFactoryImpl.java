@@ -17,11 +17,11 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
+import org.palladiosimulator.edp2.models.ExperimentData.Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
@@ -119,8 +119,8 @@ public class NavigatorTreeFactoryImpl implements IObservableFactory {
                             ExperimentDataPackage.Literals.MEASUREMENTS_RANGE__MEASUREMENTS,
                             ExperimentDataPackage.Literals.MEASUREMENTS__MEASURE))
                             .observe(target));
-        } else if (target instanceof Edp2Measure) {
-            return valueToCollection(EMFProperties.value(FeaturePath.fromList(ExperimentDataPackage.Literals.EDP2_MEASURE__METRIC)).observe(target));
+        } else if (target instanceof Measure) {
+            return valueToCollection(EMFProperties.value(FeaturePath.fromList(ExperimentDataPackage.Literals.MEASURE__METRIC)).observe(target));
         } else if (target instanceof AggregatedMeasurements) {
             //TODO implement
             return null;

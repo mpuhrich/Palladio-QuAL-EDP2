@@ -30,128 +30,128 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  */
 public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements DoubleBinaryMeasurements<Q> {
 	/**
-	 * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStorageUnit()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getStorageUnit()
+     * @generated
+     * @ordered
+     */
 	protected Unit<Q> storageUnit;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DoubleBinaryMeasurementsImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS;
-	}
+        return ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Unit<Q> getStorageUnit() {
-		return storageUnit;
-	}
+        return storageUnit;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setStorageUnit(Unit<Q> newStorageUnit) {
-		Unit<Q> oldStorageUnit = storageUnit;
-		storageUnit = newStorageUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, oldStorageUnit, storageUnit));
-	}
+        Unit<Q> oldStorageUnit = storageUnit;
+        storageUnit = newStorageUnit;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, oldStorageUnit, storageUnit));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-				return getStorageUnit();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
+                return getStorageUnit();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
     @Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-				setStorageUnit((Unit<Q>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
+                setStorageUnit((Unit<Q>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-				setStorageUnit((Unit<Q>)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
+                setStorageUnit((Unit<Q>)null);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-				return storageUnit != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
+                return storageUnit != null;
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (storageUnit: ");
-		result.append(storageUnit);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (storageUnit: ");
+        result.append(storageUnit);
+        result.append(')');
+        return result.toString();
+    }
 
 } //DoubleBinaryMeasurementsImpl

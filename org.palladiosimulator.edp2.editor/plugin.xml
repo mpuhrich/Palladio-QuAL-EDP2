@@ -30,6 +30,18 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated EDP2 -->
       <editor
+            id="org.palladiosimulator.edp2.models.measuringpoint.presentation.MeasuringpointEditorID"
+            name="%_UI_MeasuringpointEditor_label"
+            icon="icons/full/obj16/MeasuringpointModelFile.gif"
+            extensions="measuringpoint"
+            class="org.palladiosimulator.edp2.models.measuringpoint.presentation.MeasuringpointEditor"
+            contributorClass="org.palladiosimulator.edp2.models.measuringpoint.presentation.MeasuringpointActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated EDP2 -->
+      <editor
             id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditorID"
             name="%_UI_RepositoryEditor_label"
             icon="icons/full/obj16/RepositoryModelFile.gif"
@@ -39,6 +51,25 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated EDP2 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.edp2.models.measuringpoint.presentation.MeasuringpointModelWizardID"
+            name="%_UI_MeasuringpointModelWizard_label"
+            class="org.palladiosimulator.edp2.models.measuringpoint.presentation.MeasuringpointModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MeasuringpointModelFile.gif">
+         <description>%_UI_MeasuringpointModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
    <extension point="org.eclipse.ui.editors">
       <editor
             id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
@@ -74,6 +105,10 @@
       </wizard>
    </extension>
 
+null
+null
+null
+null
 null
 null
 null

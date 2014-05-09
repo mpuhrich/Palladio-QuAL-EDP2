@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.palladiosimulator.edp2.impl.MeasuringPointUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
@@ -23,6 +24,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
@@ -102,12 +104,15 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     return styledString;
                 };
                 @Override
-                public StyledString caseEdp2Measure(final org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure object) {
-                    final StyledString styledString = new StyledString(object.getMeasuredObject()==null ? "Measure" : object.getMeasuredObject());
+                public StyledString caseMeasure(final org.palladiosimulator.edp2.models.ExperimentData.Measure object) {
+                    MeasuringPoint measuringPoint = object.getMeasuringPoint();
+                             
+                    final StyledString styledString = new StyledString(MeasuringPointUtility.measuringPointToString(measuringPoint));
+                    
                     final String decoration = " (" + object.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;
-                };
+                }
                 @Override
                 public StyledString caseMeasurements(final Measurements object) {
                     final StyledString styledString = new StyledString("Measurement");

@@ -21,10 +21,10 @@ import org.palladiosimulator.edp2.internal.EmfmodelDataSeriesFromReferenceSwitch
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Edp2Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
@@ -214,7 +214,7 @@ public class MeasurementsUtility {
     }
 
     public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {
-        final Edp2Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
+        final Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
         final MetricDescription metricDescription = measure.getMetric();
 
         return metricDescription;

@@ -42,99 +42,99 @@ import de.uka.ipd.sdq.identifier.Identifier;
  */
 public interface Repository extends Identifier, MetaDao {
 	/**
-	 * Returns the value of the '<em><b>Repositories</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories <em>Available Repositories</em>}'.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Repositories</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories <em>Available Repositories</em>}'.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Repositories</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Repositories</em>' container reference.
-	 * @see #setRepositories(Repositories)
-	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Repositories()
-	 * @see org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories
-	 * @model opposite="availableRepositories" required="true" transient="false" ordered="false"
-	 * @generated
-	 */
+     * @return the value of the '<em>Repositories</em>' container reference.
+     * @see #setRepositories(Repositories)
+     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Repositories()
+     * @see org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories
+     * @model opposite="availableRepositories" required="true" transient="false" ordered="false"
+     * @generated
+     */
 	Repositories getRepositories();
 
 	/**
-	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories <em>Repositories</em>}' container reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories <em>Repositories</em>}' container reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Repositories</em>' container reference.
-	 * @see #getRepositories()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Repositories</em>' container reference.
+     * @see #getRepositories()
+     * @generated
+     */
 	void setRepositories(Repositories value);
 
 	/**
-	 * Returns the value of the '<em><b>Read Only</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Read Only</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Read Only</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Read Only</em>' attribute.
-	 * @see #setReadOnly(boolean)
-	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ReadOnly()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
+     * @return the value of the '<em>Read Only</em>' attribute.
+     * @see #setReadOnly(boolean)
+     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ReadOnly()
+     * @model required="true" ordered="false"
+     * @generated
+     */
 	boolean isReadOnly();
 
 	/**
-	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repository#isReadOnly <em>Read Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.palladiosimulator.edp2.models.Repository.Repository#isReadOnly <em>Read Only</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Read Only</em>' attribute.
-	 * @see #isReadOnly()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Read Only</em>' attribute.
+     * @see #isReadOnly()
+     * @generated
+     */
 	void setReadOnly(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Descriptions</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.metricspec.Description}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Descriptions</b></em>' reference list.
+     * The list contents are of type {@link org.palladiosimulator.metricspec.Description}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Descriptions</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Descriptions</em>' reference list.
-	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Descriptions()
-	 * @model transient="true" ordered="false"
-	 * @generated
-	 */
+     * @return the value of the '<em>Descriptions</em>' reference list.
+     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Descriptions()
+     * @model transient="true" ordered="false"
+     * @generated
+     */
 	EList<Description> getDescriptions();
 
 	/**
-	 * Returns the value of the '<em><b>Experiment Groups</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}.
-	 * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository <em>Repository</em>}'.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Experiment Groups</b></em>' reference list.
+     * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}.
+     * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository <em>Repository</em>}'.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Experiment Groups</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Experiment Groups</em>' reference list.
-	 * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ExperimentGroups()
-	 * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository
-	 * @model opposite="repository" transient="true" ordered="false"
-	 * @generated
-	 */
+     * @return the value of the '<em>Experiment Groups</em>' reference list.
+     * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ExperimentGroups()
+     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository
+     * @model opposite="repository" transient="true" ordered="false"
+     * @generated
+     */
 	EList<ExperimentGroup> getExperimentGroups();
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+     * @model
+     * @generated
+     */
 	void resetExperimentGroups();
 
 } // Repository

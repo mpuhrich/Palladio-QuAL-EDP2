@@ -9,7 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.palladiosimulator.edp2.models.ExperimentData.presentation,
- org.palladiosimulator.edp2.models.Repository.presentation
+ org.palladiosimulator.edp2.models.Repository.presentation,
+ org.palladiosimulator.edp2.models.measuringpoint.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.palladiosimulator.edp2.edit;visibility:=reexport,
@@ -18,6 +19,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;visibility:=reexport,
  de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
  org.palladiosimulator.metricspec.edit;visibility:=reexport,
+ de.uka.ipd.sdq.pcm.edit;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction.edit;visibility:=reexport,
+ de.uka.ipd.sdq.stoex.edit;visibility:=reexport,
+ de.uka.ipd.sdq.units.edit;visibility:=reexport,
  org.palladiosimulator.edp2.examples;visibility:=reexport,
  org.eclipse.ui.views.properties.tabbed;visibility:=reexport,
  org.jfree.jfreechart;bundle-version="1.0.9",

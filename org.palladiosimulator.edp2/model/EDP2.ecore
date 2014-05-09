@@ -183,8 +183,7 @@
           upperBound="-1" eType="#//ExperimentData/ExperimentSetting" containment="true"
           eOpposite="#//ExperimentData/ExperimentSetting/experimentGroup"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Edp2Measure" containment="true"
-          eOpposite="#//ExperimentData/Edp2Measure/experimentGroup"/>
+          upperBound="-1" eType="#//ExperimentData/Measure" containment="true" eOpposite="#//ExperimentData/Measure/experimentGroup"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="repository" ordered="false"
@@ -204,7 +203,7 @@
           upperBound="-1" eType="#//ExperimentData/ExperimentRun" containment="true"
           eOpposite="#//ExperimentData/ExperimentRun/experimentSetting"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Edp2Measure" eOpposite="#//ExperimentData/Edp2Measure/experimentSettings"/>
+          upperBound="-1" eType="#//ExperimentData/Measure" eOpposite="#//ExperimentData/Measure/experimentSettings"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentGroup" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/experimentSettings"/>
     </eClassifiers>
@@ -235,14 +234,14 @@
         <details key="documentation" value="There&amp;nbsp;is&amp;nbsp;exactly&amp;nbsp;one&amp;nbsp;instance&amp;nbsp;of&amp;nbsp;this&amp;nbsp;class&amp;nbsp;for&amp;nbsp;each&amp;nbsp;combination&amp;nbsp;of&amp;nbsp;experiment&amp;nbsp;run&amp;nbsp;and&amp;nbsp;corresponding&amp;nbsp;measure&amp;nbsp;declaration.&#xD;&#xA;It indicates that the experiment run contains measurements for the linked Edp2Measure."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/Edp2Measure"/>
+          lowerBound="1" eType="#//ExperimentData/Measure"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="measurementsRanges" ordered="false"
           upperBound="-1" eType="#//ExperimentData/MeasurementsRange" containment="true"
           eOpposite="#//ExperimentData/MeasurementsRange/measurements"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentRun" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentRun" eOpposite="#//ExperimentData/ExperimentRun/measurements"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Edp2Measure" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="Measure" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Describes&amp;nbsp;and&amp;nbsp;specifies&amp;nbsp;the&amp;nbsp;measure&amp;nbsp;used.&amp;nbsp;Needs&amp;nbsp;to&amp;nbsp;be&amp;nbsp;subclassed&amp;nbsp;to&amp;nbsp;create&amp;nbsp;concrete&amp;nbsp;Measures&amp;nbsp;which&amp;nbsp;can&amp;nbsp;handle&amp;nbsp;specific&amp;nbsp;data.&amp;nbsp;Measures&amp;nbsp;are&amp;nbsp;attached&amp;nbsp;to&amp;nbsp;ExperimentGroup&amp;nbsp;and&amp;nbsp;referenced&amp;nbsp;from&amp;nbsp;ExperimentSetting&amp;nbsp;to&amp;nbsp;allow&amp;nbsp;modeling&amp;nbsp;that&amp;nbsp;the&amp;nbsp;same&amp;nbsp;Measure&amp;nbsp;is&amp;nbsp;used&amp;nbsp;throughout&amp;nbsp;several&amp;nbsp;experiment&amp;nbsp;settings.&#xD;&#xA;An Edp2Measure can have one or more dimensions (see also the attribute metric).&lt;br />&#xD;&#xA;&lt;br />&#xD;&#xA;Characterizes&amp;nbsp;the&amp;nbsp;reading&amp;nbsp;point&amp;nbsp;how&amp;nbsp;the&amp;nbsp;measurements&amp;nbsp;are&amp;nbsp;collected.&amp;nbsp;The&amp;nbsp;Characerization&amp;nbsp;is&amp;nbsp;propertyable&amp;nbsp;if&amp;nbsp;additional&amp;nbsp;context-specific&amp;nbsp;information&amp;nbsp;should&amp;nbsp;be&amp;nbsp;stored&amp;nbsp;for&amp;nbsp;the&amp;nbsp;sensor.&lt;br />&#xD;&#xA;&lt;br />&#xD;&#xA;For&amp;nbsp;example&amp;nbsp;measuring&amp;nbsp;the&amp;nbsp;response&amp;nbsp;time&amp;nbsp;of&amp;nbsp;a&amp;nbsp;request&amp;nbsp;to&amp;nbsp;a&amp;nbsp;system&amp;nbsp;in&amp;nbsp;milliseconds&amp;nbsp;could&amp;nbsp;result&amp;nbsp;in&amp;nbsp;the&amp;nbsp;following&amp;nbsp;values&amp;nbsp;of&amp;nbsp;the&amp;nbsp;attributes:&amp;nbsp;metric='Response&amp;nbsp;Time',&amp;nbsp;measuredObject='System&amp;nbsp;External&amp;nbsp;Requests',&amp;nbsp;and&amp;nbsp;unitOfMeasurements='ms'.&amp;nbsp;Another&amp;nbsp;example&amp;nbsp;is&amp;nbsp;the&amp;nbsp;number&amp;nbsp;of&amp;nbsp;lines&amp;nbsp;of&amp;nbsp;code&amp;nbsp;of&amp;nbsp;the&amp;nbsp;class&amp;nbsp;java.lang.System:&amp;nbsp;metric='LOC',&amp;nbsp;measuredObject='Class&amp;nbsp;java.lang.System',&amp;nbsp;and&amp;nbsp;unitOfMeasurement='Positive&amp;nbsp;Integer'."/>
       </eAnnotations>
@@ -250,10 +249,10 @@
           lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/measure"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentSettings" ordered="false"
           upperBound="-1" eType="#//ExperimentData/ExperimentSetting" eOpposite="#//ExperimentData/ExperimentSetting/measure"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuredObject" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="metric" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//MetricDescription"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringPoint" lowerBound="1"
+          eType="#//measuringpoint/MeasuringPoint" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="EJSDurationMeasure" instanceClassName="javax.measure.Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="AggregationStatistics" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
@@ -437,6 +436,54 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" ordered="false"
           upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//Description"
           transient="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="measuringpoint" nsURI="http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1"
+      nsPrefix="org.palladiosimulator.edp2.models">
+    <eClassifiers xsi:type="ecore:EClass" name="MeasuringPoint" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StringMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuringPoint" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyOperationMeasuringPoint" eSuperTypes="#//measuringpoint/OperationReference #//measuringpoint/AssemblyReference #//measuringpoint/MeasuringPoint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyPassiveResourceMeasuringPoint"
+        eSuperTypes="#//measuringpoint/AssemblyReference #//measuringpoint/PassiveResourceReference #//measuringpoint/MeasuringPoint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ActiveResourceMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/ActiveResourceReference"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemOperationMeasuringPoint" eSuperTypes="#//measuringpoint/OperationReference #//measuringpoint/MeasuringPoint #//measuringpoint/SystemReference"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/Role"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operationSignature" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/OperationSignature"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//system/System"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PassiveResourceReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="passiveResource" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/PassiveResource"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActiveResourceReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activeResource" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicaID" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/LinkingResourceReference"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingResource" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SubSystemOperationMeasuringPoint"
+        eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/SubSystemReference #//measuringpoint/OperationReference"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SubSystemReference" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subsystem" lowerBound="1"
+          eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//subsystem/SubSystem"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

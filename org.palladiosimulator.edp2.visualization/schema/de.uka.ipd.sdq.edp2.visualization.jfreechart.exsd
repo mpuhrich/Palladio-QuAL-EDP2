@@ -62,7 +62,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditorInput:"/>
+                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput:"/>
                </appinfo>
             </annotation>
          </attribute>

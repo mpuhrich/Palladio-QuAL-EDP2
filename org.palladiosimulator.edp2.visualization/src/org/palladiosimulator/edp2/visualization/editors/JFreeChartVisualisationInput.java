@@ -4,8 +4,6 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
 import java.util.Observable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IMemento;
@@ -22,15 +20,8 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
  * @author Dominik Ernst
  * 
  */
-public class JFreeChartVisualisationInput<T extends Dataset>
+public abstract class JFreeChartVisualisationInput<T extends Dataset>
 extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> {
-
-    private final Logger logger = Logger.getLogger(JFreeChartVisualisationInput.class.getCanonicalName());
-
-    /**
-     * The chart, which ultimately displays the data from this handle.
-     */
-    private JFreeChart chart;
 
     /**
      * Empty constructor.
@@ -117,7 +108,6 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<
      */
     @Override
     public void update(final Observable o, final Object arg) {
-        logger.log(Level.INFO, "update invoked");
         this.getEventDispatcher().visualisationInputChanged();
     }
 
@@ -126,10 +116,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<
      * EditorInput. Typically an update of the current DataSet is recommended,
      * before the chart itself is updated.
      */
-    public JFreeChart createChart() {
-        chart = getInputs().get(0).getChart();
-        return chart;
-    }
+    public abstract JFreeChart createChart();
 
     /* (non-Javadoc)
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
@@ -144,7 +131,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<
      */
     @Override
     public String getFactoryId() {
-        return JFreeChartEditorInputHandleFactory.getFactoryId();
+        return JFreeChartVisualisationInputFactory.getFactoryId();
     }
 
     /* (non-Javadoc)

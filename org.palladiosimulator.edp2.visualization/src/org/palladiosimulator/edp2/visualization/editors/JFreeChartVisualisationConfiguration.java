@@ -8,17 +8,10 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 
 public class JFreeChartVisualisationConfiguration extends PropertyConfigurable implements IPropertyListener {
 
-    /**
-     * Constants used in property-persistence.
-     */
     public static final String TITLE_KEY = "title";
     public static final String SHOW_TITLE_KEY = "showTitle";
     public static final String SHOW_LEGEND_KEY = "showLegend";
 
-    /**
-     * The title for the chart. Only used if the input is the main input, i.e.
-     * the first input in case multiple inputs are supported by the editor.
-     */
     private String title = "JFreeChart";
     private boolean showTitle = true;
     private boolean showLegend = true;

@@ -20,97 +20,100 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationS
 
 public class InputSelectionComposite extends Composite {
 
-	private ComboViewer comboViewer;
-	private Combo combo_1;
-	private final FormToolkit toolkit = new FormToolkit(Display.getCurrent());
+    private ComboViewer comboViewer;
+    private Combo combo_1;
+    private final FormToolkit toolkit = new FormToolkit(Display.getCurrent());
 
-	/**
-	 * Create the composite.
-	 * 
-	 * @param parent
-	 * @param style
-	 */
-	public InputSelectionComposite(Composite parent, int style,
-			final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> inputHandle) {
-		super(parent, SWT.EMBEDDED);
-		addDisposeListener(new DisposeListener() {
-			public void widgetDisposed(DisposeEvent e) {
-				toolkit.dispose();
-			}
-		});
-		toolkit.adapt(this);
-		toolkit.paintBordersFor(this);
-		setLayout(null);
+    /**
+     * Create the composite.
+     * 
+     * @param parent
+     * @param style
+     */
+    public InputSelectionComposite(final Composite parent, final int style,
+            final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<?>> inputHandle) {
+        super(parent, SWT.EMBEDDED);
+        addDisposeListener(new DisposeListener() {
+            @Override
+            public void widgetDisposed(final DisposeEvent e) {
+                toolkit.dispose();
+            }
+        });
+        toolkit.adapt(this);
+        toolkit.paintBordersFor(this);
+        setLayout(null);
 
-		comboViewer = new ComboViewer(this, SWT.NONE);
+        comboViewer = new ComboViewer(this, SWT.NONE);
 
-		comboViewer.setLabelProvider(new ILabelProvider() {
+        comboViewer.setLabelProvider(new ILabelProvider() {
 
-			@Override
-			public void removeListener(ILabelProviderListener listener) {
-				// TODO Auto-generated method stub
+            @Override
+            public void removeListener(final ILabelProviderListener listener) {
+                // TODO Auto-generated method stub
 
-			}
+            }
 
-			@Override
-			public boolean isLabelProperty(Object element, String property) {
-				// TODO Auto-generated method stub
-				return false;
-			}
+            @Override
+            public boolean isLabelProperty(final Object element, final String property) {
+                // TODO Auto-generated method stub
+                return false;
+            }
 
-			@Override
-			public void dispose() {
-				// TODO Auto-generated method stub
+            @Override
+            public void dispose() {
+                // TODO Auto-generated method stub
 
-			}
+            }
 
-			@Override
-			public void addListener(ILabelProviderListener listener) {
-				// TODO Auto-generated method stub
+            @Override
+            public void addListener(final ILabelProviderListener listener) {
+                // TODO Auto-generated method stub
 
-			}
+            }
 
-			@Override
-			public String getText(Object element) {
-				return ((AbstractVisualizationSingleDatastreamInput) element).getInputName();
-			}
+            @Override
+            public String getText(final Object element) {
+                return ((AbstractVisualizationSingleDatastreamInput) element).getInputName();
+            }
 
-			@Override
-			public Image getImage(Object element) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		});
-		comboViewer.setContentProvider(new IStructuredContentProvider() {
-			public Object[] getElements(Object inputElement) {
-				return ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>) inputElement).getInputs()
-						.toArray();
-			}
+            @Override
+            public Image getImage(final Object element) {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        });
+        comboViewer.setContentProvider(new IStructuredContentProvider() {
+            @Override
+            public Object[] getElements(final Object inputElement) {
+                return inputHandle.getInputs().toArray();
+            }
 
-			public void dispose() {
-			}
+            @Override
+            public void dispose() {
+            }
 
-			public void inputChanged(Viewer viewer, Object oldInput,
-					Object newInput) {
-			}
-		});
-		comboViewer.setInput(inputHandle);
-		combo_1 = comboViewer.getCombo();
-		combo_1.setBounds(0, 0, 177, 23);
-		toolkit.paintBordersFor(combo_1);
+            @Override
+            public void inputChanged(final Viewer viewer, final Object oldInput,
+                    final Object newInput) {
+            }
+        });
+        comboViewer.setInput(inputHandle);
+        combo_1 = comboViewer.getCombo();
+        combo_1.setBounds(0, 0, 177, 23);
+        toolkit.paintBordersFor(combo_1);
 
-	}
+    }
 
-	public AbstractVisualizationSingleDatastreamInput getInputSelection() {
-		IStructuredSelection selection = (IStructuredSelection) comboViewer
-				.getSelection();
-		return (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
-	}
+    public AbstractVisualizationSingleDatastreamInput getInputSelection() {
+        final IStructuredSelection selection = (IStructuredSelection) comboViewer
+                .getSelection();
+        return (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
+    }
 
-	/**
-	 * @return the combo_1
-	 */
-	public Combo getComboBox() {
-		return combo_1;
-	}
+    /**
+     * @return the combo_1
+     */
+    public Combo getComboBox() {
+        return combo_1;
+    }
 }

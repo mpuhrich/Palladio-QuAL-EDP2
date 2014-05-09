@@ -3,7 +3,6 @@ package org.palladiosimulator.edp2.visualization.properties.sections;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.jface.viewers.ColumnWeightData;
@@ -40,12 +39,11 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.visualization.AbstractInput;
-import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput;
 
 /**
  * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and
@@ -206,9 +204,9 @@ ISection {
                     if (rect.contains(pt)) {
                         // boolean properties
                         if (item.getText(labelColumn).equals(
-                                AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>.SHOW_LEGEND_KEY)
+                                JFreeChartVisualisationConfiguration.SHOW_LEGEND_KEY)
                                 || (item.getText(labelColumn)
-                                        .equals(AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>.SHOW_TITLE_KEY))) {
+                                        .equals(JFreeChartVisualisationConfiguration.SHOW_TITLE_KEY))) {
                             openBooleanDialog(index, commonPropertiesTable);
                         }
                         // textual properties
@@ -285,18 +283,20 @@ ISection {
                             openColorAndTransparencyDialog(item,
                                     specificPropertiesTable);
                             // boolean properties
-                        } else if (item.getText(labelColumn).equals(
-                                HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)
-                                || (item.getText(labelColumn)
-                                        .equals(HistogramEditorInput.SHOW_ITEM_VALUES_KEY))
-                                        || (item.getText(labelColumn)
-                                                .equals(HistogramEditorInput.SHOW_DOMAIN_AXIS_LABEL_KEY))
-                                                || (item.getText(labelColumn)
-                                                        .equals(HistogramEditorInput.SHOW_RANGE_AXIS_LABEL_KEY))
-                                                        || (item.getText(labelColumn)
-                                                                .equals(HistogramEditorInput.INCLUDE_ZERO_KEY))) {
-                            openBooleanDialog(index, specificPropertiesTable);
                         }
+                        // FIXME
+                        //                        else if (item.getText(labelColumn).equals(
+                        //                                HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)
+                        //                                || (item.getText(labelColumn)
+                        //                                        .equals(HistogramEditorInput.SHOW_ITEM_VALUES_KEY))
+                        //                                        || (item.getText(labelColumn)
+                        //                                                .equals(HistogramEditorInput.SHOW_DOMAIN_AXIS_LABEL_KEY))
+                        //                                                || (item.getText(labelColumn)
+                        //                                                        .equals(HistogramEditorInput.SHOW_RANGE_AXIS_LABEL_KEY))
+                        //                                                        || (item.getText(labelColumn)
+                        //                                                                .equals(HistogramEditorInput.INCLUDE_ZERO_KEY))) {
+                        //                            openBooleanDialog(index, specificPropertiesTable);
+                        //                        }
                         // textual properties
                         else {
                             openTextDialog(index, specificPropertiesTable);
@@ -391,13 +391,14 @@ ISection {
                 // if the changed field was the frequency, reset the label of
                 // the range
                 // axis to default
-                if (table.getItem(index).getText(labelColumn)
-                        .equals(HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)) {
-                    final HistogramEditorInput firstInput = ((HistogramEditorInput) ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>) getInput())
-                            .getInputs().get(0));
-                    firstInput.setRangeAxisLabel(firstInput
-                            .getDefaultRangeAxisLabel());
-                }
+                // FIXME
+                //                if (table.getItem(index).getText(labelColumn)
+                //                        .equals(HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)) {
+                //                    final HistogramEditorInput firstInput = ((HistogramEditorInput) ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>) getInput())
+                //                            .getInputs().get(0));
+                //                    firstInput.setRangeAxisLabel(firstInput
+                //                            .getDefaultRangeAxisLabel());
+                //                }
                 comboBox.dispose();
             }
 
@@ -485,7 +486,7 @@ ISection {
         commonPropertiesTable.clearAll();
         commonPropertiesTable.setItemCount(0);
 
-        final Map<String, Object> commonProperties = getInput().getProperties();
+        final Map<String, Object> commonProperties = getInput().getConfiguration().getProperties();
         commonProperties.remove(NAME_KEY);
 
         for (final Object key : commonProperties.keySet()) {
@@ -514,8 +515,8 @@ ISection {
      * 
      * @return
      */
-    private AbstractInput<T> getInput() {
-        return (AbstractInput<T>) editor.getEditorInput();
+    private AbstractInput getInput() {
+        return (AbstractInput) editor.getEditorInput();
     }
 
     /*
@@ -622,20 +623,13 @@ ISection {
     private void updateProperties(final String key, final Object value, final Table table) {
         // get properties for keys and old values
         if (table == specificPropertiesTable) {
-            final Map<String, Object> newProperties = lastSelectedInput
-                    .getProperties();
-            logger.log(Level.INFO,
-                    "" + lastSelectedInput.getInputName() + " updated with: "
-                            + key.toString() + ", " + value.toString());
+            final Map<String, Object> newProperties = new HashMap<String,Object>(lastSelectedInput.getProperties());
             newProperties.put(key, value);
-            lastSelectedInput.setProperties(newProperties);
-            // update the input
-            lastSelectedInput.updateInputData();
+            lastSelectedInput.getConfiguration().setProperties(newProperties);
         } else {
-            final Map<String, Object> newProperties = getInput().getProperties();
+            final Map<String, Object> newProperties = new HashMap<String,Object>(getInput().getConfiguration().getProperties());
             newProperties.put(key, value);
-            getInput().setProperties(newProperties);
-
+            getInput().getConfiguration().setProperties(newProperties);
         }
 
     }

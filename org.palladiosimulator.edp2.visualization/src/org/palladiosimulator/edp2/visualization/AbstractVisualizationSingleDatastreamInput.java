@@ -84,7 +84,7 @@ implements IVisualisationSingleDatastreamInput {
     @Override
     public String getInputName() {
         if (inputName == null) {
-            return getDefaultName();
+            inputName = getDefaultName();
         }
         return inputName;
     }

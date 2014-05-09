@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.palladiosimulator.edp2.visualization.editors;
 
 import java.awt.Color;

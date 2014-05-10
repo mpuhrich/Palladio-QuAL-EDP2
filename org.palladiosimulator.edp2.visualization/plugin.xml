@@ -52,7 +52,7 @@
                 id="org.palladiosimulator.edp2.visualization.propertySectionDisplay"
                 tab="org.palladiosimulator.edp2.visualization.propertyTabDisplay">
              <input
-                   type="org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationInput">
+                   type="org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput">
              </input>
          </propertySection>
          
@@ -129,7 +129,7 @@
             id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
       </datasink>
       <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualisationInput"
+            class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
             factory="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">

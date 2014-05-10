@@ -3,7 +3,6 @@ package org.palladiosimulator.edp2.visualization.properties.sections;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
@@ -37,7 +36,6 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.views.properties.tabbed.ISection;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
-import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.visualization.AbstractInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
@@ -47,34 +45,22 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationS
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 
 /**
- * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and
- * allows to edit visual settings of the current Editor in the Eclipse
- * Properties View if an {@link JFreeChartEditor} is the currently active
- * editor.
+ * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and allows to edit visual
+ * settings of the current Editor in the Eclipse Properties View if an {@link JFreeChartEditor} is
+ * the currently active editor.
  * 
  * @author Roland Richter, Dominik Ernst
  * 
  */
-public class DisplayPropertySection implements ISelectionChangedListener,
-ISection {
-
-    /** Logger */
-    private static Logger logger = Logger
-            .getLogger(DisplayPropertySection.class.getCanonicalName());
-
-    /**
-     * Key, which must be the same as the key under which the ID's / names of
-     * {@link IDataSink}s are stored.
-     */
-    private final static String NAME_KEY = "elementName";
+public class DisplayPropertySection implements ISelectionChangedListener, ISection {
 
     /**
      * The last active editor;
      */
     private JFreeChartEditor editor;
+
     /**
-     * A tree, which contains the editor's inputs and their transformations (as
-     * children)
+     * A tree, which contains the editor's inputs and their transformations (as children)
      */
     private ListViewer listViewer;
 
@@ -84,14 +70,12 @@ ISection {
     private Composite composite;
 
     /**
-     * The last selected input, the properties of which are displayed in the
-     * table.
+     * The last selected input, the properties of which are displayed in the table.
      */
     private AbstractVisualizationSingleDatastreamInput lastSelectedInput;
 
     /**
-     * The table for displaying visual properties of the selected
-     * transformation.
+     * The table for displaying visual properties of the selected transformation.
      */
     private Table specificPropertiesTable;
 
@@ -101,19 +85,18 @@ ISection {
     private Table commonPropertiesTable;
 
     /**
-     * Index of the column in the {@link #visualPropertiesTable} containing the
-     * properties' labels.
+     * Index of the column in the {@link #visualPropertiesTable} containing the properties' labels.
      */
     private static int labelColumn = 0;
+
     /**
-     * Index of the column in the {@link #visualPropertiesTable} containing the
-     * properties' editable values.
+     * Index of the column in the {@link #visualPropertiesTable} containing the properties' editable
+     * values.
      */
     private static int editColumn = 1;
 
     /**
-     * Viewer for the table containing the visual properties of the selected
-     * transformation.
+     * Viewer for the table containing the visual properties of the selected transformation.
      */
     private TableViewer specificPropertiesTableViewer;
 
@@ -125,18 +108,15 @@ ISection {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#createControls
+     * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#createControls
      * (org.eclipse.swt.widgets.Composite,
      * org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
      */
     @Override
-    public void createControls(final Composite parent,
-            final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+    public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
         this.tabbedPropertySheetPage = aTabbedPropertySheetPage;
         composite = getWidgetFactory().createFlatFormComposite(parent);
-        composite.setBackground(parent.getDisplay().getSystemColor(
-                SWT.COLOR_WIDGET_BACKGROUND));
+        composite.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
         composite.setSize(800, 275);
         createLayout(composite);
 
@@ -149,8 +129,7 @@ ISection {
         groupSpecific.setLayout(new GridLayout(2, false));
 
         // create empty input list
-        listViewer = new InputElementList(groupSpecific, SWT.EMBEDDED, null)
-        .getListViewer();
+        listViewer = new InputElementList(groupSpecific, SWT.EMBEDDED, null).getListViewer();
         createCommonPropertiesTable(groupCommon);
         createSpecificPropertiesTable(groupSpecific);
     }
@@ -162,8 +141,7 @@ ISection {
      *            the composite in which the table is created
      */
     private void createCommonPropertiesTable(final Composite composite) {
-        commonPropertiesTable = new Table(composite, SWT.SINGLE | SWT.BORDER
-                | SWT.V_SCROLL | SWT.FULL_SELECTION);
+        commonPropertiesTable = new Table(composite, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.FULL_SELECTION);
 
         commonPropertiesTable.setLinesVisible(true);
         commonPropertiesTable.setHeaderVisible(true);
@@ -179,18 +157,14 @@ ISection {
         tableLayout.addColumnData(new ColumnWeightData(1));
         commonPropertiesTable.setLayout(tableLayout);
 
-        final TableViewer commonPropertiesTableViewer = new TableViewer(
-                commonPropertiesTable);
-        final TableViewerColumn keyColumn = new TableViewerColumn(
-                commonPropertiesTableViewer, SWT.NONE);
+        final TableViewer commonPropertiesTableViewer = new TableViewer(commonPropertiesTable);
+        final TableViewerColumn keyColumn = new TableViewerColumn(commonPropertiesTableViewer, SWT.NONE);
         keyColumn.getColumn().setText("Property");
 
-        final TableViewerColumn valueColumn = new TableViewerColumn(
-                commonPropertiesTableViewer, SWT.NONE);
+        final TableViewerColumn valueColumn = new TableViewerColumn(commonPropertiesTableViewer, SWT.NONE);
         valueColumn.getColumn().setText("Value");
 
         // the editor for the cells
-
         commonPropertiesTable.addListener(SWT.MouseDown, new Listener() {
             @Override
             public void handleEvent(final Event event) {
@@ -204,8 +178,7 @@ ISection {
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
                         // boolean properties
-                        if (item.getText(labelColumn).equals(
-                                JFreeChartVisualisationConfiguration.SHOW_LEGEND_KEY)
+                        if (item.getText(labelColumn).equals(JFreeChartVisualisationConfiguration.SHOW_LEGEND_KEY)
                                 || (item.getText(labelColumn)
                                         .equals(JFreeChartVisualisationConfiguration.SHOW_TITLE_KEY))) {
                             openBooleanDialog(index, commonPropertiesTable);
@@ -238,8 +211,7 @@ ISection {
     private void createSpecificPropertiesTable(final Composite parent) {
 
         // initialize the table, which shows the properties of transformations
-        specificPropertiesTable = new Table(parent, SWT.SINGLE | SWT.BORDER
-                | SWT.V_SCROLL | SWT.FULL_SELECTION);
+        specificPropertiesTable = new Table(parent, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.FULL_SELECTION);
 
         specificPropertiesTable.setLinesVisible(true);
         specificPropertiesTable.setHeaderVisible(true);
@@ -256,12 +228,10 @@ ISection {
         specificPropertiesTable.setLayout(tableLayout);
 
         specificPropertiesTableViewer = new TableViewer(specificPropertiesTable);
-        final TableViewerColumn keyColumn = new TableViewerColumn(
-                specificPropertiesTableViewer, SWT.NONE);
+        final TableViewerColumn keyColumn = new TableViewerColumn(specificPropertiesTableViewer, SWT.NONE);
         keyColumn.getColumn().setText("Property");
 
-        final TableViewerColumn valueColumn = new TableViewerColumn(
-                specificPropertiesTableViewer, SWT.NONE);
+        final TableViewerColumn valueColumn = new TableViewerColumn(specificPropertiesTableViewer, SWT.NONE);
         valueColumn.getColumn().setText("Value");
 
         // the editor for the cells
@@ -281,23 +251,22 @@ ISection {
                         // color properties
                         if (item.getText(labelColumn).equals(
                                 JFreeChartVisualisationSingleDatastreamConfiguration.COLOR_KEY)) {
-                            openColorAndTransparencyDialog(item,
-                                    specificPropertiesTable);
+                            openColorAndTransparencyDialog(item, specificPropertiesTable);
                             // boolean properties
                         }
                         // FIXME
-                        //                        else if (item.getText(labelColumn).equals(
-                        //                                HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)
-                        //                                || (item.getText(labelColumn)
-                        //                                        .equals(HistogramEditorInput.SHOW_ITEM_VALUES_KEY))
-                        //                                        || (item.getText(labelColumn)
-                        //                                                .equals(HistogramEditorInput.SHOW_DOMAIN_AXIS_LABEL_KEY))
-                        //                                                || (item.getText(labelColumn)
-                        //                                                        .equals(HistogramEditorInput.SHOW_RANGE_AXIS_LABEL_KEY))
-                        //                                                        || (item.getText(labelColumn)
-                        //                                                                .equals(HistogramEditorInput.INCLUDE_ZERO_KEY))) {
-                        //                            openBooleanDialog(index, specificPropertiesTable);
-                        //                        }
+                        // else if (item.getText(labelColumn).equals(
+                        // HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)
+                        // || (item.getText(labelColumn)
+                        // .equals(HistogramEditorInput.SHOW_ITEM_VALUES_KEY))
+                        // || (item.getText(labelColumn)
+                        // .equals(HistogramEditorInput.SHOW_DOMAIN_AXIS_LABEL_KEY))
+                        // || (item.getText(labelColumn)
+                        // .equals(HistogramEditorInput.SHOW_RANGE_AXIS_LABEL_KEY))
+                        // || (item.getText(labelColumn)
+                        // .equals(HistogramEditorInput.INCLUDE_ZERO_KEY))) {
+                        // openBooleanDialog(index, specificPropertiesTable);
+                        // }
                         // textual properties
                         else {
                             openTextDialog(index, specificPropertiesTable);
@@ -318,8 +287,7 @@ ISection {
     }
 
     /**
-     * Opens a text dialog for editing cells in the
-     * {@link #visualPropertiesTable} by entering text.
+     * Opens a text dialog for editing cells in the {@link #visualPropertiesTable} by entering text.
      * 
      * @param index
      *            the row-index of the cell to be edited
@@ -341,11 +309,8 @@ ISection {
                 case SWT.Traverse:
                     switch (e.detail) {
                     case SWT.TRAVERSE_RETURN:
-                        table.getItem(index)
-                        .setText(editColumn, text.getText());
-                        updateProperties(
-                                table.getItem(index).getText(labelColumn),
-                                text.getText(), table);
+                        table.getItem(index).setText(editColumn, text.getText());
+                        updateProperties(table.getItem(index).getText(labelColumn), text.getText(), table);
                         refreshSpecificPropertiesTable();
                         refreshCommonPropertiesTable();
                     case SWT.TRAVERSE_ESCAPE:
@@ -365,8 +330,8 @@ ISection {
     }
 
     /**
-     * Opens a dropdown ({@link Combo}) for editing cells in the
-     * {@link #visualPropertiesTable}, which can only have boolean values.
+     * Opens a dropdown ({@link Combo}) for editing cells in the {@link #visualPropertiesTable},
+     * which can only have boolean values.
      * 
      * @param index
      *            the row-index of the cell to be edited
@@ -378,28 +343,27 @@ ISection {
         final Combo comboBox = new Combo(table, SWT.DROP_DOWN);
         comboBox.setItems(new String[] { "true", "false" });
         // set the currently selected item to the value stored in the cell
-        comboBox.select(table.getItem(index).getText(editColumn).equals("true") ? 0
-                : 1);
+        comboBox.select(table.getItem(index).getText(editColumn).equals("true") ? 0 : 1);
 
         final String key = table.getItem(index).getText(labelColumn);
         comboBox.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(final SelectionEvent e) {
-                table.getItem(index).setText(editColumn,
-                        comboBox.getItem(comboBox.getSelectionIndex()));
-                updateProperties(key,
-                        comboBox.getItem(comboBox.getSelectionIndex()), table);
+                table.getItem(index).setText(editColumn, comboBox.getItem(comboBox.getSelectionIndex()));
+                updateProperties(key, comboBox.getItem(comboBox.getSelectionIndex()), table);
                 // if the changed field was the frequency, reset the label of
                 // the range
                 // axis to default
                 // FIXME
-                //                if (table.getItem(index).getText(labelColumn)
-                //                        .equals(HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)) {
-                //                    final HistogramEditorInput firstInput = ((HistogramEditorInput) ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>) getInput())
-                //                            .getInputs().get(0));
-                //                    firstInput.setRangeAxisLabel(firstInput
-                //                            .getDefaultRangeAxisLabel());
-                //                }
+                // if (table.getItem(index).getText(labelColumn)
+                // .equals(HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)) {
+                // final HistogramEditorInput firstInput = ((HistogramEditorInput)
+                // ((AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>>)
+                // getInput())
+                // .getInputs().get(0));
+                // firstInput.setRangeAxisLabel(firstInput
+                // .getDefaultRangeAxisLabel());
+                // }
                 comboBox.dispose();
             }
 
@@ -433,22 +397,17 @@ ISection {
         colorPicker.setRGB(item.getBackground().getRGB());
         final RGB rgbColor = colorPicker.open();
         if (rgbColor != null) {
-            item.setBackground(editColumn, new org.eclipse.swt.graphics.Color(
-                    table.getDisplay(), rgbColor));
-            updateProperties(
-                    item.getText(labelColumn),
+            item.setBackground(editColumn, new org.eclipse.swt.graphics.Color(table.getDisplay(), rgbColor));
+            updateProperties(item.getText(labelColumn),
                     "#"
-                            + Integer.toHexString(
-                                    new Color(rgbColor.red, rgbColor.green,
-                                            rgbColor.blue).getRGB()).substring(
-                                                    2), table);
+                            + Integer.toHexString(new Color(rgbColor.red, rgbColor.green, rgbColor.blue).getRGB())
+                            .substring(2), table);
         }
 
     }
 
     /**
-     * Update the table containing the properties of the
-     * {@link #lastSelectedInput}.
+     * Update the table containing the properties of the {@link #lastSelectedInput}.
      */
     private void refreshSpecificPropertiesTable() {
 
@@ -457,9 +416,7 @@ ISection {
 
         final Map<String, Object> properties = lastSelectedInput.getProperties();
 
-        properties.remove(NAME_KEY);
-
-        for (final Object key : properties.keySet()) {
+        for (final String key : properties.keySet()) {
             final TableItem item = new TableItem(specificPropertiesTable, SWT.NONE);
             item.setText(0, String.valueOf(key));
             item.setText(1, String.valueOf(properties.get(key)));
@@ -470,9 +427,10 @@ ISection {
                 } else {
                     item.setText(1, "");
                     final Color col = Color.decode(hexColor);
-                    item.setBackground(1, new org.eclipse.swt.graphics.Color(
-                            specificPropertiesTable.getDisplay(), col.getRed(),
-                            col.getGreen(), col.getBlue()));
+                    item.setBackground(
+                            1,
+                            new org.eclipse.swt.graphics.Color(specificPropertiesTable.getDisplay(), col.getRed(), col
+                                    .getGreen(), col.getBlue()));
                 }
             }
         }
@@ -480,15 +438,13 @@ ISection {
     }
 
     /**
-     * Update the table containing the properties of the
-     * {@link #lastSelectedInput}.
+     * Update the table containing the properties of the {@link #lastSelectedInput}.
      */
     private void refreshCommonPropertiesTable() {
         commonPropertiesTable.clearAll();
         commonPropertiesTable.setItemCount(0);
 
         final Map<String, Object> commonProperties = getInput().getConfiguration().getProperties();
-        commonProperties.remove(NAME_KEY);
 
         for (final Object key : commonProperties.keySet()) {
             final TableItem item = new TableItem(commonPropertiesTable, SWT.NONE);
@@ -500,8 +456,7 @@ ISection {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
+     * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
      * (org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
      */
     @Override
@@ -511,8 +466,8 @@ ISection {
     }
 
     /**
-     * Retrieves the input of the last active editor. <code>null</code> if no
-     * editor was active during the current session.
+     * Retrieves the input of the last active editor. <code>null</code> if no editor was active
+     * during the current session.
      * 
      * @return
      */
@@ -546,8 +501,7 @@ ISection {
 
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
-        final IStructuredSelection selection = (IStructuredSelection) listViewer
-                .getSelection();
+        final IStructuredSelection selection = (IStructuredSelection) listViewer.getSelection();
         lastSelectedInput = (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
         if (lastSelectedInput != null) {
             refreshSpecificPropertiesTable();
@@ -579,8 +533,7 @@ ISection {
     }
 
     private boolean editorExists() {
-        final IWorkbenchWindow window = Activator.getDefault().getWorkbench()
-                .getActiveWorkbenchWindow();
+        final IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
         if (window == null) {
             editor = null;
             return false;
@@ -591,8 +544,7 @@ ISection {
             editor = null;
             return false;
         } else {
-            editor = (JFreeChartEditor) window.getActivePage()
-                    .getActiveEditor();
+            editor = (JFreeChartEditor) window.getActivePage().getActiveEditor();
             return true;
         }
     }
@@ -613,8 +565,7 @@ ISection {
 
     /**
      * Update the properties of the selected input. Uses
-     * {@link AbstractTransformation#setProperties(HashMap)} to update the
-     * properties.
+     * {@link AbstractTransformation#setProperties(HashMap)} to update the properties.
      * 
      * @param key
      *            the key of the updated value as a String.
@@ -624,11 +575,12 @@ ISection {
     private void updateProperties(final String key, final Object value, final Table table) {
         // get properties for keys and old values
         if (table == specificPropertiesTable) {
-            final Map<String, Object> newProperties = new HashMap<String,Object>(lastSelectedInput.getProperties());
+            final Map<String, Object> newProperties = new HashMap<String, Object>(lastSelectedInput.getProperties());
             newProperties.put(key, value);
             lastSelectedInput.getConfiguration().setProperties(newProperties);
         } else {
-            final Map<String, Object> newProperties = new HashMap<String,Object>(getInput().getConfiguration().getProperties());
+            final Map<String, Object> newProperties = new HashMap<String, Object>(getInput().getConfiguration()
+                    .getProperties());
             newProperties.put(key, value);
             getInput().getConfiguration().setProperties(newProperties);
         }

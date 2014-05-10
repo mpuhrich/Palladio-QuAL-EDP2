@@ -1,13 +1,9 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.EditorPart;
 import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.Dataset;
 import org.jfree.experimental.chart.swt.ChartComposite;
 import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
 
@@ -17,7 +13,7 @@ import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
  * 
  * @author Dominik Ernst
  */
-public class JFreeChartEditor<T extends Dataset>
+public class JFreeChartEditor
 extends AbstractEditor<JFreeChartVisualisationSingleDatastreamInput>
 implements IVisualisationInputListener {
 
@@ -28,9 +24,6 @@ implements IVisualisationInputListener {
      * Title of this Editor.
      */
     private final static String EDITOR_NAME = "JFreeChartEditor";
-
-    /** Logger for this class */
-    private static Logger logger = Logger.getLogger(JFreeChartEditor.class.getCanonicalName());
 
     /** The container in which a {@link JFreeChart} is contained. */
     protected ChartComposite chartContainer;
@@ -66,13 +59,15 @@ implements IVisualisationInputListener {
     }
 
     @Override
-    public JFreeChartVisualisationInput getVisualisationInput() {
-        return (JFreeChartVisualisationInput)input;
+    public JFreeChartVisualizationInput getVisualisationInput() {
+        return (JFreeChartVisualizationInput)input;
     }
 
     @Override
-    public void visualisationInputChanged() {
-        logger.log(Level.INFO, "update invoked");
+    public void visualisationInputChanged(final boolean needsDatasetReload) {
+        if (needsDatasetReload) {
+            getVisualisationInput().reloadDataset();
+        }
         updateChart();
     }
 }

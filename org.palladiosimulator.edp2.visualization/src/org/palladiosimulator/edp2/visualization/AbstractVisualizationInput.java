@@ -6,7 +6,6 @@ package org.palladiosimulator.edp2.visualization;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Observer;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
@@ -19,7 +18,7 @@ import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
  */
 public abstract class AbstractVisualizationInput<T extends AbstractVisualizationSingleDatastreamInput>
 extends AbstractInput
-implements Observer, ISelection, IVisualisationInput<T> {
+implements ISelection, IVisualisationInput<T> {
 
     /**
      * The list of inputs managed by this handle.
@@ -37,7 +36,7 @@ implements Observer, ISelection, IVisualisationInput<T> {
         if (inputs.size() == 1) {
             firstChildInputAdded(newChildInput);
         }
-        this.getEventDispatcher().visualisationInputChanged();
+        this.getEventDispatcher().visualisationInputChanged(true);
     }
 
     protected void firstChildInputAdded(final T newChildInput) {
@@ -52,6 +51,6 @@ implements Observer, ISelection, IVisualisationInput<T> {
     public final void removeInput(final T newChildInput) {
         inputs.remove(newChildInput);
         newChildInput.setParentInput(null);
-        this.getEventDispatcher().visualisationInputChanged();
+        this.getEventDispatcher().visualisationInputChanged(true);
     }
 }

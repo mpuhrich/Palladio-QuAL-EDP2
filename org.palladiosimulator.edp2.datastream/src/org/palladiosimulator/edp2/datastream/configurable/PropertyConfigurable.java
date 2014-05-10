@@ -51,5 +51,6 @@ implements IPropertyConfigurable {
                 this.getEventDispatcher().propertyChanged(key, oldValue, newValue);
             }
         }
+        this.getEventDispatcher().propertyChangeCompleted();
     }
 }

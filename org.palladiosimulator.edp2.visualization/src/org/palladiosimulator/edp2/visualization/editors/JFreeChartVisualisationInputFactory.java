@@ -9,7 +9,7 @@ import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 
 /**
- * Factory class for {@link JFreeChartVisualisationInput}. Invokes persistence of
+ * Factory class for {@link JFreeChartVisualizationInput}. Invokes persistence of
  * all {@link IDataSink} elements managed by this handle.
  * 
  * @author Dominik Ernst
@@ -60,7 +60,7 @@ extends ElementFactory implements IElementFactory
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public IAdaptable createElement(final IMemento memento) {
-        final JFreeChartVisualisationInput visualisationInput = createElement();
+        final JFreeChartVisualizationInput visualisationInput = createElement();
         final IMemento childMemento = memento.getChild(ELEMENT_NAME);
 
         // first restore the inputs managed by this handle (required that way
@@ -82,10 +82,10 @@ extends ElementFactory implements IElementFactory
         return visualisationInput;
     }
 
-    protected abstract JFreeChartVisualisationInput createElement();
+    protected abstract JFreeChartVisualizationInput createElement();
 
     public static void saveState(final IMemento memento,
-            final JFreeChartVisualisationInput inputHandle) {
+            final JFreeChartVisualizationInput inputHandle) {
         final Map<String, Object> props = inputHandle.getConfiguration().getProperties();
         memento.createChild(ELEMENT_NAME);
         final IMemento childIMemento = memento.getChild(ELEMENT_NAME);

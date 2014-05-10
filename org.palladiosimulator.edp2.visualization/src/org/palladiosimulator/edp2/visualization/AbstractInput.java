@@ -16,7 +16,11 @@ extends AbstractObservable<IVisualisationInputListener> {
 
             @Override
             public void propertyChanged(final String key, final Object oldValue, final Object newValue) {
-                getEventDispatcher().visualisationInputChanged();
+            }
+
+            @Override
+            public void propertyChangeCompleted() {
+                getEventDispatcher().visualisationInputChanged(false);
             }
         });
     }

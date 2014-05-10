@@ -7,7 +7,7 @@ import java.util.Set;
 
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
 
-public class XYPlotVisualisationInputConfiguration extends JFreeChartVisualisationConfiguration {
+public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualisationConfiguration {
 
     public static final String DOMAIN_AXIS_LABEL_KEY = "domainAxisLabel";
     public static final String RANGE_AXIS_LABEL_KEY = "rangeAxisLabel";
@@ -79,6 +79,7 @@ public class XYPlotVisualisationInputConfiguration extends JFreeChartVisualisati
 
     @Override
     public void propertyChanged(final String key, final Object oldValue, final Object newValue) {
+        super.propertyChanged(key, oldValue, newValue);
         if (DOMAIN_AXIS_LABEL_KEY.equals(key)) {
             domainAxisLabel = (String) newValue;
         } else if (RANGE_AXIS_LABEL_KEY.equals(key)) {

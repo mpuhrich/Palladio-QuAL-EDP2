@@ -3,13 +3,13 @@ package org.palladiosimulator.edp2.visualization.util;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
+import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 
-public class DefaultUnitSwitch extends ExperimentDataSwitch<String> {
+public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
 
     /**
      * Logger for this class.
@@ -23,16 +23,19 @@ public class DefaultUnitSwitch extends ExperimentDataSwitch<String> {
         this.metric = metric;
     }
 
+    @Override
     public String caseNumericalBaseMetricDescription(
             final NumericalBaseMetricDescription object) {
         return ((NumericalBaseMetricDescription)metric).getDefaultUnit().toString();
     }
 
+    @Override
     public String caseTextualBaseMetricDescription(
             final TextualBaseMetricDescription object) {
         return ((TextualBaseMetricDescription)metric).getIdentifiers().get(0).toString();
     }
 
+    @Override
     public String caseBaseMetricDescription(final BaseMetricDescription object) {
         logger.log(
                 Level.SEVERE,

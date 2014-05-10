@@ -63,4 +63,8 @@ public class JFreeChartVisualisationConfiguration extends PropertyConfigurable i
         result.put(SHOW_TITLE_KEY, "true");
         return result;
     }
+
+    @Override
+    public void propertyChangeCompleted() {
+    }
 }

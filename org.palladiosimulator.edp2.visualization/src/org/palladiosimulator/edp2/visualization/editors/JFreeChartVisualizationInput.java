@@ -3,12 +3,12 @@
  */
 package org.palladiosimulator.edp2.visualization.editors;
 
-import java.util.Observable;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.Plot;
+import org.jfree.data.general.AbstractDataset;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 
@@ -19,20 +19,22 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
  * @author Dominik Ernst
  * 
  */
-public abstract class JFreeChartVisualisationInput
+public abstract class JFreeChartVisualizationInput
 extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput> {
+
+    private AbstractDataset currentCachedDataset;
 
     /**
      * Empty constructor.
      */
-    public JFreeChartVisualisationInput() {
+    public JFreeChartVisualizationInput() {
         super();
     }
 
     /**
      * Constructor with a first input.
      */
-    public JFreeChartVisualisationInput(final JFreeChartVisualisationSingleDatastreamInput firstInput) {
+    public JFreeChartVisualizationInput(final JFreeChartVisualisationSingleDatastreamInput firstInput) {
         this();
         addInput(firstInput);
     }
@@ -54,7 +56,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
      */
     @Override
     public ImageDescriptor getImageDescriptor() {
-        throw new RuntimeException("Not implemented.");
+        return ImageDescriptor.getMissingImageDescriptor();
     }
 
     /*
@@ -64,7 +66,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
      */
     @Override
     public String getName() {
-        return "someName";
+        return "JFreeChart EDP2 Editor";
     }
 
     /*
@@ -84,8 +86,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
      */
     @Override
     public String getToolTipText() {
-        // TODO Auto-generated method stub
-        return "someTT";
+        return getName();
     }
 
     /*
@@ -96,26 +97,8 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
     @SuppressWarnings("rawtypes")
     @Override
     public Object getAdapter(final Class adapter) {
-        // TODO Auto-generated method stub
         return null;
     }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
-     */
-    @Override
-    public void update(final Observable o, final Object arg) {
-        this.getEventDispatcher().visualisationInputChanged();
-    }
-
-    /**
-     * Creates a new {@link JFreeChart}. Charts are specific for each
-     * EditorInput. Typically an update of the current DataSet is recommended,
-     * before the chart itself is updated.
-     */
-    public abstract JFreeChart createChart();
 
     /* (non-Javadoc)
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
@@ -141,9 +124,34 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
         // JFreeChartEditorInputHandleFactory.saveState(memento, this);
     }
 
+    /**
+     * Creates a new {@link JFreeChart}. Charts are specific for each
+     * EditorInput. Typically an update of the current DataSet is recommended,
+     * before the chart itself is updated.
+     */
+    final JFreeChart createChart() {
+        if (currentCachedDataset == null) {
+            reloadDataset();
+        }
+        final JFreeChartVisualisationConfiguration configuration = getConfiguration();
+        final Plot plot = generatePlot(configuration, currentCachedDataset);
+
+        return new JFreeChart(
+                configuration.isShowTitle() ? configuration.getTitle() : null,
+                        JFreeChart.DEFAULT_TITLE_FONT, plot, configuration.isShowLegend());
+    }
+
+    void reloadDataset() {
+        currentCachedDataset = generateDataset();
+    }
+
     @Override
     protected PropertyConfigurable createConfiguration() {
         return new JFreeChartVisualisationConfiguration();
     }
+
+    protected abstract Plot generatePlot(final PropertyConfigurable config, final AbstractDataset dataset);
+
+    protected abstract AbstractDataset generateDataset();
 
 }

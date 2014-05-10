@@ -17,6 +17,10 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="Palladio" url="https://sdqweb.ipd.kit.edu/eclipse/palladio/releases/3.5.0/"/>
+   </url>
+
    <includes
          id="org.palladiosimulator.edp2.feature"
          version="0.0.0"/>

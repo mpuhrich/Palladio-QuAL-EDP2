@@ -27,6 +27,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
@@ -80,7 +81,7 @@ ISelectionChangedListener {
     /**
      * The source which was selected when the wizard was started.
      */
-    private final AbstractDataSource selectedSource;
+    private final IDataSource selectedSource;
     /**
      * The current {@link IStatus} based on the selection in the <choiceViewer>
      */
@@ -108,7 +109,7 @@ ISelectionChangedListener {
      *            the source which was selected to invoke the wizard.
      */
     protected SelectDefaultCombinationsPage(final String pageName,
-            final AbstractDataSource selectedSource) {
+            final IDataSource selectedSource) {
         super(pageName);
         this.selectedSource = selectedSource;
         setDescription("Choose a combination of Filters/Adapters + Editor to display"
@@ -405,7 +406,7 @@ ISelectionChangedListener {
      * @return list of {@link DefaultSequence}-objects that can process the given source.
      */
     private ArrayList<DefaultSequence> getApplicableSequences(
-            final AbstractDataSource forSource) {
+            final IDataSource forSource) {
         final ArrayList<DefaultSequence> applicableSequences = new ArrayList<DefaultSequence>();
 
         for (final DefaultSequence seq : defaultSequences) {

@@ -43,6 +43,7 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatas
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamConfiguration;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 
 /**
@@ -279,7 +280,7 @@ ISection {
                     if (rect.contains(pt)) {
                         // color properties
                         if (item.getText(labelColumn).equals(
-                                JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY)) {
+                                JFreeChartVisualisationSingleDatastreamConfiguration.COLOR_KEY)) {
                             openColorAndTransparencyDialog(item,
                                     specificPropertiesTable);
                             // boolean properties
@@ -462,9 +463,9 @@ ISection {
             final TableItem item = new TableItem(specificPropertiesTable, SWT.NONE);
             item.setText(0, String.valueOf(key));
             item.setText(1, String.valueOf(properties.get(key)));
-            if (String.valueOf(key).equals(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY)) {
+            if (String.valueOf(key).equals(JFreeChartVisualisationSingleDatastreamConfiguration.COLOR_KEY)) {
                 final String hexColor = String.valueOf(properties.get(key));
-                if (hexColor.equals(JFreeChartVisualisationSingleDatastreamInput.NO_COLOR)) {
+                if (hexColor.equals(JFreeChartVisualisationSingleDatastreamConfiguration.NO_COLOR)) {
                     item.setText(1, "(default Color)");
                 } else {
                     item.setText(1, "");

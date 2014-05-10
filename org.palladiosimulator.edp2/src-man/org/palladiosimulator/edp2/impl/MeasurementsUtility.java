@@ -170,47 +170,55 @@ public class MeasurementsUtility {
      * @return DAO for ordinal measurements.
      */
     @SuppressWarnings("unchecked")
-    public static <Q extends Quantity> MeasurementsDao<?,Q> getMeasurementsDao(final DataSeries ds) {
-        final MeasurementsDaoFactory daoFactory = ds.getRawMeasurements()
-                .getMeasurementsRange().getMeasurements().getMeasure()
-                .getExperimentGroup().getRepository()
-                .getMeasurementsDaoFactory();
+    public static <Q extends Quantity> MeasurementsDao<?, Q> getMeasurementsDao(final DataSeries ds) {
+        final MeasurementsDaoFactory daoFactory = ds.getRawMeasurements().getMeasurementsRange().getMeasurements()
+                .getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory();
+        final MeasurementsDao<?, Q> omd;
         if (daoFactory.getDaoRegistry().isRegistered(ds.getValuesUuid())) {
-            return daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
+            omd = daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
         } else {
-            final MeasurementsDao<?,Q> omd = new ExperimentDataSwitch<MeasurementsDao<?,Q>>() {
+            omd = new ExperimentDataSwitch<MeasurementsDao<?, Q>>() {
                 @Override
-                public MeasurementsDao<?,Q> caseIdentifierBasedMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
-                    final BinaryMeasurementsDao<Identifier, Dimensionless> bmd = daoFactory.createNominalMeasurementsDao(ds.getValuesUuid(), getTextualBaseMetricDescriptionFromIdentifierMeasurement(object));
+                public MeasurementsDao<?, Q> caseIdentifierBasedMeasurements(
+                        final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
+                    final BinaryMeasurementsDao<Identifier, Dimensionless> bmd = daoFactory
+                            .createNominalMeasurementsDao(ds.getValuesUuid(),
+                                    getTextualBaseMetricDescriptionFromIdentifierMeasurement(object));
                     bmd.setUnit(Unit.ONE);
                     return (MeasurementsDao<?, Q>) bmd;
                 };
+
                 @Override
-                public MeasurementsDao<?,Q> caseJSXmlMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements object) {
+                public MeasurementsDao<?, Q> caseJSXmlMeasurements(
+                        final org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements object) {
                     return daoFactory.createJScienceXmlMeasurementsDao(ds.getValuesUuid());
                 };
+
                 @Override
-                public MeasurementsDao<?,Q> caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
-                    final BinaryMeasurementsDao<Double,Q> bmd = daoFactory.createDoubleMeasurementsDao(ds.getValuesUuid());
+                public MeasurementsDao<?, Q> caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
+                    final BinaryMeasurementsDao<Double, Q> bmd = daoFactory.createDoubleMeasurementsDao(ds
+                            .getValuesUuid());
                     bmd.setUnit(object.getStorageUnit());
                     return bmd;
                 };
+
                 @Override
-                public MeasurementsDao<?,Q> caseLongBinaryMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements object) {
-                    final BinaryMeasurementsDao<Long,Q> bmd = daoFactory.createLongMeasurementsDao(ds.getValuesUuid());
+                public MeasurementsDao<?, Q> caseLongBinaryMeasurements(
+                        final org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements object) {
+                    final BinaryMeasurementsDao<Long, Q> bmd = daoFactory.createLongMeasurementsDao(ds.getValuesUuid());
                     bmd.setUnit(object.getStorageUnit());
                     return bmd;
                 };
             }.doSwitch(ds);
-            if (!omd.isOpen() && omd.canOpen()) {
-                try {
-                    omd.open();
-                } catch (final DataNotAccessibleException e) {
-                    // Do nothing. Could simply not open the DAO.
-                }
-            }
-            return omd;
         }
+        if (!omd.isOpen() && omd.canOpen()) {
+            try {
+                omd.open();
+            } catch (final DataNotAccessibleException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return omd;
     }
 
     public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {

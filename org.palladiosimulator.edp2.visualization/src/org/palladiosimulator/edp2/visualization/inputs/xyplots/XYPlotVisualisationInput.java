@@ -1,6 +1,12 @@
 package org.palladiosimulator.edp2.visualization.inputs.xyplots;
 
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.measure.Measure;
+import javax.measure.quantity.Duration;
+import javax.measure.unit.SI;
 
 import org.jfree.chart.ChartColor;
 import org.jfree.chart.JFreeChart;
@@ -10,14 +16,18 @@ import org.jfree.chart.renderer.AbstractRenderer;
 import org.jfree.chart.renderer.xy.DefaultXYItemRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamConfiguration;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
+import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.CaptureType;
+import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 /**
  * Input for {@link JFreeChartEditor} .
@@ -25,7 +35,7 @@ import org.palladiosimulator.metricspec.CaptureType;
  * @author Steffen Becker, Dominik Ernst, Roland Richter
  */
 public class XYPlotVisualisationInput
-extends JFreeChartVisualisationInput<DefaultXYDataset> {
+extends JFreeChartVisualisationInput {
 
     public XYPlotVisualisationInput() {
         super();
@@ -59,6 +69,18 @@ extends JFreeChartVisualisationInput<DefaultXYDataset> {
         return new XYPlotVisualisationInputConfiguration();
     }
 
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
+     */
+    @Override
+    protected void firstChildInputAdded(final JFreeChartVisualisationSingleDatastreamInput newChildInput) {
+        super.firstChildInputAdded(newChildInput);
+        final Map<String,Object> configuration = new HashMap<String,Object>(getConfiguration().getProperties());
+        configuration.put(XYPlotVisualisationInputConfiguration.DOMAIN_AXIS_LABEL_KEY,getAxisLabel(0));
+        configuration.put(XYPlotVisualisationInputConfiguration.RANGE_AXIS_LABEL_KEY,getAxisLabel(1));
+        getConfiguration().setProperties(configuration);
+    }
+
     private String getAxisLabel(final int pos) {
         final BaseMetricDescription metric = MetricDescriptionUtility
                 .toBaseMetricDescriptions(getInputs().get(0).getDataSource().getMetricDesciption())[pos];
@@ -72,7 +94,7 @@ extends JFreeChartVisualisationInput<DefaultXYDataset> {
     private DefaultXYDataset generateDataset() {
         final DefaultXYDataset dataset = new DefaultXYDataset();
 
-        for (final JFreeChartVisualisationSingleDatastreamInput<DefaultXYDataset> childInput : getInputs()) {
+        for (final JFreeChartVisualisationSingleDatastreamInput childInput : getInputs()) {
             dataset.addSeries(childInput.getInputName(),getXYData(childInput.getDataSource()));
         }
         return dataset;
@@ -86,16 +108,17 @@ extends JFreeChartVisualisationInput<DefaultXYDataset> {
     private XYPlot generatePlot(final XYPlotVisualisationInputConfiguration configuration,
             final DefaultXYDataset dataset) {
         final XYPlot plot = new XYPlot();
-        plot.setDataset(dataset);
-
-        final DefaultXYItemRenderer renderer = new DefaultXYItemRenderer();
-        renderer.setDrawSeriesLineAsPath(false);
-        plot.setRenderer(renderer);
 
         final NumberAxis domainAxis = new NumberAxis(configuration.getDomainAxisLabel());
         final NumberAxis rangeAxis = new NumberAxis(configuration.getRangeAxisLabel());
         plot.setRangeAxis(rangeAxis);
         plot.setDomainAxis(domainAxis);
+
+        plot.setDataset(dataset);
+
+        final DefaultXYItemRenderer renderer = new DefaultXYItemRenderer();
+        renderer.setDrawSeriesLineAsPath(false);
+        plot.setRenderer(renderer);
 
         configureSeriesColors(renderer);
         return plot;
@@ -106,32 +129,36 @@ extends JFreeChartVisualisationInput<DefaultXYDataset> {
      */
     private void configureSeriesColors(final AbstractRenderer renderer) {
         for (int i = 0; i < getInputs().size(); i++) {
-            final float alpha = 0.0f;
-            //            final float alpha = Float.parseFloat(getHandle().getInputProperties()[i]
-            //                    .get(JFreeChartVisualisationSingleDatastreamInput.ALPHA_KEY).toString());
-            //            if ((getHandle().getInputProperties()[i]
-            //                    .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY) != null)
-            //                    && !getHandle().getInputProperties()[i]
-            //                            .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString()
-            //                            .equals(NO_COLOR)) {
-            //                final Color opaque = Color.decode(getHandle().getInputProperties()[i]
-            //                        .get(JFreeChartVisualisationSingleDatastreamInput.COLOR_KEY).toString());
-            //
-            //                final float[] comp = opaque.getRGBColorComponents(null);
-            //                final Color col = new Color(comp[0], comp[1], comp[2], alpha);
-            //                renderer.setSeriesPaint(i, col);
-            //            } else {
-            final Color defaultColor = (Color) ChartColor
-                    .createDefaultPaintArray()[i];
-            final float[] comp = defaultColor.getRGBColorComponents(null);
-            final Color col = new Color(comp[0], comp[1], comp[2], alpha);
-            renderer.setSeriesPaint(i, col);
-            //            }
+            final JFreeChartVisualisationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
+            final float alpha = config.getAlpha();
+            if (config.getColor() != null && !config.getColor().equals(JFreeChartVisualisationSingleDatastreamConfiguration.NO_COLOR)){
+                final Color opaque = Color.decode(config.getColor());
+                final float[] comp = opaque.getRGBColorComponents(null);
+                final Color col = new Color(comp[0], comp[1], comp[2], alpha);
+                renderer.setSeriesPaint(i, col);
+            } else {
+                final Color defaultColor = (Color) ChartColor.createDefaultPaintArray()[i];
+                final float[] comp = defaultColor.getRGBColorComponents(null);
+                final Color col = new Color(comp[0], comp[1], comp[2], alpha);
+                renderer.setSeriesPaint(i, col);
+            }
         }
     }
 
     private double[][] getXYData(final IDataSource dataSource) {
-        // TODO Auto-generated method stub
-        return null;
+        final IDataStream<MeasurementTuple> inputStream = dataSource.getDataStream();
+        final double[][] result = new double[2][inputStream.size()];
+        try {
+            int i = 0;
+            for (final MeasurementTuple tuple : inputStream) {
+                final Measure<Double, Duration> pointInTime = tuple.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
+                result[0][i] = pointInTime.doubleValue(SI.SECOND);
+                result[1][i] = (Double) tuple.asArray()[1].getValue();
+                i++;
+            }
+        } finally {
+            inputStream.close();
+        }
+        return result;
     }
 }

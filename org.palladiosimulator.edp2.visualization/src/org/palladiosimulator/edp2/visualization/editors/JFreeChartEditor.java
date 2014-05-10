@@ -18,7 +18,7 @@ import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
  * @author Dominik Ernst
  */
 public class JFreeChartEditor<T extends Dataset>
-extends AbstractEditor<JFreeChartVisualisationSingleDatastreamInput<T>>
+extends AbstractEditor<JFreeChartVisualisationSingleDatastreamInput>
 implements IVisualisationInputListener {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
@@ -66,8 +66,8 @@ implements IVisualisationInputListener {
     }
 
     @Override
-    public JFreeChartVisualisationInput<T> getVisualisationInput() {
-        return (JFreeChartVisualisationInput<T>)input;
+    public JFreeChartVisualisationInput getVisualisationInput() {
+        return (JFreeChartVisualisationInput)input;
     }
 
     @Override

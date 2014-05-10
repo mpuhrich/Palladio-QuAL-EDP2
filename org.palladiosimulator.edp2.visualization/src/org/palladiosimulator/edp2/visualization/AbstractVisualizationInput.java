@@ -34,7 +34,13 @@ implements Observer, ISelection, IVisualisationInput<T> {
     public final void addInput(final T newChildInput) {
         inputs.add(newChildInput);
         newChildInput.setParentInput(this);
+        if (inputs.size() == 1) {
+            firstChildInputAdded(newChildInput);
+        }
         this.getEventDispatcher().visualisationInputChanged();
+    }
+
+    protected void firstChildInputAdded(final T newChildInput) {
     }
 
     @Override
@@ -43,7 +49,7 @@ implements Observer, ISelection, IVisualisationInput<T> {
     }
 
     @Override
-    public void removeInput(final T newChildInput) {
+    public final void removeInput(final T newChildInput) {
         inputs.remove(newChildInput);
         newChildInput.setParentInput(null);
         this.getEventDispatcher().visualisationInputChanged();

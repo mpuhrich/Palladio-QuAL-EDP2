@@ -1,6 +1,7 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
@@ -20,6 +21,7 @@ public class Edp2DataTupleDataSource extends AbstractDataSource implements IData
         this.dataStream = new Edp2DataTupleStreamForRawMeasurements(measurements, (MetricSetDescription) this.getMetricDesciption());
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public <M extends Measurement> IDataStream<M> getDataStream() {
         return (IDataStream<M>) dataStream;
@@ -28,6 +30,11 @@ public class Edp2DataTupleDataSource extends AbstractDataSource implements IData
     @Override
     public Set<String> getKeys() {
         return Collections.emptySet();
+    }
+
+    @Override
+    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+        return Collections.emptyMap();
     }
 
 }

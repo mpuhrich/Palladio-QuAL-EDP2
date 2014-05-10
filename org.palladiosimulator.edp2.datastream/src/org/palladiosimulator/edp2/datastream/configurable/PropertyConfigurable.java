@@ -17,7 +17,11 @@ implements IPropertyConfigurable {
     public PropertyConfigurable() {
         super();
         this.keys = getKeys();
+        properties.putAll(getDefaultConfiguration());
     }
+
+    @Override
+    public abstract Map<? extends String, ? extends Object> getDefaultConfiguration();
 
     public PropertyConfigurable(final Map<String,Object> newProperties) {
         this();
@@ -42,7 +46,7 @@ implements IPropertyConfigurable {
         for (final String key : keys) {
             final Object oldValue = properties.get(key);
             final Object newValue = newProperties.get(key);
-            if (!oldValue.equals(newValue)) {
+            if (!newValue.equals(oldValue)) {
                 properties.put(key, newProperties.get(key));
                 this.getEventDispatcher().propertyChanged(key, oldValue, newValue);
             }

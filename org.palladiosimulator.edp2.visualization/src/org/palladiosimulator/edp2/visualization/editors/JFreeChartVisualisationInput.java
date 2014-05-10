@@ -9,7 +9,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.Dataset;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 
@@ -20,8 +19,8 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
  * @author Dominik Ernst
  * 
  */
-public abstract class JFreeChartVisualisationInput<T extends Dataset>
-extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> {
+public abstract class JFreeChartVisualisationInput
+extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput> {
 
     /**
      * Empty constructor.
@@ -33,7 +32,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<
     /**
      * Constructor with a first input.
      */
-    public JFreeChartVisualisationInput(final JFreeChartVisualisationSingleDatastreamInput<T> firstInput) {
+    public JFreeChartVisualisationInput(final JFreeChartVisualisationSingleDatastreamInput firstInput) {
         this();
         addInput(firstInput);
     }

@@ -15,6 +15,11 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
         public Set<String> getKeys() {
             return AbstractDataSource.this.getKeys();
         }
+
+        @Override
+        public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+            return AbstractDataSource.this.getDefaultConfiguration();
+        }
     };
 
     public AbstractDataSource() {

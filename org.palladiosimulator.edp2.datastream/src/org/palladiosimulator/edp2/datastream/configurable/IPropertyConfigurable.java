@@ -7,4 +7,5 @@ public interface IPropertyConfigurable {
     public Set<String> getKeys();
     public Map<String,Object> getProperties();
     public void setProperties(Map<String,Object> properties);
+    public abstract Map<? extends String, ? extends Object> getDefaultConfiguration();
 }

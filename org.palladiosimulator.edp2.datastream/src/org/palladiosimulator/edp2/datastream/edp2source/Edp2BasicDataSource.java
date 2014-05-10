@@ -1,6 +1,7 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 
 import javax.measure.quantity.Quantity;
@@ -25,6 +26,11 @@ public class Edp2BasicDataSource<V,Q extends Quantity> extends AbstractDataSourc
 
     @Override
     public Set<String> getKeys() {
-        return Collections.EMPTY_SET;
+        return Collections.emptySet();
+    }
+
+    @Override
+    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+        return Collections.emptyMap();
     }
 }

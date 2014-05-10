@@ -56,4 +56,12 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
         }
     }
 
+    @Override
+    public int size() {
+        if (!measurementsDao.isOpen()) {
+            throw new IllegalStateException("You have to open a datastream first before size() becomes available!");
+        }
+        return measurementsDao.getMeasurements().size();
+    }
+
 }

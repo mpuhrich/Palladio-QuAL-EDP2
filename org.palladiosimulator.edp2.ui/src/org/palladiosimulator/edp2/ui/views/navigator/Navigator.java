@@ -62,7 +62,7 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         treeViewer.setInput(nodes.observe(EDP2Plugin.INSTANCE.getRepositories()));
 
         // Add double click listener
-        //treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
+        treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
 
         getSite().setSelectionProvider(treeViewer);
     }

@@ -28,3 +28,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.core.databinding.validation,
  org.eclipse.emf.edit.ui.provider
 Bundle-ClassPath: .
+Export-Package: org.palladiosimulator.edp2.visualization,
+ org.palladiosimulator.edp2.visualization.editors,
+ org.palladiosimulator.edp2.visualization.inputs.xyplots,
+ org.palladiosimulator.edp2.visualization.wizards

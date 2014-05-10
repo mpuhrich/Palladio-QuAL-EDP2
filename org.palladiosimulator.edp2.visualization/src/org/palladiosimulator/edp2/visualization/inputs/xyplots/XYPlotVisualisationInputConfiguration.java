@@ -1,6 +1,8 @@
 package org.palladiosimulator.edp2.visualization.inputs.xyplots;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
@@ -28,6 +30,7 @@ public class XYPlotVisualisationInputConfiguration extends JFreeChartVisualisati
     private boolean showRangeAxisLabel = true;
     private boolean showDomainAxisLabel = true;
 
+
     /* (non-Javadoc)
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration#getKeys()
      */
@@ -38,6 +41,17 @@ public class XYPlotVisualisationInputConfiguration extends JFreeChartVisualisati
         result.add(RANGE_AXIS_LABEL_KEY);
         result.add(SHOW_RANGE_AXIS_LABEL_KEY);
         result.add(SHOW_DOMAIN_AXIS_LABEL_KEY);
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration#getDefaultConfiguration()
+     */
+    @Override
+    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+        final Map<String,Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
+        result.put(SHOW_DOMAIN_AXIS_LABEL_KEY,"true");
+        result.put(SHOW_RANGE_AXIS_LABEL_KEY,"true");
         return result;
     }
 

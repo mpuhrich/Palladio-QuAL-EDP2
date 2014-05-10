@@ -145,7 +145,12 @@ public class StoreLoadExample {
 
             @Override
             public Set<String> getKeys() {
-                return Collections.EMPTY_SET;
+                return Collections.emptySet();
+            }
+
+            @Override
+            public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+                return Collections.emptyMap();
             }
 
         };

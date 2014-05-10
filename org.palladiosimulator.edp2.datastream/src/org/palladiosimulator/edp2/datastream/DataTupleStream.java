@@ -62,4 +62,9 @@ public class DataTupleStream extends DataStream<MeasurementTuple> {
         }
     }
 
+    @Override
+    public int size() {
+        return childStreams.get(0).size();
+    }
+
 }

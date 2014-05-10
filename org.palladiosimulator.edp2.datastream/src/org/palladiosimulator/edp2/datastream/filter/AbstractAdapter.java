@@ -70,6 +70,11 @@ implements IDataSink, IDataSource
             public void close() {
                 inputDataStream.close();
             }
+
+            @Override
+            public int size() {
+                return inputDataStream.size();
+            }
         };
     }
 

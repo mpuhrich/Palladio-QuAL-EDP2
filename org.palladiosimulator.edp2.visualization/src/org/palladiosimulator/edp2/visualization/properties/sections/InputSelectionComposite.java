@@ -31,7 +31,7 @@ public class InputSelectionComposite extends Composite {
      * @param style
      */
     public InputSelectionComposite(final Composite parent, final int style,
-            final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<?>> inputHandle) {
+            final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput> inputHandle) {
         super(parent, SWT.EMBEDDED);
         addDisposeListener(new DisposeListener() {
             @Override

@@ -1,6 +1,8 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyListener;
@@ -51,5 +53,14 @@ public class JFreeChartVisualisationConfiguration extends PropertyConfigurable i
 
     public boolean isShowLegend() {
         return showLegend;
+    }
+
+    @Override
+    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+        final Map<String,Object> result = new HashMap<String, Object>();
+        result.put(TITLE_KEY, "JFreeChart");
+        result.put(SHOW_LEGEND_KEY, "true");
+        result.put(SHOW_TITLE_KEY, "true");
+        return result;
     }
 }

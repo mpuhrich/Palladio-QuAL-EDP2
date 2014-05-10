@@ -5,7 +5,6 @@ import java.util.Map;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
-import org.jfree.data.general.Dataset;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.visualization.datasource.ElementFactory;
 
@@ -61,7 +60,7 @@ extends ElementFactory implements IElementFactory
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public IAdaptable createElement(final IMemento memento) {
-        final JFreeChartVisualisationInput<? extends Dataset> visualisationInput = createElement();
+        final JFreeChartVisualisationInput visualisationInput = createElement();
         final IMemento childMemento = memento.getChild(ELEMENT_NAME);
 
         // first restore the inputs managed by this handle (required that way
@@ -71,7 +70,7 @@ extends ElementFactory implements IElementFactory
             final String elementName = subMemento.getString(INPUT_NAME_KEY);
             final IElementFactory inputFactory = null; //TODO FactoryConnector.instance.getAdapter(
             //elementName, IElementFactory.class);
-            final JFreeChartVisualisationSingleDatastreamInput createdInput = (JFreeChartVisualisationSingleDatastreamInput<? extends Dataset>) inputFactory
+            final JFreeChartVisualisationSingleDatastreamInput createdInput = (JFreeChartVisualisationSingleDatastreamInput) inputFactory
                     .createElement(subMemento);
             visualisationInput.addInput(createdInput);
         }
@@ -83,10 +82,10 @@ extends ElementFactory implements IElementFactory
         return visualisationInput;
     }
 
-    protected abstract JFreeChartVisualisationInput<? extends Dataset> createElement();
+    protected abstract JFreeChartVisualisationInput createElement();
 
     public static void saveState(final IMemento memento,
-            final JFreeChartVisualisationInput<? extends Dataset> inputHandle) {
+            final JFreeChartVisualisationInput inputHandle) {
         final Map<String, Object> props = inputHandle.getConfiguration().getProperties();
         memento.createChild(ELEMENT_NAME);
         final IMemento childIMemento = memento.getChild(ELEMENT_NAME);
@@ -95,7 +94,7 @@ extends ElementFactory implements IElementFactory
         for (final String key : props.keySet()) {
             childIMemento.putString(key, props.get(key).toString());
         }
-        for (final JFreeChartVisualisationSingleDatastreamInput<? extends Dataset> childInput : inputHandle.getInputs()) {
+        for (final JFreeChartVisualisationSingleDatastreamInput childInput : inputHandle.getInputs()) {
             final IMemento subMemento = childIMemento.createChild(INPUT_ELEMENT_KEY);
             subMemento.putString(INPUT_NAME_KEY, childInput.getClass().getCanonicalName());
             //TODO: input.saveState(subMemento);

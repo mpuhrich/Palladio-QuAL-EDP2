@@ -17,7 +17,7 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationS
  * @author Steffen Becker
  * 
  */
-public abstract class JFreeChartVisualisationInputFactory
+public abstract class JFreeChartVisualizationInputFactory
 extends PropertyConfigurableElementFactory implements IElementFactory {
 
     @Override

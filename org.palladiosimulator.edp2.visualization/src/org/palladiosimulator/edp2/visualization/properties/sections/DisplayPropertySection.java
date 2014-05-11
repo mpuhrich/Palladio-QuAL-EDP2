@@ -43,6 +43,7 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationConfiguration;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamConfiguration;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputConfiguration;
 
 /**
  * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and allows to edit visual
@@ -179,8 +180,10 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     if (rect.contains(pt)) {
                         // boolean properties
                         if (item.getText(labelColumn).equals(JFreeChartVisualizationConfiguration.SHOW_LEGEND_KEY)
-                                || (item.getText(labelColumn)
-                                        .equals(JFreeChartVisualizationConfiguration.SHOW_TITLE_KEY))) {
+                                || (item.getText(labelColumn).equals(JFreeChartVisualizationConfiguration.SHOW_TITLE_KEY))
+                                || (item.getText(labelColumn).equals(XYPlotVisualizationInputConfiguration.SHOW_DOMAIN_AXIS_LABEL_KEY))
+                                || (item.getText(labelColumn).equals(XYPlotVisualizationInputConfiguration.SHOW_RANGE_AXIS_LABEL_KEY))
+                                ) {
                             openBooleanDialog(index, commonPropertiesTable);
                         }
                         // textual properties

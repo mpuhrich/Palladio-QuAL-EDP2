@@ -4,7 +4,7 @@ import org.eclipse.ui.IMemento;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput;
 
-public class XYPlotVisualizationInputFactory extends JFreeChartVisualisationInputFactory {
+public class XYPlotVisualizationInputFactory extends JFreeChartVisualizationInputFactory {
 
     public static final String FACTORY_ID = XYPlotVisualizationInputFactory.class.getCanonicalName();
 

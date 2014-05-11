@@ -135,7 +135,7 @@
       <datasink
             class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInputFactory"
+            factory="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
       </datasink>
       <datasink

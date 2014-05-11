@@ -3,29 +3,28 @@
  */
 package org.palladiosimulator.edp2.visualization.datasource;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTargetAdapter;
 import org.eclipse.swt.dnd.DropTargetEvent;
+import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
  * @author Dominik Ernst
  *
  */
-public class DatasourceDropTargetAdapter extends DropTargetAdapter {
+public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastreamInput> extends DropTargetAdapter {
 
-    private final static Logger logger = Logger.getLogger(DatasourceDropTargetAdapter.class.getName());
-    private final IVisualisationInput<?> inputHandle;
+    private final IVisualisationInput<T> visualizationInput;
 
-    public DatasourceDropTargetAdapter(final IVisualisationInput<?> inputHandle){
-        this.inputHandle = inputHandle;
+    public DatasourceDropTargetAdapter(final IVisualisationInput<T> iVisualisationInput){
+        this.visualizationInput = iVisualisationInput;
     }
 
     @Override
@@ -33,12 +32,9 @@ public class DatasourceDropTargetAdapter extends DropTargetAdapter {
         final IStructuredSelection selection =
                 (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
         if (selection.getFirstElement() instanceof RawMeasurements){
-            final EDP2Source newSource = new EDP2Source(/*(RawMeasurements) selection.getFirstElement()*/);
-            final IVisualisationSingleDatastreamInput firstInput = inputHandle.getInputs().get(0);
-            // inputHandle.addInput(firstInput.createTransformationsChainCopy(newSource));
-            logger.log(Level.INFO, "added new input:"+newSource.getRawMeasurementsUUID());
+            final IDataSource newSource = new Edp2DataTupleDataSource((RawMeasurements) selection.getFirstElement());
+            visualizationInput.addInput((T) new JFreeChartVisualizationSingleDatastreamInput(newSource));
         }
-        logger.log(Level.INFO, "dropped element: "+selection.getFirstElement().toString());
     }
 
     /* (non-Javadoc)

@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 public class InputSelectionComposite extends Composite {
 
@@ -31,7 +31,7 @@ public class InputSelectionComposite extends Composite {
      * @param style
      */
     public InputSelectionComposite(final Composite parent, final int style,
-            final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput> inputHandle) {
+            final AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> inputHandle) {
         super(parent, SWT.EMBEDDED);
         addDisposeListener(new DisposeListener() {
             @Override

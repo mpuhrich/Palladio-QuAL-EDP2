@@ -9,7 +9,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
-public class Edp2DataTupleStreamForRawMeasurements extends DataTupleStream {
+public class Edp2DataTupleStreamForRawMeasurements
+extends DataTupleStream {
 
     public Edp2DataTupleStreamForRawMeasurements(
             final RawMeasurements measurements,
@@ -17,6 +18,7 @@ public class Edp2DataTupleStreamForRawMeasurements extends DataTupleStream {
         super(getChildDataStreams(measurements, metricSetDescription), metricSetDescription);
     }
 
+    @SuppressWarnings("rawtypes")
     private static List<BasicDataStream<?, ?>> getChildDataStreams(final RawMeasurements measurements, final MetricSetDescription metricSetDescription) {
         final List<BasicDataStream<?,?>> result = new ArrayList<BasicDataStream<?,?>>(measurements.getDataSeries().size());
         for (int i = 0; i < measurements.getDataSeries().size(); i++) {

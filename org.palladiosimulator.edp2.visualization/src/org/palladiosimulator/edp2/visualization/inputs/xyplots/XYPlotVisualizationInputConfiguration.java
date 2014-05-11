@@ -5,9 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationConfiguration;
 
-public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualisationConfiguration {
+public class XYPlotVisualizationInputConfiguration
+extends JFreeChartVisualizationConfiguration {
 
     public static final String DOMAIN_AXIS_LABEL_KEY = "domainAxisLabel";
     public static final String RANGE_AXIS_LABEL_KEY = "rangeAxisLabel";

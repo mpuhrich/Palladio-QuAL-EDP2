@@ -40,9 +40,9 @@ import org.palladiosimulator.edp2.visualization.AbstractInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamConfiguration;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
  * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and allows to edit visual
@@ -178,9 +178,9 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
                         // boolean properties
-                        if (item.getText(labelColumn).equals(JFreeChartVisualisationConfiguration.SHOW_LEGEND_KEY)
+                        if (item.getText(labelColumn).equals(JFreeChartVisualizationConfiguration.SHOW_LEGEND_KEY)
                                 || (item.getText(labelColumn)
-                                        .equals(JFreeChartVisualisationConfiguration.SHOW_TITLE_KEY))) {
+                                        .equals(JFreeChartVisualizationConfiguration.SHOW_TITLE_KEY))) {
                             openBooleanDialog(index, commonPropertiesTable);
                         }
                         // textual properties
@@ -250,7 +250,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     if (rect.contains(pt)) {
                         // color properties
                         if (item.getText(labelColumn).equals(
-                                JFreeChartVisualisationSingleDatastreamConfiguration.COLOR_KEY)) {
+                                JFreeChartVisualizationSingleDatastreamConfiguration.COLOR_KEY)) {
                             openColorAndTransparencyDialog(item, specificPropertiesTable);
                             // boolean properties
                         }
@@ -385,7 +385,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
 
     /**
      * Opens a {@link ColorDialog} to change the color of the last selected
-     * {@link JFreeChartVisualisationSingleDatastreamInput}.
+     * {@link JFreeChartVisualizationSingleDatastreamInput}.
      * 
      * @param item
      *            index the row-index of the cell to be edited
@@ -420,9 +420,9 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             final TableItem item = new TableItem(specificPropertiesTable, SWT.NONE);
             item.setText(0, String.valueOf(key));
             item.setText(1, String.valueOf(properties.get(key)));
-            if (String.valueOf(key).equals(JFreeChartVisualisationSingleDatastreamConfiguration.COLOR_KEY)) {
+            if (String.valueOf(key).equals(JFreeChartVisualizationSingleDatastreamConfiguration.COLOR_KEY)) {
                 final String hexColor = String.valueOf(properties.get(key));
-                if (hexColor.equals(JFreeChartVisualisationSingleDatastreamConfiguration.NO_COLOR)) {
+                if (hexColor.equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)) {
                     item.setText(1, "(default Color)");
                 } else {
                     item.setText(1, "");

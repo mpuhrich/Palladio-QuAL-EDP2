@@ -3,7 +3,9 @@ package org.palladiosimulator.edp2.datastream.configurable;
 import java.util.Map;
 import java.util.Set;
 
-public interface IPropertyConfigurable {
+import org.eclipse.core.runtime.IAdaptable;
+
+public interface IPropertyConfigurable extends IAdaptable {
     public Set<String> getKeys();
     public Map<String,Object> getProperties();
     public void setProperties(Map<String,Object> properties);

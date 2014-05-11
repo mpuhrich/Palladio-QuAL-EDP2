@@ -1,6 +1,5 @@
 package org.palladiosimulator.edp2.visualization;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,26 +20,10 @@ extends AbstractInput
 implements IVisualisationSingleDatastreamInput {
 
     /**
-     * Keys used for persistence of properties.
-     */
-    public static final String INPUT_NAME_KEY = "inputName";
-
-    /**
-     * The properties of this {@link AbstractVisualizationSingleDatastreamInput}, which are persisted
-     * and displayed in the 'Display'-Tab of the Properties-View.
-     */
-    protected final Map<String, Object> properties;
-
-    /**
      * The {@link AbstractVisualizationSingleDatastreamInput}'s or rather {@link IDataSink}'s
      * predecessor.
      */
     private IDataSource source;
-
-    /**
-     * A display name for this {@link AbstractVisualizationSingleDatastreamInput}.
-     */
-    private String inputName;
 
     private AbstractVisualizationInput<? extends AbstractVisualizationSingleDatastreamInput> parentInput;
 
@@ -50,7 +33,6 @@ implements IVisualisationSingleDatastreamInput {
 
     public AbstractVisualizationSingleDatastreamInput(final IDataSource source) {
         super();
-        properties = new HashMap<String, Object>();
         if (source != null) {
             setDataSource(source);
         }
@@ -61,9 +43,11 @@ implements IVisualisationSingleDatastreamInput {
         return source;
     }
 
-    private void setDataSource(final IDataSource source) {
+    public void setDataSource(final IDataSource source) {
         this.source = source;
-        properties.put(INPUT_NAME_KEY, getInputName());
+        final Map<String,Object> properties = new HashMap<String,Object>(getConfiguration().getProperties());
+        properties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, getDefaultName());
+        getConfiguration().setProperties(properties);
     }
 
     /* (non-Javadoc)
@@ -76,21 +60,6 @@ implements IVisualisationSingleDatastreamInput {
         } else {
             return "noSourceSet";
         }
-    }
-
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.IVisualisationInput#getInputName()
-     */
-    @Override
-    public String getInputName() {
-        if (inputName == null) {
-            inputName = getDefaultName();
-        }
-        return inputName;
-    }
-
-    public final Map<String,Object> getProperties(){
-        return Collections.unmodifiableMap(this.properties);
     }
 
     <T extends AbstractVisualizationSingleDatastreamInput> void setParentInput(final AbstractVisualizationInput<T> parent) {

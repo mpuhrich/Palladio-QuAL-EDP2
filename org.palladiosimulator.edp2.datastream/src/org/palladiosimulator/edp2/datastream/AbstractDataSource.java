@@ -46,4 +46,13 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
         myProperties.setProperties(properties);
     }
 
+    /* (non-Javadoc)
+     * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
+     */
+    @SuppressWarnings("rawtypes")
+    @Override
+    public Object getAdapter(final Class adapter) {
+        return myProperties.getAdapter(adapter);
+    }
+
 }

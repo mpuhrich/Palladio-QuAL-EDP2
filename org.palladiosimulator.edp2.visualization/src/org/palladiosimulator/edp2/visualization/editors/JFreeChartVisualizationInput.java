@@ -11,16 +11,17 @@ import org.jfree.chart.plot.Plot;
 import org.jfree.data.general.AbstractDataset;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualisationInputFactory;
 
 /**
  * Implementation of an {@link AbstractVisualizationInput} for
- * {@link JFreeChartVisualisationSingleDatastreamInput}s.
+ * {@link JFreeChartVisualizationSingleDatastreamInput}s.
  * 
  * @author Dominik Ernst
  * 
  */
 public abstract class JFreeChartVisualizationInput
-extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput> {
+extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     private AbstractDataset currentCachedDataset;
 
@@ -34,7 +35,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
     /**
      * Constructor with a first input.
      */
-    public JFreeChartVisualizationInput(final JFreeChartVisualisationSingleDatastreamInput firstInput) {
+    public JFreeChartVisualizationInput(final JFreeChartVisualizationSingleDatastreamInput firstInput) {
         this();
         addInput(firstInput);
     }
@@ -89,17 +90,6 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
         return getName();
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-     */
-    @SuppressWarnings("rawtypes")
-    @Override
-    public Object getAdapter(final Class adapter) {
-        return null;
-    }
-
     /* (non-Javadoc)
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
      */
@@ -109,19 +99,11 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
     }
 
     /* (non-Javadoc)
-     * @see org.eclipse.ui.IPersistableElement#getFactoryId()
-     */
-    @Override
-    public String getFactoryId() {
-        return JFreeChartVisualisationInputFactory.getFactoryId();
-    }
-
-    /* (non-Javadoc)
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
     public void saveState(final IMemento memento) {
-        // JFreeChartEditorInputHandleFactory.saveState(memento, this);
+        JFreeChartVisualisationInputFactory.saveState(memento, this);
     }
 
     /**
@@ -133,7 +115,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
         if (currentCachedDataset == null) {
             reloadDataset();
         }
-        final JFreeChartVisualisationConfiguration configuration = getConfiguration();
+        final JFreeChartVisualizationConfiguration configuration = getConfiguration();
         final Plot plot = generatePlot(configuration, currentCachedDataset);
 
         return new JFreeChart(
@@ -147,7 +129,7 @@ extends AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput>
 
     @Override
     protected PropertyConfigurable createConfiguration() {
-        return new JFreeChartVisualisationConfiguration();
+        return new JFreeChartVisualizationConfiguration();
     }
 
     protected abstract Plot generatePlot(final PropertyConfigurable config, final AbstractDataset dataset);

@@ -31,7 +31,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
  * Implementation of a {@link WizardPage} that contains a list of visualizations
@@ -51,7 +51,7 @@ ISelectionChangedListener {
 
     /**
      * Extension points for registered {@link AbstractFilter}, {@link AbstractAdapter} and
-     * {@link JFreeChartVisualisationSingleDatastreamInput}-elements
+     * {@link JFreeChartVisualizationSingleDatastreamInput}-elements
      */
     private final static String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
     private final static String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
@@ -123,7 +123,7 @@ ISelectionChangedListener {
 
     /**
      * Checks the registered plugins for filters {@link AbstractFilter}, adapters
-     * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartVisualisationSingleDatastreamInput}. Then
+     * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartVisualizationSingleDatastreamInput}. Then
      * creates the basic combinations, objects of the type
      * {@link DefaultSequence} from these.
      */

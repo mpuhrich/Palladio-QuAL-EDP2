@@ -22,9 +22,10 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamConfiguration;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
 import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
@@ -65,7 +66,7 @@ extends JFreeChartVisualizationInput {
      * @see org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
      */
     @Override
-    protected void firstChildInputAdded(final JFreeChartVisualisationSingleDatastreamInput newChildInput) {
+    protected void firstChildInputAdded(final JFreeChartVisualizationSingleDatastreamInput newChildInput) {
         super.firstChildInputAdded(newChildInput);
         final Map<String,Object> configuration = new HashMap<String,Object>(getConfiguration().getProperties());
         configuration.put(XYPlotVisualizationInputConfiguration.DOMAIN_AXIS_LABEL_KEY,getAxisDefaultLabel(0));
@@ -80,7 +81,7 @@ extends JFreeChartVisualizationInput {
     protected AbstractDataset generateDataset() {
         final DefaultXYDataset dataset = new DefaultXYDataset();
 
-        for (final JFreeChartVisualisationSingleDatastreamInput childInput : getInputs()) {
+        for (final JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
             dataset.addSeries(childInput.getInputName(),getXYData(childInput.getDataSource()));
         }
         return dataset;
@@ -128,9 +129,9 @@ extends JFreeChartVisualizationInput {
      */
     private void configureSeriesColors(final AbstractRenderer renderer) {
         for (int i = 0; i < getInputs().size(); i++) {
-            final JFreeChartVisualisationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
+            final JFreeChartVisualizationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
             final float alpha = config.getAlpha();
-            if (config.getColor() != null && !config.getColor().equals(JFreeChartVisualisationSingleDatastreamConfiguration.NO_COLOR)){
+            if (config.getColor() != null && !config.getColor().equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)){
                 final Color opaque = Color.decode(config.getColor());
                 final float[] comp = opaque.getRGBColorComponents(null);
                 final Color col = new Color(comp[0], comp[1], comp[2], alpha);
@@ -159,5 +160,10 @@ extends JFreeChartVisualizationInput {
             inputStream.close();
         }
         return result;
+    }
+
+    @Override
+    public String getFactoryId() {
+        return XYPlotVisualizationInputFactory.FACTORY_ID;
     }
 }

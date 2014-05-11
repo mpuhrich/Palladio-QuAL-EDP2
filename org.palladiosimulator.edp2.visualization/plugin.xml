@@ -9,8 +9,12 @@
    <extension
          point="org.eclipse.ui.elementFactories">
       <factory
-            class="org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.JFreeChartEditorInputHandleFactory">
+            class="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory"
+            id="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory">
       </factory>
    </extension>
    <extension

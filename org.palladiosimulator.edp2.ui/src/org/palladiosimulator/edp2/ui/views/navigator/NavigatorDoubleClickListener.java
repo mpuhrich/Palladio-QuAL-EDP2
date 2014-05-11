@@ -10,7 +10,7 @@ import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultSequence;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultViewsWizard;
@@ -63,7 +63,7 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
                 //    final DefaultSequence selection = wizard.getSelectedDefault();
 
                 final JFreeChartVisualizationInput input = new XYPlotVisualizationInput();
-                input.addInput(new JFreeChartVisualisationSingleDatastreamInput(edp2Source));
+                input.addInput(new JFreeChartVisualizationSingleDatastreamInput(edp2Source));
                 try {
                     final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
                             .getActivePage();

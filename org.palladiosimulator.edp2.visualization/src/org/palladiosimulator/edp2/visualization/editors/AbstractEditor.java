@@ -224,7 +224,6 @@ implements IVisualization<T> {
                 LocalSelectionTransfer.getTransfer()
         };
         target.setTransfer(transferTypes);
-        target.addDropListener(new DatasourceDropTargetAdapter(
-                getVisualisationInput()));
+        target.addDropListener(new DatasourceDropTargetAdapter(getVisualisationInput()));
     }
 }

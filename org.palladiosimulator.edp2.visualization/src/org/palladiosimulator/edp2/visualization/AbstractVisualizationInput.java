@@ -25,6 +25,14 @@ implements ISelection, IVisualisationInput<T> {
      */
     protected final List<T> inputs = new ArrayList<T>();
 
+    private final IVisualisationInputListener updateObserver = new IVisualisationInputListener() {
+
+        @Override
+        public void visualisationInputChanged(final boolean needsDatasetReload) {
+            AbstractVisualizationInput.this.getEventDispatcher().visualisationInputChanged(needsDatasetReload);
+        }
+    };
+
     public AbstractVisualizationInput(){
         super();
     }
@@ -32,6 +40,7 @@ implements ISelection, IVisualisationInput<T> {
     @Override
     public final void addInput(final T newChildInput) {
         inputs.add(newChildInput);
+        newChildInput.addObserver(updateObserver);
         newChildInput.setParentInput(this);
         if (inputs.size() == 1) {
             firstChildInputAdded(newChildInput);
@@ -49,6 +58,7 @@ implements ISelection, IVisualisationInput<T> {
 
     @Override
     public final void removeInput(final T newChildInput) {
+        newChildInput.removeObserver(updateObserver);
         inputs.remove(newChildInput);
         newChildInput.setParentInput(null);
         this.getEventDispatcher().visualisationInputChanged(true);

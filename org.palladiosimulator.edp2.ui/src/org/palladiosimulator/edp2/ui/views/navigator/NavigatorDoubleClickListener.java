@@ -3,15 +3,16 @@ package org.palladiosimulator.edp2.ui.views.navigator;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultSequence;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultViewsWizard;
 
@@ -54,26 +55,24 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
                 // open the wizard with reference to the selected source
                 // it shows possible visualizations, which are instances of
                 // DefaultSequence
-                //final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
-                //final WizardDialog wdialog = new WizardDialog(
-                //        EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
-                //wdialog.open();
+                final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
+                final WizardDialog wdialog = new WizardDialog(
+                        EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
+                wdialog.open();
 
-                //if (wdialog.getReturnCode() == Window.OK) {
-                //    final DefaultSequence selection = wizard.getSelectedDefault();
-
-                final JFreeChartVisualizationInput input = new XYPlotVisualizationInput();
-                input.addInput(new JFreeChartVisualizationSingleDatastreamInput(edp2Source));
-                try {
-                    final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
-                            .getActivePage();
-                    page.openEditor(input,
-                            "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
-                } catch (final PartInitException e) {
-                    throw new RuntimeException(e);
+                if (wdialog.getReturnCode() == Window.OK) {
+                    final DefaultSequence selection = wizard.getSelectedDefault();
+                    final IVisualisationInput input = selection.getVisualizationInput();
+                    input.addInput(new JFreeChartVisualizationSingleDatastreamInput(edp2Source));
+                    try {
+                        final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
+                                .getActivePage();
+                        page.openEditor(input,
+                                "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
+                    } catch (final PartInitException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-
-                //}
             } else {
                 throw new RuntimeException("Empty Measurements!");
             }

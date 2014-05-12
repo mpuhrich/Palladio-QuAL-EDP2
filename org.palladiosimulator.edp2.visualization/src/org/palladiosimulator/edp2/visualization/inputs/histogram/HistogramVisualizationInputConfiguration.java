@@ -13,7 +13,8 @@ import javax.measure.unit.UnitFormat;
 
 import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputConfiguration;
 
-public class HistogramVisualizationInputConfiguration extends XYPlotVisualizationInputConfiguration {
+public class HistogramVisualizationInputConfiguration
+extends XYPlotVisualizationInputConfiguration {
 
     /**
      * Keys for persistence of properties

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.palladiosimulator.edp2.datastream.IDataSource;
-import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 
 /**
  * Instances of {@link DefaultSequence} represent predefined sequences of {@link IDataFlow}-elements.
@@ -18,7 +18,7 @@ public class DefaultSequence {
     private String inputMetricUUID;
     private String inputDescription;
     private final ArrayList<HashMap<String, Object>> sequenceProperties;
-    private IVisualisationSingleDatastreamInput visualization;
+    private IVisualisationInput visualization;
     private HashMap<String, Object> visualizationProperties;
 
     public DefaultSequence() {
@@ -90,14 +90,14 @@ public class DefaultSequence {
     /**
      * @param visualization the visualization to set
      */
-    public void setVisualization(final IVisualisationSingleDatastreamInput visualization) {
+    public void setVisualization(final IVisualisationInput visualization) {
         this.visualization = visualization;
     }
 
     /**
      * @return the visualization
      */
-    public IVisualisationSingleDatastreamInput getVisualization() {
+    public IVisualisationInput getVisualizationInput() {
         return visualization;
     }
 

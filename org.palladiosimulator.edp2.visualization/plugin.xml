@@ -80,22 +80,6 @@
                UUID="_MenvIiUREd6gmLudJva2Dw"
                description="default combination for 2-dimensional measurements of respnse time">
          </inputMetric>
-         <adapter
-               adapterID="org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter">
-            <property
-                  key="dataSeriesIndex"
-                  name="index of data series"
-                  value="1">
-            </property>
-         </adapter>
-         <filter
-               filterID="org.palladiosimulator.edp2.transformation.WarmupFilter">
-            <property
-                  key="droppedValuesRelative"
-                  name="dropped values in percentage"
-                  value="15.0">
-            </property>
-         </filter>
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
             <property
@@ -112,13 +96,6 @@
                UUID="_BoroIZMbEd6Vw8NDgVSYcgLehr6"
                description="2-dimensional data with repeating values">
          </inputMetric>
-         <adapter
-               adapterID="org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter">
-            <property
-                  key="dataSeriesIndex"
-                  value="1">
-            </property>
-         </adapter>
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput">
          </datasink>
@@ -127,9 +104,9 @@
    <extension
          point="org.palladiosimulator.edp2.visualization.datasink">
       <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput"
+            class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInputFactory"
+            factory="org.palladiosimulator.edp2.visualization.elementfactories.HistogramVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
       </datasink>
       <datasink
@@ -138,12 +115,12 @@
             factory="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
       </datasink>
-      <datasink
+      <!-- <datasink
             class="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
             factory="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput">
-      </datasink>
+      </datasink> -->
    </extension>
 
 </plugin>

@@ -8,7 +8,8 @@ import java.util.Set;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyListener;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 
-public class JFreeChartVisualizationConfiguration extends PropertyConfigurable implements IPropertyListener {
+public class JFreeChartVisualizationConfiguration
+extends PropertyConfigurable implements IPropertyListener {
 
     public static final String TITLE_KEY = "title";
     public static final String SHOW_TITLE_KEY = "showTitle";

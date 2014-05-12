@@ -1,6 +1,8 @@
 package org.palladiosimulator.edp2.visualization.inputs.histogram;
 
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.measure.unit.Unit;
 
@@ -21,9 +23,12 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput;
+import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.elementfactories.HistogramVisualizationInputFactory;
+import org.palladiosimulator.edp2.visualization.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.measurementspec.MeasurementTuple;
+import org.palladiosimulator.metricspec.MetricSetDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 
 /**
  * A HistogramEditorInput displays the input data in a histogram either in absolute or relative
@@ -34,7 +39,7 @@ import org.palladiosimulator.measurementspec.MeasurementTuple;
  * 
  */
 public class HistogramVisualizationInput
-extends JFreeChartVisualizationInput {
+extends AbstractXYVisualizationInput {
 
     /**
      * Empty constructor.
@@ -127,7 +132,7 @@ extends JFreeChartVisualizationInput {
         for (int i = 0; i < getInputs().size(); i++) {
             result.addSeries(getInputs().get(i).getInputName(),
                     generateData(getInputs().get(i).getDataSource()),
-                    ((HistogramVisualizationInputConfiguration)getInputs().get(i).getConfiguration()).getNumberOfBins());
+                    ((HistogramVisualizationInputConfiguration)getConfiguration()).getNumberOfBins());
         }
         return result;
     }
@@ -149,4 +154,18 @@ extends JFreeChartVisualizationInput {
     protected PropertyConfigurable createConfiguration() {
         return new HistogramVisualizationInputConfiguration();
     }
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
+     */
+    @Override
+    protected void firstChildInputAdded(final JFreeChartVisualizationSingleDatastreamInput newChildInput) {
+        super.firstChildInputAdded(newChildInput);
+        final Map<String,Object> properties = new HashMap<String,Object>(getProperties());
+        final MetricSetDescription metricSet = (MetricSetDescription) newChildInput.getDataSource().getMetricDesciption();
+        final NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) metricSet.getSubsumedMetrics().get(1);
+        properties.put(HistogramVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit().toString());
+        setProperties(properties);
+    }
+
 }

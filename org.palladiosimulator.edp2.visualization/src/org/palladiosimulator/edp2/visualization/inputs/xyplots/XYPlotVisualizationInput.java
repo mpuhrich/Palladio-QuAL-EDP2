@@ -1,8 +1,5 @@
 package org.palladiosimulator.edp2.visualization.inputs.xyplots;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.measure.Measure;
 import javax.measure.quantity.Duration;
 import javax.measure.unit.SI;
@@ -19,9 +16,9 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory;
+import org.palladiosimulator.edp2.visualization.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.CaptureType;
@@ -33,7 +30,7 @@ import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
  * @author Steffen Becker, Dominik Ernst, Roland Richter
  */
 public class XYPlotVisualizationInput
-extends JFreeChartVisualizationInput {
+extends AbstractXYVisualizationInput {
 
     public XYPlotVisualizationInput() {
         super();
@@ -60,18 +57,6 @@ extends JFreeChartVisualizationInput {
     @Override
     protected PropertyConfigurable createConfiguration() {
         return new XYPlotVisualizationInputConfiguration();
-    }
-
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
-     */
-    @Override
-    protected void firstChildInputAdded(final JFreeChartVisualizationSingleDatastreamInput newChildInput) {
-        super.firstChildInputAdded(newChildInput);
-        final Map<String,Object> configuration = new HashMap<String,Object>(getConfiguration().getProperties());
-        configuration.put(XYPlotVisualizationInputConfiguration.DOMAIN_AXIS_LABEL_KEY,getAxisDefaultLabel(0));
-        configuration.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY,getAxisDefaultLabel(1));
-        getConfiguration().setProperties(configuration);
     }
 
     /**

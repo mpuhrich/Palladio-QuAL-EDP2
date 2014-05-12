@@ -30,7 +30,7 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
-import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
@@ -40,8 +40,8 @@ import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationS
  * <code>org.palladiosimulator.edp2.visualization.defaultSequences</code>.
  * @author Dominik Ernst
  */
-public class SelectDefaultCombinationsPage extends WizardPage implements
-ISelectionChangedListener {
+public class SelectDefaultCombinationsPage
+extends WizardPage implements ISelectionChangedListener {
 
     /**
      * Logger for this class.
@@ -170,12 +170,12 @@ ISelectionChangedListener {
         final IConfigurationElement[] visualizationExtensions = Platform
                 .getExtensionRegistry().getConfigurationElementsFor(
                         SINK_EXTENSION_POINT_ID);
-        final HashMap<String, AbstractVisualizationSingleDatastreamInput> charts = new HashMap<String, AbstractVisualizationSingleDatastreamInput>();
+        final HashMap<String, AbstractVisualizationInput> charts = new HashMap<String, AbstractVisualizationInput>();
         for (final IConfigurationElement e : visualizationExtensions) {
             try {
                 id = e.getAttribute(ID_ATTRIBUTE);
                 o = e.createExecutableExtension(CLASS_ATTRIBUTE);
-                charts.put(id, (AbstractVisualizationSingleDatastreamInput) o);
+                charts.put(id, (AbstractVisualizationInput) o);
             } catch (final CoreException e1) {
                 logger
                 .log(Level.SEVERE,
@@ -265,9 +265,9 @@ ISelectionChangedListener {
         basicSequence1.setSequenceID("histogramAdapterDefault");
         basicSequence1.setSequenceName("Histogram + Adapter");
         basicSequence1.setInputMetricUUID("no_UUID");
-        basicSequence1
-        .addSequenceElement(adapters
-                .get("org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter"));
+        //basicSequence1
+        //.addSequenceElement(adapters
+        //        .get("org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter"));
         basicSequence1.setVisualization(charts
                 .get("org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput"));
         // The scatterplot is added independently of Default Combinations in
@@ -410,22 +410,22 @@ ISelectionChangedListener {
         final ArrayList<DefaultSequence> applicableSequences = new ArrayList<DefaultSequence>();
 
         for (final DefaultSequence seq : defaultSequences) {
-            //			if (seq.getInputMetricUUID().equals(
-            //					forSource.getOriginalMeasurementsRange().getMeasurements()
-            //							.getMeasure().getMetric().getUuid())) {
-            //				applicableSequences.add(seq);
-            //			}
-            //			else if (seq.getInputMetricUUID().equals("no_UUID")) {
-            //				if (seq.getSize() > 0) {
-            //					if (seq.getFirstSequenceElement().canAccept(forSource)) {
-            //						applicableSequences.add(seq);
-            //					}
-            //				} else {
-            //					if (seq.getVisualization().canAccept(forSource)) {
-            //						applicableSequences.add(seq);
-            //					}
-            //				}
-            //			}
+            if (seq.getInputMetricUUID().equals(
+                    forSource.getMetricDesciption().getId())) {
+                applicableSequences.add(seq);
+            } else if (seq.getInputMetricUUID().equals("no_UUID")) {
+                // TODO FIXME
+                //                if (seq.getSize() > 0) {
+                //                    if (seq.getFirstSequenceElement().canAccept(forSource)) {
+                //                        applicableSequences.add(seq);
+                //                    }
+                //                } else {
+                //                    if (seq.getVisualization().canAccept(forSource)) {
+                //                        applicableSequences.add(seq);
+                //                    }
+                //                }
+                applicableSequences.add(seq);
+            }
         }
 
         return applicableSequences;

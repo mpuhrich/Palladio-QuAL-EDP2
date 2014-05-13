@@ -18,13 +18,17 @@ implements IPropertyConfigurable {
         super();
         myProperties.addObserver(new IPropertyListener() {
 
+            boolean requiresUpdate = false;
+
             @Override
             public void propertyChanged(final String key, final Object oldValue, final Object newValue) {
+                requiresUpdate |= getPropertyKeysTriggeringUpdate().contains(key);
             }
 
             @Override
             public void propertyChangeCompleted() {
-                getEventDispatcher().visualisationInputChanged(false);
+                getEventDispatcher().visualisationInputChanged(requiresUpdate);
+                requiresUpdate = false;
             }
         });
     }
@@ -83,4 +87,6 @@ implements IPropertyConfigurable {
         }
         return null;
     }
+
+    protected abstract Set<String> getPropertyKeysTriggeringUpdate();
 }

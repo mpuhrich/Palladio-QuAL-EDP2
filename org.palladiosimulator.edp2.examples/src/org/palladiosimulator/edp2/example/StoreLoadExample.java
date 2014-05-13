@@ -2,10 +2,8 @@ package org.palladiosimulator.edp2.example;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -141,16 +139,6 @@ public class StoreLoadExample {
                     next.add(newM);
                 }
                 return new MeasurementTuple((MetricSetDescription) data.getMetricDesciption(), next);
-            }
-
-            @Override
-            public Set<String> getKeys() {
-                return Collections.emptySet();
-            }
-
-            @Override
-            public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-                return Collections.emptyMap();
             }
 
         };

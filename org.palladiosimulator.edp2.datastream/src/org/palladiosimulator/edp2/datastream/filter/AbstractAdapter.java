@@ -6,6 +6,8 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
+import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
+import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.measurementspec.Measurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 
@@ -79,5 +81,14 @@ implements IDataSink, IDataSource
     }
 
     protected abstract Measurement computeOutputFromInput(Measurement next);
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.AbstractDataSource#createProperties()
+     */
+    @Override
+    protected PropertyConfigurable createProperties() {
+        return new EmptyConfiguration();
+    }
+
 
 }

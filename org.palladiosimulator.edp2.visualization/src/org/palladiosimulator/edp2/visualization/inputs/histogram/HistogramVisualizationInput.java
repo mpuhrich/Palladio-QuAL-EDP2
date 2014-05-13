@@ -1,8 +1,11 @@
 package org.palladiosimulator.edp2.visualization.inputs.histogram;
 
 import java.awt.Color;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.measure.unit.Unit;
 
@@ -26,6 +29,7 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.elementfactories.HistogramVisualizationInputFactory;
 import org.palladiosimulator.edp2.visualization.input.AbstractXYVisualizationInput;
+import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputConfiguration;
 import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
@@ -165,7 +169,15 @@ extends AbstractXYVisualizationInput {
         final MetricSetDescription metricSet = (MetricSetDescription) newChildInput.getDataSource().getMetricDesciption();
         final NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) metricSet.getSubsumedMetrics().get(1);
         properties.put(HistogramVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit().toString());
+        properties.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, "Frequency [%]");
         setProperties(properties);
+    }
+
+    @Override
+    protected Set<String> getPropertyKeysTriggeringUpdate() {
+        return new HashSet<String>(Arrays.asList(
+                HistogramVisualizationInputConfiguration.NUMBER_BINS_KEY,
+                HistogramVisualizationInputConfiguration.UNIT_KEY));
     }
 
 }

@@ -1,14 +1,12 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
+import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
+import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.elementfactories.Edp2DataTupleDataSourceFactory;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
@@ -34,16 +32,6 @@ extends AbstractDataSource implements IDataSource, IPersistableElement {
     }
 
     @Override
-    public Set<String> getKeys() {
-        return Collections.emptySet();
-    }
-
-    @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-        return Collections.emptyMap();
-    }
-
-    @Override
     public void saveState(final IMemento memento) {
         Edp2DataTupleDataSourceFactory.saveState(memento,this);
     }
@@ -55,5 +43,10 @@ extends AbstractDataSource implements IDataSource, IPersistableElement {
 
     public RawMeasurements getRawMeasurements() {
         return rawMeasurements;
+    }
+
+    @Override
+    protected PropertyConfigurable createProperties() {
+        return new EmptyConfiguration();
     }
 }

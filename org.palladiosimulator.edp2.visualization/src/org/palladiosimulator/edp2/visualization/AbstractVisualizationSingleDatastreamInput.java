@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.IDataSourceListener;
 
 /**
  * Interface used to describe elements that are managed by an
@@ -48,6 +49,13 @@ implements IVisualisationSingleDatastreamInput {
         final Map<String,Object> properties = new HashMap<String,Object>(getConfiguration().getProperties());
         properties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, getDefaultName());
         getConfiguration().setProperties(properties);
+        this.source.addObserver(new IDataSourceListener() {
+
+            @Override
+            public void datasourceUpdated() {
+                AbstractVisualizationSingleDatastreamInput.this.getEventDispatcher().visualisationInputChanged(true);
+            }
+        });
     }
 
     /* (non-Javadoc)
@@ -55,7 +63,7 @@ implements IVisualisationSingleDatastreamInput {
      */
     private String getDefaultName() {
         if (getDataSource() != null) {
-            return source.getMetricDesciption().getName();
+            return source.getMetricDesciption().getTextualDescription();
             // TODO: Should be ...  .getMeasuredObject();
         } else {
             return "noSourceSet";

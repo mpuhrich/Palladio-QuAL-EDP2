@@ -1,14 +1,12 @@
 package org.palladiosimulator.edp2.datastream.edp2source;
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-
 import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
+import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
+import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.measurementspec.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
@@ -25,12 +23,7 @@ public class Edp2BasicDataSource<V,Q extends Quantity> extends AbstractDataSourc
     }
 
     @Override
-    public Set<String> getKeys() {
-        return Collections.emptySet();
-    }
-
-    @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-        return Collections.emptyMap();
+    protected PropertyConfigurable createProperties() {
+        return new EmptyConfiguration();
     }
 }

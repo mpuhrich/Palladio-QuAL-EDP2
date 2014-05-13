@@ -1,5 +1,9 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
@@ -57,6 +61,11 @@ implements ISelection, IPersistableElement {
     @Override
     public String getInputName() {
         return ((AbstractVisualizationSingleDatastreamConfiguration)getConfiguration()).getInputName();
+    }
+
+    @Override
+    protected Set<String> getPropertyKeysTriggeringUpdate() {
+        return new HashSet<String>(Arrays.asList(JFreeChartVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY));
     }
 
 }

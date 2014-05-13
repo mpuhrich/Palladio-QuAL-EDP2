@@ -1,5 +1,8 @@
 package org.palladiosimulator.edp2.visualization.inputs.xyplots;
 
+import java.util.Collections;
+import java.util.Set;
+
 import javax.measure.Measure;
 import javax.measure.quantity.Duration;
 import javax.measure.unit.SI;
@@ -119,5 +122,10 @@ extends AbstractXYVisualizationInput {
             inputStream.close();
         }
         return result;
+    }
+
+    @Override
+    protected Set<String> getPropertyKeysTriggeringUpdate() {
+        return Collections.emptySet();
     }
 }

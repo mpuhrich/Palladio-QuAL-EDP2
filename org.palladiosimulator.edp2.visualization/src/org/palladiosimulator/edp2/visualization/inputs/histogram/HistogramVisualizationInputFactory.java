@@ -1,8 +1,8 @@
-package org.palladiosimulator.edp2.visualization.elementfactories;
+package org.palladiosimulator.edp2.visualization.inputs.histogram;
 
 import org.eclipse.ui.IMemento;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
-import org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput;
+import org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationInputFactory;
 
 public class HistogramVisualizationInputFactory extends JFreeChartVisualizationInputFactory {
 

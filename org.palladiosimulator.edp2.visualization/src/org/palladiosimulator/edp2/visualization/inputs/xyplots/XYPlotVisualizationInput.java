@@ -20,7 +20,6 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory;
 import org.palladiosimulator.edp2.visualization.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.measurementspec.MeasurementTuple;
 import org.palladiosimulator.metricspec.BaseMetricDescription;

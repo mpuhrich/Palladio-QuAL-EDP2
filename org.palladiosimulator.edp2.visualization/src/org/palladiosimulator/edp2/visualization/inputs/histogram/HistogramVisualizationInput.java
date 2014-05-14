@@ -27,7 +27,6 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.elementfactories.HistogramVisualizationInputFactory;
 import org.palladiosimulator.edp2.visualization.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputConfiguration;
 import org.palladiosimulator.measurementspec.MeasurementTuple;

@@ -9,8 +9,16 @@
    <extension
          point="org.eclipse.ui.elementFactories">
       <factory
-            class="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory"
+            class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.elementfactories.PieChartVisualizationInputFactory">
       </factory>
       <factory
             class="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory"
@@ -78,10 +86,10 @@
             name="Response Time">
          <inputMetric
                UUID="_MenvIiUREd6gmLudJva2Dw"
-               description="default combination for 2-dimensional measurements of respnse time">
+               description="default combination for 2-dimensional measurements of response time">
          </inputMetric>
          <datasink
-               sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput">
             <property
                   key="numberOfBins"
                   name="the number of bins"
@@ -93,11 +101,11 @@
             id="utilization"
             name="Utilization">
          <inputMetric
-               UUID="_BoroIZMbEd6Vw8NDgVSYcgLehr6"
+               UUID="no_UUID"
                description="2-dimensional data with repeating values">
          </inputMetric>
          <datasink
-               sinkID="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput">
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
          </datasink>
       </defaultSequence>
    </extension>
@@ -106,21 +114,21 @@
       <datasink
             class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.elementfactories.HistogramVisualizationInputFactory"
+            factory="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
       </datasink>
       <datasink
             class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory"
+            factory="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
       </datasink>
-      <!-- <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput"
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.PieChartEditorInput">
-      </datasink> -->
+            factory="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
+      </datasink> 
    </extension>
 
 </plugin>

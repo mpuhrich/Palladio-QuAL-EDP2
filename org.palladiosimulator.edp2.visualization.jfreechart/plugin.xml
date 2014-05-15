@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory">
+      </factory>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEditor"
+            default="false"
+            id="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            name="JFreeChartEditor">
+      </editor>
+   </extension>
+
+   <extension
+         point="org.palladiosimulator.edp2.visualization.datasink">
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
+      </datasink>
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
+      </datasink>
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
+      </datasink> 
+   </extension>
+   
+</plugin>

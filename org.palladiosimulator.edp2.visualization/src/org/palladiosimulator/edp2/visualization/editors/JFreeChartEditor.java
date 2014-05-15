@@ -22,11 +22,6 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
     /** The container in which a {@link JFreeChart} is contained. */
     protected ChartComposite chartContainer;
 
-    /**
-     * The current chart.
-     */
-    JFreeChart chart;
-
     /*
      * (non-Javadoc)
      * @see org.eclipse.ui.part.WorkbenchPart#createPartControl(org.eclipse.swt.widgets.Composite)
@@ -34,7 +29,7 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
     @Override
     public void createPartControl(final Composite parent) {
         super.createPartControl(parent);
-        chartContainer = new ChartComposite(parent, SWT.NONE, chart, false);
+        chartContainer = new CustomJFreeChartComposite(parent, SWT.NONE);
         updateEditorContents();
     }
 
@@ -43,7 +38,7 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
      */
     @Override
     public void updateEditorContents() {
-        chart = ((JFreeChartVisualizationInput)getVisualisationInput()).createChart();
+        final JFreeChart chart = ((JFreeChartVisualizationInput)getVisualisationInput()).createChart();
         chartContainer.setChart(chart);
         chartContainer.forceRedraw();
     }

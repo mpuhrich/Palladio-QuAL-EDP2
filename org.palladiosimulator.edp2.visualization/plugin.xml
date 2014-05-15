@@ -7,31 +7,13 @@
    <extension-point id="defaultSequences" name="Default Sequences" schema="schema/defaultSequence.exsd"/>
    <extension-point id="datasink" name="Data Sink" schema="schema/datasink.exsd"/>
    <extension
-         point="org.eclipse.ui.elementFactories">
-      <factory
-            class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory">
-      </factory>
-      <factory
-            class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory">
-      </factory>
-      <factory
-            class="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory">
-      </factory>
-      <factory
-            class="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory"
-            id="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory">
-      </factory>
-   </extension>
-   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="org.palladiosimulator.edp2.visualization.editors.AbstractEditor">
          <propertyCategory category="sample"/>
       </propertyContributor>
    </extension>
+   
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
@@ -64,20 +46,11 @@
                 id="org.palladiosimulator.edp2.visualization.propertySectionDisplay"
                 tab="org.palladiosimulator.edp2.visualization.propertyTabDisplay">
              <input
-                   type="org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput">
+                   type="org.palladiosimulator.edp2.visualization.AbstractVisualizationInput">
              </input>
          </propertySection>
          
       </propertySections>
-   </extension>
-   <extension
-         point="org.eclipse.ui.editors">
-      <editor
-            class="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            default="false"
-            id="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            name="JFreeChartEditor">
-      </editor>
    </extension>
    <extension
          point="org.palladiosimulator.edp2.visualization.defaultSequences">
@@ -109,26 +82,5 @@
          </datasink>
       </defaultSequence>
    </extension>
-   <extension
-         point="org.palladiosimulator.edp2.visualization.datasink">
-      <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput"
-            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
-      </datasink>
-      <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInput"
-            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
-      </datasink>
-      <datasink
-            class="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput"
-            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
-      </datasink> 
-   </extension>
-
+   
 </plugin>

@@ -6,6 +6,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
 import org.palladiosimulator.commons.designpatterns.IAbstractObservable;
 import org.palladiosimulator.edp2.datastream.IDataSink;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 
 public interface IVisualisationInput<T extends IVisualisationSingleDatastreamInput>
@@ -33,4 +34,6 @@ extends IEditorInput,  IPersistableElement, IAbstractObservable<IVisualisationIn
     public <G extends IPropertyConfigurable> G getConfiguration();
 
     public void reloadData();
+
+    public T createNewInput(IDataSource source);
 }

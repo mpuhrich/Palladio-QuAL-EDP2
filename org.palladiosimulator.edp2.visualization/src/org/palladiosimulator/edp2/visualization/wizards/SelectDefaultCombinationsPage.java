@@ -31,7 +31,6 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
  * Implementation of a {@link WizardPage} that contains a list of visualizations

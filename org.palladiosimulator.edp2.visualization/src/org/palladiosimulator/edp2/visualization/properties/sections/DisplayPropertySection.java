@@ -39,11 +39,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.palladiosimulator.edp2.visualization.AbstractInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationConfiguration;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamConfiguration;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputConfiguration;
+import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
 
 /**
  * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and allows to edit visual
@@ -58,7 +54,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
     /**
      * The last active editor;
      */
-    private JFreeChartEditor editor;
+    private AbstractEditor<AbstractVisualizationSingleDatastreamInput> editor;
 
     /**
      * A tree, which contains the editor's inputs and their transformations (as children)
@@ -179,11 +175,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
                         // boolean properties
-                        if (item.getText(labelColumn).equals(JFreeChartVisualizationConfiguration.SHOW_LEGEND_KEY)
-                                || (item.getText(labelColumn).equals(JFreeChartVisualizationConfiguration.SHOW_TITLE_KEY))
-                                || (item.getText(labelColumn).equals(XYPlotVisualizationInputConfiguration.SHOW_DOMAIN_AXIS_LABEL_KEY))
-                                || (item.getText(labelColumn).equals(XYPlotVisualizationInputConfiguration.SHOW_RANGE_AXIS_LABEL_KEY))
-                                ) {
+                        // FIXME: This is a terrible hack
+                        if (item.getText(labelColumn).toLowerCase().contains("show")) {
                             openBooleanDialog(index, commonPropertiesTable);
                         }
                         // textual properties
@@ -252,8 +245,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
                         // color properties
-                        if (item.getText(labelColumn).equals(
-                                JFreeChartVisualizationSingleDatastreamConfiguration.COLOR_KEY)) {
+                        // FIXME: This is a terrible hack!
+                        if (item.getText(labelColumn).contains("color")) {
                             openColorAndTransparencyDialog(item, specificPropertiesTable);
                             // boolean properties
                         }
@@ -423,9 +416,11 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             final TableItem item = new TableItem(specificPropertiesTable, SWT.NONE);
             item.setText(0, String.valueOf(key));
             item.setText(1, String.valueOf(properties.get(key)));
-            if (String.valueOf(key).equals(JFreeChartVisualizationSingleDatastreamConfiguration.COLOR_KEY)) {
+            // FIXME! This is a hack
+            if (String.valueOf(key).contains("color")) {
                 final String hexColor = String.valueOf(properties.get(key));
-                if (hexColor.equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)) {
+                // FIXME! This is a hack
+                if (hexColor.equals("#ffffff")) {
                     item.setText(1, "(default Color)");
                 } else {
                     item.setText(1, "");
@@ -547,7 +542,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             editor = null;
             return false;
         } else {
-            editor = (JFreeChartEditor) window.getActivePage().getActiveEditor();
+            editor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) window.getActivePage().getActiveEditor();
             return true;
         }
     }

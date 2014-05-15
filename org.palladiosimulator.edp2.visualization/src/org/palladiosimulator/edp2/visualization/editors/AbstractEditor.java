@@ -253,5 +253,5 @@ implements IVisualization<T>, IVisualisationInputListener {
         updateEditorContents();
     }
 
-    protected abstract void updateEditorContents();
+    public abstract void updateEditorContents();
 }

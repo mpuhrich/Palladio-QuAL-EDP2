@@ -33,4 +33,5 @@ Import-Package: org.eclipse.core.databinding.validation,
 Bundle-ClassPath: .
 Export-Package: org.palladiosimulator.edp2.visualization,
  org.palladiosimulator.edp2.visualization.editors,
+ org.palladiosimulator.edp2.visualization.util,
  org.palladiosimulator.edp2.visualization.wizards

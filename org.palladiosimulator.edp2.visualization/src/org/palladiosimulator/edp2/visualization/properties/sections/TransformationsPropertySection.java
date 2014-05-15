@@ -42,7 +42,6 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatas
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.wizards.AdapterWizard;
 import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
 
@@ -183,7 +182,7 @@ implements ISelectionChangedListener {
                         }
                     }
 
-                    ((JFreeChartEditor) editor).updateEditorContents();
+                    ((AbstractEditor<AbstractVisualizationSingleDatastreamInput>) editor).updateEditorContents();
                 }
             }
         };

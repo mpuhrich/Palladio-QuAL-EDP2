@@ -13,7 +13,6 @@ import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
-import org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
  * @author Dominik Ernst
@@ -33,7 +32,8 @@ public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastrea
                 (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
         if (selection.getFirstElement() instanceof RawMeasurements){
             final IDataSource newSource = new Edp2DataTupleDataSource((RawMeasurements) selection.getFirstElement());
-            visualizationInput.addInput((T) new JFreeChartVisualizationSingleDatastreamInput(newSource));
+            // FIXME: Use the input factory from the registy
+            // visualizationInput.addInput((T) new JFreeChartVisualizationSingleDatastreamInput(newSource));
         }
     }
 

@@ -1,6 +1,6 @@
 package org.palladiosimulator.edp2.visualization;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -28,8 +28,10 @@ extends PropertyConfigurable implements IPropertyListener {
     }
 
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-        return Collections.emptyMap();
+    public Map<String, Object> getDefaultConfiguration() {
+        final Map<String,Object> result = new HashMap<String, Object>();
+        result.put(INPUT_NAME_KEY, "Anonymous Input");
+        return result;
     }
 
     @Override

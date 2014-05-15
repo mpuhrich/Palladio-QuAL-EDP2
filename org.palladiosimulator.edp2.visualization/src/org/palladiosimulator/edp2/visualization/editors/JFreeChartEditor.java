@@ -5,7 +5,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.EditorPart;
 import org.jfree.chart.JFreeChart;
 import org.jfree.experimental.chart.swt.ChartComposite;
-import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
 
 /**
  * Implementation of an {@link EditorPart}, which is responsible for showing
@@ -15,15 +14,10 @@ import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
  */
 public class JFreeChartEditor
 extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
-implements IVisualisationInputListener {
+{
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor";
-
-    /**
-     * Title of this Editor.
-     */
-    private final static String EDITOR_NAME = "JFreeChartEditor";
 
     /** The container in which a {@link JFreeChart} is contained. */
     protected ChartComposite chartContainer;
@@ -39,35 +33,23 @@ implements IVisualisationInputListener {
      */
     @Override
     public void createPartControl(final Composite parent) {
-        this.parent = parent;
-        setPartName(EDITOR_NAME);
-        setTitleToolTip(EDITOR_NAME);
-        chart = getVisualisationInput().createChart();
+        super.createPartControl(parent);
         chartContainer = new ChartComposite(parent, SWT.NONE, chart, false);
-        getSite().setSelectionProvider(createSelectionProvider());
-        addDropSupport(parent);
-        getVisualisationInput().addObserver(this);
+        updateEditorContents();
     }
 
     /**
      * Method, which describes the default updating process of the current chart.
      */
-    public void updateChart() {
-        chart = getVisualisationInput().createChart();
+    @Override
+    public void updateEditorContents() {
+        chart = ((JFreeChartVisualizationInput)getVisualisationInput()).createChart();
         chartContainer.setChart(chart);
         chartContainer.forceRedraw();
     }
 
     @Override
-    public JFreeChartVisualizationInput getVisualisationInput() {
-        return (JFreeChartVisualizationInput)input;
-    }
-
-    @Override
-    public void visualisationInputChanged(final boolean needsDatasetReload) {
-        if (needsDatasetReload) {
-            getVisualisationInput().reloadDataset();
-        }
-        updateChart();
+    protected String getEditorName() {
+        return "JFreeChartEditor";
     }
 }

@@ -1,5 +1,6 @@
 package org.palladiosimulator.edp2.visualization.editors;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -27,9 +28,11 @@ extends PropertyConfigurable implements IPropertyListener {
     @Override
     public Set<String> getKeys() {
         final Set<String> result = new HashSet<String>();
-        result.add(TITLE_KEY);
-        result.add(SHOW_LEGEND_KEY);
-        result.add(SHOW_TITLE_KEY);
+        result.addAll(
+                Arrays.asList(
+                        TITLE_KEY,
+                        SHOW_LEGEND_KEY,
+                        SHOW_TITLE_KEY));
         return result;
     }
 
@@ -57,7 +60,7 @@ extends PropertyConfigurable implements IPropertyListener {
     }
 
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+    public Map<String, Object> getDefaultConfiguration() {
         final Map<String,Object> result = new HashMap<String, Object>();
         result.put(TITLE_KEY, "JFreeChart");
         result.put(SHOW_LEGEND_KEY, "true");

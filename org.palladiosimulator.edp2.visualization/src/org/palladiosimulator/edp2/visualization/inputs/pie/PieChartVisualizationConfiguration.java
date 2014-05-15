@@ -39,7 +39,7 @@ extends JFreeChartVisualizationConfiguration {
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationConfiguration#getDefaultConfiguration()
      */
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+    public Map<String,Object> getDefaultConfiguration() {
         final Map<String,Object> result = new HashMap<String,Object>(super.getDefaultConfiguration());
         result.put(SHOW_RELATIVE_AMOUNT_KEY, "true");
         return result;

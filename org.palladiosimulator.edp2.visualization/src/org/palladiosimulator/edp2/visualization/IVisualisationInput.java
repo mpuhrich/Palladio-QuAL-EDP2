@@ -31,4 +31,6 @@ extends IEditorInput,  IPersistableElement, IAbstractObservable<IVisualisationIn
     public void removeInput(T removedInput);
 
     public <G extends IPropertyConfigurable> G getConfiguration();
+
+    public void reloadData();
 }

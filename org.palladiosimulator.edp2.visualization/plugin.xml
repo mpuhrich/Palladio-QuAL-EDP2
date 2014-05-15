@@ -10,7 +10,7 @@
          point="org.eclipse.ui.elementFactories">
       <factory
             class="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.elementfactories.XYPlotVisualizationInputFactory">
+            id="org.palladiosimulator.edp2.visualization.inputs.xyplots.XYPlotVisualizationInputFactory">
       </factory>
       <factory
             class="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInputFactory"
@@ -18,7 +18,7 @@
       </factory>
       <factory
             class="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.elementfactories.PieChartVisualizationInputFactory">
+            id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInputFactory">
       </factory>
       <factory
             class="org.palladiosimulator.edp2.visualization.elementfactories.JFreeChartVisualizationSingleDatastreamInputFactory"

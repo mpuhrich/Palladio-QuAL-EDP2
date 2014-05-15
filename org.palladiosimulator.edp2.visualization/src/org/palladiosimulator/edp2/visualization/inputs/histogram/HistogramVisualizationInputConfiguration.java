@@ -2,8 +2,8 @@ package org.palladiosimulator.edp2.visualization.inputs.histogram;
 
 import java.text.ParseException;
 import java.text.ParsePosition;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -68,6 +68,10 @@ extends XYPlotVisualizationInputConfiguration {
      * Always include zero in the diagram?
      */
     private boolean includeZero;
+
+    /**
+     * The unit parsed as jscience object
+     */
     private Unit<?> jscienceUnit;
 
     public boolean isIncludeZero() {
@@ -121,13 +125,14 @@ extends XYPlotVisualizationInputConfiguration {
      */
     @Override
     public Set<String> getKeys() {
-        final Set<String> result = new HashSet<String>(super.getKeys());
-        result.add(INCLUDE_ZERO_KEY);
-        result.add(NUMBER_BINS_KEY);
-        result.add(SHOW_ITEM_VALUES_KEY);
-        result.add(BAR_MARGIN_KEY);
-        result.add(ABSOLUTE_FREQUENCY_KEY);
-        result.add(UNIT_KEY);
+        final Set<String> result = super.getKeys();
+        result.addAll(Arrays.asList(
+                INCLUDE_ZERO_KEY,
+                NUMBER_BINS_KEY,
+                SHOW_ITEM_VALUES_KEY,
+                BAR_MARGIN_KEY,
+                ABSOLUTE_FREQUENCY_KEY,
+                UNIT_KEY));
         return result;
     }
 
@@ -135,7 +140,7 @@ extends XYPlotVisualizationInputConfiguration {
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration#getDefaultConfiguration()
      */
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+    public Map<String,Object> getDefaultConfiguration() {
         final Map<String,Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
         result.put(INCLUDE_ZERO_KEY,"false");
         result.put(NUMBER_BINS_KEY,DEFAULT_NUMBER_BINS + "");

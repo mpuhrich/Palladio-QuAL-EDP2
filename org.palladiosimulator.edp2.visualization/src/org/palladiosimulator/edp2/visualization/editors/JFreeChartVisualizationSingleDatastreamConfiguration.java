@@ -49,8 +49,8 @@ extends AbstractVisualizationSingleDatastreamConfiguration {
     }
 
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-        final Map<String,Object> result = new HashMap<String, Object>();
+    public Map<String, Object> getDefaultConfiguration() {
+        final Map<String,Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
         result.put(COLOR_KEY, NO_COLOR);
         result.put(ALPHA_KEY, "1.0");
         return result;

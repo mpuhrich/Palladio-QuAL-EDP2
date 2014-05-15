@@ -17,16 +17,16 @@ implements IPropertyConfigurable {
     public PropertyConfigurable() {
         super();
         this.keys = getKeys();
-        properties.putAll(getDefaultConfiguration());
+        setProperties(getDefaultConfiguration());
     }
-
-    @Override
-    public abstract Map<? extends String, ? extends Object> getDefaultConfiguration();
 
     public PropertyConfigurable(final Map<String,Object> newProperties) {
         this();
         setProperties(newProperties);
     }
+
+    @Override
+    public abstract Map<String, Object> getDefaultConfiguration();
 
     @Override
     public abstract Set<String> getKeys();

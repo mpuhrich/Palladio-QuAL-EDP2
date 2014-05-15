@@ -19,6 +19,8 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationInputListener;
 import org.palladiosimulator.edp2.visualization.IVisualization;
 import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetAdapter;
 
@@ -31,7 +33,7 @@ import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetA
  */
 public abstract class AbstractEditor<T extends AbstractVisualizationSingleDatastreamInput>
 extends EditorPart
-implements IVisualization<T> {
+implements IVisualization<T>, IVisualisationInputListener {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.AbstractEditor";
@@ -72,7 +74,6 @@ implements IVisualization<T> {
     @Override
     protected void setInput(final IEditorInput input) {
         this.input = (AbstractVisualizationInput<T>)input;
-        // this.input.addObserver(this);
         super.setInput(input);
     }
 
@@ -226,4 +227,31 @@ implements IVisualization<T> {
         target.setTransfer(transferTypes);
         target.addDropListener(new DatasourceDropTargetAdapter(getVisualisationInput()));
     }
+
+    @Override
+    public IVisualisationInput<T> getVisualisationInput() {
+        return input;
+    }
+
+    @Override
+    public void createPartControl(final Composite parent) {
+        this.parent = parent;
+        setPartName(getEditorName());
+        setTitleToolTip(getEditorName());
+        getSite().setSelectionProvider(createSelectionProvider());
+        addDropSupport(parent);
+        getVisualisationInput().addObserver(this);
+    }
+
+    protected abstract String getEditorName();
+
+    @Override
+    public void visualisationInputChanged(final boolean needsDatasetReload) {
+        if (needsDatasetReload) {
+            getVisualisationInput().reloadData();
+        }
+        updateEditorContents();
+    }
+
+    protected abstract void updateEditorContents();
 }

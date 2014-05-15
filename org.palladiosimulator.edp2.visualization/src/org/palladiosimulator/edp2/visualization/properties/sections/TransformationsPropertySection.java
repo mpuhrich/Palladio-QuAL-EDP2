@@ -183,7 +183,7 @@ implements ISelectionChangedListener {
                         }
                     }
 
-                    ((JFreeChartEditor) editor).updateChart();
+                    ((JFreeChartEditor) editor).updateEditorContents();
                 }
             }
         };

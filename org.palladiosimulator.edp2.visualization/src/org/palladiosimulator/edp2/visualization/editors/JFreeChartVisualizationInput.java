@@ -120,7 +120,7 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
      */
     final JFreeChart createChart() {
         if (currentCachedDataset == null) {
-            reloadDataset();
+            reloadData();
         }
         final JFreeChartVisualizationConfiguration configuration = getConfiguration();
         final Plot plot = generatePlot(configuration, currentCachedDataset);
@@ -130,7 +130,8 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
                         JFreeChart.DEFAULT_TITLE_FONT, plot, configuration.isShowLegend());
     }
 
-    void reloadDataset() {
+    @Override
+    public void reloadData() {
         currentCachedDataset = generateDataset();
     }
 

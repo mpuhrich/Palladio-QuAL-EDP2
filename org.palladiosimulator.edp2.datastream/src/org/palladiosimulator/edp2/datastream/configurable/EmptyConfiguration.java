@@ -7,7 +7,7 @@ import java.util.Set;
 public class EmptyConfiguration extends PropertyConfigurable {
 
     @Override
-    public Map<? extends String, ? extends Object> getDefaultConfiguration() {
+    public Map<String, Object> getDefaultConfiguration() {
         return Collections.emptyMap();
     }
 

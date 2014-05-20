@@ -16,4 +16,9 @@ public class EmptyConfiguration extends PropertyConfigurable {
         return Collections.emptySet();
     }
 
+    @Override
+    public Class<?> getPropertyType(final String key) {
+        throw new UnsupportedOperationException();
+    }
+
 }

@@ -25,7 +25,8 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.commons;bundle-version="1.0.0",
  org.apache.batik.dom;bundle-version="1.6.0",
  org.apache.batik.ext.awt;bundle-version="1.6.0",
- org.apache.batik.svggen;bundle-version="1.6.0"
+ org.apache.batik.svggen;bundle-version="1.6.0",
+ org.apache.commons.lang;bundle-version="2.6.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.core.databinding.validation,

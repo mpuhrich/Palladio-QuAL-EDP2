@@ -155,17 +155,12 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
     protected void configureSeriesColors(final AbstractRenderer renderer) {
         for (int i = 0; i < getInputs().size(); i++) {
             final JFreeChartVisualizationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
-            final float alpha = config.getAlpha();
             if (config.getColor() != null && !config.getColor().equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)){
-                final Color opaque = Color.decode(config.getColor());
-                final float[] comp = opaque.getRGBColorComponents(null);
-                final Color col = new Color(comp[0], comp[1], comp[2], alpha);
+                final Color col = config.getColor();
                 renderer.setSeriesPaint(i, col);
             } else {
                 final Color defaultColor = (Color) ChartColor.createDefaultPaintArray()[i];
-                final float[] comp = defaultColor.getRGBColorComponents(null);
-                final Color col = new Color(comp[0], comp[1], comp[2], alpha);
-                renderer.setSeriesPaint(i, col);
+                renderer.setSeriesPaint(i, defaultColor);
             }
         }
     }

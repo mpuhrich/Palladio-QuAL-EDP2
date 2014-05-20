@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang.ClassUtils;
 import org.palladiosimulator.commons.designpatterns.AbstractObservable;
 
 public abstract class PropertyConfigurable
@@ -12,12 +13,11 @@ extends AbstractObservable<IPropertyListener>
 implements IPropertyConfigurable {
 
     private final Map<String,Object> properties = new HashMap<String, Object>();
-    private final Set<String> keys;
+    protected final Set<String> keys;
 
     public PropertyConfigurable() {
         super();
         this.keys = getKeys();
-        setProperties(getDefaultConfiguration());
     }
 
     public PropertyConfigurable(final Map<String,Object> newProperties) {
@@ -42,12 +42,20 @@ implements IPropertyConfigurable {
             if (!newProperties.containsKey(key)) {
                 throw new IllegalArgumentException("New properties miss expected key "+key);
             }
+            if (newProperties.get(key) == null) {
+                throw new IllegalArgumentException("New properties has null value for key "+key);
+            }
+            final Class<?> fromClass = newProperties.get(key).getClass();
+            final Class<?> propertyType = getPropertyType(key);
+            if (!ClassUtils.isAssignable(fromClass, propertyType, true)){
+                throw new IllegalArgumentException("New properties have wrong type for "+key);
+            }
         }
         for (final String key : keys) {
             final Object oldValue = properties.get(key);
             final Object newValue = newProperties.get(key);
-            if (!newValue.equals(oldValue)) {
-                properties.put(key, newProperties.get(key));
+            properties.put(key, newProperties.get(key));
+            if ((newValue == null && oldValue != null) || (newValue != null && !newValue.equals(oldValue))) {
                 this.getEventDispatcher().propertyChanged(key, oldValue, newValue);
             }
         }

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.ClassUtils;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -174,14 +175,13 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     // look if the mouse event is in the editable column
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
-                        // boolean properties
-                        // FIXME: This is a terrible hack
-                        if (item.getText(labelColumn).toLowerCase().contains("show")) {
+                        final Class<?> propertyType = editor.getVisualisationInput().getConfiguration().getPropertyType(item.getText(labelColumn));
+                        if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
                             openBooleanDialog(index, commonPropertiesTable);
-                        }
-                        // textual properties
-                        else {
+                        } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
                             openTextDialog(index, commonPropertiesTable);
+                        } else {
+                            throw new RuntimeException("Unsupported property type found!");
                         }
                         return;
                     }
@@ -244,28 +244,15 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     // look if the mouse event is in the editable column
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
-                        // color properties
-                        // FIXME: This is a terrible hack!
-                        if (item.getText(labelColumn).contains("color")) {
+                        final Class<?> propertyType = lastSelectedInput.getConfiguration().getPropertyType(item.getText(labelColumn));
+                        if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
+                            openBooleanDialog(index, commonPropertiesTable);
+                        } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
+                            openTextDialog(index, commonPropertiesTable);
+                        } else if (ClassUtils.isAssignable(Color.class, propertyType, true)) {
                             openColorAndTransparencyDialog(item, specificPropertiesTable);
-                            // boolean properties
-                        }
-                        // FIXME
-                        // else if (item.getText(labelColumn).equals(
-                        // HistogramEditorInput.ABSOLUTE_FREQUENCY_KEY)
-                        // || (item.getText(labelColumn)
-                        // .equals(HistogramEditorInput.SHOW_ITEM_VALUES_KEY))
-                        // || (item.getText(labelColumn)
-                        // .equals(HistogramEditorInput.SHOW_DOMAIN_AXIS_LABEL_KEY))
-                        // || (item.getText(labelColumn)
-                        // .equals(HistogramEditorInput.SHOW_RANGE_AXIS_LABEL_KEY))
-                        // || (item.getText(labelColumn)
-                        // .equals(HistogramEditorInput.INCLUDE_ZERO_KEY))) {
-                        // openBooleanDialog(index, specificPropertiesTable);
-                        // }
-                        // textual properties
-                        else {
-                            openTextDialog(index, specificPropertiesTable);
+                        } else {
+                            throw new RuntimeException("Unsupported property type found!");
                         }
                         return;
                     }
@@ -346,7 +333,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             @Override
             public void widgetSelected(final SelectionEvent e) {
                 table.getItem(index).setText(editColumn, comboBox.getItem(comboBox.getSelectionIndex()));
-                updateProperties(key, comboBox.getItem(comboBox.getSelectionIndex()), table);
+                updateProperties(key, "true".equals(comboBox.getItem(comboBox.getSelectionIndex())), table);
                 // if the changed field was the frequency, reset the label of
                 // the range
                 // axis to default
@@ -393,11 +380,9 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
         colorPicker.setRGB(item.getBackground().getRGB());
         final RGB rgbColor = colorPicker.open();
         if (rgbColor != null) {
-            item.setBackground(editColumn, new org.eclipse.swt.graphics.Color(table.getDisplay(), rgbColor));
-            updateProperties(item.getText(labelColumn),
-                    "#"
-                            + Integer.toHexString(new Color(rgbColor.red, rgbColor.green, rgbColor.blue).getRGB())
-                            .substring(2), table);
+            final Color newColor =  new Color(rgbColor.red, rgbColor.green, rgbColor.blue);
+            updateColorCell(item, newColor);
+            updateProperties(item.getText(labelColumn), newColor, table);
         }
 
     }
@@ -416,23 +401,29 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             final TableItem item = new TableItem(specificPropertiesTable, SWT.NONE);
             item.setText(0, String.valueOf(key));
             item.setText(1, String.valueOf(properties.get(key)));
-            // FIXME! This is a hack
-            if (String.valueOf(key).contains("color")) {
-                final String hexColor = String.valueOf(properties.get(key));
-                // FIXME! This is a hack
-                if (hexColor.equals("#ffffff")) {
-                    item.setText(1, "(default Color)");
-                } else {
-                    item.setText(1, "");
-                    final Color col = Color.decode(hexColor);
-                    item.setBackground(
-                            1,
-                            new org.eclipse.swt.graphics.Color(specificPropertiesTable.getDisplay(), col.getRed(), col
-                                    .getGreen(), col.getBlue()));
-                }
+            final Class<?> propertyType = lastSelectedInput.getPropertyType(key);
+            if (ClassUtils.isAssignable(propertyType, Color.class)) {
+                final Color col = (Color)properties.get(key);
+                updateColorCell(item, col);
             }
         }
 
+    }
+
+    /**
+     * @param item
+     * @param col
+     */
+    private void updateColorCell(final TableItem item, final Color col) {
+        if (col.getAlpha() == 0) {
+            item.setText(1, "(default Color)");
+        } else {
+            item.setText(1, "");
+            item.setBackground(
+                    1,
+                    new org.eclipse.swt.graphics.Color(specificPropertiesTable.getDisplay(), col.getRed(), col
+                            .getGreen(), col.getBlue()));
+        }
     }
 
     /**

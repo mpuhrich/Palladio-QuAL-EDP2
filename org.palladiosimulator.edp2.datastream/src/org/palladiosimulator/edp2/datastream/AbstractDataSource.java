@@ -123,5 +123,12 @@ extends MetricEntity implements IDataSource, IPropertyConfigurable {
         listener.removeObserver(observer);
     }
 
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(java.lang.String)
+     */
+    @Override
+    public Class<?> getPropertyType(final String key) {
+        return myProperties.getPropertyType(key);
+    }
 
 }

@@ -1,5 +1,6 @@
 package org.palladiosimulator.edp2.datastream.elementfactories;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.ClassUtils;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
@@ -31,7 +33,7 @@ implements IElementFactory {
     @Override
     public IAdaptable createElement(final IMemento memento) {
         final IPropertyConfigurable result = createElementInternal(memento);
-        final Map<String, Object> newProperties = getPropertiesFromMemento(memento,result.getKeys());
+        final Map<String, Object> newProperties = getPropertiesFromMemento(memento,result);
         result.setProperties(newProperties);
 
         return result;
@@ -41,8 +43,16 @@ implements IElementFactory {
         final Map<String, Object> props = configurable.getProperties();
 
         for (final String key : props.keySet()) {
-            memento.putString(key, props.get(key).toString());
+            memento.putString(key, serialize(props.get(key)));
         }
+    }
+
+    private static String serialize(final Object object) {
+        if (ClassUtils.isAssignable(object.getClass(), Color.class, true)) {
+            final Color col = (Color) object;
+            return String.format("%08x", col.getRGB());
+        }
+        return object.toString();
     }
 
     /**
@@ -79,12 +89,31 @@ implements IElementFactory {
      * @param propertiesToOverride
      *            the properties in which the values are to be replaced
      */
-    private Map<String,Object> getPropertiesFromMemento(final IMemento memento, final Collection<String> collection) {
+    private Map<String,Object> getPropertiesFromMemento(final IMemento memento, final IPropertyConfigurable configurable) {
         final Map<String,Object> result = new HashMap<String, Object>();
-        for (final String key : collection) {
-            result.put(key, memento.getString(key));
+        for (final String key : configurable.getKeys()) {
+            result.put(key, deserialize(memento.getString(key), configurable.getPropertyType(key)));
         }
         return Collections.unmodifiableMap(result);
+    }
+
+    private Object deserialize(final String string, final Class<?> propertyType) {
+        if (ClassUtils.isAssignable(propertyType, String.class, true)) {
+            return string;
+        } else if (ClassUtils.isAssignable(propertyType, Boolean.class, true)) {
+            return "true".equals(string);
+        } else if (ClassUtils.isAssignable(propertyType, Integer.class, true)) {
+            return Integer.parseInt(string);
+        } else if (ClassUtils.isAssignable(propertyType, Float.class, true)) {
+            return Float.parseFloat(string);
+        } else if (ClassUtils.isAssignable(propertyType, Double.class, true)) {
+            return Double.parseDouble(string);
+        } else if (ClassUtils.isAssignable(propertyType, Color.class, true)) {
+            Color col = Color.decode(string.substring(2));
+            col = new Color(col.getRed(), col.getBlue(), col.getBlue(), Integer.parseInt(string.substring(0, 1), 16));
+            return col;
+        }
+        throw new UnsupportedOperationException("Deserialize of unsupported type found: "+propertyType);
     }
 
     protected abstract IPropertyConfigurable createElementInternal(IMemento memento);

@@ -170,7 +170,7 @@ extends AbstractXYVisualizationInput {
         final Map<String,Object> properties = new HashMap<String,Object>(getProperties());
         final MetricSetDescription metricSet = (MetricSetDescription) newChildInput.getDataSource().getMetricDesciption();
         final NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) metricSet.getSubsumedMetrics().get(1);
-        properties.put(HistogramVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit().toString());
+        properties.put(HistogramVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit());
         properties.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, "Frequency [%]");
         setProperties(properties);
     }

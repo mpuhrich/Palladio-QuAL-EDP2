@@ -76,6 +76,7 @@ implements IPropertyConfigurable {
         return myProperties.getDefaultConfiguration();
     }
 
+
     /* (non-Javadoc)
      * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
      */
@@ -89,4 +90,12 @@ implements IPropertyConfigurable {
     }
 
     protected abstract Set<String> getPropertyKeysTriggeringUpdate();
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(java.lang.String)
+     */
+    @Override
+    public Class<?> getPropertyType(final String key) {
+        return myProperties.getPropertyType(key);
+    }
 }

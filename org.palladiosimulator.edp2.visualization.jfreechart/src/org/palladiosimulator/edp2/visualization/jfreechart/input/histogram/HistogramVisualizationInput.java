@@ -30,7 +30,7 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputConfiguration;
-import org.palladiosimulator.measurementspec.MeasurementTuple;
+import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 
@@ -143,12 +143,12 @@ extends AbstractXYVisualizationInput {
 
     @SuppressWarnings("unchecked")
     private double[] generateData(final IDataSource dataSource) {
-        final IDataStream<MeasurementTuple> inputStream = dataSource.getDataStream();
+        final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
         final double[] data = new double[inputStream.size()];
         final HistogramVisualizationInputConfiguration configuration = getConfiguration();
 
         int i = 0;
-        for (final MeasurementTuple tuple : inputStream) {
+        for (final TupleMeasurement tuple : inputStream) {
             final Measure<? extends Number, Quantity> measure = (Measure<? extends Number, Quantity>) tuple.asArray()[1];
             data[i] = measure.doubleValue(configuration.getUnit());
             i++;

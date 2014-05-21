@@ -115,7 +115,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 }
                 @Override
                 public StyledString caseMeasurements(final Measurements object) {
-                    final StyledString styledString = new StyledString("Measurement");
+                    final StyledString styledString = new StyledString("AbstractMeasureProvider");
                     return styledString;
                 };
             }.doSwitch(eObject);

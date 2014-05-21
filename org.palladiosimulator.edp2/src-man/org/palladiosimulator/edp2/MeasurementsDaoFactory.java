@@ -19,13 +19,13 @@ public interface MeasurementsDaoFactory {
     // Creating DAOs
 
     /**Creates a DAO to access measured data of type double.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @return DAO for the measurements with the specified uuid.
      */
     public <Q extends Quantity> BinaryMeasurementsDao<Double,Q> createDoubleMeasurementsDao(String uuid);
 
     /**Creates a DAO to access measured data of type double.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @return DAO for the measurements with the specified uuid.
      * @param storageUnit Unit in which the measurements will be stored.
      */
@@ -33,13 +33,13 @@ public interface MeasurementsDaoFactory {
             String uuid, Unit<Q> storageUnit);
 
     /**Creates a DAO to access measured data of type long.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @return DAO for the measurements with the specified uuid.
      */
     public <Q extends Quantity> BinaryMeasurementsDao<Long,Q> createLongMeasurementsDao(String uuid);
 
     /**Creates a DAO to access measured data of type long.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @param storageUnit Unit in which the measurements will be stored.
      * @return DAO for the measurements with the specified uuid.
      */
@@ -47,7 +47,7 @@ public interface MeasurementsDaoFactory {
             String uuid, Unit<Q> storageUnit);
 
     /**Creates a DAO to access measured data of type nominal measurement.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @param one
      * @return DAO for the measurements with the specified uuid.
      */
@@ -55,7 +55,7 @@ public interface MeasurementsDaoFactory {
     public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(String uuid, TextualBaseMetricDescription metric);
 
     /**Creates a DAO to access measured data of type nominal measurement.
-     * @param uuid UUID of the Measurement.
+     * @param uuid UUID of the AbstractMeasureProvider.
      * @return DAO for the measurements with the specified uuid.
      */
     public <Q extends Quantity> JScienceXmlMeasurementsDao<?,Q> createJScienceXmlMeasurementsDao(String uuid);

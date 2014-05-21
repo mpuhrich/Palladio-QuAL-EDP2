@@ -16,6 +16,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.SubSystemOperationMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemOperationMeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +69,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
             case MeasuringpointPackage.SYSTEM_OPERATION_MEASURING_POINT: return createSystemOperationMeasuringPoint();
             case MeasuringpointPackage.LINKING_RESOURCE_MEASURING_POINT: return createLinkingResourceMeasuringPoint();
             case MeasuringpointPackage.SUB_SYSTEM_OPERATION_MEASURING_POINT: return createSubSystemOperationMeasuringPoint();
+            case MeasuringpointPackage.USAGE_SCENARIO_MEASURING_POINT: return createUsageScenarioMeasuringPoint();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -141,6 +143,16 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
     public SubSystemOperationMeasuringPoint createSubSystemOperationMeasuringPoint() {
         SubSystemOperationMeasuringPointImpl subSystemOperationMeasuringPoint = new SubSystemOperationMeasuringPointImpl();
         return subSystemOperationMeasuringPoint;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UsageScenarioMeasuringPoint createUsageScenarioMeasuringPoint() {
+        UsageScenarioMeasuringPointImpl usageScenarioMeasuringPoint = new UsageScenarioMeasuringPointImpl();
+        return usageScenarioMeasuringPoint;
     }
 
     /**

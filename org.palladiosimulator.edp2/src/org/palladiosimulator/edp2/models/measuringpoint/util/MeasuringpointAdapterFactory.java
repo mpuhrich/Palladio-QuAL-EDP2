@@ -22,6 +22,8 @@ import org.palladiosimulator.edp2.models.measuringpoint.SubSystemOperationMeasur
 import org.palladiosimulator.edp2.models.measuringpoint.SubSystemReference;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemOperationMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemReference;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,6 +140,14 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseSubSystemReference(SubSystemReference object) {
                 return createSubSystemReferenceAdapter();
+            }
+            @Override
+            public Adapter caseUsageScenarioMeasuringPoint(UsageScenarioMeasuringPoint object) {
+                return createUsageScenarioMeasuringPointAdapter();
+            }
+            @Override
+            public Adapter caseUsageScenarioReference(UsageScenarioReference object) {
+                return createUsageScenarioReferenceAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -366,6 +376,34 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createSubSystemReferenceAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint <em>Usage Scenario Measuring Point</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint
+     * @generated
+     */
+    public Adapter createUsageScenarioMeasuringPointAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference <em>Usage Scenario Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference
+     * @generated
+     */
+    public Adapter createUsageScenarioReferenceAdapter() {
         return null;
     }
 

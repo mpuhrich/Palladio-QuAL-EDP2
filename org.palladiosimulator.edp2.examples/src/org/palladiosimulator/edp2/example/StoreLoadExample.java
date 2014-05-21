@@ -23,8 +23,9 @@ import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
-import org.palladiosimulator.measurementspec.Measurement;
-import org.palladiosimulator.measurementspec.MeasurementTuple;
+import org.palladiosimulator.measurementframework.Measurement;
+import org.palladiosimulator.measurementframework.TupleMeasurement;
+import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
@@ -133,17 +134,17 @@ public class StoreLoadExample {
 
             @Override
             protected Measurement computeOutputFromInput(final Measurement data) {
-                final List<Measure> next = new ArrayList<Measure>(2);
+                final List<Measure<?, ?>> next = new ArrayList<Measure<?, ?>>(2);
                 for (final Measure m : data.asList()) {
                     final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
                     next.add(newM);
                 }
-                return new MeasurementTuple((MetricSetDescription) data.getMetricDesciption(), next);
+                return new TupleMeasurement((MetricSetDescription) data.getMetricDesciption(), next);
             }
 
         };
         final IDataStream<Measurement> dataStream = adapter.getDataStream();
-        for (final Measurement tuple : dataStream) {
+        for (final IMeasureProvider tuple : dataStream) {
             System.out.println(tuple);
         }
         dataStream.close();

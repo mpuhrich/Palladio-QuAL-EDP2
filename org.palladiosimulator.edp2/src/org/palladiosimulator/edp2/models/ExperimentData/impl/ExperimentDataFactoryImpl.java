@@ -387,7 +387,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
         // input validation
         String errorMsg = "Cannot create data series for raw measurements. ";
         if (forMeasurementsRange == null) {
-            errorMsg += "Measurement range must not be null in order to create "
+            errorMsg += "AbstractMeasureProvider range must not be null in order to create "
                     + "data series for raw measurements.";
         } else if (forMeasurementsRange.getMeasurements() == null) {
             errorMsg = "Measurements must not be null in order to create data "

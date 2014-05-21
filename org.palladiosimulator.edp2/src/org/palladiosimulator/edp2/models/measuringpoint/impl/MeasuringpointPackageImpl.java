@@ -28,6 +28,8 @@ import org.palladiosimulator.edp2.models.measuringpoint.SubSystemOperationMeasur
 import org.palladiosimulator.edp2.models.measuringpoint.SubSystemReference;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemOperationMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemReference;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 
 import de.uka.ipd.sdq.pcm.PcmPackage;
@@ -35,6 +37,7 @@ import de.uka.ipd.sdq.pcm.core.composition.CompositionPackage;
 import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceenvironmentPackage;
 import de.uka.ipd.sdq.pcm.subsystem.SubsystemPackage;
 import de.uka.ipd.sdq.pcm.system.SystemPackage;
+import de.uka.ipd.sdq.pcm.usagemodel.UsagemodelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,6 +150,20 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
      * @generated
      */
     private EClass subSystemReferenceEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass usageScenarioMeasuringPointEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass usageScenarioReferenceEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -451,6 +468,33 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getUsageScenarioMeasuringPoint() {
+        return usageScenarioMeasuringPointEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getUsageScenarioReference() {
+        return usageScenarioReferenceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getUsageScenarioReference_UsageScenario() {
+        return (EReference)usageScenarioReferenceEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public MeasuringpointFactory getMeasuringpointFactory() {
         return (MeasuringpointFactory)getEFactoryInstance();
     }
@@ -513,6 +557,11 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
 
         subSystemReferenceEClass = createEClass(SUB_SYSTEM_REFERENCE);
         createEReference(subSystemReferenceEClass, SUB_SYSTEM_REFERENCE__SUBSYSTEM);
+
+        usageScenarioMeasuringPointEClass = createEClass(USAGE_SCENARIO_MEASURING_POINT);
+
+        usageScenarioReferenceEClass = createEClass(USAGE_SCENARIO_REFERENCE);
+        createEReference(usageScenarioReferenceEClass, USAGE_SCENARIO_REFERENCE__USAGE_SCENARIO);
     }
 
     /**
@@ -544,6 +593,7 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         SystemPackage theSystemPackage = (SystemPackage)EPackage.Registry.INSTANCE.getEPackage(SystemPackage.eNS_URI);
         ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(ResourceenvironmentPackage.eNS_URI);
         SubsystemPackage theSubsystemPackage = (SubsystemPackage)EPackage.Registry.INSTANCE.getEPackage(SubsystemPackage.eNS_URI);
+        UsagemodelPackage theUsagemodelPackage = (UsagemodelPackage)EPackage.Registry.INSTANCE.getEPackage(UsagemodelPackage.eNS_URI);
 
         // Create type parameters
 
@@ -567,6 +617,8 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         subSystemOperationMeasuringPointEClass.getESuperTypes().add(this.getMeasuringPoint());
         subSystemOperationMeasuringPointEClass.getESuperTypes().add(this.getSubSystemReference());
         subSystemOperationMeasuringPointEClass.getESuperTypes().add(this.getOperationReference());
+        usageScenarioMeasuringPointEClass.getESuperTypes().add(this.getMeasuringPoint());
+        usageScenarioMeasuringPointEClass.getESuperTypes().add(this.getUsageScenarioReference());
 
         // Initialize classes and features; add operations and parameters
         initEClass(measuringPointEClass, MeasuringPoint.class, "MeasuringPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -608,6 +660,11 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
 
         initEClass(subSystemReferenceEClass, SubSystemReference.class, "SubSystemReference", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getSubSystemReference_Subsystem(), theSubsystemPackage.getSubSystem(), null, "subsystem", null, 1, 1, SubSystemReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(usageScenarioMeasuringPointEClass, UsageScenarioMeasuringPoint.class, "UsageScenarioMeasuringPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(usageScenarioReferenceEClass, UsageScenarioReference.class, "UsageScenarioReference", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getUsageScenarioReference_UsageScenario(), theUsagemodelPackage.getUsageScenario(), null, "usageScenario", null, 1, 1, UsageScenarioReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

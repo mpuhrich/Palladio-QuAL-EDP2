@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import javax.measure.quantity.Quantity;
 
-import org.palladiosimulator.measurementspec.BasicMeasurement;
+import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
 public abstract class BasicDataStream<V,Q extends Quantity> extends DataStream<BasicMeasurement<V,Q>> {

@@ -10,7 +10,7 @@ import org.palladiosimulator.edp2.datastream.BasicDataStream;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
-import org.palladiosimulator.measurementspec.BasicMeasurement;
+import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
 public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V,Q> {
@@ -37,7 +37,7 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
 
             @Override
             public BasicMeasurement<V, Q> next() {
-                return new BasicMeasurement<V,Q>(innerIterator.next(), getMetricDesciption());
+                return new BasicMeasurement<V,Q>(innerIterator.next(), (BaseMetricDescription) getMetricDesciption());
             }
 
             @Override

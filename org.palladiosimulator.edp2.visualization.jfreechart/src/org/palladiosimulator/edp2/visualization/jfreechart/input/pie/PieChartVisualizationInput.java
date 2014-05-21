@@ -17,7 +17,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationInput;
-import org.palladiosimulator.measurementspec.MeasurementTuple;
+import org.palladiosimulator.measurementframework.TupleMeasurement;
 
 public class PieChartVisualizationInput
 extends JFreeChartVisualizationInput {
@@ -71,9 +71,9 @@ extends JFreeChartVisualizationInput {
         final DefaultPieDataset dataset = new DefaultPieDataset();
         final Bag<Comparable<?>> bins = new HashBag<Comparable<?>>();
         final IDataSource datasource = getInputs().get(0).getDataSource();
-        final IDataStream<MeasurementTuple> datastream = datasource.getDataStream();
+        final IDataStream<TupleMeasurement> datastream = datasource.getDataStream();
 
-        for (final MeasurementTuple tuple : datastream) {
+        for (final TupleMeasurement tuple : datastream) {
             bins.add((Comparable<?>) tuple.asArray()[1].getValue());
         }
 

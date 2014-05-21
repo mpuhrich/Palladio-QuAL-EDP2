@@ -85,6 +85,15 @@ public interface MeasuringpointFactory extends EFactory {
     SubSystemOperationMeasuringPoint createSubSystemOperationMeasuringPoint();
 
     /**
+     * Returns a new object of class '<em>Usage Scenario Measuring Point</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Usage Scenario Measuring Point</em>'.
+     * @generated
+     */
+    UsageScenarioMeasuringPoint createUsageScenarioMeasuringPoint();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

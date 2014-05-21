@@ -8,7 +8,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.measurementframework.Measurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 public abstract class AbstractAdapter

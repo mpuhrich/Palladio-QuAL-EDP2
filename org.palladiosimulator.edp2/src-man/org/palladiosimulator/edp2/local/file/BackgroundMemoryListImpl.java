@@ -10,7 +10,7 @@ import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
-import org.palladiosimulator.measurementspec.IdentifierMeasure;
+import org.palladiosimulator.measurementframework.measure.IdentifierMeasure;
 import org.palladiosimulator.metricspec.Identifier;
 
 /**

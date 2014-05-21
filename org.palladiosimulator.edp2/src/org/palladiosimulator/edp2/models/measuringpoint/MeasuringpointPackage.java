@@ -558,6 +558,63 @@ public interface MeasuringpointPackage extends EPackage {
 
 
     /**
+     * The meta object id for the '{@link org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioMeasuringPointImpl <em>Usage Scenario Measuring Point</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioMeasuringPointImpl
+     * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getUsageScenarioMeasuringPoint()
+     * @generated
+     */
+    int USAGE_SCENARIO_MEASURING_POINT = 15;
+
+    /**
+     * The feature id for the '<em><b>Usage Scenario</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int USAGE_SCENARIO_MEASURING_POINT__USAGE_SCENARIO = MEASURING_POINT_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Usage Scenario Measuring Point</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int USAGE_SCENARIO_MEASURING_POINT_FEATURE_COUNT = MEASURING_POINT_FEATURE_COUNT + 1;
+
+    /**
+     * The meta object id for the '{@link org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioReferenceImpl <em>Usage Scenario Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioReferenceImpl
+     * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getUsageScenarioReference()
+     * @generated
+     */
+    int USAGE_SCENARIO_REFERENCE = 16;
+
+    /**
+     * The feature id for the '<em><b>Usage Scenario</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int USAGE_SCENARIO_REFERENCE__USAGE_SCENARIO = 0;
+
+    /**
+     * The number of structural features of the '<em>Usage Scenario Reference</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int USAGE_SCENARIO_REFERENCE_FEATURE_COUNT = 1;
+
+
+    /**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint <em>Measuring Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -818,6 +875,37 @@ public interface MeasuringpointPackage extends EPackage {
     EReference getSubSystemReference_Subsystem();
 
     /**
+     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint <em>Usage Scenario Measuring Point</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Usage Scenario Measuring Point</em>'.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint
+     * @generated
+     */
+    EClass getUsageScenarioMeasuringPoint();
+
+    /**
+     * Returns the meta object for class '{@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference <em>Usage Scenario Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Usage Scenario Reference</em>'.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference
+     * @generated
+     */
+    EClass getUsageScenarioReference();
+
+    /**
+     * Returns the meta object for the reference '{@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference#getUsageScenario <em>Usage Scenario</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Usage Scenario</em>'.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference#getUsageScenario()
+     * @see #getUsageScenarioReference()
+     * @generated
+     */
+    EReference getUsageScenarioReference_UsageScenario();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1068,6 +1156,34 @@ public interface MeasuringpointPackage extends EPackage {
          * @generated
          */
         EReference SUB_SYSTEM_REFERENCE__SUBSYSTEM = eINSTANCE.getSubSystemReference_Subsystem();
+
+        /**
+         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioMeasuringPointImpl <em>Usage Scenario Measuring Point</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioMeasuringPointImpl
+         * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getUsageScenarioMeasuringPoint()
+         * @generated
+         */
+        EClass USAGE_SCENARIO_MEASURING_POINT = eINSTANCE.getUsageScenarioMeasuringPoint();
+
+        /**
+         * The meta object literal for the '{@link org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioReferenceImpl <em>Usage Scenario Reference</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.palladiosimulator.edp2.models.measuringpoint.impl.UsageScenarioReferenceImpl
+         * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getUsageScenarioReference()
+         * @generated
+         */
+        EClass USAGE_SCENARIO_REFERENCE = eINSTANCE.getUsageScenarioReference();
+
+        /**
+         * The meta object literal for the '<em><b>Usage Scenario</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference USAGE_SCENARIO_REFERENCE__USAGE_SCENARIO = eINSTANCE.getUsageScenarioReference_UsageScenario();
 
     }
 

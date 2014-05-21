@@ -30,7 +30,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
     /** Registry for the DAOs. */
     private final MeasurementsDaoRegistry daoRegistry;
-    /** Measurement to add. */
+    /** AbstractMeasureProvider to add. */
     private Object measurementToAdd;
 
     public EmfmodelAddMeasurementToDataSeriesSwitch(final MeasurementsDaoRegistry daoRegistry) {

@@ -231,6 +231,29 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected UsageScenarioMeasuringPointItemProvider usageScenarioMeasuringPointItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createUsageScenarioMeasuringPointAdapter() {
+        if (usageScenarioMeasuringPointItemProvider == null) {
+            usageScenarioMeasuringPointItemProvider = new UsageScenarioMeasuringPointItemProvider(this);
+        }
+
+        return usageScenarioMeasuringPointItemProvider;
+    }
+
+    /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -336,6 +359,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
         if (systemOperationMeasuringPointItemProvider != null) systemOperationMeasuringPointItemProvider.dispose();
         if (linkingResourceMeasuringPointItemProvider != null) linkingResourceMeasuringPointItemProvider.dispose();
         if (subSystemOperationMeasuringPointItemProvider != null) subSystemOperationMeasuringPointItemProvider.dispose();
+        if (usageScenarioMeasuringPointItemProvider != null) usageScenarioMeasuringPointItemProvider.dispose();
     }
 
 }

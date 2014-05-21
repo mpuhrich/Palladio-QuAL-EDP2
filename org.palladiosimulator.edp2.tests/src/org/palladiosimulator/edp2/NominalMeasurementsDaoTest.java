@@ -18,7 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.measurementspec.IdentifierMeasure;
+import org.palladiosimulator.measurementframework.measure.IdentifierMeasure;
 import org.palladiosimulator.metricspec.DataType;
 import org.palladiosimulator.metricspec.Identifier;
 import org.palladiosimulator.metricspec.Scale;

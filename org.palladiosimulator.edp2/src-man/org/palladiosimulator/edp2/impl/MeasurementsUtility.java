@@ -30,7 +30,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.Repository;
-import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.measurementframework.Measurement;
 import org.palladiosimulator.metricspec.Identifier;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;

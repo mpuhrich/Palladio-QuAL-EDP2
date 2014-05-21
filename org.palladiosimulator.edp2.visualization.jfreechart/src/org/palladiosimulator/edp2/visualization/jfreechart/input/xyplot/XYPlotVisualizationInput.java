@@ -21,7 +21,7 @@ import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.measurementspec.MeasurementTuple;
+import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.CaptureType;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
@@ -103,11 +103,11 @@ extends AbstractXYVisualizationInput {
     }
 
     private double[][] getXYData(final IDataSource dataSource) {
-        final IDataStream<MeasurementTuple> inputStream = dataSource.getDataStream();
+        final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
         final double[][] result = new double[2][inputStream.size()];
         try {
             int i = 0;
-            for (final MeasurementTuple tuple : inputStream) {
+            for (final TupleMeasurement tuple : inputStream) {
                 final Measure<Double, Duration> pointInTime = tuple.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
                 result[0][i] = pointInTime.doubleValue(SI.SECOND);
                 if (tuple.asArray()[1].getValue() instanceof Double) {

@@ -10,7 +10,7 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.elementfactories.Edp2DataTupleDataSourceFactory;
 import org.palladiosimulator.edp2.impl.MeasurementsUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.measurementspec.Measurement;
+import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
 public class Edp2DataTupleDataSource
@@ -27,7 +27,7 @@ extends AbstractDataSource implements IDataSource, IPersistableElement {
 
     @SuppressWarnings("unchecked")
     @Override
-    public <M extends Measurement> IDataStream<M> getDataStream() {
+    public <M extends IMeasureProvider> IDataStream<M> getDataStream() {
         return (IDataStream<M>) dataStream;
     }
 

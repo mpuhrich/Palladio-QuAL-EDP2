@@ -70,6 +70,7 @@
 null
 null
 null
+null
    <extension point="org.eclipse.ui.editors">
       <editor
             id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
@@ -105,6 +106,7 @@ null
       </wizard>
    </extension>
 
+null
 null
 null
 null

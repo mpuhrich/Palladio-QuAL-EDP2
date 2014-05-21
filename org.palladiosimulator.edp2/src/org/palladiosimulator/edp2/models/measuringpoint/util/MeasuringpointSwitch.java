@@ -21,6 +21,8 @@ import org.palladiosimulator.edp2.models.measuringpoint.SubSystemOperationMeasur
 import org.palladiosimulator.edp2.models.measuringpoint.SubSystemReference;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemOperationMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.SystemReference;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioMeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.UsageScenarioReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -183,6 +185,20 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
             case MeasuringpointPackage.SUB_SYSTEM_REFERENCE: {
                 SubSystemReference subSystemReference = (SubSystemReference)theEObject;
                 T result = caseSubSystemReference(subSystemReference);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case MeasuringpointPackage.USAGE_SCENARIO_MEASURING_POINT: {
+                UsageScenarioMeasuringPoint usageScenarioMeasuringPoint = (UsageScenarioMeasuringPoint)theEObject;
+                T result = caseUsageScenarioMeasuringPoint(usageScenarioMeasuringPoint);
+                if (result == null) result = caseMeasuringPoint(usageScenarioMeasuringPoint);
+                if (result == null) result = caseUsageScenarioReference(usageScenarioMeasuringPoint);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case MeasuringpointPackage.USAGE_SCENARIO_REFERENCE: {
+                UsageScenarioReference usageScenarioReference = (UsageScenarioReference)theEObject;
+                T result = caseUsageScenarioReference(usageScenarioReference);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -412,6 +428,36 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseSubSystemReference(SubSystemReference object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Usage Scenario Measuring Point</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Usage Scenario Measuring Point</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUsageScenarioMeasuringPoint(UsageScenarioMeasuringPoint object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Usage Scenario Reference</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Usage Scenario Reference</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUsageScenarioReference(UsageScenarioReference object) {
         return null;
     }
 

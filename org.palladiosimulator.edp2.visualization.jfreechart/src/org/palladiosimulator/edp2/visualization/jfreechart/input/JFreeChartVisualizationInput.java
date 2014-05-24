@@ -15,7 +15,7 @@ import org.jfree.chart.renderer.AbstractRenderer;
 import org.jfree.data.general.AbstractDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.util.DefaultUnitSwitch;
 import org.palladiosimulator.metricspec.BaseMetricDescription;

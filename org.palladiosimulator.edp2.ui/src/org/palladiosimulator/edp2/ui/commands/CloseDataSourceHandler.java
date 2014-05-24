@@ -10,9 +10,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.palladiosimulator.edp2.EDP2Plugin;
-import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.edp2.impl.MeasurementsUtility;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
 /**
  * Command for opening the OpenDataSourceWizard.

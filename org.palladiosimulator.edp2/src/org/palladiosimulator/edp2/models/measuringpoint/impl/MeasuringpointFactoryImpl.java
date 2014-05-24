@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.palladiosimulator.edp2.models.measuringpoint.*;
 import org.palladiosimulator.edp2.models.measuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.AssemblyOperationMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.AssemblyPassiveResourceMeasuringPoint;

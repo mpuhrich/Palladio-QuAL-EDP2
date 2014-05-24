@@ -5,6 +5,7 @@ package org.palladiosimulator.edp2.models.measuringpoint.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.palladiosimulator.edp2.models.measuringpoint.*;
 import org.palladiosimulator.edp2.models.measuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.ActiveResourceReference;
 import org.palladiosimulator.edp2.models.measuringpoint.AssemblyOperationMeasuringPoint;

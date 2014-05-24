@@ -6,6 +6,11 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,14 +18,14 @@ import java.util.logging.Logger;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
+import org.apache.commons.codec.binary.Base64;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.palladiosimulator.edp2.internal.DataSeriesFromRawMeasurementsSwitch;
-import org.palladiosimulator.edp2.internal.SerializationUtil;
+import org.palladiosimulator.edp2.models.ExperimentData.*;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
@@ -383,27 +388,6 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
         final RawMeasurements rm = createRawMeasurements();
         forMeasurementsRange.setRawMeasurements(rm);
 
-        // create necessary data series from measure (after input model validation)
-        // input validation
-        String errorMsg = "Cannot create data series for raw measurements. ";
-        if (forMeasurementsRange == null) {
-            errorMsg += "AbstractMeasureProvider range must not be null in order to create "
-                    + "data series for raw measurements.";
-        } else if (forMeasurementsRange.getMeasurements() == null) {
-            errorMsg = "Measurements must not be null in order to create data "
-                    + "series for raw measurements.";
-        } else if (rm.getMeasurementsRange().getMeasurements().getMeasure() == null) {
-            errorMsg = "Measure (definition) must not be null in order to create "
-                    + "data series for raw measurements.";
-        } else {
-            errorMsg = null;
-        }
-        if (errorMsg != null) {
-            logger.log(Level.SEVERE, errorMsg);
-            throw new IllegalStateException(errorMsg);
-        }
-        // create necessary data series instances themselves
-        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementsRange().getMeasurements().getMeasure().getMetric());
         return rm;
     }
 
@@ -606,58 +590,37 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated not
      */
-    @SuppressWarnings("unchecked")
-    public javax.measure.Measure createEJSMeasureFromString(final EDataType eDataType, final String initialValue) {
-        return (javax.measure.Measure) SerializationUtil.readObject(initialValue);
+    public javax.measure.Measure<?, ?> createEJSMeasureFromString(final EDataType eDataType, final String initialValue) {
+        return (javax.measure.Measure<?, ?>)readObject(initialValue);
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated not
      */
     public String convertEJSMeasureToString(final EDataType eDataType, final Object instanceValue) {
-        return SerializationUtil.writeObject(instanceValue);
+        return writeObject(instanceValue);
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated not
      */
-    @SuppressWarnings("unchecked")
     public javax.measure.Measure createEJSDurationMeasureFromString(final EDataType eDataType, final String initialValue) {
-        return (javax.measure.Measure) SerializationUtil.readObject(initialValue);
+        return (javax.measure.Measure)readObject(initialValue);
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated not
      */
     public String convertEJSDurationMeasureToString(final EDataType eDataType, final Object instanceValue) {
-        return SerializationUtil.writeObject(instanceValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    @SuppressWarnings("unchecked")
-    public Unit createEJSUnitFromString(final EDataType eDataType, final String initialValue) {
-        return (Unit) SerializationUtil.readObject(initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertEJSUnitToString(final EDataType eDataType, final Object instanceValue) {
-        return SerializationUtil.writeObject(instanceValue);
+        return writeObject(instanceValue);
     }
 
     /**
@@ -679,6 +642,51 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     @Deprecated
     public static ExperimentDataPackage getPackage() {
         return ExperimentDataPackage.eINSTANCE;
+    }
+
+    /**Serializes an object to a string.
+     * @param o The object to store.
+     * @return String containing the serialized object.
+     * @throws IOException Error occurred during serialization.
+     */
+    private String writeObject(final Object o) {
+        final ByteArrayOutputStream bas = new ByteArrayOutputStream();
+        ObjectOutputStream oos;
+        try {
+            oos = new ObjectOutputStream(bas);
+            oos.writeObject(o);
+            oos.close();
+        } catch (final IOException e) {
+            logger.log(Level.SEVERE,
+                    "Could not serialize object to string. Data corruption is likely. "
+                            + "Object: " + o + "Error: " + e.getMessage());
+        }
+        return Base64.encodeBase64String(bas.toByteArray());
+    }
+
+    /**Deserialized an object from a string.
+     * @param bis The input string containing the object.
+     * @return The deserialized object.
+     * @throws IOException Error occurred during serialization.
+     * @throws ClassNotFoundException Error occurred during serialization.
+     */
+    private Object readObject(final String input) {
+        Object o = null;
+        try {
+            ObjectInputStream ois;
+            ois = new ObjectInputStream(new ByteArrayInputStream(Base64.decodeBase64(input)));
+            o = ois.readObject();
+            ois.close();
+        } catch (final IOException e) {
+            logger.log(Level.SEVERE,
+                    "Could not deserialize object from string. Data corruption is likely. "
+                            + "Error: " + e.getMessage());
+        } catch (final ClassNotFoundException e) {
+            logger.log(Level.SEVERE,
+                    "Could not deserialize object from string. No class for object could be found. " +
+                            "Data corruption is likely. " + "Error: " + e.getMessage());
+        }
+        return o;
     }
 
 } //EmfmodelFactoryImpl

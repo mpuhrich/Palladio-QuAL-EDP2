@@ -16,6 +16,8 @@ Require-Bundle: org.palladiosimulator.edp2,
  org.eclipse.core.runtime;bundle-version="3.4.0",
  org.jscience;bundle-version="4.1.3",
  org.eclipse.emf.ecore.xmi;bundle-version="2.9.1",
- org.palladiosimulator.measurementframework
+ org.palladiosimulator.measurementframework,
+ org.palladiosimulator.edp2.dao.localfile;bundle-version="1.0.0",
+ org.palladiosimulator.edp2.dao;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

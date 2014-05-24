@@ -16,8 +16,8 @@ import javax.measure.unit.Unit;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
-import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
+import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.measurementframework.measure.IdentifierMeasure;
 import org.palladiosimulator.metricspec.DataType;
 import org.palladiosimulator.metricspec.Identifier;

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.edp2.models.measuringpoint.*;
 import org.palladiosimulator.edp2.models.measuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.ActiveResourceReference;
 import org.palladiosimulator.edp2.models.measuringpoint.AssemblyOperationMeasuringPoint;

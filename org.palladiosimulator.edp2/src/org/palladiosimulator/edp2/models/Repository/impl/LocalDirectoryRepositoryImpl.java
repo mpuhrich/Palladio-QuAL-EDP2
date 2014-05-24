@@ -7,12 +7,20 @@
 package org.palladiosimulator.edp2.models.Repository.impl;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
-import org.palladiosimulator.edp2.local.file.LocalDirectoryMetaDao;
+import org.palladiosimulator.edp2.dao.MetaDaoDelegate;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
@@ -30,85 +38,157 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements LocalDirectoryRepository {
-	
-	/**
+
+    /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getUri()
      * @generated
      * @ordered
      */
-	protected static final String URI_EDEFAULT = null;
+    protected static final String URI_EDEFAULT = null;
 
-	/**
+    /**
      * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getUri()
      * @generated
      * @ordered
      */
-	protected String uri = URI_EDEFAULT;
+    protected String uri = URI_EDEFAULT;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected LocalDirectoryRepositoryImpl() {
-		super();
-		metaDao = new LocalDirectoryMetaDao(this);
-	}
-
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    protected LocalDirectoryRepositoryImpl() {
+        super();
+        final MetaDaoDelegate delegate = getMetaDaoDelegate("org.palladiosimulator.edp2.dao.localfile.dao");
+        delegate.setParent(this);
+
+        metaDao = delegate;
+    }
+
+    private MetaDaoDelegate getMetaDaoDelegate(final String wantedId) {
+        MetaDaoDelegate result = null;
+        if (Platform.getExtensionRegistry() != null) {
+            final IConfigurationElement[] adapterExtensions = Platform
+                    .getExtensionRegistry().getConfigurationElementsFor(
+                            "org.palladiosimulator.edp2.dao");
+            for (final IConfigurationElement e : adapterExtensions) {
+                try {
+                    id = e.getAttribute("id");
+                    if (id.equals(wantedId)) {
+                        result = (MetaDaoDelegate) e.createExecutableExtension("class");
+                        break;
+                    }
+                } catch (final CoreException e1) {
+                    throw new RuntimeException();
+                }
+            }
+        } else {
+            try {
+                result = (MetaDaoDelegate) Class.forName("org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMetaDao").newInstance();
+            } catch (final InstantiationException e) {
+                throw new RuntimeException(e);
+            } catch (final IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (final ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public String getUri() {
+    @Override
+    public String getUri() {
         return uri;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void setUri(String newUri) {
+    @Override
+    public void setUri(String newUri) {
         String oldUri = uri;
         uri = newUri;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI, oldUri, uri));
     }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @throws DataNotAccessibleException 
-	 * @generated NOT
-	 */
-	public File convertUriStringToFile(String uriString) throws DataNotAccessibleException {
-		return ((LocalDirectoryMetaDao)metaDao).convertUriStringToFile(uriString);
-	}
-
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
+     * @throws DataNotAccessibleException
+     * @generated NOT
+     */
+    @Override
+    public File convertUriStringToFile(final String uriString) throws DataNotAccessibleException {
+        return convertUriStringToFileInternal(uriString);
+    }
+
+    /**Converts a supplied URI to a file on the local file system, if possible.
+     * @param uri The URI to convert.
+     * @return Local file.
+     * @throws DataNotAccessibleException For conversion errors. Details are provided in the message.
+     */
+    private File convertUriStringToFileInternal(final String uriString) throws DataNotAccessibleException {
+        final URI uri = URI.createURI(uriString);
+        File directory;
+        String fileLocation;
+        if (uri.isPlatform()) {
+            URL urlToFoo = null;
+            try {
+                urlToFoo = FileLocator.toFileURL(new URL(uri.toString()));
+                fileLocation = urlToFoo.getFile();
+            } catch (final MalformedURLException e) {
+                throw new DataNotAccessibleException("The URI is not well-formed.", e);
+            } catch (final IOException e) {
+                throw new DataNotAccessibleException("The URI could not be converted.", e);
+            }
+        } else {
+            fileLocation = uri.toFileString();
+        }
+        if (fileLocation == null) {
+            // URI is valid but does not point to a file
+            throw new DataNotAccessibleException("The URI could not be converted to a local file.", null);
+        } else {
+            directory = new File(fileLocation);
+            if (!directory.isDirectory()) {
+                // URI does not point to a directory.
+                throw new DataNotAccessibleException("The URI does not point to a directory.", null);
+            }
+        }
+        return directory;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    @Override
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
             case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
                 return getUri();
@@ -116,13 +196,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         return super.eGet(featureID, resolve, coreType);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eSet(int featureID, Object newValue) {
+    @Override
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
                 setUri((String)newValue);
@@ -131,13 +211,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         super.eSet(featureID, newValue);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
+    @Override
+    public void eUnset(int featureID) {
         switch (featureID) {
             case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
                 setUri(URI_EDEFAULT);
@@ -146,13 +226,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         super.eUnset(featureID);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
+    @Override
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
             case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
                 return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
@@ -160,13 +240,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         return super.eIsSet(featureID);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public String toString() {
+    @Override
+    public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
@@ -175,5 +255,5 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         result.append(')');
         return result.toString();
     }
-	
+
 } //LocalDirectoryRepositoryImpl

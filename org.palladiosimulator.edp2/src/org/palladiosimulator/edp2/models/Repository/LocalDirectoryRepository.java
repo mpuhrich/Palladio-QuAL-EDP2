@@ -8,7 +8,7 @@ package org.palladiosimulator.edp2.models.Repository;
 
 import java.io.File;
 
-import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 
 
 /**

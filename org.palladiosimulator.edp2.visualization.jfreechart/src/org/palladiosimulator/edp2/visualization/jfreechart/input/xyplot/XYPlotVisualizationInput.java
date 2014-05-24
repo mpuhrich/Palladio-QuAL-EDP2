@@ -17,7 +17,7 @@ import org.jfree.data.xy.XYDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.edp2.impl.MetricDescriptionUtility;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;

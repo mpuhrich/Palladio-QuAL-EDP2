@@ -507,10 +507,10 @@ public interface RepositoryPackage extends EPackage {
 	int IRESOURCE_SET_FEATURE_COUNT = 0;
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}' class.
+     * The meta object id for the '{@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.MeasurementsDaoFactory
+     * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMeasurementsDaoFactory()
      * @generated
      */
@@ -526,10 +526,10 @@ public interface RepositoryPackage extends EPackage {
 	int MEASUREMENTS_DAO_FACTORY_FEATURE_COUNT = 0;
 
 	/**
-     * The meta object id for the '{@link org.palladiosimulator.edp2.MetaDao <em>Meta Dao</em>}' class.
+     * The meta object id for the '{@link org.palladiosimulator.edp2.dao.MetaDao <em>Meta Dao</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see org.palladiosimulator.edp2.MetaDao
+     * @see org.palladiosimulator.edp2.dao.MetaDao
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMetaDao()
      * @generated
      */
@@ -694,23 +694,23 @@ public interface RepositoryPackage extends EPackage {
 	EClass getIResourceSet();
 
 	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}'.
+     * Returns the meta object for class '{@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @return the meta object for class '<em>Measurements Dao Factory</em>'.
-     * @see org.palladiosimulator.edp2.MeasurementsDaoFactory
-     * @model instanceClass="org.palladiosimulator.edp2.MeasurementsDaoFactory"
+     * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
+     * @model instanceClass="org.palladiosimulator.edp2.dao.MeasurementsDaoFactory"
      * @generated
      */
 	EClass getMeasurementsDaoFactory();
 
 	/**
-     * Returns the meta object for class '{@link org.palladiosimulator.edp2.MetaDao <em>Meta Dao</em>}'.
+     * Returns the meta object for class '{@link org.palladiosimulator.edp2.dao.MetaDao <em>Meta Dao</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @return the meta object for class '<em>Meta Dao</em>'.
-     * @see org.palladiosimulator.edp2.MetaDao
-     * @model instanceClass="org.palladiosimulator.edp2.MetaDao"
+     * @see org.palladiosimulator.edp2.dao.MetaDao
+     * @model instanceClass="org.palladiosimulator.edp2.dao.MetaDao"
      * @generated
      */
 	EClass getMetaDao();
@@ -918,20 +918,20 @@ public interface RepositoryPackage extends EPackage {
 		EClass IRESOURCE_SET = eINSTANCE.getIResourceSet();
 
 		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}' class.
+         * The meta object literal for the '{@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory <em>Measurements Dao Factory</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.MeasurementsDaoFactory
+         * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMeasurementsDaoFactory()
          * @generated
          */
 		EClass MEASUREMENTS_DAO_FACTORY = eINSTANCE.getMeasurementsDaoFactory();
 
 		/**
-         * The meta object literal for the '{@link org.palladiosimulator.edp2.MetaDao <em>Meta Dao</em>}' class.
+         * The meta object literal for the '{@link org.palladiosimulator.edp2.dao.MetaDao <em>Meta Dao</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-         * @see org.palladiosimulator.edp2.MetaDao
+         * @see org.palladiosimulator.edp2.dao.MetaDao
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMetaDao()
          * @generated
          */

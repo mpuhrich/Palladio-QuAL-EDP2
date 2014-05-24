@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 import org.junit.Test;
-import org.palladiosimulator.edp2.local.file.LongSerializer;
+import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializer.LongSerializer;
 
 /**
  * Test the behavior of the LongSerializer.

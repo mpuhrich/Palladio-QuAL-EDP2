@@ -12,9 +12,9 @@ import javax.measure.unit.Unit;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl;
-import org.palladiosimulator.edp2.local.file.BackgroundMemoryListImpl.BinaryRepresentation;
-import org.palladiosimulator.edp2.local.file.DoubleSerializer;
+import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.BackgroundMemoryListImpl;
+import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.BackgroundMemoryListImpl.BinaryRepresentation;
+import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializer.DoubleSerializer;
 
 
 /**Tests the behavior of the BackgroundMemoryList and DoubleSerialiser.

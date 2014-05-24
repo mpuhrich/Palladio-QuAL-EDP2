@@ -16,8 +16,8 @@ import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
 import org.junit.Test;
-import org.palladiosimulator.edp2.impl.BinaryMeasurementsDao;
-import org.palladiosimulator.edp2.impl.DataNotAccessibleException;
+import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 
 /**JUnit test for classes with LongBinaryMeasurementsDao interface.
  * Subclass and test for all different types of LongBinaryMeasurementsDao.

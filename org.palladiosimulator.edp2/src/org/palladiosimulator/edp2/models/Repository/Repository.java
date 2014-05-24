@@ -7,7 +7,7 @@
 package org.palladiosimulator.edp2.models.Repository;
 
 import org.eclipse.emf.common.util.EList;
-import org.palladiosimulator.edp2.MetaDao;
+import org.palladiosimulator.edp2.dao.MetaDao;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.metricspec.Description;
 

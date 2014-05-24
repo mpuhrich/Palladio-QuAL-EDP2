@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 import org.junit.Test;
-import org.palladiosimulator.edp2.local.file.DoubleSerializer;
+import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializer.DoubleSerializer;
 
 /**Test the behavior of the DoubleSerializer.
  * @author Steffen Becker

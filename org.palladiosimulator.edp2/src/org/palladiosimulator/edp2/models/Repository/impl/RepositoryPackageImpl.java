@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.palladiosimulator.edp2.MeasurementsDaoFactory;
-import org.palladiosimulator.edp2.MetaDao;
+import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
+import org.palladiosimulator.edp2.dao.MetaDao;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
@@ -41,77 +41,77 @@ import de.uka.ipd.sdq.pcm.PcmPackage;
  * @generated
  */
 public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass localDirectoryRepositoryEClass = null;
+    private EClass localDirectoryRepositoryEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass fileEClass = null;
+    private EClass fileEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass localMemoryRepositoryEClass = null;
+    private EClass localMemoryRepositoryEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass remoteCdoRepositoryEClass = null;
+    private EClass remoteCdoRepositoryEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass localSensorFrameworkRepositoryEClass = null;
+    private EClass localSensorFrameworkRepositoryEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass repositoriesEClass = null;
+    private EClass repositoriesEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass iResourceSetEClass = null;
+    private EClass iResourceSetEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass measurementsDaoFactoryEClass = null;
+    private EClass measurementsDaoFactoryEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass metaDaoEClass = null;
+    private EClass metaDaoEClass = null;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private EClass repositoryEClass = null;
+    private EClass repositoryEClass = null;
 
-	/**
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -120,36 +120,36 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * initialization of the package, or returns the registered package,
      * if one already exists.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#eNS_URI
      * @see #init()
      * @generated
      */
-	private RepositoryPackageImpl() {
+    private RepositoryPackageImpl() {
         super(eNS_URI, RepositoryFactory.eINSTANCE);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private static boolean isInited = false;
+    private static boolean isInited = false;
 
-	/**
+    /**
      * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
      * 
      * <p>This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is accessed.
      * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
      * @generated
      */
-	public static RepositoryPackage init() {
+    public static RepositoryPackage init() {
         if (isInited) return (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
 
         // Obtain or create and register package
@@ -184,219 +184,241 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         return theRepositoryPackage;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getLocalDirectoryRepository() {
+    @Override
+    public EClass getLocalDirectoryRepository() {
         return localDirectoryRepositoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getLocalDirectoryRepository_Uri() {
+    @Override
+    public EAttribute getLocalDirectoryRepository_Uri() {
         return (EAttribute)localDirectoryRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getFile() {
+    @Override
+    public EClass getFile() {
         return fileEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getLocalMemoryRepository() {
+    @Override
+    public EClass getLocalMemoryRepository() {
         return localMemoryRepositoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getLocalMemoryRepository_Domain() {
+    @Override
+    public EAttribute getLocalMemoryRepository_Domain() {
         return (EAttribute)localMemoryRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getRemoteCdoRepository() {
+    @Override
+    public EClass getRemoteCdoRepository() {
         return remoteCdoRepositoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getRemoteCdoRepository_Url() {
+    @Override
+    public EAttribute getRemoteCdoRepository_Url() {
         return (EAttribute)remoteCdoRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getLocalSensorFrameworkRepository() {
+    @Override
+    public EClass getLocalSensorFrameworkRepository() {
         return localSensorFrameworkRepositoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getLocalSensorFrameworkRepository_Uri() {
+    @Override
+    public EAttribute getLocalSensorFrameworkRepository_Uri() {
         return (EAttribute)localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getLocalSensorFrameworkRepository_ImportSettings() {
+    @Override
+    public EAttribute getLocalSensorFrameworkRepository_ImportSettings() {
         return (EAttribute)localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(1);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getRepositories() {
+    @Override
+    public EClass getRepositories() {
         return repositoriesEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EReference getRepositories_AvailableRepositories() {
+    @Override
+    public EReference getRepositories_AvailableRepositories() {
         return (EReference)repositoriesEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EReference getRepositories_CommonResourceSet() {
+    @Override
+    public EReference getRepositories_CommonResourceSet() {
         return (EReference)repositoriesEClass.getEStructuralFeatures().get(1);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getIResourceSet() {
+    @Override
+    public EClass getIResourceSet() {
         return iResourceSetEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getMeasurementsDaoFactory() {
+    @Override
+    public EClass getMeasurementsDaoFactory() {
         return measurementsDaoFactoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getMetaDao() {
+    @Override
+    public EClass getMetaDao() {
         return metaDaoEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EClass getRepository() {
+    @Override
+    public EClass getRepository() {
         return repositoryEClass;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EReference getRepository_Repositories() {
+    @Override
+    public EReference getRepository_Repositories() {
         return (EReference)repositoryEClass.getEStructuralFeatures().get(0);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EAttribute getRepository_ReadOnly() {
+    @Override
+    public EAttribute getRepository_ReadOnly() {
         return (EAttribute)repositoryEClass.getEStructuralFeatures().get(2);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EReference getRepository_Descriptions() {
+    @Override
+    public EReference getRepository_Descriptions() {
         return (EReference)repositoryEClass.getEStructuralFeatures().get(3);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public EReference getRepository_ExperimentGroups() {
+    @Override
+    public EReference getRepository_ExperimentGroups() {
         return (EReference)repositoryEClass.getEStructuralFeatures().get(1);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public RepositoryFactory getRepositoryFactory() {
+    @Override
+    public RepositoryFactory getRepositoryFactory() {
         return (RepositoryFactory)getEFactoryInstance();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private boolean isCreated = false;
+    private boolean isCreated = false;
 
-	/**
+    /**
      * Creates the meta-model objects for the package.  This method is
      * guarded to have no affect on any invocation but its first.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void createPackageContents() {
+    public void createPackageContents() {
         if (isCreated) return;
         isCreated = true;
 
@@ -433,21 +455,21 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         createEReference(repositoryEClass, REPOSITORY__DESCRIPTIONS);
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	private boolean isInitialized = false;
+    private boolean isInitialized = false;
 
-	/**
+    /**
      * Complete the initialization of the package and its meta-model.  This
      * method is guarded to have no affect on any invocation but its first.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public void initializePackageContents() {
+    public void initializePackageContents() {
         if (isInitialized) return;
         isInitialized = true;
 

@@ -417,9 +417,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IResourceSet" instanceClassName="org.eclipse.emf.ecore.resource.ResourceSet"
         abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MeasurementsDaoFactory" instanceClassName="org.palladiosimulator.edp2.MeasurementsDaoFactory"
+    <eClassifiers xsi:type="ecore:EClass" name="MeasurementsDaoFactory" instanceClassName="org.palladiosimulator.edp2.dao.MeasurementsDaoFactory"
         abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MetaDao" instanceClassName="org.palladiosimulator.edp2.MetaDao"
+    <eClassifiers xsi:type="ecore:EClass" name="MetaDao" instanceClassName="org.palladiosimulator.edp2.dao.MetaDao"
         abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="Repository" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Repository/MetaDao">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

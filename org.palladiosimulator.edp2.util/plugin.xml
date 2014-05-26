@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.palladiosimulator.edp2.util.formater" name="org.palladiosimulator.edp2.util.formater" schema="schema/org.palladiosimulator.edp2.util.formater.exsd"/>
+   <extension
+         point="org.palladiosimulator.edp2.util.formater">
+      <measuringpointformater
+            class="org.palladiosimulator.edp2.util.visitors.MeasuringPointStringFormaterSwitch">
+      </measuringpointformater>
+   </extension>
+
+</plugin>

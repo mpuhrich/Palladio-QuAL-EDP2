@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="test" nsPrefix="">
-  <eClassifiers xsi:type="ecore:EClass" name="Y" eSuperTypes="../../org.palladiosimulator.metricspec/model/metricspec.ecore#//AggregationFunctionDescription">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EEnum ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//CaptureType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//TextualBaseMetricDescription"/>
-  </eClassifiers>
-</ecore:EPackage>

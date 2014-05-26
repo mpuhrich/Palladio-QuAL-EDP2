@@ -445,50 +445,5 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuringPoint" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AssemblyOperationMeasuringPoint" eSuperTypes="#//measuringpoint/OperationReference #//measuringpoint/AssemblyReference #//measuringpoint/MeasuringPoint"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AssemblyPassiveResourceMeasuringPoint"
-        eSuperTypes="#//measuringpoint/AssemblyReference #//measuringpoint/PassiveResourceReference #//measuringpoint/MeasuringPoint"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ActiveResourceMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/ActiveResourceReference"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SystemOperationMeasuringPoint" eSuperTypes="#//measuringpoint/OperationReference #//measuringpoint/MeasuringPoint #//measuringpoint/SystemReference"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/Role"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="operationSignature" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/OperationSignature"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AssemblyReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SystemReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//system/System"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PassiveResourceReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="passiveResource" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//repository/PassiveResource"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActiveResourceReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="activeResource" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicaID" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/LinkingResourceReference"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingResource" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SubSystemOperationMeasuringPoint"
-        eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/SubSystemReference #//measuringpoint/OperationReference"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SubSystemReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subsystem" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//subsystem/SubSystem"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="UsageScenarioMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint #//measuringpoint/UsageScenarioReference"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UsageScenarioReference" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="usageScenario" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
-    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

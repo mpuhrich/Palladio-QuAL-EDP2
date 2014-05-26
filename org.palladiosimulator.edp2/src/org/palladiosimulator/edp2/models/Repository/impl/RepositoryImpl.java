@@ -119,7 +119,9 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public Repositories getRepositories() {
-        if (eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES) return null;
+        if (eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES) {
+            return null;
+        }
         return (Repositories)eInternalContainer();
     }
 
@@ -128,7 +130,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRepositories(Repositories newRepositories, NotificationChain msgs) {
+    public NotificationChain basicSetRepositories(final Repositories newRepositories, NotificationChain msgs) {
         msgs = eBasicSetContainer((InternalEObject)newRepositories, RepositoryPackage.REPOSITORY__REPOSITORIES, msgs);
         return msgs;
     }
@@ -139,20 +141,26 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public void setRepositories(Repositories newRepositories) {
+    public void setRepositories(final Repositories newRepositories) {
         if (newRepositories != eInternalContainer() || (eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES && newRepositories != null)) {
-            if (EcoreUtil.isAncestor(this, newRepositories))
+            if (EcoreUtil.isAncestor(this, newRepositories)) {
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
+            if (eInternalContainer() != null) {
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newRepositories != null)
+            }
+            if (newRepositories != null) {
                 msgs = ((InternalEObject)newRepositories).eInverseAdd(this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
+            }
             msgs = basicSetRepositories(newRepositories, msgs);
-            if (msgs != null) msgs.dispatch();
+            if (msgs != null) {
+                msgs.dispatch();
+            }
         }
-        else if (eNotificationRequired())
+        else if (eNotificationRequired()) {
             eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__REPOSITORIES, newRepositories, newRepositories));
+        }
     }
 
     /**
@@ -171,11 +179,12 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public void setReadOnly(boolean newReadOnly) {
-        boolean oldReadOnly = readOnly;
+    public void setReadOnly(final boolean newReadOnly) {
+        final boolean oldReadOnly = readOnly;
         readOnly = newReadOnly;
-        if (eNotificationRequired())
+        if (eNotificationRequired()) {
             eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__READ_ONLY, oldReadOnly, readOnly));
+        }
     }
 
     /**
@@ -222,14 +231,15 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetRepositories((Repositories)otherEnd, msgs);
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getExperimentGroups()).basicAdd(otherEnd, msgs);
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            if (eInternalContainer() != null) {
+                msgs = eBasicRemoveFromContainer(msgs);
+            }
+            return basicSetRepositories((Repositories)otherEnd, msgs);
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            return ((InternalEList<InternalEObject>)(InternalEList<?>)getExperimentGroups()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -240,12 +250,12 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                return basicSetRepositories(null, msgs);
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                return ((InternalEList<?>)getExperimentGroups()).basicRemove(otherEnd, msgs);
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            return basicSetRepositories(null, msgs);
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            return ((InternalEList<?>)getExperimentGroups()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -256,10 +266,10 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
         switch (eContainerFeatureID()) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                return eInternalContainer().eInverseRemove(this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            return eInternalContainer().eInverseRemove(this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -270,16 +280,16 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                return getRepositories();
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                return getExperimentGroups();
-            case RepositoryPackage.REPOSITORY__READ_ONLY:
-                return isReadOnly();
-            case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-                return getDescriptions();
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            return getRepositories();
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            return getExperimentGroups();
+        case RepositoryPackage.REPOSITORY__READ_ONLY:
+            return isReadOnly();
+        case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
+            return getDescriptions();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -291,22 +301,22 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                setRepositories((Repositories)newValue);
-                return;
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                getExperimentGroups().clear();
-                getExperimentGroups().addAll((Collection<? extends ExperimentGroup>)newValue);
-                return;
-            case RepositoryPackage.REPOSITORY__READ_ONLY:
-                setReadOnly((Boolean)newValue);
-                return;
-            case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-                getDescriptions().clear();
-                getDescriptions().addAll((Collection<? extends Description>)newValue);
-                return;
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            setRepositories((Repositories)newValue);
+            return;
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            getExperimentGroups().clear();
+            getExperimentGroups().addAll((Collection<? extends ExperimentGroup>)newValue);
+            return;
+        case RepositoryPackage.REPOSITORY__READ_ONLY:
+            setReadOnly((Boolean)newValue);
+            return;
+        case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
+            getDescriptions().clear();
+            getDescriptions().addAll((Collection<? extends Description>)newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
@@ -317,20 +327,20 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                setRepositories((Repositories)null);
-                return;
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                getExperimentGroups().clear();
-                return;
-            case RepositoryPackage.REPOSITORY__READ_ONLY:
-                setReadOnly(READ_ONLY_EDEFAULT);
-                return;
-            case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-                getDescriptions().clear();
-                return;
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            setRepositories((Repositories)null);
+            return;
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            getExperimentGroups().clear();
+            return;
+        case RepositoryPackage.REPOSITORY__READ_ONLY:
+            setReadOnly(READ_ONLY_EDEFAULT);
+            return;
+        case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
+            getDescriptions().clear();
+            return;
         }
         super.eUnset(featureID);
     }
@@ -341,16 +351,16 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
-            case RepositoryPackage.REPOSITORY__REPOSITORIES:
-                return getRepositories() != null;
-            case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-                return experimentGroups != null && !experimentGroups.isEmpty();
-            case RepositoryPackage.REPOSITORY__READ_ONLY:
-                return readOnly != READ_ONLY_EDEFAULT;
-            case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-                return descriptions != null && !descriptions.isEmpty();
+        case RepositoryPackage.REPOSITORY__REPOSITORIES:
+            return getRepositories() != null;
+        case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
+            return experimentGroups != null && !experimentGroups.isEmpty();
+        case RepositoryPackage.REPOSITORY__READ_ONLY:
+            return readOnly != READ_ONLY_EDEFAULT;
+        case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
+            return descriptions != null && !descriptions.isEmpty();
         }
         return super.eIsSet(featureID);
     }
@@ -362,9 +372,11 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if (eIsProxy()) {
+            return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (readOnly: ");
         result.append(readOnly);
         result.append(')');
@@ -443,6 +455,13 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     public void open() throws DataNotAccessibleException {
         if (metaDao != null) {
             metaDao.open();
+        }
+    }
+
+    @Override
+    public void flush() {
+        if (metaDao != null) {
+            metaDao.flush();
         }
     }
 

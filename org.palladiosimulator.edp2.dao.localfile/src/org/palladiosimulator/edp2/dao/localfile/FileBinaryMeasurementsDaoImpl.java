@@ -165,4 +165,16 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
             throw new DataNotAccessibleException(msg, e);
         }
     }
+
+    @Override
+    public void flush() {
+        if (isOpen()) {
+            try {
+                backgroundMemoryList.flush();
+            } catch (final IOException e) {
+                logger.log(Level.SEVERE, "Flush failed. Data may not be persited", e);
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }

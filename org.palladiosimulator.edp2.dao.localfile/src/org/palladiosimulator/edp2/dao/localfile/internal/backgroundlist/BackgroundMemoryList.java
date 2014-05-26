@@ -32,4 +32,6 @@ public interface BackgroundMemoryList<V,Q extends Quantity> extends BinaryMeasur
      */
     public boolean isClosed();
 
+    public void flush() throws IOException;
+
 }

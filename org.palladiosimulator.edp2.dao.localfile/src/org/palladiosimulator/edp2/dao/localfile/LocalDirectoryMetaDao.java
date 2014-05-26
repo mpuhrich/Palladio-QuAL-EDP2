@@ -178,48 +178,60 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     public void close() throws DataNotAccessibleException {
         super.close();
         // close directory
-        URI uri;
         try {
-            uri = URI.createURI(managedRepo.getUri());
-
-            File directory = null;
-            if(uri.isFile()) {
-                directory = new File(uri.toFileString());
-
-                if (!directory.isDirectory()) {
-                    final String msg = "URI does not point to a directory.";
-                    logger.log(Level.WARNING, msg);
-                    throw new DataNotAccessibleException(msg, null);
-                }
-
-                // load descriptions
-                saveDescriptions(directory);
-                // load experiment groups
-                saveExperimentGroups(directory);
-            }
-            else if(uri.isPlatformResource()) {
-                logger.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
-                //throw new UnsupportedOperationException("Platform resource deletion currently only partly supported!");
-            }
-            else {
-                logger.log(Level.WARNING, "Unsupported URI format.");
-                //throw new UnsupportedOperationException("Unsupported URI format.");
-            }
-
-            if(mmtDaoFactory.isActive()) {
-                mmtDaoFactory.setActive(false);
-            }
-            // Warning: Cannot clear lists as this would affect data on background storage
-            // TODO: FIXME
-            managedRepo.getDescriptions().clear();
-            managedRepo.resetExperimentGroups();
-            setClosed();
+            persistMetaData();
+            closeRepository();
         } catch (final IllegalArgumentException e) {
             final String msg = "URI is not valid.";
             logger.log(Level.WARNING, msg);
             throw new DataNotAccessibleException(msg, e);
         }
-        assert (isOpen());
+        assert !isOpen();
+    }
+
+    /**
+     * 
+     */
+    private void closeRepository() {
+        if(mmtDaoFactory.isActive()) {
+            mmtDaoFactory.setActive(false);
+        }
+        // Warning: Cannot clear lists as this would affect data on background storage
+        // TODO: FIXME
+        managedRepo.getDescriptions().clear();
+        managedRepo.resetExperimentGroups();
+        setClosed();
+    }
+
+    /**
+     * @throws DataNotAccessibleException
+     */
+    private void persistMetaData() throws DataNotAccessibleException {
+        final URI uri = URI.createURI(managedRepo.getUri());
+
+        File directory = null;
+        if(uri.isFile()) {
+            directory = new File(uri.toFileString());
+
+            if (!directory.isDirectory()) {
+                final String msg = "URI does not point to a directory.";
+                logger.log(Level.WARNING, msg);
+                throw new DataNotAccessibleException(msg, null);
+            }
+
+            // load descriptions
+            saveDescriptions(directory);
+            // load experiment groups
+            saveExperimentGroups(directory);
+        }
+        else if(uri.isPlatformResource()) {
+            logger.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
+            //throw new UnsupportedOperationException("Platform resource deletion currently only partly supported!");
+        }
+        else {
+            logger.log(Level.WARNING, "Unsupported URI format.");
+            //throw new UnsupportedOperationException("Unsupported URI format.");
+        }
     }
 
     /* (non-Javadoc)
@@ -624,6 +636,16 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         @Override
         public boolean accept(final File arg0, final String arg1) {
             return arg1.endsWith(extension);
+        }
+    }
+
+    @Override
+    public void flush() {
+        try {
+            persistMetaData();
+        } catch (final DataNotAccessibleException e) {
+            logger.log(Level.SEVERE, "Flush failed.", e);
+            throw new RuntimeException(e);
         }
     }
 }

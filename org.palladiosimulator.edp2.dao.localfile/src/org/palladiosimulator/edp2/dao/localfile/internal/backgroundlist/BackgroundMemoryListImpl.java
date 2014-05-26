@@ -307,4 +307,11 @@ implements BackgroundMemoryList<V,Q>
         }
         listSize = (int) chunks.getElementsInFile();
     }
+
+    @Override
+    public void flush() throws IOException {
+        if (chunks.isChunkLoaded() && chunks.isChanged()) {
+            chunks.saveChunk();
+        }
+    }
 }

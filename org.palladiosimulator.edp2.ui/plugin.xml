@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
 <plugin>
    <extension
          point="org.eclipse.ui.views">
@@ -77,13 +76,7 @@
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="org.palladiosimulator.edp2.ui.propertyContributor"
-            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
-         <propertyCategory
-               category="default">
-         </propertyCategory>
-         <propertyCategory
-               category="extended">
-         </propertyCategory>
+            labelProvider="org.palladiosimulator.edp2.ui.properties.EMFLabelProvider">
          <propertyCategory
                category="advanced">
          </propertyCategory>
@@ -93,11 +86,6 @@
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
             contributorId="org.palladiosimulator.edp2.ui.propertyContributor">
-         <propertyTab
-               category="default"
-               id="Base"
-               label="Base">
-         </propertyTab>
          <propertyTab
                category="advanced"
                id="org.palladiosimulator.edp2.ui.advancedTab"
@@ -117,157 +105,6 @@
                   type="org.eclipse.emf.ecore.EObject">
             </input>
          </propertySection>
-                  <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.MeasurementsRangePropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.MeasurementsRangePropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.MeasurementsRange"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.RawMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.RawMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.RawMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalNominalStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalNominalStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalNominalStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalMassDistributionPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalMassDistributionPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalMassDistribution"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.FixedWidthAggregatedMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.FixedWidthAggregatedMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.FixedWidthAggregatedMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.FixedIntervalsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.FixedIntervalsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.FixedIntervals"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.TextualNominalStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.TextualNominalStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.TextualNominalStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.TextualMassDistributionPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.TextualMassDistributionPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.TextualMassDistribution"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.ExperimentGroupPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.ExperimentGroupPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.ExperimentGroup"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.ExperimentSettingPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.ExperimentSettingPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.ExperimentSetting"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.ExperimentRunPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.ExperimentRunPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.ExperimentRun"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.MeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.MeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.Measurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.Edp2MeasurePropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.Edp2MeasurePropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.Edp2Measure"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.AggregationStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.AggregationStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.AggregationStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.DoubleBinaryMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.DoubleBinaryMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.DoubleBinaryMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalIntervalStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalIntervalStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalIntervalStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalOrdinalStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalOrdinalStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalOrdinalStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalPercentilePropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalPercentilePropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalPercentile"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.JSXmlMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.JSXmlMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.JSXmlMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.LongBinaryMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.LongBinaryMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.LongBinaryMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.IdentifierBasedMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.IdentifierBasedMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.IdentifierBasedMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.NumericalRatioStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.NumericalRatioStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.NumericalRatioStatistics"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.SensorFrameworkV1DoubleBinaryMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.SensorFrameworkV1DoubleBinaryMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.SensorFrameworkV1DoubleBinaryMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.SensorFrameworkV1IdentifierBasedMeasurementsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.SensorFrameworkV1IdentifierBasedMeasurementsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.SensorFrameworkV1IdentifierBasedMeasurements"
-               tab="Base">
-         </propertySection>
-         <propertySection
-               class="org.palladiosimulator.edp2.models.ExperimentData.parts.forms.TextualOrdinalStatisticsPropertiesEditionPartForm"
-               filter="org.palladiosimulator.edp2.models.ExperimentData.providers.TextualOrdinalStatisticsPropertiesEditionProvider$EditionFilter"
-               id="org.palladiosimulator.edp2.models.ExperimentData.section.TextualOrdinalStatistics"
-               tab="Base">
-         </propertySection>
-         
       </propertySections>
    </extension>
 

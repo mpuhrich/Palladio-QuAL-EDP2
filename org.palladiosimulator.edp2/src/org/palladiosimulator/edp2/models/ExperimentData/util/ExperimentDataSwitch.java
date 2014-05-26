@@ -14,7 +14,6 @@ import javax.measure.quantity.Quantity;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.palladiosimulator.edp2.models.ExperimentData.*;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;

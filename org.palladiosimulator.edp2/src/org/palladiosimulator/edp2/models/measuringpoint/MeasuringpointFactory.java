@@ -31,69 +31,6 @@ public interface MeasuringpointFactory extends EFactory {
     StringMeasuringPoint createStringMeasuringPoint();
 
     /**
-     * Returns a new object of class '<em>Assembly Operation Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Assembly Operation Measuring Point</em>'.
-     * @generated
-     */
-    AssemblyOperationMeasuringPoint createAssemblyOperationMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>Assembly Passive Resource Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Assembly Passive Resource Measuring Point</em>'.
-     * @generated
-     */
-    AssemblyPassiveResourceMeasuringPoint createAssemblyPassiveResourceMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>Active Resource Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Active Resource Measuring Point</em>'.
-     * @generated
-     */
-    ActiveResourceMeasuringPoint createActiveResourceMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>System Operation Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>System Operation Measuring Point</em>'.
-     * @generated
-     */
-    SystemOperationMeasuringPoint createSystemOperationMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>Linking Resource Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Linking Resource Measuring Point</em>'.
-     * @generated
-     */
-    LinkingResourceMeasuringPoint createLinkingResourceMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>Sub System Operation Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Sub System Operation Measuring Point</em>'.
-     * @generated
-     */
-    SubSystemOperationMeasuringPoint createSubSystemOperationMeasuringPoint();
-
-    /**
-     * Returns a new object of class '<em>Usage Scenario Measuring Point</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Usage Scenario Measuring Point</em>'.
-     * @generated
-     */
-    UsageScenarioMeasuringPoint createUsageScenarioMeasuringPoint();
-
-    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

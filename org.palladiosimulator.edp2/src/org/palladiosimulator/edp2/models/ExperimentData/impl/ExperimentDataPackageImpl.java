@@ -55,7 +55,6 @@ import org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPacka
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
-import de.uka.ipd.sdq.pcm.PcmPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -343,7 +342,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         // Initialize simple dependencies
         MetricSpecPackage.eINSTANCE.eClass();
-        PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);

@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.palladiosimulator.edp2.models.Repository.*;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;

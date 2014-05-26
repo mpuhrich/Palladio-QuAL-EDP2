@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.palladiosimulator.edp2.models.ExperimentData.*;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;

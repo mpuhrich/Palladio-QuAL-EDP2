@@ -15,7 +15,6 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.palladiosimulator.edp2.models.ExperimentData.*;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;

@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.MetaDao;
-import org.palladiosimulator.edp2.models.Repository.*;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;

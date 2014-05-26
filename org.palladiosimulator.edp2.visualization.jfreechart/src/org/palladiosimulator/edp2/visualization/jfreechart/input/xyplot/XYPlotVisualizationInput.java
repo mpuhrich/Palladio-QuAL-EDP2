@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.Set;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Duration;
-import javax.measure.unit.SI;
 
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.Plot;
@@ -24,15 +22,15 @@ import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisua
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.CaptureType;
-import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
+import org.palladiosimulator.metricspec.MetricSetDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 
 /**
  * Input for {@link JFreeChartEditor} .
  * 
  * @author Steffen Becker, Dominik Ernst, Roland Richter
  */
-public class XYPlotVisualizationInput
-extends AbstractXYVisualizationInput {
+public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
 
     public XYPlotVisualizationInput() {
         super();
@@ -44,12 +42,12 @@ extends AbstractXYVisualizationInput {
     }
 
     public boolean canAccept(final IDataSource source) {
-        final BaseMetricDescription[] mds = MetricDescriptionUtility
-                .toBaseMetricDescriptions(source.getMetricDesciption());
+        final BaseMetricDescription[] mds = MetricDescriptionUtility.toBaseMetricDescriptions(source
+                .getMetricDesciption());
         boolean allDataNumeric = true;
         for (final BaseMetricDescription md : mds) {
-            if (!(md.getCaptureType().equals(CaptureType.INTEGER_NUMBER) || md
-                    .getCaptureType().equals(CaptureType.REAL_NUMBER))) {
+            if (!(md.getCaptureType().equals(CaptureType.INTEGER_NUMBER) || md.getCaptureType().equals(
+                    CaptureType.REAL_NUMBER))) {
                 allDataNumeric = false;
             }
         }
@@ -69,7 +67,7 @@ extends AbstractXYVisualizationInput {
         final DefaultXYDataset dataset = new DefaultXYDataset();
 
         for (final JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
-            dataset.addSeries(childInput.getInputName(),getXYData(childInput.getDataSource()));
+            dataset.addSeries(childInput.getInputName(), getXYData(childInput.getDataSource()));
         }
         return dataset;
     }
@@ -84,8 +82,10 @@ extends AbstractXYVisualizationInput {
         final XYPlotVisualizationInputConfiguration configuration = (XYPlotVisualizationInputConfiguration) config;
         final XYPlot plot = new XYPlot();
 
-        final NumberAxis domainAxis = new NumberAxis(configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
-        final NumberAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel() : null);
+        final NumberAxis domainAxis = new NumberAxis(
+                configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
+        final NumberAxis rangeAxis = new NumberAxis(
+                configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel() : null);
 
         plot.setRangeAxis(rangeAxis);
         plot.setDomainAxis(domainAxis);
@@ -102,19 +102,29 @@ extends AbstractXYVisualizationInput {
         return plot;
     }
 
+    @SuppressWarnings("unchecked")
     private double[][] getXYData(final IDataSource dataSource) {
+        if (!canAccept(dataSource)) {
+            throw new IllegalArgumentException("XYData has to be a two-dimensional metric set description.");
+        }
+
+        final MetricSetDescription metricSetDescription = ((MetricSetDescription) dataSource.getMetricDesciption());
+
         final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
         final double[][] result = new double[2][inputStream.size()];
         try {
             int i = 0;
             for (final TupleMeasurement tuple : inputStream) {
-                final Measure<Double, Duration> pointInTime = tuple.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
-                result[0][i] = pointInTime.doubleValue(SI.SECOND);
-                if (tuple.asArray()[1].getValue() instanceof Double) {
-                    result[1][i] = (Double) tuple.asArray()[1].getValue();
-                } else if (tuple.asArray()[1].getValue() instanceof Long) {
-                    result[1][i] = (Long) tuple.asArray()[1].getValue();
-                }
+                @SuppressWarnings("rawtypes")
+                final Measure[] measurement = tuple.asArray();
+
+                result[0][i] = measurement[getXPos()]
+                        .doubleValue(((NumericalBaseMetricDescription) metricSetDescription.getSubsumedMetrics().get(
+                                getXPos())).getDefaultUnit());
+                result[1][i] = measurement[getYPos()]
+                        .doubleValue(((NumericalBaseMetricDescription) metricSetDescription.getSubsumedMetrics().get(
+                                getYPos())).getDefaultUnit());
+
                 i++;
             }
         } finally {

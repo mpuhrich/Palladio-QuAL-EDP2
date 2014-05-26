@@ -42,8 +42,7 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
  * @author Steffen Becker, Dominik Ernst
  * 
  */
-public class HistogramVisualizationInput
-extends AbstractXYVisualizationInput {
+public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
     /**
      * Empty constructor.
@@ -70,9 +69,10 @@ extends AbstractXYVisualizationInput {
      */
     public boolean canAccept(final AbstractDataSource source) {
         final boolean result = true;
-        //result = source.getOutput().size() < 1;
-        //result = (MetricDescriptionUtility.toBaseMetricDescriptions(source.getMeasurementsRange().getMeasurements()
-        //        .getMeasure().getMetric())[0] instanceof NumericalBaseMetricDescription);
+        // result = source.getOutput().size() < 1;
+        // result =
+        // (MetricDescriptionUtility.toBaseMetricDescriptions(source.getMeasurementsRange().getMeasurements()
+        // .getMeasure().getMetric())[0] instanceof NumericalBaseMetricDescription);
         return result;
     }
 
@@ -101,9 +101,11 @@ extends AbstractXYVisualizationInput {
         final HistogramVisualizationInputConfiguration configuration = (HistogramVisualizationInputConfiguration) config;
         final XYPlot plot = new XYPlot();
         final XYBarRenderer renderer = new XYBarRenderer();
-        final NumberAxis domainAxis = new NumberAxis(configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
+        final NumberAxis domainAxis = new NumberAxis(
+                configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
         domainAxis.setAutoRangeIncludesZero(configuration.isIncludeZero());
-        final NumberAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel() : null);
+        final NumberAxis rangeAxis = new NumberAxis(
+                configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel() : null);
 
         plot.setDataset((XYDataset) dataset);
 
@@ -113,7 +115,8 @@ extends AbstractXYVisualizationInput {
 
         this.configureSeriesColors(renderer);
 
-        ((HistogramDataset)dataset).setType(configuration.isAbsoluteFrequency() ? HistogramType.FREQUENCY : HistogramType.RELATIVE_FREQUENCY);
+        ((HistogramDataset) dataset).setType(configuration.isAbsoluteFrequency() ? HistogramType.FREQUENCY
+                : HistogramType.RELATIVE_FREQUENCY);
         renderer.setMargin(configuration.getBarMargin() / 100);
 
         // show values on each bar in the histogram if the property is set
@@ -134,9 +137,8 @@ extends AbstractXYVisualizationInput {
         // assume that if the getChart()-Method of this input is called, the
         // remaining inputs have the same type of data
         for (int i = 0; i < getInputs().size(); i++) {
-            result.addSeries(getInputs().get(i).getInputName(),
-                    generateData(getInputs().get(i).getDataSource()),
-                    ((HistogramVisualizationInputConfiguration)getConfiguration()).getNumberOfBins());
+            result.addSeries(getInputs().get(i).getInputName(), generateData(getInputs().get(i).getDataSource()),
+                    ((HistogramVisualizationInputConfiguration) getConfiguration()).getNumberOfBins());
         }
         return result;
     }
@@ -149,7 +151,7 @@ extends AbstractXYVisualizationInput {
 
         int i = 0;
         for (final TupleMeasurement tuple : inputStream) {
-            final Measure<? extends Number, Quantity> measure = (Measure<? extends Number, Quantity>) tuple.asArray()[1];
+            final Measure<? extends Number, Quantity> measure = (Measure<? extends Number, Quantity>) tuple.asArray()[getYPos()];
             data[i] = measure.doubleValue(configuration.getUnit());
             i++;
         }
@@ -161,24 +163,30 @@ extends AbstractXYVisualizationInput {
         return new HistogramVisualizationInputConfiguration();
     }
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(
+     * org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)
      */
     @Override
     protected void firstChildInputAdded(final JFreeChartVisualizationSingleDatastreamInput newChildInput) {
         super.firstChildInputAdded(newChildInput);
-        final Map<String,Object> properties = new HashMap<String,Object>(getProperties());
-        final MetricSetDescription metricSet = (MetricSetDescription) newChildInput.getDataSource().getMetricDesciption();
-        final NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) metricSet.getSubsumedMetrics().get(1);
+        final Map<String, Object> properties = new HashMap<String, Object>(getProperties());
+        final MetricSetDescription metricSet = (MetricSetDescription) newChildInput.getDataSource()
+                .getMetricDesciption();
+        final NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) metricSet
+                .getSubsumedMetrics().get(getYPos());
         properties.put(HistogramVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit());
+        properties.put(XYPlotVisualizationInputConfiguration.DOMAIN_AXIS_LABEL_KEY, getAxisDefaultLabel(getYPos()));
         properties.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, "Frequency [%]");
         setProperties(properties);
     }
 
     @Override
     protected Set<String> getPropertyKeysTriggeringUpdate() {
-        return new HashSet<String>(Arrays.asList(
-                HistogramVisualizationInputConfiguration.NUMBER_BINS_KEY,
+        return new HashSet<String>(Arrays.asList(HistogramVisualizationInputConfiguration.NUMBER_BINS_KEY,
                 HistogramVisualizationInputConfiguration.UNIT_KEY));
     }
 

@@ -24,7 +24,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
-import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
@@ -105,10 +104,12 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 };
                 @Override
                 public StyledString caseMeasure(final org.palladiosimulator.edp2.models.ExperimentData.Measure object) {
-                    MeasuringPoint measuringPoint = object.getMeasuringPoint();
-                             
-                    final StyledString styledString = new StyledString(MeasuringPointUtility.measuringPointToString(measuringPoint));
-                    
+                    final MeasuringPoint measuringPoint = object.getMeasuringPoint();
+
+                    // TODO: FIXME Should use either extendable visitor/switch or EMF label provider!
+                    // final StyledString styledString = new StyledString(MeasuringPointUtility.measuringPointToString(measuringPoint));
+                    final StyledString styledString = new StyledString(measuringPoint.toString());
+
                     final String decoration = " (" + object.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;

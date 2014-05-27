@@ -1,10 +1,15 @@
 package org.palladiosimulator.edp2.visualization.jfreechart.input.pie;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.collections15.Bag;
-import org.apache.commons.collections15.bag.HashBag;
+import javax.measure.Measure;
+import javax.measure.quantity.Duration;
+import javax.measure.unit.SI;
+
+import org.apache.commons.lang.mutable.MutableDouble;
 import org.eclipse.ui.IMemento;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot3D;
@@ -18,6 +23,7 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationInput;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
+import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 public class PieChartVisualizationInput
 extends JFreeChartVisualizationInput {
@@ -69,16 +75,26 @@ extends JFreeChartVisualizationInput {
     @Override
     protected AbstractDataset generateDataset() {
         final DefaultPieDataset dataset = new DefaultPieDataset();
-        final Bag<Comparable<?>> bins = new HashBag<Comparable<?>>();
+        final Map<Comparable<?>,MutableDouble> bins = new HashMap<Comparable<?>,MutableDouble>();
         final IDataSource datasource = getInputs().get(0).getDataSource();
         final IDataStream<TupleMeasurement> datastream = datasource.getDataStream();
 
+        TupleMeasurement last = null;
         for (final TupleMeasurement tuple : datastream) {
-            bins.add((Comparable<?>) tuple.asArray()[1].getValue());
+            if (last != null) {
+                final Measure<Double,Duration> currentTime = tuple.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
+                final Measure<Double,Duration> lastTime = last.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
+                final Comparable<?> state = (Comparable<?>) last.asArray()[1].getValue();
+                if (!bins.containsKey(state)) {
+                    bins.put(state, new MutableDouble(0.0d));
+                }
+                bins.get(state).add(currentTime.doubleValue(SI.SECOND)-lastTime.doubleValue(SI.SECOND));
+            }
+            last = tuple;
         }
 
-        for (final Comparable<?> o : bins) {
-            dataset.setValue(o, bins.getCount(o));
+        for (final Comparable<?> o : bins.keySet()) {
+            dataset.setValue(o, bins.get(o).doubleValue());
         }
 
         return dataset;

@@ -13,9 +13,6 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
  */
 public class MeasuringPointUtility {
 
-    /**
-     * TODO Should be refactored into measuring point objects' toString() method. [Lehrig]
-     */
     public static String measuringPointToString(final MeasuringPoint measuringPoint) {
         if (measuringPoint == null) {
             return "Measure";

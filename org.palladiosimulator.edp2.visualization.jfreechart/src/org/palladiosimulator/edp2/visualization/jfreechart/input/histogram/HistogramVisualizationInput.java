@@ -67,7 +67,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
      * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#canAccept
      * (org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSource)
      */
-    public boolean canAccept(final AbstractDataSource source) {
+    public boolean canAccept(final IDataSource source) {
         final boolean result = true;
         // result = source.getOutput().size() < 1;
         // result =

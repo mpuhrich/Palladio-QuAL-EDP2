@@ -111,8 +111,8 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         final MetricSetDescription metricSetDescription = ((MetricSetDescription) dataSource.getMetricDesciption());
 
         final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
-        final double[][] result = new double[2][inputStream.size()];
         try {
+            final double[][] result = new double[2][inputStream.size()];
             int i = 0;
             for (final TupleMeasurement tuple : inputStream) {
                 @SuppressWarnings("rawtypes")
@@ -127,10 +127,10 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
 
                 i++;
             }
+            return result;
         } finally {
             inputStream.close();
         }
-        return result;
     }
 
     @Override

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSourceListener;
+import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 
 /**
  * Interface used to describe elements that are managed by an
@@ -63,8 +64,7 @@ implements IVisualisationSingleDatastreamInput {
      */
     private String getDefaultName() {
         if (getDataSource() != null) {
-            return source.getMetricDesciption().getTextualDescription();
-            // TODO: Should be ...  .getMeasuredObject();
+            return MeasuringPointUtility.measuringPointToString(source.getMeasuringPoint());
         } else {
             return "noSourceSet";
         }

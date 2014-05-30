@@ -34,6 +34,7 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
         super.createPartControl(parent);
         chartContainer = new CustomJFreeChartComposite(parent, SWT.NONE);
         updateEditorContents();
+        addDropSupport(chartContainer);
     }
 
     /**

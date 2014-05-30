@@ -19,19 +19,23 @@ public class MeasuringPointUtility {
         }
         String result = null;
         if (Platform.getExtensionRegistry() != null) {
-            final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry()
-                    .getConfigurationElementsFor("org.palladiosimulator.edp2.util.formater");
-            for (final IConfigurationElement e : adapterExtensions) {
-                try {
-                    @SuppressWarnings("unchecked")
-                    final Switch<String> formater = (Switch<String>) e.createExecutableExtension("class");
-                    result = formater.doSwitch(measuringPoint);
-                    if (result != null) {
-                        break;
+            try {
+                final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry()
+                        .getConfigurationElementsFor("org.palladiosimulator.edp2.util.formater");
+                for (final IConfigurationElement e : adapterExtensions) {
+                    try {
+                        @SuppressWarnings("unchecked")
+                        final Switch<String> formater = (Switch<String>) e.createExecutableExtension("class");
+                        result = formater.doSwitch(measuringPoint);
+                        if (result != null) {
+                            break;
+                        }
+                    } catch (final CoreException e1) {
+                        throw new RuntimeException();
                     }
-                } catch (final CoreException e1) {
-                    throw new RuntimeException();
                 }
+            } catch (final Exception e) {
+                result = "<Unknown Measuring Point>";
             }
         }
 

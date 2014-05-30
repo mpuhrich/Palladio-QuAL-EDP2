@@ -32,8 +32,8 @@ public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastrea
                 (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
         if (selection.getFirstElement() instanceof RawMeasurements){
             final IDataSource newSource = new Edp2DataTupleDataSource((RawMeasurements) selection.getFirstElement());
-            // FIXME: Use the input factory from the registy
-            // visualizationInput.addInput((T) new JFreeChartVisualizationSingleDatastreamInput(newSource));
+            final IVisualisationSingleDatastreamInput newInput = visualizationInput.createNewInput(newSource);
+            visualizationInput.addInput((T) newInput);
         }
     }
 

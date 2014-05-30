@@ -175,7 +175,7 @@ implements IVisualization<T>, IVisualisationInputListener {
     @SuppressWarnings("rawtypes")
     public Object getAdapter(final Class adapter) {
         if (adapter == IPropertySheetPage.class) {
-            return new TabbedPropertySheetPage(this);
+            return getPropertySheetPage();
         }
         return super.getAdapter(adapter);
     }
@@ -186,11 +186,10 @@ implements IVisualization<T>, IVisualisationInputListener {
      * 
      * @return a property sheet, saved in {@link #propertySheetPage}
      */
-    public IPropertySheetPage getPropertySheetPage() {
+    private IPropertySheetPage getPropertySheetPage() {
         if (propertySheetPage == null
                 || propertySheetPage.getControl().isDisposed()) {
-            propertySheetPage = new TabbedPropertySheetPage(
-                    AbstractEditor.this, false);
+            propertySheetPage = new TabbedPropertySheetPage(this, false);
         }
         return propertySheetPage;
     }
@@ -239,8 +238,8 @@ implements IVisualization<T>, IVisualisationInputListener {
         setPartName(getEditorName());
         setTitleToolTip(getEditorName());
         getSite().setSelectionProvider(createSelectionProvider());
-        addDropSupport(parent);
         getVisualisationInput().addObserver(this);
+        setFocus();
     }
 
     protected abstract String getEditorName();

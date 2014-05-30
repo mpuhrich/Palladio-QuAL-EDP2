@@ -1,5 +1,4 @@
 package org.palladiosimulator.edp2.example;
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,9 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
 import org.palladiosimulator.measurementframework.Measurement;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
@@ -41,7 +42,7 @@ public class StoreLoadExample {
     private static final Logger logger = Logger.getLogger(StoreLoadExample.class.getCanonicalName());
 
     /** Repository which is used to store the data. */
-    private final LocalDirectoryRepository ldRepo;
+    private final Repository ldRepo;
 
     /** Helper class used to process data for the example. */
     private final ExampleData exampleData;
@@ -90,8 +91,9 @@ public class StoreLoadExample {
      * @param directory Path to directory in which the data should be stored.
      * @return the initialized repository.
      */
-    private LocalDirectoryRepository initializeRepository(final String directory) {
-        final LocalDirectoryRepository repo = RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
+    private Repository initializeRepository(final String directory) {
+        // final LocalDirectoryRepository repo = RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
+        final LocalMemoryRepository repo = RepositoryFactory.eINSTANCE.createLocalMemoryRepository();
         /* Add repository to a (optional) central directory of repositories.
          * This can be useful to manage more than one repository or have links
          * between different existing repositories.

@@ -225,11 +225,12 @@ public class MeasurementsUtility {
         return omd;
     }
 
-    public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {
-        final Measure measure = rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
-        final MetricDescription metricDescription = measure.getMetric();
+    public static Measure getMeasureFromRawMeasurements(final RawMeasurements rawMeasurements) {
+        return rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
+    }
 
-        return metricDescription;
+    public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {
+        return getMeasureFromRawMeasurements(rawMeasurements).getMetric();
     }
 
     public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(final IdentifierBasedMeasurements idBasedMeasurement) {

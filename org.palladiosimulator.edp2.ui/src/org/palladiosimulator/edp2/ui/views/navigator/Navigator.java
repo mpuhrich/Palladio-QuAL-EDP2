@@ -5,7 +5,13 @@ import org.eclipse.core.databinding.observable.set.IObservableSet;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFListProperty;
 import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
+import org.eclipse.jface.util.LocalSelectionTransfer;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
@@ -63,6 +69,24 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
 
         // Add double click listener
         treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
+        treeViewer.addDragSupport(DND.DROP_LINK, new Transfer[]{LocalSelectionTransfer.getTransfer()}, new DragSourceListener() {
+
+            @Override
+            public void dragStart(final DragSourceEvent event) {
+                event.doit = true;
+            }
+
+            @Override
+            public void dragSetData(final DragSourceEvent event) {
+                final IStructuredSelection selection = (IStructuredSelection) treeViewer
+                        .getSelection();
+                LocalSelectionTransfer.getTransfer().setSelection(selection);
+            }
+
+            @Override
+            public void dragFinished(final DragSourceEvent event) {
+            }
+        });
 
         getSite().setSelectionProvider(treeViewer);
     }
@@ -78,6 +102,7 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         return "org.palladiosimulator.edp2.ui.propertyContributor";
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public Object getAdapter(final Class adapter) {
         if (adapter == IPropertySheetPage.class) {

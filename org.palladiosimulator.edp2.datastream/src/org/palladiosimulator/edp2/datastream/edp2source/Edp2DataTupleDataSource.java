@@ -9,6 +9,7 @@ import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.elementfactories.Edp2DataTupleDataSourceFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -16,19 +17,18 @@ import org.palladiosimulator.metricspec.MetricSetDescription;
 public class Edp2DataTupleDataSource
 extends AbstractDataSource implements IDataSource, IPersistableElement {
 
-    private final Edp2DataTupleStreamForRawMeasurements dataStream;
     private final RawMeasurements rawMeasurements;
 
     public Edp2DataTupleDataSource(final RawMeasurements measurements) {
         super(MeasurementsUtility.getMetricDescriptionFromRawMeasurements(measurements));
-        this.dataStream = new Edp2DataTupleStreamForRawMeasurements(measurements, (MetricSetDescription) this.getMetricDesciption());
         rawMeasurements = measurements;
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public <M extends IMeasureProvider> IDataStream<M> getDataStream() {
-        return (IDataStream<M>) dataStream;
+        return (IDataStream<M>) new Edp2DataTupleStreamForRawMeasurements(rawMeasurements,
+                (MetricSetDescription) this.getMetricDesciption());
     }
 
     @Override
@@ -48,5 +48,10 @@ extends AbstractDataSource implements IDataSource, IPersistableElement {
     @Override
     protected PropertyConfigurable createProperties() {
         return new EmptyConfiguration();
+    }
+
+    @Override
+    public MeasuringPoint getMeasuringPoint() {
+        return MeasurementsUtility.getMeasureFromRawMeasurements(this.rawMeasurements).getMeasuringPoint();
     }
 }

@@ -7,6 +7,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
@@ -25,5 +26,10 @@ public class Edp2BasicDataSource<V,Q extends Quantity> extends AbstractDataSourc
     @Override
     protected PropertyConfigurable createProperties() {
         return new EmptyConfiguration();
+    }
+
+    @Override
+    public MeasuringPoint getMeasuringPoint() {
+        throw new UnsupportedOperationException("Not yet implemented.");
     }
 }

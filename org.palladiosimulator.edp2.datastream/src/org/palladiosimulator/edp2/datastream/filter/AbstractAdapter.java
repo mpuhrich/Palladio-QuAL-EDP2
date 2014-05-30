@@ -8,6 +8,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.measurementframework.Measurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 
@@ -88,6 +89,14 @@ implements IDataSink, IDataSource
     @Override
     protected PropertyConfigurable createProperties() {
         return new EmptyConfiguration();
+    }
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.IDataSource#getMeasuringPoint()
+     */
+    @Override
+    public MeasuringPoint getMeasuringPoint() {
+        return datasource.getMeasuringPoint();
     }
 
 

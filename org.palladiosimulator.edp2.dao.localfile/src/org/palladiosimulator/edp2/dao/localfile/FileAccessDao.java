@@ -86,6 +86,7 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
             final byte[] b = ExtendedIOUtil.readByteArray(input);
             raf.write(b);
             raf.setLength(b.length);
+            raf.close();
         } catch (final IOException ioe) {
             final String msg = "Serialization error: Could not read from file "
                     + resourceFile.getAbsolutePath()
@@ -121,6 +122,7 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
             raf.seek(0);
             raf.read(b);
             ExtendedIOUtil.writeByteArray(output, b);
+            raf.close();
         } catch (final IOException ioe) {
             final String msg = "Serialization error: Could not read from file "
                     + resourceFile.getAbsolutePath()

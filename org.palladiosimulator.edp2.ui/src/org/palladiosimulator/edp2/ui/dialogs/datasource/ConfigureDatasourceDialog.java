@@ -19,7 +19,7 @@ import org.palladiosimulator.edp2.ui.wizards.datasource.OpenDataSourceWizard;
  * */
 public class ConfigureDatasourceDialog extends DatasourceDialog {
 	
-    public static String OPEN_WISARD_TITLE = "Load a source storage for EDP2.";
+    public static String OPEN_WIZARD_TITLE = "Load a source storage for EDP2.";
     public static String ADD_WIZARD_TITLE = "Select/create a storage for EDP2.";
 
 	public ConfigureDatasourceDialog(Shell parentShell, String dialogTitel, boolean makeValidation) {
@@ -73,7 +73,7 @@ public class ConfigureDatasourceDialog extends DatasourceDialog {
 				WizardDialog dialog = new WizardDialog(e.display
 						.getActiveShell(), w);
 				dialog.create();
-				dialog.setTitle(OPEN_WISARD_TITLE);
+				dialog.setTitle(OPEN_WIZARD_TITLE);
 				dialog.open();
 				refresh();
 			}

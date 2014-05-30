@@ -1,31 +1,33 @@
-/**
- * 
- */
 package org.palladiosimulator.edp2.ui.wizards.datasource;
 
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 
 /**
- * @author groenda
- *
+ * Wizard page to discover and select a local memory repository.
+ * 
+ * @author groenda, Sebastian Lehrig
  */
 public class DiscoverLocalMemoryPage extends WizardPage {
 
-	private LocalMemoryRepository lmRepo;
+    private final LocalMemoryRepository localMemoryRepository;
 
-	protected DiscoverLocalMemoryPage(LocalMemoryRepository lmRepo) {
-		super("wizardPage");
-		this.lmRepo = lmRepo;
+    protected DiscoverLocalMemoryPage(LocalMemoryRepository localMemoryRepository) {
+        super("wizardPage");
+        this.localMemoryRepository = localMemoryRepository;
 
-		setTitle("Discover Local Memory Data Source");
-		setDescription("Please select the data source you want to open.");
-	}
+        setTitle("Discover Local Memory Data Source");
+        setDescription("Please select the data source you want to open.");
+        
+        setPageComplete(true);
+    }
 
-	@Override
-	public void createControl(Composite parent) {
-		// TODO Auto-generated method stub
-	}
-	
+    @Override
+    public void createControl(Composite parent) {
+        Composite container = new Composite(parent, SWT.NULL);
+        setControl(container);
+    }
+
 }

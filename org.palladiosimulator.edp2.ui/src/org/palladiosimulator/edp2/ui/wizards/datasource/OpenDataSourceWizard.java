@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.palladiosimulator.edp2.ui.wizards.datasource;
 
 import org.eclipse.jface.wizard.IWizardPage;
@@ -15,8 +12,7 @@ import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 
 /**
- * @author groenda
- *
+ * @author groenda, Sebastian Lehrig
  */
 public class OpenDataSourceWizard extends Wizard {
 	Repositories repos;
@@ -26,10 +22,10 @@ public class OpenDataSourceWizard extends Wizard {
 	private DiscoverSensorFrameworkV1Page discoverSensorFrameworkV1Page;
 	private ImportSensorFrameworkV1Page importSensorFrameworkV1Page;
 	private SelectDataSourceTypePage selectDataSourceTypePage;
-	private LocalDirectoryRepository ldRepo;
-	private LocalMemoryRepository lmRepo;
-	private LocalSensorFrameworkRepository lsfRepo;
-	private RemoteCdoRepository rcRepo;
+	private final LocalDirectoryRepository ldRepo;
+	private final LocalMemoryRepository lmRepo;
+	private final LocalSensorFrameworkRepository lsfRepo;
+	private final RemoteCdoRepository rcRepo;
 
 	public OpenDataSourceWizard() {
 		// Create empty list of storage nodes
@@ -47,13 +43,13 @@ public class OpenDataSourceWizard extends Wizard {
 		discoverLocalFilePage = new DiscoverLocalDirectoryPage(ldRepo); 
 		addPage(discoverLocalFilePage);
 		discoverLocalMemoryPage = new DiscoverLocalMemoryPage(lmRepo); 
-		//addPage(discoverLocalMemoryPage);
+		addPage(discoverLocalMemoryPage);
 		discoverRemotePage = new DiscoverRemotePage(rcRepo); 
-		//addPage(discoverRemotePage);
+		//addPage(discoverRemotePage); // TODO Add support for DiscoverRemotePage
 		discoverSensorFrameworkV1Page = new DiscoverSensorFrameworkV1Page(lsfRepo); 
-		//addPage(discoverSensorFrameworkV1Page);
+		//addPage(discoverSensorFrameworkV1Page); // TODO Add support for DiscoverSensorFrameworkV1Page
 		importSensorFrameworkV1Page = new ImportSensorFrameworkV1Page(lsfRepo); 
-		//addPage(importSensorFrameworkV1Page);
+		//addPage(importSensorFrameworkV1Page); // TODO Add support for ImportSensorFrameworkV1Page
 	}
 	
 	@Override

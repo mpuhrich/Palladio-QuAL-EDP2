@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.palladiosimulator.edp2.ui.wizards.datasource;
 
 import java.util.HashMap;
@@ -35,13 +32,15 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
-/**Wizard page to discover and select a local directory based repository.
- * @author groenda
+/**
+ * Wizard page to discover and select a local directory based repository.
+ * 
+ * @author groenda, Sebastian Lehrig
  */
 public class DiscoverLocalDirectoryPage extends WizardPage {
-	private static HashMap<Control, ControlDecoration> decoratorMap = new HashMap<Control, ControlDecoration>();
+	private static final HashMap<Control, ControlDecoration> DECORATOR_MAP = new HashMap<Control, ControlDecoration>();
 	
-	private LocalDirectoryRepository ldRepo;
+	private final LocalDirectoryRepository ldRepo;
 
 	public DiscoverLocalDirectoryPage(LocalDirectoryRepository ldRepo) {
 		super("wizardPage");
@@ -89,7 +88,8 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 				AggregateValidationStatus.MAX_SEVERITY);
 
 		aggregateValidationStatus.addValueChangeListener(new IValueChangeListener() {
-					public void handleValueChange(ValueChangeEvent event) {
+					@Override
+                    public void handleValueChange(ValueChangeEvent event) {
 						// the invocation of the getValue method is necessary
 						// the further changes will be fired
 						aggregateValidationStatus.getValue();
@@ -101,7 +101,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 								ISWTObservable swtObservable = (ISWTObservable) binding.getTarget();
 								control = (Control) swtObservable.getWidget();
 							}
-							ControlDecoration decoration = decoratorMap.get(control);
+							ControlDecoration decoration = DECORATOR_MAP.get(control);
 							if (decoration != null) {
 								if (status.isOK()) {
 									decoration.hide();
@@ -126,7 +126,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 				.getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
 		controlDecoration.setImage(fieldDecoration.getImage());
 		controlDecoration.hide();
-		decoratorMap.put(control, controlDecoration);
+		DECORATOR_MAP.put(control, controlDecoration);
 	}
 
 	/**Validator which checks that a provided value is not empty.
@@ -141,7 +141,8 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 			this.label = label;
 		}
 
-		public IStatus validate(Object value) {
+		@Override
+        public IStatus validate(Object value) {
 			String string = (String) value;
 			if (string == null || string.trim().length() == 0) {
 				return ValidationStatus.error("Please enter a value for "

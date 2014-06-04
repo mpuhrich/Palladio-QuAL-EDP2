@@ -1,18 +1,12 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package org.palladiosimulator.edp2.models.ExperimentData.provider;
+package org.palladiosimulator.edp2.models.measuringpoint.provider;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,25 +15,27 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 
 /**
- * This is the item provider adapter for a {@link java.util.Map.Entry} object. <!-- begin-user-doc
- * --> <!-- end-user-doc -->
+ * This is the item provider adapter for a
+ * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointItemProvider implements
+        IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
+        IItemPropertySource {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      * 
      * @generated
      */
-    public EStringtoEObjectMapEntryItemProvider(AdapterFactory adapterFactory) {
+    public ResourceURIMeasuringPointItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -54,54 +50,36 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addKeyPropertyDescriptor(object);
-            addValuePropertyDescriptor(object);
+            addResourceURIPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
 
     /**
-     * This adds a property descriptor for the Key feature. <!-- begin-user-doc --> <!--
+     * This adds a property descriptor for the Resource URI feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      * 
      * @generated
      */
-    protected void addKeyPropertyDescriptor(Object object) {
+    protected void addResourceURIPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add(createItemPropertyDescriptor(
                 ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
                 getResourceLocator(),
-                getString("_UI_EStringtoEObjectMapEntry_key_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_EStringtoEObjectMapEntry_key_feature",
-                        "_UI_EStringtoEObjectMapEntry_type"),
-                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY, true, false, false,
+                getString("_UI_ResourceURIMeasuringPoint_resourceURI_feature"),
+                getString("_UI_PropertyDescriptor_description", "_UI_ResourceURIMeasuringPoint_resourceURI_feature",
+                        "_UI_ResourceURIMeasuringPoint_type"),
+                MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, true, false, false,
                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
-     * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @generated
-     */
-    protected void addValuePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString("_UI_EStringtoEObjectMapEntry_value_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_EStringtoEObjectMapEntry_value_feature",
-                        "_UI_EStringtoEObjectMapEntry_type"),
-                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-    }
-
-    /**
-     * This returns EStringtoEObjectMapEntry.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This returns ResourceURIMeasuringPoint.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
      * @generated
      */
     @Override
     public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/EStringtoEObjectMapEntry"));
+        return overlayImage(object, getResourceLocator().getImage("full/obj16/ResourceURIMeasuringPoint"));
     }
 
     /**
@@ -112,8 +90,9 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
      */
     @Override
     public String getText(Object object) {
-        Map.Entry<?, ?> eStringtoEObjectMapEntry = (Map.Entry<?, ?>) object;
-        return "" + eStringtoEObjectMapEntry.getKey() + " -> " + eStringtoEObjectMapEntry.getValue();
+        String label = ((ResourceURIMeasuringPoint) object).getMeasuringPoint();
+        return label == null || label.length() == 0 ? getString("_UI_ResourceURIMeasuringPoint_type")
+                : getString("_UI_ResourceURIMeasuringPoint_type") + " " + label;
     }
 
     /**
@@ -127,9 +106,8 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
 
-        switch (notification.getFeatureID(Map.Entry.class)) {
-        case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
-        case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE:
+        switch (notification.getFeatureID(ResourceURIMeasuringPoint.class)) {
+        case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         }
@@ -145,17 +123,6 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     @Override
     protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
-    }
-
-    /**
-     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
     }
 
 }

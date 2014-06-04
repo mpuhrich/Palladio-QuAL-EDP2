@@ -6,7 +6,6 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.presentation;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -63,113 +62,107 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 
-
 /**
- * This is a simple wizard for creating a new model file.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is a simple wizard for creating a new model file. <!-- begin-user-doc --> <!-- end-user-doc
+ * -->
+ * 
  * @generated
  */
 public class ExperimentDataModelWizard extends Wizard implements INewWizard {
-	/**
-     * The supported extensions for created files.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataEditorFilenameExtensions").split("\\s*,\\s*")));
+    public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
+            .asList(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataEditorFilenameExtensions")
+                    .split("\\s*,\\s*")));
 
-	/**
-     * A formatted list of supported file extensions, suitable for display.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public static final String FORMATTED_FILE_EXTENSIONS =
-		EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+    public static final String FORMATTED_FILE_EXTENSIONS = EDP2EditorPlugin.INSTANCE.getString(
+            "_UI_ExperimentDataEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
-	/**
-     * This caches an instance of the model package.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected ExperimentDataPackage experimentDataPackage = ExperimentDataPackage.eINSTANCE;
+    protected ExperimentDataPackage experimentDataPackage = ExperimentDataPackage.eINSTANCE;
 
-	/**
-     * This caches an instance of the model factory.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This caches an instance of the model factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected ExperimentDataFactory experimentDataFactory = experimentDataPackage.getExperimentDataFactory();
+    protected ExperimentDataFactory experimentDataFactory = experimentDataPackage.getExperimentDataFactory();
 
-	/**
-     * This is the file creation page.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected ExperimentDataModelWizardNewFileCreationPage newFileCreationPage;
+    protected ExperimentDataModelWizardNewFileCreationPage newFileCreationPage;
 
-	/**
-     * This is the initial object creation page.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This is the initial object creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected ExperimentDataModelWizardInitialObjectCreationPage initialObjectCreationPage;
+    protected ExperimentDataModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-	/**
-     * Remember the selection during initialization for populating the default container.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Remember the selection during initialization for populating the default container. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected IStructuredSelection selection;
+    protected IStructuredSelection selection;
 
-	/**
-     * Remember the workbench during initialization.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Remember the workbench during initialization. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected IWorkbench workbench;
+    protected IWorkbench workbench;
 
-	/**
-     * Caches the names of the types that can be created as the root object.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Caches the names of the types that can be created as the root object. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected List<String> initialObjectNames;
+    protected List<String> initialObjectNames;
 
-	/**
-     * This just records the information.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This just records the information. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public void init(IWorkbench workbench, IStructuredSelection selection) {
+    public void init(IWorkbench workbench, IStructuredSelection selection) {
         this.workbench = workbench;
         this.selection = selection;
         setWindowTitle(EDP2EditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(EDP2EditorPlugin.INSTANCE.getImage("full/wizban/NewExperimentData")));
+        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(EDP2EditorPlugin.INSTANCE
+                .getImage("full/wizban/NewExperimentData")));
     }
 
-	/**
-     * Returns the names of the types that can be created as the root object.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Returns the names of the types that can be created as the root object. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected Collection<String> getInitialObjectNames() {
+    protected Collection<String> getInitialObjectNames() {
         if (initialObjectNames == null) {
             initialObjectNames = new ArrayList<String>();
             for (EClassifier eClassifier : experimentDataPackage.getEClassifiers()) {
                 if (eClassifier instanceof EClass) {
-                    EClass eClass = (EClass)eClassifier;
+                    EClass eClass = (EClass) eClassifier;
                     if (!eClass.isAbstract()) {
                         initialObjectNames.add(eClass.getName());
                     }
@@ -180,26 +173,24 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
         return initialObjectNames;
     }
 
-	/**
-     * Create a new model.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected EObject createInitialModel() {
-        EClass eClass = (EClass)experimentDataPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+    protected EObject createInitialModel() {
+        EClass eClass = (EClass) experimentDataPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
         EObject rootObject = experimentDataFactory.create(eClass);
         return rootObject;
     }
 
-	/**
-     * Do the work after everything is specified.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Do the work after everything is specified. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public boolean performFinish() {
+    @Override
+    public boolean performFinish() {
         try {
             // Remember the file.
             //
@@ -207,44 +198,41 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
 
             // Do the work within an operation.
             //
-            WorkspaceModifyOperation operation =
-                new WorkspaceModifyOperation() {
-                    @Override
-                    protected void execute(IProgressMonitor progressMonitor) {
-                        try {
-                            // Create a resource set
-                            //
-                            ResourceSet resourceSet = new ResourceSetImpl();
+            WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+                @Override
+                protected void execute(IProgressMonitor progressMonitor) {
+                    try {
+                        // Create a resource set
+                        //
+                        ResourceSet resourceSet = new ResourceSetImpl();
 
-                            // Get the URI of the model file.
-                            //
-                            URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+                        // Get the URI of the model file.
+                        //
+                        URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-                            // Create a resource for this file.
-                            //
-                            Resource resource = resourceSet.createResource(fileURI);
+                        // Create a resource for this file.
+                        //
+                        Resource resource = resourceSet.createResource(fileURI);
 
-                            // Add the initial model object to the contents.
-                            //
-                            EObject rootObject = createInitialModel();
-                            if (rootObject != null) {
-                                resource.getContents().add(rootObject);
-                            }
-
-                            // Save the contents of the resource to the file system.
-                            //
-                            Map<Object, Object> options = new HashMap<Object, Object>();
-                            options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-                            resource.save(options);
+                        // Add the initial model object to the contents.
+                        //
+                        EObject rootObject = createInitialModel();
+                        if (rootObject != null) {
+                            resource.getContents().add(rootObject);
                         }
-                        catch (Exception exception) {
-                            EDP2EditorPlugin.INSTANCE.log(exception);
-                        }
-                        finally {
-                            progressMonitor.done();
-                        }
+
+                        // Save the contents of the resource to the file system.
+                        //
+                        Map<Object, Object> options = new HashMap<Object, Object>();
+                        options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+                        resource.save(options);
+                    } catch (Exception exception) {
+                        EDP2EditorPlugin.INSTANCE.log(exception);
+                    } finally {
+                        progressMonitor.done();
                     }
-                };
+                }
+            };
 
             getContainer().run(false, false, operation);
 
@@ -255,64 +243,60 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             final IWorkbenchPart activePart = page.getActivePart();
             if (activePart instanceof ISetSelectionTarget) {
                 final ISelection targetSelection = new StructuredSelection(modelFile);
-                getShell().getDisplay().asyncExec
-                    (new Runnable() {
-                         public void run() {
-                             ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-                         }
-                     });
+                getShell().getDisplay().asyncExec(new Runnable() {
+                    public void run() {
+                        ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+                    }
+                });
             }
 
             // Open an editor on the new file.
             //
             try {
-                page.openEditor
-                    (new FileEditorInput(modelFile),
-                     workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-            }
-            catch (PartInitException exception) {
-                MessageDialog.openError(workbenchWindow.getShell(), EDP2EditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+                page.openEditor(new FileEditorInput(modelFile),
+                        workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+            } catch (PartInitException exception) {
+                MessageDialog.openError(workbenchWindow.getShell(),
+                        EDP2EditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
                 return false;
             }
 
             return true;
-        }
-        catch (Exception exception) {
+        } catch (Exception exception) {
             EDP2EditorPlugin.INSTANCE.log(exception);
             return false;
         }
     }
 
-	/**
-     * This is the one page of the wizard.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public class ExperimentDataModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-		/**
-         * Pass in the selection.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+    public class ExperimentDataModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+        /**
+         * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public ExperimentDataModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+        public ExperimentDataModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
             super(pageId, selection);
         }
 
-		/**
-         * The framework calls this to see if the file is correct.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * The framework calls this to see if the file is correct. <!-- begin-user-doc --> <!--
+         * end-user-doc -->
+         * 
          * @generated
          */
-		@Override
-		protected boolean validatePage() {
+        @Override
+        protected boolean validatePage() {
             if (super.validatePage()) {
                 String extension = new Path(getFileName()).getFileExtension();
                 if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
                     String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-                    setErrorMessage(EDP2EditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+                    setErrorMessage(EDP2EditorPlugin.INSTANCE
+                            .getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
                     return false;
                 }
                 return true;
@@ -320,61 +304,59 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             return false;
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public IFile getModelFile() {
+        public IFile getModelFile() {
             return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
         }
-	}
+    }
 
-	/**
-     * This is the page where the type of object to create is selected.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * This is the page where the type of object to create is selected. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
-	public class ExperimentDataModelWizardInitialObjectCreationPage extends WizardPage {
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+    public class ExperimentDataModelWizardInitialObjectCreationPage extends WizardPage {
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		protected Combo initialObjectField;
+        protected Combo initialObjectField;
 
-		/**
-         * @generated
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
          */
-		protected List<String> encodings;
+        protected List<String> encodings;
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		protected Combo encodingField;
+        protected Combo encodingField;
 
-		/**
-         * Pass in the selection.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public ExperimentDataModelWizardInitialObjectCreationPage(String pageId) {
+        public ExperimentDataModelWizardInitialObjectCreationPage(String pageId) {
             super(pageId);
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public void createControl(Composite parent) {
-            Composite composite = new Composite(parent, SWT.NONE); {
+        public void createControl(Composite parent) {
+            Composite composite = new Composite(parent, SWT.NONE);
+            {
                 GridLayout layout = new GridLayout();
                 layout.numColumns = 1;
                 layout.verticalSpacing = 12;
@@ -440,53 +422,51 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             setControl(composite);
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		protected ModifyListener validator =
-			new ModifyListener() {
-                public void modifyText(ModifyEvent e) {
-                    setPageComplete(validatePage());
-                }
-            };
+        protected ModifyListener validator = new ModifyListener() {
+            public void modifyText(ModifyEvent e) {
+                setPageComplete(validatePage());
+            }
+        };
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		protected boolean validatePage() {
+        protected boolean validatePage() {
             return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		@Override
-		public void setVisible(boolean visible) {
+        @Override
+        public void setVisible(boolean visible) {
             super.setVisible(visible);
             if (visible) {
                 if (initialObjectField.getItemCount() == 1) {
                     initialObjectField.clearSelection();
                     encodingField.setFocus();
-                }
-                else {
+                } else {
                     encodingField.clearSelection();
                     initialObjectField.setFocus();
                 }
             }
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public String getInitialObjectName() {
+        public String getInitialObjectName() {
             String label = initialObjectField.getText();
 
             for (String name : getInitialObjectNames()) {
@@ -497,61 +477,63 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             return null;
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		public String getEncoding() {
+        public String getEncoding() {
             return encodingField.getText();
         }
 
-		/**
-         * Returns the label for the specified type name.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc
+         * -->
+         * 
          * @generated
          */
-		protected String getLabel(String typeName) {
+        protected String getLabel(String typeName) {
             try {
                 return EDP2EditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-            }
-            catch(MissingResourceException mre) {
+            } catch (MissingResourceException mre) {
                 EDP2EditorPlugin.INSTANCE.log(mre);
             }
             return typeName;
         }
 
-		/**
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+        /**
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-		protected Collection<String> getEncodings() {
+        protected Collection<String> getEncodings() {
             if (encodings == null) {
                 encodings = new ArrayList<String>();
-                for (StringTokenizer stringTokenizer = new StringTokenizer(EDP2EditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+                for (StringTokenizer stringTokenizer = new StringTokenizer(
+                        EDP2EditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
                     encodings.add(stringTokenizer.nextToken());
                 }
             }
             return encodings;
         }
-	}
+    }
 
-	/**
-     * The framework calls this to create the contents of the wizard.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * The framework calls this to create the contents of the wizard. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
-		@Override
-	public void addPages() {
+    @Override
+    public void addPages() {
         // Create a page, set the title, and the initial model file name.
         //
         newFileCreationPage = new ExperimentDataModelWizardNewFileCreationPage("Whatever", selection);
         newFileCreationPage.setTitle(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataModelWizard_label"));
-        newFileCreationPage.setDescription(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataModelWizard_description"));
-        newFileCreationPage.setFileName(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+        newFileCreationPage.setDescription(EDP2EditorPlugin.INSTANCE
+                .getString("_UI_ExperimentDataModelWizard_description"));
+        newFileCreationPage.setFileName(EDP2EditorPlugin.INSTANCE
+                .getString("_UI_ExperimentDataEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
         addPage(newFileCreationPage);
 
         // Try and get the resource selection to determine a current directory for the file dialog.
@@ -563,7 +545,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             if (selectedElement instanceof IResource) {
                 // Get the resource parent, if its a file.
                 //
-                IResource selectedResource = (IResource)selectedElement;
+                IResource selectedResource = (IResource) selectedElement;
                 if (selectedResource.getType() == IResource.FILE) {
                     selectedResource = selectedResource.getParent();
                 }
@@ -577,10 +559,11 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
 
                     // Make up a unique new name here.
                     //
-                    String defaultModelBaseFilename = EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataEditorFilenameDefaultBase");
+                    String defaultModelBaseFilename = EDP2EditorPlugin.INSTANCE
+                            .getString("_UI_ExperimentDataEditorFilenameDefaultBase");
                     String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
                     String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-                    for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
                         modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
                     }
                     newFileCreationPage.setFileName(modelFilename);
@@ -589,17 +572,17 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
         }
         initialObjectCreationPage = new ExperimentDataModelWizardInitialObjectCreationPage("Whatever2");
         initialObjectCreationPage.setTitle(EDP2EditorPlugin.INSTANCE.getString("_UI_ExperimentDataModelWizard_label"));
-        initialObjectCreationPage.setDescription(EDP2EditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+        initialObjectCreationPage.setDescription(EDP2EditorPlugin.INSTANCE
+                .getString("_UI_Wizard_initial_object_description"));
         addPage(initialObjectCreationPage);
     }
 
-	/**
-     * Get the file from the page.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public IFile getModelFile() {
+    public IFile getModelFile() {
         return newFileCreationPage.getModelFile();
     }
 

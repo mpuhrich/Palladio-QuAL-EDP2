@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -22,23 +21,18 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measure;
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.edp2.models.ExperimentData.Measure} object.
- * <!-- begin-user-doc -->
+ * This is the item provider adapter for a
+ * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class MeasureItemProvider
-    extends IdentifierItemProvider
-    implements
-        IEditingDomainItemProvider,
-        IStructuredItemContentProvider,
-        ITreeItemContentProvider,
-        IItemLabelProvider,
-        IItemPropertySource {
+public class MeasureItemProvider extends IdentifierItemProvider implements IEditingDomainItemProvider,
+        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
     /**
-     * This constructs an instance from a factory and a notifier.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     public MeasureItemProvider(AdapterFactory adapterFactory) {
@@ -46,9 +40,9 @@ public class MeasureItemProvider
     }
 
     /**
-     * This returns the property descriptors for the adapted class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -64,75 +58,54 @@ public class MeasureItemProvider
     }
 
     /**
-     * This adds a property descriptor for the Experiment Settings feature.
-     * <!-- begin-user-doc -->
+     * This adds a property descriptor for the Experiment Settings feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected void addExperimentSettingsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Measure_experimentSettings_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Measure_experimentSettings_feature", "_UI_Measure_type"),
-                 ExperimentDataPackage.Literals.MEASURE__EXPERIMENT_SETTINGS,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Measure_experimentSettings_feature"),
+                getString("_UI_PropertyDescriptor_description", "_UI_Measure_experimentSettings_feature",
+                        "_UI_Measure_type"), ExperimentDataPackage.Literals.MEASURE__EXPERIMENT_SETTINGS, true, false,
+                true, null, null, null));
     }
 
     /**
-     * This adds a property descriptor for the Metric feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This adds a property descriptor for the Metric feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     protected void addMetricPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Measure_metric_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Measure_metric_feature", "_UI_Measure_type"),
-                 ExperimentDataPackage.Literals.MEASURE__METRIC,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+                getString("_UI_Measure_metric_feature"),
+                getString("_UI_PropertyDescriptor_description", "_UI_Measure_metric_feature", "_UI_Measure_type"),
+                ExperimentDataPackage.Literals.MEASURE__METRIC, true, false, true, null, null, null));
     }
 
     /**
-     * This adds a property descriptor for the Measuring Point feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This adds a property descriptor for the Measuring Point feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     protected void addMeasuringPointPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Measure_measuringPoint_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Measure_measuringPoint_feature", "_UI_Measure_type"),
-                 ExperimentDataPackage.Literals.MEASURE__MEASURING_POINT,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Measure_measuringPoint_feature"),
+                getString("_UI_PropertyDescriptor_description", "_UI_Measure_measuringPoint_feature",
+                        "_UI_Measure_type"), ExperimentDataPackage.Literals.MEASURE__MEASURING_POINT, true, false,
+                true, null, null, null));
     }
 
     /**
-     * This returns Measure.gif.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This returns Measure.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -141,24 +114,23 @@ public class MeasureItemProvider
     }
 
     /**
-     * This returns the label text for the adapted class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     * 
      * @generated
      */
     @Override
     public String getText(Object object) {
-        String label = ((Measure)object).getId();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Measure_type") :
-            getString("_UI_Measure_type") + " " + label;
+        String label = ((Measure) object).getId();
+        return label == null || label.length() == 0 ? getString("_UI_Measure_type") : getString("_UI_Measure_type")
+                + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
-     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
+     * . <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -168,10 +140,9 @@ public class MeasureItemProvider
     }
 
     /**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-     * that can be created under this object.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
+     * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -180,9 +151,9 @@ public class MeasureItemProvider
     }
 
     /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     @Override

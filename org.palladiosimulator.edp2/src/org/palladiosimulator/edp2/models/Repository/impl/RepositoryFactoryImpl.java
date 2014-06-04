@@ -20,35 +20,32 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public static RepositoryFactory init() {
         try {
-            RepositoryFactory theRepositoryFactory = (RepositoryFactory)EPackage.Registry.INSTANCE.getEFactory(RepositoryPackage.eNS_URI);
+            RepositoryFactory theRepositoryFactory = (RepositoryFactory) EPackage.Registry.INSTANCE
+                    .getEFactory(RepositoryPackage.eNS_URI);
             if (theRepositoryFactory != null) {
                 return theRepositoryFactory;
             }
-        }
-        catch (Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new RepositoryFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public RepositoryFactoryImpl() {
@@ -56,26 +53,31 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY: return createLocalDirectoryRepository();
-            case RepositoryPackage.LOCAL_MEMORY_REPOSITORY: return createLocalMemoryRepository();
-            case RepositoryPackage.REMOTE_CDO_REPOSITORY: return createRemoteCdoRepository();
-            case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY: return createLocalSensorFrameworkRepository();
-            case RepositoryPackage.REPOSITORIES: return createRepositories();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY:
+            return createLocalDirectoryRepository();
+        case RepositoryPackage.LOCAL_MEMORY_REPOSITORY:
+            return createLocalMemoryRepository();
+        case RepositoryPackage.REMOTE_CDO_REPOSITORY:
+            return createRemoteCdoRepository();
+        case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY:
+            return createLocalSensorFrameworkRepository();
+        case RepositoryPackage.REPOSITORIES:
+            return createRepositories();
+        default:
+            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -85,8 +87,8 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -96,8 +98,8 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -107,8 +109,8 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -118,8 +120,8 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -129,18 +131,18 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public RepositoryPackage getRepositoryPackage() {
-        return (RepositoryPackage)getEPackage();
+        return (RepositoryPackage) getEPackage();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @deprecated
      * @generated
      */
@@ -149,4 +151,4 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
         return RepositoryPackage.eINSTANCE;
     }
 
-} //RepositoryFactoryImpl
+} // RepositoryFactoryImpl

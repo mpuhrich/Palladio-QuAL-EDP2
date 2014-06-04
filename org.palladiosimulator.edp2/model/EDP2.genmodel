@@ -207,6 +207,9 @@
       <genClasses ecoreClass="EDP2.ecore#//measuringpoint/StringMeasuringPoint">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/StringMeasuringPoint/measuringPoint"/>
       </genClasses>
+      <genClasses ecoreClass="EDP2.ecore#//measuringpoint/ResourceURIMeasuringPoint">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/ResourceURIMeasuringPoint/resourceURI"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

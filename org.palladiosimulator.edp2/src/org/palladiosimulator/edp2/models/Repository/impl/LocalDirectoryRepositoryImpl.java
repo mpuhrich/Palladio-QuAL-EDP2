@@ -25,24 +25,24 @@ import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Local Directory Repository</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Local Directory Repository</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl#getUri <em>Uri</em>}</li>
+ * <li>{@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl#getUri
+ * <em>Uri</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements LocalDirectoryRepository {
 
     /**
-     * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
-     * <!-- begin-user-doc -->
+     * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @see #getUri()
      * @generated
      * @ordered
@@ -50,9 +50,9 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     protected static final String URI_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
-     * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @see #getUri()
      * @generated
      * @ordered
@@ -60,8 +60,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     protected String uri = URI_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated NOT
      */
     protected LocalDirectoryRepositoryImpl() {
@@ -75,9 +75,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     private MetaDaoDelegate getMetaDaoDelegate(final String wantedId) {
         MetaDaoDelegate result = null;
         if (Platform.getExtensionRegistry() != null) {
-            final IConfigurationElement[] adapterExtensions = Platform
-                    .getExtensionRegistry().getConfigurationElementsFor(
-                            "org.palladiosimulator.edp2.dao");
+            final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry()
+                    .getConfigurationElementsFor("org.palladiosimulator.edp2.dao");
             for (final IConfigurationElement e : adapterExtensions) {
                 try {
                     id = e.getAttribute("id");
@@ -91,7 +90,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
             }
         } else {
             try {
-                result = (MetaDaoDelegate) Class.forName("org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMetaDao").newInstance();
+                result = (MetaDaoDelegate) Class.forName(
+                        "org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMetaDao").newInstance();
             } catch (final InstantiationException e) {
                 throw new RuntimeException(e);
             } catch (final IllegalAccessException e) {
@@ -104,8 +104,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -114,8 +114,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -124,8 +124,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -133,12 +133,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         String oldUri = uri;
         uri = newUri;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI, oldUri, uri));
+            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI,
+                    oldUri, uri));
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @throws DataNotAccessibleException
      * @generated NOT
      */
@@ -147,10 +148,14 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         return convertUriStringToFileInternal(uriString);
     }
 
-    /**Converts a supplied URI to a file on the local file system, if possible.
-     * @param uri The URI to convert.
+    /**
+     * Converts a supplied URI to a file on the local file system, if possible.
+     * 
+     * @param uri
+     *            The URI to convert.
      * @return Local file.
-     * @throws DataNotAccessibleException For conversion errors. Details are provided in the message.
+     * @throws DataNotAccessibleException
+     *             For conversion errors. Details are provided in the message.
      */
     private File convertUriStringToFileInternal(final String uriString) throws DataNotAccessibleException {
         final URI uri = URI.createURI(uriString);
@@ -183,71 +188,72 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
-                return getUri();
+        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
+            return getUri();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
-                setUri((String)newValue);
-                return;
+        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
+            setUri((String) newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
-                setUri(URI_EDEFAULT);
-                return;
+        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
+            setUri(URI_EDEFAULT);
+            return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
-                return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
+        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
+            return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
         }
         return super.eIsSet(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if (eIsProxy())
+            return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
         result.append(" (uri: ");
@@ -256,4 +262,4 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
         return result.toString();
     }
 
-} //LocalDirectoryRepositoryImpl
+} // LocalDirectoryRepositoryImpl

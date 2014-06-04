@@ -34,92 +34,90 @@ import org.palladiosimulator.metricspec.MetricSpecPackage;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass localDirectoryRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass fileEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass localMemoryRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass remoteCdoRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass localSensorFrameworkRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass repositoriesEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass iResourceSetEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass measurementsDaoFactoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass metaDaoEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass repositoryEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-     * package URI value.
-     * <p>Note: the correct way to create the package is via the static
-     * factory method {@link #init init()}, which also performs
-     * initialization of the package, or returns the registered package,
-     * if one already exists.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
+     * value.
+     * <p>
+     * Note: the correct way to create the package is via the static factory method {@link #init
+     * init()}, which also performs initialization of the package, or returns the registered
+     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#eNS_URI
      * @see #init()
@@ -130,29 +128,33 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
+     * upon which it depends.
      * 
-     * <p>This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is accessed.
-     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <p>
+     * This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is
+     * accessed. Clients should not invoke it directly. Instead, they should simply access that
+     * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
      * @generated
      */
     public static RepositoryPackage init() {
-        if (isInited) return (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
+        if (isInited)
+            return (RepositoryPackage) EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
 
         // Obtain or create and register package
-        RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RepositoryPackageImpl());
+        RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
+                .get(eNS_URI) : new RepositoryPackageImpl());
 
         isInited = true;
 
@@ -160,8 +162,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         MetricSpecPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
-        ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
-        MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
+        ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
+                .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
+        MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
+                .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theRepositoryPackage.createPackageContents();
@@ -176,15 +182,14 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Mark meta-data to indicate it can't be changed
         theRepositoryPackage.freeze();
 
-  
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(RepositoryPackage.eNS_URI, theRepositoryPackage);
         return theRepositoryPackage;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -193,18 +198,18 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getLocalDirectoryRepository_Uri() {
-        return (EAttribute)localDirectoryRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) localDirectoryRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -213,8 +218,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -223,18 +228,18 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getLocalMemoryRepository_Domain() {
-        return (EAttribute)localMemoryRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) localMemoryRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -243,18 +248,18 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getRemoteCdoRepository_Url() {
-        return (EAttribute)remoteCdoRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) remoteCdoRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -263,28 +268,28 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getLocalSensorFrameworkRepository_Uri() {
-        return (EAttribute)localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getLocalSensorFrameworkRepository_ImportSettings() {
-        return (EAttribute)localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(1);
+        return (EAttribute) localSensorFrameworkRepositoryEClass.getEStructuralFeatures().get(1);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -293,28 +298,28 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getRepositories_AvailableRepositories() {
-        return (EReference)repositoriesEClass.getEStructuralFeatures().get(0);
+        return (EReference) repositoriesEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getRepositories_CommonResourceSet() {
-        return (EReference)repositoriesEClass.getEStructuralFeatures().get(1);
+        return (EReference) repositoriesEClass.getEStructuralFeatures().get(1);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -323,8 +328,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -333,8 +338,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -343,8 +348,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -353,71 +358,71 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getRepository_Repositories() {
-        return (EReference)repositoryEClass.getEStructuralFeatures().get(0);
+        return (EReference) repositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EAttribute getRepository_ReadOnly() {
-        return (EAttribute)repositoryEClass.getEStructuralFeatures().get(2);
+        return (EAttribute) repositoryEClass.getEStructuralFeatures().get(2);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getRepository_Descriptions() {
-        return (EReference)repositoryEClass.getEStructuralFeatures().get(3);
+        return (EReference) repositoryEClass.getEStructuralFeatures().get(3);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getRepository_ExperimentGroups() {
-        return (EReference)repositoryEClass.getEStructuralFeatures().get(1);
+        return (EReference) repositoryEClass.getEStructuralFeatures().get(1);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public RepositoryFactory getRepositoryFactory() {
-        return (RepositoryFactory)getEFactoryInstance();
+        return (RepositoryFactory) getEFactoryInstance();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package.  This method is
-     * guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the meta-model objects for the package. This method is guarded to have no affect on
+     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public void createPackageContents() {
-        if (isCreated) return;
+        if (isCreated)
+            return;
         isCreated = true;
 
         // Create classes and their features
@@ -454,21 +459,21 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model.  This
-     * method is guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Complete the initialization of the package and its meta-model. This method is guarded to have
+     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public void initializePackageContents() {
-        if (isInitialized) return;
+        if (isInitialized)
+            return;
         isInitialized = true;
 
         // Initialize package
@@ -477,9 +482,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
-        ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage)EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI);
-        MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage)EPackage.Registry.INSTANCE.getEPackage(MetricSpecPackage.eNS_URI);
+        IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
+                .getEPackage(IdentifierPackage.eNS_URI);
+        ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
+                .getEPackage(ExperimentDataPackage.eNS_URI);
+        MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage) EPackage.Registry.INSTANCE
+                .getEPackage(MetricSpecPackage.eNS_URI);
 
         // Create type parameters
 
@@ -494,39 +502,72 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         repositoryEClass.getESuperTypes().add(this.getMetaDao());
 
         // Initialize classes and features; add operations and parameters
-        initEClass(localDirectoryRepositoryEClass, LocalDirectoryRepository.class, "LocalDirectoryRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getLocalDirectoryRepository_Uri(), ecorePackage.getEString(), "uri", null, 1, 1, LocalDirectoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(localDirectoryRepositoryEClass, LocalDirectoryRepository.class, "LocalDirectoryRepository",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getLocalDirectoryRepository_Uri(), ecorePackage.getEString(), "uri", null, 1, 1,
+                LocalDirectoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        EOperation op = addEOperation(localDirectoryRepositoryEClass, this.getFile(), "convertUriStringToFile", 1, 1, IS_UNIQUE, !IS_ORDERED);
+        EOperation op = addEOperation(localDirectoryRepositoryEClass, this.getFile(), "convertUriStringToFile", 1, 1,
+                IS_UNIQUE, !IS_ORDERED);
         addEParameter(op, ecorePackage.getEString(), "uriString", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
         initEClass(fileEClass, File.class, "File", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(localMemoryRepositoryEClass, LocalMemoryRepository.class, "LocalMemoryRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getLocalMemoryRepository_Domain(), ecorePackage.getEString(), "domain", null, 1, 1, LocalMemoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(localMemoryRepositoryEClass, LocalMemoryRepository.class, "LocalMemoryRepository", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getLocalMemoryRepository_Domain(), ecorePackage.getEString(), "domain", null, 1, 1,
+                LocalMemoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        initEClass(remoteCdoRepositoryEClass, RemoteCdoRepository.class, "RemoteCdoRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getRemoteCdoRepository_Url(), ecorePackage.getEString(), "url", null, 1, 1, RemoteCdoRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(remoteCdoRepositoryEClass, RemoteCdoRepository.class, "RemoteCdoRepository", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRemoteCdoRepository_Url(), ecorePackage.getEString(), "url", null, 1, 1,
+                RemoteCdoRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        initEClass(localSensorFrameworkRepositoryEClass, LocalSensorFrameworkRepository.class, "LocalSensorFrameworkRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getLocalSensorFrameworkRepository_Uri(), ecorePackage.getEString(), "uri", null, 1, 1, LocalSensorFrameworkRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getLocalSensorFrameworkRepository_ImportSettings(), ecorePackage.getEString(), "importSettings", null, 1, 1, LocalSensorFrameworkRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(localSensorFrameworkRepositoryEClass, LocalSensorFrameworkRepository.class,
+                "LocalSensorFrameworkRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getLocalSensorFrameworkRepository_Uri(), ecorePackage.getEString(), "uri", null, 1, 1,
+                LocalSensorFrameworkRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEAttribute(getLocalSensorFrameworkRepository_ImportSettings(), ecorePackage.getEString(), "importSettings",
+                null, 1, 1, LocalSensorFrameworkRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        initEClass(repositoriesEClass, Repositories.class, "Repositories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getRepositories_AvailableRepositories(), this.getRepository(), this.getRepository_Repositories(), "availableRepositories", null, 0, -1, Repositories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getRepositories_CommonResourceSet(), this.getIResourceSet(), null, "commonResourceSet", null, 1, 1, Repositories.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(repositoriesEClass, Repositories.class, "Repositories", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getRepositories_AvailableRepositories(), this.getRepository(),
+                this.getRepository_Repositories(), "availableRepositories", null, 0, -1, Repositories.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getRepositories_CommonResourceSet(), this.getIResourceSet(), null, "commonResourceSet", null, 1,
+                1, Repositories.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        initEClass(iResourceSetEClass, ResourceSet.class, "IResourceSet", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+        initEClass(iResourceSetEClass, ResourceSet.class, "IResourceSet", IS_ABSTRACT, IS_INTERFACE,
+                !IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(measurementsDaoFactoryEClass, MeasurementsDaoFactory.class, "MeasurementsDaoFactory", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+        initEClass(measurementsDaoFactoryEClass, MeasurementsDaoFactory.class, "MeasurementsDaoFactory", IS_ABSTRACT,
+                IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(metaDaoEClass, MetaDao.class, "MetaDao", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(repositoryEClass, Repository.class, "Repository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getRepository_Repositories(), this.getRepositories(), this.getRepositories_AvailableRepositories(), "repositories", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getRepository_ExperimentGroups(), theExperimentDataPackage.getExperimentGroup(), theExperimentDataPackage.getExperimentGroup_Repository(), "experimentGroups", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEAttribute(getRepository_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        initEReference(getRepository_Descriptions(), theMetricSpecPackage.getDescription(), null, "descriptions", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEClass(repositoryEClass, Repository.class, "Repository", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getRepository_Repositories(), this.getRepositories(),
+                this.getRepositories_AvailableRepositories(), "repositories", null, 1, 1, Repository.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getRepository_ExperimentGroups(), theExperimentDataPackage.getExperimentGroup(),
+                theExperimentDataPackage.getExperimentGroup_Repository(), "experimentGroups", null, 0, -1,
+                Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEAttribute(getRepository_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, Repository.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getRepository_Descriptions(), theMetricSpecPackage.getDescription(), null, "descriptions", null,
+                0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         addEOperation(repositoryEClass, null, "resetExperimentGroups", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -534,4 +575,4 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         createResource(eNS_URI);
     }
 
-} //RepositoryPackageImpl
+} // RepositoryPackageImpl

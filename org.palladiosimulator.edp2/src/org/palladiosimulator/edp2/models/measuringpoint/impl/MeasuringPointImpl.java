@@ -8,18 +8,17 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Measuring Point</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Measuring Point</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected MeasuringPointImpl() {
@@ -27,8 +26,8 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -36,4 +35,4 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
         return MeasuringpointPackage.Literals.MEASURING_POINT;
     }
 
-} //MeasuringPointImpl
+} // MeasuringPointImpl

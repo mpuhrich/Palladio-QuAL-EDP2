@@ -1,52 +1,54 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package org.palladiosimulator.edp2.models.ExperimentData.impl;
-
-import javax.measure.quantity.Quantity;
-import javax.measure.unit.Unit;
+package org.palladiosimulator.edp2.models.measuringpoint.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Double Binary Measurements</b></em>'. <!-- end-user-doc -->
+ * <em><b>Resource URI Measuring Point</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
  * <li>
- * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.DoubleBinaryMeasurementsImpl#getStorageUnit
- * <em>Storage Unit</em>}</li>
+ * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.ResourceURIMeasuringPointImpl#getResourceURI
+ * <em>Resource URI</em>}</li>
  * </ul>
  * </p>
  * 
  * @generated
  */
-public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements
-        DoubleBinaryMeasurements<Q> {
+public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl implements ResourceURIMeasuringPoint {
     /**
-     * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
+     * The default value of the '{@link #getResourceURI() <em>Resource URI</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      * 
-     * @see #getStorageUnit()
+     * @see #getResourceURI()
      * @generated
      * @ordered
      */
-    protected Unit<Q> storageUnit;
+    protected static final String RESOURCE_URI_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getResourceURI() <em>Resource URI</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     * 
+     * @see #getResourceURI()
+     * @generated
+     * @ordered
+     */
+    protected String resourceURI = RESOURCE_URI_EDEFAULT;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
      * @generated
      */
-    protected DoubleBinaryMeasurementsImpl() {
+    protected ResourceURIMeasuringPointImpl() {
         super();
     }
 
@@ -57,7 +59,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
      */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS;
+        return MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT;
     }
 
     /**
@@ -65,8 +67,8 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
      * 
      * @generated
      */
-    public Unit<Q> getStorageUnit() {
-        return storageUnit;
+    public String getResourceURI() {
+        return resourceURI;
     }
 
     /**
@@ -74,12 +76,12 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
      * 
      * @generated
      */
-    public void setStorageUnit(Unit<Q> newStorageUnit) {
-        Unit<Q> oldStorageUnit = storageUnit;
-        storageUnit = newStorageUnit;
+    public void setResourceURI(String newResourceURI) {
+        String oldResourceURI = resourceURI;
+        resourceURI = newResourceURI;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, oldStorageUnit, storageUnit));
+                    MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, oldResourceURI, resourceURI));
     }
 
     /**
@@ -90,8 +92,8 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            return getStorageUnit();
+        case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
+            return getResourceURI();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -101,12 +103,11 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
      * 
      * @generated
      */
-    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            setStorageUnit((Unit<Q>) newValue);
+        case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
+            setResourceURI((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -120,8 +121,8 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-        case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            setStorageUnit((Unit<Q>) null);
+        case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
+            setResourceURI(RESOURCE_URI_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -135,8 +136,8 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            return storageUnit != null;
+        case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
+            return RESOURCE_URI_EDEFAULT == null ? resourceURI != null : !RESOURCE_URI_EDEFAULT.equals(resourceURI);
         }
         return super.eIsSet(featureID);
     }
@@ -152,10 +153,10 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
             return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (storageUnit: ");
-        result.append(storageUnit);
+        result.append(" (resourceURI: ");
+        result.append(resourceURI);
         result.append(')');
         return result.toString();
     }
 
-} // DoubleBinaryMeasurementsImpl
+} // ResourceURIMeasuringPointImpl

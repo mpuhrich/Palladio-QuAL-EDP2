@@ -21,283 +21,301 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Numerical Percentile</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Numerical Percentile</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getPercentile <em>Percentile</em>}</li>
- *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getOrdinalStatistics <em>Ordinal Statistics</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getPercentile
+ * <em>Percentile</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getValue
+ * <em>Value</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl#getOrdinalStatistics
+ * <em>Ordinal Statistics</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class NumericalPercentileImpl extends IdentifierImpl implements NumericalPercentile {
-	/**
-     * The default value of the '{@link #getPercentile() <em>Percentile</em>}' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * The default value of the '{@link #getPercentile() <em>Percentile</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getPercentile()
      * @generated
      * @ordered
      */
-	protected static final double PERCENTILE_EDEFAULT = 0.0;
+    protected static final double PERCENTILE_EDEFAULT = 0.0;
 
-	/**
-     * The cached value of the '{@link #getPercentile() <em>Percentile</em>}' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * The cached value of the '{@link #getPercentile() <em>Percentile</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getPercentile()
      * @generated
      * @ordered
      */
-	protected double percentile = PERCENTILE_EDEFAULT;
+    protected double percentile = PERCENTILE_EDEFAULT;
 
-	/**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     * 
      * @see #getValue()
      * @generated
      * @ordered
      */
-	protected Measure value;
+    protected Measure value;
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected NumericalPercentileImpl() {
+    protected NumericalPercentileImpl() {
         super();
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE;
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public double getPercentile() {
+    public double getPercentile() {
         return percentile;
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public void setPercentile(double newPercentile) {
+    public void setPercentile(double newPercentile) {
         double oldPercentile = percentile;
         percentile = newPercentile;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE, oldPercentile, percentile));
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE, oldPercentile, percentile));
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public Measure getValue() {
+    public Measure getValue() {
         return value;
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public void setValue(Measure newValue) {
+    public void setValue(Measure newValue) {
         Measure oldValue = value;
         value = newValue;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE, oldValue, value));
+            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE,
+                    oldValue, value));
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public NumericalOrdinalStatistics getOrdinalStatistics() {
-        if (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS) return null;
-        return (NumericalOrdinalStatistics)eInternalContainer();
+    public NumericalOrdinalStatistics getOrdinalStatistics() {
+        if (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS)
+            return null;
+        return (NumericalOrdinalStatistics) eInternalContainer();
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public NotificationChain basicSetOrdinalStatistics(NumericalOrdinalStatistics newOrdinalStatistics, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newOrdinalStatistics, ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, msgs);
+    public NotificationChain basicSetOrdinalStatistics(NumericalOrdinalStatistics newOrdinalStatistics,
+            NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject) newOrdinalStatistics,
+                ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, msgs);
         return msgs;
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	public void setOrdinalStatistics(NumericalOrdinalStatistics newOrdinalStatistics) {
-        if (newOrdinalStatistics != eInternalContainer() || (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS && newOrdinalStatistics != null)) {
+    public void setOrdinalStatistics(NumericalOrdinalStatistics newOrdinalStatistics) {
+        if (newOrdinalStatistics != eInternalContainer()
+                || (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS && newOrdinalStatistics != null)) {
             if (EcoreUtil.isAncestor(this, newOrdinalStatistics))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
             if (newOrdinalStatistics != null)
-                msgs = ((InternalEObject)newOrdinalStatistics).eInverseAdd(this, ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES, NumericalOrdinalStatistics.class, msgs);
+                msgs = ((InternalEObject) newOrdinalStatistics).eInverseAdd(this,
+                        ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
+                        NumericalOrdinalStatistics.class, msgs);
             msgs = basicSetOrdinalStatistics(newOrdinalStatistics, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, newOrdinalStatistics, newOrdinalStatistics));
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, newOrdinalStatistics,
+                    newOrdinalStatistics));
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    @Override
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetOrdinalStatistics((NumericalOrdinalStatistics)otherEnd, msgs);
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            return basicSetOrdinalStatistics((NumericalOrdinalStatistics) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                return basicSetOrdinalStatistics(null, msgs);
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            return basicSetOrdinalStatistics(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+    @Override
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
         switch (eContainerFeatureID()) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                return eInternalContainer().eInverseRemove(this, ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES, NumericalOrdinalStatistics.class, msgs);
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            return eInternalContainer().eInverseRemove(this,
+                    ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES, NumericalOrdinalStatistics.class,
+                    msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    @Override
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
-                return getPercentile();
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
-                return getValue();
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                return getOrdinalStatistics();
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
+            return getPercentile();
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
+            return getValue();
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            return getOrdinalStatistics();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public void eSet(int featureID, Object newValue) {
+    @Override
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
-                setPercentile((Double)newValue);
-                return;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
-                setValue((Measure)newValue);
-                return;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                setOrdinalStatistics((NumericalOrdinalStatistics)newValue);
-                return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
+            setPercentile((Double) newValue);
+            return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
+            setValue((Measure) newValue);
+            return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            setOrdinalStatistics((NumericalOrdinalStatistics) newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
+    @Override
+    public void eUnset(int featureID) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
-                setPercentile(PERCENTILE_EDEFAULT);
-                return;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
-                setValue((Measure)null);
-                return;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                setOrdinalStatistics((NumericalOrdinalStatistics)null);
-                return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
+            setPercentile(PERCENTILE_EDEFAULT);
+            return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
+            setValue((Measure) null);
+            return;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            setOrdinalStatistics((NumericalOrdinalStatistics) null);
+            return;
         }
         super.eUnset(featureID);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
+    @Override
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
-                return percentile != PERCENTILE_EDEFAULT;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
-                return value != null;
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
-                return getOrdinalStatistics() != null;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
+            return percentile != PERCENTILE_EDEFAULT;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
+            return value != null;
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
+            return getOrdinalStatistics() != null;
         }
         return super.eIsSet(featureID);
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	public String toString() {
-        if (eIsProxy()) return super.toString();
+    @Override
+    public String toString() {
+        if (eIsProxy())
+            return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
         result.append(" (percentile: ");
@@ -308,4 +326,4 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
         return result.toString();
     }
 
-} //NumericalPercentileImpl
+} // NumericalPercentileImpl

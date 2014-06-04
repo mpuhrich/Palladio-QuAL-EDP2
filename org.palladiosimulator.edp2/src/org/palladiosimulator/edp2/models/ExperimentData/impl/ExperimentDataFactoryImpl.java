@@ -56,41 +56,39 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExperimentDataFactoryImpl extends EFactoryImpl implements ExperimentDataFactory {
-    /** Logger for this class.
+    /**
+     * Logger for this class.
+     * 
      * @generated NOT
      */
-    private static final Logger logger = Logger
-            .getLogger(ExperimentDataFactoryImpl.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger(ExperimentDataFactoryImpl.class.getCanonicalName());
 
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public static ExperimentDataFactory init() {
         try {
-            ExperimentDataFactory theExperimentDataFactory = (ExperimentDataFactory)EPackage.Registry.INSTANCE.getEFactory(ExperimentDataPackage.eNS_URI);
+            ExperimentDataFactory theExperimentDataFactory = (ExperimentDataFactory) EPackage.Registry.INSTANCE
+                    .getEFactory(ExperimentDataPackage.eNS_URI);
             if (theExperimentDataFactory != null) {
                 return theExperimentDataFactory;
             }
-        }
-        catch (Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new ExperimentDataFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ExperimentDataFactoryImpl() {
@@ -98,81 +96,107 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case ExperimentDataPackage.MEASUREMENTS_RANGE: return createMeasurementsRange();
-            case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY: return (EObject)createEStringtoEObjectMapEntry();
-            case ExperimentDataPackage.RAW_MEASUREMENTS: return createRawMeasurements();
-            case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS: return createNumericalNominalStatistics();
-            case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION: return createNumericalMassDistribution();
-            case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS: return createFixedWidthAggregatedMeasurements();
-            case ExperimentDataPackage.FIXED_INTERVALS: return createFixedIntervals();
-            case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS: return createTextualNominalStatistics();
-            case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION: return createTextualMassDistribution();
-            case ExperimentDataPackage.EXPERIMENT_GROUP: return createExperimentGroup();
-            case ExperimentDataPackage.EXPERIMENT_SETTING: return createExperimentSetting();
-            case ExperimentDataPackage.EXPERIMENT_RUN: return createExperimentRun();
-            case ExperimentDataPackage.MEASUREMENTS: return createMeasurements();
-            case ExperimentDataPackage.MEASURE: return createMeasure();
-            case ExperimentDataPackage.AGGREGATION_STATISTICS: return createAggregationStatistics();
-            case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS: return createDoubleBinaryMeasurements();
-            case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS: return createNumericalIntervalStatistics();
-            case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS: return createNumericalOrdinalStatistics();
-            case ExperimentDataPackage.NUMERICAL_PERCENTILE: return createNumericalPercentile();
-            case ExperimentDataPackage.JS_XML_MEASUREMENTS: return createJSXmlMeasurements();
-            case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS: return createLongBinaryMeasurements();
-            case ExperimentDataPackage.IDENTIFIER_BASED_MEASUREMENTS: return createIdentifierBasedMeasurements();
-            case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS: return createNumericalRatioStatistics();
-            case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS: return createSensorFrameworkV1DoubleBinaryMeasurements();
-            case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS: return createSensorFrameworkV1IdentifierBasedMeasurements();
-            case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS: return createTextualOrdinalStatistics();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        case ExperimentDataPackage.MEASUREMENTS_RANGE:
+            return createMeasurementsRange();
+        case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY:
+            return (EObject) createEStringtoEObjectMapEntry();
+        case ExperimentDataPackage.RAW_MEASUREMENTS:
+            return createRawMeasurements();
+        case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS:
+            return createNumericalNominalStatistics();
+        case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION:
+            return createNumericalMassDistribution();
+        case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS:
+            return createFixedWidthAggregatedMeasurements();
+        case ExperimentDataPackage.FIXED_INTERVALS:
+            return createFixedIntervals();
+        case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS:
+            return createTextualNominalStatistics();
+        case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION:
+            return createTextualMassDistribution();
+        case ExperimentDataPackage.EXPERIMENT_GROUP:
+            return createExperimentGroup();
+        case ExperimentDataPackage.EXPERIMENT_SETTING:
+            return createExperimentSetting();
+        case ExperimentDataPackage.EXPERIMENT_RUN:
+            return createExperimentRun();
+        case ExperimentDataPackage.MEASUREMENTS:
+            return createMeasurements();
+        case ExperimentDataPackage.MEASURE:
+            return createMeasure();
+        case ExperimentDataPackage.AGGREGATION_STATISTICS:
+            return createAggregationStatistics();
+        case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS:
+            return createDoubleBinaryMeasurements();
+        case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS:
+            return createNumericalIntervalStatistics();
+        case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS:
+            return createNumericalOrdinalStatistics();
+        case ExperimentDataPackage.NUMERICAL_PERCENTILE:
+            return createNumericalPercentile();
+        case ExperimentDataPackage.JS_XML_MEASUREMENTS:
+            return createJSXmlMeasurements();
+        case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS:
+            return createLongBinaryMeasurements();
+        case ExperimentDataPackage.IDENTIFIER_BASED_MEASUREMENTS:
+            return createIdentifierBasedMeasurements();
+        case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS:
+            return createNumericalRatioStatistics();
+        case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS:
+            return createSensorFrameworkV1DoubleBinaryMeasurements();
+        case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS:
+            return createSensorFrameworkV1IdentifierBasedMeasurements();
+        case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS:
+            return createTextualOrdinalStatistics();
+        default:
+            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public Object createFromString(EDataType eDataType, String initialValue) {
         switch (eDataType.getClassifierID()) {
-            case ExperimentDataPackage.EJS_MEASURE:
-                return createEJSMeasureFromString(eDataType, initialValue);
-            case ExperimentDataPackage.EJS_DURATION_MEASURE:
-                return createEJSDurationMeasureFromString(eDataType, initialValue);
-            default:
-                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        case ExperimentDataPackage.EJS_MEASURE:
+            return createEJSMeasureFromString(eDataType, initialValue);
+        case ExperimentDataPackage.EJS_DURATION_MEASURE:
+            return createEJSDurationMeasureFromString(eDataType, initialValue);
+        default:
+            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public String convertToString(EDataType eDataType, Object instanceValue) {
         switch (eDataType.getClassifierID()) {
-            case ExperimentDataPackage.EJS_MEASURE:
-                return convertEJSMeasureToString(eDataType, instanceValue);
-            case ExperimentDataPackage.EJS_DURATION_MEASURE:
-                return convertEJSDurationMeasureToString(eDataType, instanceValue);
-            default:
-                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        case ExperimentDataPackage.EJS_MEASURE:
+            return convertEJSMeasureToString(eDataType, instanceValue);
+        case ExperimentDataPackage.EJS_DURATION_MEASURE:
+            return convertEJSDurationMeasureToString(eDataType, instanceValue);
+        default:
+            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -182,8 +206,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -193,8 +217,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -204,8 +228,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -215,8 +239,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -226,8 +250,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -237,8 +261,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -248,8 +272,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public Map.Entry<String, Object> createEStringtoEObjectMapEntry() {
@@ -258,8 +282,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -269,8 +293,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -280,8 +304,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -291,8 +315,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -302,8 +326,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -313,8 +337,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -327,8 +351,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public Measure createMeasure(final MeasuringPoint measuringPoint,
-            final MetricDescription metricDescription) {
+    public Measure createMeasure(final MeasuringPoint measuringPoint, final MetricDescription metricDescription) {
         final Measure measure = createMeasure();
         measure.setMeasuringPoint(measuringPoint);
         measure.setMetric(metricDescription);
@@ -339,8 +362,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public ExperimentSetting createExperimentSetting(
-            final ExperimentGroup experimentGroup, final String description) {
+    public ExperimentSetting createExperimentSetting(final ExperimentGroup experimentGroup, final String description) {
         final ExperimentSetting es = createExperimentSetting();
         experimentGroup.getExperimentSettings().add(es);
         es.setDescription(description);
@@ -371,8 +393,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public ExperimentRun createExperimentRun(
-            final ExperimentSetting forExperimentSetting) {
+    public ExperimentRun createExperimentRun(final ExperimentSetting forExperimentSetting) {
         final ExperimentRun er = createExperimentRun();
         forExperimentSetting.getExperimentRuns().add(er);
         return er;
@@ -382,8 +403,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public RawMeasurements createRawMeasurements(
-            final MeasurementsRange forMeasurementsRange) {
+    public RawMeasurements createRawMeasurements(final MeasurementsRange forMeasurementsRange) {
         final RawMeasurements rm = createRawMeasurements();
         forMeasurementsRange.setRawMeasurements(rm);
 
@@ -394,8 +414,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public JSXmlMeasurements createJSXmlMeasurements(
-            final RawMeasurements forRawMeasurements, final String valuesUuid) {
+    public JSXmlMeasurements createJSXmlMeasurements(final RawMeasurements forRawMeasurements, final String valuesUuid) {
         final JSXmlMeasurements jsxm = createJSXmlMeasurements();
         jsxm.setValuesUuid(valuesUuid);
         forRawMeasurements.getDataSeries().add(jsxm);
@@ -407,9 +426,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      */
     @Override
     @SuppressWarnings("unchecked")
-    public LongBinaryMeasurements createLongBinaryMeasurements(
-            final RawMeasurements forRawMeasurements, final String valuesUuid,
-            final Unit defaultUnit) {
+    public LongBinaryMeasurements createLongBinaryMeasurements(final RawMeasurements forRawMeasurements,
+            final String valuesUuid, final Unit defaultUnit) {
         final LongBinaryMeasurements lbm = createLongBinaryMeasurements();
         lbm.setValuesUuid(valuesUuid);
         lbm.setStorageUnit(defaultUnit);
@@ -422,9 +440,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      */
     @Override
     @SuppressWarnings("unchecked")
-    public DoubleBinaryMeasurements createDoubleBinaryMeasurements(
-            final RawMeasurements forRawMeasurements, final String valuesUuid,
-            final Unit defaultUnit) {
+    public DoubleBinaryMeasurements createDoubleBinaryMeasurements(final RawMeasurements forRawMeasurements,
+            final String valuesUuid, final Unit defaultUnit) {
         final DoubleBinaryMeasurements dbm = createDoubleBinaryMeasurements();
         dbm.setValuesUuid(valuesUuid);
         dbm.setStorageUnit(defaultUnit);
@@ -436,8 +453,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * {@inheritDoc}
      */
     @Override
-    public IdentifierBasedMeasurements createIdentifierBasedMeasurements(
-            final RawMeasurements forRawMeasurements, final String valuesUuid) {
+    public IdentifierBasedMeasurements createIdentifierBasedMeasurements(final RawMeasurements forRawMeasurements,
+            final String valuesUuid) {
         final IdentifierBasedMeasurements ibm = createIdentifierBasedMeasurements();
         ibm.setValuesUuid(valuesUuid);
         forRawMeasurements.getDataSeries().add(ibm);
@@ -455,8 +472,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -466,8 +483,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -477,8 +494,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -488,8 +505,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -499,8 +516,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -510,8 +527,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -521,8 +538,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -532,8 +549,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -543,8 +560,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -554,8 +571,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -565,8 +582,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -576,8 +593,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -587,17 +604,17 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated not
      */
     public javax.measure.Measure<?, ?> createEJSMeasureFromString(final EDataType eDataType, final String initialValue) {
-        return (javax.measure.Measure<?, ?>)readObject(initialValue);
+        return (javax.measure.Measure<?, ?>) readObject(initialValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated not
      */
     public String convertEJSMeasureToString(final EDataType eDataType, final Object instanceValue) {
@@ -605,17 +622,17 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated not
      */
     public javax.measure.Measure createEJSDurationMeasureFromString(final EDataType eDataType, final String initialValue) {
-        return (javax.measure.Measure)readObject(initialValue);
+        return (javax.measure.Measure) readObject(initialValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated not
      */
     public String convertEJSDurationMeasureToString(final EDataType eDataType, final Object instanceValue) {
@@ -623,18 +640,18 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ExperimentDataPackage getExperimentDataPackage() {
-        return (ExperimentDataPackage)getEPackage();
+        return (ExperimentDataPackage) getEPackage();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @deprecated
      * @generated
      */
@@ -643,10 +660,14 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
         return ExperimentDataPackage.eINSTANCE;
     }
 
-    /**Serializes an object to a string.
-     * @param o The object to store.
+    /**
+     * Serializes an object to a string.
+     * 
+     * @param o
+     *            The object to store.
      * @return String containing the serialized object.
-     * @throws IOException Error occurred during serialization.
+     * @throws IOException
+     *             Error occurred during serialization.
      */
     private String writeObject(final Object o) {
         final ByteArrayOutputStream bas = new ByteArrayOutputStream();
@@ -656,18 +677,22 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
             oos.writeObject(o);
             oos.close();
         } catch (final IOException e) {
-            logger.log(Level.SEVERE,
-                    "Could not serialize object to string. Data corruption is likely. "
-                            + "Object: " + o + "Error: " + e.getMessage());
+            logger.log(Level.SEVERE, "Could not serialize object to string. Data corruption is likely. " + "Object: "
+                    + o + "Error: " + e.getMessage());
         }
         return Base64.encodeBase64String(bas.toByteArray());
     }
 
-    /**Deserialized an object from a string.
-     * @param bis The input string containing the object.
+    /**
+     * Deserialized an object from a string.
+     * 
+     * @param bis
+     *            The input string containing the object.
      * @return The deserialized object.
-     * @throws IOException Error occurred during serialization.
-     * @throws ClassNotFoundException Error occurred during serialization.
+     * @throws IOException
+     *             Error occurred during serialization.
+     * @throws ClassNotFoundException
+     *             Error occurred during serialization.
      */
     private Object readObject(final String input) {
         Object o = null;
@@ -677,15 +702,13 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
             o = ois.readObject();
             ois.close();
         } catch (final IOException e) {
-            logger.log(Level.SEVERE,
-                    "Could not deserialize object from string. Data corruption is likely. "
-                            + "Error: " + e.getMessage());
+            logger.log(Level.SEVERE, "Could not deserialize object from string. Data corruption is likely. "
+                    + "Error: " + e.getMessage());
         } catch (final ClassNotFoundException e) {
-            logger.log(Level.SEVERE,
-                    "Could not deserialize object from string. No class for object could be found. " +
-                            "Data corruption is likely. " + "Error: " + e.getMessage());
+            logger.log(Level.SEVERE, "Could not deserialize object from string. No class for object could be found. "
+                    + "Data corruption is likely. " + "Error: " + e.getMessage());
         }
         return o;
     }
 
-} //EmfmodelFactoryImpl
+} // EmfmodelFactoryImpl

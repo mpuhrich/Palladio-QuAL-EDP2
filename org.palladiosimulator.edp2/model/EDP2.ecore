@@ -445,5 +445,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuringPoint" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceURIMeasuringPoint" eSuperTypes="#//measuringpoint/StringMeasuringPoint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceURI" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

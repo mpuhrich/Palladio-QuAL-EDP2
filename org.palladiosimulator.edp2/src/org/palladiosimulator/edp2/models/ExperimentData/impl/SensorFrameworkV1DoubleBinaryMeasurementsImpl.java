@@ -11,32 +11,32 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sensor Framework V1 Double Binary Measurements</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Sensor Framework V1 Double Binary Measurements</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
-public class SensorFrameworkV1DoubleBinaryMeasurementsImpl extends DoubleBinaryMeasurementsImpl implements SensorFrameworkV1DoubleBinaryMeasurements {
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+public class SensorFrameworkV1DoubleBinaryMeasurementsImpl extends DoubleBinaryMeasurementsImpl implements
+        SensorFrameworkV1DoubleBinaryMeasurements {
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	protected SensorFrameworkV1DoubleBinaryMeasurementsImpl() {
+    protected SensorFrameworkV1DoubleBinaryMeasurementsImpl() {
         super();
     }
 
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return ExperimentDataPackage.Literals.SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS;
     }
 
-} //SensorFrameworkV1DoubleBinaryMeasurementsImpl
+} // SensorFrameworkV1DoubleBinaryMeasurementsImpl

@@ -40,7 +40,7 @@ public class MeasuringPointUtility {
         }
 
         if (result == null) {
-            throw new IllegalArgumentException("Unknown measuring point type");
+            throw new IllegalArgumentException("Unknown measuring point type: "+measuringPoint.getClass());
         }
 
         return result;

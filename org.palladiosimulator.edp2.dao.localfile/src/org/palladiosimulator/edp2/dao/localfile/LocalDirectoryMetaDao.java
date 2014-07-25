@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2.dao.localfile;
 
@@ -37,7 +37,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * DAO to access the meta data stored in a local directory.
  * Warning: It is not allowed to reassign a managed repository to another instance of Repositories.
- * 
+ *
  * @author groenda, Sebastian Lehrig
  */
 public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
@@ -179,7 +179,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         super.close();
         // close directory
         try {
-            persistMetaData();
+            persistMetaData(false);
             closeRepository();
         } catch (final IllegalArgumentException e) {
             final String msg = "URI is not valid.";
@@ -190,7 +190,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     }
 
     /**
-     * 
+     *
      */
     private void closeRepository() {
         if(mmtDaoFactory.isActive()) {
@@ -206,7 +206,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     /**
      * @throws DataNotAccessibleException
      */
-    private void persistMetaData() throws DataNotAccessibleException {
+    private void persistMetaData(final boolean flushOnly) throws DataNotAccessibleException {
         final URI uri = URI.createURI(managedRepo.getUri());
 
         File directory = null;
@@ -220,9 +220,9 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             }
 
             // load descriptions
-            saveDescriptions(directory);
+            saveDescriptions(directory, flushOnly);
             // load experiment groups
-            saveExperimentGroups(directory);
+            saveExperimentGroups(directory, flushOnly);
         }
         else if(uri.isPlatformResource()) {
             logger.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
@@ -362,18 +362,20 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
 
     /**Saves all descriptions to description files within the specified directory.
      * @param directory The EDP2 data directory.
+     * @param flushOnly
      */
-    private void saveDescriptions(final File directory) {
+    private void saveDescriptions(final File directory, final boolean flushOnly) {
         for (final Description desc : managedRepo.getDescriptions()) {
-            saveDescription(directory, desc);
+            saveDescription(directory, desc, flushOnly);
         }
     }
 
     /**Saves a description in the provided directory.
      * @param directory The EDP2 data directory.
      * @param desc The description to save.
+     * @param flushOnly
      */
-    private void saveDescription(final File directory, final Description desc) {
+    private void saveDescription(final File directory, final Description desc, final boolean flushOnly) {
         final String descFileLocation = directory.getAbsoluteFile() + File.separator
                 + desc.getId() + "."
                 + EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION;
@@ -389,7 +391,9 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             }
             try {
                 resource.save(null);
-                resource.unload();
+                if (!flushOnly) {
+                    resource.unload();
+                }
                 // TODO: Test
                 //resource.getResourceSet().getResources().remove(resource);
             } catch (final IOException e) {
@@ -401,10 +405,11 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
 
     /**Saves all experiment groups to files within the specified directory.
      * @param directory The EDP2 data directory.
+     * @param flushOnly
      */
-    private void saveExperimentGroups(final File directory) {
+    private void saveExperimentGroups(final File directory, final boolean flushOnly) {
         for (final ExperimentGroup eg : managedRepo.getExperimentGroups()) {
-            saveExperimentGroup(directory, eg);
+            saveExperimentGroup(directory, eg, flushOnly);
         }
     }
 
@@ -419,24 +424,32 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     /**Saves an experiment group in the provided directory.
      * @param directory The EDP2 data directory.
      * @param expGroup The experiment group to save.
+     * @param flushOnly
      */
-    private void saveExperimentGroup(final File directory, final ExperimentGroup expGroup) {
+    private void saveExperimentGroup(final File directory, final ExperimentGroup expGroup, final boolean flushOnly) {
         final String egFileLocation = directory.getAbsoluteFile() + File.separator
                 + expGroup.getId() + "."
                 + EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
         final Resource resource = getResourceForURI(URI.createFileURI(egFileLocation));
         if (resource == null) {
             final String msg = "Could not create resource to save the experiment group file " + egFileLocation;
-            logger.log(Level.WARNING, msg);
+            logger.log(Level.SEVERE, msg);
+            throw new RuntimeException("Unable to persist experiment group: "+expGroup);
         } else {
             if (expGroup.eResource() == null) {
+                if (resource.getContents().size() > 0) {
+                    throw new IllegalStateException("Persisting experiment group which should have been persisted before: "+expGroup);
+                }
                 resource.getContents().add(expGroup);
             } else if (!expGroup.eResource().equals(resource)) {
                 logger.log(Level.SEVERE, "ExperimentGroup was assigned to resource " + expGroup.eResource() + "but should be assigned to " + resource);
+                throw new IllegalStateException("Resource for experiment group is not the one it should be");
             }
             try {
                 resource.save(null);
-                resource.unload();
+                if (!flushOnly) {
+                    resource.unload();
+                }
             } catch (final IOException e) {
                 final String msg = "Could not save the experiment group file " + egFileLocation;
                 logger.log(Level.WARNING, msg, e);
@@ -642,7 +655,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     @Override
     public void flush() {
         try {
-            persistMetaData();
+            persistMetaData(true);
         } catch (final DataNotAccessibleException e) {
             logger.log(Level.SEVERE, "Flush failed.", e);
             throw new RuntimeException(e);

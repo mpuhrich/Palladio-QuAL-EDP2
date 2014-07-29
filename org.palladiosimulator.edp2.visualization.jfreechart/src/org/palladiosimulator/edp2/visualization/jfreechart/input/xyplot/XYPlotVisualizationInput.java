@@ -27,7 +27,7 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 
 /**
  * Input for {@link JFreeChartEditor} .
- * 
+ *
  * @author Steffen Becker, Dominik Ernst, Roland Richter
  */
 public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
@@ -66,8 +66,10 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
     protected AbstractDataset generateDataset() {
         final DefaultXYDataset dataset = new DefaultXYDataset();
 
+        int i = 1;
         for (final JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
-            dataset.addSeries(childInput.getInputName(), getXYData(childInput.getDataSource()));
+            dataset.addSeries(i + ": " + childInput.getInputName(), getXYData(childInput.getDataSource()));
+            i++;
         }
         return dataset;
     }

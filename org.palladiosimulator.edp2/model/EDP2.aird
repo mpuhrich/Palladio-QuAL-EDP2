@@ -4,11 +4,15 @@
   <models xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
   <models xmi:type="genmodel:GenModel" href="model/EDP2.genmodel#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
+  <models xmi:type="description:Group" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#/"/>
+  <models xmi:type="description:Environment" href="environment:/viewpoint#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/GenModel#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_W22IMBh2EeSoUsjueZK-JA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_W4JvwBh2EeSoUsjueZK-JA" name="models class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_W4KW0Bh2EeSoUsjueZK-JA" source="GMF_DIAGRAMS">
@@ -4095,8 +4099,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_W5XQsRh2EeSoUsjueZK-JA" width="-1" height="-1">
-        <target xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
-        <semanticElements xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
+        <target xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_W5XQshh2EeSoUsjueZK-JA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_W5XQsxh2EeSoUsjueZK-JA"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
@@ -4109,7 +4113,7 @@
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
-      <target xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
+      <target xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
     </ownedRepresentations>
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_W5ksEBh2EeSoUsjueZK-JA" name="metricspec class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_W5ksFhh2EeSoUsjueZK-JA" source="GMF_DIAGRAMS">
@@ -4129,8 +4133,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_W5ksERh2EeSoUsjueZK-JA" width="-1" height="-1">
-        <target xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
-        <semanticElements xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
+        <target xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_W5ksEhh2EeSoUsjueZK-JA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_W5ksExh2EeSoUsjueZK-JA"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
@@ -4143,7 +4147,7 @@
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
-      <target xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
+      <target xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>

@@ -47,57 +47,61 @@ import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 public class MeasurementsUtility {
 
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(MeasurementsUtility.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(MeasurementsUtility.class.getCanonicalName());
 
     /** EMF factory used by this instance. */
-    private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
+    private static final ExperimentDataFactory FACTORY = ExperimentDataFactory.eINSTANCE;
 
     /**
-     * Creates a new MeasurementRange and contained elements if there
-     * are already existing elements in another MeasurementRange.
-     * Does not set the startTime and endTime properties.
+     * Creates a new MeasurementRange and contained elements if there are already existing elements
+     * in another MeasurementRange. Does not set the startTime and endTime properties.
      * 
-     * @param measurements Location where to add the range.
+     * @param measurements
+     *            Location where to add the range.
      * @return The newly created measurement range.
      */
     public static MeasurementsRange addMeasurementRange(final Measurements measurements) {
         // TODO: check if measurements or setting is better.
-        final MeasurementsDaoFactory daoFactory = measurements.getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory();
-        final MeasurementsRange mr = factory.createMeasurementsRange(measurements);
-        if (measurements.getMeasurementsRanges().size() > 1) { // copy contents from existing templates
+        final MeasurementsDaoFactory daoFactory = measurements.getMeasure().getExperimentGroup().getRepository()
+                .getMeasurementsDaoFactory();
+        final MeasurementsRange mr = FACTORY.createMeasurementsRange(measurements);
+        if (measurements.getMeasurementsRanges().size() > 1) { // copy contents from existing
+                                                               // templates
             final MeasurementsRange template = measurements.getMeasurementsRanges().get(0);
             // copy raw measurements
             if (template.getRawMeasurements() != null) {
-                factory.createRawMeasurements(mr);
+                FACTORY.createRawMeasurements(mr);
             }
             // copy aggregated measurements
             final Iterator<AggregatedMeasurements> iter = template.getAggregatedMeasurements().iterator();
             while (iter.hasNext()) {
-                final FixedWidthAggregatedMeasurements fwam = factory.createFixedWidthAggregatedMeasurements();
+                final FixedWidthAggregatedMeasurements fwam = FACTORY.createFixedWidthAggregatedMeasurements();
                 final FixedWidthAggregatedMeasurements fwtemplate = (FixedWidthAggregatedMeasurements) iter.next();
                 fwam.setIntervals(EcoreUtil.copy(fwtemplate.getIntervals()));
                 fwam.setAggregationOn(fwtemplate.getAggregationOn());
                 final Iterator<DataSeries> iter2 = fwtemplate.getDataSeries().iterator();
                 while (iter2.hasNext()) {
                     fwam.getDataSeries().add(
-                            new EmfmodelDataSeriesFromReferenceSwitch<Quantity>(daoFactory)
-                            .doSwitch(iter2.next()));
+                            new EmfmodelDataSeriesFromReferenceSwitch<Quantity>(daoFactory).doSwitch(iter2.next()));
                 }
             }
         }
         return mr;
-        // TODO: Add parameter currentTime to allow range(n-1).endtime=currentTime,range(n).starttime=currentTime
-        // TODO: Create MeasurementsRange for all Measurements of an ExperimentRun -> Refactor from Measurements to ExperimentRun
+        // TODO: Add parameter currentTime to allow
+        // range(n-1).endtime=currentTime,range(n).starttime=currentTime
+        // TODO: Create MeasurementsRange for all Measurements of an ExperimentRun -> Refactor from
+        // Measurements to ExperimentRun
     }
 
     /**
      * Creates the DAOs for the data series of a raw measurement.
      * 
-     * @param rm The raw measurements containing the data series.
+     * @param rm
+     *            The raw measurements containing the data series.
      */
     public static void createDAOsForRawMeasurements(final RawMeasurements rm) {
         // input validation
-        String errorMsg = "Could not create DAOs for raw measurements. A link to the DAO factory was missing: ";
+        String errorMsg = "Could not create DAOs for raw measurements. A link to the DAO FACTORY was missing: ";
         if (rm.getMeasurementsRange() == null) {
             errorMsg = "RawMeasurements must be assigned to a measurement range.";
         } else if (rm.getMeasurementsRange().getMeasurements() == null) {
@@ -112,19 +116,22 @@ public class MeasurementsUtility {
             errorMsg = null;
         }
         if (errorMsg != null) {
-            logger.log(Level.SEVERE, errorMsg);
+            LOGGER.log(Level.SEVERE, errorMsg);
             throw new IllegalArgumentException(errorMsg);
         }
         // creation
-        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementsRange().getMeasurements().getMeasure().getMetric());
+        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementsRange().getMeasurements().getMeasure()
+                .getMetric());
         new DAOFromBelowRawMeasurementSwitch().doSwitch(rm);
     }
 
     /**
      * Stores a new measurement at the last existing range.
      * 
-     * @param measurements The measurement of the experiment run for which a new measurement exists.
-     * @param data The measurement (data) itself.
+     * @param measurements
+     *            The measurement of the experiment run for which a new measurement exists.
+     * @param data
+     *            The measurement (data) itself.
      */
     public static void storeMeasurement(final Measurements measurements, final Measurement measurement) {
         final int size = measurements.getMeasurementsRanges().size();
@@ -137,18 +144,18 @@ public class MeasurementsUtility {
         if (rm != null) { // Add raw measurements
             if (!measurement.getMetricDesciption().equals(measurements.getMeasure().getMetric())) {
                 final String msg = "Tried to store measurement with a wrong metric. Expected: "
-                        + measurements.getMeasure().getMetric()
-                        + ", provided: "
-                        + measurement.getMetricDesciption()
+                        + measurements.getMeasure().getMetric() + ", provided: " + measurement.getMetricDesciption()
                         + ".";
-                logger.log(Level.SEVERE, msg);
+                LOGGER.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
             }
             final Iterator<DataSeries> iter = rm.getDataSeries().iterator();
             DataSeries ds;
             int index = -1;
-            final MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory().getDaoRegistry();
-            final EmfmodelAddMeasurementToDataSeriesSwitch addMmt = new EmfmodelAddMeasurementToDataSeriesSwitch(daoRegistry);
+            final MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository()
+                    .getMeasurementsDaoFactory().getDaoRegistry();
+            final EmfmodelAddMeasurementToDataSeriesSwitch addMmt = new EmfmodelAddMeasurementToDataSeriesSwitch(
+                    daoRegistry);
             while (iter.hasNext()) {
                 ds = iter.next();
                 index++;
@@ -167,10 +174,11 @@ public class MeasurementsUtility {
     }
 
     /**
-     * Requests a DAO for a ordinal measurement.
-     * If the DAO does not exists it is created and opened automatically (if possible).
+     * Requests a DAO for a ordinal measurement. If the DAO does not exists it is created and opened
+     * automatically (if possible).
      * 
-     * @param ds The data series for which the DAO should be created.
+     * @param ds
+     *            The data series for which the DAO should be created.
      * @return DAO for ordinal measurements.
      */
     @SuppressWarnings("unchecked")
@@ -233,7 +241,8 @@ public class MeasurementsUtility {
         return getMeasureFromRawMeasurements(rawMeasurements).getMetric();
     }
 
-    public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(final IdentifierBasedMeasurements idBasedMeasurement) {
+    public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(
+            final IdentifierBasedMeasurements idBasedMeasurement) {
         final RawMeasurements rawMeasurements = idBasedMeasurement.getRawMeasurements();
         final int position = rawMeasurements.getDataSeries().indexOf(idBasedMeasurement);
         final MetricDescription metricDescription = getMetricDescriptionFromRawMeasurements(rawMeasurements);
@@ -247,35 +256,38 @@ public class MeasurementsUtility {
     }
 
     /**
-     * Opens the data store behind the repository if necessary.
-     * Access is only allowed to opened repositories. Repositories may be
-     * reopened (and the also reclosed).
+     * Opens the data store behind the repository if necessary. Access is only allowed to opened
+     * repositories. Repositories may be reopened (and the also reclosed).
      * 
-     * @param repo Repository which should be opened.
-     * @throws DataNotAccessibleException if access to the repository fails.
+     * @param repo
+     *            Repository which should be opened.
+     * @throws DataNotAccessibleException
+     *             if access to the repository fails.
      */
     public static void ensureOpenRepository(final Repository repo) throws DataNotAccessibleException {
-        /* Attention: Using addRepository() of RepositoryManager already opens
-         * the DAO. open() is only necessary if you don't use the convenience
-         * function or closed the repository and want to reopen it.
+        /*
+         * Attention: Using addRepository() of RepositoryManager already opens the DAO. open() is
+         * only necessary if you don't use the convenience function or closed the repository and
+         * want to reopen it.
          */
         if (!repo.isOpen()) {
             repo.open();
         }
         if (!repo.isOpen()) {
             final String msg = "Repository could not be opened.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new DataNotAccessibleException(msg, null);
         }
     }
 
     /**
-     * Closes the data store behind the repository if necessary.
-     * Access is only allowed to opened repositories. Repositories may be
-     * reopened (and the also reclosed).
+     * Closes the data store behind the repository if necessary. Access is only allowed to opened
+     * repositories. Repositories may be reopened (and the also reclosed).
      * 
-     * @param repo Repository which should be closed.
-     * @throws DataNotAccessibleException if access to the repository fails.
+     * @param repo
+     *            Repository which should be closed.
+     * @throws DataNotAccessibleException
+     *             if access to the repository fails.
      */
     public static void ensureClosedRepository(final Repository repo) throws DataNotAccessibleException {
         if (repo.isOpen()) {
@@ -283,7 +295,7 @@ public class MeasurementsUtility {
         }
         if (repo.isOpen()) {
             final String msg = "Repository could not be closed.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new DataNotAccessibleException(msg, null);
         }
     }

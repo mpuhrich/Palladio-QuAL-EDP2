@@ -63,6 +63,9 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
      * @generated NOT
+     * 
+     *            FIXME Seriously? What the **?! Who was that?! (Crappy code; local file
+     *            repositories don't have IDs!) [Lehrig]
      */
     protected LocalDirectoryRepositoryImpl() {
         super();
@@ -132,9 +135,10 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     public void setUri(String newUri) {
         String oldUri = uri;
         uri = newUri;
-        if (eNotificationRequired())
+        if (eNotificationRequired()) {
             eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI,
                     oldUri, uri));
+        }
     }
 
     /**
@@ -252,8 +256,9 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (eIsProxy()) {
             return super.toString();
+        }
 
         StringBuffer result = new StringBuffer(super.toString());
         result.append(" (uri: ");

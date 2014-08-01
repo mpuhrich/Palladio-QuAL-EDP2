@@ -22,7 +22,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
  */
 public class RepositoryManager {
     /** Logger for this class. */
-    private static Logger logger = Logger.getLogger(RepositoryManager.class.getCanonicalName());
+    private static Logger LOGGER = Logger.getLogger(RepositoryManager.class.getCanonicalName());
 
     /** Central instance of a repository (singleton). */
     private static Repositories centralRepository = RepositoryFactory.eINSTANCE.createRepositories();
@@ -42,7 +42,7 @@ public class RepositoryManager {
             try {
                 newRepo.open();
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.WARNING, "Could not open repository after adding it to repositories.", e);
+                LOGGER.log(Level.WARNING, "Could not open repository after adding it to repositories.", e);
             }
         }
     }
@@ -62,11 +62,11 @@ public class RepositoryManager {
             try {
                 repo.close();
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.WARNING, "Could not close repository before removing it from the list.", e);
+                LOGGER.log(Level.WARNING, "Could not close repository before removing it from the list.", e);
             }
         }
         repos.getAvailableRepositories().remove(repo);
-        logger.log(Level.INFO, "Repository is removed.");
+        LOGGER.log(Level.INFO, "Repository is removed.");
     }
 
     /**
@@ -106,12 +106,12 @@ public class RepositoryManager {
         if (!location.exists()) {
             final boolean result = location.mkdir();
             if (result == false) {
-                logger.severe("Could not create directory at location " + pathToRepo);
+                LOGGER.severe("Could not create directory at location " + pathToRepo);
                 return null;
             }
         } else {
             if (!location.isDirectory()) {
-                logger.severe("Directory can't be created. A file of the same name already exists. Location: "
+                LOGGER.severe("Directory can't be created. A file of the same name already exists. Location: "
                         + pathToRepo);
                 return null;
             }
@@ -119,7 +119,7 @@ public class RepositoryManager {
 
         final String uriString = URI.createFileURI(pathToRepo).toString();
         ldRepo.setUri(uriString);
-        logger.info("The repository has been initialized. Location: " + pathToRepo + ".");
+        LOGGER.info("The repository has been initialized. Location: " + pathToRepo + ".");
         return ldRepo;
     }
 

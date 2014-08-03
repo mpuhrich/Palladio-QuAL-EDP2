@@ -14,7 +14,7 @@ public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
     /**
      * Logger for this class.
      */
-    private final static Logger logger = Logger
+    private final static Logger LOGGER = Logger
             .getLogger(DefaultUnitSwitch.class.getSimpleName());
 
     private final MetricDescription metric;
@@ -37,7 +37,7 @@ public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
 
     @Override
     public String caseBaseMetricDescription(final BaseMetricDescription object) {
-        logger.log(
+        LOGGER.log(
                 Level.SEVERE,
                 "Unsupported Base Metric: the selected measurements could not be opened, because it is neither described by a TextualBaseMetricDescription nor a NumericalBaseMetricDescription.");
         throw new RuntimeException("Unsupported Base Metric.");

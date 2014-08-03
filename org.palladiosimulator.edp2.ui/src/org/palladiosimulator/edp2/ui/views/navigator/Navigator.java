@@ -45,31 +45,27 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         treeViewer.setAutoExpandLevel(8);
 
         final ObservableListTreeContentProvider contentProvider = new ObservableListTreeContentProvider(
-                new NavigatorTreeFactoryImpl(),
-                new NavigatorTreeStructureAdvisorImpl());
+                new NavigatorTreeFactoryImpl(), new NavigatorTreeStructureAdvisorImpl());
         treeViewer.setContentProvider(contentProvider);
 
         // Label Provider; Observe model for change wrt to labels
         final IObservableSet set = contentProvider.getKnownElements();
-        final IObservableMap[] map = new IObservableMap [3];
-        map[0] = EMFProperties.value(
-                RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI
-                ).observeDetail(set);
-        map[1] = EMFProperties.value(
-                RepositoryPackage.Literals.LOCAL_MEMORY_REPOSITORY__DOMAIN
-                ).observeDetail(set);
-        map[2] = EMFProperties.value(
-                RepositoryPackage.Literals.REMOTE_CDO_REPOSITORY__URL
-                ).observeDetail(set);
+        final IObservableMap[] map = new IObservableMap[3];
+        map[0] = EMFProperties.value(RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI).observeDetail(set);
+        map[1] = EMFProperties.value(RepositoryPackage.Literals.LOCAL_MEMORY_REPOSITORY__DOMAIN).observeDetail(set);
+        map[2] = EMFProperties.value(RepositoryPackage.Literals.REMOTE_CDO_REPOSITORY__URL).observeDetail(set);
         // TODO: Observe other labels
         treeViewer.setLabelProvider(new NavigatorTreeLabelProviderImpl(map));
 
-        final IEMFListProperty nodes = EMFProperties.list(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES);
+        final IEMFListProperty nodes = EMFProperties
+                .list(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES);
         treeViewer.setInput(nodes.observe(EDP2Plugin.INSTANCE.getRepositories()));
 
         // Add double click listener
         treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
-        treeViewer.addDragSupport(DND.DROP_LINK, new Transfer[]{LocalSelectionTransfer.getTransfer()}, new DragSourceListener() {
+        treeViewer.addDragSupport(DND.DROP_LINK, new Transfer[] {
+            LocalSelectionTransfer.getTransfer()
+        }, new DragSourceListener() {
 
             @Override
             public void dragStart(final DragSourceEvent event) {
@@ -78,8 +74,7 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
 
             @Override
             public void dragSetData(final DragSourceEvent event) {
-                final IStructuredSelection selection = (IStructuredSelection) treeViewer
-                        .getSelection();
+                final IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
                 LocalSelectionTransfer.getTransfer().setSelection(selection);
             }
 

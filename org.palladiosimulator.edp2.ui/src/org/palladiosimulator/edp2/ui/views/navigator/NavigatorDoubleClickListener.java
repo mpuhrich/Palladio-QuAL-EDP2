@@ -9,25 +9,24 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultSequence;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultViewsWizard;
 
-
 /**
- * Listener for selections in the {@link Navigator}.
- * Creates a new {@link EDP2Source}, which is associated with the selected
- * {@link RawMeasurements}. Upon Double-click on a {@link RawMeasurements}
- * -object, it opens a Dialog and offers possible combinations of visualizations
- * and transformations to display the data encapsulated by the object. All
- * combinations are objects of the Type {@link DefaultSequence} and displayed in
- * the {@link DefaultViewsWizard}.
+ * Listener for selections in the {@link Navigator}. Creates a new {@link EDP2Source}, which is
+ * associated with the selected {@link RawMeasurements}. Upon Double-click on a
+ * {@link RawMeasurements} -object, it opens a Dialog and offers possible combinations of
+ * visualizations and transformations to display the data encapsulated by the object. All
+ * combinations are objects of the Type {@link DefaultSequence} and displayed in the
+ * {@link DefaultViewsWizard}.
  *
  * TODO This is a copied version of /org.palladiosimulator.edp2.editor/src-man/de/uka
- *      /ipd/sdq/edp2/models/ExperimentData/presentation/NavigatorDoubleClickListener.java.
- *      Get rid of redundancies.
+ * /ipd/sdq/edp2/models/ExperimentData/presentation/NavigatorDoubleClickListener.java. Get rid of
+ * redundancies.
  *
  * @author Sebastian Lehrig
  *
@@ -38,25 +37,26 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
     public void doubleClick(final DoubleClickEvent event) {
         Object selectedObject = null;
         if (event.getSelection() instanceof IStructuredSelection) {
-            final IStructuredSelection selection = (IStructuredSelection) event
-                    .getSelection();
+            final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
             selectedObject = selection.getFirstElement();
         }
-        RawMeasurements measurement = null;
+
         // check for the object to contain actual data
-        if (selectedObject instanceof RawMeasurements) {
-            measurement = (RawMeasurements) selectedObject;
+        if (selectedObject instanceof Measurements) {
 
-            if (measurement != null && !measurement.getDataSeries().isEmpty()) {
+            final Measurements measurements = (Measurements) selectedObject;
+            final RawMeasurements rawMeasurements = measurements.getMeasurementsRanges().get(0).getRawMeasurements();
 
-                final IDataSource edp2Source = new Edp2DataTupleDataSource(measurement);
+            if (rawMeasurements != null && !rawMeasurements.getDataSeries().isEmpty()) {
+
+                final IDataSource edp2Source = new Edp2DataTupleDataSource(rawMeasurements);
 
                 // open the wizard with reference to the selected source
                 // it shows possible visualizations, which are instances of
                 // DefaultSequence
                 final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
-                final WizardDialog wdialog = new WizardDialog(
-                        EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
+                final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench()
+                        .getActiveWorkbenchWindow().getShell(), wizard);
                 wdialog.open();
 
                 if (wdialog.getReturnCode() == Window.OK) {
@@ -66,8 +66,7 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
                     try {
                         final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
                                 .getActivePage();
-                        page.openEditor(input,
-                                "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
+                        page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
                     } catch (final PartInitException e) {
                         throw new RuntimeException(e);
                     }

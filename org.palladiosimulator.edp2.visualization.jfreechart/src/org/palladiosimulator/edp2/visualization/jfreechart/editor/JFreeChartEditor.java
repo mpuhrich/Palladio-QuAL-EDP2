@@ -10,14 +10,12 @@ import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisua
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;
 
 /**
- * Implementation of an {@link EditorPart}, which is responsible for showing
- * different subclasses of {@link JFreeChart}.
+ * Implementation of an {@link EditorPart}, which is responsible for showing different subclasses of
+ * {@link JFreeChart}.
  * 
  * @author Dominik Ernst
  */
-public class JFreeChartEditor
-extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
-{
+public class JFreeChartEditor extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput> {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor";
@@ -27,6 +25,7 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.part.WorkbenchPart#createPartControl(org.eclipse.swt.widgets.Composite)
      */
     @Override
@@ -42,7 +41,7 @@ extends AbstractEditor<JFreeChartVisualizationSingleDatastreamInput>
      */
     @Override
     public void updateEditorContents() {
-        final JFreeChart chart = ((JFreeChartVisualizationInput)getVisualisationInput()).createChart();
+        final JFreeChart chart = ((JFreeChartVisualizationInput) getVisualisationInput()).createChart();
         chartContainer.setChart(chart);
         chartContainer.forceRedraw();
     }

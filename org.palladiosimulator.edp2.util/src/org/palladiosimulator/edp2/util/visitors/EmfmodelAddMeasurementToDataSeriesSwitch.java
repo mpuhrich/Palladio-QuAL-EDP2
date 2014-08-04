@@ -20,12 +20,15 @@ import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.metricspec.Identifier;
 
-/**Switch class to add a provided measurement to a data series.
+/**
+ * Switch class to add a provided measurement to a data series.
+ * 
  * @author groenda
  */
 public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwitch<Boolean> {
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(EmfmodelAddMeasurementToDataSeriesSwitch.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger(EmfmodelAddMeasurementToDataSeriesSwitch.class
+            .getCanonicalName());
     /** Factory of EDP2 EMF model. */
     private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
     /** Registry for the DAOs. */
@@ -38,9 +41,10 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     }
 
     @Override
-    public Boolean caseIdentifierBasedMeasurements(final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
+    public Boolean caseIdentifierBasedMeasurements(
+            final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
         @SuppressWarnings("unchecked")
-        final MeasurementsDao<Identifier,Dimensionless> dao = daoRegistry.getMeasurementsDao(object.getValuesUuid());
+        final MeasurementsDao<Identifier, Dimensionless> dao = daoRegistry.getMeasurementsDao(object.getValuesUuid());
         if (!dao.isOpen()) {
             try {
                 dao.open();
@@ -49,22 +53,20 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
                 return false;
             }
         }
-        dao.getMeasurements().add((javax.measure.Measure<Identifier,Dimensionless>)measurementToAdd);
+        dao.getMeasurements().add((javax.measure.Measure<Identifier, Dimensionless>) measurementToAdd);
         return true;
     }
 
     @Override
-    public Boolean caseJSXmlMeasurements(
-            final JSXmlMeasurements object) {
+    public Boolean caseJSXmlMeasurements(final JSXmlMeasurements object) {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public Boolean caseDoubleBinaryMeasurements(
-            final DoubleBinaryMeasurements object) {
-        final BinaryMeasurementsDao<Double, Quantity> bmd =
-                (BinaryMeasurementsDao<Double, Quantity>) daoRegistry.getMeasurementsDao(object.getValuesUuid());
+    public Boolean caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
+        final BinaryMeasurementsDao<Double, Quantity> bmd = (BinaryMeasurementsDao<Double, Quantity>) daoRegistry
+                .getMeasurementsDao(object.getValuesUuid());
         if (!bmd.isOpen()) {
             try {
                 bmd.open();
@@ -73,16 +75,15 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
                 return false;
             }
         }
-        bmd.getMeasurements().add((javax.measure.Measure<Double,Quantity>)measurementToAdd);
+        bmd.getMeasurements().add((javax.measure.Measure<Double, Quantity>) measurementToAdd);
         return true;
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public Boolean caseLongBinaryMeasurements(
-            final LongBinaryMeasurements object) {
-        final BinaryMeasurementsDao<Long, Quantity> bmd =
-                (BinaryMeasurementsDao<Long, Quantity>) daoRegistry.getMeasurementsDao(object.getValuesUuid());
+    public Boolean caseLongBinaryMeasurements(final LongBinaryMeasurements object) {
+        final BinaryMeasurementsDao<Long, Quantity> bmd = (BinaryMeasurementsDao<Long, Quantity>) daoRegistry
+                .getMeasurementsDao(object.getValuesUuid());
         if (!bmd.isOpen()) {
             try {
                 bmd.open();
@@ -91,7 +92,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
                 return false;
             }
         }
-        bmd.getMeasurements().add((javax.measure.Measure<Long, Quantity>)measurementToAdd);
+        bmd.getMeasurements().add((javax.measure.Measure<Long, Quantity>) measurementToAdd);
         return true;
     }
 
@@ -103,7 +104,8 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     }
 
     /**
-     * @param measurementToAdd the measurementToAdd to set
+     * @param measurementToAdd
+     *            the measurementToAdd to set
      */
     public void setMeasurementToAdd(final Object measurementToAdd) {
         this.measurementToAdd = measurementToAdd;

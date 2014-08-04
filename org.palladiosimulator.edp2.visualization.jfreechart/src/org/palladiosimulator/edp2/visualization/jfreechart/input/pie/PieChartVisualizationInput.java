@@ -25,9 +25,7 @@ import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisua
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
-public class PieChartVisualizationInput
-extends JFreeChartVisualizationInput {
-
+public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     public PieChartVisualizationInput() {
         this(null);
@@ -39,7 +37,7 @@ extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -47,7 +45,9 @@ extends JFreeChartVisualizationInput {
         PieChartVisualizationInputFactory.saveState(memento, this);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistableElement#getFactoryId()
      */
     @Override
@@ -55,8 +55,13 @@ extends JFreeChartVisualizationInput {
         return PieChartVisualizationInputFactory.FACTORY_ID;
     }
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generatePlot(org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable, org.jfree.data.general.AbstractDataset)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generatePlot
+     * (org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable,
+     * org.jfree.data.general.AbstractDataset)
      */
     @Override
     protected Plot generatePlot(final PropertyConfigurable config, final AbstractDataset dataset) {
@@ -64,31 +69,38 @@ extends JFreeChartVisualizationInput {
         final PiePlot3D plot = new PiePlot3D((PieDataset) dataset);
         plot.setNoDataMessage("No data available.");
         plot.setIgnoreNullValues(true);
-        plot.setLabelGenerator(new StandardPieSectionLabelGenerator(configuration.isShowRelativeAmount() ? "{0} ({2})" : "{0} ({1})"));
+        plot.setLabelGenerator(new StandardPieSectionLabelGenerator(configuration.isShowRelativeAmount() ? "{0} ({2})"
+                : "{0} ({1})"));
 
         return plot;
     }
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generateDataset()
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generateDataset
+     * ()
      */
     @Override
     protected AbstractDataset generateDataset() {
         final DefaultPieDataset dataset = new DefaultPieDataset();
-        final Map<Comparable<?>,MutableDouble> bins = new HashMap<Comparable<?>,MutableDouble>();
+        final Map<Comparable<?>, MutableDouble> bins = new HashMap<Comparable<?>, MutableDouble>();
         final IDataSource datasource = getInputs().get(0).getDataSource();
         final IDataStream<TupleMeasurement> datastream = datasource.getDataStream();
 
         TupleMeasurement last = null;
         for (final TupleMeasurement tuple : datastream) {
             if (last != null) {
-                final Measure<Double,Duration> currentTime = tuple.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
-                final Measure<Double,Duration> lastTime = last.getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
+                final Measure<Double, Duration> currentTime = tuple
+                        .getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
+                final Measure<Double, Duration> lastTime = last
+                        .getMeasureForMetric(MetricDescriptionConstants.POINT_IN_TIME_METRIC);
                 final Comparable<?> state = (Comparable<?>) last.asArray()[1].getValue();
                 if (!bins.containsKey(state)) {
                     bins.put(state, new MutableDouble(0.0d));
                 }
-                bins.get(state).add(currentTime.doubleValue(SI.SECOND)-lastTime.doubleValue(SI.SECOND));
+                bins.get(state).add(currentTime.doubleValue(SI.SECOND) - lastTime.doubleValue(SI.SECOND));
             }
             last = tuple;
         }
@@ -100,7 +112,9 @@ extends JFreeChartVisualizationInput {
         return dataset;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.AbstractInput#getPropertyKeysTriggeringUpdate()
      */
     @Override
@@ -108,13 +122,16 @@ extends JFreeChartVisualizationInput {
         return Collections.emptySet();
     }
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#createConfiguration()
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#createConfiguration
+     * ()
      */
     @Override
     protected PropertyConfigurable createConfiguration() {
         return new PieChartVisualizationConfiguration();
     }
-
 
 }

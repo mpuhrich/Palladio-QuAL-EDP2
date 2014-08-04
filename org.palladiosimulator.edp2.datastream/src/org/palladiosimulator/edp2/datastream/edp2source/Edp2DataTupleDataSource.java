@@ -14,8 +14,7 @@ import org.palladiosimulator.edp2.util.MeasurementsUtility;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
-public class Edp2DataTupleDataSource
-extends AbstractDataSource implements IDataSource, IPersistableElement {
+public class Edp2DataTupleDataSource extends AbstractDataSource implements IDataSource, IPersistableElement {
 
     private final RawMeasurements rawMeasurements;
 
@@ -33,7 +32,7 @@ extends AbstractDataSource implements IDataSource, IPersistableElement {
 
     @Override
     public void saveState(final IMemento memento) {
-        Edp2DataTupleDataSourceFactory.saveState(memento,this);
+        Edp2DataTupleDataSourceFactory.saveState(memento, this);
     }
 
     @Override

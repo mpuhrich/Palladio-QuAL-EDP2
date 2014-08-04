@@ -23,16 +23,16 @@ public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastrea
 
     private final IVisualisationInput<T> visualizationInput;
 
-    public DatasourceDropTargetAdapter(final IVisualisationInput<T> iVisualisationInput){
+    public DatasourceDropTargetAdapter(final IVisualisationInput<T> iVisualisationInput) {
         this.visualizationInput = iVisualisationInput;
     }
 
     @Override
-    public void drop(final DropTargetEvent event){
-        final IStructuredSelection selection =
-                (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
-        if (selection.getFirstElement() instanceof Measurements){
-            
+    public void drop(final DropTargetEvent event) {
+        final IStructuredSelection selection = (IStructuredSelection) LocalSelectionTransfer.getTransfer()
+                .getSelection();
+        if (selection.getFirstElement() instanceof Measurements) {
+
             final Measurements measurements = (Measurements) selection.getFirstElement();
             final RawMeasurements rawMeasurements = measurements.getMeasurementsRanges().get(0).getRawMeasurements();
             final IDataSource newSource = new Edp2DataTupleDataSource(rawMeasurements);
@@ -41,15 +41,21 @@ public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastrea
         }
     }
 
-    /* (non-Javadoc)
-     * @see org.eclipse.swt.dnd.DropTargetAdapter#dragOperationChanged(org.eclipse.swt.dnd.DropTargetEvent)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.eclipse.swt.dnd.DropTargetAdapter#dragOperationChanged(org.eclipse.swt.dnd.DropTargetEvent
+     * )
      */
     @Override
     public void dragOperationChanged(final DropTargetEvent event) {
         event.detail = DND.DROP_LINK;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.swt.dnd.DropTargetAdapter#dragEnter(org.eclipse.swt.dnd.DropTargetEvent)
      */
     @Override

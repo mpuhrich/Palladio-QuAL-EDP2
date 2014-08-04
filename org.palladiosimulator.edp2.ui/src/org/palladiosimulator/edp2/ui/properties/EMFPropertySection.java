@@ -27,7 +27,8 @@ public class EMFPropertySection extends AbstractPropertySection {
         final Composite composite = getWidgetFactory().createFlatFormComposite(parent);
         page = new PropertySheetPage();
 
-        final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+        final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
+                ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
         adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());

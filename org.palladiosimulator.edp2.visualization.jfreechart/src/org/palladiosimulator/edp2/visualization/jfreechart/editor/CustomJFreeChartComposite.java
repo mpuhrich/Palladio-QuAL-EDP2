@@ -28,7 +28,9 @@ public class CustomJFreeChartComposite extends ChartComposite {
 
     private File selectFileDialog(final String filter) {
         final FileDialog dialog = new FileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
-        dialog.setFilterExtensions(new String[] { filter });
+        dialog.setFilterExtensions(new String[] {
+            filter
+        });
         dialog.setText("Enter the image file name");
         final String result = dialog.open();
         if (result != null) {

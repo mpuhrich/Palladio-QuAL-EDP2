@@ -22,18 +22,20 @@ import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
  * @author Dominik Ernst
  * 
  */
-public abstract class PropertyConfigurableElementFactory
-implements IElementFactory {
+public abstract class PropertyConfigurableElementFactory implements IElementFactory {
 
-    private static final String CHILD_INPUTS_MEMENTO_TAG = PropertyConfigurableElementFactory.class.getCanonicalName() + "childInputs";
+    private static final String CHILD_INPUTS_MEMENTO_TAG = PropertyConfigurableElementFactory.class.getCanonicalName()
+            + "childInputs";
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IElementFactory#createElement(org.eclipse.ui.IMemento)
      */
     @Override
     public IAdaptable createElement(final IMemento memento) {
         final IPropertyConfigurable result = createElementInternal(memento);
-        final Map<String, Object> newProperties = getPropertiesFromMemento(memento,result);
+        final Map<String, Object> newProperties = getPropertiesFromMemento(memento, result);
         result.setProperties(newProperties);
 
         return result;
@@ -61,9 +63,9 @@ implements IElementFactory {
      */
     @SuppressWarnings("rawtypes")
     public static void persistChildren(final IMemento memento, final Collection children) {
-        for (final Object childObject : children ) {
+        for (final Object childObject : children) {
             final IPersistableElement child = (IPersistableElement) childObject;
-            final IMemento subMemento = memento.createChild(CHILD_INPUTS_MEMENTO_TAG,child.getFactoryId());
+            final IMemento subMemento = memento.createChild(CHILD_INPUTS_MEMENTO_TAG, child.getFactoryId());
             child.saveState(subMemento);
         }
     }
@@ -81,16 +83,17 @@ implements IElementFactory {
     }
 
     /**
-     * Method used during restoration of persisted elements. It is the same for
-     * all implementations of {@link IDataFlow}.
+     * Method used during restoration of persisted elements. It is the same for all implementations
+     * of {@link IDataFlow}.
      * 
      * @param memento
      *            the {@link IMemento} from which the properties are read
      * @param propertiesToOverride
      *            the properties in which the values are to be replaced
      */
-    private Map<String,Object> getPropertiesFromMemento(final IMemento memento, final IPropertyConfigurable configurable) {
-        final Map<String,Object> result = new HashMap<String, Object>();
+    private Map<String, Object> getPropertiesFromMemento(final IMemento memento,
+            final IPropertyConfigurable configurable) {
+        final Map<String, Object> result = new HashMap<String, Object>();
         for (final String key : configurable.getKeys()) {
             result.put(key, deserialize(memento.getString(key), configurable.getPropertyType(key)));
         }
@@ -113,7 +116,7 @@ implements IElementFactory {
             col = new Color(col.getRed(), col.getBlue(), col.getBlue(), Integer.parseInt(string.substring(0, 1), 16));
             return col;
         }
-        throw new UnsupportedOperationException("Deserialize of unsupported type found: "+propertyType);
+        throw new UnsupportedOperationException("Deserialize of unsupported type found: " + propertyType);
     }
 
     protected abstract IPropertyConfigurable createElementInternal(IMemento memento);

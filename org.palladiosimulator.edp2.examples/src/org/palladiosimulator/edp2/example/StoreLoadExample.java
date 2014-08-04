@@ -1,4 +1,5 @@
 package org.palladiosimulator.edp2.example;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
  * Contains an example how data can be stored with EDP2.
+ * 
  * @author groenda
  */
 public class StoreLoadExample {
@@ -56,7 +58,9 @@ public class StoreLoadExample {
 
     /**
      * Initializes an instance of this class.
-     * @param directory Directory to be used to store measurements.
+     * 
+     * @param directory
+     *            Directory to be used to store measurements.
      */
     public StoreLoadExample(final String directory) {
         super();
@@ -78,8 +82,7 @@ public class StoreLoadExample {
         urlString = urlString.substring(0, urlString.length() - metricSpecModel.length() - 1);
         final URI uri = URI.createURI(urlString);
         final URI target = uri.appendSegment("");
-        URIConverter.URI_MAP.put(URI.createURI("pathmap://METRIC_SPEC_MODELS/"),
-                target);
+        URIConverter.URI_MAP.put(URI.createURI("pathmap://METRIC_SPEC_MODELS/"), target);
 
         final Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
         final Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -88,17 +91,20 @@ public class StoreLoadExample {
 
     /**
      * Initializes the repository in which the data will be stored.
-     * @param directory Path to directory in which the data should be stored.
+     * 
+     * @param directory
+     *            Path to directory in which the data should be stored.
      * @return the initialized repository.
      */
     private Repository initializeRepository(final String directory) {
-        // final LocalDirectoryRepository repo = RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
+        // final LocalDirectoryRepository repo =
+        // RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
         final LocalMemoryRepository repo = RepositoryFactory.eINSTANCE.createLocalMemoryRepository();
-        /* Add repository to a (optional) central directory of repositories.
-         * This can be useful to manage more than one repository or have links
-         * between different existing repositories.
-         * A repository must be connected to an instance of Repositories in order
-         * to be opened.*/
+        /*
+         * Add repository to a (optional) central directory of repositories. This can be useful to
+         * manage more than one repository or have links between different existing repositories. A
+         * repository must be connected to an instance of Repositories in order to be opened.
+         */
         RepositoryManager.addRepository(RepositoryManager.getCentralRepository(), repo);
         return repo;
     }
@@ -118,7 +124,8 @@ public class StoreLoadExample {
             final String storedData = storeExperimentRun();
             final String readData = loadExperimentRun(storedData);
             if (readData != null && !readData.equals(storedData)) {
-                throw new IllegalStateException("Stored and loaded data is not equal. Stored: " + storedData + "\nLoaded: " + readData);
+                throw new IllegalStateException("Stored and loaded data is not equal. Stored: " + storedData
+                        + "\nLoaded: " + readData);
             }
             streamResultData();
         } catch (final DataNotAccessibleException e) {
@@ -131,14 +138,18 @@ public class StoreLoadExample {
      */
     private void streamResultData() throws DataNotAccessibleException {
         MeasurementsUtility.ensureOpenRepository(ldRepo);
-        final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0).getMeasurementsRanges().get(0).getRawMeasurements());
-        final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0).getExperimentSettings().get(0).getMeasure().get(0).getMetric()){
+        final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0)
+                .getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0)
+                .getMeasurementsRanges().get(0).getRawMeasurements());
+        final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0)
+                .getExperimentSettings().get(0).getMeasure().get(0).getMetric()) {
 
             @Override
             protected Measurement computeOutputFromInput(final Measurement data) {
                 final List<Measure<?, ?>> next = new ArrayList<Measure<?, ?>>(2);
                 for (final Measure m : data.asList()) {
-                    final Measure<Double,Duration> newM = Measure.valueOf(m.doubleValue(SI.SECOND)+1.0d, m.getUnit());
+                    final Measure<Double, Duration> newM = Measure
+                            .valueOf(m.doubleValue(SI.SECOND) + 1.0d, m.getUnit());
                     next.add(newM);
                 }
                 return new TupleMeasurement((MetricSetDescription) data.getMetricDesciption(), next);
@@ -180,8 +191,11 @@ public class StoreLoadExample {
         return storedData;
     }
 
-    /**Main method to run the example.
-     * @param args Not used.
+    /**
+     * Main method to run the example.
+     * 
+     * @param args
+     *            Not used.
      */
     public static void main(final String[] args) {
         final StoreLoadExample example = new StoreLoadExample();

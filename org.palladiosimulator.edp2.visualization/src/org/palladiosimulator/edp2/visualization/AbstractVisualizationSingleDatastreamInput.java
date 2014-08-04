@@ -9,17 +9,15 @@ import org.palladiosimulator.edp2.datastream.IDataSourceListener;
 import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 
 /**
- * Interface used to describe elements that are managed by an
- * {@link AbstractVisualizationInput}. It is important to note that the actual
- * input to an {@link IVisualization} is the {@link AbstractVisualizationInput}
- * and not implementations of this interface.
+ * Interface used to describe elements that are managed by an {@link AbstractVisualizationInput}. It
+ * is important to note that the actual input to an {@link IVisualization} is the
+ * {@link AbstractVisualizationInput} and not implementations of this interface.
  * 
  * @author Dominik Ernst
  * 
  */
-public abstract class AbstractVisualizationSingleDatastreamInput
-extends AbstractInput
-implements IVisualisationSingleDatastreamInput {
+public abstract class AbstractVisualizationSingleDatastreamInput extends AbstractInput implements
+        IVisualisationSingleDatastreamInput {
 
     /**
      * The {@link AbstractVisualizationSingleDatastreamInput}'s or rather {@link IDataSink}'s
@@ -47,7 +45,7 @@ implements IVisualisationSingleDatastreamInput {
 
     public void setDataSource(final IDataSource source) {
         this.source = source;
-        final Map<String,Object> properties = new HashMap<String,Object>(getConfiguration().getProperties());
+        final Map<String, Object> properties = new HashMap<String, Object>(getConfiguration().getProperties());
         properties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, getDefaultName());
         getConfiguration().setProperties(properties);
         this.source.addObserver(new IDataSourceListener() {
@@ -59,7 +57,9 @@ implements IVisualisationSingleDatastreamInput {
         });
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.visualization.IVisualisationInput#getDefaultName()
      */
     private String getDefaultName() {
@@ -70,7 +70,8 @@ implements IVisualisationSingleDatastreamInput {
         }
     }
 
-    <T extends AbstractVisualizationSingleDatastreamInput> void setParentInput(final AbstractVisualizationInput<T> parent) {
+    <T extends AbstractVisualizationSingleDatastreamInput> void setParentInput(
+            final AbstractVisualizationInput<T> parent) {
         this.parentInput = parent;
     }
 
@@ -81,8 +82,7 @@ implements IVisualisationSingleDatastreamInput {
     @SuppressWarnings("unchecked")
     <T extends AbstractVisualizationSingleDatastreamInput> AbstractVisualizationInput<T> getParent() {
         if (parentInput == null) {
-            throw new IllegalStateException(
-                    "No Handle set for this JFreeChartEditorInput!");
+            throw new IllegalStateException("No Handle set for this JFreeChartEditorInput!");
         }
         return (AbstractVisualizationInput<T>) parentInput;
     }

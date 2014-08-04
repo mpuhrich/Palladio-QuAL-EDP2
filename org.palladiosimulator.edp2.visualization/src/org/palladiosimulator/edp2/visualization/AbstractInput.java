@@ -8,9 +8,8 @@ import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyListener;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 
-public abstract class AbstractInput
-extends AbstractObservable<IVisualisationInputListener>
-implements IPropertyConfigurable {
+public abstract class AbstractInput extends AbstractObservable<IVisualisationInputListener> implements
+        IPropertyConfigurable {
 
     private final PropertyConfigurable myProperties = createConfiguration();
 
@@ -76,8 +75,9 @@ implements IPropertyConfigurable {
         return myProperties.getDefaultConfiguration();
     }
 
-
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
      */
     @SuppressWarnings("rawtypes")
@@ -91,8 +91,12 @@ implements IPropertyConfigurable {
 
     protected abstract Set<String> getPropertyKeysTriggeringUpdate();
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(java.lang.String)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(
+     * java.lang.String)
      */
     @Override
     public Class<?> getPropertyType(final String key) {

@@ -22,18 +22,21 @@ import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.Backgrou
 import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.BackgroundMemoryListImpl.BinaryRepresentation;
 import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializer.Serializer;
 
-/**File-backed implementation of {@link BinaryMeasurementsDao}.
+/**
+ * File-backed implementation of {@link BinaryMeasurementsDao}.
+ * 
  * @author groenda
  * @author S. Becker
  */
-public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAccessDao<V,Q> implements BinaryMeasurementsDao<V,Q> {
+public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAccessDao<V, Q> implements
+        BinaryMeasurementsDao<V, Q> {
     /** Error logger for this class. */
     protected static final Logger logger = Logger.getLogger(FileBinaryMeasurementsDaoImpl.class.getCanonicalName());
 
     /** Serializer to use for the background list. */
     private Serializer<V> serializer = null;
     /** Background memory list used to actually handle the list. */
-    private BackgroundMemoryList<V,Q> backgroundMemoryList;
+    private BackgroundMemoryList<V, Q> backgroundMemoryList;
     /** Binary format of stored Measures. */
     private BinaryRepresentation binaryRepresentation = null;
     /** Unit in which all measurements are stored. */
@@ -58,8 +61,8 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
             throw new IllegalStateException(msg, null);
         }
         try {
-            this.backgroundMemoryList = new BackgroundMemoryListImpl<V,Q>(
-                    resourceFile.getAbsolutePath(),	serializer, binaryRepresentation, unit);
+            this.backgroundMemoryList = new BackgroundMemoryListImpl<V, Q>(resourceFile.getAbsolutePath(), serializer,
+                    binaryRepresentation, unit);
             setOpen();
         } catch (final IOException ioe) {
             final String msg = "Error accessing file on background storage.";
@@ -90,7 +93,7 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
     }
 
     @Override
-    public List<Measure<V,Q>> getMeasurements() {
+    public List<Measure<V, Q>> getMeasurements() {
         if (!isOpen()) {
             final String msg = "Binary measurements can only be requested if state is open.";
             logger.log(Level.WARNING, msg);
@@ -107,7 +110,8 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
     }
 
     /**
-     * @param binaryRepresentation the binaryRepresentation to set
+     * @param binaryRepresentation
+     *            the binaryRepresentation to set
      */
     public void setBinaryRepresentation(final BinaryRepresentation binaryRepresentation) {
         if (this.binaryRepresentation != null) {
@@ -127,7 +131,8 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
     }
 
     /**
-     * @param unit the unit to set
+     * @param unit
+     *            the unit to set
      */
     @Override
     public void setUnit(final Unit<Q> unit) {
@@ -140,8 +145,7 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
     }
 
     @Override
-    public synchronized void serialize(final ExtendedDataOutputStream output)
-            throws DataNotAccessibleException {
+    public synchronized void serialize(final ExtendedDataOutputStream output) throws DataNotAccessibleException {
         try {
             super.serialize(output);
             ExtendedIOUtil.writeString(output, getUnit().toString());
@@ -154,8 +158,7 @@ public class FileBinaryMeasurementsDaoImpl<V,Q extends Quantity> extends FileAcc
 
     @SuppressWarnings("unchecked")
     @Override
-    public synchronized void deserialize(final ExtendedDataInputStream input)
-            throws DataNotAccessibleException {
+    public synchronized void deserialize(final ExtendedDataInputStream input) throws DataNotAccessibleException {
         try {
             super.deserialize(input);
             unit = (Unit<Q>) Unit.valueOf(ExtendedIOUtil.readString(input));

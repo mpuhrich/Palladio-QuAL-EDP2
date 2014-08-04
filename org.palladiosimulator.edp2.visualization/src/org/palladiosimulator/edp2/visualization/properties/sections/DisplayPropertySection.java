@@ -175,7 +175,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     // look if the mouse event is in the editable column
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
-                        final Class<?> propertyType = editor.getVisualisationInput().getConfiguration().getPropertyType(item.getText(labelColumn));
+                        final Class<?> propertyType = editor.getVisualisationInput().getConfiguration()
+                                .getPropertyType(item.getText(labelColumn));
                         if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
                             openBooleanDialog(index, commonPropertiesTable);
                         } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
@@ -244,7 +245,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                     // look if the mouse event is in the editable column
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
-                        final Class<?> propertyType = lastSelectedInput.getConfiguration().getPropertyType(item.getText(labelColumn));
+                        final Class<?> propertyType = lastSelectedInput.getConfiguration().getPropertyType(
+                                item.getText(labelColumn));
                         if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
                             openBooleanDialog(index, commonPropertiesTable);
                         } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
@@ -324,7 +326,9 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
         editor.horizontalAlignment = SWT.LEFT;
         editor.grabHorizontal = true;
         final Combo comboBox = new Combo(table, SWT.DROP_DOWN);
-        comboBox.setItems(new String[] { "true", "false" });
+        comboBox.setItems(new String[] {
+                "true", "false"
+        });
         // set the currently selected item to the value stored in the cell
         comboBox.select(table.getItem(index).getText(editColumn).equals("true") ? 0 : 1);
 
@@ -380,7 +384,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
         colorPicker.setRGB(item.getBackground().getRGB());
         final RGB rgbColor = colorPicker.open();
         if (rgbColor != null) {
-            final Color newColor =  new Color(rgbColor.red, rgbColor.green, rgbColor.blue);
+            final Color newColor = new Color(rgbColor.red, rgbColor.green, rgbColor.blue);
             updateColorCell(item, newColor);
             updateProperties(item.getText(labelColumn), newColor, table);
         }
@@ -403,7 +407,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             item.setText(1, String.valueOf(properties.get(key)));
             final Class<?> propertyType = lastSelectedInput.getPropertyType(key);
             if (ClassUtils.isAssignable(propertyType, Color.class)) {
-                final Color col = (Color)properties.get(key);
+                final Color col = (Color) properties.get(key);
                 updateColorCell(item, col);
             }
         }
@@ -419,10 +423,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             item.setText(1, "(default Color)");
         } else {
             item.setText(1, "");
-            item.setBackground(
-                    1,
-                    new org.eclipse.swt.graphics.Color(specificPropertiesTable.getDisplay(), col.getRed(), col
-                            .getGreen(), col.getBlue()));
+            item.setBackground(1, new org.eclipse.swt.graphics.Color(specificPropertiesTable.getDisplay(),
+                    col.getRed(), col.getGreen(), col.getBlue()));
         }
     }
 
@@ -533,7 +535,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             editor = null;
             return false;
         } else {
-            editor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) window.getActivePage().getActiveEditor();
+            editor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) window.getActivePage()
+                    .getActiveEditor();
             return true;
         }
     }

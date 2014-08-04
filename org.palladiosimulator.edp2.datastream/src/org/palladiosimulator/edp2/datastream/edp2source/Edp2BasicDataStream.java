@@ -13,7 +13,7 @@ import org.palladiosimulator.edp2.util.MeasurementsUtility;
 import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
-public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V,Q> {
+public class Edp2BasicDataStream<V, Q extends Quantity> extends BasicDataStream<V, Q> {
 
     private final DataSeries dataSeries;
     private final MeasurementsDao<V, Q> measurementsDao;
@@ -27,8 +27,8 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
 
     @Override
     public Iterator<BasicMeasurement<V, Q>> iterator() {
-        final Iterator<Measure<V,Q>> innerIterator = measurementsDao.getMeasurements().iterator();
-        return new Iterator<BasicMeasurement<V,Q>>() {
+        final Iterator<Measure<V, Q>> innerIterator = measurementsDao.getMeasurements().iterator();
+        return new Iterator<BasicMeasurement<V, Q>>() {
 
             @Override
             public boolean hasNext() {
@@ -37,7 +37,7 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
 
             @Override
             public BasicMeasurement<V, Q> next() {
-                return new BasicMeasurement<V,Q>(innerIterator.next(), (BaseMetricDescription) getMetricDesciption());
+                return new BasicMeasurement<V, Q>(innerIterator.next(), (BaseMetricDescription) getMetricDesciption());
             }
 
             @Override
@@ -52,7 +52,7 @@ public class Edp2BasicDataStream<V,Q extends Quantity> extends BasicDataStream<V
         try {
             measurementsDao.close();
         } catch (final DataNotAccessibleException e) {
-            throw new RuntimeException("Failed to close EDP2 data stream",e);
+            throw new RuntimeException("Failed to close EDP2 data stream", e);
         }
     }
 

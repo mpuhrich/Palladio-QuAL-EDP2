@@ -25,15 +25,13 @@ import org.palladiosimulator.edp2.visualization.IVisualization;
 import org.palladiosimulator.edp2.visualization.datasource.DatasourceDropTargetAdapter;
 
 /**
- * Default implementation of an {@link EditorPart}. Provides common
- * functionality, which all editors that want to display experiment data must
- * have. Also enables the tabbed properties view.
+ * Default implementation of an {@link EditorPart}. Provides common functionality, which all editors
+ * that want to display experiment data must have. Also enables the tabbed properties view.
  * 
  * @author Dominik Ernst
  */
-public abstract class AbstractEditor<T extends AbstractVisualizationSingleDatastreamInput>
-extends EditorPart
-implements IVisualization<T>, IVisualisationInputListener {
+public abstract class AbstractEditor<T extends AbstractVisualizationSingleDatastreamInput> extends EditorPart implements
+        IVisualization<T>, IVisualisationInputListener {
 
     /** This editor's ID, e.g. for Referencing in extension points. */
     public static final String EDITOR_ID = "org.palladiosimulator.edp2.visualization.editors.AbstractEditor";
@@ -44,7 +42,7 @@ implements IVisualization<T>, IVisualisationInputListener {
     /** Reference on the current {@link TabbedPropertySheetPage}. */
     protected TabbedPropertySheetPage propertySheetPage;
 
-    /** The composite of the parent element, for reference if a new chart is added.*/
+    /** The composite of the parent element, for reference if a new chart is added. */
     protected Composite parent;
 
     /** Default constructor. */
@@ -54,8 +52,7 @@ implements IVisualization<T>, IVisualisationInputListener {
     /*
      * (non-Javadoc)
      * 
-     * @seeorg.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime.
-     * IProgressMonitor)
+     * @seeorg.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime. IProgressMonitor)
      */
     @Override
     public void doSave(final IProgressMonitor monitor) {
@@ -73,7 +70,7 @@ implements IVisualization<T>, IVisualisationInputListener {
     @SuppressWarnings("unchecked")
     @Override
     protected void setInput(final IEditorInput input) {
-        this.input = (AbstractVisualizationInput<T>)input;
+        this.input = (AbstractVisualizationInput<T>) input;
         super.setInput(input);
     }
 
@@ -84,14 +81,14 @@ implements IVisualization<T>, IVisualisationInputListener {
      * org.eclipse.ui.IEditorInput)
      */
     @Override
-    public void init(final IEditorSite site, final IEditorInput input)
-            throws PartInitException {
+    public void init(final IEditorSite site, final IEditorInput input) throws PartInitException {
         setSite(site);
         setInput(input);
     }
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.part.EditorPart#isDirty()
      */
     @Override
@@ -101,6 +98,7 @@ implements IVisualization<T>, IVisualisationInputListener {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.part.EditorPart#isSaveAsAllowed()
      */
     @Override
@@ -110,6 +108,7 @@ implements IVisualization<T>, IVisualisationInputListener {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -118,6 +117,7 @@ implements IVisualization<T>, IVisualisationInputListener {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
      */
     @Override
@@ -127,6 +127,7 @@ implements IVisualization<T>, IVisualisationInputListener {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistableEditor#restoreState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -135,19 +136,17 @@ implements IVisualization<T>, IVisualisationInputListener {
     }
 
     /**
-     * Creates a simple selection provider, which always returns just the input.
-     * This selectionProvider is needed for displaying of the properties view
-     * for this editor.
+     * Creates a simple selection provider, which always returns just the input. This
+     * selectionProvider is needed for displaying of the properties view for this editor.
      * 
-     * @return a selection provider which selection is always the the editor
-     *         input in the attribute {@link #input}
+     * @return a selection provider which selection is always the the editor input in the attribute
+     *         {@link #input}
      */
     protected ISelectionProvider createSelectionProvider() {
         return new ISelectionProvider() {
 
             @Override
-            public void addSelectionChangedListener(
-                    final ISelectionChangedListener listener) {
+            public void addSelectionChangedListener(final ISelectionChangedListener listener) {
             }
 
             @Override
@@ -156,8 +155,7 @@ implements IVisualization<T>, IVisualisationInputListener {
             }
 
             @Override
-            public void removeSelectionChangedListener(
-                    final ISelectionChangedListener listener) {
+            public void removeSelectionChangedListener(final ISelectionChangedListener listener) {
             }
 
             @Override
@@ -181,14 +179,12 @@ implements IVisualization<T>, IVisualisationInputListener {
     }
 
     /**
-     * Creates a new tabbed property sheet page if no page exits, otherwise it
-     * returns the old one.
+     * Creates a new tabbed property sheet page if no page exits, otherwise it returns the old one.
      * 
      * @return a property sheet, saved in {@link #propertySheetPage}
      */
     private IPropertySheetPage getPropertySheetPage() {
-        if (propertySheetPage == null
-                || propertySheetPage.getControl().isDisposed()) {
+        if (propertySheetPage == null || propertySheetPage.getControl().isDisposed()) {
             propertySheetPage = new TabbedPropertySheetPage(this, false);
         }
         return propertySheetPage;
@@ -197,8 +193,7 @@ implements IVisualization<T>, IVisualisationInputListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+     * @see org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
      * #getContributorId()
      */
     @Override
@@ -208,10 +203,11 @@ implements IVisualization<T>, IVisualisationInputListener {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.part.EditorPart#getEditorInput()
      */
     @Override
-    public IEditorInput getEditorInput(){
+    public IEditorInput getEditorInput() {
         return getVisualisationInput();
     }
 
@@ -221,7 +217,7 @@ implements IVisualization<T>, IVisualisationInputListener {
         final DropTarget target = new DropTarget(control, operations);
 
         final Transfer[] transferTypes = new Transfer[] {
-                LocalSelectionTransfer.getTransfer()
+            LocalSelectionTransfer.getTransfer()
         };
         target.setTransfer(transferTypes);
         target.addDropListener(new DatasourceDropTargetAdapter(getVisualisationInput()));

@@ -99,7 +99,9 @@ public enum RepositoryStatus implements Enumerator {
      * 
      * @generated
      */
-    private static final RepositoryStatus[] VALUES_ARRAY = new RepositoryStatus[] { OPEN, CLOSED, DELETED, };
+    private static final RepositoryStatus[] VALUES_ARRAY = new RepositoryStatus[] {
+            OPEN, CLOSED, DELETED,
+    };
 
     /**
      * A public read-only list of all the '<em><b>Status</b></em>' enumerators. <!-- begin-user-doc

@@ -14,15 +14,14 @@ import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
 /**
  * EMF switch to create DAOs based on a raw measurement or a lower element (e.g. data series).
+ * 
  * @author groenda
  */
-public class DAOFromBelowRawMeasurementSwitch
-extends ExperimentDataSwitch<Boolean>
-{
+public class DAOFromBelowRawMeasurementSwitch extends ExperimentDataSwitch<Boolean> {
     @Override
     public Boolean caseRawMeasurements(final RawMeasurements object) {
         boolean success = true;
-        for(final DataSeries dataSeries : object.getDataSeries()) {
+        for (final DataSeries dataSeries : object.getDataSeries()) {
             success &= doSwitch(dataSeries);
         }
         return success;
@@ -31,30 +30,35 @@ extends ExperimentDataSwitch<Boolean>
     @Override
     public Boolean caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object) {
         final MeasurementsDaoFactory daoFactory = getMeasurementsDaoFactoryFromMeasurements(object);
-        return null != daoFactory.createNominalMeasurementsDao(object.getValuesUuid(), MeasurementsUtility.getTextualBaseMetricDescriptionFromIdentifierMeasurement(object), Unit.ONE /* TODO object.getStorageUnit()*/);
+        return null != daoFactory.createNominalMeasurementsDao(object.getValuesUuid(),
+                MeasurementsUtility.getTextualBaseMetricDescriptionFromIdentifierMeasurement(object), Unit.ONE /*
+                                                                                                                * TODO
+                                                                                                                * object
+                                                                                                                * .
+                                                                                                                * getStorageUnit
+                                                                                                                * (
+                                                                                                                * )
+                                                                                                                */);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public Boolean caseLongBinaryMeasurements(final LongBinaryMeasurements object) {
         final MeasurementsDaoFactory daoFactory = getMeasurementsDaoFactoryFromMeasurements(object);
-        return null != daoFactory.createLongMeasurementsDao(object
-                .getValuesUuid(), object.getStorageUnit());
+        return null != daoFactory.createLongMeasurementsDao(object.getValuesUuid(), object.getStorageUnit());
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public Boolean caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
         final MeasurementsDaoFactory daoFactory = getMeasurementsDaoFactoryFromMeasurements(object);
-        return null != daoFactory.createDoubleMeasurementsDao(object
-                .getValuesUuid(), object.getStorageUnit());
+        return null != daoFactory.createDoubleMeasurementsDao(object.getValuesUuid(), object.getStorageUnit());
     }
 
     @Override
     public Boolean caseJSXmlMeasurements(final JSXmlMeasurements object) {
         final MeasurementsDaoFactory daoFactory = getMeasurementsDaoFactoryFromMeasurements(object);
-        return null != daoFactory.createJScienceXmlMeasurementsDao(object
-                .getValuesUuid());
+        return null != daoFactory.createJScienceXmlMeasurementsDao(object.getValuesUuid());
     }
 
     /**
@@ -62,8 +66,7 @@ extends ExperimentDataSwitch<Boolean>
      * @return
      */
     protected MeasurementsDaoFactory getMeasurementsDaoFactoryFromMeasurements(final DataSeries dataSeries) {
-        return dataSeries.getRawMeasurements().getMeasurementsRange()
-                .getMeasurements().getMeasure().getExperimentGroup()
-                .getRepository().getMeasurementsDaoFactory();
+        return dataSeries.getRawMeasurements().getMeasurementsRange().getMeasurements().getMeasure()
+                .getExperimentGroup().getRepository().getMeasurementsDaoFactory();
     }
 }

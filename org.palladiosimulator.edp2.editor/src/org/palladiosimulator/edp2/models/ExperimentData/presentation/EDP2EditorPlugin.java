@@ -40,7 +40,9 @@ public final class EDP2EditorPlugin extends EMFPlugin {
      * @generated
      */
     public EDP2EditorPlugin() {
-        super(new ResourceLocator[] { IdentifierEditPlugin.INSTANCE, MetricSpecEditPlugin.INSTANCE, });
+        super(new ResourceLocator[] {
+                IdentifierEditPlugin.INSTANCE, MetricSpecEditPlugin.INSTANCE,
+        });
     }
 
     /**

@@ -27,11 +27,15 @@ import org.palladiosimulator.metricspec.BaseMetricDescription;
  * @author Dominik Ernst
  * 
  */
-public abstract class JFreeChartVisualizationInput
-extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
+public abstract class JFreeChartVisualizationInput extends
+        AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.IVisualisationInput#createNewInput(org.palladiosimulator.edp2.datastream.IDataSource)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.IVisualisationInput#createNewInput(org.palladiosimulator
+     * .edp2.datastream.IDataSource)
      */
     @Override
     public JFreeChartVisualizationSingleDatastreamInput createNewInput(final IDataSource source) {
@@ -105,7 +109,9 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
         return getName();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
      */
     @Override
@@ -113,7 +119,9 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
         return getInputs().size() == 0;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -122,9 +130,8 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
     }
 
     /**
-     * Creates a new {@link JFreeChart}. Charts are specific for each
-     * EditorInput. Typically an update of the current DataSet is recommended,
-     * before the chart itself is updated.
+     * Creates a new {@link JFreeChart}. Charts are specific for each EditorInput. Typically an
+     * update of the current DataSet is recommended, before the chart itself is updated.
      */
     public final JFreeChart createChart() {
         if (currentCachedDataset == null) {
@@ -133,9 +140,8 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
         final JFreeChartVisualizationConfiguration configuration = getConfiguration();
         final Plot plot = generatePlot(configuration, currentCachedDataset);
 
-        return new JFreeChart(
-                configuration.isShowTitle() ? configuration.getTitle() : null,
-                        JFreeChart.DEFAULT_TITLE_FONT, plot, configuration.isShowLegend());
+        return new JFreeChart(configuration.isShowTitle() ? configuration.getTitle() : null,
+                JFreeChart.DEFAULT_TITLE_FONT, plot, configuration.isShowLegend());
     }
 
     @Override
@@ -144,8 +150,8 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
     }
 
     protected String getAxisDefaultLabel(final int pos) {
-        final BaseMetricDescription metric = MetricDescriptionUtility
-                .toBaseMetricDescriptions(getInputs().get(0).getDataSource().getMetricDesciption())[pos];
+        final BaseMetricDescription metric = MetricDescriptionUtility.toBaseMetricDescriptions(getInputs().get(0)
+                .getDataSource().getMetricDesciption())[pos];
         return metric.getName() + " [" + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
     }
 
@@ -155,7 +161,8 @@ extends AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput>
     protected void configureSeriesColors(final AbstractRenderer renderer) {
         for (int i = 0; i < getInputs().size(); i++) {
             final JFreeChartVisualizationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
-            if (config.getColor() != null && !config.getColor().equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)){
+            if (config.getColor() != null
+                    && !config.getColor().equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)) {
                 final Color col = config.getColor();
                 renderer.setSeriesPaint(i, col);
             } else {

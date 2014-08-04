@@ -24,17 +24,17 @@ public class IdentifierSerializer implements Serializer<Identifier> {
     @Override
     public byte[] serialise(final Object[] objects, final int count) {
         final Long[] internalData = new Long[count];
-        for (int i = 0; i<count; i++) {
+        for (int i = 0; i < count; i++) {
             internalData[i] = (long) allIdentifier.indexOf(objects[i]);
         }
-        return internalSerialiser.serialise(internalData,count);
+        return internalSerialiser.serialise(internalData, count);
     }
 
     @Override
     public Identifier[] deserialise(final byte[] bytes) {
         final Long[] internalData = internalSerialiser.deserialise(bytes);
         final Identifier[] result = new Identifier[internalData.length];
-        for (int i = 0; i<internalData.length; i++) {
+        for (int i = 0; i < internalData.length; i++) {
             final int index = internalData[i].intValue();
             result[i] = allIdentifier.get(index);
         }

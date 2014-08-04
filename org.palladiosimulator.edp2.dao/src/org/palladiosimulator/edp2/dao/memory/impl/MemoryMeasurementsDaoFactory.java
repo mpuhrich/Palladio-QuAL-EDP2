@@ -18,7 +18,8 @@ public class MemoryMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
     @Override
     public <Q extends Quantity> BinaryMeasurementsDao<Double, Q> createDoubleMeasurementsDao(final String uuid,
             final Unit<Q> storageUnit) {
-        final MemoryBinaryMeasurementsDaoImpl<Double, Q> result = new MemoryBinaryMeasurementsDaoImpl<Double,Q>(storageUnit);
+        final MemoryBinaryMeasurementsDaoImpl<Double, Q> result = new MemoryBinaryMeasurementsDaoImpl<Double, Q>(
+                storageUnit);
         registry.register(result, uuid);
         return result;
     }
@@ -26,7 +27,8 @@ public class MemoryMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
     @Override
     public <Q extends Quantity> BinaryMeasurementsDao<Long, Q> createLongMeasurementsDao(final String uuid,
             final Unit<Q> storageUnit) {
-        final MemoryBinaryMeasurementsDaoImpl<Long, Q> result = new MemoryBinaryMeasurementsDaoImpl<Long,Q>(storageUnit);
+        final MemoryBinaryMeasurementsDaoImpl<Long, Q> result = new MemoryBinaryMeasurementsDaoImpl<Long, Q>(
+                storageUnit);
         registry.register(result, uuid);
         return result;
     }
@@ -34,7 +36,8 @@ public class MemoryMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
     @Override
     public BinaryMeasurementsDao<Identifier, Dimensionless> createNominalMeasurementsDao(final String uuid,
             final TextualBaseMetricDescription metric, final Unit<Dimensionless> one) {
-        final MemoryBinaryMeasurementsDaoImpl<Identifier, Dimensionless> result = new MemoryBinaryMeasurementsDaoImpl<Identifier,Dimensionless>(one);
+        final MemoryBinaryMeasurementsDaoImpl<Identifier, Dimensionless> result = new MemoryBinaryMeasurementsDaoImpl<Identifier, Dimensionless>(
+                one);
         registry.register(result, uuid);
         return result;
     }

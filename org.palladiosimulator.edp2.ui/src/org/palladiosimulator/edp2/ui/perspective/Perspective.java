@@ -10,17 +10,16 @@ import org.eclipse.ui.IPerspectiveFactory;
  * @author Sebastian Lehrig
  */
 public class Perspective implements IPerspectiveFactory {
-	private final String NAVIGATOR_ID = "org.palladiosimulator.edp2.ui.views.navigator";
+    private final String NAVIGATOR_ID = "org.palladiosimulator.edp2.ui.views.navigator";
 
-	@Override
-	public void createInitialLayout(IPageLayout layout) {
-		String editorArea = layout.getEditorArea();
-		layout.setEditorAreaVisible(true);
+    @Override
+    public void createInitialLayout(IPageLayout layout) {
+        String editorArea = layout.getEditorArea();
+        layout.setEditorAreaVisible(true);
 
-		IFolderLayout navFolder = layout.createFolder("experiments",
-				IPageLayout.LEFT, 0.33f, editorArea);
-		navFolder.addView(NAVIGATOR_ID);
-		layout.getViewLayout(NAVIGATOR_ID).setCloseable(false);
-	}
+        IFolderLayout navFolder = layout.createFolder("experiments", IPageLayout.LEFT, 0.33f, editorArea);
+        navFolder.addView(NAVIGATOR_ID);
+        layout.getViewLayout(NAVIGATOR_ID).setCloseable(false);
+    }
 
 }

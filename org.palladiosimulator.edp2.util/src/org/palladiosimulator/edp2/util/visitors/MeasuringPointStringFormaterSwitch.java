@@ -5,8 +5,12 @@ import org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointSwitc
 
 public class MeasuringPointStringFormaterSwitch extends MeasuringpointSwitch<String> {
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointSwitch#caseStringMeasuringPoint(org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointSwitch#
+     * caseStringMeasuringPoint
+     * (org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint)
      */
     @Override
     public String caseStringMeasuringPoint(final StringMeasuringPoint object) {

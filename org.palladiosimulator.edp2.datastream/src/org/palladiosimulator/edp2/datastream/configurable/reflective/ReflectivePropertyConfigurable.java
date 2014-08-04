@@ -27,7 +27,7 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
         try {
             for (final Field f : keyFieldMap.values()) {
                 f.setAccessible(true);
-                result.put(getKeynameForField(f),f.get(this));
+                result.put(getKeynameForField(f), f.get(this));
             }
         } catch (final IllegalAccessException ex) {
             throw new RuntimeException(ex);
@@ -48,7 +48,7 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
             final Field f = keyFieldMap.get(key);
             try {
                 f.setAccessible(true);
-                f.set(this,newValue);
+                f.set(this, newValue);
             } catch (final IllegalArgumentException e) {
                 throw new RuntimeException(e);
             } catch (final IllegalAccessException e) {
@@ -66,7 +66,7 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
      */
     private void initKeyFieldMap() {
         if (keyFieldMap == null) {
-            final Map<String,Field> keys = new HashMap<String,Field>();
+            final Map<String, Field> keys = new HashMap<String, Field>();
             Class<?> currentClass = getClass();
             while (currentClass != null) {
                 for (final Field f : currentClass.getDeclaredFields()) {

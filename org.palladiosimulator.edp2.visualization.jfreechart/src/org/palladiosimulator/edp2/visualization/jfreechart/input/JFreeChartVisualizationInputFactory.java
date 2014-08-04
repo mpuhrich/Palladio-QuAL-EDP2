@@ -9,18 +9,19 @@ import org.eclipse.ui.IPersistableElement;
 import org.palladiosimulator.edp2.datastream.elementfactories.PropertyConfigurableElementFactory;
 
 /**
- * Factory class for {@link JFreeChartVisualizationInput}. Invokes persistence of
- * all child elements managed by this input
+ * Factory class for {@link JFreeChartVisualizationInput}. Invokes persistence of all child elements
+ * managed by this input
  * 
  * @author Steffen Becker
  * 
  */
-public abstract class JFreeChartVisualizationInputFactory
-extends PropertyConfigurableElementFactory implements IElementFactory {
+public abstract class JFreeChartVisualizationInputFactory extends PropertyConfigurableElementFactory implements
+        IElementFactory {
 
     @Override
     public IAdaptable createElement(final IMemento memento) {
-        final JFreeChartVisualizationInput result = (JFreeChartVisualizationInput) super.createElement(memento).getAdapter(JFreeChartVisualizationInput.class);
+        final JFreeChartVisualizationInput result = (JFreeChartVisualizationInput) super.createElement(memento)
+                .getAdapter(JFreeChartVisualizationInput.class);
         final List<IPersistableElement> children = PropertyConfigurableElementFactory.loadChildren(memento);
         for (final IPersistableElement child : children) {
             result.addInput((JFreeChartVisualizationSingleDatastreamInput) child);
@@ -29,7 +30,7 @@ extends PropertyConfigurableElementFactory implements IElementFactory {
     }
 
     public static void saveState(final IMemento memento, final JFreeChartVisualizationInput input) {
-        PropertyConfigurableElementFactory.saveConfigurationState(memento,input);
+        PropertyConfigurableElementFactory.saveConfigurationState(memento, input);
         PropertyConfigurableElementFactory.persistChildren(memento, input.getInputs());
     }
 

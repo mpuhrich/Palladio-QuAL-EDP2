@@ -25,14 +25,15 @@ public class Edp2DataTupleDataSourceFactory extends PropertyConfigurableElementF
                 break;
             }
         }
-        final RawMeasurements measurements = (RawMeasurements) repo.getExperimentGroups().get(0).eResource().getEObject(measurementID);
+        final RawMeasurements measurements = (RawMeasurements) repo.getExperimentGroups().get(0).eResource()
+                .getEObject(measurementID);
         return new Edp2DataTupleDataSource(measurements);
     }
 
-    public static void saveState(final IMemento memento,
-            final Edp2DataTupleDataSource edp2DataTupleDataSource) {
+    public static void saveState(final IMemento memento, final Edp2DataTupleDataSource edp2DataTupleDataSource) {
         final RawMeasurements measurements = edp2DataTupleDataSource.getRawMeasurements();
-        memento.putString(REPOSITORY_UUID, measurements.getMeasurementsRange().getMeasurements().getExperimentRun().getExperimentSetting().getExperimentGroup().getRepository().getId());
+        memento.putString(REPOSITORY_UUID, measurements.getMeasurementsRange().getMeasurements().getExperimentRun()
+                .getExperimentSetting().getExperimentGroup().getRepository().getId());
         memento.putString(MEASUREMENTS_UUID, measurements.getId());
     }
 

@@ -19,7 +19,8 @@ public class EMFLabelProvider extends AdapterFactoryLabelProvider implements ILa
     }
 
     private static AdapterFactory createAdapterFactory() {
-        final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+        final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
+                ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
         adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());

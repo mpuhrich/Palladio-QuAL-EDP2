@@ -14,9 +14,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
-public class EmfmodelDataSeriesFromReferenceSwitch<Q extends Quantity>
-extends ExperimentDataSwitch<DataSeries>
-{
+public class EmfmodelDataSeriesFromReferenceSwitch<Q extends Quantity> extends ExperimentDataSwitch<DataSeries> {
 
     /** Factory for Emfmodel. */
     private static final ExperimentDataFactory experimentDatafactory = ExperimentDataFactory.eINSTANCE;
@@ -36,7 +34,8 @@ extends ExperimentDataSwitch<DataSeries>
     @Override
     public DataSeries caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object) {
         final IdentifierBasedMeasurements ibm = experimentDatafactory.createIdentifierBasedMeasurements();
-        daoFactory.createNominalMeasurementsDao(valuesId, MeasurementsUtility.getTextualBaseMetricDescriptionFromIdentifierMeasurement(object));
+        daoFactory.createNominalMeasurementsDao(valuesId,
+                MeasurementsUtility.getTextualBaseMetricDescriptionFromIdentifierMeasurement(object));
         ibm.setValuesUuid(valuesId);
         return ibm;
     }
@@ -55,7 +54,7 @@ extends ExperimentDataSwitch<DataSeries>
         final DoubleBinaryMeasurements dbm = experimentDatafactory.createDoubleBinaryMeasurements();
         dbm.setValuesUuid(valuesId);
         dbm.setStorageUnit(object.getStorageUnit());
-        final BinaryMeasurementsDao<Double,Q> bmdao = daoFactory.<Q>createDoubleMeasurementsDao(valuesId);
+        final BinaryMeasurementsDao<Double, Q> bmdao = daoFactory.<Q> createDoubleMeasurementsDao(valuesId);
         bmdao.setUnit(dbm.getStorageUnit());
         return dbm;
     }
@@ -66,7 +65,7 @@ extends ExperimentDataSwitch<DataSeries>
         final LongBinaryMeasurements lbm = experimentDatafactory.createLongBinaryMeasurements();
         lbm.setValuesUuid(valuesId);
         lbm.setStorageUnit(object.getStorageUnit());
-        final BinaryMeasurementsDao<Long,Q> bmdao = daoFactory.<Q>createLongMeasurementsDao(valuesId);
+        final BinaryMeasurementsDao<Long, Q> bmdao = daoFactory.<Q> createLongMeasurementsDao(valuesId);
         bmdao.setUnit(lbm.getStorageUnit());
         return lbm;
     }

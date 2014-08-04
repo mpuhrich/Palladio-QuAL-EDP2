@@ -12,34 +12,31 @@ import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
  */
 public class DialogsImages {
 
-	/**
-	 * Names of images used to represent actions in ToolBar
-	 */
-	public static final String TREEROOT = "tree_root";
+    /**
+     * Names of images used to represent actions in ToolBar
+     */
+    public static final String TREEROOT = "tree_root";
 
-	// For the toolbar images
-	public static ImageRegistry imageRegistry = new ImageRegistry();
+    // For the toolbar images
+    public static ImageRegistry imageRegistry = new ImageRegistry();
 
-	/**
-	 * Note: An image registry owns all of the image objects registered with it,
-	 * and automatically disposes of them the SWT Display is disposed.
-	 */
-	static {
-		String iconPath = "icons/";
+    /**
+     * Note: An image registry owns all of the image objects registered with it, and automatically
+     * disposes of them the SWT Display is disposed.
+     */
+    static {
+        String iconPath = "icons/";
 
-		imageRegistry.put(TREEROOT,
-				 getImageDescriptor(iconPath + TREEROOT + ".gif"));
-	}
+        imageRegistry.put(TREEROOT, getImageDescriptor(iconPath + TREEROOT + ".gif"));
+    }
 
-	/**
-	 * @param imageFilePath
-	 *            the relative to the root of the plug-in; the path must be
-	 *            legal
-	 * @return an image descriptor, or null if no image could be found
-	 */
-	public static ImageDescriptor getImageDescriptor(String imageFilePath) {
-		return AbstractUIPlugin.imageDescriptorFromPlugin(
-		        EDP2UIPlugin.PLUGIN_ID, imageFilePath);
-	}
+    /**
+     * @param imageFilePath
+     *            the relative to the root of the plug-in; the path must be legal
+     * @return an image descriptor, or null if no image could be found
+     */
+    public static ImageDescriptor getImageDescriptor(String imageFilePath) {
+        return AbstractUIPlugin.imageDescriptorFromPlugin(EDP2UIPlugin.PLUGIN_ID, imageFilePath);
+    }
 
 }

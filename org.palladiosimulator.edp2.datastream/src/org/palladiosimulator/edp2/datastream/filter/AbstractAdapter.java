@@ -12,10 +12,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.measurementframework.Measurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 
-public abstract class AbstractAdapter
-extends AbstractDataSource
-implements IDataSink, IDataSource
-{
+public abstract class AbstractAdapter extends AbstractDataSource implements IDataSink, IDataSource {
 
     protected final IDataStream<Measurement> inputDataStream;
     private final IDataSource datasource;
@@ -31,7 +28,9 @@ implements IDataSink, IDataSource
         return datasource;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getDataStream()
      */
     @Override
@@ -83,7 +82,9 @@ implements IDataSink, IDataSource
 
     protected abstract Measurement computeOutputFromInput(Measurement next);
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.datastream.AbstractDataSource#createProperties()
      */
     @Override
@@ -91,13 +92,14 @@ implements IDataSink, IDataSource
         return new EmptyConfiguration();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getMeasuringPoint()
      */
     @Override
     public MeasuringPoint getMeasuringPoint() {
         return datasource.getMeasuringPoint();
     }
-
 
 }

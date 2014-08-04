@@ -7,8 +7,8 @@ import java.util.Map;
 import org.palladiosimulator.edp2.datastream.configurable.reflective.ConfigurationProperty;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamConfiguration;
 
-public class JFreeChartVisualizationSingleDatastreamConfiguration
-extends AbstractVisualizationSingleDatastreamConfiguration {
+public class JFreeChartVisualizationSingleDatastreamConfiguration extends
+        AbstractVisualizationSingleDatastreamConfiguration {
 
     /**
      * Keys used for persistence of properties.
@@ -16,15 +16,14 @@ extends AbstractVisualizationSingleDatastreamConfiguration {
     public static final String COLOR_KEY = "color";
 
     /**
-     * Constant, describing that no color is used for this input (actually, it
-     * is white).
+     * Constant, describing that no color is used for this input (actually, it is white).
      */
     public final static Color NO_COLOR = new Color(0, 0, 0, 0);
 
     /**
      * Color for this {@link JFreeChartVisualizationSingleDatastreamInput}'s data in the graph.
      */
-    @ConfigurationProperty(description="Color of the dataseries")
+    @ConfigurationProperty(description = "Color of the dataseries")
     private final Color color = NO_COLOR;
 
     public Color getColor() {
@@ -33,7 +32,7 @@ extends AbstractVisualizationSingleDatastreamConfiguration {
 
     @Override
     public Map<String, Object> getDefaultConfiguration() {
-        final Map<String,Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
+        final Map<String, Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
         result.put(COLOR_KEY, NO_COLOR);
         return result;
     }

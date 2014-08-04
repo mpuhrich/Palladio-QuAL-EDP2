@@ -92,8 +92,7 @@ public class InputSelectionComposite extends Composite {
             }
 
             @Override
-            public void inputChanged(final Viewer viewer, final Object oldInput,
-                    final Object newInput) {
+            public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
             }
         });
         comboViewer.setInput(inputHandle);
@@ -104,8 +103,7 @@ public class InputSelectionComposite extends Composite {
     }
 
     public AbstractVisualizationSingleDatastreamInput getInputSelection() {
-        final IStructuredSelection selection = (IStructuredSelection) comboViewer
-                .getSelection();
+        final IStructuredSelection selection = (IStructuredSelection) comboViewer.getSelection();
         return (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
     }
 

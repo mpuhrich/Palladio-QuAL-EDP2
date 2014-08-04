@@ -11,11 +11,10 @@ import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.AbstractMeasurementsDaoImpl;
 
-public class MemoryBinaryMeasurementsDaoImpl<V,Q extends Quantity>
-extends AbstractMeasurementsDaoImpl<V, Q>
-implements BinaryMeasurementsDao<V, Q>{
+public class MemoryBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends AbstractMeasurementsDaoImpl<V, Q> implements
+        BinaryMeasurementsDao<V, Q> {
 
-    private final List<Measure<V,Q>> list = new LinkedList<Measure<V,Q>>();
+    private final List<Measure<V, Q>> list = new LinkedList<Measure<V, Q>>();
     private Unit<Q> unit;
 
     public MemoryBinaryMeasurementsDaoImpl(final Unit<Q> storageUnit) {
@@ -32,7 +31,9 @@ implements BinaryMeasurementsDao<V, Q>{
     public void flush() {
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
      */
     @Override
@@ -41,7 +42,9 @@ implements BinaryMeasurementsDao<V, Q>{
         setOpen();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#close()
      */
     @Override
@@ -59,6 +62,5 @@ implements BinaryMeasurementsDao<V, Q>{
     public void setUnit(final Unit<Q> unit) {
         this.unit = unit;
     }
-
 
 }

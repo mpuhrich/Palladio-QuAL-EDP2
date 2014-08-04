@@ -47,8 +47,7 @@ public class InputSelectionTree extends Composite {
      * @param parent
      * @param style
      */
-    public InputSelectionTree(final Composite parent, final int style,
-            final IVisualisationInput inputHandle) {
+    public InputSelectionTree(final Composite parent, final int style, final IVisualisationInput inputHandle) {
         super(parent, SWT.EMBEDDED);
         setLayout(new GridLayout(1, false));
 

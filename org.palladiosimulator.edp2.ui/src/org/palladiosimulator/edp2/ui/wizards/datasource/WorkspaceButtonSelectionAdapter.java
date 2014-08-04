@@ -12,34 +12,34 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-/**Opens a directory selection dialog for workspace resources.
- * The resulting URI of the selected directory is stored in a provided text field.
+/**
+ * Opens a directory selection dialog for workspace resources. The resulting URI of the selected
+ * directory is stored in a provided text field.
+ * 
  * @author groenda
  *
  */
-public class WorkspaceButtonSelectionAdapter extends SelectionAdapter implements
-		SelectionListener {
-	
-	private Shell shell;
-	private Text text;
+public class WorkspaceButtonSelectionAdapter extends SelectionAdapter implements SelectionListener {
 
-	public WorkspaceButtonSelectionAdapter(Shell shell, Text text) {
-		this.shell = shell;
-		this.text = text;
-	}
+    private Shell shell;
+    private Text text;
 
-	@Override
-	public void widgetSelected(SelectionEvent e) {
-		IContainer directory = null;
+    public WorkspaceButtonSelectionAdapter(Shell shell, Text text) {
+        this.shell = shell;
+        this.text = text;
+    }
 
-		IContainer[] directories = WorkspaceResourceDialog.openFolderSelection(shell, null, null, false, null, null);
-		if (directories.length != 0) {
-			directory = directories[0];
-		}
+    @Override
+    public void widgetSelected(SelectionEvent e) {
+        IContainer directory = null;
 
-		if (directory != null) {
-			text.setText(URI.createPlatformResourceURI(
-					directory.getFullPath().toString(), true).toString());
-		}
-	}
+        IContainer[] directories = WorkspaceResourceDialog.openFolderSelection(shell, null, null, false, null, null);
+        if (directories.length != 0) {
+            directory = directories[0];
+        }
+
+        if (directory != null) {
+            text.setText(URI.createPlatformResourceURI(directory.getFullPath().toString(), true).toString());
+        }
+    }
 }

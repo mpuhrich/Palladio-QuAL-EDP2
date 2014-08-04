@@ -11,7 +11,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
-public class Edp2BasicDataSource<V,Q extends Quantity> extends AbstractDataSource implements IDataSource {
+public class Edp2BasicDataSource<V, Q extends Quantity> extends AbstractDataSource implements IDataSource {
 
     public Edp2BasicDataSource(final BaseMetricDescription metricDescription) {
         super(metricDescription);
@@ -19,8 +19,8 @@ public class Edp2BasicDataSource<V,Q extends Quantity> extends AbstractDataSourc
 
     @SuppressWarnings("unchecked")
     @Override
-    public IDataStream<BasicMeasurement<V,Q>> getDataStream() {
-        return new Edp2BasicDataStream<V,Q>(null, (BaseMetricDescription) getMetricDesciption());
+    public IDataStream<BasicMeasurement<V, Q>> getDataStream() {
+        return new Edp2BasicDataStream<V, Q>(null, (BaseMetricDescription) getMetricDesciption());
     }
 
     @Override

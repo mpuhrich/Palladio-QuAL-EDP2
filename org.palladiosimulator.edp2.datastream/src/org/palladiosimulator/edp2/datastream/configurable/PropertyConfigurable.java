@@ -8,11 +8,10 @@ import java.util.Set;
 import org.apache.commons.lang.ClassUtils;
 import org.palladiosimulator.commons.designpatterns.AbstractObservable;
 
-public abstract class PropertyConfigurable
-extends AbstractObservable<IPropertyListener>
-implements IPropertyConfigurable {
+public abstract class PropertyConfigurable extends AbstractObservable<IPropertyListener> implements
+        IPropertyConfigurable {
 
-    private final Map<String,Object> properties = new HashMap<String, Object>();
+    private final Map<String, Object> properties = new HashMap<String, Object>();
     protected final Set<String> keys;
 
     public PropertyConfigurable() {
@@ -20,7 +19,7 @@ implements IPropertyConfigurable {
         this.keys = getKeys();
     }
 
-    public PropertyConfigurable(final Map<String,Object> newProperties) {
+    public PropertyConfigurable(final Map<String, Object> newProperties) {
         this();
         setProperties(newProperties);
     }
@@ -40,15 +39,15 @@ implements IPropertyConfigurable {
     public void setProperties(final Map<String, Object> newProperties) {
         for (final String key : keys) {
             if (!newProperties.containsKey(key)) {
-                throw new IllegalArgumentException("New properties miss expected key "+key);
+                throw new IllegalArgumentException("New properties miss expected key " + key);
             }
             if (newProperties.get(key) == null) {
-                throw new IllegalArgumentException("New properties has null value for key "+key);
+                throw new IllegalArgumentException("New properties has null value for key " + key);
             }
             final Class<?> fromClass = newProperties.get(key).getClass();
             final Class<?> propertyType = getPropertyType(key);
-            if (!ClassUtils.isAssignable(fromClass, propertyType, true)){
-                throw new IllegalArgumentException("New properties have wrong type for "+key);
+            if (!ClassUtils.isAssignable(fromClass, propertyType, true)) {
+                throw new IllegalArgumentException("New properties have wrong type for " + key);
             }
         }
         for (final String key : keys) {
@@ -62,7 +61,9 @@ implements IPropertyConfigurable {
         this.getEventDispatcher().propertyChangeCompleted();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
      */
     @SuppressWarnings("rawtypes")

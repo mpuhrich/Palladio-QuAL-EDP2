@@ -13,20 +13,20 @@ import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkReposito
  */
 public class DiscoverSensorFrameworkV1Page extends WizardPage {
 
-	private LocalSensorFrameworkRepository lsfRepo;
+    private LocalSensorFrameworkRepository lsfRepo;
 
-	protected DiscoverSensorFrameworkV1Page(LocalSensorFrameworkRepository lsfRepo) {
-		super("wizardPage");
-		this.lsfRepo = lsfRepo;
+    protected DiscoverSensorFrameworkV1Page(LocalSensorFrameworkRepository lsfRepo) {
+        super("wizardPage");
+        this.lsfRepo = lsfRepo;
 
-		setTitle("Discover Local Memory Data Source");
-		setDescription("Please select the data source you want to open.");
-	}
+        setTitle("Discover Local Memory Data Source");
+        setDescription("Please select the data source you want to open.");
+    }
 
-	@Override
-	public void createControl(Composite parent) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+    @Override
+    public void createControl(Composite parent) {
+        // TODO Auto-generated method stub
+
+    }
+
 }

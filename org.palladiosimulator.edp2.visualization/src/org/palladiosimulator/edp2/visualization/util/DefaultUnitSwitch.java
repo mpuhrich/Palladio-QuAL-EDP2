@@ -14,8 +14,7 @@ public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
     /**
      * Logger for this class.
      */
-    private static final Logger LOGGER = Logger
-            .getLogger(DefaultUnitSwitch.class.getSimpleName());
+    private static final Logger LOGGER = Logger.getLogger(DefaultUnitSwitch.class.getSimpleName());
 
     private final MetricDescription metric;
 
@@ -24,15 +23,13 @@ public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
     }
 
     @Override
-    public String caseNumericalBaseMetricDescription(
-            final NumericalBaseMetricDescription object) {
-        return ((NumericalBaseMetricDescription)metric).getDefaultUnit().toString();
+    public String caseNumericalBaseMetricDescription(final NumericalBaseMetricDescription object) {
+        return ((NumericalBaseMetricDescription) metric).getDefaultUnit().toString();
     }
 
     @Override
-    public String caseTextualBaseMetricDescription(
-            final TextualBaseMetricDescription object) {
-        return ((TextualBaseMetricDescription)metric).getIdentifiers().get(0).toString();
+    public String caseTextualBaseMetricDescription(final TextualBaseMetricDescription object) {
+        return ((TextualBaseMetricDescription) metric).getIdentifiers().get(0).toString();
     }
 
     @Override

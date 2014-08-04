@@ -7,7 +7,9 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 
 /**
- * Instances of {@link DefaultSequence} represent predefined sequences of {@link IDataFlow}-elements.
+ * Instances of {@link DefaultSequence} represent predefined sequences of {@link IDataFlow}
+ * -elements.
+ * 
  * @author Dominik Ernst
  * 
  */
@@ -43,7 +45,8 @@ public class DefaultSequence {
 
     /**
      * 
-     * @param element the element to add
+     * @param element
+     *            the element to add
      */
     public void addSequenceElement(final IDataSource element) {
         sequenceElements.add(element);
@@ -51,8 +54,10 @@ public class DefaultSequence {
 
     /**
      * 
-     * @param key the property's key
-     * @param value the property's value
+     * @param key
+     *            the property's key
+     * @param value
+     *            the property's value
      */
     public void addSequenceProperty(final HashMap<String, Object> map) {
         sequenceProperties.add(map);
@@ -67,9 +72,10 @@ public class DefaultSequence {
 
     /**
      * Convenience method.
+     * 
      * @return the first element in <sequenceElements>
      */
-    public IDataSource getFirstSequenceElement(){
+    public IDataSource getFirstSequenceElement() {
         return sequenceElements.get(0);
     }
 
@@ -79,8 +85,10 @@ public class DefaultSequence {
     public ArrayList<HashMap<String, Object>> getSequenceProperties() {
         return sequenceProperties;
     }
+
     /**
      * Convenience method.
+     * 
      * @return the number of elements in <sequenceElements>
      */
     public int getSize() {
@@ -88,7 +96,8 @@ public class DefaultSequence {
     }
 
     /**
-     * @param visualization the visualization to set
+     * @param visualization
+     *            the visualization to set
      */
     public void setVisualization(final IVisualisationInput visualization) {
         this.visualization = visualization;
@@ -109,7 +118,8 @@ public class DefaultSequence {
     }
 
     /**
-     * @param sequenceName the sequenceName to set
+     * @param sequenceName
+     *            the sequenceName to set
      */
     public void setSequenceName(final String sequenceName) {
         this.sequenceName = sequenceName;
@@ -123,7 +133,8 @@ public class DefaultSequence {
     }
 
     /**
-     * @param inputMetricUUID the inputMetricUUID to set
+     * @param inputMetricUUID
+     *            the inputMetricUUID to set
      */
     public void setInputMetricUUID(final String inputMetricUUID) {
         this.inputMetricUUID = inputMetricUUID;
@@ -137,14 +148,16 @@ public class DefaultSequence {
     }
 
     /**
-     * @param inputDescription the inputDescription to set
+     * @param inputDescription
+     *            the inputDescription to set
      */
     public void setInputDescription(final String inputDescription) {
         this.inputDescription = inputDescription;
     }
 
     /**
-     * @param visualizationProperties the visualizationProperties to set
+     * @param visualizationProperties
+     *            the visualizationProperties to set
      */
     public void setVisualizationProperties(final HashMap<String, Object> visualizationProperties) {
         this.visualizationProperties = visualizationProperties;
@@ -154,18 +167,20 @@ public class DefaultSequence {
      * @return the visualizationProperties
      */
     public HashMap<String, Object> getVisualizationProperties() {
-        //if no properties are set, return dummy properties to make the visualization use default values
+        // if no properties are set, return dummy properties to make the visualization use default
+        // values
         if (visualizationProperties == null) {
-            return new HashMap<String,Object>();
+            return new HashMap<String, Object>();
         }
         return visualizationProperties;
     }
 
     /**
      * Convenience method.
+     * 
      * @return the last element in <sequenceElements>
      */
-    public IDataSource getLastSequenceElement(){
-        return sequenceElements.get(getSize()-1);
+    public IDataSource getLastSequenceElement() {
+        return sequenceElements.get(getSize() - 1);
     }
 }

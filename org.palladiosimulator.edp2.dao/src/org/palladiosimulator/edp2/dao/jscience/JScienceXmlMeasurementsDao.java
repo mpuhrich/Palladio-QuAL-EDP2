@@ -10,12 +10,14 @@ import javax.measure.quantity.Quantity;
 
 import org.palladiosimulator.edp2.dao.MeasurementsDao;
 
-/**Access for JScienceXmlMeasurements.
+/**
+ * Access for JScienceXmlMeasurements.
+ * 
  * @author groenda
  *
  */
-public interface JScienceXmlMeasurementsDao<V,Q extends Quantity> extends MeasurementsDao<V,Q> {
+public interface JScienceXmlMeasurementsDao<V, Q extends Quantity> extends MeasurementsDao<V, Q> {
 
     @Override
-    public List<Measure<V,Q>> getMeasurements();
+    public List<Measure<V, Q>> getMeasurements();
 }

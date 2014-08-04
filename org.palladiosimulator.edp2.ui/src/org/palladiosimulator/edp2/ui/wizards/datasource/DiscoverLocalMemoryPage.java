@@ -20,7 +20,7 @@ public class DiscoverLocalMemoryPage extends WizardPage {
 
         setTitle("Discover Local Memory Data Source");
         setDescription("Please select the data source you want to open.");
-        
+
         setPageComplete(true);
     }
 

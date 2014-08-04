@@ -35,22 +35,16 @@ import org.palladiosimulator.metricspec.util.builder.TextualBaseMetricDescriptio
 public abstract class NominalMeasurementsDaoTest extends Edp2DaoTest {
     /** The ExperimentGroupDao under test. */
     @SuppressWarnings("unchecked")
-    protected BinaryMeasurementsDao<Identifier,Dimensionless> onmDao = (BinaryMeasurementsDao<Identifier,Dimensionless>) dao;
+    protected BinaryMeasurementsDao<Identifier, Dimensionless> onmDao = (BinaryMeasurementsDao<Identifier, Dimensionless>) dao;
     protected TextualBaseMetricDescription metric;
     protected Identifier identifier;
 
     @Before
     public void setup() {
-        metric = TextualBaseMetricDescriptionBuilder.
-                newTextualBaseMetricDescriptionBuilder().
-                name("Test Enum").
-                textualDescription("Test Enum").
-                scale(Scale.NOMINAL).
-                dataType(DataType.QUALITATIVE).
-                build();
-        identifier = IdentifierBuilder.newIdentifierBuilder().literal("TEST ID").
-                textualBaseMetricDescription(metric).
-                build();
+        metric = TextualBaseMetricDescriptionBuilder.newTextualBaseMetricDescriptionBuilder().name("Test Enum")
+                .textualDescription("Test Enum").scale(Scale.NOMINAL).dataType(DataType.QUALITATIVE).build();
+        identifier = IdentifierBuilder.newIdentifierBuilder().literal("TEST ID").textualBaseMetricDescription(metric)
+                .build();
         identifier.setTextualBaseMetricDescription(metric);
         metric.getIdentifiers().add(identifier);
     }

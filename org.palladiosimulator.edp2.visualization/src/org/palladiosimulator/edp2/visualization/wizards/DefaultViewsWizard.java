@@ -14,6 +14,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
  * A wizard which is opened upon selection/doubleclick on an element containing Experiment Data.
  * Provides possible "Default-Combinations" of Filter/Adapter/Editor which allows to visualize the
  * the selected Data in a appropriate way.
+ * 
  * @author Dominik Ernst
  * 
  */
@@ -41,7 +42,9 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /**
      * Sets the <finishable> attribute to the specified value.
-     * @param finishable a boolean value
+     * 
+     * @param finishable
+     *            a boolean value
      */
     public void setFinishable(final boolean finishable) {
         this.finishable = finishable;
@@ -71,6 +74,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.jface.wizard.Wizard#addPages()
      */
     @Override
@@ -81,6 +85,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.jface.wizard.Wizard#needsPreviousAndNextButtons()
      */
     @Override
@@ -90,6 +95,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.jface.wizard.Wizard#createPageControls(org.eclipse.swt.widgets.Composite)
      */
     @Override
@@ -99,7 +105,9 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
-     * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
+     * 
+     * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench,
+     * org.eclipse.jface.viewers.IStructuredSelection)
      */
     @Override
     public void init(final IWorkbench workbench, final IStructuredSelection selection) {
@@ -107,6 +115,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
+     * 
      * @see org.eclipse.jface.wizard.Wizard#canFinish()
      */
     @Override
@@ -122,7 +131,8 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
     }
 
     /**
-     * @param selectedDefault the selectedDefault to set
+     * @param selectedDefault
+     *            the selectedDefault to set
      */
     public void setSelectedDefault(final DefaultSequence selectedDefault) {
         this.selectedDefault = selectedDefault;

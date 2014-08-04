@@ -13,17 +13,23 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatas
 
 public class JFreeChartVisualizationSingleDatastreamInputFactory extends PropertyConfigurableElementFactory {
 
-    public static final String FACTORY_ID = JFreeChartVisualizationSingleDatastreamInputFactory.class.getCanonicalName();
+    public static final String FACTORY_ID = JFreeChartVisualizationSingleDatastreamInputFactory.class
+            .getCanonicalName();
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.visualization.elementfactories.PropertyConfigurableElementFactory#createElement(org.eclipse.ui.IMemento)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.visualization.elementfactories.PropertyConfigurableElementFactory
+     * #createElement(org.eclipse.ui.IMemento)
      */
     @Override
     public IAdaptable createElement(final IMemento memento) {
         final IAdaptable result = super.createElement(memento);
-        final AbstractVisualizationSingleDatastreamInput input = (AbstractVisualizationSingleDatastreamInput) result.getAdapter(AbstractVisualizationSingleDatastreamInput.class);
+        final AbstractVisualizationSingleDatastreamInput input = (AbstractVisualizationSingleDatastreamInput) result
+                .getAdapter(AbstractVisualizationSingleDatastreamInput.class);
         final List<IPersistableElement> children = PropertyConfigurableElementFactory.loadChildren(memento);
-        input.setDataSource((IDataSource)children.get(0));
+        input.setDataSource((IDataSource) children.get(0));
         return result;
     }
 

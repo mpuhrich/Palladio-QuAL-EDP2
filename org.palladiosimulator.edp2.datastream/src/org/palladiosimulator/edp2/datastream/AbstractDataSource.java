@@ -10,11 +10,11 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.metricentity.MetricEntity;
 
-public abstract class AbstractDataSource
-extends MetricEntity implements IDataSource, IPropertyConfigurable {
+public abstract class AbstractDataSource extends MetricEntity implements IDataSource, IPropertyConfigurable {
 
     private final PropertyConfigurable myProperties;
-    private final AbstractObservable<IDataSourceListener> listener = new AbstractObservable<IDataSourceListener>() {};
+    private final AbstractObservable<IDataSourceListener> listener = new AbstractObservable<IDataSourceListener>() {
+    };
 
     public AbstractDataSource() {
         super();
@@ -49,7 +49,9 @@ extends MetricEntity implements IDataSource, IPropertyConfigurable {
         return myProperties;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getConfiguration()
      */
     @SuppressWarnings("unchecked")
@@ -123,8 +125,12 @@ extends MetricEntity implements IDataSource, IPropertyConfigurable {
         listener.removeObserver(observer);
     }
 
-    /* (non-Javadoc)
-     * @see org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(java.lang.String)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(
+     * java.lang.String)
      */
     @Override
     public Class<?> getPropertyType(final String key) {

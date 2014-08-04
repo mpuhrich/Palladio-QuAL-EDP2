@@ -19,12 +19,12 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.AbstractMeasurementsDaoImpl;
 
 /**
- * Provides the basic functionality and protocol checking for DAOs where the persisted data is managed in
- * files on a local drive
+ * Provides the basic functionality and protocol checking for DAOs where the persisted data is
+ * managed in files on a local drive
  * 
  * @author groenda
  */
-abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsDaoImpl<V,Q> {
+abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurementsDaoImpl<V, Q> {
 
     /** Error logger for this class. */
     protected static final Logger logger = Logger.getLogger(FileAccessDao.class.getCanonicalName());
@@ -39,9 +39,10 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
     protected File resourceFile = null;
 
     /**
-     * Sets the resource file from which the ExperimentGroup data is loaded.
-     * Can only be set once.
-     * @param resourceFile File in which the ExperimentGroup is stored.
+     * Sets the resource file from which the ExperimentGroup data is loaded. Can only be set once.
+     * 
+     * @param resourceFile
+     *            File in which the ExperimentGroup is stored.
      */
     public synchronized void setResourceFile(final File resourceFile) {
         if (this.resourceFile == null) {
@@ -75,8 +76,7 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
         try {
             raf = new RandomAccessFile(resourceFile, FILE_ACCESS_READ_WRITE);
         } catch (final FileNotFoundException e) {
-            final String msg = "Serialization error: File "
-                    + resourceFile.getAbsolutePath()
+            final String msg = "Serialization error: File " + resourceFile.getAbsolutePath()
                     + " on background storage could not be accessed.";
             logger.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
@@ -88,8 +88,7 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
             raf.setLength(b.length);
             raf.close();
         } catch (final IOException ioe) {
-            final String msg = "Serialization error: Could not read from file "
-                    + resourceFile.getAbsolutePath()
+            final String msg = "Serialization error: Could not read from file " + resourceFile.getAbsolutePath()
                     + " on background storage and store results in serialized stream.";
             logger.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);
@@ -110,13 +109,12 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
         try {
             raf = new RandomAccessFile(resourceFile, FILE_ACCESS_READ_ONLY);
         } catch (final FileNotFoundException e) {
-            final String msg = "Serialization error: File "
-                    + resourceFile.getAbsolutePath()
+            final String msg = "Serialization error: File " + resourceFile.getAbsolutePath()
                     + " on background storage could not be accessed.";
             logger.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
         }
-        //TODO State that only files of size Integer.MAX_INT are supported (also by Serializer).
+        // TODO State that only files of size Integer.MAX_INT are supported (also by Serializer).
         final byte[] b = new byte[(int) resourceFile.length()];
         try {
             raf.seek(0);
@@ -124,8 +122,7 @@ abstract class FileAccessDao<V,Q extends Quantity> extends AbstractMeasurementsD
             ExtendedIOUtil.writeByteArray(output, b);
             raf.close();
         } catch (final IOException ioe) {
-            final String msg = "Serialization error: Could not read from file "
-                    + resourceFile.getAbsolutePath()
+            final String msg = "Serialization error: Could not read from file " + resourceFile.getAbsolutePath()
                     + " on background storage and store results in serialized stream.";
             logger.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);

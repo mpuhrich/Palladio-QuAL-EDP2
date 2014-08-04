@@ -37,11 +37,9 @@ import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 /**
  * @author Dominik Ernst
  */
-public class SelectFilterPage extends WizardPage implements
-ISelectionChangedListener {
+public class SelectFilterPage extends WizardPage implements ISelectionChangedListener {
 
-    private static final Logger LOGGER = Logger
-            .getLogger(SelectFilterPage.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(SelectFilterPage.class.getCanonicalName());
 
     private static final String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
 
@@ -74,9 +72,7 @@ ISelectionChangedListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets
-     * .Composite)
+     * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets .Composite)
      */
     @Override
     public void createControl(final Composite parent) {
@@ -111,8 +107,7 @@ ISelectionChangedListener {
             }
 
             @Override
-            public void inputChanged(final Viewer viewer, final Object oldInput,
-                    final Object newInput) {
+            public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
                 // TODO Auto-generated method stub
 
             }
@@ -166,20 +161,18 @@ ISelectionChangedListener {
         updatePageStatus();
     }
 
-    protected ArrayList<IFilterWizard> getApplicableFilters(
-            final AbstractDataSource forSource) {
+    protected ArrayList<IFilterWizard> getApplicableFilters(final AbstractDataSource forSource) {
         availableFilters = new ArrayList<IFilterWizard>();
         // checks the extension registry for all registered filters and adds
         // them to the list
-        final IConfigurationElement[] filterExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        FILTER_EXTENSION_POINT_ID);
+        final IConfigurationElement[] filterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
+                FILTER_EXTENSION_POINT_ID);
         for (final IConfigurationElement e : filterExtensions) {
             Object w, o = null;
             try {
                 w = e.createExecutableExtension(FILTER_WIZARD_ATTRIBUTE);
                 o = e.createExecutableExtension(FILTER_CLASS_ATTRIBUTE);
-                if (((AbstractFilter)o).getDataSource().isCompatibleWith(forSource.getMetricDesciption())) {
+                if (((AbstractFilter) o).getDataSource().isCompatibleWith(forSource.getMetricDesciption())) {
                     availableFilters.add((IFilterWizard) w);
                 }
             } catch (final CoreException e1) {
@@ -192,10 +185,10 @@ ISelectionChangedListener {
     }
 
     /**
-     * Method which is called when the "Next" Button in the Wizard is clicked.
-     * Must call {@link IFilterWizard#setSourceFromCaller(AbstractDataSource, SelectFilterPage)},
-     * where the {@link AbstractDataSource} is the source handed from the RawMeasurements object, which was selected
-     * in the first place and SelectFilterPage is a reference to {@link this} page.
+     * Method which is called when the "Next" Button in the Wizard is clicked. Must call
+     * {@link IFilterWizard#setSourceFromCaller(AbstractDataSource, SelectFilterPage)}, where the
+     * {@link AbstractDataSource} is the source handed from the RawMeasurements object, which was
+     * selected in the first place and SelectFilterPage is a reference to {@link this} page.
      */
     @Override
     public IWizardPage getNextPage() {
@@ -207,12 +200,10 @@ ISelectionChangedListener {
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
         selectionStatus = statusOK;
-        final IStructuredSelection selection = (IStructuredSelection) event
-                .getSelection();
+        final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
         selectedFilterWizard = null;
         if (selection == null) {
-            selectionStatus = new Status(IStatus.ERROR, "", 0,
-                    "Must select a Filter to proceed.", null);
+            selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select a Filter to proceed.", null);
         } else {
             selectedFilterWizard = (IFilterWizard) selection.getFirstElement();
             LOGGER.log(Level.INFO, selectedFilterWizard.getWindowTitle());

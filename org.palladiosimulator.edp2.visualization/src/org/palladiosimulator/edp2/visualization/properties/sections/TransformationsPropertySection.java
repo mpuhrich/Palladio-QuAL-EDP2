@@ -46,18 +46,16 @@ import org.palladiosimulator.edp2.visualization.wizards.AdapterWizard;
 import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
 
 /**
- * GUI controls for {@link AbstractTransformation}s. Used to display and edit
- * properties of applied data transformations in the Eclipse Properties View if
- * an {@link AbstractEditor} is the currently active editor.
+ * GUI controls for {@link AbstractTransformation}s. Used to display and edit properties of applied
+ * data transformations in the Eclipse Properties View if an {@link AbstractEditor} is the currently
+ * active editor.
  * 
  * @author Roland Richter, Dominik Ernst
  * 
  */
-public class TransformationsPropertySection extends AbstractPropertySection
-implements ISelectionChangedListener {
+public class TransformationsPropertySection extends AbstractPropertySection implements ISelectionChangedListener {
     /** LOGGER */
-    private static final Logger LOGGER = Logger
-            .getLogger(TransformationsPropertySection.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(TransformationsPropertySection.class.getCanonicalName());
 
     /**
      * Key which must be the same as the key under which the ID's / names of
@@ -66,8 +64,7 @@ implements ISelectionChangedListener {
     private static final String NAME_KEY = "elementName";
 
     /**
-     * A tree, which contains the editor's inputs and their transformations (as
-     * children)
+     * A tree, which contains the editor's inputs and their transformations (as children)
      */
     private TreeViewer treeViewer;
     /**
@@ -81,19 +78,18 @@ implements ISelectionChangedListener {
     private TableViewer transformationTableViewer;
 
     /**
-     * The current editor which is an
-     * {@link ITabbedPropertySheetPageContributor}.
+     * The current editor which is an {@link ITabbedPropertySheetPageContributor}.
      */
     private AbstractEditor editor;
 
     /**
-     * Last, by the user selected {@link AbstractTransformation} in the
-     * {@link #treeViewer}.
+     * Last, by the user selected {@link AbstractTransformation} in the {@link #treeViewer}.
      */
     private AbstractAdapter selectedTransformation;
 
     /**
-     * The last selected {@link AbstractVisualizationSingleDatastreamInput} in the {@link #treeViewer}.
+     * The last selected {@link AbstractVisualizationSingleDatastreamInput} in the
+     * {@link #treeViewer}.
      */
     private IVisualisationSingleDatastreamInput selectedInput;
 
@@ -103,18 +99,16 @@ implements ISelectionChangedListener {
     private Composite container;
 
     /**
-     * Create the look and items of the properties. It is called, if one of the
-     * editors in the package visualization.editors is selected.
+     * Create the look and items of the properties. It is called, if one of the editors in the
+     * package visualization.editors is selected.
      */
     @Override
-    public void createControls(final Composite parent,
-            final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+    public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 
         super.createControls(parent, aTabbedPropertySheetPage);
 
         container = getWidgetFactory().createFlatFormComposite(parent);
-        container.setBackground(parent.getDisplay().getSystemColor(
-                SWT.COLOR_WIDGET_BACKGROUND));
+        container.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
         final GridLayout layout = new GridLayout(1, false);
         layout.marginWidth = 2;
         layout.marginHeight = 2;
@@ -124,8 +118,7 @@ implements ISelectionChangedListener {
         group.setText("Editor Inputs");
         group.setLayout(new GridLayout(3, false));
         // create the tree viewer with empty input
-        final InputSelectionTree tree = new InputSelectionTree(group, SWT.EMBEDDED,
-                null);
+        final InputSelectionTree tree = new InputSelectionTree(group, SWT.EMBEDDED, null);
         GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1);
         tree.setLayoutData(gridData);
         treeViewer = tree.getTreeViewer();
@@ -134,8 +127,7 @@ implements ISelectionChangedListener {
 
         final Button buttonAdapter = new Button(group, SWT.PUSH);
         buttonAdapter.setText("Add new Adapter..");
-        gridData = new GridData(SWT.FILL,
-                SWT.FILL, false, false, 1, 1);
+        gridData = new GridData(SWT.FILL, SWT.FILL, false, false, 1, 1);
         gridData.widthHint = 120;
         buttonAdapter.setLayoutData(gridData);
         final Button buttonFilter = new Button(group, SWT.PUSH);
@@ -148,9 +140,9 @@ implements ISelectionChangedListener {
             @Override
             public void handleEvent(final Event event) {
                 if (selectedInput == null) {
-                    MessageDialog.openError(Activator.getDefault()
-                            .getWorkbench().getActiveWorkbenchWindow()
-                            .getShell(), "No data series selected",
+                    MessageDialog.openError(
+                            Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
+                            "No data series selected",
                             "To add a transformation, a data series, to which the transformation should "
                                     + "be added, must be selected first");
                 } else {
@@ -158,8 +150,7 @@ implements ISelectionChangedListener {
                         final AdapterWizard wizard = new AdapterWizard(
                                 (AbstractDataSource) selectedInput.getDataSource());
                         AbstractAdapter adapter = null;
-                        final WizardDialog wdialog = new WizardDialog(Activator
-                                .getDefault().getWorkbench()
+                        final WizardDialog wdialog = new WizardDialog(Activator.getDefault().getWorkbench()
                                 .getActiveWorkbenchWindow().getShell(), wizard);
                         wdialog.open();
                         if (wdialog.getReturnCode() == Window.OK) {
@@ -168,16 +159,14 @@ implements ISelectionChangedListener {
                         }
 
                     } else if (event.widget == buttonFilter) {
-                        final FilterWizard wizard = new FilterWizard(
-                                (AbstractDataSource) selectedInput.getDataSource());
+                        final FilterWizard wizard = new FilterWizard((AbstractDataSource) selectedInput.getDataSource());
                         AbstractFilter filter = null;
-                        final WizardDialog wdialog = new WizardDialog(Activator
-                                .getDefault().getWorkbench()
+                        final WizardDialog wdialog = new WizardDialog(Activator.getDefault().getWorkbench()
                                 .getActiveWorkbenchWindow().getShell(), wizard);
                         wdialog.open();
                         if (wdialog.getReturnCode() == Window.OK) {
                             filter = wizard.getFilter();
-                            //TODO selectedInput.setSource(filter);
+                            // TODO selectedInput.setSource(filter);
                             refresh();
                         }
                     }
@@ -192,101 +181,101 @@ implements ISelectionChangedListener {
     }
 
     private void handleSemanticChange(final AbstractAdapter adapter) {
-        //        // TODO perform actual check on compatible editors for new input.
-        //        boolean adapterExistsAlready = false;
-        //        for (final AbstractTransformation trafo : selectedInput
-        //                .getListOfTransformations()) {
-        //            if (trafo.getFactoryId().equals(adapter.getFactoryId())) {
-        //                MessageDialog
-        //                .openInformation(
-        //                        Activator.getDefault().getWorkbench()
-        //                        .getActiveWorkbenchWindow().getShell(),
-        //                        "Adapter already exists",
-        //                        "You tried to add an adapter, which already exists in the list"
-        //                                + "of transformations for the selected data series. "
-        //                                + "Please select a different series or change the settings of the existing adapter "
-        //                                + "in the properties view.");
-        //                adapterExistsAlready = true;
-        //            }
-        //        }
+        // // TODO perform actual check on compatible editors for new input.
+        // boolean adapterExistsAlready = false;
+        // for (final AbstractTransformation trafo : selectedInput
+        // .getListOfTransformations()) {
+        // if (trafo.getFactoryId().equals(adapter.getFactoryId())) {
+        // MessageDialog
+        // .openInformation(
+        // Activator.getDefault().getWorkbench()
+        // .getActiveWorkbenchWindow().getShell(),
+        // "Adapter already exists",
+        // "You tried to add an adapter, which already exists in the list"
+        // + "of transformations for the selected data series. "
+        // + "Please select a different series or change the settings of the existing adapter "
+        // + "in the properties view.");
+        // adapterExistsAlready = true;
+        // }
+        // }
         //
-        //        if (!adapterExistsAlready) {
-        //            final boolean result = MessageDialog
-        //                    .openQuestion(
-        //                            Activator.getDefault().getWorkbench()
-        //                            .getActiveWorkbenchWindow().getShell(),
-        //                            "Semantics of Data Changed",
-        //                            "The applied data transformation cannot be displayed in the current dataset."
-        //                                    + "A new dataset in a new editor must be opened. Do you want to proceed?");
-        //            if (result) {
+        // if (!adapterExistsAlready) {
+        // final boolean result = MessageDialog
+        // .openQuestion(
+        // Activator.getDefault().getWorkbench()
+        // .getActiveWorkbenchWindow().getShell(),
+        // "Semantics of Data Changed",
+        // "The applied data transformation cannot be displayed in the current dataset."
+        // + "A new dataset in a new editor must be opened. Do you want to proceed?");
+        // if (result) {
         //
-        //                final DefaultViewsWizard wizard = new DefaultViewsWizard(adapter);
-        //                final WizardDialog wdialog = new WizardDialog(Activator.getDefault()
-        //                        .getWorkbench().getActiveWorkbenchWindow().getShell(),
-        //                        wizard);
-        //                wdialog.open();
+        // final DefaultViewsWizard wizard = new DefaultViewsWizard(adapter);
+        // final WizardDialog wdialog = new WizardDialog(Activator.getDefault()
+        // .getWorkbench().getActiveWorkbenchWindow().getShell(),
+        // wizard);
+        // wdialog.open();
         //
-        //                if (wdialog.getReturnCode() == Window.OK) {
-        //                    final DefaultSequence selection = wizard.getSelectedDefault();
+        // if (wdialog.getReturnCode() == Window.OK) {
+        // final DefaultSequence selection = wizard.getSelectedDefault();
         //
-        //                    if (selection.getSize() > 0) {
-        //                        if (selection.getSequenceProperties().size() > 0) {
-        //                            selection.getFirstSequenceElement().setProperties(
-        //                                    selection.getSequenceProperties().get(0));
-        //                        }
-        //                        selection.getFirstSequenceElement().setSource(adapter);
-        //                    }
-        //                    for (int i = 1; i < selection.getSize(); i++) {
-        //                        selection
-        //                        .getSequenceElements()
-        //                        .get(i)
-        //                        .setProperties(
-        //                                selection.getSequenceProperties()
-        //                                .get(i));
-        //                        selection
-        //                        .getSequenceElements()
-        //                        .get(i)
-        //                        .setSource(
-        //                                selection.getSequenceElements().get(
-        //                                        i - 1));
-        //                    }
+        // if (selection.getSize() > 0) {
+        // if (selection.getSequenceProperties().size() > 0) {
+        // selection.getFirstSequenceElement().setProperties(
+        // selection.getSequenceProperties().get(0));
+        // }
+        // selection.getFirstSequenceElement().setSource(adapter);
+        // }
+        // for (int i = 1; i < selection.getSize(); i++) {
+        // selection
+        // .getSequenceElements()
+        // .get(i)
+        // .setProperties(
+        // selection.getSequenceProperties()
+        // .get(i));
+        // selection
+        // .getSequenceElements()
+        // .get(i)
+        // .setSource(
+        // selection.getSequenceElements().get(
+        // i - 1));
+        // }
         //
-        //                    final IVisualisationSingleDatastreamInput visualization = selection
-        //                            .getVisualization();
-        //                    visualization.setProperties(selection
-        //                            .getVisualizationProperties());
-        //                    if (selection.getSize() > 0) {
-        //                        visualization.setSource(selection
-        //                                .getLastSequenceElement());
-        //                    } else {
-        //                        visualization.setSource(adapter);
-        //                    }
-        //                    final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> input = new JFreeChartVisualisationInput(
-        //                            (AbstractVisualizationSingleDatastreamInput) visualization);
+        // final IVisualisationSingleDatastreamInput visualization = selection
+        // .getVisualization();
+        // visualization.setProperties(selection
+        // .getVisualizationProperties());
+        // if (selection.getSize() > 0) {
+        // visualization.setSource(selection
+        // .getLastSequenceElement());
+        // } else {
+        // visualization.setSource(adapter);
+        // }
+        // final AbstractVisualizationInput<JFreeChartVisualisationSingleDatastreamInput<T>> input =
+        // new JFreeChartVisualisationInput(
+        // (AbstractVisualizationSingleDatastreamInput) visualization);
         //
-        //                    try {
-        //                        final IWorkbenchPage page = Activator.getDefault()
-        //                                .getWorkbench().getActiveWorkbenchWindow()
-        //                                .getActivePage();
-        //                        page.openEditor(input,
-        //                                "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
-        //                    } catch (final PartInitException e) {
-        //                    }
+        // try {
+        // final IWorkbenchPage page = Activator.getDefault()
+        // .getWorkbench().getActiveWorkbenchWindow()
+        // .getActivePage();
+        // page.openEditor(input,
+        // "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
+        // } catch (final PartInitException e) {
+        // }
         //
-        //                }
-        //            }
-        //        }
-        //        refresh();
+        // }
+        // }
+        // }
+        // refresh();
     }
 
     /**
-     * Creates and initializes the list of the applied filters and the
-     * properties table. A selection listener looks if one entry in the filter
-     * list is selected and if one is selected the
-     * {@link TransformationsPropertySection#refreshPropertiesTable()} is
-     * called. A listener look for the properties table and call
-     * {@link TransformationsPropertySection#updateProperties(String, Object)}
-     * of the value field is let out by pressing ENTER.
+     * Creates and initializes the list of the applied filters and the properties table. A selection
+     * listener looks if one entry in the filter list is selected and if one is selected the
+     * {@link TransformationsPropertySection#refreshPropertiesTable()} is called. A listener look
+     * for the properties table and call
+     * {@link TransformationsPropertySection#updateProperties(String, Object)} of the value field is
+     * let out by pressing ENTER.
      * 
      * @param parentGroup
      *            the parent GUI Object
@@ -294,13 +283,11 @@ implements ISelectionChangedListener {
     private void initTransformationTable(final Composite parent) {
 
         // initialize the table, which shows the properties of transformations
-        transformationTable = new Table(parent, SWT.SINGLE | SWT.BORDER
-                | SWT.V_SCROLL | SWT.FULL_SELECTION);
+        transformationTable = new Table(parent, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.FULL_SELECTION);
 
         transformationTable.setLinesVisible(true);
         transformationTable.setHeaderVisible(true);
-        final GridData gridData = new GridData(GridData.FILL_HORIZONTAL,
-                GridData.FILL_VERTICAL, false, true, 1, 1);
+        final GridData gridData = new GridData(GridData.FILL_HORIZONTAL, GridData.FILL_VERTICAL, false, true, 1, 1);
         gridData.heightHint = 220;
         gridData.widthHint = 180;
 
@@ -314,12 +301,10 @@ implements ISelectionChangedListener {
         transformationTable.setLayout(tableLayout);
 
         transformationTableViewer = new TableViewer(transformationTable);
-        final TableViewerColumn labelColumn = new TableViewerColumn(
-                transformationTableViewer, SWT.NONE);
+        final TableViewerColumn labelColumn = new TableViewerColumn(transformationTableViewer, SWT.NONE);
         labelColumn.getColumn().setText("Property");
 
-        final TableViewerColumn valueColumn = new TableViewerColumn(
-                transformationTableViewer, SWT.NONE);
+        final TableViewerColumn valueColumn = new TableViewerColumn(transformationTableViewer, SWT.NONE);
         valueColumn.getColumn().setText("Value");
 
         // the editor for the cells
@@ -340,8 +325,7 @@ implements ISelectionChangedListener {
                     final Rectangle rect = item.getBounds(1);
                     if (rect.contains(pt)) {
                         final int column = 1;
-                        final Text text = new Text(transformationTable,
-                                SWT.NONE);
+                        final Text text = new Text(transformationTable, SWT.NONE);
                         final Listener textListener = new Listener() {
                             @Override
                             public void handleEvent(final Event e) {
@@ -355,7 +339,7 @@ implements ISelectionChangedListener {
                                     case SWT.TRAVERSE_RETURN:
                                         item.setText(column, text.getText());
                                         updateProperties(
-                                                // first column
+                                        // first column
                                                 item.getText(0), text.getText());
 
                                     case SWT.TRAVERSE_ESCAPE:
@@ -391,8 +375,7 @@ implements ISelectionChangedListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
+     * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
      * (org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
      */
     @Override
@@ -401,8 +384,7 @@ implements ISelectionChangedListener {
     }
 
     private boolean editorExists() {
-        final IWorkbenchWindow window = Activator.getDefault().getWorkbench()
-                .getActiveWorkbenchWindow();
+        final IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
         if (window == null) {
             editor = null;
             return false;
@@ -419,8 +401,8 @@ implements ISelectionChangedListener {
     }
 
     /**
-     * Refresh the items in the filters properties table. It shows the
-     * properties of the selected filter in the list.
+     * Refresh the items in the filters properties table. It shows the properties of the selected
+     * filter in the list.
      * 
      * @param abstractTransformation
      */
@@ -441,8 +423,8 @@ implements ISelectionChangedListener {
 
     /**
      * Update the properties of the selected filter. It use the method
-     * {@link AbstractTransformation#setProperties(HashMap)} to update the
-     * properties from the Filter.
+     * {@link AbstractTransformation#setProperties(HashMap)} to update the properties from the
+     * Filter.
      * 
      * @param key
      *            the key as String.
@@ -456,8 +438,7 @@ implements ISelectionChangedListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#refresh()
+     * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#refresh()
      */
     @Override
     public void refresh() {
@@ -470,11 +451,9 @@ implements ISelectionChangedListener {
 
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
-        final ITreeSelection selection = (ITreeSelection) event
-                .getSelectionProvider().getSelection();
+        final ITreeSelection selection = (ITreeSelection) event.getSelectionProvider().getSelection();
         if (selection.getFirstElement() instanceof AbstractAdapter) {
-            selectedTransformation = (AbstractAdapter) selection
-                    .getFirstElement();
+            selectedTransformation = (AbstractAdapter) selection.getFirstElement();
             refreshPropertiesTable();
         } else {
             selectedInput = (IVisualisationSingleDatastreamInput) selection.getFirstElement();

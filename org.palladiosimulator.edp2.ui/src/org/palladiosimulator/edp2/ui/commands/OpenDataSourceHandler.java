@@ -1,4 +1,5 @@
 package org.palladiosimulator.edp2.ui.commands;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -14,11 +15,11 @@ import org.palladiosimulator.edp2.ui.wizards.datasource.OpenDataSourceWizard;
  */
 public class OpenDataSourceHandler extends AbstractHandler implements IHandler {
 
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveWorkbenchWindow(event).getShell(),
-				new OpenDataSourceWizard());
-		dialog.open();
-		return null;
-	}
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
+        WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveWorkbenchWindow(event).getShell(),
+                new OpenDataSourceWizard());
+        dialog.open();
+        return null;
+    }
 }

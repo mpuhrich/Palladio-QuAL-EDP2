@@ -15,15 +15,14 @@ import org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEdit
 
 /**
  * Basic implementation of an {@link AbstractVisualizationSingleDatastreamInput} for the
- * {@link JFreeChartEditor}. Responsible for common properties of any subclass
- * of {@link JFreeChartVisualizationSingleDatastreamInput}.
+ * {@link JFreeChartEditor}. Responsible for common properties of any subclass of
+ * {@link JFreeChartVisualizationSingleDatastreamInput}.
  * 
  * @author Dominik Ernst
  * 
  */
-public class JFreeChartVisualizationSingleDatastreamInput
-extends AbstractVisualizationSingleDatastreamInput
-implements ISelection, IPersistableElement {
+public class JFreeChartVisualizationSingleDatastreamInput extends AbstractVisualizationSingleDatastreamInput implements
+        ISelection, IPersistableElement {
 
     public JFreeChartVisualizationSingleDatastreamInput() {
         this(null);
@@ -60,7 +59,7 @@ implements ISelection, IPersistableElement {
 
     @Override
     public String getInputName() {
-        return ((AbstractVisualizationSingleDatastreamConfiguration)getConfiguration()).getInputName();
+        return ((AbstractVisualizationSingleDatastreamConfiguration) getConfiguration()).getInputName();
     }
 
     @Override

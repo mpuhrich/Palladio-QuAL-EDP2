@@ -18,13 +18,14 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.PersistenceKindOptions;
 import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 
-/**EMF switch to create data series based on RawMeasurements.
+/**
+ * EMF switch to create data series based on RawMeasurements.
+ * 
  * @author groenda
  */
 public class DataSeriesFromRawMeasurementsSwitch extends MetricSpecSwitch<Boolean> {
     /** Logger for this class. */
-    private static final Logger logger = Logger
-            .getLogger(DataSeriesFromRawMeasurementsSwitch.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger(DataSeriesFromRawMeasurementsSwitch.class.getCanonicalName());
     /** Factory for EMF model. */
     private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
 

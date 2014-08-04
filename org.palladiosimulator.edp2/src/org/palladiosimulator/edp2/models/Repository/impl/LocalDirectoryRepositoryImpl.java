@@ -129,12 +129,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
-     * @generated
+     * @generated NOT
      */
     @Override
     public void setUri(String newUri) {
         String oldUri = uri;
         uri = newUri;
+        id = newUri;
         if (eNotificationRequired()) {
             eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI,
                     oldUri, uri));

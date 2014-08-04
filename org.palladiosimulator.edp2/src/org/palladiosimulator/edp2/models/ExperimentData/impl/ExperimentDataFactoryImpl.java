@@ -66,7 +66,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * 
      * @generated NOT
      */
-    private static final Logger logger = Logger.getLogger(ExperimentDataFactoryImpl.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(ExperimentDataFactoryImpl.class.getCanonicalName());
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -677,7 +677,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
             oos.writeObject(o);
             oos.close();
         } catch (final IOException e) {
-            logger.log(Level.SEVERE, "Could not serialize object to string. Data corruption is likely. " + "Object: "
+            LOGGER.log(Level.SEVERE, "Could not serialize object to string. Data corruption is likely. " + "Object: "
                     + o + "Error: " + e.getMessage());
         }
         return Base64.encodeBase64String(bas.toByteArray());
@@ -702,10 +702,10 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
             o = ois.readObject();
             ois.close();
         } catch (final IOException e) {
-            logger.log(Level.SEVERE, "Could not deserialize object from string. Data corruption is likely. "
+            LOGGER.log(Level.SEVERE, "Could not deserialize object from string. Data corruption is likely. "
                     + "Error: " + e.getMessage());
         } catch (final ClassNotFoundException e) {
-            logger.log(Level.SEVERE, "Could not deserialize object from string. No class for object could be found. "
+            LOGGER.log(Level.SEVERE, "Could not deserialize object from string. No class for object could be found. "
                     + "Data corruption is likely. " + "Error: " + e.getMessage());
         }
         return o;

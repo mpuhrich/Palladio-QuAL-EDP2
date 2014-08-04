@@ -26,8 +26,8 @@ import org.palladiosimulator.edp2.dao.impl.AbstractMeasurementsDaoImpl;
  */
 abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurementsDaoImpl<V, Q> {
 
-    /** Error logger for this class. */
-    protected static final Logger logger = Logger.getLogger(FileAccessDao.class.getCanonicalName());
+    /** Error LOGGER for this class. */
+    protected static final Logger LOGGER = Logger.getLogger(FileAccessDao.class.getCanonicalName());
 
     /** Denotes read-only file access. */
     private static final String FILE_ACCESS_READ_ONLY = "r";
@@ -48,7 +48,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
         if (this.resourceFile == null) {
             this.resourceFile = resourceFile;
         } else {
-            logger.log(Level.SEVERE, "Setting the file resource is only allowed if there is no resource loaded.");
+            LOGGER.log(Level.SEVERE, "Setting the file resource is only allowed if there is no resource loaded.");
             throw new IllegalArgumentException();
         }
     }
@@ -60,7 +60,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
             setDeleted(true);
         } else {
             final String msg = "Could not delete file.";
-            logger.log(Level.WARNING, msg);
+            LOGGER.log(Level.WARNING, msg);
             throw new DataNotAccessibleException(msg, null);
         }
     }
@@ -78,7 +78,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
         } catch (final FileNotFoundException e) {
             final String msg = "Serialization error: File " + resourceFile.getAbsolutePath()
                     + " on background storage could not be accessed.";
-            logger.log(Level.SEVERE, msg, e);
+            LOGGER.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
         }
         try {
@@ -90,7 +90,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
         } catch (final IOException ioe) {
             final String msg = "Serialization error: Could not read from file " + resourceFile.getAbsolutePath()
                     + " on background storage and store results in serialized stream.";
-            logger.log(Level.SEVERE, msg, ioe);
+            LOGGER.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);
         }
         if (oldOpenState) {
@@ -111,7 +111,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
         } catch (final FileNotFoundException e) {
             final String msg = "Serialization error: File " + resourceFile.getAbsolutePath()
                     + " on background storage could not be accessed.";
-            logger.log(Level.SEVERE, msg, e);
+            LOGGER.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
         }
         // TODO State that only files of size Integer.MAX_INT are supported (also by Serializer).
@@ -124,7 +124,7 @@ abstract class FileAccessDao<V, Q extends Quantity> extends AbstractMeasurements
         } catch (final IOException ioe) {
             final String msg = "Serialization error: Could not read from file " + resourceFile.getAbsolutePath()
                     + " on background storage and store results in serialized stream.";
-            logger.log(Level.SEVERE, msg, ioe);
+            LOGGER.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);
         }
         if (oldOpenState) {

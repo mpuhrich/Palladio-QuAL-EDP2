@@ -27,10 +27,10 @@ import org.palladiosimulator.metricspec.Identifier;
  */
 public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwitch<Boolean> {
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(EmfmodelAddMeasurementToDataSeriesSwitch.class
+    private static final Logger LOGGER = Logger.getLogger(EmfmodelAddMeasurementToDataSeriesSwitch.class
             .getCanonicalName());
     /** Factory of EDP2 EMF model. */
-    private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
+    private static final ExperimentDataFactory FACTORY = ExperimentDataFactory.eINSTANCE;
     /** Registry for the DAOs. */
     private final MeasurementsDaoRegistry daoRegistry;
     /** AbstractMeasureProvider to add. */
@@ -49,7 +49,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
             try {
                 dao.open();
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
+                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
                 return false;
             }
         }
@@ -71,7 +71,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
             try {
                 bmd.open();
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
+                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
                 return false;
             }
         }
@@ -88,7 +88,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
             try {
                 bmd.open();
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
+                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
                 return false;
             }
         }

@@ -23,7 +23,7 @@ import org.palladiosimulator.edp2.dao.MeasurementsDaoRegistry;
  */
 public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(MeasurementsDaoRegistryImpl.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(MeasurementsDaoRegistryImpl.class.getCanonicalName());
 
     /** Map of the registered DAOs. */
     private ConcurrentMap<String, MeasurementsDao> registeredDaos;
@@ -44,7 +44,7 @@ public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
     public void deregister(String uuid) {
         if (!isRegistered(uuid)) {
             String msg = "Tried to deregister a DAO which was not registered. UUID was " + uuid + ".";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalArgumentException(msg);
         } else {
             registeredDaos.remove(uuid);
@@ -71,7 +71,7 @@ public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
     public void register(MeasurementsDao dao, String uuid) {
         if (isRegistered(uuid)) {
             String msg = "Tried to register a DAO which was already registered. UUID was " + uuid + ".";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalArgumentException(msg);
         } else {
             registeredDaos.put(uuid, dao);

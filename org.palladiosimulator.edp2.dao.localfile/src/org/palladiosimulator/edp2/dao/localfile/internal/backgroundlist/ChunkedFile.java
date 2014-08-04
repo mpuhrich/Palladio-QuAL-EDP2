@@ -19,7 +19,7 @@ import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializ
 class ChunkedFile<T> {
 
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(ChunkedFile.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ChunkedFile.class.getName());
 
     /** Link to the file on background storage containing all chunks. */
     private final RandomAccessFile raf;
@@ -86,17 +86,17 @@ class ChunkedFile<T> {
     public void add(final T d) {
         if (d == null) {
             final String msg = "Chunks do not support null values.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalArgumentException(msg);
         }
         if (!chunkLoaded) {
             final String msg = "Tried to add data element to chunk although there is no chunk loaded.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         if (isFull()) {
             final String msg = "Tried to add data element to chunk without any capacity left.";
-            logger.warning(msg);
+            LOGGER.warning(msg);
             throw new IllegalStateException(msg);
         }
         data[elementsInLoadedChunk++] = d;
@@ -123,7 +123,7 @@ class ChunkedFile<T> {
     public T get(final int indexInChunk) {
         if (!chunkLoaded) {
             final String msg = "Tried to add data element to chunk although there is no chunk loaded.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         return data[indexInChunk];
@@ -141,12 +141,12 @@ class ChunkedFile<T> {
     public T set(final int indexInChunk, final T value) {
         if (value == null) {
             final String msg = "Chunks do not support null values.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalArgumentException(msg);
         }
         if (!chunkLoaded) {
             final String msg = "Tried to add data element to chunk although there is no chunk loaded.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         final T oldElement = data[indexInChunk];
@@ -177,7 +177,7 @@ class ChunkedFile<T> {
     public void loadChunkForElement(final long elementIndex) throws IOException {
         if (chunkLoaded && changed) {
             final String msg = "The currently loaded chunk has been changed but not saved to disc. Cannot load other chunk.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalArgumentException(msg);
         }
         final long requestedChunkNumber = (long) Math.floor(elementIndex / chunkSize);
@@ -198,7 +198,7 @@ class ChunkedFile<T> {
         }
         if (loadedChunkFilePos > raf.length()) {
             final String msg = "The requested element index is not stored in the file.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalArgumentException(msg);
         }
 
@@ -224,12 +224,12 @@ class ChunkedFile<T> {
     public void createChunk() {
         if (chunkLoaded && changed) {
             final String msg = "Cannot create chunk if the currently loaded chunk is changed and not saved yet.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         if (elementsInFile % chunkSize != 0) {
             final String msg = "Cannot create new chunk if there is a chunk with free capacity available.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         data = (T[]) (new Object[chunkSize]);
@@ -254,12 +254,12 @@ class ChunkedFile<T> {
         } else {
             if (!chunkLoaded) {
                 final String msg = "Tried to save the current chunk although there is no chunk loaded.";
-                logger.warning(msg);
+                LOGGER.warning(msg);
                 throw new IllegalStateException(msg);
             }
             if (!changed) {
                 final String msg = "Tried to save the current chunk although it is not changed.";
-                logger.info(msg);
+                LOGGER.info(msg);
             }
         }
     }
@@ -272,7 +272,7 @@ class ChunkedFile<T> {
     public int getNumberElementsInLoadedChunk() {
         if (!chunkLoaded) {
             final String msg = "Tried to query number of elements in loaded chunk although there is no chunk loaded.";
-            logger.warning(msg);
+            LOGGER.warning(msg);
             throw new IllegalStateException(msg);
         }
         return elementsInLoadedChunk;
@@ -298,7 +298,7 @@ class ChunkedFile<T> {
     public boolean isChanged() {
         if (!chunkLoaded) {
             final String msg = "Tried to query changed status although there is no chunk loaded.";
-            logger.warning(msg);
+            LOGGER.warning(msg);
             throw new IllegalStateException(msg);
         }
         return changed;

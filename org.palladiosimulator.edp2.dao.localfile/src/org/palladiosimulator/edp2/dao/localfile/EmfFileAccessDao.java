@@ -24,7 +24,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPacka
  */
 abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao {
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(EmfFileAccessDao.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(EmfFileAccessDao.class.getCanonicalName());
     /** Factory for the EDP2 EMFmodel. */
     protected final static ExperimentDataFactory ModelFactory = ExperimentDataFactory.eINSTANCE;
     /** ResourceSet for the EDP2 EMFModel. */
@@ -54,7 +54,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
         } catch (IOException e) {
             String errorMsg = "Could not close file " + resourceFile.getAbsolutePath()
                     + " and save the contained EMF model.";
-            logger.log(Level.SEVERE, errorMsg);
+            LOGGER.log(Level.SEVERE, errorMsg);
             throw new DataNotAccessibleException(errorMsg, e);
         }
     }
@@ -72,7 +72,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
             setDeleted(false);
             String errorMsg = "Could not delete file " + resourceFile.getAbsolutePath()
                     + " and its contained EMF model.";
-            logger.log(Level.WARNING, errorMsg);
+            LOGGER.log(Level.WARNING, errorMsg);
             throw new DataNotAccessibleException(errorMsg, e);
         }
     }
@@ -91,7 +91,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
                 try {
                     resource.load(null);
                 } catch (IOException ie) {
-                    logger.log(Level.WARNING,
+                    LOGGER.log(Level.WARNING,
                             "Could not load EMF model from resource at " + filename + ". " + ie.getMessage());
                 }
             }
@@ -106,7 +106,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
                 if (extension == null) {
                     String msg = "The root element in the file is not valid to EDP2 specifications. " + "Filename = "
                             + filename;
-                    logger.log(Level.WARNING, msg);
+                    LOGGER.log(Level.WARNING, msg);
                     emfRootElement = null;
                     setClosed();
                     throw new DataNotAccessibleException(msg, null);
@@ -117,7 +117,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
                     } else {
                         String msg = "The root element in the file is not valid to EDP2 specifications. "
                                 + " Expected root element = " + extension + ". Filename = " + filename;
-                        logger.log(Level.WARNING, msg);
+                        LOGGER.log(Level.WARNING, msg);
                         emfRootElement = null;
                         setClosed();
                         throw new DataNotAccessibleException(msg, null);
@@ -126,7 +126,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
             } else {
                 String msg = "Only one root element is allowed per file in EDP2 specifications. " + "Filename = "
                         + filename;
-                logger.log(Level.WARNING, msg);
+                LOGGER.log(Level.WARNING, msg);
                 emfRootElement = null;
                 setClosed();
                 throw new DataNotAccessibleException(msg, null);
@@ -135,7 +135,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
             emfRootElement = null;
             setClosed();
             String errorMsg = "Could not load EMF model from file " + filename + ".";
-            logger.log(Level.SEVERE, errorMsg);
+            LOGGER.log(Level.SEVERE, errorMsg);
             throw new DataNotAccessibleException(errorMsg, ioobe);
         }
     }
@@ -161,7 +161,7 @@ abstract class EmfFileAccessDao extends FileAccessDao implements EmfResourceDao 
     public synchronized void setResourceSet(ResourceSet newResourceSet) {
         if (resourceSet != null) {
             String msg = "Resource set must only be registered once.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg);
         }
         resourceSet = newResourceSet;

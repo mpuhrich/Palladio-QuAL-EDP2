@@ -41,7 +41,7 @@ public class StoreLoadExample {
     public static final String DEFAULT_DIRECTORY = "LocalRepository";
 
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(StoreLoadExample.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(StoreLoadExample.class.getCanonicalName());
 
     /** Repository which is used to store the data. */
     private final Repository ldRepo;
@@ -129,7 +129,7 @@ public class StoreLoadExample {
             }
             streamResultData();
         } catch (final DataNotAccessibleException e) {
-            logger.log(Level.SEVERE, "Error while accessing the datastore.", e);
+            LOGGER.log(Level.SEVERE, "Error while accessing the datastore.", e);
         }
     }
 

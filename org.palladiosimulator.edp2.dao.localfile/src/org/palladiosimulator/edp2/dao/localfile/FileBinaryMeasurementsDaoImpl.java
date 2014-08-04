@@ -31,7 +31,7 @@ import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializ
 public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAccessDao<V, Q> implements
         BinaryMeasurementsDao<V, Q> {
     /** Error logger for this class. */
-    protected static final Logger logger = Logger.getLogger(FileBinaryMeasurementsDaoImpl.class.getCanonicalName());
+    protected static final Logger LOGGER = Logger.getLogger(FileBinaryMeasurementsDaoImpl.class.getCanonicalName());
 
     /** Serializer to use for the background list. */
     private Serializer<V> serializer = null;
@@ -47,17 +47,17 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
         super.open();
         if (unit == null) {
             final String msg = "A unit must be set before a call to open() is made.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg, null);
         }
         if (binaryRepresentation == null) {
             final String msg = "A binary representation must be set before a call to open() is made.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg, null);
         }
         if (serializer == null) {
             final String msg = "Initialization must have failed. Serializer is null.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg, null);
         }
         try {
@@ -66,7 +66,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
             setOpen();
         } catch (final IOException ioe) {
             final String msg = "Error accessing file on background storage.";
-            logger.log(Level.SEVERE, msg, ioe);
+            LOGGER.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);
         }
     }
@@ -79,7 +79,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
             setClosed();
         } catch (final IOException ioe) {
             final String msg = "Error accessing file on background storage.";
-            logger.log(Level.SEVERE, msg, ioe);
+            LOGGER.log(Level.SEVERE, msg, ioe);
             throw new DataNotAccessibleException(msg, ioe);
         }
     }
@@ -96,7 +96,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
     public List<Measure<V, Q>> getMeasurements() {
         if (!isOpen()) {
             final String msg = "Binary measurements can only be requested if state is open.";
-            logger.log(Level.WARNING, msg);
+            LOGGER.log(Level.WARNING, msg);
             throw new IllegalStateException(msg);
         }
         return backgroundMemoryList;
@@ -116,7 +116,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
     public void setBinaryRepresentation(final BinaryRepresentation binaryRepresentation) {
         if (this.binaryRepresentation != null) {
             final String msg = "It is not allowed to set the binary representation more than once.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg);
         }
         this.binaryRepresentation = binaryRepresentation;
@@ -138,7 +138,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
     public void setUnit(final Unit<Q> unit) {
         if (this.unit != null) {
             final String msg = "It is not allowed to set the unit more than once.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalStateException(msg);
         }
         this.unit = unit;
@@ -151,7 +151,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
             ExtendedIOUtil.writeString(output, getUnit().toString());
         } catch (final IOException e) {
             final String msg = "Could not put unit name on stream.";
-            logger.log(Level.SEVERE, msg, e);
+            LOGGER.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
         }
     }
@@ -164,7 +164,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
             unit = (Unit<Q>) Unit.valueOf(ExtendedIOUtil.readString(input));
         } catch (final IOException e) {
             final String msg = "Could not put unit name on stream.";
-            logger.log(Level.SEVERE, msg, e);
+            LOGGER.log(Level.SEVERE, msg, e);
             throw new DataNotAccessibleException(msg, e);
         }
     }
@@ -175,7 +175,7 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
             try {
                 backgroundMemoryList.flush();
             } catch (final IOException e) {
-                logger.log(Level.SEVERE, "Flush failed. Data may not be persited", e);
+                LOGGER.log(Level.SEVERE, "Flush failed. Data may not be persited", e);
                 throw new RuntimeException(e);
             }
         }

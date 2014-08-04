@@ -36,7 +36,7 @@ import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
 
     /** Logger for this class. */
-    private static final Logger logger = Logger
+    private static final Logger LOGGER = Logger
             .getLogger(LocalDirectoryMeasurementsDaoFactory.class.getCanonicalName());
 
     /** File suffix for uuid-referenced data files. */
@@ -63,7 +63,7 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
      */
     public LocalDirectoryMeasurementsDaoFactory(final File storageDirectory) {
         if (existingFileDaoFactories.containsKey(fileToMapKey(storageDirectory))) {
-            logger.log(Level.SEVERE, "There is already an existing FileDaoFactory instance for "
+            LOGGER.log(Level.SEVERE, "There is already an existing FileDaoFactory instance for "
                     + fileToMapKey(storageDirectory) + ".");
             throw new IllegalArgumentException();
         } else {
@@ -85,7 +85,7 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
         try {
             result = directory.getCanonicalPath();
         } catch (final IOException e) {
-            logger.log(Level.WARNING, "Could not resolve file name to String.", e);
+            LOGGER.log(Level.WARNING, "Could not resolve file name to String.", e);
         }
         return result;
     }
@@ -106,7 +106,7 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
         super.createJScienceXmlMeasurementsDao(uuid);
 
         // TODO Implement JScienceXmlMeasurements
-        logger.log(Level.SEVERE, "Unsupported Operation: JScience Measurements.");
+        LOGGER.log(Level.SEVERE, "Unsupported Operation: JScience Measurements.");
         throw new UnsupportedOperationException();
     }
 
@@ -166,7 +166,7 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
                     daoRegistry.getMeasurementsDao(uuid).open();
                 }
             } catch (final DataNotAccessibleException e) {
-                logger.log(Level.SEVERE, "Could not close DAO.", e);
+                LOGGER.log(Level.SEVERE, "Could not close DAO.", e);
                 throw new RuntimeException(e);
             }
         }

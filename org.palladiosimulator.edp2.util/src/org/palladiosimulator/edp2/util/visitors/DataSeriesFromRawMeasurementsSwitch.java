@@ -25,9 +25,9 @@ import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
  */
 public class DataSeriesFromRawMeasurementsSwitch extends MetricSpecSwitch<Boolean> {
     /** Logger for this class. */
-    private static final Logger logger = Logger.getLogger(DataSeriesFromRawMeasurementsSwitch.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(DataSeriesFromRawMeasurementsSwitch.class.getCanonicalName());
     /** Factory for EMF model. */
-    private static final ExperimentDataFactory factory = ExperimentDataFactory.eINSTANCE;
+    private static final ExperimentDataFactory FACTORY = ExperimentDataFactory.eINSTANCE;
 
     /** RawMeasurement on which the DataSeries should be added. */
     private final RawMeasurements rm;
@@ -54,32 +54,32 @@ public class DataSeriesFromRawMeasurementsSwitch extends MetricSpecSwitch<Boolea
     public Boolean caseBaseMetricDescription(final BaseMetricDescription bmd) {
         final String valuesUuid = EcoreUtil.generateUUID();
         if (bmd.getCaptureType() == CaptureType.IDENTIFIER) {
-            factory.createIdentifierBasedMeasurements(rm, valuesUuid);
+            FACTORY.createIdentifierBasedMeasurements(rm, valuesUuid);
         } else if (bmd.getCaptureType() == CaptureType.INTEGER_NUMBER) {
             final NumericalBaseMetricDescription nmbd = (NumericalBaseMetricDescription) bmd;
             if (nmbd.getPersistenceKind() == PersistenceKindOptions.BINARY_PREFERRED) {
-                factory.createLongBinaryMeasurements(rm, valuesUuid, nmbd.getDefaultUnit());
+                FACTORY.createLongBinaryMeasurements(rm, valuesUuid, nmbd.getDefaultUnit());
             } else if (nmbd.getPersistenceKind() == PersistenceKindOptions.JS_XML_PREFERRED) {
-                factory.createJSXmlMeasurements(rm, valuesUuid);
+                FACTORY.createJSXmlMeasurements(rm, valuesUuid);
             } else {
                 final String msg = "PersistenceKindOption of measure not known.";
-                logger.log(Level.SEVERE, msg);
+                LOGGER.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
             }
         } else if (bmd.getCaptureType() == CaptureType.REAL_NUMBER) {
             final NumericalBaseMetricDescription nmbd = (NumericalBaseMetricDescription) bmd;
             if (nmbd.getPersistenceKind() == PersistenceKindOptions.BINARY_PREFERRED) {
-                factory.createDoubleBinaryMeasurements(rm, valuesUuid, nmbd.getDefaultUnit());
+                FACTORY.createDoubleBinaryMeasurements(rm, valuesUuid, nmbd.getDefaultUnit());
             } else if (nmbd.getPersistenceKind() == PersistenceKindOptions.JS_XML_PREFERRED) {
-                factory.createJSXmlMeasurements(rm, valuesUuid);
+                FACTORY.createJSXmlMeasurements(rm, valuesUuid);
             } else {
                 final String msg = "PersistenceKindOption of measure not known.";
-                logger.log(Level.SEVERE, msg);
+                LOGGER.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
             }
         } else {
             final String msg = "CaptureType of measure not known.";
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new IllegalArgumentException(msg);
         }
         return true;

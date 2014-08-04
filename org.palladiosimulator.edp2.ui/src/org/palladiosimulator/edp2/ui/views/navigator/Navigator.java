@@ -6,8 +6,11 @@ import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFListProperty;
 import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
 import org.eclipse.jface.util.LocalSelectionTransfer;
+import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.window.ToolTip;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSourceEvent;
 import org.eclipse.swt.dnd.DragSourceListener;
@@ -41,8 +44,9 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
     @Override
     public void createPartControl(final Composite parent) {
         parent.setLayout(new FillLayout());
-        treeViewer = new TreeViewer(parent);
+        treeViewer = new TreeViewer(parent, SWT.FULL_SELECTION);
         treeViewer.setAutoExpandLevel(8);
+        ColumnViewerToolTipSupport.enableFor(treeViewer,ToolTip.NO_RECREATE);
 
         final ObservableListTreeContentProvider contentProvider = new ObservableListTreeContentProvider(
                 new NavigatorTreeFactoryImpl(), new NavigatorTreeStructureAdvisorImpl());

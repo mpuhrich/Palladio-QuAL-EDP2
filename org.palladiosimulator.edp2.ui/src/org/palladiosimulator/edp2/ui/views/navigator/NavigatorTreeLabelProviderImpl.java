@@ -28,6 +28,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 
@@ -54,13 +55,77 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
     }
 
     /**
-     * TODO Enable tool tip for measurements (give details about the used metric)
-     * 
      * {@inheritDoc}
      */
     @Override
     public String getToolTipText(final Object element) {
-        return "#dummy#";
+        if (element instanceof EObject) {
+            final EObject eObject = (EObject) element;
+            final StyledString styledString = new ExperimentDataSwitch<StyledString>() {
+
+                @Override
+                public StyledString caseMeasurements(final Measurements object) {
+                    final Measure measure = object.getMeasure();
+                    final MetricDescription metricDescription = measure.getMetric();
+
+                    final StyledString styledString = new MetricSpecSwitch<StyledString>() {
+                        @Override
+                        public final StyledString caseBaseMetricDescription(final BaseMetricDescription object) {
+                            final StyledString styledString = new StyledString(object.getName() == null ? "Base Metric"
+                                    : object.getName());
+                            final String decoration = " (" + object.getScale() + ")";
+                            styledString.append(decoration, StyledString.COUNTER_STYLER);
+                            return styledString;
+                        };
+
+                        @Override
+                        public final StyledString caseNumericalBaseMetricDescription(
+                                final NumericalBaseMetricDescription object) {
+                            final StyledString styledString = new StyledString(object.getName() == null ? "Base Metric"
+                                    : object.getName());
+                            final String decoration = " (" + object.getScale() + ", " + object.getDefaultUnit() + ")";
+                            styledString.append(decoration, StyledString.COUNTER_STYLER);
+                            return styledString;
+                        };
+
+                        @Override
+                        public StyledString caseMetricSetDescription(MetricSetDescription object) {
+                            final StyledString styledString = new StyledString("MetricSet [\n");
+                            
+                            final int subsumedMetrics = object.getSubsumedMetrics().size();
+                            for(int i=0; i<subsumedMetrics; i++) {
+                                styledString.append("  ");
+                                final MetricDescription subsumedMetric = object.getSubsumedMetrics().get(i);                                
+                                styledString.append(this.doSwitch(subsumedMetric));
+                                if(i != subsumedMetrics-1) {
+                                    styledString.append(";\n");
+                                }
+                            }
+                            styledString.append("]\n\nDescription:\n");
+                            styledString.append(object.getTextualDescription());
+                            
+                            return styledString;
+                        }
+                        
+                        @Override
+                        public final StyledString caseMetricDescription(final MetricDescription object) {
+                            final StyledString styledString = new StyledString(object.getName() == null ? "Metric Set"
+                                    : object.getName());
+                            return styledString;
+                        };
+                    }.doSwitch(metricDescription);
+  
+                    return styledString;
+                };
+
+            }.doSwitch(eObject);
+
+            if (styledString != null) {
+                return styledString.getString();
+            }
+        }
+
+        return null;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class DefaultUnitSwitch extends MetricSpecSwitch<String> {
     /**
      * Logger for this class.
      */
-    private final static Logger LOGGER = Logger
+    private static final Logger LOGGER = Logger
             .getLogger(DefaultUnitSwitch.class.getSimpleName());
 
     private final MetricDescription metric;

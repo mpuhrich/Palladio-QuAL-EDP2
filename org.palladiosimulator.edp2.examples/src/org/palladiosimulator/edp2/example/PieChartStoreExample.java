@@ -20,9 +20,9 @@ import org.palladiosimulator.edp2.util.MeasurementsUtility;
  */
 public class PieChartStoreExample {
 	/** (Relative) name of the directory in which the data of the example will be stored. */
-	public final static String DEFAULT_DIRECTORY = "LocalRepository";
+	public static final String DEFAULT_DIRECTORY = "LocalRepository";
 	/** Logger for this class. */
-	private final static Logger logger = Logger.getLogger(PieChartStoreExample.class.getCanonicalName());
+	private static final Logger LOGGER = Logger.getLogger(PieChartStoreExample.class.getCanonicalName());
 	
 	/** Repository which is used to store the data. */
 	private final LocalDirectoryRepository ldRepo;
@@ -80,7 +80,7 @@ public class PieChartStoreExample {
 			createExample();
 			MeasurementsUtility.ensureClosedRepository(ldRepo);
 		} catch (DataNotAccessibleException e) {
-			logger.log(Level.SEVERE, "Error while accessing the datastore.", e);
+			LOGGER.log(Level.SEVERE, "Error while accessing the datastore.", e);
 		}
 	}
 

@@ -35,21 +35,19 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 
 /**
- * {@link WizardPage}, which provides a list of all available adapters
- * {@link AbstractAdapter}, that are registered as extensions.
+ * {@link WizardPage}, which provides a list of all available adapters {@link AbstractAdapter}, that
+ * are registered as extensions.
  * 
  * @author Dominik Ernst
  */
-public class SelectAdapterPage extends WizardPage implements
-ISelectionChangedListener {
+public class SelectAdapterPage extends WizardPage implements ISelectionChangedListener {
 
-    private final static Logger logger = Logger
-            .getLogger(SelectAdapterPage.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(SelectAdapterPage.class.getCanonicalName());
 
-    private final static String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
+    private static final String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
 
-    private final static String ADAPTER_CLASS_ATTRIBUTE = "class";
-    private final static String ADAPTER_WIZARD_ATTRIBUTE = "wizard";
+    private static final String ADAPTER_CLASS_ATTRIBUTE = "class";
+    private static final String ADAPTER_WIZARD_ATTRIBUTE = "wizard";
 
     AbstractDataSource selectedSource;
     ArrayList<IAdapterWizard> availableAdapters;
@@ -77,9 +75,7 @@ ISelectionChangedListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets
-     * .Composite)
+     * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets .Composite)
      */
     @Override
     public void createControl(final Composite parent) {
@@ -114,8 +110,7 @@ ISelectionChangedListener {
             }
 
             @Override
-            public void inputChanged(final Viewer viewer, final Object oldInput,
-                    final Object newInput) {
+            public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
                 // TODO Auto-generated method stub
 
             }
@@ -169,14 +164,12 @@ ISelectionChangedListener {
         updatePageStatus();
     }
 
-    protected ArrayList<IAdapterWizard> getApplicableAdapters(
-            final AbstractDataSource forSource) {
+    protected ArrayList<IAdapterWizard> getApplicableAdapters(final AbstractDataSource forSource) {
         availableAdapters = new ArrayList<IAdapterWizard>();
         // checks the extension registry for all registered adapters and adds
         // them to the list
-        final IConfigurationElement[] adapterExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        ADAPTER_EXTENSION_POINT_ID);
+        final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
+                ADAPTER_EXTENSION_POINT_ID);
         for (final IConfigurationElement e : adapterExtensions) {
             Object w, o = null;
             try {
@@ -186,23 +179,20 @@ ISelectionChangedListener {
                     availableAdapters.add((IAdapterWizard) w);
                 }
             } catch (final CoreException ex) {
-                logger
-                .log(Level.SEVERE,
-                        "Error in creating an Object referenced in an extension.");
+                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
                 throw new RuntimeException();
             }
-            logger.log(Level.INFO, o.toString());
+            LOGGER.log(Level.INFO, o.toString());
         }
         return availableAdapters;
     }
 
     /**
-     * Method which is called when the "Next" Button in the Wizard is clicked.
-     * Must call
-     * {@link IAdapterWizard#setSourceFromCaller(AbstractDataSource, SelectAdapterPage)}
-     * , where the {@link AbstractDataSource} is the source handed from the
-     * RawMeasurements object, which was selected in the first place and
-     * <code>this</code> a reference on this {@link SelectAdapterPage}.
+     * Method which is called when the "Next" Button in the Wizard is clicked. Must call
+     * {@link IAdapterWizard#setSourceFromCaller(AbstractDataSource, SelectAdapterPage)} , where the
+     * {@link AbstractDataSource} is the source handed from the RawMeasurements object, which was
+     * selected in the first place and <code>this</code> a reference on this
+     * {@link SelectAdapterPage}.
      */
     @Override
     public IWizardPage getNextPage() {
@@ -214,16 +204,13 @@ ISelectionChangedListener {
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
         selectionStatus = statusOK;
-        final IStructuredSelection selection = (IStructuredSelection) event
-                .getSelection();
+        final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
         selectedAdapterWizard = null;
         if (selection == null) {
-            selectionStatus = new Status(IStatus.ERROR, "", 0,
-                    "Must select an adapter to proceed.", null);
+            selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select an adapter to proceed.", null);
         } else {
-            selectedAdapterWizard = (IAdapterWizard) selection
-                    .getFirstElement();
-            logger.log(Level.INFO, selectedAdapterWizard.getWindowTitle());
+            selectedAdapterWizard = (IAdapterWizard) selection.getFirstElement();
+            LOGGER.log(Level.INFO, selectedAdapterWizard.getWindowTitle());
         }
 
         updatePageStatus();
@@ -259,7 +246,7 @@ ISelectionChangedListener {
     }
 
     public void setAdapter(final AbstractAdapter adapter) {
-        logger.log(Level.INFO, "adapter of AdapterWizard set");
+        LOGGER.log(Level.INFO, "adapter of AdapterWizard set");
         this.createdAdapter = adapter;
         final AdapterWizard wizard = (AdapterWizard) getWizard();
         wizard.setAdapter(adapter);

@@ -34,7 +34,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  */
 public class EDP2Plugin extends Plugin {
     /** Logger for this class. */
-    private static Logger logger = Logger.getLogger(EDP2Plugin.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(EDP2Plugin.class.getCanonicalName());
 
     /** Setting: Should there be an initial population or mock-up data of repositories? */
     private static String SETTING_INITIALLY_POPULATE_REPOSITORY = "populate_repository";
@@ -68,7 +68,7 @@ public class EDP2Plugin extends Plugin {
             try {
                 node.flush();
             } catch (BackingStoreException e) {
-                logger.log(Level.SEVERE, "Could not load/store preferences. ", e);
+                LOGGER.log(Level.SEVERE, "Could not load/store preferences. ", e);
             }
         }
         if (populate) {
@@ -119,12 +119,12 @@ public class EDP2Plugin extends Plugin {
                     try {
                         repo.open();
                     } catch (DataNotAccessibleException e) {
-                        logger.log(Level.WARNING, "Could not open repository after reloading. Repository is " + repo);
+                        LOGGER.log(Level.WARNING, "Could not open repository after reloading. Repository is " + repo);
                     }
                 }
             }
         } catch (Exception e) {
-            logger.warning("No preexisting EDP2 dataset configuration file. Resetting configuration...");
+            LOGGER.warning("No preexisting EDP2 dataset configuration file. Resetting configuration...");
             if (getRepositories().getAvailableRepositories().size() == 0) {
                 // TODO add EDP2 main memory repository once available
             }
@@ -143,7 +143,7 @@ public class EDP2Plugin extends Plugin {
         try {
             resource.save(Collections.EMPTY_MAP);
         } catch (IOException e) {
-            logger.warning("Saving dataset configuration failed.");
+            LOGGER.warning("Saving dataset configuration failed.");
         }
     }
 

@@ -22,7 +22,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
  */
 public class RepositoryManager {
     /** Logger for this class. */
-    private static Logger LOGGER = Logger.getLogger(RepositoryManager.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(RepositoryManager.class.getCanonicalName());
 
     /** Central instance of a repository (singleton). */
     private static Repositories centralRepository = RepositoryFactory.eINSTANCE.createRepositories();

@@ -33,49 +33,48 @@ import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 
 /**
- * Implementation of a {@link WizardPage} that contains a list of visualizations
- * which are able to display the selected data. The list contains both the basic defaults,
- * i.e. registered visualizations only, and defaults as described by extensions to the extension point
+ * Implementation of a {@link WizardPage} that contains a list of visualizations which are able to
+ * display the selected data. The list contains both the basic defaults, i.e. registered
+ * visualizations only, and defaults as described by extensions to the extension point
  * <code>org.palladiosimulator.edp2.visualization.defaultSequences</code>.
+ * 
  * @author Dominik Ernst
  */
-public class SelectDefaultCombinationsPage
-extends WizardPage implements ISelectionChangedListener {
+public class SelectDefaultCombinationsPage extends WizardPage implements ISelectionChangedListener {
 
     /**
      * Logger for this class.
      */
-    private final static Logger logger = Logger
-            .getLogger(SelectDefaultCombinationsPage.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(SelectDefaultCombinationsPage.class.getCanonicalName());
 
     /**
      * Extension points for registered {@link AbstractFilter}, {@link AbstractAdapter} and
      * {@link JFreeChartVisualizationSingleDatastreamInput}-elements
      */
-    private final static String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
-    private final static String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
-    private final static String SINK_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.datasink";
-    private final static String DEFAULT_COMBOS_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.defaultSequences";
+    private static final String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
+    private static final String ADAPTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.adapter";
+    private static final String SINK_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.datasink";
+    private static final String DEFAULT_COMBOS_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.defaultSequences";
 
     /**
      * Attribute names and element IDs as used in extension points.
      */
-    private final static String ELEMENT_ID_ADAPTER = "adapter";
-    private final static String ELEMENT_ID_FILTER = "filter";
-    private final static String ELEMENT_ID_DATASINK = "datasink";
-    private final static String ELEMENT_ID_PROPERTY = "property";
-    private final static String ELEMENT_ID_INPUT_METRIC = "inputMetric";
-    private final static String INPUT_METRIC_UUID_ATTRIBUTE = "UUID";
-    private final static String INPUT_METRIC_DESCRIPTION_ATTRIBUTE = "description";
-    private final static String PROPERTY_KEY_ATTRIBUTE = "key";
-    private final static String PROPERTY_VALUE_ATTRIBUTE = "value";
-    private final static String ADAPTER_ID_ATTRIBUTE = "adapterID";
-    private final static String FILTER_ID_ATTRIBUTE = "filterID";
-    private final static String DATASINK_ID_ATTRIBUTE = "sinkID";
+    private static final String ELEMENT_ID_ADAPTER = "adapter";
+    private static final String ELEMENT_ID_FILTER = "filter";
+    private static final String ELEMENT_ID_DATASINK = "datasink";
+    private static final String ELEMENT_ID_PROPERTY = "property";
+    private static final String ELEMENT_ID_INPUT_METRIC = "inputMetric";
+    private static final String INPUT_METRIC_UUID_ATTRIBUTE = "UUID";
+    private static final String INPUT_METRIC_DESCRIPTION_ATTRIBUTE = "description";
+    private static final String PROPERTY_KEY_ATTRIBUTE = "key";
+    private static final String PROPERTY_VALUE_ATTRIBUTE = "value";
+    private static final String ADAPTER_ID_ATTRIBUTE = "adapterID";
+    private static final String FILTER_ID_ATTRIBUTE = "filterID";
+    private static final String DATASINK_ID_ATTRIBUTE = "sinkID";
 
-    private final static String CLASS_ATTRIBUTE = "class";
-    private final static String ID_ATTRIBUTE = "id";
-    private final static String NAME_ATTRIBUTE = "name";
+    private static final String CLASS_ATTRIBUTE = "class";
+    private static final String ID_ATTRIBUTE = "id";
+    private static final String NAME_ATTRIBUTE = "name";
 
     /**
      * The source which was selected when the wizard was started.
@@ -107,32 +106,27 @@ extends WizardPage implements ISelectionChangedListener {
      * @param selectedSource
      *            the source which was selected to invoke the wizard.
      */
-    protected SelectDefaultCombinationsPage(final String pageName,
-            final IDataSource selectedSource) {
+    protected SelectDefaultCombinationsPage(final String pageName, final IDataSource selectedSource) {
         super(pageName);
         this.selectedSource = selectedSource;
-        setDescription("Choose a combination of Filters/Adapters + Editor to display"
-                + "the selected Data.");
+        setDescription("Choose a combination of Filters/Adapters + Editor to display" + "the selected Data.");
         statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
-        selectionStatus = new Status(IStatus.INFO, "not_used", 0,
-                "Please select a Visualization to proceed.", null);
+        selectionStatus = new Status(IStatus.INFO, "not_used", 0, "Please select a Visualization to proceed.", null);
 
         createDefaultCombinations();
     }
 
     /**
      * Checks the registered plugins for filters {@link AbstractFilter}, adapters
-     * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartVisualizationSingleDatastreamInput}. Then
-     * creates the basic combinations, objects of the type
-     * {@link DefaultSequence} from these.
+     * {@link AbstractAdapter} and JFreeCharts {@link JFreeChartVisualizationSingleDatastreamInput}.
+     * Then creates the basic combinations, objects of the type {@link DefaultSequence} from these.
      */
     private void createDefaultCombinations() {
         Object o = null;
         String id;
         // get list of registered filters - assume that the basic filters exist
-        final IConfigurationElement[] filterExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        FILTER_EXTENSION_POINT_ID);
+        final IConfigurationElement[] filterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
+                FILTER_EXTENSION_POINT_ID);
         final HashMap<String, AbstractFilter> filters = new HashMap<String, AbstractFilter>();
         for (final IConfigurationElement e : filterExtensions) {
 
@@ -141,17 +135,14 @@ extends WizardPage implements ISelectionChangedListener {
                 id = e.getAttribute(ID_ATTRIBUTE);
                 filters.put(id, (AbstractFilter) o);
             } catch (final CoreException e1) {
-                logger
-                .log(Level.SEVERE,
-                        "Error in creating an Object referenced in an extension.");
+                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
                 throw new RuntimeException();
             }
         }
         // get list of registered adapters - assume that the basic adapters
         // exist
-        final IConfigurationElement[] adapterExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        ADAPTER_EXTENSION_POINT_ID);
+        final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
+                ADAPTER_EXTENSION_POINT_ID);
         final HashMap<String, AbstractAdapter> adapters = new HashMap<String, AbstractAdapter>();
         for (final IConfigurationElement e : adapterExtensions) {
             try {
@@ -159,16 +150,13 @@ extends WizardPage implements ISelectionChangedListener {
                 id = e.getAttribute(ID_ATTRIBUTE);
                 adapters.put(id, (AbstractAdapter) o);
             } catch (final CoreException e1) {
-                logger
-                .log(Level.SEVERE,
-                        "Error in creating an Object referenced in an extension.");
+                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
                 throw new RuntimeException();
             }
         }
         // get the list of registered visualizations
-        final IConfigurationElement[] visualizationExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        SINK_EXTENSION_POINT_ID);
+        final IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(SINK_EXTENSION_POINT_ID);
         final HashMap<String, AbstractVisualizationInput> charts = new HashMap<String, AbstractVisualizationInput>();
         for (final IConfigurationElement e : visualizationExtensions) {
             try {
@@ -176,19 +164,16 @@ extends WizardPage implements ISelectionChangedListener {
                 o = e.createExecutableExtension(CLASS_ATTRIBUTE);
                 charts.put(id, (AbstractVisualizationInput) o);
             } catch (final CoreException e1) {
-                logger
-                .log(Level.SEVERE,
-                        "Error in creating an Object referenced in an extension.");
-                logger.log(Level.SEVERE, e1.getMessage());
+                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
+                LOGGER.log(Level.SEVERE, e1.getMessage());
                 throw new RuntimeException();
             }
         }
 
         defaultSequences = new ArrayList<DefaultSequence>();
 
-        final IConfigurationElement[] defaultSequencesExtensions = Platform
-                .getExtensionRegistry().getConfigurationElementsFor(
-                        DEFAULT_COMBOS_EXTENSION_POINT_ID);
+        final IConfigurationElement[] defaultSequencesExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(DEFAULT_COMBOS_EXTENSION_POINT_ID);
 
         for (final IConfigurationElement e : defaultSequencesExtensions) {
 
@@ -204,55 +189,42 @@ extends WizardPage implements ISelectionChangedListener {
 
             for (final IConfigurationElement element : sequence) {
                 if (element.getName().equals(ELEMENT_ID_ADAPTER)) {
-                    tempDefault.addSequenceElement(adapters.get(element
-                            .getAttribute(ADAPTER_ID_ATTRIBUTE)));
-                    final IConfigurationElement[] properties = element
-                            .getChildren(ELEMENT_ID_PROPERTY);
+                    tempDefault.addSequenceElement(adapters.get(element.getAttribute(ADAPTER_ID_ATTRIBUTE)));
+                    final IConfigurationElement[] properties = element.getChildren(ELEMENT_ID_PROPERTY);
                     for (final IConfigurationElement property : properties) {
                         final HashMap<String, Object> elementProperties = new HashMap<String, Object>();
-                        elementProperties.put(property
-                                .getAttribute(PROPERTY_KEY_ATTRIBUTE), property
-                                .getAttribute(PROPERTY_VALUE_ATTRIBUTE));
+                        elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
+                                property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
                         tempDefault.addSequenceProperty(elementProperties);
                     }
                 } else if (element.getName().equals(ELEMENT_ID_FILTER)) {
-                    tempDefault.addSequenceElement(filters.get(element
-                            .getAttribute(FILTER_ID_ATTRIBUTE)));
-                    final IConfigurationElement[] properties = element
-                            .getChildren(ELEMENT_ID_PROPERTY);
+                    tempDefault.addSequenceElement(filters.get(element.getAttribute(FILTER_ID_ATTRIBUTE)));
+                    final IConfigurationElement[] properties = element.getChildren(ELEMENT_ID_PROPERTY);
                     for (final IConfigurationElement property : properties) {
                         final HashMap<String, Object> elementProperties = new HashMap<String, Object>();
-                        elementProperties.put(property
-                                .getAttribute(PROPERTY_KEY_ATTRIBUTE), property
-                                .getAttribute(PROPERTY_VALUE_ATTRIBUTE));
+                        elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
+                                property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
                         tempDefault.addSequenceProperty(elementProperties);
                     }
 
                 } else if (element.getName().equals(ELEMENT_ID_DATASINK)) {
                     // the visualization is handled separately by the
                     // DefaultSequence class
-                    tempDefault.setVisualization(charts.get(element
-                            .getAttribute(DATASINK_ID_ATTRIBUTE)));
-                    final IConfigurationElement[] properties = element
-                            .getChildren(ELEMENT_ID_PROPERTY);
+                    tempDefault.setVisualization(charts.get(element.getAttribute(DATASINK_ID_ATTRIBUTE)));
+                    final IConfigurationElement[] properties = element.getChildren(ELEMENT_ID_PROPERTY);
                     for (final IConfigurationElement property : properties) {
                         final HashMap<String, Object> elementProperties = new HashMap<String, Object>();
-                        elementProperties.put(property
-                                .getAttribute(PROPERTY_KEY_ATTRIBUTE), property
-                                .getAttribute(PROPERTY_VALUE_ATTRIBUTE));
-                        tempDefault
-                        .setVisualizationProperties(elementProperties);
+                        elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
+                                property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
+                        tempDefault.setVisualizationProperties(elementProperties);
                     }
                 }
             }
 
             // there is exactly 1 element of the type inputMetric
-            final IConfigurationElement inputMetricElement = e
-                    .getChildren(ELEMENT_ID_INPUT_METRIC)[0];
-            tempDefault.setInputMetricUUID(inputMetricElement
-                    .getAttribute(INPUT_METRIC_UUID_ATTRIBUTE));
-            tempDefault.setInputDescription(inputMetricElement
-                    .getAttribute(INPUT_METRIC_DESCRIPTION_ATTRIBUTE));
+            final IConfigurationElement inputMetricElement = e.getChildren(ELEMENT_ID_INPUT_METRIC)[0];
+            tempDefault.setInputMetricUUID(inputMetricElement.getAttribute(INPUT_METRIC_UUID_ATTRIBUTE));
+            tempDefault.setInputDescription(inputMetricElement.getAttribute(INPUT_METRIC_DESCRIPTION_ATTRIBUTE));
 
             defaultSequences.add(tempDefault);
 
@@ -264,9 +236,9 @@ extends WizardPage implements ISelectionChangedListener {
         basicSequence1.setSequenceID("histogramAdapterDefault");
         basicSequence1.setSequenceName("Histogram + Adapter");
         basicSequence1.setInputMetricUUID("no_UUID");
-        //basicSequence1
-        //.addSequenceElement(adapters
-        //        .get("org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter"));
+        // basicSequence1
+        // .addSequenceElement(adapters
+        // .get("org.palladiosimulator.edp2.transformation.HistogramFrequencyAdapter"));
         basicSequence1.setVisualization(charts
                 .get("org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput"));
         // The scatterplot is added independently of Default Combinations in
@@ -275,8 +247,7 @@ extends WizardPage implements ISelectionChangedListener {
         basicSequence2.setSequenceID("scatterplotDefault");
         basicSequence2.setSequenceName("Scatterplot");
         basicSequence2.setInputMetricUUID("no_UUID");
-        basicSequence2.setVisualization(charts
-                .get("org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput"));
+        basicSequence2.setVisualization(charts.get("org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput"));
 
         // experimental sequence with histogram only (for multiple dataseries)
         final DefaultSequence basicSequence3 = new DefaultSequence();
@@ -299,17 +270,14 @@ extends WizardPage implements ISelectionChangedListener {
      */
     @Override
     public boolean canFlipToNextPage() {
-        ((DefaultViewsWizard) getWizard()).setFinishable(updatePageStatus()
-                .isOK());
+        ((DefaultViewsWizard) getWizard()).setFinishable(updatePageStatus().isOK());
         return updatePageStatus().isOK();
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets
-     * .Composite)
+     * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets .Composite)
      */
     @Override
     public void createControl(final Composite parent) {
@@ -333,7 +301,7 @@ extends WizardPage implements ISelectionChangedListener {
         choiceViewer.setContentProvider(new IStructuredContentProvider() {
             @Override
             public void dispose() {
-                //do nothing here
+                // do nothing here
             }
 
             @Override
@@ -342,26 +310,25 @@ extends WizardPage implements ISelectionChangedListener {
             }
 
             @Override
-            public void inputChanged(final Viewer viewer, final Object oldInput,
-                    final Object newInput) {
-                //do nothing here
+            public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
+                // do nothing here
             }
         });
         choiceViewer.setLabelProvider(new ILabelProvider() {
 
             @Override
             public void addListener(final ILabelProviderListener listener) {
-                //do nothing here
+                // do nothing here
             }
 
             @Override
             public void dispose() {
-                //do nothing here
+                // do nothing here
             }
 
             @Override
             public Image getImage(final Object element) {
-                //do nothing here
+                // do nothing here
                 return null;
             }
 
@@ -370,8 +337,7 @@ extends WizardPage implements ISelectionChangedListener {
                 if (element != null) {
                     // the elements in the list are of type DefaultSequence
                     final DefaultSequence sequenceElement = (DefaultSequence) element;
-                    final StringBuilder shownString = new StringBuilder(
-                            sequenceElement.getSequenceName());
+                    final StringBuilder shownString = new StringBuilder(sequenceElement.getSequenceName());
                     // return the sequenceName as labels
                     return shownString.toString();
                 }
@@ -380,13 +346,13 @@ extends WizardPage implements ISelectionChangedListener {
 
             @Override
             public boolean isLabelProperty(final Object element, final String property) {
-                //not used
+                // not used
                 return false;
             }
 
             @Override
             public void removeListener(final ILabelProviderListener listener) {
-                //not used
+                // not used
             }
         });
 
@@ -399,30 +365,30 @@ extends WizardPage implements ISelectionChangedListener {
     }
 
     /**
-     * Method that checks if a given {@link AbstractDataSource} can be processed by any registered {@link DefaultSequence}-objects and returns
-     * the possible results as a list.
-     * @param forSource the {@link AbstractDataSource} for which sequences are returned
+     * Method that checks if a given {@link AbstractDataSource} can be processed by any registered
+     * {@link DefaultSequence}-objects and returns the possible results as a list.
+     * 
+     * @param forSource
+     *            the {@link AbstractDataSource} for which sequences are returned
      * @return list of {@link DefaultSequence}-objects that can process the given source.
      */
-    private ArrayList<DefaultSequence> getApplicableSequences(
-            final IDataSource forSource) {
+    private ArrayList<DefaultSequence> getApplicableSequences(final IDataSource forSource) {
         final ArrayList<DefaultSequence> applicableSequences = new ArrayList<DefaultSequence>();
 
         for (final DefaultSequence seq : defaultSequences) {
-            if (seq.getInputMetricUUID().equals(
-                    forSource.getMetricDesciption().getId())) {
+            if (seq.getInputMetricUUID().equals(forSource.getMetricDesciption().getId())) {
                 applicableSequences.add(seq);
             } else if (seq.getInputMetricUUID().equals("no_UUID")) {
                 // TODO FIXME
-                //                if (seq.getSize() > 0) {
-                //                    if (seq.getFirstSequenceElement().canAccept(forSource)) {
-                //                        applicableSequences.add(seq);
-                //                    }
-                //                } else {
-                //                    if (seq.getVisualization().canAccept(forSource)) {
-                //                        applicableSequences.add(seq);
-                //                    }
-                //                }
+                // if (seq.getSize() > 0) {
+                // if (seq.getFirstSequenceElement().canAccept(forSource)) {
+                // applicableSequences.add(seq);
+                // }
+                // } else {
+                // if (seq.getVisualization().canAccept(forSource)) {
+                // applicableSequences.add(seq);
+                // }
+                // }
                 applicableSequences.add(seq);
             }
         }
@@ -433,30 +399,27 @@ extends WizardPage implements ISelectionChangedListener {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(
+     * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(
      * org.eclipse.jface.viewers.SelectionChangedEvent)
      */
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
         selectionStatus = statusOK;
-        final IStructuredSelection selection = (IStructuredSelection) event
-                .getSelection();
+        final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
         if (selection.isEmpty()) {
-            selectionStatus = new Status(IStatus.ERROR, "not_used", 0,
-                    "Please select a Visualization to proceed.", null);
+            selectionStatus = new Status(IStatus.ERROR, "not_used", 0, "Please select a Visualization to proceed.",
+                    null);
         } else {
             final int index = choiceViewer.getTable().getSelectionIndex();
-            setSelectedDefault(getApplicableSequences(selectedSource)
-                    .get(index));
+            setSelectedDefault(getApplicableSequences(selectedSource).get(index));
         }
 
         updatePageStatus();
     }
 
     /**
-     * Method which handles the status of the whole {@link WizardPage} based on
-     * the different states resulting from inputs.
+     * Method which handles the status of the whole {@link WizardPage} based on the different states
+     * resulting from inputs.
      * 
      * @return the page Status
      */

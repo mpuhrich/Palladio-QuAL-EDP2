@@ -23,7 +23,7 @@ public class LoadExample {
     /** (Relative) name of the directory in which the data of the example will be stored. */
     public static String DEFAULT_DIRECTORY = "LocalRepository";
     /** Logger for this class. */
-    private static Logger logger = Logger.getLogger(LoadExample.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(LoadExample.class.getCanonicalName());
 
     /** Helper class used to process data for the example. */
     private final ExampleData exampleData;
@@ -95,7 +95,7 @@ public class LoadExample {
                             .getId()));
             MeasurementsUtility.ensureClosedRepository(ldRepo);
         } catch (final DataNotAccessibleException e) {
-            logger.log(Level.SEVERE, "Error while accessing the datastore.", e);
+            LOGGER.log(Level.SEVERE, "Error while accessing the datastore.", e);
         }
     }
 

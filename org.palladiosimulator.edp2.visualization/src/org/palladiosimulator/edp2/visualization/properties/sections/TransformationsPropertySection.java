@@ -55,15 +55,15 @@ import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
  */
 public class TransformationsPropertySection extends AbstractPropertySection
 implements ISelectionChangedListener {
-    /** logger */
-    private final static Logger logger = Logger
+    /** LOGGER */
+    private static final Logger LOGGER = Logger
             .getLogger(TransformationsPropertySection.class.getCanonicalName());
 
     /**
      * Key which must be the same as the key under which the ID's / names of
      * {@link AbstractTransformation}s are stored.
      */
-    private final static String NAME_KEY = "elementName";
+    private static final String NAME_KEY = "elementName";
 
     /**
      * A tree, which contains the editor's inputs and their transformations (as

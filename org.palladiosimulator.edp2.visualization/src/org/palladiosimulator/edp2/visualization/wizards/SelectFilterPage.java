@@ -40,13 +40,13 @@ import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 public class SelectFilterPage extends WizardPage implements
 ISelectionChangedListener {
 
-    private final static Logger logger = Logger
+    private static final Logger LOGGER = Logger
             .getLogger(SelectFilterPage.class.getCanonicalName());
 
-    private final static String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
+    private static final String FILTER_EXTENSION_POINT_ID = "org.palladiosimulator.edp2.visualization.filter";
 
-    private final static String FILTER_CLASS_ATTRIBUTE = "class";
-    private final static String FILTER_WIZARD_ATTRIBUTE = "wizard";
+    private static final String FILTER_CLASS_ATTRIBUTE = "class";
+    private static final String FILTER_WIZARD_ATTRIBUTE = "wizard";
 
     AbstractDataSource selectedSource;
     ArrayList<IFilterWizard> availableFilters;
@@ -183,10 +183,10 @@ ISelectionChangedListener {
                     availableFilters.add((IFilterWizard) w);
                 }
             } catch (final CoreException e1) {
-                logger.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
+                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
                 throw new RuntimeException();
             }
-            logger.log(Level.INFO, o.toString());
+            LOGGER.log(Level.INFO, o.toString());
         }
         return availableFilters;
     }
@@ -215,7 +215,7 @@ ISelectionChangedListener {
                     "Must select a Filter to proceed.", null);
         } else {
             selectedFilterWizard = (IFilterWizard) selection.getFirstElement();
-            logger.log(Level.INFO, selectedFilterWizard.getWindowTitle());
+            LOGGER.log(Level.INFO, selectedFilterWizard.getWindowTitle());
         }
 
         updatePageStatus();
@@ -251,7 +251,7 @@ ISelectionChangedListener {
     }
 
     public void setFilter(final AbstractFilter filter) {
-        logger.log(Level.INFO, "Filter of FilterWizard set");
+        LOGGER.log(Level.INFO, "Filter of FilterWizard set");
         this.createdFilter = filter;
         final FilterWizard wizard = (FilterWizard) getWizard();
         wizard.setFilter(filter);

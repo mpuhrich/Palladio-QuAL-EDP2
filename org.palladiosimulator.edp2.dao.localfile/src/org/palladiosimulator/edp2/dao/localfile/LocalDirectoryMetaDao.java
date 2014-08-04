@@ -43,7 +43,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
 
     /** Logger for this class. */
-    private static Logger logger = Logger.getLogger(LocalDirectoryMetaDao.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(LocalDirectoryMetaDao.class.getCanonicalName());
 
     /** The measurement DAO factory connected to this meta data DAO.*/
     MeasurementsDaoFactory mmtDaoFactory = null;
@@ -60,7 +60,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                         if (isOpen()) {
                             final String errMsg = "Repository was reassigned to another instance "
                                     + "of Repositories while it was still open. Data might be corrupted!";
-                            logger.log(Level.SEVERE, errMsg);
+                            LOGGER.log(Level.SEVERE, errMsg);
                             throw new IllegalStateException(errMsg);
                         }
                     }
@@ -161,7 +161,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                     return false;
                 }
             } catch (final IOException e) {
-                logger.log(Level.WARNING, "File " + directory.getAbsolutePath()
+                LOGGER.log(Level.WARNING, "File " + directory.getAbsolutePath()
                         + "did not contain a valid EMF model. Reason: "
                         + e.getMessage());
                 resourceSet = null;
@@ -183,7 +183,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             closeRepository();
         } catch (final IllegalArgumentException e) {
             final String msg = "URI is not valid.";
-            logger.log(Level.WARNING, msg);
+            LOGGER.log(Level.WARNING, msg);
             throw new DataNotAccessibleException(msg, e);
         }
         assert !isOpen();
@@ -215,7 +215,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
 
             if (!directory.isDirectory()) {
                 final String msg = "URI does not point to a directory.";
-                logger.log(Level.WARNING, msg);
+                LOGGER.log(Level.WARNING, msg);
                 throw new DataNotAccessibleException(msg, null);
             }
 
@@ -225,11 +225,11 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             saveExperimentGroups(directory, flushOnly);
         }
         else if(uri.isPlatformResource()) {
-            logger.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
+            LOGGER.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
             //throw new UnsupportedOperationException("Platform resource deletion currently only partly supported!");
         }
         else {
-            logger.log(Level.WARNING, "Unsupported URI format.");
+            LOGGER.log(Level.WARNING, "Unsupported URI format.");
             //throw new UnsupportedOperationException("Unsupported URI format.");
         }
     }
@@ -252,7 +252,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             //				File directory = new File(uri.toFileString());
             //				if (!directory.isDirectory()) {
             //					String msg = "URI does not point to a directory.";
-            //					logger.log(Level.WARNING, msg);
+            //					LOGGER.log(Level.WARNING, msg);
             //					throw new DataNotAccessibleException(msg, null);
             //				}
             //				// load experiment groups
@@ -273,19 +273,19 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             ////					File dsFile = new File (dsFileLocation);
             ////					boolean success = dsFile.delete();
             ////					if (!success) {
-            ////						logger.log(Level.WARNING, "Failed to delete DataSeries file. Filename: " + dsFileLocation);
+            ////						LOGGER.log(Level.WARNING, "Failed to delete DataSeries file. Filename: " + dsFileLocation);
             ////					}
             ////				}
             //				// Remove all ExperimentGroup files
             //				deleteExperimentGroups(directory);
             //				if (!directory.delete()) {
-            //					logger.log(Level.WARNING, "Failed to delete EDP2 directory. Might be not empty. Directory: " + directory.getAbsolutePath());
+            //					LOGGER.log(Level.WARNING, "Failed to delete EDP2 directory. Might be not empty. Directory: " + directory.getAbsolutePath());
             //				}
             //				mmtDaoFactory = null;
             //				setDeleted(true);
             //			} catch (IllegalArgumentException e) {
             //				String msg = "URI is not valid.";
-            //				logger.log(Level.WARNING, msg);
+            //				LOGGER.log(Level.WARNING, msg);
             //				throw new DataNotAccessibleException(msg, e);
             //			}
             //		}
@@ -304,7 +304,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     //		for (File expGroupFile : expGroupFiles) {
     //			boolean success = expGroupFile.delete();
     //			if (!success) {
-    //				logger.log(Level.WARNING,
+    //				LOGGER.log(Level.WARNING,
     //						"Failed to delete ExperimentGroup file. Filename: "
     //								+ expGroupFile.getAbsolutePath());
     //			}
@@ -322,7 +322,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             final File directory = managedRepo.convertUriStringToFile(managedRepo.getUri());
             if (managedRepo.getRepositories() == null) {
                 final String msg = "Every repository must be attached to an instance of Repositories in order to be opened.";
-                logger.log(Level.SEVERE, msg);
+                LOGGER.log(Level.SEVERE, msg);
                 throw new DataNotAccessibleException(msg, null);
             }
             // load descriptions
@@ -340,7 +340,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             setOpen();
         } catch (final IllegalArgumentException e) {
             final String msg = "URI is not valid.";
-            logger.log(Level.WARNING, msg);
+            LOGGER.log(Level.WARNING, msg);
             throw new DataNotAccessibleException(msg, e);
         }
         assert (isOpen());
@@ -354,7 +354,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         for (final File descriptionFile : descriptionFiles) {
             if (!descriptionFile.isFile()) {
                 final String msg = "Could not load the description file " + descriptionFile.getName();
-                logger.log(Level.WARNING, msg);
+                LOGGER.log(Level.WARNING, msg);
             }
             loadDescription(descriptionFile);
         }
@@ -382,12 +382,12 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         final Resource resource = getResourceForURI(URI.createFileURI(descFileLocation));
         if (resource == null) {
             final String msg = "Could not create resource to save the description file " + descFileLocation;
-            logger.log(Level.WARNING, msg);
+            LOGGER.log(Level.WARNING, msg);
         } else {
             if (desc.eResource() == null) {
                 resource.getContents().add(desc);
             } else if (!desc.eResource().equals(resource)) {
-                logger.log(Level.SEVERE, "Description was assigned to resource " + desc.eResource() + "but should be assigned to " + resource);
+                LOGGER.log(Level.SEVERE, "Description was assigned to resource " + desc.eResource() + "but should be assigned to " + resource);
             }
             try {
                 resource.save(null);
@@ -398,7 +398,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 //resource.getResourceSet().getResources().remove(resource);
             } catch (final IOException e) {
                 final String msg = "Could not save the description file " + descFileLocation;
-                logger.log(Level.WARNING, msg, e);
+                LOGGER.log(Level.WARNING, msg, e);
             }
         }
     }
@@ -433,7 +433,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         final Resource resource = getResourceForURI(URI.createFileURI(egFileLocation));
         if (resource == null) {
             final String msg = "Could not create resource to save the experiment group file " + egFileLocation;
-            logger.log(Level.SEVERE, msg);
+            LOGGER.log(Level.SEVERE, msg);
             throw new RuntimeException("Unable to persist experiment group: "+expGroup);
         } else {
             if (expGroup.eResource() == null) {
@@ -442,7 +442,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 }
                 resource.getContents().add(expGroup);
             } else if (!expGroup.eResource().equals(resource)) {
-                logger.log(Level.SEVERE, "ExperimentGroup was assigned to resource " + expGroup.eResource() + "but should be assigned to " + resource);
+                LOGGER.log(Level.SEVERE, "ExperimentGroup was assigned to resource " + expGroup.eResource() + "but should be assigned to " + resource);
                 throw new IllegalStateException("Resource for experiment group is not the one it should be");
             }
             try {
@@ -452,7 +452,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 }
             } catch (final IOException e) {
                 final String msg = "Could not save the experiment group file " + egFileLocation;
-                logger.log(Level.WARNING, msg, e);
+                LOGGER.log(Level.WARNING, msg, e);
             }
         }
     }
@@ -483,7 +483,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             errorMessage = "Could not load EMF model. Reason: " + e.getMessage();
         }
         if (errorMessage != null) {
-            logger.log(Level.WARNING, errorMessage + " Filename: " + descriptionFile.getAbsolutePath() + ".");
+            LOGGER.log(Level.WARNING, errorMessage + " Filename: " + descriptionFile.getAbsolutePath() + ".");
         }
     }
 
@@ -494,7 +494,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     private void logDiagnostic(final EList<Diagnostic> diagnostics, final Level level) {
         if (diagnostics.size() != 0) {
             for (final Diagnostic diag : diagnostics) {
-                logger.log(level, "EMF Diagnostic message: " + diag.toString());
+                LOGGER.log(level, "EMF Diagnostic message: " + diag.toString());
             }
         }
     }
@@ -507,7 +507,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         for (final File expGroupFile : expGroupFiles) {
             if (!expGroupFile.isFile()) {
                 final String msg = "Could not load the experiment group file " + expGroupFile.getName();
-                logger.log(Level.WARNING, msg);
+                LOGGER.log(Level.WARNING, msg);
             }
             loadExperimentGroup(expGroupFile);
         }
@@ -550,7 +550,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             errorMessage = "Could not load EMF model.";
         }
         if (errorMessage != null) {
-            logger.log(Level.WARNING, errorMessage + " Filename: " + expGroupFile.getAbsolutePath() + ".");
+            LOGGER.log(Level.WARNING, errorMessage + " Filename: " + expGroupFile.getAbsolutePath() + ".");
         }
     }
 
@@ -626,7 +626,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 try {
                     id.eResource().delete(null);
                 } catch (final IOException e) {
-                    logger.log(Level.WARNING, "Could not delete file for a removed element. " + e.getMessage());
+                    LOGGER.log(Level.WARNING, "Could not delete file for a removed element. " + e.getMessage());
                 }
             }
         }
@@ -657,7 +657,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         try {
             persistMetaData(true);
         } catch (final DataNotAccessibleException e) {
-            logger.log(Level.SEVERE, "Flush failed.", e);
+            LOGGER.log(Level.SEVERE, "Flush failed.", e);
             throw new RuntimeException(e);
         }
     }

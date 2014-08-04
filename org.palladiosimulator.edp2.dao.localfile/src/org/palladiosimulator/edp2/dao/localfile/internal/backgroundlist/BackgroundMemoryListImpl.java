@@ -40,7 +40,7 @@ implements BackgroundMemoryList<V,Q>
     private static final String ACCESS_MODIFIER_READ_WRITE = "rw";
 
     /** Logger for this class. */
-    transient private static Logger logger = Logger.getLogger(BackgroundMemoryListImpl.class.getName());
+    transient private static final Logger LOGGER = Logger.getLogger(BackgroundMemoryListImpl.class.getName());
 
     /** Default Number of data elements per chunk. */
     static final public int DEFAULT_CHUNK_SIZE = 10000;
@@ -115,7 +115,7 @@ implements BackgroundMemoryList<V,Q>
     public synchronized void open() throws IOException {
         if (!closed) {
             final String msg = "Tried to open an already open background list.";
-            logger.warning(msg);
+            LOGGER.warning(msg);
             throw new IllegalStateException(msg);
         }
         raf = new RandomAccessFile(absoluteFilename, ACCESS_MODIFIER_READ_WRITE);
@@ -136,17 +136,17 @@ implements BackgroundMemoryList<V,Q>
     public synchronized void add(final int index, final Measure<V,Q> element) {
         if (closed) {
             final String msg = "Tried to add data to a closed background list.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         if (index != listSize) {
             final String msg = "The background list currently only supports adding elements at the end of the list";
-            logger.info(msg);
+            LOGGER.info(msg);
             throw new IllegalArgumentException(msg);
         }
         if (element == null) {
             final String msg = "Null values must not be added to the list.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalArgumentException(msg);
         }
         try {
@@ -159,7 +159,7 @@ implements BackgroundMemoryList<V,Q>
             }
         } catch(final IOException ex) {
             final String msg = "Error during IO of background list for file \"" + absoluteFilename +"\"";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new RuntimeException(msg, ex);
         }
     }
@@ -172,7 +172,7 @@ implements BackgroundMemoryList<V,Q>
     public synchronized Measure<V,Q> get(final int index) {
         if (closed) {
             final String msg = "Tried to get data from a closed background list.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         if (index < 0 || index >= size()) {
@@ -182,7 +182,7 @@ implements BackgroundMemoryList<V,Q>
             } else {
                 msg = "Tried to get data element with a negative index from the background list.";
             }
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new ArrayIndexOutOfBoundsException(msg);
         }
         try {
@@ -200,7 +200,7 @@ implements BackgroundMemoryList<V,Q>
             throw new UnsupportedOperationException("Unsupported Binary Representation found");
         } catch(final IOException ex) {
             final String msg = "Error during IO of background list for file \"" + absoluteFilename +"\"";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new RuntimeException(msg, ex);
         }
     }
@@ -210,7 +210,7 @@ implements BackgroundMemoryList<V,Q>
     public Measure<V,Q> set(final int index, final Measure<V,Q> element) {
         if (closed) {
             final String msg = "Tried to get data to a closed background list.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new IllegalStateException(msg);
         }
         if (index < 0 || index >= size()) {
@@ -220,7 +220,7 @@ implements BackgroundMemoryList<V,Q>
             } else {
                 msg = "Tried to set data element with a negative index from the background list.";
             }
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new ArrayIndexOutOfBoundsException(msg);
         }
         try {
@@ -239,7 +239,7 @@ implements BackgroundMemoryList<V,Q>
             throw new UnsupportedOperationException("Unsupported Binary Representation found");
         } catch(final IOException ex) {
             final String msg = "Error during IO of background list for file \"" + absoluteFilename +"\"";
-            logger.severe(msg);
+            LOGGER.severe(msg);
             throw new RuntimeException(msg, ex);
         }
     };
@@ -278,7 +278,7 @@ implements BackgroundMemoryList<V,Q>
     public synchronized void close() throws IOException {
         if (closed) {
             final String msg = "Tried to close a closed list.";
-            logger.warning(msg);
+            LOGGER.warning(msg);
             throw new IllegalStateException(msg);
         }
         if (!closed) {
@@ -303,7 +303,7 @@ implements BackgroundMemoryList<V,Q>
         open();
         if (chunks.getElementsInFile() != listSize) {
             final String msg = "Number of elements of this list and elements saved to file on background mismatch.";
-            logger.severe(msg);
+            LOGGER.severe(msg);
         }
         listSize = (int) chunks.getElementsInFile();
     }

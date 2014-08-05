@@ -10,10 +10,16 @@ import org.eclipse.core.databinding.observable.map.IMapChangeListener;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.map.MapChangeEvent;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.swt.graphics.RGB;
+import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
@@ -22,9 +28,12 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
+import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
@@ -35,6 +44,20 @@ import org.palladiosimulator.metricspec.util.MetricSpecSwitch;
 public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    private static final String EMPTY_SENSOR_COLOR = "Empty Sensor Color";
+    
+    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory();        
+    
+    private static final AdapterFactoryLabelProvider LABEL_PROVIDER;
+    
+    static {
+        JFaceResources.getColorRegistry().put(EMPTY_SENSOR_COLOR, new RGB(150, 150, 150));
+        COMPOSED_FACTORY.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
+        COMPOSED_FACTORY.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
+        COMPOSED_FACTORY.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+        LABEL_PROVIDER = new AdapterFactoryLabelProvider(COMPOSED_FACTORY);
+    }
 
     private final IMapChangeListener mapChangeListener = new IMapChangeListener() {
         @Override
@@ -68,7 +91,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     final Measure measure = object.getMeasure();
                     final MetricDescription metricDescription = measure.getMetric();
 
-                    final StyledString styledString = new MetricSpecSwitch<StyledString>() {
+                    return new MetricSpecSwitch<StyledString>() {
                         @Override
                         public final StyledString caseBaseMetricDescription(final BaseMetricDescription object) {
                             final StyledString styledString = new StyledString(object.getName() == null ? "Base Metric"
@@ -91,22 +114,22 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                         @Override
                         public StyledString caseMetricSetDescription(MetricSetDescription object) {
                             final StyledString styledString = new StyledString("MetricSet [\n");
-                            
+
                             final int subsumedMetrics = object.getSubsumedMetrics().size();
-                            for(int i=0; i<subsumedMetrics; i++) {
+                            for (int i = 0; i < subsumedMetrics; i++) {
                                 styledString.append("  ");
-                                final MetricDescription subsumedMetric = object.getSubsumedMetrics().get(i);                                
+                                final MetricDescription subsumedMetric = object.getSubsumedMetrics().get(i);
                                 styledString.append(this.doSwitch(subsumedMetric));
-                                if(i != subsumedMetrics-1) {
+                                if (i != subsumedMetrics - 1) {
                                     styledString.append(";\n");
                                 }
                             }
                             styledString.append("]\n\nDescription:\n");
                             styledString.append(object.getTextualDescription());
-                            
+
                             return styledString;
                         }
-                        
+
                         @Override
                         public final StyledString caseMetricDescription(final MetricDescription object) {
                             final StyledString styledString = new StyledString(object.getName() == null ? "Metric Set"
@@ -114,10 +137,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                             return styledString;
                         };
                     }.doSwitch(metricDescription);
-  
-                    return styledString;
                 };
-
             }.doSwitch(eObject);
 
             if (styledString != null) {
@@ -204,6 +224,15 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
                     final String decoration = " (" + measure.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
+
+                    final IDataSource dataSource = new Edp2DataTupleDataSource(object.getMeasurementsRanges().get(0)
+                            .getRawMeasurements());
+                    if (dataSource.getDataStream().size() == 0) {
+                        styledString.setStyle(0, styledString.length(),
+                                StyledString.createColorRegistryStyler(EMPTY_SENSOR_COLOR, null));
+                    }
+                    dataSource.getDataStream().close();
+
                     return styledString;
                 };
             }.doSwitch(eObject);
@@ -280,9 +309,10 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                         "Could not create label for " + eObject);
             } else {
                 cell.setText(styledString.getString());
-                // cell.setImage();
+                cell.setImage(LABEL_PROVIDER.getImage(eObject));
                 cell.setStyleRanges(styledString.getStyleRanges());
             }
         }
     }
+
 }

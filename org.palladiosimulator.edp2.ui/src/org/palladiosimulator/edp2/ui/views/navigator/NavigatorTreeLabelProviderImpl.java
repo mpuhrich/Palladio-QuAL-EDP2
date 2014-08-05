@@ -46,11 +46,11 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     private static final String EMPTY_SENSOR_COLOR = "Empty Sensor Color";
-    
-    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory();        
-    
+
+    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory();
+
     private static final AdapterFactoryLabelProvider LABEL_PROVIDER;
-    
+
     static {
         JFaceResources.getColorRegistry().put(EMPTY_SENSOR_COLOR, new RGB(150, 150, 150));
         COMPOSED_FACTORY.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
@@ -156,16 +156,17 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             styledString = new ExperimentDataSwitch<StyledString>() {
                 @Override
                 public StyledString caseExperimentGroup(final ExperimentGroup object) {
-                    final StyledString styledString = new StyledString("Experiment Group");
-                    final String decoration = " " + object.getPurpose() + " (" + object.getId() + ")";
+                    final StyledString styledString = new StyledString("Experiment Group ");
+                    final String decoration = object.getPurpose() + " (" + object.getId() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;
                 };
 
                 @Override
                 public StyledString caseExperimentSetting(final ExperimentSetting object) {
-                    final StyledString styledString = new StyledString(object.getDescription() == null ? ""
-                            : object.getDescription());
+                    final StyledString styledString = new StyledString("Experiment Setting ");
+                    final String decoration = object.getDescription() == null ? "" : object.getDescription();
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
                     return styledString;
                 };
 

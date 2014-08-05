@@ -48,27 +48,30 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
             final RawMeasurements rawMeasurements = measurements.getMeasurementsRanges().get(0).getRawMeasurements();
 
             if (rawMeasurements != null && !rawMeasurements.getDataSeries().isEmpty()) {
-
                 final IDataSource edp2Source = new Edp2DataTupleDataSource(rawMeasurements);
+                final int dataStreamSize = edp2Source.getDataStream().size();
+                edp2Source.getDataStream().close();
 
-                // open the wizard with reference to the selected source
-                // it shows possible visualizations, which are instances of
-                // DefaultSequence
-                final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
-                final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench()
-                        .getActiveWorkbenchWindow().getShell(), wizard);
-                wdialog.open();
+                if (dataStreamSize > 0) {
+                    // open the wizard with reference to the selected source
+                    // it shows possible visualizations, which are instances of
+                    // DefaultSequence
+                    final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
+                    final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench()
+                            .getActiveWorkbenchWindow().getShell(), wizard);
+                    wdialog.open();
 
-                if (wdialog.getReturnCode() == Window.OK) {
-                    final DefaultSequence selection = wizard.getSelectedDefault();
-                    final IVisualisationInput input = selection.getVisualizationInput();
-                    input.addInput(input.createNewInput(edp2Source));
-                    try {
-                        final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
-                                .getActivePage();
-                        page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
-                    } catch (final PartInitException e) {
-                        throw new RuntimeException(e);
+                    if (wdialog.getReturnCode() == Window.OK) {
+                        final DefaultSequence selection = wizard.getSelectedDefault();
+                        final IVisualisationInput input = selection.getVisualizationInput();
+                        input.addInput(input.createNewInput(edp2Source));
+                        try {
+                            final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
+                                    .getActivePage();
+                            page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
+                        } catch (final PartInitException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
             } else {

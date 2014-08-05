@@ -63,9 +63,6 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
      * @generated NOT
-     * 
-     *            FIXME Seriously? What the **?! Who was that?! (Crappy code; local file
-     *            repositories don't have IDs!) [Lehrig]
      */
     protected LocalDirectoryRepositoryImpl() {
         super();

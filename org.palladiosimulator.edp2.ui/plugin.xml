@@ -6,6 +6,7 @@
             allowMultiple="false"
             category="org.palladiosimulator.edp2.ui.category"
             class="org.palladiosimulator.edp2.ui.views.navigator.Navigator"
+            icon="icons/tree_root.gif"
             id="org.palladiosimulator.edp2.ui.views.navigator"
             name="Experiments">
       </view>
@@ -18,6 +19,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="org.palladiosimulator.edp2.ui.perspective.Perspective"
+            icon="icons/tree_root.gif"
             id="org.palladiosimulator.edp2.ui.perspective"
             name="EDP2">
       </perspective>
@@ -85,13 +87,13 @@
             locationURI="toolbar:org.palladiosimulator.edp2.ui.views.navigator">
          <command
                commandId="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
-               icon="icons/tree_root.gif"
+               icon="icons/add_datasource.gif"
                label="Open..."
                style="push">
          </command>
          <command
                commandId="org.palladiosimulator.edp2.ui.commands.CloseDataSource"
-               icon="icons/delete_obj.gif"
+               icon="icons/dellete_datasource.gif"
                label="Close..."
                style="push">
          </command>

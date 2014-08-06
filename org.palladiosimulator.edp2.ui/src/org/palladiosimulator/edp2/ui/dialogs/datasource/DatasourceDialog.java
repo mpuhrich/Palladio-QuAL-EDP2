@@ -34,11 +34,11 @@ public class DatasourceDialog extends TitleAreaDialog {
     private static String DIALOG_TITLE = "Create/Load the data source.";
 
     private Button addButton, removeButton, okButton, openButton;
-    private Object input;
+    private final Object input;
     private Repository selectedRepository;
     private TableViewer viewer;
-    private boolean buttonValidation;
-    private String dialogTitle;
+    private final boolean buttonValidation;
+    private final String dialogTitle;
 
     /**
      * Create the dialog.
@@ -124,7 +124,7 @@ public class DatasourceDialog extends TitleAreaDialog {
         openButton.setLayoutData(fd_openButton);
         openButton.setText("Open..");
 
-        Label separator = new Label(container, SWT.SEPARATOR | SWT.HORIZONTAL);
+        final Label separator = new Label(container, SWT.SEPARATOR | SWT.HORIZONTAL);
         final FormData fd_label = new FormData();
         fd_label.bottom = new FormAttachment(100, 2);
         fd_label.right = new FormAttachment(100, 2);
@@ -149,6 +149,7 @@ public class DatasourceDialog extends TitleAreaDialog {
         viewer.setLabelProvider(new DatasourceListLabelProvider());
         viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+            @Override
             public void selectionChanged(SelectionChangedEvent event) {
                 ISelection selection = event.getSelection();
                 if (selection instanceof IStructuredSelection) {

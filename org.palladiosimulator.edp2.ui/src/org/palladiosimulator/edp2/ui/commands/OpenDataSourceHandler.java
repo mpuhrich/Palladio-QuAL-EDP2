@@ -16,9 +16,8 @@ import org.palladiosimulator.edp2.ui.wizards.datasource.OpenDataSourceWizard;
 public class OpenDataSourceHandler extends AbstractHandler implements IHandler {
 
     @Override
-    public Object execute(ExecutionEvent event) throws ExecutionException {
-        WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveWorkbenchWindow(event).getShell(),
-                new OpenDataSourceWizard());
+    public Object execute(final ExecutionEvent event) throws ExecutionException {
+        final WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveShell(event), new OpenDataSourceWizard());
         dialog.open();
         return null;
     }

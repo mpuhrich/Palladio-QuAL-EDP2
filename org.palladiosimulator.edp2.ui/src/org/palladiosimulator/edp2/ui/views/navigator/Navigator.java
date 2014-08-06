@@ -109,4 +109,12 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         }
         return super.getAdapter(adapter);
     }
+    
+    public void collapseTree() {
+        this.treeViewer.collapseAll();
+    }
+    
+    public void expandTree() {
+        this.treeViewer.expandAll();;
+    }
 }

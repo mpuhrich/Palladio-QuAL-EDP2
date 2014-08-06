@@ -281,7 +281,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     public StyledString caseLocalMemoryRepository(
                             final org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository object) {
                         final StyledString styledString = new StyledString("Local Memory");
-                        final String decoration = " (" + object.getDomain() + ")";
+                        final String decoration = " (" + object.getId() + ")";
                         styledString.append(decoration, StyledString.COUNTER_STYLER);
                         return styledString;
                     };

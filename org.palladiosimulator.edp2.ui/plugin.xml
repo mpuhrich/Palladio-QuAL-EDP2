@@ -51,23 +51,60 @@
       </category>
    </extension>
    <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="toolbar:org.palladiosimulator.edp2.ui.views.navigator">
-         <command
-               commandId="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
-               label="Open..."
-               style="push">
-         </command>
-      </menuContribution>
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+            defaultHandler="org.palladiosimulator.edp2.ui.commands.ExpandDataSourcesHandler"
+            description="Expands all data sources in the tree viewer."
+            id="org.palladiosimulator.edp2.ui.commands.ExpandDataSources"
+            name="Expand All Data Sources">
+      </command>
+      <category
+            id="org.palladiosimulator.edp2.ui.category.dataSources"
+            name="Data Sources">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+            defaultHandler="org.palladiosimulator.edp2.ui.commands.CollapseDataSourcesHandler"
+            description="Collapses all data sources in the tree viewer."
+            id="org.palladiosimulator.edp2.ui.commands.CollapseDataSources"
+            name="Collapse All Data Sources">
+      </command>
+      <category
+            id="org.palladiosimulator.edp2.ui.category.dataSources"
+            name="Data Sources">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
+            allPopups="true"
             locationURI="toolbar:org.palladiosimulator.edp2.ui.views.navigator">
          <command
+               commandId="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
+               icon="icons/tree_root.gif"
+               label="Open..."
+               style="push">
+         </command>
+         <command
                commandId="org.palladiosimulator.edp2.ui.commands.CloseDataSource"
+               icon="icons/delete_obj.gif"
                label="Close..."
+               style="push">
+         </command>
+         <command
+               commandId="org.palladiosimulator.edp2.ui.commands.ExpandDataSources"
+               icon="icons/expandall.gif"
+               label="Expand All..."
+               style="push">
+         </command>
+         <command
+               commandId="org.palladiosimulator.edp2.ui.commands.CollapseDataSources"
+               icon="icons/collapseall.gif"
+               label="Collapse All..."
                style="push">
          </command>
       </menuContribution>

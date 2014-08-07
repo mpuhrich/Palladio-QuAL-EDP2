@@ -38,14 +38,14 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * <em>Common Resource Set</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RepositoriesImpl extends EObjectImpl implements Repositories {
     /**
      * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getAvailableRepositories()
      * @generated
      * @ordered
@@ -55,7 +55,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
     /**
      * The cached value of the '{@link #getCommonResourceSet() <em>Common Resource Set</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getCommonResourceSet()
      * @generated
      * @ordered
@@ -64,19 +64,19 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated NOT
      */
     protected RepositoriesImpl() {
         super();
         // DEFAULT: Generate a new resource set by which all EMF resources are managed.
-        commonResourceSet = EmfModelXMIResourceFactoryImpl.createResourceSet();
+        this.commonResourceSet = EmfModelXMIResourceFactoryImpl.createResourceSet();
         // EmfmodelPackageImpl.eINSTANCE.eClass();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -86,127 +86,131 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public EList<Repository> getAvailableRepositories() {
-        if (availableRepositories == null) {
-            availableRepositories = new EObjectContainmentWithInverseEList<Repository>(Repository.class, this,
+        if (this.availableRepositories == null) {
+            this.availableRepositories = new EObjectContainmentWithInverseEList<Repository>(Repository.class, this,
                     RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, RepositoryPackage.REPOSITORY__REPOSITORIES);
         }
-        return availableRepositories;
+        return this.availableRepositories;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated NOT
      */
     @Override
     public ResourceSet getCommonResourceSet() {
         // Added "commonResourceSet instanceof EObject && " as this returns an error
-        if (commonResourceSet != null && commonResourceSet instanceof EObject
-                && ((EObject) commonResourceSet).eIsProxy()) {
-            final InternalEObject oldCommonResourceSet = (InternalEObject) commonResourceSet;
-            commonResourceSet = (ResourceSet) eResolveProxy(oldCommonResourceSet);
-            if (commonResourceSet != oldCommonResourceSet) {
-                if (eNotificationRequired()) {
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.commonResourceSet != null && this.commonResourceSet instanceof EObject
+                && ((EObject) this.commonResourceSet).eIsProxy()) {
+            final InternalEObject oldCommonResourceSet = (InternalEObject) this.commonResourceSet;
+            this.commonResourceSet = (ResourceSet) this.eResolveProxy(oldCommonResourceSet);
+            if (this.commonResourceSet != oldCommonResourceSet) {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet,
-                            commonResourceSet));
+                            this.commonResourceSet));
                 }
             }
         }
-        return commonResourceSet;
+        return this.commonResourceSet;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ResourceSet basicGetCommonResourceSet() {
-        return commonResourceSet;
+        return this.commonResourceSet;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setCommonResourceSet(ResourceSet newCommonResourceSet) {
-        ResourceSet oldCommonResourceSet = commonResourceSet;
-        commonResourceSet = newCommonResourceSet;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET,
-                    oldCommonResourceSet, commonResourceSet));
+    public void setCommonResourceSet(final ResourceSet newCommonResourceSet) {
+        final ResourceSet oldCommonResourceSet = this.commonResourceSet;
+        this.commonResourceSet = newCommonResourceSet;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, this.commonResourceSet));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getAvailableRepositories()).basicAdd(otherEnd,
-                    msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getAvailableRepositories()).basicAdd(
+                    otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            return ((InternalEList<?>) getAvailableRepositories()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getAvailableRepositories()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            return getAvailableRepositories();
+            return this.getAvailableRepositories();
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-            if (resolve)
-                return getCommonResourceSet();
-            return basicGetCommonResourceSet();
+            if (resolve) {
+                return this.getCommonResourceSet();
+            }
+            return this.basicGetCommonResourceSet();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            getAvailableRepositories().clear();
-            getAvailableRepositories().addAll((Collection<? extends Repository>) newValue);
+            this.getAvailableRepositories().clear();
+            this.getAvailableRepositories().addAll((Collection<? extends Repository>) newValue);
             return;
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-            setCommonResourceSet((ResourceSet) newValue);
+            this.setCommonResourceSet((ResourceSet) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -214,17 +218,17 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            getAvailableRepositories().clear();
+            this.getAvailableRepositories().clear();
             return;
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-            setCommonResourceSet((ResourceSet) null);
+            this.setCommonResourceSet((ResourceSet) null);
             return;
         }
         super.eUnset(featureID);
@@ -232,16 +236,16 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            return availableRepositories != null && !availableRepositories.isEmpty();
+            return this.availableRepositories != null && !this.availableRepositories.isEmpty();
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-            return commonResourceSet != null;
+            return this.commonResourceSet != null;
         }
         return super.eIsSet(featureID);
     }

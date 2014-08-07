@@ -13,14 +13,14 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Experiment Setting</b></em>
  * '. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc --> An experiment setting belongs to an experiment group and consists of a
  * fixed experimental setting, meaning all independent variables are fixed. This includes variables
  * influencing the generation of the test data, for example the duration of a simulation run leading
  * to the generation of the collected data (later stored in an experiment run). Such a set of
  * collected data is stored as an experiment run. For example, an experiment setting allows
  * repeating a single setting to study statistical significance and variance. <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,7 +34,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <em>Experiment Group</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting()
  * @model
  * @generated
@@ -47,7 +47,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Description</em>' attribute.
      * @see #setDescription(String)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_Description()
@@ -60,7 +60,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getDescription
      * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Description</em>' attribute.
      * @see #getDescription()
@@ -80,7 +80,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Runs</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_ExperimentRuns()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun#getExperimentSetting
@@ -100,7 +100,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measure</em>' reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_Measure()
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measure#getExperimentSettings
@@ -119,7 +119,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Group</em>' container reference.
      * @see #setExperimentGroup(ExperimentGroup)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_ExperimentGroup()
@@ -134,7 +134,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentGroup
      * <em>Experiment Group</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Experiment Group</em>' container reference.
      * @see #getExperimentGroup()

@@ -31,7 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapt
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdapterFactory implements
@@ -39,7 +39,7 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ComposedAdapterFactory parentAdapterFactory;
@@ -47,7 +47,7 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     /**
      * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -55,29 +55,29 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ExperimentDataItemProviderAdapterFactory() {
-        supportedTypes.add(IEditingDomainItemProvider.class);
-        supportedTypes.add(IStructuredItemContentProvider.class);
-        supportedTypes.add(ITreeItemContentProvider.class);
-        supportedTypes.add(IItemLabelProvider.class);
-        supportedTypes.add(IItemPropertySource.class);
+        this.supportedTypes.add(IEditingDomainItemProvider.class);
+        this.supportedTypes.add(IStructuredItemContentProvider.class);
+        this.supportedTypes.add(ITreeItemContentProvider.class);
+        this.supportedTypes.add(IItemLabelProvider.class);
+        this.supportedTypes.add(IItemPropertySource.class);
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasurementsRangeItemProvider measurementsRangeItemProvider;
@@ -86,22 +86,22 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createMeasurementsRangeAdapter() {
-        if (measurementsRangeItemProvider == null) {
-            measurementsRangeItemProvider = new MeasurementsRangeItemProvider(this);
+        if (this.measurementsRangeItemProvider == null) {
+            this.measurementsRangeItemProvider = new MeasurementsRangeItemProvider(this);
         }
 
-        return measurementsRangeItemProvider;
+        return this.measurementsRangeItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected EStringtoEObjectMapEntryItemProvider eStringtoEObjectMapEntryItemProvider;
@@ -109,23 +109,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     /**
      * This creates an adapter for a {@link java.util.Map.Entry}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createEStringtoEObjectMapEntryAdapter() {
-        if (eStringtoEObjectMapEntryItemProvider == null) {
-            eStringtoEObjectMapEntryItemProvider = new EStringtoEObjectMapEntryItemProvider(this);
+        if (this.eStringtoEObjectMapEntryItemProvider == null) {
+            this.eStringtoEObjectMapEntryItemProvider = new EStringtoEObjectMapEntryItemProvider(this);
         }
 
-        return eStringtoEObjectMapEntryItemProvider;
+        return this.eStringtoEObjectMapEntryItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected RawMeasurementsItemProvider rawMeasurementsItemProvider;
@@ -134,23 +134,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createRawMeasurementsAdapter() {
-        if (rawMeasurementsItemProvider == null) {
-            rawMeasurementsItemProvider = new RawMeasurementsItemProvider(this);
+        if (this.rawMeasurementsItemProvider == null) {
+            this.rawMeasurementsItemProvider = new RawMeasurementsItemProvider(this);
         }
 
-        return rawMeasurementsItemProvider;
+        return this.rawMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalNominalStatisticsItemProvider numericalNominalStatisticsItemProvider;
@@ -159,23 +159,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalNominalStatisticsAdapter() {
-        if (numericalNominalStatisticsItemProvider == null) {
-            numericalNominalStatisticsItemProvider = new NumericalNominalStatisticsItemProvider(this);
+        if (this.numericalNominalStatisticsItemProvider == null) {
+            this.numericalNominalStatisticsItemProvider = new NumericalNominalStatisticsItemProvider(this);
         }
 
-        return numericalNominalStatisticsItemProvider;
+        return this.numericalNominalStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalMassDistributionItemProvider numericalMassDistributionItemProvider;
@@ -184,23 +184,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalMassDistributionAdapter() {
-        if (numericalMassDistributionItemProvider == null) {
-            numericalMassDistributionItemProvider = new NumericalMassDistributionItemProvider(this);
+        if (this.numericalMassDistributionItemProvider == null) {
+            this.numericalMassDistributionItemProvider = new NumericalMassDistributionItemProvider(this);
         }
 
-        return numericalMassDistributionItemProvider;
+        return this.numericalMassDistributionItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedWidthAggregatedMeasurementsItemProvider fixedWidthAggregatedMeasurementsItemProvider;
@@ -209,23 +209,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createFixedWidthAggregatedMeasurementsAdapter() {
-        if (fixedWidthAggregatedMeasurementsItemProvider == null) {
-            fixedWidthAggregatedMeasurementsItemProvider = new FixedWidthAggregatedMeasurementsItemProvider(this);
+        if (this.fixedWidthAggregatedMeasurementsItemProvider == null) {
+            this.fixedWidthAggregatedMeasurementsItemProvider = new FixedWidthAggregatedMeasurementsItemProvider(this);
         }
 
-        return fixedWidthAggregatedMeasurementsItemProvider;
+        return this.fixedWidthAggregatedMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedIntervalsItemProvider fixedIntervalsItemProvider;
@@ -234,23 +234,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createFixedIntervalsAdapter() {
-        if (fixedIntervalsItemProvider == null) {
-            fixedIntervalsItemProvider = new FixedIntervalsItemProvider(this);
+        if (this.fixedIntervalsItemProvider == null) {
+            this.fixedIntervalsItemProvider = new FixedIntervalsItemProvider(this);
         }
 
-        return fixedIntervalsItemProvider;
+        return this.fixedIntervalsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualNominalStatisticsItemProvider textualNominalStatisticsItemProvider;
@@ -259,23 +259,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createTextualNominalStatisticsAdapter() {
-        if (textualNominalStatisticsItemProvider == null) {
-            textualNominalStatisticsItemProvider = new TextualNominalStatisticsItemProvider(this);
+        if (this.textualNominalStatisticsItemProvider == null) {
+            this.textualNominalStatisticsItemProvider = new TextualNominalStatisticsItemProvider(this);
         }
 
-        return textualNominalStatisticsItemProvider;
+        return this.textualNominalStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualMassDistributionItemProvider textualMassDistributionItemProvider;
@@ -284,23 +284,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createTextualMassDistributionAdapter() {
-        if (textualMassDistributionItemProvider == null) {
-            textualMassDistributionItemProvider = new TextualMassDistributionItemProvider(this);
+        if (this.textualMassDistributionItemProvider == null) {
+            this.textualMassDistributionItemProvider = new TextualMassDistributionItemProvider(this);
         }
 
-        return textualMassDistributionItemProvider;
+        return this.textualMassDistributionItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ExperimentGroupItemProvider experimentGroupItemProvider;
@@ -309,23 +309,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createExperimentGroupAdapter() {
-        if (experimentGroupItemProvider == null) {
-            experimentGroupItemProvider = new ExperimentGroupItemProvider(this);
+        if (this.experimentGroupItemProvider == null) {
+            this.experimentGroupItemProvider = new ExperimentGroupItemProvider(this);
         }
 
-        return experimentGroupItemProvider;
+        return this.experimentGroupItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ExperimentSettingItemProvider experimentSettingItemProvider;
@@ -334,23 +334,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createExperimentSettingAdapter() {
-        if (experimentSettingItemProvider == null) {
-            experimentSettingItemProvider = new ExperimentSettingItemProvider(this);
+        if (this.experimentSettingItemProvider == null) {
+            this.experimentSettingItemProvider = new ExperimentSettingItemProvider(this);
         }
 
-        return experimentSettingItemProvider;
+        return this.experimentSettingItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ExperimentRunItemProvider experimentRunItemProvider;
@@ -359,23 +359,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createExperimentRunAdapter() {
-        if (experimentRunItemProvider == null) {
-            experimentRunItemProvider = new ExperimentRunItemProvider(this);
+        if (this.experimentRunItemProvider == null) {
+            this.experimentRunItemProvider = new ExperimentRunItemProvider(this);
         }
 
-        return experimentRunItemProvider;
+        return this.experimentRunItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasurementsItemProvider measurementsItemProvider;
@@ -384,23 +384,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createMeasurementsAdapter() {
-        if (measurementsItemProvider == null) {
-            measurementsItemProvider = new MeasurementsItemProvider(this);
+        if (this.measurementsItemProvider == null) {
+            this.measurementsItemProvider = new MeasurementsItemProvider(this);
         }
 
-        return measurementsItemProvider;
+        return this.measurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasureItemProvider measureItemProvider;
@@ -409,23 +409,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createMeasureAdapter() {
-        if (measureItemProvider == null) {
-            measureItemProvider = new MeasureItemProvider(this);
+        if (this.measureItemProvider == null) {
+            this.measureItemProvider = new MeasureItemProvider(this);
         }
 
-        return measureItemProvider;
+        return this.measureItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected AggregationStatisticsItemProvider aggregationStatisticsItemProvider;
@@ -434,23 +434,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createAggregationStatisticsAdapter() {
-        if (aggregationStatisticsItemProvider == null) {
-            aggregationStatisticsItemProvider = new AggregationStatisticsItemProvider(this);
+        if (this.aggregationStatisticsItemProvider == null) {
+            this.aggregationStatisticsItemProvider = new AggregationStatisticsItemProvider(this);
         }
 
-        return aggregationStatisticsItemProvider;
+        return this.aggregationStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DoubleBinaryMeasurementsItemProvider doubleBinaryMeasurementsItemProvider;
@@ -459,23 +459,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createDoubleBinaryMeasurementsAdapter() {
-        if (doubleBinaryMeasurementsItemProvider == null) {
-            doubleBinaryMeasurementsItemProvider = new DoubleBinaryMeasurementsItemProvider(this);
+        if (this.doubleBinaryMeasurementsItemProvider == null) {
+            this.doubleBinaryMeasurementsItemProvider = new DoubleBinaryMeasurementsItemProvider(this);
         }
 
-        return doubleBinaryMeasurementsItemProvider;
+        return this.doubleBinaryMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalIntervalStatisticsItemProvider numericalIntervalStatisticsItemProvider;
@@ -484,23 +484,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalIntervalStatisticsAdapter() {
-        if (numericalIntervalStatisticsItemProvider == null) {
-            numericalIntervalStatisticsItemProvider = new NumericalIntervalStatisticsItemProvider(this);
+        if (this.numericalIntervalStatisticsItemProvider == null) {
+            this.numericalIntervalStatisticsItemProvider = new NumericalIntervalStatisticsItemProvider(this);
         }
 
-        return numericalIntervalStatisticsItemProvider;
+        return this.numericalIntervalStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalOrdinalStatisticsItemProvider numericalOrdinalStatisticsItemProvider;
@@ -509,23 +509,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalOrdinalStatisticsAdapter() {
-        if (numericalOrdinalStatisticsItemProvider == null) {
-            numericalOrdinalStatisticsItemProvider = new NumericalOrdinalStatisticsItemProvider(this);
+        if (this.numericalOrdinalStatisticsItemProvider == null) {
+            this.numericalOrdinalStatisticsItemProvider = new NumericalOrdinalStatisticsItemProvider(this);
         }
 
-        return numericalOrdinalStatisticsItemProvider;
+        return this.numericalOrdinalStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalPercentileItemProvider numericalPercentileItemProvider;
@@ -534,23 +534,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalPercentileAdapter() {
-        if (numericalPercentileItemProvider == null) {
-            numericalPercentileItemProvider = new NumericalPercentileItemProvider(this);
+        if (this.numericalPercentileItemProvider == null) {
+            this.numericalPercentileItemProvider = new NumericalPercentileItemProvider(this);
         }
 
-        return numericalPercentileItemProvider;
+        return this.numericalPercentileItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected JSXmlMeasurementsItemProvider jsXmlMeasurementsItemProvider;
@@ -559,23 +559,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createJSXmlMeasurementsAdapter() {
-        if (jsXmlMeasurementsItemProvider == null) {
-            jsXmlMeasurementsItemProvider = new JSXmlMeasurementsItemProvider(this);
+        if (this.jsXmlMeasurementsItemProvider == null) {
+            this.jsXmlMeasurementsItemProvider = new JSXmlMeasurementsItemProvider(this);
         }
 
-        return jsXmlMeasurementsItemProvider;
+        return this.jsXmlMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected LongBinaryMeasurementsItemProvider longBinaryMeasurementsItemProvider;
@@ -584,23 +584,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createLongBinaryMeasurementsAdapter() {
-        if (longBinaryMeasurementsItemProvider == null) {
-            longBinaryMeasurementsItemProvider = new LongBinaryMeasurementsItemProvider(this);
+        if (this.longBinaryMeasurementsItemProvider == null) {
+            this.longBinaryMeasurementsItemProvider = new LongBinaryMeasurementsItemProvider(this);
         }
 
-        return longBinaryMeasurementsItemProvider;
+        return this.longBinaryMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IdentifierBasedMeasurementsItemProvider identifierBasedMeasurementsItemProvider;
@@ -609,23 +609,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createIdentifierBasedMeasurementsAdapter() {
-        if (identifierBasedMeasurementsItemProvider == null) {
-            identifierBasedMeasurementsItemProvider = new IdentifierBasedMeasurementsItemProvider(this);
+        if (this.identifierBasedMeasurementsItemProvider == null) {
+            this.identifierBasedMeasurementsItemProvider = new IdentifierBasedMeasurementsItemProvider(this);
         }
 
-        return identifierBasedMeasurementsItemProvider;
+        return this.identifierBasedMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalRatioStatisticsItemProvider numericalRatioStatisticsItemProvider;
@@ -634,23 +634,23 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createNumericalRatioStatisticsAdapter() {
-        if (numericalRatioStatisticsItemProvider == null) {
-            numericalRatioStatisticsItemProvider = new NumericalRatioStatisticsItemProvider(this);
+        if (this.numericalRatioStatisticsItemProvider == null) {
+            this.numericalRatioStatisticsItemProvider = new NumericalRatioStatisticsItemProvider(this);
         }
 
-        return numericalRatioStatisticsItemProvider;
+        return this.numericalRatioStatisticsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected SensorFrameworkV1DoubleBinaryMeasurementsItemProvider sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
@@ -659,24 +659,24 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createSensorFrameworkV1DoubleBinaryMeasurementsAdapter() {
-        if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider == null) {
-            sensorFrameworkV1DoubleBinaryMeasurementsItemProvider = new SensorFrameworkV1DoubleBinaryMeasurementsItemProvider(
+        if (this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider == null) {
+            this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider = new SensorFrameworkV1DoubleBinaryMeasurementsItemProvider(
                     this);
         }
 
-        return sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
+        return this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected SensorFrameworkV1IdentifierBasedMeasurementsItemProvider sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
@@ -685,24 +685,24 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createSensorFrameworkV1IdentifierBasedMeasurementsAdapter() {
-        if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider == null) {
-            sensorFrameworkV1IdentifierBasedMeasurementsItemProvider = new SensorFrameworkV1IdentifierBasedMeasurementsItemProvider(
+        if (this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider == null) {
+            this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider = new SensorFrameworkV1IdentifierBasedMeasurementsItemProvider(
                     this);
         }
 
-        return sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
+        return this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
     }
 
     /**
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualOrdinalStatisticsItemProvider textualOrdinalStatisticsItemProvider;
@@ -711,68 +711,95 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createTextualOrdinalStatisticsAdapter() {
-        if (textualOrdinalStatisticsItemProvider == null) {
-            textualOrdinalStatisticsItemProvider = new TextualOrdinalStatisticsItemProvider(this);
+        if (this.textualOrdinalStatisticsItemProvider == null) {
+            this.textualOrdinalStatisticsItemProvider = new TextualOrdinalStatisticsItemProvider(this);
         }
 
-        return textualOrdinalStatisticsItemProvider;
+        return this.textualOrdinalStatisticsItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ExperimentGroupRunItemProvider experimentGroupRunItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createExperimentGroupRunAdapter() {
+        if (this.experimentGroupRunItemProvider == null) {
+            this.experimentGroupRunItemProvider = new ExperimentGroupRunItemProvider(this);
+        }
+
+        return this.experimentGroupRunItemProvider;
     }
 
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public ComposeableAdapterFactory getRootAdapterFactory() {
-        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+        return this.parentAdapterFactory == null ? this : this.parentAdapterFactory.getRootAdapterFactory();
     }
 
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+    @Override
+    public void setParentAdapterFactory(final ComposedAdapterFactory parentAdapterFactory) {
         this.parentAdapterFactory = parentAdapterFactory;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean isFactoryForType(Object type) {
-        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    public boolean isFactoryForType(final Object type) {
+        return this.supportedTypes.contains(type) || super.isFactoryForType(type);
     }
 
     /**
      * This implementation substitutes the factory itself as the key for the adapter. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Adapter adapt(Notifier notifier, Object type) {
+    public Adapter adapt(final Notifier notifier, final Object type) {
         return super.adapt(notifier, this);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object adapt(Object object, Object type) {
-        if (isFactoryForType(type)) {
-            Object adapter = super.adapt(object, type);
+    public Object adapt(final Object object, final Object type) {
+        if (this.isFactoryForType(type)) {
+            final Object adapter = super.adapt(object, type);
             if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
                 return adapter;
             }
@@ -783,95 +810,128 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void addListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.addListener(notifyChangedListener);
+    @Override
+    public void addListener(final INotifyChangedListener notifyChangedListener) {
+        this.changeNotifier.addListener(notifyChangedListener);
     }
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void removeListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.removeListener(notifyChangedListener);
+    @Override
+    public void removeListener(final INotifyChangedListener notifyChangedListener) {
+        this.changeNotifier.removeListener(notifyChangedListener);
     }
 
     /**
      * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void fireNotifyChanged(Notification notification) {
-        changeNotifier.fireNotifyChanged(notification);
+    @Override
+    public void fireNotifyChanged(final Notification notification) {
+        this.changeNotifier.fireNotifyChanged(notification);
 
-        if (parentAdapterFactory != null) {
-            parentAdapterFactory.fireNotifyChanged(notification);
+        if (this.parentAdapterFactory != null) {
+            this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
 
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public void dispose() {
-        if (measurementsRangeItemProvider != null)
-            measurementsRangeItemProvider.dispose();
-        if (eStringtoEObjectMapEntryItemProvider != null)
-            eStringtoEObjectMapEntryItemProvider.dispose();
-        if (rawMeasurementsItemProvider != null)
-            rawMeasurementsItemProvider.dispose();
-        if (numericalNominalStatisticsItemProvider != null)
-            numericalNominalStatisticsItemProvider.dispose();
-        if (numericalMassDistributionItemProvider != null)
-            numericalMassDistributionItemProvider.dispose();
-        if (fixedWidthAggregatedMeasurementsItemProvider != null)
-            fixedWidthAggregatedMeasurementsItemProvider.dispose();
-        if (fixedIntervalsItemProvider != null)
-            fixedIntervalsItemProvider.dispose();
-        if (textualNominalStatisticsItemProvider != null)
-            textualNominalStatisticsItemProvider.dispose();
-        if (textualMassDistributionItemProvider != null)
-            textualMassDistributionItemProvider.dispose();
-        if (experimentGroupItemProvider != null)
-            experimentGroupItemProvider.dispose();
-        if (experimentSettingItemProvider != null)
-            experimentSettingItemProvider.dispose();
-        if (experimentRunItemProvider != null)
-            experimentRunItemProvider.dispose();
-        if (measurementsItemProvider != null)
-            measurementsItemProvider.dispose();
-        if (measureItemProvider != null)
-            measureItemProvider.dispose();
-        if (aggregationStatisticsItemProvider != null)
-            aggregationStatisticsItemProvider.dispose();
-        if (doubleBinaryMeasurementsItemProvider != null)
-            doubleBinaryMeasurementsItemProvider.dispose();
-        if (numericalIntervalStatisticsItemProvider != null)
-            numericalIntervalStatisticsItemProvider.dispose();
-        if (numericalOrdinalStatisticsItemProvider != null)
-            numericalOrdinalStatisticsItemProvider.dispose();
-        if (numericalPercentileItemProvider != null)
-            numericalPercentileItemProvider.dispose();
-        if (jsXmlMeasurementsItemProvider != null)
-            jsXmlMeasurementsItemProvider.dispose();
-        if (longBinaryMeasurementsItemProvider != null)
-            longBinaryMeasurementsItemProvider.dispose();
-        if (identifierBasedMeasurementsItemProvider != null)
-            identifierBasedMeasurementsItemProvider.dispose();
-        if (numericalRatioStatisticsItemProvider != null)
-            numericalRatioStatisticsItemProvider.dispose();
-        if (sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null)
-            sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
-        if (sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null)
-            sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
-        if (textualOrdinalStatisticsItemProvider != null)
-            textualOrdinalStatisticsItemProvider.dispose();
+        if (this.measurementsRangeItemProvider != null) {
+            this.measurementsRangeItemProvider.dispose();
+        }
+        if (this.eStringtoEObjectMapEntryItemProvider != null) {
+            this.eStringtoEObjectMapEntryItemProvider.dispose();
+        }
+        if (this.rawMeasurementsItemProvider != null) {
+            this.rawMeasurementsItemProvider.dispose();
+        }
+        if (this.numericalNominalStatisticsItemProvider != null) {
+            this.numericalNominalStatisticsItemProvider.dispose();
+        }
+        if (this.numericalMassDistributionItemProvider != null) {
+            this.numericalMassDistributionItemProvider.dispose();
+        }
+        if (this.fixedWidthAggregatedMeasurementsItemProvider != null) {
+            this.fixedWidthAggregatedMeasurementsItemProvider.dispose();
+        }
+        if (this.fixedIntervalsItemProvider != null) {
+            this.fixedIntervalsItemProvider.dispose();
+        }
+        if (this.textualNominalStatisticsItemProvider != null) {
+            this.textualNominalStatisticsItemProvider.dispose();
+        }
+        if (this.textualMassDistributionItemProvider != null) {
+            this.textualMassDistributionItemProvider.dispose();
+        }
+        if (this.experimentGroupItemProvider != null) {
+            this.experimentGroupItemProvider.dispose();
+        }
+        if (this.experimentSettingItemProvider != null) {
+            this.experimentSettingItemProvider.dispose();
+        }
+        if (this.experimentRunItemProvider != null) {
+            this.experimentRunItemProvider.dispose();
+        }
+        if (this.measurementsItemProvider != null) {
+            this.measurementsItemProvider.dispose();
+        }
+        if (this.measureItemProvider != null) {
+            this.measureItemProvider.dispose();
+        }
+        if (this.aggregationStatisticsItemProvider != null) {
+            this.aggregationStatisticsItemProvider.dispose();
+        }
+        if (this.doubleBinaryMeasurementsItemProvider != null) {
+            this.doubleBinaryMeasurementsItemProvider.dispose();
+        }
+        if (this.numericalIntervalStatisticsItemProvider != null) {
+            this.numericalIntervalStatisticsItemProvider.dispose();
+        }
+        if (this.numericalOrdinalStatisticsItemProvider != null) {
+            this.numericalOrdinalStatisticsItemProvider.dispose();
+        }
+        if (this.numericalPercentileItemProvider != null) {
+            this.numericalPercentileItemProvider.dispose();
+        }
+        if (this.jsXmlMeasurementsItemProvider != null) {
+            this.jsXmlMeasurementsItemProvider.dispose();
+        }
+        if (this.longBinaryMeasurementsItemProvider != null) {
+            this.longBinaryMeasurementsItemProvider.dispose();
+        }
+        if (this.identifierBasedMeasurementsItemProvider != null) {
+            this.identifierBasedMeasurementsItemProvider.dispose();
+        }
+        if (this.numericalRatioStatisticsItemProvider != null) {
+            this.numericalRatioStatisticsItemProvider.dispose();
+        }
+        if (this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null) {
+            this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
+        }
+        if (this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null) {
+            this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
+        }
+        if (this.textualOrdinalStatisticsItemProvider != null) {
+            this.textualOrdinalStatisticsItemProvider.dispose();
+        }
+        if (this.experimentGroupRunItemProvider != null) {
+            this.experimentGroupRunItemProvider.dispose();
+        }
     }
 
 }

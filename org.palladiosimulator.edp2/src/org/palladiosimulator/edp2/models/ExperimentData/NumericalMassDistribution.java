@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Numerical Mass Distribution</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * <em>Numerical Nominal Statistics</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution()
  * @model
  * @generated
@@ -40,7 +40,7 @@ public interface NumericalMassDistribution extends EObject {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Frequency</em>' attribute.
      * @see #setFrequency(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_Frequency()
@@ -53,7 +53,7 @@ public interface NumericalMassDistribution extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getFrequency
      * <em>Frequency</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Frequency</em>' attribute.
      * @see #getFrequency()
@@ -68,7 +68,7 @@ public interface NumericalMassDistribution extends EObject {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_Value()
@@ -82,7 +82,7 @@ public interface NumericalMassDistribution extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getValue
      * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()
@@ -100,7 +100,7 @@ public interface NumericalMassDistribution extends EObject {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Numerical Nominal Statistics</em>' container reference.
      * @see #setNumericalNominalStatistics(NumericalNominalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_NumericalNominalStatistics()
@@ -115,7 +115,7 @@ public interface NumericalMassDistribution extends EObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getNumericalNominalStatistics
      * <em>Numerical Nominal Statistics</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Numerical Nominal Statistics</em>' container reference.
      * @see #getNumericalNominalStatistics()

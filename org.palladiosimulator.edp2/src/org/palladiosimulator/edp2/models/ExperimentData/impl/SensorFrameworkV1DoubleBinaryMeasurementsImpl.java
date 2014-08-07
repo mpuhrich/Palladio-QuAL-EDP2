@@ -15,14 +15,14 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleB
  * <em><b>Sensor Framework V1 Double Binary Measurements</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class SensorFrameworkV1DoubleBinaryMeasurementsImpl extends DoubleBinaryMeasurementsImpl implements
-        SensorFrameworkV1DoubleBinaryMeasurements {
+SensorFrameworkV1DoubleBinaryMeasurements {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected SensorFrameworkV1DoubleBinaryMeasurementsImpl() {
@@ -31,7 +31,7 @@ public class SensorFrameworkV1DoubleBinaryMeasurementsImpl extends DoubleBinaryM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

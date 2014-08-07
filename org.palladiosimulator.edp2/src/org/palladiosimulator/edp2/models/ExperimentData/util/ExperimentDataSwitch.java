@@ -20,6 +20,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
@@ -38,6 +39,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Run;
 import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
@@ -52,21 +54,21 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage
  * @generated
  */
 public class ExperimentDataSwitch<T> extends Switch<T> {
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static ExperimentDataPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ExperimentDataSwitch() {
@@ -78,318 +80,420 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
     @Override
-    protected boolean isSwitchFor(EPackage ePackage) {
+    protected boolean isSwitchFor(final EPackage ePackage) {
         return ePackage == modelPackage;
     }
 
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
     @Override
-    protected T doSwitch(int classifierID, EObject theEObject) {
+    protected T doSwitch(final int classifierID, final EObject theEObject) {
         switch (classifierID) {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS: {
-            AggregatedMeasurements aggregatedMeasurements = (AggregatedMeasurements) theEObject;
-            T result = caseAggregatedMeasurements(aggregatedMeasurements);
-            if (result == null)
-                result = caseIdentifier(aggregatedMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final AggregatedMeasurements aggregatedMeasurements = (AggregatedMeasurements) theEObject;
+            T result = this.caseAggregatedMeasurements(aggregatedMeasurements);
+            if (result == null) {
+                result = this.caseIdentifier(aggregatedMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.MEASUREMENTS_RANGE: {
-            MeasurementsRange measurementsRange = (MeasurementsRange) theEObject;
-            T result = caseMeasurementsRange(measurementsRange);
-            if (result == null)
-                result = casePropertyable(measurementsRange);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final MeasurementsRange measurementsRange = (MeasurementsRange) theEObject;
+            T result = this.caseMeasurementsRange(measurementsRange);
+            if (result == null) {
+                result = this.casePropertyable(measurementsRange);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.PROPERTYABLE: {
-            Propertyable propertyable = (Propertyable) theEObject;
-            T result = casePropertyable(propertyable);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Propertyable propertyable = (Propertyable) theEObject;
+            T result = this.casePropertyable(propertyable);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY: {
             @SuppressWarnings("unchecked")
-            Map.Entry<String, Object> eStringtoEObjectMapEntry = (Map.Entry<String, Object>) theEObject;
-            T result = caseEStringtoEObjectMapEntry(eStringtoEObjectMapEntry);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Map.Entry<String, Object> eStringtoEObjectMapEntry = (Map.Entry<String, Object>) theEObject;
+            T result = this.caseEStringtoEObjectMapEntry(eStringtoEObjectMapEntry);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.RAW_MEASUREMENTS: {
-            RawMeasurements rawMeasurements = (RawMeasurements) theEObject;
-            T result = caseRawMeasurements(rawMeasurements);
-            if (result == null)
-                result = caseIdentifier(rawMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final RawMeasurements rawMeasurements = (RawMeasurements) theEObject;
+            T result = this.caseRawMeasurements(rawMeasurements);
+            if (result == null) {
+                result = this.caseIdentifier(rawMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.DATA_SERIES: {
-            DataSeries dataSeries = (DataSeries) theEObject;
-            T result = caseDataSeries(dataSeries);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final DataSeries dataSeries = (DataSeries) theEObject;
+            T result = this.caseDataSeries(dataSeries);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS: {
-            NumericalNominalStatistics numericalNominalStatistics = (NumericalNominalStatistics) theEObject;
-            T result = caseNumericalNominalStatistics(numericalNominalStatistics);
-            if (result == null)
-                result = caseIdentifier(numericalNominalStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalNominalStatistics numericalNominalStatistics = (NumericalNominalStatistics) theEObject;
+            T result = this.caseNumericalNominalStatistics(numericalNominalStatistics);
+            if (result == null) {
+                result = this.caseIdentifier(numericalNominalStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION: {
-            NumericalMassDistribution numericalMassDistribution = (NumericalMassDistribution) theEObject;
-            T result = caseNumericalMassDistribution(numericalMassDistribution);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalMassDistribution numericalMassDistribution = (NumericalMassDistribution) theEObject;
+            T result = this.caseNumericalMassDistribution(numericalMassDistribution);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS: {
-            FixedWidthAggregatedMeasurements fixedWidthAggregatedMeasurements = (FixedWidthAggregatedMeasurements) theEObject;
-            T result = caseFixedWidthAggregatedMeasurements(fixedWidthAggregatedMeasurements);
-            if (result == null)
-                result = caseAggregatedMeasurements(fixedWidthAggregatedMeasurements);
-            if (result == null)
-                result = caseIdentifier(fixedWidthAggregatedMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final FixedWidthAggregatedMeasurements fixedWidthAggregatedMeasurements = (FixedWidthAggregatedMeasurements) theEObject;
+            T result = this.caseFixedWidthAggregatedMeasurements(fixedWidthAggregatedMeasurements);
+            if (result == null) {
+                result = this.caseAggregatedMeasurements(fixedWidthAggregatedMeasurements);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(fixedWidthAggregatedMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.FIXED_INTERVALS: {
-            FixedIntervals fixedIntervals = (FixedIntervals) theEObject;
-            T result = caseFixedIntervals(fixedIntervals);
-            if (result == null)
-                result = caseIdentifier(fixedIntervals);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final FixedIntervals fixedIntervals = (FixedIntervals) theEObject;
+            T result = this.caseFixedIntervals(fixedIntervals);
+            if (result == null) {
+                result = this.caseIdentifier(fixedIntervals);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS: {
-            TextualNominalStatistics textualNominalStatistics = (TextualNominalStatistics) theEObject;
-            T result = caseTextualNominalStatistics(textualNominalStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final TextualNominalStatistics textualNominalStatistics = (TextualNominalStatistics) theEObject;
+            T result = this.caseTextualNominalStatistics(textualNominalStatistics);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION: {
-            TextualMassDistribution textualMassDistribution = (TextualMassDistribution) theEObject;
-            T result = caseTextualMassDistribution(textualMassDistribution);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final TextualMassDistribution textualMassDistribution = (TextualMassDistribution) theEObject;
+            T result = this.caseTextualMassDistribution(textualMassDistribution);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.EXPERIMENT_GROUP: {
-            ExperimentGroup experimentGroup = (ExperimentGroup) theEObject;
-            T result = caseExperimentGroup(experimentGroup);
-            if (result == null)
-                result = caseIdentifier(experimentGroup);
-            if (result == null)
-                result = casePropertyable(experimentGroup);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final ExperimentGroup experimentGroup = (ExperimentGroup) theEObject;
+            T result = this.caseExperimentGroup(experimentGroup);
+            if (result == null) {
+                result = this.caseIdentifier(experimentGroup);
+            }
+            if (result == null) {
+                result = this.casePropertyable(experimentGroup);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.EXPERIMENT_SETTING: {
-            ExperimentSetting experimentSetting = (ExperimentSetting) theEObject;
-            T result = caseExperimentSetting(experimentSetting);
-            if (result == null)
-                result = caseIdentifier(experimentSetting);
-            if (result == null)
-                result = casePropertyable(experimentSetting);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final ExperimentSetting experimentSetting = (ExperimentSetting) theEObject;
+            T result = this.caseExperimentSetting(experimentSetting);
+            if (result == null) {
+                result = this.caseIdentifier(experimentSetting);
+            }
+            if (result == null) {
+                result = this.casePropertyable(experimentSetting);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.EXPERIMENT_RUN: {
-            ExperimentRun experimentRun = (ExperimentRun) theEObject;
-            T result = caseExperimentRun(experimentRun);
-            if (result == null)
-                result = caseIdentifier(experimentRun);
-            if (result == null)
-                result = casePropertyable(experimentRun);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final ExperimentRun experimentRun = (ExperimentRun) theEObject;
+            T result = this.caseExperimentRun(experimentRun);
+            if (result == null) {
+                result = this.caseRun(experimentRun);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(experimentRun);
+            }
+            if (result == null) {
+                result = this.casePropertyable(experimentRun);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.MEASUREMENTS: {
-            Measurements measurements = (Measurements) theEObject;
-            T result = caseMeasurements(measurements);
-            if (result == null)
-                result = caseIdentifier(measurements);
-            if (result == null)
-                result = casePropertyable(measurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Measurements measurements = (Measurements) theEObject;
+            T result = this.caseMeasurements(measurements);
+            if (result == null) {
+                result = this.caseIdentifier(measurements);
+            }
+            if (result == null) {
+                result = this.casePropertyable(measurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.MEASURE: {
-            Measure measure = (Measure) theEObject;
-            T result = caseMeasure(measure);
-            if (result == null)
-                result = caseIdentifier(measure);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Measure measure = (Measure) theEObject;
+            T result = this.caseMeasure(measure);
+            if (result == null) {
+                result = this.caseIdentifier(measure);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.AGGREGATION_STATISTICS: {
-            AggregationStatistics aggregationStatistics = (AggregationStatistics) theEObject;
-            T result = caseAggregationStatistics(aggregationStatistics);
-            if (result == null)
-                result = caseIdentifier(aggregationStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final AggregationStatistics aggregationStatistics = (AggregationStatistics) theEObject;
+            T result = this.caseAggregationStatistics(aggregationStatistics);
+            if (result == null) {
+                result = this.caseIdentifier(aggregationStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS: {
-            DoubleBinaryMeasurements<?> doubleBinaryMeasurements = (DoubleBinaryMeasurements<?>) theEObject;
-            T result = caseDoubleBinaryMeasurements(doubleBinaryMeasurements);
-            if (result == null)
-                result = caseDataSeries(doubleBinaryMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final DoubleBinaryMeasurements<?> doubleBinaryMeasurements = (DoubleBinaryMeasurements<?>) theEObject;
+            T result = this.caseDoubleBinaryMeasurements(doubleBinaryMeasurements);
+            if (result == null) {
+                result = this.caseDataSeries(doubleBinaryMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS: {
-            NumericalIntervalStatistics numericalIntervalStatistics = (NumericalIntervalStatistics) theEObject;
-            T result = caseNumericalIntervalStatistics(numericalIntervalStatistics);
-            if (result == null)
-                result = caseNumericalOrdinalStatistics(numericalIntervalStatistics);
-            if (result == null)
-                result = caseNumericalNominalStatistics(numericalIntervalStatistics);
-            if (result == null)
-                result = caseIdentifier(numericalIntervalStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalIntervalStatistics numericalIntervalStatistics = (NumericalIntervalStatistics) theEObject;
+            T result = this.caseNumericalIntervalStatistics(numericalIntervalStatistics);
+            if (result == null) {
+                result = this.caseNumericalOrdinalStatistics(numericalIntervalStatistics);
+            }
+            if (result == null) {
+                result = this.caseNumericalNominalStatistics(numericalIntervalStatistics);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(numericalIntervalStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS: {
-            NumericalOrdinalStatistics numericalOrdinalStatistics = (NumericalOrdinalStatistics) theEObject;
-            T result = caseNumericalOrdinalStatistics(numericalOrdinalStatistics);
-            if (result == null)
-                result = caseNumericalNominalStatistics(numericalOrdinalStatistics);
-            if (result == null)
-                result = caseIdentifier(numericalOrdinalStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalOrdinalStatistics numericalOrdinalStatistics = (NumericalOrdinalStatistics) theEObject;
+            T result = this.caseNumericalOrdinalStatistics(numericalOrdinalStatistics);
+            if (result == null) {
+                result = this.caseNumericalNominalStatistics(numericalOrdinalStatistics);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(numericalOrdinalStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_PERCENTILE: {
-            NumericalPercentile numericalPercentile = (NumericalPercentile) theEObject;
-            T result = caseNumericalPercentile(numericalPercentile);
-            if (result == null)
-                result = caseIdentifier(numericalPercentile);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalPercentile numericalPercentile = (NumericalPercentile) theEObject;
+            T result = this.caseNumericalPercentile(numericalPercentile);
+            if (result == null) {
+                result = this.caseIdentifier(numericalPercentile);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.JS_XML_MEASUREMENTS: {
-            JSXmlMeasurements jsXmlMeasurements = (JSXmlMeasurements) theEObject;
-            T result = caseJSXmlMeasurements(jsXmlMeasurements);
-            if (result == null)
-                result = caseDataSeries(jsXmlMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final JSXmlMeasurements jsXmlMeasurements = (JSXmlMeasurements) theEObject;
+            T result = this.caseJSXmlMeasurements(jsXmlMeasurements);
+            if (result == null) {
+                result = this.caseDataSeries(jsXmlMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS: {
-            LongBinaryMeasurements longBinaryMeasurements = (LongBinaryMeasurements) theEObject;
-            T result = caseLongBinaryMeasurements(longBinaryMeasurements);
-            if (result == null)
-                result = caseDataSeries(longBinaryMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final LongBinaryMeasurements longBinaryMeasurements = (LongBinaryMeasurements) theEObject;
+            T result = this.caseLongBinaryMeasurements(longBinaryMeasurements);
+            if (result == null) {
+                result = this.caseDataSeries(longBinaryMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.IDENTIFIER_BASED_MEASUREMENTS: {
-            IdentifierBasedMeasurements identifierBasedMeasurements = (IdentifierBasedMeasurements) theEObject;
-            T result = caseIdentifierBasedMeasurements(identifierBasedMeasurements);
-            if (result == null)
-                result = caseDataSeries(identifierBasedMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final IdentifierBasedMeasurements identifierBasedMeasurements = (IdentifierBasedMeasurements) theEObject;
+            T result = this.caseIdentifierBasedMeasurements(identifierBasedMeasurements);
+            if (result == null) {
+                result = this.caseDataSeries(identifierBasedMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS: {
-            NumericalRatioStatistics numericalRatioStatistics = (NumericalRatioStatistics) theEObject;
-            T result = caseNumericalRatioStatistics(numericalRatioStatistics);
-            if (result == null)
-                result = caseNumericalIntervalStatistics(numericalRatioStatistics);
-            if (result == null)
-                result = caseNumericalOrdinalStatistics(numericalRatioStatistics);
-            if (result == null)
-                result = caseNumericalNominalStatistics(numericalRatioStatistics);
-            if (result == null)
-                result = caseIdentifier(numericalRatioStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final NumericalRatioStatistics numericalRatioStatistics = (NumericalRatioStatistics) theEObject;
+            T result = this.caseNumericalRatioStatistics(numericalRatioStatistics);
+            if (result == null) {
+                result = this.caseNumericalIntervalStatistics(numericalRatioStatistics);
+            }
+            if (result == null) {
+                result = this.caseNumericalOrdinalStatistics(numericalRatioStatistics);
+            }
+            if (result == null) {
+                result = this.caseNumericalNominalStatistics(numericalRatioStatistics);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(numericalRatioStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS: {
-            SensorFrameworkV1DoubleBinaryMeasurements sensorFrameworkV1DoubleBinaryMeasurements = (SensorFrameworkV1DoubleBinaryMeasurements) theEObject;
-            T result = caseSensorFrameworkV1DoubleBinaryMeasurements(sensorFrameworkV1DoubleBinaryMeasurements);
-            if (result == null)
-                result = (T) caseDoubleBinaryMeasurements(sensorFrameworkV1DoubleBinaryMeasurements);
-            if (result == null)
-                result = caseDataSeries(sensorFrameworkV1DoubleBinaryMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final SensorFrameworkV1DoubleBinaryMeasurements sensorFrameworkV1DoubleBinaryMeasurements = (SensorFrameworkV1DoubleBinaryMeasurements) theEObject;
+            T result = this.caseSensorFrameworkV1DoubleBinaryMeasurements(sensorFrameworkV1DoubleBinaryMeasurements);
+            if (result == null) {
+                result = (T) this.caseDoubleBinaryMeasurements(sensorFrameworkV1DoubleBinaryMeasurements);
+            }
+            if (result == null) {
+                result = this.caseDataSeries(sensorFrameworkV1DoubleBinaryMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS: {
-            SensorFrameworkV1IdentifierBasedMeasurements sensorFrameworkV1IdentifierBasedMeasurements = (SensorFrameworkV1IdentifierBasedMeasurements) theEObject;
-            T result = caseSensorFrameworkV1IdentifierBasedMeasurements(sensorFrameworkV1IdentifierBasedMeasurements);
-            if (result == null)
-                result = caseIdentifierBasedMeasurements(sensorFrameworkV1IdentifierBasedMeasurements);
-            if (result == null)
-                result = caseDataSeries(sensorFrameworkV1IdentifierBasedMeasurements);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final SensorFrameworkV1IdentifierBasedMeasurements sensorFrameworkV1IdentifierBasedMeasurements = (SensorFrameworkV1IdentifierBasedMeasurements) theEObject;
+            T result = this
+                    .caseSensorFrameworkV1IdentifierBasedMeasurements(sensorFrameworkV1IdentifierBasedMeasurements);
+            if (result == null) {
+                result = this.caseIdentifierBasedMeasurements(sensorFrameworkV1IdentifierBasedMeasurements);
+            }
+            if (result == null) {
+                result = this.caseDataSeries(sensorFrameworkV1IdentifierBasedMeasurements);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.IJS_DURATION: {
-            Duration ijsDuration = (Duration) theEObject;
-            T result = caseIJSDuration(ijsDuration);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Duration ijsDuration = (Duration) theEObject;
+            T result = this.caseIJSDuration(ijsDuration);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.ECOMPARABLE: {
-            Comparable eComparable = (Comparable) theEObject;
-            T result = caseEComparable(eComparable);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Comparable eComparable = (Comparable) theEObject;
+            T result = this.caseEComparable(eComparable);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS: {
-            TextualOrdinalStatistics textualOrdinalStatistics = (TextualOrdinalStatistics) theEObject;
-            T result = caseTextualOrdinalStatistics(textualOrdinalStatistics);
-            if (result == null)
-                result = caseTextualNominalStatistics(textualOrdinalStatistics);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final TextualOrdinalStatistics textualOrdinalStatistics = (TextualOrdinalStatistics) theEObject;
+            T result = this.caseTextualOrdinalStatistics(textualOrdinalStatistics);
+            if (result == null) {
+                result = this.caseTextualNominalStatistics(textualOrdinalStatistics);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case ExperimentDataPackage.RUN: {
+            final Run run = (Run) theEObject;
+            T result = this.caseRun(run);
+            if (result == null) {
+                result = this.caseIdentifier(run);
+            }
+            if (result == null) {
+                result = this.casePropertyable(run);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case ExperimentDataPackage.EXPERIMENT_GROUP_RUN: {
+            final ExperimentGroupRun experimentGroupRun = (ExperimentGroupRun) theEObject;
+            T result = this.caseExperimentGroupRun(experimentGroupRun);
+            if (result == null) {
+                result = this.caseRun(experimentGroupRun);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(experimentGroupRun);
+            }
+            if (result == null) {
+                result = this.casePropertyable(experimentGroupRun);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         default:
-            return defaultCase(theEObject);
+            return this.defaultCase(theEObject);
         }
     }
 
@@ -397,7 +501,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Aggregated Measurements</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -405,7 +509,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAggregatedMeasurements(AggregatedMeasurements object) {
+    public T caseAggregatedMeasurements(final AggregatedMeasurements object) {
         return null;
     }
 
@@ -413,7 +517,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measurements Range</em>
      * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measurements Range</em>
@@ -421,7 +525,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMeasurementsRange(MeasurementsRange object) {
+    public T caseMeasurementsRange(final MeasurementsRange object) {
         return null;
     }
 
@@ -429,14 +533,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Propertyable</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Propertyable</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePropertyable(Propertyable object) {
+    public T casePropertyable(final Propertyable object) {
         return null;
     }
 
@@ -444,7 +548,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>EStringto EObject Map Entry</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -452,7 +556,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEStringtoEObjectMapEntry(Map.Entry<String, Object> object) {
+    public T caseEStringtoEObjectMapEntry(final Map.Entry<String, Object> object) {
         return null;
     }
 
@@ -460,14 +564,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Raw Measurements</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Raw Measurements</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRawMeasurements(RawMeasurements object) {
+    public T caseRawMeasurements(final RawMeasurements object) {
         return null;
     }
 
@@ -475,14 +579,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Data Series</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Data Series</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseDataSeries(DataSeries object) {
+    public T caseDataSeries(final DataSeries object) {
         return null;
     }
 
@@ -490,7 +594,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Nominal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -498,7 +602,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalNominalStatistics(NumericalNominalStatistics object) {
+    public T caseNumericalNominalStatistics(final NumericalNominalStatistics object) {
         return null;
     }
 
@@ -506,7 +610,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Mass Distribution</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -514,7 +618,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalMassDistribution(NumericalMassDistribution object) {
+    public T caseNumericalMassDistribution(final NumericalMassDistribution object) {
         return null;
     }
 
@@ -522,7 +626,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Fixed Width Aggregated Measurements</em>'. <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -530,7 +634,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseFixedWidthAggregatedMeasurements(FixedWidthAggregatedMeasurements object) {
+    public T caseFixedWidthAggregatedMeasurements(final FixedWidthAggregatedMeasurements object) {
         return null;
     }
 
@@ -538,14 +642,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Fixed Intervals</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Fixed Intervals</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseFixedIntervals(FixedIntervals object) {
+    public T caseFixedIntervals(final FixedIntervals object) {
         return null;
     }
 
@@ -553,7 +657,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Nominal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -561,7 +665,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseTextualNominalStatistics(TextualNominalStatistics object) {
+    public T caseTextualNominalStatistics(final TextualNominalStatistics object) {
         return null;
     }
 
@@ -569,7 +673,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Mass Distribution</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -577,7 +681,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseTextualMassDistribution(TextualMassDistribution object) {
+    public T caseTextualMassDistribution(final TextualMassDistribution object) {
         return null;
     }
 
@@ -585,14 +689,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measurements</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measurements</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMeasurements(Measurements object) {
+    public T caseMeasurements(final Measurements object) {
         return null;
     }
 
@@ -600,14 +704,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measure</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measure</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMeasure(Measure object) {
+    public T caseMeasure(final Measure object) {
         return null;
     }
 
@@ -615,14 +719,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Group</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Group</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseExperimentGroup(ExperimentGroup object) {
+    public T caseExperimentGroup(final ExperimentGroup object) {
         return null;
     }
 
@@ -630,7 +734,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Setting</em>
      * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Setting</em>
@@ -638,7 +742,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseExperimentSetting(ExperimentSetting object) {
+    public T caseExperimentSetting(final ExperimentSetting object) {
         return null;
     }
 
@@ -646,14 +750,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Run</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Run</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseExperimentRun(ExperimentRun object) {
+    public T caseExperimentRun(final ExperimentRun object) {
         return null;
     }
 
@@ -661,7 +765,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Aggregation Statistics</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -669,7 +773,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAggregationStatistics(AggregationStatistics object) {
+    public T caseAggregationStatistics(final AggregationStatistics object) {
         return null;
     }
 
@@ -677,7 +781,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Double Binary Measurements</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -685,7 +789,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public <Q extends Quantity> T caseDoubleBinaryMeasurements(DoubleBinaryMeasurements<Q> object) {
+    public <Q extends Quantity> T caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements<Q> object) {
         return null;
     }
 
@@ -693,7 +797,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Interval Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -701,7 +805,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalIntervalStatistics(NumericalIntervalStatistics object) {
+    public T caseNumericalIntervalStatistics(final NumericalIntervalStatistics object) {
         return null;
     }
 
@@ -709,7 +813,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Ordinal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -717,7 +821,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalOrdinalStatistics(NumericalOrdinalStatistics object) {
+    public T caseNumericalOrdinalStatistics(final NumericalOrdinalStatistics object) {
         return null;
     }
 
@@ -725,7 +829,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Percentile</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -733,7 +837,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalPercentile(NumericalPercentile object) {
+    public T caseNumericalPercentile(final NumericalPercentile object) {
         return null;
     }
 
@@ -741,7 +845,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>JS Xml Measurements</em>
      * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>JS Xml Measurements</em>
@@ -749,7 +853,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseJSXmlMeasurements(JSXmlMeasurements object) {
+    public T caseJSXmlMeasurements(final JSXmlMeasurements object) {
         return null;
     }
 
@@ -757,7 +861,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Long Binary Measurements</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -765,7 +869,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLongBinaryMeasurements(LongBinaryMeasurements object) {
+    public T caseLongBinaryMeasurements(final LongBinaryMeasurements object) {
         return null;
     }
 
@@ -773,7 +877,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Identifier Based Measurements</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -781,7 +885,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifierBasedMeasurements(IdentifierBasedMeasurements object) {
+    public T caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object) {
         return null;
     }
 
@@ -789,7 +893,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Ratio Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -797,7 +901,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNumericalRatioStatistics(NumericalRatioStatistics object) {
+    public T caseNumericalRatioStatistics(final NumericalRatioStatistics object) {
         return null;
     }
 
@@ -806,7 +910,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * <em>Sensor Framework V1 Double Binary Measurements</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!--
      * end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -814,7 +918,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSensorFrameworkV1DoubleBinaryMeasurements(SensorFrameworkV1DoubleBinaryMeasurements object) {
+    public T caseSensorFrameworkV1DoubleBinaryMeasurements(final SensorFrameworkV1DoubleBinaryMeasurements object) {
         return null;
     }
 
@@ -823,7 +927,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * <em>Sensor Framework V1 Identifier Based Measurements</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!--
      * end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -831,7 +935,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSensorFrameworkV1IdentifierBasedMeasurements(SensorFrameworkV1IdentifierBasedMeasurements object) {
+    public T caseSensorFrameworkV1IdentifierBasedMeasurements(final SensorFrameworkV1IdentifierBasedMeasurements object) {
         return null;
     }
 
@@ -839,14 +943,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>IJS Duration</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>IJS Duration</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIJSDuration(Duration object) {
+    public T caseIJSDuration(final Duration object) {
         return null;
     }
 
@@ -854,7 +958,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>EComparable</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>EComparable</em>'.
@@ -862,7 +966,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
     @SuppressWarnings("unchecked")
-    public T caseEComparable(Comparable object) {
+    public T caseEComparable(final Comparable object) {
         return null;
     }
 
@@ -870,7 +974,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Ordinal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -878,7 +982,38 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseTextualOrdinalStatistics(TextualOrdinalStatistics object) {
+    public T caseTextualOrdinalStatistics(final TextualOrdinalStatistics object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Run</em>'. <!--
+     * begin-user-doc --> This implementation returns null; returning a non-null result will
+     * terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Run</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRun(final Run object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Experiment Group Run</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Experiment Group Run</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseExperimentGroupRun(final ExperimentGroupRun object) {
         return null;
     }
 
@@ -886,14 +1021,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(Identifier object) {
+    public T caseIdentifier(final Identifier object) {
         return null;
     }
 
@@ -901,7 +1036,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
@@ -909,7 +1044,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(EObject object) {
+    public T defaultCase(final EObject object) {
         return null;
     }
 

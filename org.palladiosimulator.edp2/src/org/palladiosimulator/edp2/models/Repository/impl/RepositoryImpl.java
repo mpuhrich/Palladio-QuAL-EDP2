@@ -46,14 +46,14 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * Descriptions</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class RepositoryImpl extends IdentifierImpl implements Repository {
     /**
      * The cached value of the '{@link #getExperimentGroups() <em>Experiment Groups</em>}' reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getExperimentGroups()
      * @generated
      * @ordered
@@ -63,7 +63,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     /**
      * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #isReadOnly()
      * @generated
      * @ordered
@@ -73,7 +73,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     /**
      * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #isReadOnly()
      * @generated
      * @ordered
@@ -83,7 +83,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     /**
      * The cached value of the '{@link #getDescriptions() <em>Descriptions</em>}' reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getDescriptions()
      * @generated
      * @ordered
@@ -92,24 +92,24 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * The DAO to load/access/store the data handled by this repository.
-     * 
+     *
      * @generated NOT
      */
     protected MetaDao metaDao;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated NOT
      */
     protected RepositoryImpl() {
         super();
-        metaDao = null;
+        this.metaDao = null;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,206 +119,217 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Repositories getRepositories() {
-        if (eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES)
+        if (this.eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES) {
             return null;
-        return (Repositories) eInternalContainer();
+        }
+        return (Repositories) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetRepositories(Repositories newRepositories, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newRepositories, RepositoryPackage.REPOSITORY__REPOSITORIES, msgs);
+    public NotificationChain basicSetRepositories(final Repositories newRepositories, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newRepositories, RepositoryPackage.REPOSITORY__REPOSITORIES,
+                msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setRepositories(Repositories newRepositories) {
-        if (newRepositories != eInternalContainer()
-                || (eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES && newRepositories != null)) {
-            if (EcoreUtil.isAncestor(this, newRepositories))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setRepositories(final Repositories newRepositories) {
+        if (newRepositories != this.eInternalContainer()
+                || (this.eContainerFeatureID() != RepositoryPackage.REPOSITORY__REPOSITORIES && newRepositories != null)) {
+            if (EcoreUtil.isAncestor(this, newRepositories)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newRepositories != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newRepositories != null) {
                 msgs = ((InternalEObject) newRepositories).eInverseAdd(this,
                         RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
-            msgs = basicSetRepositories(newRepositories, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetRepositories(newRepositories, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__REPOSITORIES,
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__REPOSITORIES,
                     newRepositories, newRepositories));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public boolean isReadOnly() {
-        return readOnly;
+        return this.readOnly;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setReadOnly(boolean newReadOnly) {
-        boolean oldReadOnly = readOnly;
-        readOnly = newReadOnly;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__READ_ONLY, oldReadOnly,
-                    readOnly));
+    public void setReadOnly(final boolean newReadOnly) {
+        final boolean oldReadOnly = this.readOnly;
+        this.readOnly = newReadOnly;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REPOSITORY__READ_ONLY,
+                    oldReadOnly, this.readOnly));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public EList<Description> getDescriptions() {
-        if (descriptions == null) {
-            descriptions = new EObjectResolvingEList<Description>(Description.class, this,
+        if (this.descriptions == null) {
+            this.descriptions = new EObjectResolvingEList<Description>(Description.class, this,
                     RepositoryPackage.REPOSITORY__DESCRIPTIONS);
         }
-        return descriptions;
+        return this.descriptions;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public EList<ExperimentGroup> getExperimentGroups() {
-        if (experimentGroups == null) {
-            experimentGroups = new EObjectWithInverseResolvingEList<ExperimentGroup>(ExperimentGroup.class, this,
+        if (this.experimentGroups == null) {
+            this.experimentGroups = new EObjectWithInverseResolvingEList<ExperimentGroup>(ExperimentGroup.class, this,
                     RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY);
         }
-        return experimentGroups;
+        return this.experimentGroups;
     }
 
     /**
      * <!-- begin-user-doc --> Resets the experiment groups attribute. <!-- end-user-doc -->
-     * 
+     *
      * @generated NOT
      */
     @Override
     public void resetExperimentGroups() {
-        experimentGroups = new EObjectWithInverseResolvingEList<ExperimentGroup>(ExperimentGroup.class, this,
+        this.experimentGroups = new EObjectWithInverseResolvingEList<ExperimentGroup>(ExperimentGroup.class, this,
                 RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetRepositories((Repositories) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetRepositories((Repositories) otherEnd, msgs);
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getExperimentGroups()).basicAdd(otherEnd, msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getExperimentGroups()).basicAdd(otherEnd,
+                    msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            return basicSetRepositories(null, msgs);
+            return this.basicSetRepositories(null, msgs);
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            return ((InternalEList<?>) getExperimentGroups()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getExperimentGroups()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            return eInternalContainer().eInverseRemove(this, RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES,
-                    Repositories.class, msgs);
+            return this.eInternalContainer().eInverseRemove(this,
+                    RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            return getRepositories();
+            return this.getRepositories();
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            return getExperimentGroups();
+            return this.getExperimentGroups();
         case RepositoryPackage.REPOSITORY__READ_ONLY:
-            return isReadOnly();
+            return this.isReadOnly();
         case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-            return getDescriptions();
+            return this.getDescriptions();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            setRepositories((Repositories) newValue);
+            this.setRepositories((Repositories) newValue);
             return;
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            getExperimentGroups().clear();
-            getExperimentGroups().addAll((Collection<? extends ExperimentGroup>) newValue);
+            this.getExperimentGroups().clear();
+            this.getExperimentGroups().addAll((Collection<? extends ExperimentGroup>) newValue);
             return;
         case RepositoryPackage.REPOSITORY__READ_ONLY:
-            setReadOnly((Boolean) newValue);
+            this.setReadOnly((Boolean) newValue);
             return;
         case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-            getDescriptions().clear();
-            getDescriptions().addAll((Collection<? extends Description>) newValue);
+            this.getDescriptions().clear();
+            this.getDescriptions().addAll((Collection<? extends Description>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -326,23 +337,23 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            setRepositories((Repositories) null);
+            this.setRepositories((Repositories) null);
             return;
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            getExperimentGroups().clear();
+            this.getExperimentGroups().clear();
             return;
         case RepositoryPackage.REPOSITORY__READ_ONLY:
-            setReadOnly(READ_ONLY_EDEFAULT);
+            this.setReadOnly(READ_ONLY_EDEFAULT);
             return;
         case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-            getDescriptions().clear();
+            this.getDescriptions().clear();
             return;
         }
         super.eUnset(featureID);
@@ -350,45 +361,46 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
-            return getRepositories() != null;
+            return this.getRepositories() != null;
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
-            return experimentGroups != null && !experimentGroups.isEmpty();
+            return this.experimentGroups != null && !this.experimentGroups.isEmpty();
         case RepositoryPackage.REPOSITORY__READ_ONLY:
-            return readOnly != READ_ONLY_EDEFAULT;
+            return this.readOnly != READ_ONLY_EDEFAULT;
         case RepositoryPackage.REPOSITORY__DESCRIPTIONS:
-            return descriptions != null && !descriptions.isEmpty();
+            return this.descriptions != null && !this.descriptions.isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (readOnly: ");
-        result.append(readOnly);
+        result.append(this.readOnly);
         result.append(')');
         return result.toString();
     }
 
     @Override
     public MeasurementsDaoFactory getMeasurementsDaoFactory() {
-        if (metaDao != null) {
-            return metaDao.getMeasurementsDaoFactory();
+        if (this.metaDao != null) {
+            return this.metaDao.getMeasurementsDaoFactory();
         } else {
             return null;
         }
@@ -396,8 +408,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public boolean canClose() {
-        if (metaDao != null) {
-            return metaDao.canClose();
+        if (this.metaDao != null) {
+            return this.metaDao.canClose();
         } else {
             return false;
         }
@@ -405,8 +417,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public boolean canDelete() {
-        if (metaDao != null) {
-            return metaDao.canDelete();
+        if (this.metaDao != null) {
+            return this.metaDao.canDelete();
         } else {
             return false;
         }
@@ -414,8 +426,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public boolean canOpen() {
-        if (metaDao != null) {
-            return metaDao.canOpen();
+        if (this.metaDao != null) {
+            return this.metaDao.canOpen();
         } else {
             return false;
         }
@@ -423,22 +435,22 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public void close() throws DataNotAccessibleException {
-        if (metaDao != null) {
-            metaDao.close();
+        if (this.metaDao != null) {
+            this.metaDao.close();
         }
     }
 
     @Override
     public void delete() throws DataNotAccessibleException {
-        if (metaDao != null) {
-            metaDao.delete();
+        if (this.metaDao != null) {
+            this.metaDao.delete();
         }
     }
 
     @Override
     public boolean isDeleted() {
-        if (metaDao != null) {
-            return metaDao.isDeleted();
+        if (this.metaDao != null) {
+            return this.metaDao.isDeleted();
         } else {
             return false;
         }
@@ -446,8 +458,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public boolean isOpen() {
-        if (metaDao != null) {
-            return metaDao.isOpen();
+        if (this.metaDao != null) {
+            return this.metaDao.isOpen();
         } else {
             return false;
         }
@@ -455,15 +467,15 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     @Override
     public void open() throws DataNotAccessibleException {
-        if (metaDao != null) {
-            metaDao.open();
+        if (this.metaDao != null) {
+            this.metaDao.open();
         }
     }
 
     @Override
     public void flush() {
-        if (metaDao != null) {
-            metaDao.flush();
+        if (this.metaDao != null) {
+            this.metaDao.flush();
         }
     }
 

@@ -36,14 +36,14 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatisti
  * <em>Numerical Nominal Statistics</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class NumericalMassDistributionImpl extends EObjectImpl implements NumericalMassDistribution {
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getFrequency()
      * @generated
      * @ordered
@@ -53,7 +53,7 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
     /**
      * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getFrequency()
      * @generated
      * @ordered
@@ -63,7 +63,7 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getValue()
      * @generated
      * @ordered
@@ -72,7 +72,7 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalMassDistributionImpl() {
@@ -81,7 +81,7 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -91,137 +91,153 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public long getFrequency() {
-        return frequency;
+        return this.frequency;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setFrequency(long newFrequency) {
-        long oldFrequency = frequency;
-        frequency = newFrequency;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, frequency));
+    @Override
+    public void setFrequency(final long newFrequency) {
+        final long oldFrequency = this.frequency;
+        this.frequency = newFrequency;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, this.frequency));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Measure getValue() {
-        return value;
+        return this.value;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setValue(Measure newValue) {
-        Measure oldValue = value;
-        value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE, oldValue, value));
+    @Override
+    public void setValue(final Measure newValue) {
+        final Measure oldValue = this.value;
+        this.value = newValue;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE, oldValue, this.value));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public NumericalNominalStatistics getNumericalNominalStatistics() {
-        if (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS)
+        if (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS) {
             return null;
-        return (NumericalNominalStatistics) eInternalContainer();
+        }
+        return (NumericalNominalStatistics) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetNumericalNominalStatistics(
-            NumericalNominalStatistics newNumericalNominalStatistics, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newNumericalNominalStatistics,
+            final NumericalNominalStatistics newNumericalNominalStatistics, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newNumericalNominalStatistics,
                 ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setNumericalNominalStatistics(NumericalNominalStatistics newNumericalNominalStatistics) {
-        if (newNumericalNominalStatistics != eInternalContainer()
-                || (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS && newNumericalNominalStatistics != null)) {
-            if (EcoreUtil.isAncestor(this, newNumericalNominalStatistics))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    @Override
+    public void setNumericalNominalStatistics(final NumericalNominalStatistics newNumericalNominalStatistics) {
+        if (newNumericalNominalStatistics != this.eInternalContainer()
+                || (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS && newNumericalNominalStatistics != null)) {
+            if (EcoreUtil.isAncestor(this, newNumericalNominalStatistics)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newNumericalNominalStatistics != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newNumericalNominalStatistics != null) {
                 msgs = ((InternalEObject) newNumericalNominalStatistics).eInverseAdd(this,
                         ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
                         NumericalNominalStatistics.class, msgs);
-            msgs = basicSetNumericalNominalStatistics(newNumericalNominalStatistics, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetNumericalNominalStatistics(newNumericalNominalStatistics, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS,
                     newNumericalNominalStatistics, newNumericalNominalStatistics));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetNumericalNominalStatistics((NumericalNominalStatistics) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetNumericalNominalStatistics((NumericalNominalStatistics) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            return basicSetNumericalNominalStatistics(null, msgs);
+            return this.basicSetNumericalNominalStatistics(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            return eInternalContainer().eInverseRemove(this,
+            return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
                     NumericalNominalStatistics.class, msgs);
         }
@@ -230,38 +246,38 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
-            return getFrequency();
+            return this.getFrequency();
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
-            return getValue();
+            return this.getValue();
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            return getNumericalNominalStatistics();
+            return this.getNumericalNominalStatistics();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
-            setFrequency((Long) newValue);
+            this.setFrequency((Long) newValue);
             return;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
-            setValue((Measure) newValue);
+            this.setValue((Measure) newValue);
             return;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            setNumericalNominalStatistics((NumericalNominalStatistics) newValue);
+            this.setNumericalNominalStatistics((NumericalNominalStatistics) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -269,20 +285,20 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
-            setFrequency(FREQUENCY_EDEFAULT);
+            this.setFrequency(FREQUENCY_EDEFAULT);
             return;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
-            setValue((Measure) null);
+            this.setValue((Measure) null);
             return;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            setNumericalNominalStatistics((NumericalNominalStatistics) null);
+            this.setNumericalNominalStatistics((NumericalNominalStatistics) null);
             return;
         }
         super.eUnset(featureID);
@@ -290,37 +306,38 @@ public class NumericalMassDistributionImpl extends EObjectImpl implements Numeri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
-            return frequency != FREQUENCY_EDEFAULT;
+            return this.frequency != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
-            return value != null;
+            return this.value != null;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
-            return getNumericalNominalStatistics() != null;
+            return this.getNumericalNominalStatistics() != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (frequency: ");
-        result.append(frequency);
+        result.append(this.frequency);
         result.append(", value: ");
-        result.append(value);
+        result.append(this.value);
         result.append(')');
         return result.toString();
     }

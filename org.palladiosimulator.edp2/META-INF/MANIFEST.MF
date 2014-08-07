@@ -31,7 +31,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.databinding.beans;bundle-version="1.2.0",
  org.apache.commons.codec;bundle-version="1.4.0",
  org.palladiosimulator.measurementframework,
- org.palladiosimulator.metricspec;bundle-version="1.0.0",
+ org.palladiosimulator.metricspec;bundle-version="1.0.0";visibility:=reexport,
  org.palladiosimulator.edp2.dao;bundle-version="1.0.0"
 Bundle-Activator: org.palladiosimulator.edp2.EDP2Plugin
 Bundle-ActivationPolicy: lazy

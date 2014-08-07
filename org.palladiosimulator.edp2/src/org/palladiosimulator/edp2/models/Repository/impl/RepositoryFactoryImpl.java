@@ -21,23 +21,23 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static RepositoryFactory init() {
         try {
-            RepositoryFactory theRepositoryFactory = (RepositoryFactory) EPackage.Registry.INSTANCE
+            final RepositoryFactory theRepositoryFactory = (RepositoryFactory) EPackage.Registry.INSTANCE
                     .getEFactory(RepositoryPackage.eNS_URI);
             if (theRepositoryFactory != null) {
                 return theRepositoryFactory;
             }
-        } catch (Exception exception) {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new RepositoryFactoryImpl();
@@ -45,7 +45,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RepositoryFactoryImpl() {
@@ -54,22 +54,22 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public EObject create(EClass eClass) {
+    public EObject create(final EClass eClass) {
         switch (eClass.getClassifierID()) {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY:
-            return createLocalDirectoryRepository();
+            return this.createLocalDirectoryRepository();
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY:
-            return createLocalMemoryRepository();
+            return this.createLocalMemoryRepository();
         case RepositoryPackage.REMOTE_CDO_REPOSITORY:
-            return createRemoteCdoRepository();
+            return this.createRemoteCdoRepository();
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY:
-            return createLocalSensorFrameworkRepository();
+            return this.createLocalSensorFrameworkRepository();
         case RepositoryPackage.REPOSITORIES:
-            return createRepositories();
+            return this.createRepositories();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -77,72 +77,72 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public LocalDirectoryRepository createLocalDirectoryRepository() {
-        LocalDirectoryRepositoryImpl localDirectoryRepository = new LocalDirectoryRepositoryImpl();
+        final LocalDirectoryRepositoryImpl localDirectoryRepository = new LocalDirectoryRepositoryImpl();
         return localDirectoryRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public LocalMemoryRepository createLocalMemoryRepository() {
-        LocalMemoryRepositoryImpl localMemoryRepository = new LocalMemoryRepositoryImpl();
+        final LocalMemoryRepositoryImpl localMemoryRepository = new LocalMemoryRepositoryImpl();
         return localMemoryRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public RemoteCdoRepository createRemoteCdoRepository() {
-        RemoteCdoRepositoryImpl remoteCdoRepository = new RemoteCdoRepositoryImpl();
+        final RemoteCdoRepositoryImpl remoteCdoRepository = new RemoteCdoRepositoryImpl();
         return remoteCdoRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public LocalSensorFrameworkRepository createLocalSensorFrameworkRepository() {
-        LocalSensorFrameworkRepositoryImpl localSensorFrameworkRepository = new LocalSensorFrameworkRepositoryImpl();
+        final LocalSensorFrameworkRepositoryImpl localSensorFrameworkRepository = new LocalSensorFrameworkRepositoryImpl();
         return localSensorFrameworkRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Repositories createRepositories() {
-        RepositoriesImpl repositories = new RepositoriesImpl();
+        final RepositoriesImpl repositories = new RepositoriesImpl();
         return repositories;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public RepositoryPackage getRepositoryPackage() {
-        return (RepositoryPackage) getEPackage();
+        return (RepositoryPackage) this.getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

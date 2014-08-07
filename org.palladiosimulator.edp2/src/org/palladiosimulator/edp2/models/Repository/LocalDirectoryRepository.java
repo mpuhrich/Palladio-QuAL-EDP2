@@ -13,10 +13,10 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Local Directory Repository</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc --> Repository which provides access to data stored in a local directory.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -24,7 +24,7 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
  * </em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalDirectoryRepository()
  * @model
  * @generated
@@ -37,7 +37,7 @@ public interface LocalDirectoryRepository extends Repository {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Uri</em>' attribute.
      * @see #setUri(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalDirectoryRepository_Uri()
@@ -50,7 +50,7 @@ public interface LocalDirectoryRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository#getUri
      * <em>Uri</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Uri</em>' attribute.
      * @see #getUri()
@@ -60,7 +60,7 @@ public interface LocalDirectoryRepository extends Repository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @model type="org.palladiosimulator.edp2.models.Repository.File" required="true"
      *        ordered="false" uriStringRequired="true" uriStringOrdered="false"
      * @generated NOT (at least the exception)

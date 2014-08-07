@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Propertyable</b></em>'. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <em>Additional Information</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getPropertyable()
  * @model abstract="true"
  * @generated
@@ -36,7 +36,7 @@ public interface Propertyable extends EObject {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Additional Information</em>' map.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getPropertyable_AdditionalInformation()
      * @model mapType=

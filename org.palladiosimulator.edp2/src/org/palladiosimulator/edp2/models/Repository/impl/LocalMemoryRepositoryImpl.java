@@ -26,14 +26,14 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * <em>Domain</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMemoryRepository {
     /**
      * The default value of the '{@link #getDomain() <em>Domain</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getDomain()
      * @generated
      * @ordered
@@ -43,7 +43,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
     /**
      * The cached value of the '{@link #getDomain() <em>Domain</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getDomain()
      * @generated
      * @ordered
@@ -52,7 +52,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated not
      */
     protected LocalMemoryRepositoryImpl() {
@@ -67,35 +67,35 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
              */
             @Override
             public synchronized void open() throws DataNotAccessibleException {
                 super.open();
-                setOpen();
+                this.setOpen();
             }
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#close()
              */
             @Override
             public synchronized void close() throws DataNotAccessibleException {
                 super.close();
-                setClosed();
+                this.setClosed();
             }
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.MetaDaoImpl#getMeasurementsDaoFactory()
              */
             @Override
             public MeasurementsDaoFactory getMeasurementsDaoFactory() {
                 super.getMeasurementsDaoFactory();
-                return daoFactory;
+                return this.daoFactory;
             }
 
         };
@@ -103,7 +103,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -113,52 +113,53 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String getDomain() {
-        return domain;
+        return this.domain;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setDomain(String newDomain) {
-        String oldDomain = domain;
-        domain = newDomain;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN,
-                    oldDomain, domain));
+    public void setDomain(final String newDomain) {
+        final String oldDomain = this.domain;
+        this.domain = newDomain;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN, oldDomain, this.domain));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
-            return getDomain();
+            return this.getDomain();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
-            setDomain((String) newValue);
+            this.setDomain((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -166,14 +167,14 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
-            setDomain(DOMAIN_EDEFAULT);
+            this.setDomain(DOMAIN_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -181,31 +182,32 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
-            return DOMAIN_EDEFAULT == null ? domain != null : !DOMAIN_EDEFAULT.equals(domain);
+            return DOMAIN_EDEFAULT == null ? this.domain != null : !DOMAIN_EDEFAULT.equals(this.domain);
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (domain: ");
-        result.append(domain);
+        result.append(this.domain);
         result.append(')');
         return result.toString();
     }

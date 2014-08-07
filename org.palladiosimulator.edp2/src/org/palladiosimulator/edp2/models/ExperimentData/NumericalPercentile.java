@@ -15,7 +15,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Numerical Percentile</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -28,7 +28,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <em>Ordinal Statistics</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile()
  * @model
  * @generated
@@ -41,7 +41,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Percentile</em>' attribute.
      * @see #setPercentile(double)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_Percentile()
@@ -54,7 +54,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getPercentile
      * <em>Percentile</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Percentile</em>' attribute.
      * @see #getPercentile()
@@ -69,7 +69,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_Value()
@@ -83,7 +83,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getValue
      * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()
@@ -101,7 +101,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Ordinal Statistics</em>' container reference.
      * @see #setOrdinalStatistics(NumericalOrdinalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_OrdinalStatistics()
@@ -116,7 +116,7 @@ public interface NumericalPercentile extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getOrdinalStatistics
      * <em>Ordinal Statistics</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Ordinal Statistics</em>' container reference.
      * @see #getOrdinalStatistics()

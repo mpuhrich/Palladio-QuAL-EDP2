@@ -12,13 +12,13 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringPointImpl() {
@@ -27,7 +27,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

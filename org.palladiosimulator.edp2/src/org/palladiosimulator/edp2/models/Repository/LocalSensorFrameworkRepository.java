@@ -9,13 +9,13 @@ package org.palladiosimulator.edp2.models.Repository;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Local Sensor Framework Repository</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Provides&nbsp;access&nbsp;to&nbsp;data&nbsp;stored&nbsp;in&nbsp;the&nbsp;
  * SensorFramework&nbsp;format&nbsp;in&nbsp;a&nbsp;local&nbsp;directory. Also contains the import
  * settings which provide the necessary additional information to process the information from the
  * SensorFramework. <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -26,7 +26,7 @@ package org.palladiosimulator.edp2.models.Repository;
  * <em>Import Settings</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalSensorFrameworkRepository()
  * @model
  * @generated
@@ -39,7 +39,7 @@ public interface LocalSensorFrameworkRepository extends Repository {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Uri</em>' attribute.
      * @see #setUri(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalSensorFrameworkRepository_Uri()
@@ -52,7 +52,7 @@ public interface LocalSensorFrameworkRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getUri
      * <em>Uri</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Uri</em>' attribute.
      * @see #getUri()
@@ -67,7 +67,7 @@ public interface LocalSensorFrameworkRepository extends Repository {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Import Settings</em>' attribute.
      * @see #setImportSettings(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalSensorFrameworkRepository_ImportSettings()
@@ -80,7 +80,7 @@ public interface LocalSensorFrameworkRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getImportSettings
      * <em>Import Settings</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Import Settings</em>' attribute.
      * @see #getImportSettings()

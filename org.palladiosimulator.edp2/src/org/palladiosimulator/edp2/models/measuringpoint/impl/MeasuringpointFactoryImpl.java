@@ -14,23 +14,23 @@ import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MeasuringpointFactoryImpl extends EFactoryImpl implements MeasuringpointFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static MeasuringpointFactory init() {
         try {
-            MeasuringpointFactory theMeasuringpointFactory = (MeasuringpointFactory) EPackage.Registry.INSTANCE
+            final MeasuringpointFactory theMeasuringpointFactory = (MeasuringpointFactory) EPackage.Registry.INSTANCE
                     .getEFactory(MeasuringpointPackage.eNS_URI);
             if (theMeasuringpointFactory != null) {
                 return theMeasuringpointFactory;
             }
-        } catch (Exception exception) {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new MeasuringpointFactoryImpl();
@@ -38,7 +38,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringpointFactoryImpl() {
@@ -47,16 +47,16 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public EObject create(EClass eClass) {
+    public EObject create(final EClass eClass) {
         switch (eClass.getClassifierID()) {
         case MeasuringpointPackage.STRING_MEASURING_POINT:
-            return createStringMeasuringPoint();
+            return this.createStringMeasuringPoint();
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT:
-            return createResourceURIMeasuringPoint();
+            return this.createResourceURIMeasuringPoint();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -64,36 +64,39 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public StringMeasuringPoint createStringMeasuringPoint() {
-        StringMeasuringPointImpl stringMeasuringPoint = new StringMeasuringPointImpl();
+        final StringMeasuringPointImpl stringMeasuringPoint = new StringMeasuringPointImpl();
         return stringMeasuringPoint;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public ResourceURIMeasuringPoint createResourceURIMeasuringPoint() {
-        ResourceURIMeasuringPointImpl resourceURIMeasuringPoint = new ResourceURIMeasuringPointImpl();
+        final ResourceURIMeasuringPointImpl resourceURIMeasuringPoint = new ResourceURIMeasuringPointImpl();
         return resourceURIMeasuringPoint;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public MeasuringpointPackage getMeasuringpointPackage() {
-        return (MeasuringpointPackage) getEPackage();
+        return (MeasuringpointPackage) this.getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

@@ -14,12 +14,12 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Raw Measurements</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc --> Raw measurements contains an orderered list of measurements for a
  * sensor. For each measurement the time when the measurement as well as the measurement itself are
  * stored. Hence, n measurements imply n event times. This means that inheriting classes have to
  * ensure the same number and ordering for additionally stored measurements. <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <em>Measurements Range</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRawMeasurements()
  * @model
  * @generated
@@ -46,7 +46,7 @@ public interface RawMeasurements extends EObject, Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Data Series</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRawMeasurements_DataSeries()
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getRawMeasurements
@@ -65,7 +65,7 @@ public interface RawMeasurements extends EObject, Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measurements Range</em>' container reference.
      * @see #setMeasurementsRange(MeasurementsRange)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRawMeasurements_MeasurementsRange()
@@ -80,7 +80,7 @@ public interface RawMeasurements extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements#getMeasurementsRange
      * <em>Measurements Range</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measurements Range</em>' container reference.
      * @see #getMeasurementsRange()

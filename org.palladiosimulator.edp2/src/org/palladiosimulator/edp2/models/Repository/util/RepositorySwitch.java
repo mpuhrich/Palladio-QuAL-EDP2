@@ -30,21 +30,21 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage
  * @generated
  */
 public class RepositorySwitch<T> extends Switch<T> {
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static RepositoryPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RepositorySwitch() {
@@ -56,126 +56,150 @@ public class RepositorySwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
     @Override
-    protected boolean isSwitchFor(EPackage ePackage) {
+    protected boolean isSwitchFor(final EPackage ePackage) {
         return ePackage == modelPackage;
     }
 
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
     @Override
-    protected T doSwitch(int classifierID, EObject theEObject) {
+    protected T doSwitch(final int classifierID, final EObject theEObject) {
         switch (classifierID) {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY: {
-            LocalDirectoryRepository localDirectoryRepository = (LocalDirectoryRepository) theEObject;
-            T result = caseLocalDirectoryRepository(localDirectoryRepository);
-            if (result == null)
-                result = caseRepository(localDirectoryRepository);
-            if (result == null)
-                result = caseIdentifier(localDirectoryRepository);
-            if (result == null)
-                result = caseMetaDao(localDirectoryRepository);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final LocalDirectoryRepository localDirectoryRepository = (LocalDirectoryRepository) theEObject;
+            T result = this.caseLocalDirectoryRepository(localDirectoryRepository);
+            if (result == null) {
+                result = this.caseRepository(localDirectoryRepository);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(localDirectoryRepository);
+            }
+            if (result == null) {
+                result = this.caseMetaDao(localDirectoryRepository);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.FILE: {
-            File file = (File) theEObject;
-            T result = caseFile(file);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final File file = (File) theEObject;
+            T result = this.caseFile(file);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY: {
-            LocalMemoryRepository localMemoryRepository = (LocalMemoryRepository) theEObject;
-            T result = caseLocalMemoryRepository(localMemoryRepository);
-            if (result == null)
-                result = caseRepository(localMemoryRepository);
-            if (result == null)
-                result = caseIdentifier(localMemoryRepository);
-            if (result == null)
-                result = caseMetaDao(localMemoryRepository);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final LocalMemoryRepository localMemoryRepository = (LocalMemoryRepository) theEObject;
+            T result = this.caseLocalMemoryRepository(localMemoryRepository);
+            if (result == null) {
+                result = this.caseRepository(localMemoryRepository);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(localMemoryRepository);
+            }
+            if (result == null) {
+                result = this.caseMetaDao(localMemoryRepository);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.REMOTE_CDO_REPOSITORY: {
-            RemoteCdoRepository remoteCdoRepository = (RemoteCdoRepository) theEObject;
-            T result = caseRemoteCdoRepository(remoteCdoRepository);
-            if (result == null)
-                result = caseRepository(remoteCdoRepository);
-            if (result == null)
-                result = caseIdentifier(remoteCdoRepository);
-            if (result == null)
-                result = caseMetaDao(remoteCdoRepository);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final RemoteCdoRepository remoteCdoRepository = (RemoteCdoRepository) theEObject;
+            T result = this.caseRemoteCdoRepository(remoteCdoRepository);
+            if (result == null) {
+                result = this.caseRepository(remoteCdoRepository);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(remoteCdoRepository);
+            }
+            if (result == null) {
+                result = this.caseMetaDao(remoteCdoRepository);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY: {
-            LocalSensorFrameworkRepository localSensorFrameworkRepository = (LocalSensorFrameworkRepository) theEObject;
-            T result = caseLocalSensorFrameworkRepository(localSensorFrameworkRepository);
-            if (result == null)
-                result = caseRepository(localSensorFrameworkRepository);
-            if (result == null)
-                result = caseIdentifier(localSensorFrameworkRepository);
-            if (result == null)
-                result = caseMetaDao(localSensorFrameworkRepository);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final LocalSensorFrameworkRepository localSensorFrameworkRepository = (LocalSensorFrameworkRepository) theEObject;
+            T result = this.caseLocalSensorFrameworkRepository(localSensorFrameworkRepository);
+            if (result == null) {
+                result = this.caseRepository(localSensorFrameworkRepository);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(localSensorFrameworkRepository);
+            }
+            if (result == null) {
+                result = this.caseMetaDao(localSensorFrameworkRepository);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.REPOSITORIES: {
-            Repositories repositories = (Repositories) theEObject;
-            T result = caseRepositories(repositories);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Repositories repositories = (Repositories) theEObject;
+            T result = this.caseRepositories(repositories);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.IRESOURCE_SET: {
-            ResourceSet iResourceSet = (ResourceSet) theEObject;
-            T result = caseIResourceSet(iResourceSet);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final ResourceSet iResourceSet = (ResourceSet) theEObject;
+            T result = this.caseIResourceSet(iResourceSet);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.MEASUREMENTS_DAO_FACTORY: {
-            MeasurementsDaoFactory measurementsDaoFactory = (MeasurementsDaoFactory) theEObject;
-            T result = caseMeasurementsDaoFactory(measurementsDaoFactory);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final MeasurementsDaoFactory measurementsDaoFactory = (MeasurementsDaoFactory) theEObject;
+            T result = this.caseMeasurementsDaoFactory(measurementsDaoFactory);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.META_DAO: {
-            MetaDao metaDao = (MetaDao) theEObject;
-            T result = caseMetaDao(metaDao);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final MetaDao metaDao = (MetaDao) theEObject;
+            T result = this.caseMetaDao(metaDao);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case RepositoryPackage.REPOSITORY: {
-            Repository repository = (Repository) theEObject;
-            T result = caseRepository(repository);
-            if (result == null)
-                result = caseIdentifier(repository);
-            if (result == null)
-                result = caseMetaDao(repository);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final Repository repository = (Repository) theEObject;
+            T result = this.caseRepository(repository);
+            if (result == null) {
+                result = this.caseIdentifier(repository);
+            }
+            if (result == null) {
+                result = this.caseMetaDao(repository);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         default:
-            return defaultCase(theEObject);
+            return this.defaultCase(theEObject);
         }
     }
 
@@ -183,7 +207,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Directory Repository</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -191,7 +215,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLocalDirectoryRepository(LocalDirectoryRepository object) {
+    public T caseLocalDirectoryRepository(final LocalDirectoryRepository object) {
         return null;
     }
 
@@ -199,14 +223,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>File</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>File</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseFile(File object) {
+    public T caseFile(final File object) {
         return null;
     }
 
@@ -214,7 +238,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Memory Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -222,7 +246,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLocalMemoryRepository(LocalMemoryRepository object) {
+    public T caseLocalMemoryRepository(final LocalMemoryRepository object) {
         return null;
     }
 
@@ -230,7 +254,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Remote Cdo Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -238,7 +262,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRemoteCdoRepository(RemoteCdoRepository object) {
+    public T caseRemoteCdoRepository(final RemoteCdoRepository object) {
         return null;
     }
 
@@ -246,7 +270,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Sensor Framework Repository</em>'. <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -254,7 +278,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLocalSensorFrameworkRepository(LocalSensorFrameworkRepository object) {
+    public T caseLocalSensorFrameworkRepository(final LocalSensorFrameworkRepository object) {
         return null;
     }
 
@@ -262,14 +286,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Repositories</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Repositories</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRepositories(Repositories object) {
+    public T caseRepositories(final Repositories object) {
         return null;
     }
 
@@ -277,14 +301,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>IResource Set</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>IResource Set</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIResourceSet(ResourceSet object) {
+    public T caseIResourceSet(final ResourceSet object) {
         return null;
     }
 
@@ -292,7 +316,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Measurements Dao Factory</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -300,7 +324,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMeasurementsDaoFactory(MeasurementsDaoFactory object) {
+    public T caseMeasurementsDaoFactory(final MeasurementsDaoFactory object) {
         return null;
     }
 
@@ -308,14 +332,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Meta Dao</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Meta Dao</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMetaDao(MetaDao object) {
+    public T caseMetaDao(final MetaDao object) {
         return null;
     }
 
@@ -323,14 +347,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Repository</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Repository</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRepository(Repository object) {
+    public T caseRepository(final Repository object) {
         return null;
     }
 
@@ -338,14 +362,14 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(Identifier object) {
+    public T caseIdentifier(final Identifier object) {
         return null;
     }
 
@@ -353,7 +377,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
@@ -361,7 +385,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(EObject object) {
+    public T defaultCase(final EObject object) {
         return null;
     }
 

@@ -9,11 +9,11 @@ package org.palladiosimulator.edp2.models.Repository;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Local Memory Repository</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Repository&nbsp;which&nbsp;provides&nbsp;access&nbsp;to&nbsp;data&nbsp;stored
  * &nbsp;in&nbsp;local&nbsp;memory (RAM). <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +21,7 @@ package org.palladiosimulator.edp2.models.Repository;
  * Domain</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalMemoryRepository()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public interface LocalMemoryRepository extends Repository {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Domain</em>' attribute.
      * @see #setDomain(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalMemoryRepository_Domain()
@@ -47,7 +47,7 @@ public interface LocalMemoryRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository#getDomain
      * <em>Domain</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Domain</em>' attribute.
      * @see #getDomain()

@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Textual Nominal Statistics</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc --> self.dataSeries.oclIsKindOf(IdentifierBasedMeasurements) <!--
  * end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * <em>Data Series</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualNominalStatistics()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface TextualNominalStatistics extends EObject {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Number Measurements</em>' attribute.
      * @see #setNumberMeasurements(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualNominalStatistics_NumberMeasurements()
@@ -57,7 +57,7 @@ public interface TextualNominalStatistics extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getNumberMeasurements
      * <em>Number Measurements</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Number Measurements</em>' attribute.
      * @see #getNumberMeasurements()
@@ -77,7 +77,7 @@ public interface TextualNominalStatistics extends EObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Mass Distribution</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualNominalStatistics_MassDistribution()
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getTextualNominalStatistics
@@ -96,7 +96,7 @@ public interface TextualNominalStatistics extends EObject {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Data Series</em>' container reference.
      * @see #setDataSeries(DataSeries)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualNominalStatistics_DataSeries()
@@ -110,7 +110,7 @@ public interface TextualNominalStatistics extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getDataSeries
      * <em>Data Series</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Data Series</em>' container reference.
      * @see #getDataSeries()

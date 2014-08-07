@@ -39,14 +39,14 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * <em>Aggregated Measurements</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals {
     /**
      * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getLowerBound()
      * @generated
      * @ordered
@@ -56,7 +56,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getWidth()
      * @generated
      * @ordered
@@ -66,7 +66,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The default value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberOfIntervals()
      * @generated
      * @ordered
@@ -76,7 +76,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The cached value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberOfIntervals()
      * @generated
      * @ordered
@@ -85,7 +85,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedIntervalsImpl() {
@@ -94,7 +94,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -104,159 +104,179 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Measure getLowerBound() {
-        return lowerBound;
+        return this.lowerBound;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setLowerBound(Measure newLowerBound) {
-        Measure oldLowerBound = lowerBound;
-        lowerBound = newLowerBound;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND,
-                    oldLowerBound, lowerBound));
+    @Override
+    public void setLowerBound(final Measure newLowerBound) {
+        final Measure oldLowerBound = this.lowerBound;
+        this.lowerBound = newLowerBound;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND, oldLowerBound, this.lowerBound));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Measure getWidth() {
-        return width;
+        return this.width;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setWidth(Measure newWidth) {
-        Measure oldWidth = width;
-        width = newWidth;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.FIXED_INTERVALS__WIDTH,
-                    oldWidth, width));
+    @Override
+    public void setWidth(final Measure newWidth) {
+        final Measure oldWidth = this.width;
+        this.width = newWidth;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.FIXED_INTERVALS__WIDTH,
+                    oldWidth, this.width));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public long getNumberOfIntervals() {
-        return numberOfIntervals;
+        return this.numberOfIntervals;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setNumberOfIntervals(long newNumberOfIntervals) {
-        long oldNumberOfIntervals = numberOfIntervals;
-        numberOfIntervals = newNumberOfIntervals;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS, oldNumberOfIntervals, numberOfIntervals));
+    @Override
+    public void setNumberOfIntervals(final long newNumberOfIntervals) {
+        final long oldNumberOfIntervals = this.numberOfIntervals;
+        this.numberOfIntervals = newNumberOfIntervals;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS, oldNumberOfIntervals,
+                    this.numberOfIntervals));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public FixedWidthAggregatedMeasurements getAggregatedMeasurements() {
-        if (eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS)
+        if (this.eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS) {
             return null;
-        return (FixedWidthAggregatedMeasurements) eInternalContainer();
+        }
+        return (FixedWidthAggregatedMeasurements) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetAggregatedMeasurements(FixedWidthAggregatedMeasurements newAggregatedMeasurements,
-            NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newAggregatedMeasurements,
+    public NotificationChain basicSetAggregatedMeasurements(
+            final FixedWidthAggregatedMeasurements newAggregatedMeasurements, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newAggregatedMeasurements,
                 ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setAggregatedMeasurements(FixedWidthAggregatedMeasurements newAggregatedMeasurements) {
-        if (newAggregatedMeasurements != eInternalContainer()
-                || (eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS && newAggregatedMeasurements != null)) {
-            if (EcoreUtil.isAncestor(this, newAggregatedMeasurements))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    @Override
+    public void setAggregatedMeasurements(final FixedWidthAggregatedMeasurements newAggregatedMeasurements) {
+        if (newAggregatedMeasurements != this.eInternalContainer()
+                || (this.eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS && newAggregatedMeasurements != null)) {
+            if (EcoreUtil.isAncestor(this, newAggregatedMeasurements)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAggregatedMeasurements != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newAggregatedMeasurements != null) {
                 msgs = ((InternalEObject) newAggregatedMeasurements).eInverseAdd(this,
                         ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
                         FixedWidthAggregatedMeasurements.class, msgs);
-            msgs = basicSetAggregatedMeasurements(newAggregatedMeasurements, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetAggregatedMeasurements(newAggregatedMeasurements, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, newAggregatedMeasurements,
                     newAggregatedMeasurements));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetAggregatedMeasurements((FixedWidthAggregatedMeasurements) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetAggregatedMeasurements((FixedWidthAggregatedMeasurements) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            return basicSetAggregatedMeasurements(null, msgs);
+            return this.basicSetAggregatedMeasurements(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            return eInternalContainer().eInverseRemove(this,
+            return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
                     FixedWidthAggregatedMeasurements.class, msgs);
         }
@@ -265,43 +285,43 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
-            return getLowerBound();
+            return this.getLowerBound();
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
-            return getWidth();
+            return this.getWidth();
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            return getNumberOfIntervals();
+            return this.getNumberOfIntervals();
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            return getAggregatedMeasurements();
+            return this.getAggregatedMeasurements();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
-            setLowerBound((Measure) newValue);
+            this.setLowerBound((Measure) newValue);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
-            setWidth((Measure) newValue);
+            this.setWidth((Measure) newValue);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            setNumberOfIntervals((Long) newValue);
+            this.setNumberOfIntervals((Long) newValue);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            setAggregatedMeasurements((FixedWidthAggregatedMeasurements) newValue);
+            this.setAggregatedMeasurements((FixedWidthAggregatedMeasurements) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -309,23 +329,23 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
-            setLowerBound((Measure) null);
+            this.setLowerBound((Measure) null);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
-            setWidth((Measure) null);
+            this.setWidth((Measure) null);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            setNumberOfIntervals(NUMBER_OF_INTERVALS_EDEFAULT);
+            this.setNumberOfIntervals(NUMBER_OF_INTERVALS_EDEFAULT);
             return;
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            setAggregatedMeasurements((FixedWidthAggregatedMeasurements) null);
+            this.setAggregatedMeasurements((FixedWidthAggregatedMeasurements) null);
             return;
         }
         super.eUnset(featureID);
@@ -333,41 +353,42 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
-            return lowerBound != null;
+            return this.lowerBound != null;
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
-            return width != null;
+            return this.width != null;
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            return numberOfIntervals != NUMBER_OF_INTERVALS_EDEFAULT;
+            return this.numberOfIntervals != NUMBER_OF_INTERVALS_EDEFAULT;
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
-            return getAggregatedMeasurements() != null;
+            return this.getAggregatedMeasurements() != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (lowerBound: ");
-        result.append(lowerBound);
+        result.append(this.lowerBound);
         result.append(", width: ");
-        result.append(width);
+        result.append(this.width);
         result.append(", numberOfIntervals: ");
-        result.append(numberOfIntervals);
+        result.append(this.numberOfIntervals);
         result.append(')');
         return result.toString();
     }

@@ -31,7 +31,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.Repository.Repositories} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoriesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
@@ -39,41 +39,40 @@ public class RepositoriesItemProvider extends ItemProviderAdapter implements IEd
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public RepositoriesItemProvider(AdapterFactory adapterFactory) {
+    public RepositoriesItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addCommonResourceSetPropertyDescriptor(object);
+            this.addCommonResourceSetPropertyDescriptor(object);
         }
-        return itemPropertyDescriptors;
+        return this.itemPropertyDescriptors;
     }
 
     /**
      * This adds a property descriptor for the Common Resource Set feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected void addCommonResourceSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString("_UI_Repositories_commonResourceSet_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_Repositories_commonResourceSet_feature",
+    protected void addCommonResourceSetPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_Repositories_commonResourceSet_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_Repositories_commonResourceSet_feature",
                         "_UI_Repositories_type"), RepositoryPackage.Literals.REPOSITORIES__COMMON_RESOURCE_SET, true,
                 false, true, null, null, null));
     }
@@ -84,25 +83,25 @@ public class RepositoriesItemProvider extends ItemProviderAdapter implements IEd
      * {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
+    public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
-            childrenFeatures.add(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES);
+            this.childrenFeatures.add(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES);
         }
-        return childrenFeatures;
+        return this.childrenFeatures;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature(final Object object, final Object child) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
@@ -111,39 +110,39 @@ public class RepositoriesItemProvider extends ItemProviderAdapter implements IEd
 
     /**
      * This returns Repositories.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Repositories"));
+    public Object getImage(final Object object) {
+        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/Repositories"));
     }
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        return getString("_UI_Repositories_type");
+    public String getText(final Object object) {
+        return this.getString("_UI_Repositories_type");
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged(final Notification notification) {
+        this.updateChildren(notification);
 
         switch (notification.getFeatureID(Repositories.class)) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
         super.notifyChanged(notification);
@@ -152,30 +151,34 @@ public class RepositoriesItemProvider extends ItemProviderAdapter implements IEd
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+    protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(createChildParameter(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
+        newChildDescriptors.add(this.createChildParameter(
+                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                 RepositoryFactory.eINSTANCE.createLocalDirectoryRepository()));
 
-        newChildDescriptors.add(createChildParameter(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
+        newChildDescriptors.add(this.createChildParameter(
+                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                 RepositoryFactory.eINSTANCE.createLocalMemoryRepository()));
 
-        newChildDescriptors.add(createChildParameter(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
+        newChildDescriptors.add(this.createChildParameter(
+                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                 RepositoryFactory.eINSTANCE.createRemoteCdoRepository()));
 
-        newChildDescriptors.add(createChildParameter(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
+        newChildDescriptors.add(this.createChildParameter(
+                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                 RepositoryFactory.eINSTANCE.createLocalSensorFrameworkRepository()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

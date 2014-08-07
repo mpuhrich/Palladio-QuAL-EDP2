@@ -15,13 +15,13 @@ import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasureme
  * <em><b>Identifier Based Measurements</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements IdentifierBasedMeasurements {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IdentifierBasedMeasurementsImpl() {
@@ -30,7 +30,7 @@ public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements I
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

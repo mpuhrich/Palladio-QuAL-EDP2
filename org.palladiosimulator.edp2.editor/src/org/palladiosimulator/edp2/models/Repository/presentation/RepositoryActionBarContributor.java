@@ -46,7 +46,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.presentation.EDP2EditorP
  * @generated
  */
 public class RepositoryActionBarContributor extends EditingDomainActionBarContributor implements
-        ISelectionChangedListener {
+ISelectionChangedListener {
     /**
      * This keeps track of the active editor. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
@@ -57,7 +57,7 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
     /**
      * This keeps track of the current selection provider. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @generated
      */
     protected ISelectionProvider selectionProvider;
@@ -72,8 +72,8 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
         @Override
         public void run() {
             try {
-                getPage().showView("org.eclipse.ui.views.PropertySheet");
-            } catch (PartInitException exception) {
+                RepositoryActionBarContributor.this.getPage().showView("org.eclipse.ui.views.PropertySheet");
+            } catch (final PartInitException exception) {
                 EDP2EditorPlugin.INSTANCE.log(exception);
             }
         }
@@ -90,13 +90,14 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
             EDP2EditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
         @Override
         public boolean isEnabled() {
-            return activeEditorPart instanceof IViewerProvider;
+            return RepositoryActionBarContributor.this.activeEditorPart instanceof IViewerProvider;
         }
 
         @Override
         public void run() {
-            if (activeEditorPart instanceof IViewerProvider) {
-                Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+            if (RepositoryActionBarContributor.this.activeEditorPart instanceof IViewerProvider) {
+                final Viewer viewer = ((IViewerProvider) RepositoryActionBarContributor.this.activeEditorPart)
+                        .getViewer();
                 if (viewer != null) {
                     viewer.refresh();
                 }
@@ -108,7 +109,7 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding
      * to each descriptor generated for the current selection by the item provider. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<IAction> createChildActions;
@@ -145,9 +146,9 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      */
     public RepositoryActionBarContributor() {
         super(ADDITIONS_LAST_STYLE);
-        loadResourceAction = new LoadResourceAction();
-        validateAction = new ValidateAction();
-        controlAction = new ControlAction();
+        this.loadResourceAction = new LoadResourceAction();
+        this.validateAction = new ValidateAction();
+        this.controlAction = new ControlAction();
     }
 
     /**
@@ -157,7 +158,7 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * @generated
      */
     @Override
-    public void contributeToToolBar(IToolBarManager toolBarManager) {
+    public void contributeToToolBar(final IToolBarManager toolBarManager) {
         toolBarManager.add(new Separator("repository-settings"));
         toolBarManager.add(new Separator("repository-additions"));
     }
@@ -169,10 +170,11 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * @generated
      */
     @Override
-    public void contributeToMenu(IMenuManager menuManager) {
+    public void contributeToMenu(final IMenuManager menuManager) {
         super.contributeToMenu(menuManager);
 
-        IMenuManager submenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_RepositoryEditor_menu"),
+        final IMenuManager submenuManager = new MenuManager(
+                EDP2EditorPlugin.INSTANCE.getString("_UI_RepositoryEditor_menu"),
                 "org.palladiosimulator.edp2.models.RepositoryMenuID");
         menuManager.insertAfter("additions", submenuManager);
         submenuManager.add(new Separator("settings"));
@@ -182,23 +184,25 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
 
         // Prepare for CreateChild item addition or removal.
         //
-        createChildMenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-        submenuManager.insertBefore("additions", createChildMenuManager);
+        this.createChildMenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+        submenuManager.insertBefore("additions", this.createChildMenuManager);
 
         // Prepare for CreateSibling item addition or removal.
         //
-        createSiblingMenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-        submenuManager.insertBefore("additions", createSiblingMenuManager);
+        this.createSiblingMenuManager = new MenuManager(
+                EDP2EditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+        submenuManager.insertBefore("additions", this.createSiblingMenuManager);
 
         // Force an update because Eclipse hides empty menus now.
         //
         submenuManager.addMenuListener(new IMenuListener() {
-            public void menuAboutToShow(IMenuManager menuManager) {
+            @Override
+            public void menuAboutToShow(final IMenuManager menuManager) {
                 menuManager.updateAll(true);
             }
         });
 
-        addGlobalActions(submenuManager);
+        this.addGlobalActions(submenuManager);
     }
 
     /**
@@ -208,25 +212,26 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * @generated
      */
     @Override
-    public void setActiveEditor(IEditorPart part) {
+    public void setActiveEditor(final IEditorPart part) {
         super.setActiveEditor(part);
-        activeEditorPart = part;
+        this.activeEditorPart = part;
 
         // Switch to the new selection provider.
         //
-        if (selectionProvider != null) {
-            selectionProvider.removeSelectionChangedListener(this);
+        if (this.selectionProvider != null) {
+            this.selectionProvider.removeSelectionChangedListener(this);
         }
         if (part == null) {
-            selectionProvider = null;
+            this.selectionProvider = null;
         } else {
-            selectionProvider = part.getSite().getSelectionProvider();
-            selectionProvider.addSelectionChangedListener(this);
+            this.selectionProvider = part.getSite().getSelectionProvider();
+            this.selectionProvider.addSelectionChangedListener(this);
 
             // Fake a selection changed event to update the menus.
             //
-            if (selectionProvider.getSelection() != null) {
-                selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
+            if (this.selectionProvider.getSelection() != null) {
+                this.selectionChanged(new SelectionChangedEvent(this.selectionProvider, this.selectionProvider
+                        .getSelection()));
             }
         }
     }
@@ -236,17 +241,18 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for the children and
      * siblings that can be added to the selected object and updating the menus accordingly. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void selectionChanged(SelectionChangedEvent event) {
+    @Override
+    public void selectionChanged(final SelectionChangedEvent event) {
         // Remove any menu items for old selection.
         //
-        if (createChildMenuManager != null) {
-            depopulateManager(createChildMenuManager, createChildActions);
+        if (this.createChildMenuManager != null) {
+            this.depopulateManager(this.createChildMenuManager, this.createChildActions);
         }
-        if (createSiblingMenuManager != null) {
-            depopulateManager(createSiblingMenuManager, createSiblingActions);
+        if (this.createSiblingMenuManager != null) {
+            this.depopulateManager(this.createSiblingMenuManager, this.createSiblingActions);
         }
 
         // Query the new selection for appropriate new child/sibling descriptors
@@ -254,11 +260,11 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
         Collection<?> newChildDescriptors = null;
         Collection<?> newSiblingDescriptors = null;
 
-        ISelection selection = event.getSelection();
+        final ISelection selection = event.getSelection();
         if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
-            Object object = ((IStructuredSelection) selection).getFirstElement();
+            final Object object = ((IStructuredSelection) selection).getFirstElement();
 
-            EditingDomain domain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
+            final EditingDomain domain = ((IEditingDomainProvider) this.activeEditorPart).getEditingDomain();
 
             newChildDescriptors = domain.getNewChildDescriptors(object, null);
             newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
@@ -266,16 +272,16 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
 
         // Generate actions for selection; populate and redraw the menus.
         //
-        createChildActions = generateCreateChildActions(newChildDescriptors, selection);
-        createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
+        this.createChildActions = this.generateCreateChildActions(newChildDescriptors, selection);
+        this.createSiblingActions = this.generateCreateSiblingActions(newSiblingDescriptors, selection);
 
-        if (createChildMenuManager != null) {
-            populateManager(createChildMenuManager, createChildActions, null);
-            createChildMenuManager.update(true);
+        if (this.createChildMenuManager != null) {
+            this.populateManager(this.createChildMenuManager, this.createChildActions, null);
+            this.createChildMenuManager.update(true);
         }
-        if (createSiblingMenuManager != null) {
-            populateManager(createSiblingMenuManager, createSiblingActions, null);
-            createSiblingMenuManager.update(true);
+        if (this.createSiblingMenuManager != null) {
+            this.populateManager(this.createSiblingMenuManager, this.createSiblingActions, null);
+            this.createSiblingMenuManager.update(true);
         }
     }
 
@@ -286,11 +292,11 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * 
      * @generated
      */
-    protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
-        Collection<IAction> actions = new ArrayList<IAction>();
+    protected Collection<IAction> generateCreateChildActions(final Collection<?> descriptors, final ISelection selection) {
+        final Collection<IAction> actions = new ArrayList<IAction>();
         if (descriptors != null) {
-            for (Object descriptor : descriptors) {
-                actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
+            for (final Object descriptor : descriptors) {
+                actions.add(new CreateChildAction(this.activeEditorPart, selection, descriptor));
             }
         }
         return actions;
@@ -303,11 +309,12 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * 
      * @generated
      */
-    protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
-        Collection<IAction> actions = new ArrayList<IAction>();
+    protected Collection<IAction> generateCreateSiblingActions(final Collection<?> descriptors,
+            final ISelection selection) {
+        final Collection<IAction> actions = new ArrayList<IAction>();
         if (descriptors != null) {
-            for (Object descriptor : descriptors) {
-                actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
+            for (final Object descriptor : descriptors) {
+                actions.add(new CreateSiblingAction(this.activeEditorPart, selection, descriptor));
             }
         }
         return actions;
@@ -323,10 +330,10 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * 
      * @generated
      */
-    protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions,
-            String contributionID) {
+    protected void populateManager(final IContributionManager manager, final Collection<? extends IAction> actions,
+            final String contributionID) {
         if (actions != null) {
-            for (IAction action : actions) {
+            for (final IAction action : actions) {
                 if (contributionID != null) {
                     manager.insertBefore(contributionID, action);
                 } else {
@@ -344,13 +351,13 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * 
      * @generated
      */
-    protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
+    protected void depopulateManager(final IContributionManager manager, final Collection<? extends IAction> actions) {
         if (actions != null) {
-            IContributionItem[] items = manager.getItems();
-            for (int i = 0; i < items.length; i++) {
+            final IContributionItem[] items = manager.getItems();
+            for (final IContributionItem item : items) {
                 // Look into SubContributionItems
                 //
-                IContributionItem contributionItem = items[i];
+                IContributionItem contributionItem = item;
                 while (contributionItem instanceof SubContributionItem) {
                     contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
                 }
@@ -358,7 +365,7 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
                 // Delete the ActionContributionItems with matching action.
                 //
                 if (contributionItem instanceof ActionContributionItem) {
-                    IAction action = ((ActionContributionItem) contributionItem).getAction();
+                    final IAction action = ((ActionContributionItem) contributionItem).getAction();
                     if (actions.contains(action)) {
                         manager.remove(contributionItem);
                     }
@@ -370,20 +377,20 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
     /**
      * This populates the pop-up menu before it appears. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void menuAboutToShow(IMenuManager menuManager) {
+    public void menuAboutToShow(final IMenuManager menuManager) {
         super.menuAboutToShow(menuManager);
         MenuManager submenuManager = null;
 
         submenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-        populateManager(submenuManager, createChildActions, null);
+        this.populateManager(submenuManager, this.createChildActions, null);
         menuManager.insertBefore("edit", submenuManager);
 
         submenuManager = new MenuManager(EDP2EditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-        populateManager(submenuManager, createSiblingActions, null);
+        this.populateManager(submenuManager, this.createSiblingActions, null);
         menuManager.insertBefore("edit", submenuManager);
     }
 
@@ -394,12 +401,12 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
      * @generated
      */
     @Override
-    protected void addGlobalActions(IMenuManager menuManager) {
+    protected void addGlobalActions(final IMenuManager menuManager) {
         menuManager.insertAfter("additions-end", new Separator("ui-actions"));
-        menuManager.insertAfter("ui-actions", showPropertiesViewAction);
+        menuManager.insertAfter("ui-actions", this.showPropertiesViewAction);
 
-        refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());
-        menuManager.insertAfter("ui-actions", refreshViewerAction);
+        this.refreshViewerAction.setEnabled(this.refreshViewerAction.isEnabled());
+        menuManager.insertAfter("ui-actions", this.refreshViewerAction);
 
         super.addGlobalActions(menuManager);
     }
@@ -407,7 +414,7 @@ public class RepositoryActionBarContributor extends EditingDomainActionBarContri
     /**
      * This ensures that a delete action will clean up all references to deleted objects. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

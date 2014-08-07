@@ -43,14 +43,14 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * <em>Data Series</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class NumericalNominalStatisticsImpl extends IdentifierImpl implements NumericalNominalStatistics {
     /**
      * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberMeasurements()
      * @generated
      * @ordered
@@ -61,7 +61,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      * The cached value of the '{@link #getNumericalMassDistribution()
      * <em>Numerical Mass Distribution</em>}' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumericalMassDistribution()
      * @generated
      * @ordered
@@ -70,7 +70,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalNominalStatisticsImpl() {
@@ -79,7 +79,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,175 +89,189 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Measure getNumberMeasurements() {
-        return numberMeasurements;
+        return this.numberMeasurements;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setNumberMeasurements(Measure newNumberMeasurements) {
-        Measure oldNumberMeasurements = numberMeasurements;
-        numberMeasurements = newNumberMeasurements;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    @Override
+    public void setNumberMeasurements(final Measure newNumberMeasurements) {
+        final Measure oldNumberMeasurements = this.numberMeasurements;
+        this.numberMeasurements = newNumberMeasurements;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS, oldNumberMeasurements,
-                    numberMeasurements));
+                    this.numberMeasurements));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public EList<NumericalMassDistribution> getNumericalMassDistribution() {
-        if (numericalMassDistribution == null) {
-            numericalMassDistribution = new EObjectContainmentWithInverseEList<NumericalMassDistribution>(
+        if (this.numericalMassDistribution == null) {
+            this.numericalMassDistribution = new EObjectContainmentWithInverseEList<NumericalMassDistribution>(
                     NumericalMassDistribution.class, this,
                     ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
                     ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS);
         }
-        return numericalMassDistribution;
+        return this.numericalMassDistribution;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public DataSeries getDataSeries() {
-        if (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES)
+        if (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES) {
             return null;
-        return (DataSeries) eInternalContainer();
+        }
+        return (DataSeries) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetDataSeries(DataSeries newDataSeries, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newDataSeries,
+    public NotificationChain basicSetDataSeries(final DataSeries newDataSeries, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newDataSeries,
                 ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setDataSeries(DataSeries newDataSeries) {
-        if (newDataSeries != eInternalContainer()
-                || (eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES && newDataSeries != null)) {
-            if (EcoreUtil.isAncestor(this, newDataSeries))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    @Override
+    public void setDataSeries(final DataSeries newDataSeries) {
+        if (newDataSeries != this.eInternalContainer()
+                || (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES && newDataSeries != null)) {
+            if (EcoreUtil.isAncestor(this, newDataSeries)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataSeries != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newDataSeries != null) {
                 msgs = ((InternalEObject) newDataSeries).eInverseAdd(this,
                         ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS, DataSeries.class, msgs);
-            msgs = basicSetDataSeries(newDataSeries, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetDataSeries(newDataSeries, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES, newDataSeries, newDataSeries));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getNumericalMassDistribution()).basicAdd(
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getNumericalMassDistribution()).basicAdd(
                     otherEnd, msgs);
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetDataSeries((DataSeries) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetDataSeries((DataSeries) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            return ((InternalEList<?>) getNumericalMassDistribution()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getNumericalMassDistribution()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            return basicSetDataSeries(null, msgs);
+            return this.basicSetDataSeries(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            return eInternalContainer().eInverseRemove(this, ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS,
-                    DataSeries.class, msgs);
+            return this.eInternalContainer().eInverseRemove(this,
+                    ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS, DataSeries.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
-            return getNumberMeasurements();
+            return this.getNumberMeasurements();
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            return getNumericalMassDistribution();
+            return this.getNumericalMassDistribution();
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            return getDataSeries();
+            return this.getDataSeries();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
-            setNumberMeasurements((Measure) newValue);
+            this.setNumberMeasurements((Measure) newValue);
             return;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            getNumericalMassDistribution().clear();
-            getNumericalMassDistribution().addAll((Collection<? extends NumericalMassDistribution>) newValue);
+            this.getNumericalMassDistribution().clear();
+            this.getNumericalMassDistribution().addAll((Collection<? extends NumericalMassDistribution>) newValue);
             return;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            setDataSeries((DataSeries) newValue);
+            this.setDataSeries((DataSeries) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -265,20 +279,20 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
-            setNumberMeasurements((Measure) null);
+            this.setNumberMeasurements((Measure) null);
             return;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            getNumericalMassDistribution().clear();
+            this.getNumericalMassDistribution().clear();
             return;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            setDataSeries((DataSeries) null);
+            this.setDataSeries((DataSeries) null);
             return;
         }
         super.eUnset(featureID);
@@ -286,35 +300,36 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
-            return numberMeasurements != null;
+            return this.numberMeasurements != null;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            return numericalMassDistribution != null && !numericalMassDistribution.isEmpty();
+            return this.numericalMassDistribution != null && !this.numericalMassDistribution.isEmpty();
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
-            return getDataSeries() != null;
+            return this.getDataSeries() != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (numberMeasurements: ");
-        result.append(numberMeasurements);
+        result.append(this.numberMeasurements);
         result.append(')');
         return result.toString();
     }

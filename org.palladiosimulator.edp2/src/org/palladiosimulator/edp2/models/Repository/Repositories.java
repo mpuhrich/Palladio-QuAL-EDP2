@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Repositories</b></em>'. <!--
  * end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Contains&nbsp;a&nbsp;list&nbsp;of&nbsp;available&nbsp;repositories.&nbsp;
  * Can&nbsp;be&nbsp;used&nbsp
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * the advantage that links between the different available repositories at runtime can be resolved.
  * E.g. this allows reusing metric definitions from one repository in another one. <!--
  * end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * Common Resource Set</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories()
  * @model
  * @generated
@@ -48,7 +48,7 @@ public interface Repositories extends EObject {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Available Repositories</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_AvailableRepositories()
      * @see org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
@@ -65,7 +65,7 @@ public interface Repositories extends EObject {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Common Resource Set</em>' reference.
      * @see #setCommonResourceSet(ResourceSet)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_CommonResourceSet()
@@ -79,7 +79,7 @@ public interface Repositories extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet
      * <em>Common Resource Set</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Common Resource Set</em>' reference.
      * @see #getCommonResourceSet()

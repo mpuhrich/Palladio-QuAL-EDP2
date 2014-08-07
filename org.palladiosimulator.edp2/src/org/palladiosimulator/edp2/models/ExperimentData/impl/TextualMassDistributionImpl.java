@@ -35,14 +35,14 @@ import org.palladiosimulator.metricspec.Identifier;
  * <em>Textual Nominal Statistics</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class TextualMassDistributionImpl extends EObjectImpl implements TextualMassDistribution {
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getFrequency()
      * @generated
      * @ordered
@@ -52,7 +52,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
     /**
      * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getFrequency()
      * @generated
      * @ordered
@@ -62,7 +62,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
     /**
      * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getIdentifier()
      * @generated
      * @ordered
@@ -71,7 +71,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualMassDistributionImpl() {
@@ -80,7 +80,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,155 +90,172 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public long getFrequency() {
-        return frequency;
+        return this.frequency;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setFrequency(long newFrequency) {
-        long oldFrequency = frequency;
-        frequency = newFrequency;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, frequency));
+    @Override
+    public void setFrequency(final long newFrequency) {
+        final long oldFrequency = this.frequency;
+        this.frequency = newFrequency;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, this.frequency));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Identifier getIdentifier() {
-        if (identifier != null && identifier.eIsProxy()) {
-            InternalEObject oldIdentifier = (InternalEObject) identifier;
-            identifier = (Identifier) eResolveProxy(oldIdentifier);
-            if (identifier != oldIdentifier) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, identifier));
+        if (this.identifier != null && this.identifier.eIsProxy()) {
+            final InternalEObject oldIdentifier = (InternalEObject) this.identifier;
+            this.identifier = (Identifier) this.eResolveProxy(oldIdentifier);
+            if (this.identifier != oldIdentifier) {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                            ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, this.identifier));
+                }
             }
         }
-        return identifier;
+        return this.identifier;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Identifier basicGetIdentifier() {
-        return identifier;
+        return this.identifier;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setIdentifier(Identifier newIdentifier) {
-        Identifier oldIdentifier = identifier;
-        identifier = newIdentifier;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, identifier));
+    @Override
+    public void setIdentifier(final Identifier newIdentifier) {
+        final Identifier oldIdentifier = this.identifier;
+        this.identifier = newIdentifier;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, this.identifier));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public TextualNominalStatistics getTextualNominalStatistics() {
-        if (eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS)
+        if (this.eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS) {
             return null;
-        return (TextualNominalStatistics) eInternalContainer();
+        }
+        return (TextualNominalStatistics) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetTextualNominalStatistics(TextualNominalStatistics newTextualNominalStatistics,
-            NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newTextualNominalStatistics,
+    public NotificationChain basicSetTextualNominalStatistics(
+            final TextualNominalStatistics newTextualNominalStatistics, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newTextualNominalStatistics,
                 ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setTextualNominalStatistics(TextualNominalStatistics newTextualNominalStatistics) {
-        if (newTextualNominalStatistics != eInternalContainer()
-                || (eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS && newTextualNominalStatistics != null)) {
-            if (EcoreUtil.isAncestor(this, newTextualNominalStatistics))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    @Override
+    public void setTextualNominalStatistics(final TextualNominalStatistics newTextualNominalStatistics) {
+        if (newTextualNominalStatistics != this.eInternalContainer()
+                || (this.eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS && newTextualNominalStatistics != null)) {
+            if (EcoreUtil.isAncestor(this, newTextualNominalStatistics)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newTextualNominalStatistics != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newTextualNominalStatistics != null) {
                 msgs = ((InternalEObject) newTextualNominalStatistics).eInverseAdd(this,
                         ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
                         TextualNominalStatistics.class, msgs);
-            msgs = basicSetTextualNominalStatistics(newTextualNominalStatistics, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetTextualNominalStatistics(newTextualNominalStatistics, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS,
                     newTextualNominalStatistics, newTextualNominalStatistics));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetTextualNominalStatistics((TextualNominalStatistics) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetTextualNominalStatistics((TextualNominalStatistics) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            return basicSetTextualNominalStatistics(null, msgs);
+            return this.basicSetTextualNominalStatistics(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            return eInternalContainer().eInverseRemove(this,
+            return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
                     TextualNominalStatistics.class, msgs);
         }
@@ -247,40 +264,41 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
-            return getFrequency();
+            return this.getFrequency();
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
-            if (resolve)
-                return getIdentifier();
-            return basicGetIdentifier();
+            if (resolve) {
+                return this.getIdentifier();
+            }
+            return this.basicGetIdentifier();
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            return getTextualNominalStatistics();
+            return this.getTextualNominalStatistics();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
-            setFrequency((Long) newValue);
+            this.setFrequency((Long) newValue);
             return;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
-            setIdentifier((Identifier) newValue);
+            this.setIdentifier((Identifier) newValue);
             return;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            setTextualNominalStatistics((TextualNominalStatistics) newValue);
+            this.setTextualNominalStatistics((TextualNominalStatistics) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -288,20 +306,20 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
-            setFrequency(FREQUENCY_EDEFAULT);
+            this.setFrequency(FREQUENCY_EDEFAULT);
             return;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
-            setIdentifier((Identifier) null);
+            this.setIdentifier((Identifier) null);
             return;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            setTextualNominalStatistics((TextualNominalStatistics) null);
+            this.setTextualNominalStatistics((TextualNominalStatistics) null);
             return;
         }
         super.eUnset(featureID);
@@ -309,35 +327,36 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
-            return frequency != FREQUENCY_EDEFAULT;
+            return this.frequency != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
-            return identifier != null;
+            return this.identifier != null;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
-            return getTextualNominalStatistics() != null;
+            return this.getTextualNominalStatistics() != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (frequency: ");
-        result.append(frequency);
+        result.append(this.frequency);
         result.append(')');
         return result.toString();
     }

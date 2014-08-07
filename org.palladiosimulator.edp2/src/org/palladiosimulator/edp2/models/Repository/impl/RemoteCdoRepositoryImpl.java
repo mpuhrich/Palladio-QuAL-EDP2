@@ -22,14 +22,14 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * Url</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdoRepository {
     /**
      * The default value of the '{@link #getUrl() <em>Url</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getUrl()
      * @generated
      * @ordered
@@ -39,7 +39,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
     /**
      * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getUrl()
      * @generated
      * @ordered
@@ -48,7 +48,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected RemoteCdoRepositoryImpl() {
@@ -57,7 +57,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,50 +67,53 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public void setUrl(String newUrl) {
-        String oldUrl = url;
-        url = newUrl;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REMOTE_CDO_REPOSITORY__URL, oldUrl,
-                    url));
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public String getUrl() {
+        return this.url;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setUrl(final String newUrl) {
+        final String oldUrl = this.url;
+        this.url = newUrl;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.REMOTE_CDO_REPOSITORY__URL,
+                    oldUrl, this.url));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
-            return getUrl();
+            return this.getUrl();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
-            setUrl((String) newValue);
+            this.setUrl((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -118,14 +121,14 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
-            setUrl(URL_EDEFAULT);
+            this.setUrl(URL_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -133,31 +136,32 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
-            return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+            return URL_EDEFAULT == null ? this.url != null : !URL_EDEFAULT.equals(this.url);
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (url: ");
-        result.append(url);
+        result.append(this.url);
         result.append(')');
         return result.toString();
     }

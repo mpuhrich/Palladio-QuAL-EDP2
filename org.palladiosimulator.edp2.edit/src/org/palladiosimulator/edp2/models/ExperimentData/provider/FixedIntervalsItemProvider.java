@@ -13,12 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -30,51 +25,49 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
-public class FixedIntervalsItemProvider extends IdentifierItemProvider implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public FixedIntervalsItemProvider(AdapterFactory adapterFactory) {
+    public FixedIntervalsItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addLowerBoundPropertyDescriptor(object);
-            addWidthPropertyDescriptor(object);
-            addNumberOfIntervalsPropertyDescriptor(object);
+            this.addLowerBoundPropertyDescriptor(object);
+            this.addWidthPropertyDescriptor(object);
+            this.addNumberOfIntervalsPropertyDescriptor(object);
         }
-        return itemPropertyDescriptors;
+        return this.itemPropertyDescriptors;
     }
 
     /**
      * This adds a property descriptor for the Lower Bound feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected void addLowerBoundPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString("_UI_FixedIntervals_lowerBound_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_FixedIntervals_lowerBound_feature",
+    protected void addLowerBoundPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_FixedIntervals_lowerBound_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_lowerBound_feature",
                         "_UI_FixedIntervals_type"), ExperimentDataPackage.Literals.FIXED_INTERVALS__LOWER_BOUND, true,
                 false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
@@ -82,15 +75,14 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider implement
     /**
      * This adds a property descriptor for the Width feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected void addWidthPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString("_UI_FixedIntervals_width_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_FixedIntervals_width_feature",
+    protected void addWidthPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_FixedIntervals_width_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_width_feature",
                         "_UI_FixedIntervals_type"), ExperimentDataPackage.Literals.FIXED_INTERVALS__WIDTH, true, false,
                 false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
@@ -98,15 +90,14 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider implement
     /**
      * This adds a property descriptor for the Number Of Intervals feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected void addNumberOfIntervalsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add(createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString("_UI_FixedIntervals_numberOfIntervals_feature"),
-                getString("_UI_PropertyDescriptor_description", "_UI_FixedIntervals_numberOfIntervals_feature",
+    protected void addNumberOfIntervalsPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_FixedIntervals_numberOfIntervals_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_numberOfIntervals_feature",
                         "_UI_FixedIntervals_type"),
                 ExperimentDataPackage.Literals.FIXED_INTERVALS__NUMBER_OF_INTERVALS, true, false, false,
                 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
@@ -114,43 +105,43 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider implement
 
     /**
      * This returns FixedIntervals.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/FixedIntervals"));
+    public Object getImage(final Object object) {
+        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/FixedIntervals"));
     }
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((FixedIntervals) object).getId();
-        return label == null || label.length() == 0 ? getString("_UI_FixedIntervals_type")
-                : getString("_UI_FixedIntervals_type") + " " + label;
+    public String getText(final Object object) {
+        final String label = ((FixedIntervals) object).getId();
+        return label == null || label.length() == 0 ? this.getString("_UI_FixedIntervals_type") : this
+                .getString("_UI_FixedIntervals_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged(final Notification notification) {
+        this.updateChildren(notification);
 
         switch (notification.getFeatureID(FixedIntervals.class)) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         }
         super.notifyChanged(notification);
@@ -159,18 +150,18 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider implement
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+    protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

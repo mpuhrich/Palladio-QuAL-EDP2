@@ -12,7 +12,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Measure</b></em>'. <!--
  * end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Describes&nbsp;and&nbsp;specifies&nbsp;the&nbsp;measure&nbsp;used.&nbsp;Needs
  * &nbsp;to&nbsp;be&nbsp
@@ -33,9 +33,9 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * For&nbsp;example&nbsp;measuring&nbsp;the&nbsp;response&nbsp;time&nbsp;of&nbsp;a&nbsp;request&nbsp
  * ;to&nbsp;a&nbsp;system&nbsp;in&nbsp;milliseconds&nbsp;could&nbsp;result&nbsp;in&nbsp;the&nbsp;
  * following&nbsp;values&nbsp;of&nbsp;the&nbsp;attributes:&nbsp;metric=
- * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Integer
- * ' . <!-- end-model-doc -->
- * 
+ * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Intege
+ * r ' . <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -48,7 +48,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * Measuring Point</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasure()
  * @model
  * @generated
@@ -64,7 +64,7 @@ public interface Measure extends EObject, Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Group</em>' container reference.
      * @see #setExperimentGroup(ExperimentGroup)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasure_ExperimentGroup()
@@ -79,7 +79,7 @@ public interface Measure extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure#getExperimentGroup
      * <em>Experiment Group</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Experiment Group</em>' container reference.
      * @see #getExperimentGroup()
@@ -99,7 +99,7 @@ public interface Measure extends EObject, Identifier {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Settings</em>' reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasure_ExperimentSettings()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getMeasure
@@ -115,7 +115,7 @@ public interface Measure extends EObject, Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Metric</em>' reference.
      * @see #setMetric(MetricDescription)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasure_Metric()
@@ -128,7 +128,7 @@ public interface Measure extends EObject, Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure#getMetric <em>Metric</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Metric</em>' reference.
      * @see #getMetric()
@@ -144,7 +144,7 @@ public interface Measure extends EObject, Identifier {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Point</em>' containment reference.
      * @see #setMeasuringPoint(MeasuringPoint)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasure_MeasuringPoint()
@@ -158,7 +158,7 @@ public interface Measure extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure#getMeasuringPoint
      * <em>Measuring Point</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measuring Point</em>' containment reference.
      * @see #getMeasuringPoint()

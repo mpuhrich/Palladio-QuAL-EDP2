@@ -16,21 +16,21 @@ import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage
  * @generated
  */
 public class MeasuringpointSwitch<T> extends Switch<T> {
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static MeasuringpointPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringpointSwitch() {
@@ -42,55 +42,61 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
     @Override
-    protected boolean isSwitchFor(EPackage ePackage) {
+    protected boolean isSwitchFor(final EPackage ePackage) {
         return ePackage == modelPackage;
     }
 
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
     @Override
-    protected T doSwitch(int classifierID, EObject theEObject) {
+    protected T doSwitch(final int classifierID, final EObject theEObject) {
         switch (classifierID) {
         case MeasuringpointPackage.MEASURING_POINT: {
-            MeasuringPoint measuringPoint = (MeasuringPoint) theEObject;
-            T result = caseMeasuringPoint(measuringPoint);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final MeasuringPoint measuringPoint = (MeasuringPoint) theEObject;
+            T result = this.caseMeasuringPoint(measuringPoint);
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case MeasuringpointPackage.STRING_MEASURING_POINT: {
-            StringMeasuringPoint stringMeasuringPoint = (StringMeasuringPoint) theEObject;
-            T result = caseStringMeasuringPoint(stringMeasuringPoint);
-            if (result == null)
-                result = caseMeasuringPoint(stringMeasuringPoint);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final StringMeasuringPoint stringMeasuringPoint = (StringMeasuringPoint) theEObject;
+            T result = this.caseStringMeasuringPoint(stringMeasuringPoint);
+            if (result == null) {
+                result = this.caseMeasuringPoint(stringMeasuringPoint);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT: {
-            ResourceURIMeasuringPoint resourceURIMeasuringPoint = (ResourceURIMeasuringPoint) theEObject;
-            T result = caseResourceURIMeasuringPoint(resourceURIMeasuringPoint);
-            if (result == null)
-                result = caseStringMeasuringPoint(resourceURIMeasuringPoint);
-            if (result == null)
-                result = caseMeasuringPoint(resourceURIMeasuringPoint);
-            if (result == null)
-                result = defaultCase(theEObject);
+            final ResourceURIMeasuringPoint resourceURIMeasuringPoint = (ResourceURIMeasuringPoint) theEObject;
+            T result = this.caseResourceURIMeasuringPoint(resourceURIMeasuringPoint);
+            if (result == null) {
+                result = this.caseStringMeasuringPoint(resourceURIMeasuringPoint);
+            }
+            if (result == null) {
+                result = this.caseMeasuringPoint(resourceURIMeasuringPoint);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
             return result;
         }
         default:
-            return defaultCase(theEObject);
+            return this.defaultCase(theEObject);
         }
     }
 
@@ -98,14 +104,14 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measuring Point</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measuring Point</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMeasuringPoint(MeasuringPoint object) {
+    public T caseMeasuringPoint(final MeasuringPoint object) {
         return null;
     }
 
@@ -113,7 +119,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>String Measuring Point</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -121,7 +127,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseStringMeasuringPoint(StringMeasuringPoint object) {
+    public T caseStringMeasuringPoint(final StringMeasuringPoint object) {
         return null;
     }
 
@@ -129,7 +135,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Resource URI Measuring Point</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -137,7 +143,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseResourceURIMeasuringPoint(ResourceURIMeasuringPoint object) {
+    public T caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint object) {
         return null;
     }
 
@@ -145,7 +151,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
@@ -153,7 +159,7 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(EObject object) {
+    public T defaultCase(final EObject object) {
         return null;
     }
 

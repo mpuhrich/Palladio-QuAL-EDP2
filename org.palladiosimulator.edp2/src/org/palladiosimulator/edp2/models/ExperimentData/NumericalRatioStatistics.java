@@ -11,7 +11,7 @@ import javax.measure.Measure;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Numerical Ratio Statistics</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -26,7 +26,7 @@ import javax.measure.Measure;
  * <em>Harmonic Mean</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics()
  * @model
  * @generated
@@ -40,7 +40,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Dimensionless.UNIT as unit for the measure.
      * </p>
      * <!-- end-model-doc -->
-     * 
+     *
      * @return the value of the '<em>Coefficient Of Variation</em>' attribute.
      * @see #setCoefficientOfVariation(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics_CoefficientOfVariation()
@@ -54,7 +54,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getCoefficientOfVariation
      * <em>Coefficient Of Variation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Coefficient Of Variation</em>' attribute.
      * @see #getCoefficientOfVariation()
@@ -69,7 +69,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Geometric Mean</em>' attribute.
      * @see #setGeometricMean(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics_GeometricMean()
@@ -83,7 +83,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getGeometricMean
      * <em>Geometric Mean</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Geometric Mean</em>' attribute.
      * @see #getGeometricMean()
@@ -98,7 +98,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Harmonic Mean</em>' attribute.
      * @see #setHarmonicMean(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics_HarmonicMean()
@@ -112,7 +112,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getHarmonicMean
      * <em>Harmonic Mean</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Harmonic Mean</em>' attribute.
      * @see #getHarmonicMean()

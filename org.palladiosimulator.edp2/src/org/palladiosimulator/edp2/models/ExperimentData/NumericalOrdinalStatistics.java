@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Numerical Ordinal Statistics</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * <em>Percentiles</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalOrdinalStatistics()
  * @model
  * @generated
@@ -43,7 +43,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Minimum</em>' attribute.
      * @see #setMinimum(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalOrdinalStatistics_Minimum()
@@ -57,7 +57,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMinimum
      * <em>Minimum</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Minimum</em>' attribute.
      * @see #getMinimum()
@@ -72,7 +72,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Maximum</em>' attribute.
      * @see #setMaximum(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalOrdinalStatistics_Maximum()
@@ -86,7 +86,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMaximum
      * <em>Maximum</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Maximum</em>' attribute.
      * @see #getMaximum()
@@ -101,7 +101,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Median</em>' attribute.
      * @see #setMedian(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalOrdinalStatistics_Median()
@@ -114,7 +114,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMedian
      * <em>Median</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Median</em>' attribute.
      * @see #getMedian()
@@ -134,7 +134,7 @@ public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Percentiles</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalOrdinalStatistics_Percentiles()
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getOrdinalStatistics

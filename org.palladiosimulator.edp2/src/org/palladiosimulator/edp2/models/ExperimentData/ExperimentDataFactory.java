@@ -16,14 +16,14 @@ import org.palladiosimulator.metricspec.MetricDescription;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each
  * non-abstract class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage
  * @generated
  */
 public interface ExperimentDataFactory extends EFactory {
     /**
      * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     ExperimentDataFactory eINSTANCE = org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataFactoryImpl
@@ -32,7 +32,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measurements Range</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Measurements Range</em>'.
      * @generated
      */
@@ -41,7 +41,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Raw Measurements</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Raw Measurements</em>'.
      * @generated
      */
@@ -50,7 +50,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Nominal Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Nominal Statistics</em>'.
      * @generated
      */
@@ -59,7 +59,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Mass Distribution</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Mass Distribution</em>'.
      * @generated
      */
@@ -68,7 +68,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Fixed Width Aggregated Measurements</em>'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Fixed Width Aggregated Measurements</em>'.
      * @generated
      */
@@ -77,7 +77,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Fixed Intervals</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Fixed Intervals</em>'.
      * @generated
      */
@@ -86,7 +86,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Nominal Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Nominal Statistics</em>'.
      * @generated
      */
@@ -95,7 +95,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Mass Distribution</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Mass Distribution</em>'.
      * @generated
      */
@@ -104,7 +104,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measurements</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Measurements</em>'.
      * @generated
      */
@@ -113,7 +113,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measure</em>'. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @return a new object of class '<em>Measure</em>'.
      * @generated
      */
@@ -122,7 +122,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Group</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Group</em>'.
      * @generated
      */
@@ -131,7 +131,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Setting</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Setting</em>'.
      * @generated
      */
@@ -140,7 +140,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Run</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Run</em>'.
      * @generated
      */
@@ -149,7 +149,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Aggregation Statistics</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Aggregation Statistics</em>'.
      * @generated
      */
@@ -158,7 +158,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Long Binary Measurements</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Long Binary Measurements</em>'.
      * @generated
      */
@@ -167,7 +167,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Double Binary Measurements</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Double Binary Measurements</em>'.
      * @generated
      */
@@ -176,7 +176,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Interval Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Interval Statistics</em>'.
      * @generated
      */
@@ -185,7 +185,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Ordinal Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Ordinal Statistics</em>'.
      * @generated
      */
@@ -194,7 +194,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Percentile</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Percentile</em>'.
      * @generated
      */
@@ -203,7 +203,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>JS Xml Measurements</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>JS Xml Measurements</em>'.
      * @generated
      */
@@ -212,7 +212,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Identifier Based Measurements</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Identifier Based Measurements</em>'.
      * @generated
      */
@@ -221,7 +221,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Ratio Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Ratio Statistics</em>'.
      * @generated
      */
@@ -229,7 +229,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the package supported by this factory.
      * @generated
      */
@@ -238,7 +238,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Sensor Framework V1 Double Binary Measurements</em>'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Sensor Framework V1 Double Binary Measurements</em>'.
      * @generated
      */
@@ -247,7 +247,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Sensor Framework V1 Identifier Based Measurements</em>'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Sensor Framework V1 Identifier Based Measurements</em>'.
      * @generated
      */
@@ -256,15 +256,24 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Ordinal Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Ordinal Statistics</em>'.
      * @generated
      */
     TextualOrdinalStatistics createTextualOrdinalStatistics();
 
     /**
+     * Returns a new object of class '<em>Experiment Group Run</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Experiment Group Run</em>'.
+     * @generated
+     */
+    ExperimentGroupRun createExperimentGroupRun();
+
+    /**
      * Factory method to create a new number-based measure with the given arguments.
-     * 
+     *
      * @param persistenceOptions
      *            Persistence kind options of the measure.
      * @param measuringPoint
@@ -278,7 +287,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new experiment setting with the given arguments.
-     * 
+     *
      * @param experimentGroup
      *            The experiment group which the new setting is assigned to.
      * @param description
@@ -290,7 +299,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new experiment group with the given arguments.
-     * 
+     *
      * @param purpose
      *            The purpose of the group.
      * @return New experiment group.
@@ -300,7 +309,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new measurement with the given arguments.
-     * 
+     *
      * @param forMeasure
      *            The measure for which the measurement should be created.
      * @return New measurement.
@@ -310,7 +319,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new experiment run with the given arguments.
-     * 
+     *
      * @param forExperimentSetting
      *            The setting for which the run should be created.
      * @return New experiment run.
@@ -321,7 +330,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Factory method to create a new raw measurements with the given arguments. The corresponding
      * data series are automatically created from the measure definitions.
-     * 
+     *
      * @param forMeasurementRange
      *            The measurement range for which the run should be created.
      * @return New raw measurements.
@@ -331,7 +340,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new measurements range with the given arguments.
-     * 
+     *
      * @param forMeasurements
      *            The measurements for which the range should be created.
      * @return New measurements range.
@@ -341,7 +350,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new identifier-based measurements with the given arguments.
-     * 
+     *
      * @param forRawMeasurement
      *            The raw measurement for which the measurements should be created.
      * @param valesUuid
@@ -354,7 +363,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new long binary measurements with the given arguments.
-     * 
+     *
      * @param forRawMeasurement
      *            The raw measurement for which the measurements should be created.
      * @param valuesUuid
@@ -370,7 +379,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new double binary measurements with the given arguments.
-     * 
+     *
      * @param forRawMeasurement
      *            The raw measurement for which the measurements should be created.
      * @param valuesUuid
@@ -386,7 +395,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Factory method to create a new JScience XML measurements with the given arguments.
-     * 
+     *
      * @param forRawMeasurements
      *            The raw measurement for which the measurements should be created.
      * @param valuesUuid

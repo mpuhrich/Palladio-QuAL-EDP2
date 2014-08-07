@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.Measure;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
+import org.palladiosimulator.edp2.models.ExperimentData.Run;
 
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
@@ -43,19 +43,18 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * <li>
  * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementsImpl#getMeasurementsRanges
  * <em>Measurements Ranges</em>}</li>
- * <li>
- * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementsImpl#getExperimentRun
- * <em>Experiment Run</em>}</li>
+ * <li>{@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementsImpl#getRun <em>Run
+ * </em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class MeasurementsImpl extends IdentifierImpl implements Measurements {
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getAdditionalInformation()
      * @generated
      * @ordered
@@ -65,7 +64,7 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
     /**
      * The cached value of the '{@link #getMeasure() <em>Measure</em>}' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMeasure()
      * @generated
      * @ordered
@@ -75,7 +74,7 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
     /**
      * The cached value of the '{@link #getMeasurementsRanges() <em>Measurements Ranges</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMeasurementsRanges()
      * @generated
      * @ordered
@@ -84,7 +83,7 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasurementsImpl() {
@@ -93,7 +92,7 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -103,217 +102,234 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public EMap<String, Object> getAdditionalInformation() {
-        if (additionalInformation == null) {
-            additionalInformation = new EcoreEMap<String, Object>(
+        if (this.additionalInformation == null) {
+            this.additionalInformation = new EcoreEMap<String, Object>(
                     ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
                     this, ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION);
         }
-        return additionalInformation;
+        return this.additionalInformation;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
+    @Override
     public Measure getMeasure() {
-        if (measure != null && measure.eIsProxy()) {
-            InternalEObject oldMeasure = (InternalEObject) measure;
-            measure = (Measure) eResolveProxy(oldMeasure);
-            if (measure != oldMeasure) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.MEASUREMENTS__MEASURE, oldMeasure, measure));
+        if (this.measure != null && this.measure.eIsProxy()) {
+            final InternalEObject oldMeasure = (InternalEObject) this.measure;
+            this.measure = (Measure) this.eResolveProxy(oldMeasure);
+            if (this.measure != oldMeasure) {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                            ExperimentDataPackage.MEASUREMENTS__MEASURE, oldMeasure, this.measure));
+                }
             }
         }
-        return measure;
+        return this.measure;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Measure basicGetMeasure() {
-        return measure;
+        return this.measure;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setMeasure(Measure newMeasure) {
-        Measure oldMeasure = measure;
-        measure = newMeasure;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASUREMENTS__MEASURE,
-                    oldMeasure, measure));
+    @Override
+    public void setMeasure(final Measure newMeasure) {
+        final Measure oldMeasure = this.measure;
+        this.measure = newMeasure;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASUREMENTS__MEASURE,
+                    oldMeasure, this.measure));
+        }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public ExperimentRun getExperimentRun() {
-        if (eContainerFeatureID() != ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN)
+    @Override
+    public EList<MeasurementsRange> getMeasurementsRanges() {
+        if (this.measurementsRanges == null) {
+            this.measurementsRanges = new EObjectContainmentWithInverseEList<MeasurementsRange>(
+                    MeasurementsRange.class, this, ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES,
+                    ExperimentDataPackage.MEASUREMENTS_RANGE__MEASUREMENTS);
+        }
+        return this.measurementsRanges;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Run getRun() {
+        if (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENTS__RUN) {
             return null;
-        return (ExperimentRun) eInternalContainer();
+        }
+        return (Run) this.eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetExperimentRun(ExperimentRun newExperimentRun, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newExperimentRun,
-                ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN, msgs);
+    public NotificationChain basicSetRun(final Run newRun, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newRun, ExperimentDataPackage.MEASUREMENTS__RUN, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void setExperimentRun(ExperimentRun newExperimentRun) {
-        if (newExperimentRun != eInternalContainer()
-                || (eContainerFeatureID() != ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN && newExperimentRun != null)) {
-            if (EcoreUtil.isAncestor(this, newExperimentRun))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    @Override
+    public void setRun(final Run newRun) {
+        if (newRun != this.eInternalContainer()
+                || (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENTS__RUN && newRun != null)) {
+            if (EcoreUtil.isAncestor(this, newRun)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newExperimentRun != null)
-                msgs = ((InternalEObject) newExperimentRun).eInverseAdd(this,
-                        ExperimentDataPackage.EXPERIMENT_RUN__MEASUREMENTS, ExperimentRun.class, msgs);
-            msgs = basicSetExperimentRun(newExperimentRun, msgs);
-            if (msgs != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newRun != null) {
+                msgs = ((InternalEObject) newRun).eInverseAdd(this, ExperimentDataPackage.RUN__MEASUREMENTS, Run.class,
+                        msgs);
+            }
+            msgs = this.basicSetRun(newRun, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN,
-                    newExperimentRun, newExperimentRun));
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public EList<MeasurementsRange> getMeasurementsRanges() {
-        if (measurementsRanges == null) {
-            measurementsRanges = new EObjectContainmentWithInverseEList<MeasurementsRange>(MeasurementsRange.class,
-                    this, ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES,
-                    ExperimentDataPackage.MEASUREMENTS_RANGE__MEASUREMENTS);
+            }
+        } else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASUREMENTS__RUN, newRun,
+                    newRun));
         }
-        return measurementsRanges;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getMeasurementsRanges()).basicAdd(otherEnd,
-                    msgs);
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetExperimentRun((ExperimentRun) otherEnd, msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasurementsRanges()).basicAdd(
+                    otherEnd, msgs);
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetRun((Run) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
-            return ((InternalEList<?>) getAdditionalInformation()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            return ((InternalEList<?>) getMeasurementsRanges()).basicRemove(otherEnd, msgs);
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            return basicSetExperimentRun(null, msgs);
+            return ((InternalEList<?>) this.getMeasurementsRanges()).basicRemove(otherEnd, msgs);
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            return this.basicSetRun(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            return eInternalContainer().eInverseRemove(this, ExperimentDataPackage.EXPERIMENT_RUN__MEASUREMENTS,
-                    ExperimentRun.class, msgs);
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID()) {
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            return this.eInternalContainer().eInverseRemove(this, ExperimentDataPackage.RUN__MEASUREMENTS, Run.class,
+                    msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
-            if (coreType)
-                return getAdditionalInformation();
-            else
-                return getAdditionalInformation().map();
+            if (coreType) {
+                return this.getAdditionalInformation();
+            } else {
+                return this.getAdditionalInformation().map();
+            }
         case ExperimentDataPackage.MEASUREMENTS__MEASURE:
-            if (resolve)
-                return getMeasure();
-            return basicGetMeasure();
+            if (resolve) {
+                return this.getMeasure();
+            }
+            return this.basicGetMeasure();
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            return getMeasurementsRanges();
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            return getExperimentRun();
+            return this.getMeasurementsRanges();
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            return this.getRun();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
+    public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
-            ((EStructuralFeature.Setting) getAdditionalInformation()).set(newValue);
+            ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
         case ExperimentDataPackage.MEASUREMENTS__MEASURE:
-            setMeasure((Measure) newValue);
+            this.setMeasure((Measure) newValue);
             return;
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            getMeasurementsRanges().clear();
-            getMeasurementsRanges().addAll((Collection<? extends MeasurementsRange>) newValue);
+            this.getMeasurementsRanges().clear();
+            this.getMeasurementsRanges().addAll((Collection<? extends MeasurementsRange>) newValue);
             return;
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            setExperimentRun((ExperimentRun) newValue);
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            this.setRun((Run) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -321,23 +337,23 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
+    public void eUnset(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
-            getAdditionalInformation().clear();
+            this.getAdditionalInformation().clear();
             return;
         case ExperimentDataPackage.MEASUREMENTS__MEASURE:
-            setMeasure((Measure) null);
+            this.setMeasure((Measure) null);
             return;
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            getMeasurementsRanges().clear();
+            this.getMeasurementsRanges().clear();
             return;
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            setExperimentRun((ExperimentRun) null);
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            this.setRun((Run) null);
             return;
         }
         super.eUnset(featureID);
@@ -345,31 +361,31 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
+    public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
-            return additionalInformation != null && !additionalInformation.isEmpty();
+            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
         case ExperimentDataPackage.MEASUREMENTS__MEASURE:
-            return measure != null;
+            return this.measure != null;
         case ExperimentDataPackage.MEASUREMENTS__MEASUREMENTS_RANGES:
-            return measurementsRanges != null && !measurementsRanges.isEmpty();
-        case ExperimentDataPackage.MEASUREMENTS__EXPERIMENT_RUN:
-            return getExperimentRun() != null;
+            return this.measurementsRanges != null && !this.measurementsRanges.isEmpty();
+        case ExperimentDataPackage.MEASUREMENTS__RUN:
+            return this.getRun() != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+    public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
         if (baseClass == Propertyable.class) {
             switch (derivedFeatureID) {
             case ExperimentDataPackage.MEASUREMENTS__ADDITIONAL_INFORMATION:
@@ -383,11 +399,11 @@ public class MeasurementsImpl extends IdentifierImpl implements Measurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+    public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
         if (baseClass == Propertyable.class) {
             switch (baseFeatureID) {
             case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:

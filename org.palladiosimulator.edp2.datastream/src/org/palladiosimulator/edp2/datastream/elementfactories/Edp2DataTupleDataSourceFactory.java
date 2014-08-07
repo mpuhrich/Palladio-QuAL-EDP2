@@ -4,7 +4,11 @@ import org.eclipse.ui.IMemento;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Run;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 
 public class Edp2DataTupleDataSourceFactory extends PropertyConfigurableElementFactory {
@@ -32,8 +36,18 @@ public class Edp2DataTupleDataSourceFactory extends PropertyConfigurableElementF
 
     public static void saveState(final IMemento memento, final Edp2DataTupleDataSource edp2DataTupleDataSource) {
         final RawMeasurements measurements = edp2DataTupleDataSource.getRawMeasurements();
-        memento.putString(REPOSITORY_UUID, measurements.getMeasurementsRange().getMeasurements().getExperimentRun()
-                .getExperimentSetting().getExperimentGroup().getRepository().getId());
+        final Run run = measurements.getMeasurementsRange().getMeasurements().getRun();
+
+        final ExperimentGroup experimentGroup;
+        if (run instanceof ExperimentRun) {
+            experimentGroup = ((ExperimentRun) run).getExperimentSetting().getExperimentGroup();
+        } else if (run instanceof ExperimentGroupRun) {
+            experimentGroup = ((ExperimentGroupRun) run).getExperimentgroup();
+        } else {
+            throw new IllegalArgumentException("Unknown run type");
+        }
+
+        memento.putString(REPOSITORY_UUID, experimentGroup.getRepository().getId());
         memento.putString(MEASUREMENTS_UUID, measurements.getId());
     }
 

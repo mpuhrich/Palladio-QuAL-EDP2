@@ -28,7 +28,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * &nbsp;responsible&nbsp;to&nbsp;load/store&nbsp;experiment&nbsp;data.
  * </p>
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryFactory
  * @model kind="package"
  * @generated
@@ -36,28 +36,28 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 public interface RepositoryPackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNAME = "Repository";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_URI = "http://palladiosimulator.org/EDP2/Repository/0.9.1";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_PREFIX = "org.palladiosimulator.edp2.models";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     RepositoryPackage eINSTANCE = org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl.init();
@@ -66,7 +66,7 @@ public interface RepositoryPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.Repository.impl.RepositoryImpl <em>Repository</em>}'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRepository()
      * @generated
@@ -76,7 +76,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -85,7 +85,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -94,7 +94,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -103,7 +103,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Read Only</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -112,7 +112,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -121,7 +121,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Repository</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -131,7 +131,7 @@ public interface RepositoryPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl
      * <em>Local Directory Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalDirectoryRepository()
      * @generated
@@ -141,7 +141,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -150,7 +150,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -159,7 +159,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -168,7 +168,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Read Only</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -177,7 +177,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -186,7 +186,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Uri</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -195,7 +195,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Local Directory Repository</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -204,7 +204,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The meta object id for the '{@link java.io.File <em>File</em>}' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see java.io.File
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getFile()
      * @generated
@@ -214,7 +214,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>File</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -224,7 +224,7 @@ public interface RepositoryPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalMemoryRepositoryImpl
      * <em>Local Memory Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.LocalMemoryRepositoryImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalMemoryRepository()
      * @generated
@@ -234,7 +234,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -243,7 +243,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -252,7 +252,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -261,7 +261,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Read Only</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -270,7 +270,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -279,7 +279,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Domain</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -288,7 +288,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Local Memory Repository</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -298,7 +298,7 @@ public interface RepositoryPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.Repository.impl.RemoteCdoRepositoryImpl
      * <em>Remote Cdo Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.RemoteCdoRepositoryImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRemoteCdoRepository()
      * @generated
@@ -308,7 +308,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -317,7 +317,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -326,7 +326,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -335,7 +335,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Read Only</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -344,7 +344,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -353,7 +353,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Url</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -362,7 +362,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Remote Cdo Repository</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -373,7 +373,7 @@ public interface RepositoryPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalSensorFrameworkRepositoryImpl
      * <em>Local Sensor Framework Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.LocalSensorFrameworkRepositoryImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalSensorFrameworkRepository()
      * @generated
@@ -383,7 +383,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -392,7 +392,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repositories</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -401,7 +401,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Experiment Groups</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -410,7 +410,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Read Only</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -419,7 +419,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Descriptions</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -428,7 +428,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Uri</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -437,7 +437,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Import Settings</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -446,7 +446,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Local Sensor Framework Repository</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -456,7 +456,7 @@ public interface RepositoryPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.Repository.impl.RepositoriesImpl
      * <em>Repositories</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoriesImpl
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRepositories()
      * @generated
@@ -466,7 +466,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Available Repositories</b></em>' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -475,7 +475,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Common Resource Set</b></em>' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -484,7 +484,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Repositories</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -493,7 +493,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.emf.ecore.resource.ResourceSet
      * <em>IResource Set</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.eclipse.emf.ecore.resource.ResourceSet
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getIResourceSet()
      * @generated
@@ -503,7 +503,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>IResource Set</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -512,7 +512,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * <em>Measurements Dao Factory</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMeasurementsDaoFactory()
      * @generated
@@ -522,7 +522,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Measurements Dao Factory</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -531,7 +531,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.palladiosimulator.edp2.dao.MetaDao <em>Meta Dao</em>}'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.edp2.dao.MetaDao
      * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMetaDao()
      * @generated
@@ -541,7 +541,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Meta Dao</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -551,7 +551,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
      * <em>Local Directory Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Local Directory Repository</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
      * @generated
@@ -562,7 +562,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository#getUri
      * <em>Uri</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Uri</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository#getUri()
      * @see #getLocalDirectoryRepository()
@@ -573,7 +573,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link java.io.File <em>File</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>File</em>'.
      * @see java.io.File
      * @model instanceClass="java.io.File"
@@ -585,7 +585,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
      * <em>Local Memory Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Local Memory Repository</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
      * @generated
@@ -596,7 +596,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository#getDomain
      * <em>Domain</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Domain</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository#getDomain()
      * @see #getLocalMemoryRepository()
@@ -608,7 +608,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
      * <em>Remote Cdo Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Remote Cdo Repository</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
      * @generated
@@ -619,7 +619,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository#getUrl <em>Url</em>}
      * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Url</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository#getUrl()
      * @see #getRemoteCdoRepository()
@@ -631,7 +631,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository
      * <em>Local Sensor Framework Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Local Sensor Framework Repository</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository
      * @generated
@@ -642,7 +642,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getUri
      * <em>Uri</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Uri</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getUri()
      * @see #getLocalSensorFrameworkRepository()
@@ -654,7 +654,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getImportSettings
      * <em>Import Settings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Import Settings</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository#getImportSettings()
      * @see #getLocalSensorFrameworkRepository()
@@ -666,7 +666,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories <em>Repositories</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Repositories</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repositories
      * @generated
@@ -677,7 +677,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories
      * <em>Available Repositories</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '<em>Available Repositories</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repositories#getAvailableRepositories()
      * @see #getRepositories()
@@ -689,7 +689,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet
      * <em>Common Resource Set</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Common Resource Set</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet()
      * @see #getRepositories()
@@ -700,7 +700,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.emf.ecore.resource.ResourceSet
      * <em>IResource Set</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>IResource Set</em>'.
      * @see org.eclipse.emf.ecore.resource.ResourceSet
      * @model instanceClass="org.eclipse.emf.ecore.resource.ResourceSet"
@@ -712,7 +712,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * <em>Measurements Dao Factory</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Measurements Dao Factory</em>'.
      * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * @model instanceClass="org.palladiosimulator.edp2.dao.MeasurementsDaoFactory"
@@ -723,7 +723,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.palladiosimulator.edp2.dao.MetaDao
      * <em>Meta Dao</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Meta Dao</em>'.
      * @see org.palladiosimulator.edp2.dao.MetaDao
      * @model instanceClass="org.palladiosimulator.edp2.dao.MetaDao"
@@ -735,7 +735,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository <em>Repository</em>}'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Repository</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repository
      * @generated
@@ -746,7 +746,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
      * <em>Repositories</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the container reference '<em>Repositories</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repository#getRepositories()
      * @see #getRepository()
@@ -758,7 +758,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#isReadOnly <em>Read Only</em>}
      * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Read Only</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repository#isReadOnly()
      * @see #getRepository()
@@ -770,7 +770,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the reference list '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#getDescriptions
      * <em>Descriptions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference list '<em>Descriptions</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repository#getDescriptions()
      * @see #getRepository()
@@ -782,7 +782,7 @@ public interface RepositoryPackage extends EPackage {
      * Returns the meta object for the reference list '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#getExperimentGroups
      * <em>Experiment Groups</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference list '<em>Experiment Groups</em>'.
      * @see org.palladiosimulator.edp2.models.Repository.Repository#getExperimentGroups()
      * @see #getRepository()
@@ -793,7 +793,7 @@ public interface RepositoryPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -808,7 +808,7 @@ public interface RepositoryPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     interface Literals {
@@ -817,7 +817,7 @@ public interface RepositoryPackage extends EPackage {
          * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl
          * <em>Local Directory Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
          * -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalDirectoryRepository()
          * @generated
@@ -827,7 +827,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Uri</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute LOCAL_DIRECTORY_REPOSITORY__URI = eINSTANCE.getLocalDirectoryRepository_Uri();
@@ -835,7 +835,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '{@link java.io.File <em>File</em>}' class. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see java.io.File
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getFile()
          * @generated
@@ -846,7 +846,7 @@ public interface RepositoryPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalMemoryRepositoryImpl
          * <em>Local Memory Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.LocalMemoryRepositoryImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalMemoryRepository()
          * @generated
@@ -856,7 +856,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Domain</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute LOCAL_MEMORY_REPOSITORY__DOMAIN = eINSTANCE.getLocalMemoryRepository_Domain();
@@ -865,7 +865,7 @@ public interface RepositoryPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.Repository.impl.RemoteCdoRepositoryImpl
          * <em>Remote Cdo Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.RemoteCdoRepositoryImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRemoteCdoRepository()
          * @generated
@@ -875,7 +875,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Url</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute REMOTE_CDO_REPOSITORY__URL = eINSTANCE.getRemoteCdoRepository_Url();
@@ -885,7 +885,7 @@ public interface RepositoryPackage extends EPackage {
          * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalSensorFrameworkRepositoryImpl
          * <em>Local Sensor Framework Repository</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.LocalSensorFrameworkRepositoryImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getLocalSensorFrameworkRepository()
          * @generated
@@ -895,7 +895,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Uri</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI = eINSTANCE.getLocalSensorFrameworkRepository_Uri();
@@ -903,7 +903,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Import Settings</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS = eINSTANCE
@@ -913,7 +913,7 @@ public interface RepositoryPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.Repository.impl.RepositoriesImpl
          * <em>Repositories</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoriesImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRepositories()
          * @generated
@@ -923,7 +923,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Available Repositories</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference REPOSITORIES__AVAILABLE_REPOSITORIES = eINSTANCE.getRepositories_AvailableRepositories();
@@ -931,7 +931,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Common Resource Set</b></em>' reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference REPOSITORIES__COMMON_RESOURCE_SET = eINSTANCE.getRepositories_CommonResourceSet();
@@ -939,7 +939,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.emf.ecore.resource.ResourceSet
          * <em>IResource Set</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.eclipse.emf.ecore.resource.ResourceSet
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getIResourceSet()
          * @generated
@@ -950,7 +950,7 @@ public interface RepositoryPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
          * <em>Measurements Dao Factory</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMeasurementsDaoFactory()
          * @generated
@@ -960,7 +960,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.palladiosimulator.edp2.dao.MetaDao
          * <em>Meta Dao</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.dao.MetaDao
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getMetaDao()
          * @generated
@@ -971,7 +971,7 @@ public interface RepositoryPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.Repository.impl.RepositoryImpl
          * <em>Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryImpl
          * @see org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl#getRepository()
          * @generated
@@ -981,7 +981,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Repositories</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference REPOSITORY__REPOSITORIES = eINSTANCE.getRepository_Repositories();
@@ -989,7 +989,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Read Only</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute REPOSITORY__READ_ONLY = eINSTANCE.getRepository_ReadOnly();
@@ -997,7 +997,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Descriptions</b></em>' reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference REPOSITORY__DESCRIPTIONS = eINSTANCE.getRepository_Descriptions();
@@ -1005,7 +1005,7 @@ public interface RepositoryPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Groups</b></em>' reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference REPOSITORY__EXPERIMENT_GROUPS = eINSTANCE.getRepository_ExperimentGroups();

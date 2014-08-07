@@ -13,7 +13,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Aggregation Statistics</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -28,7 +28,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <em>Aggregated Measurements</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregationStatistics()
  * @model
  * @generated
@@ -38,9 +38,9 @@ public interface AggregationStatistics extends EObject, Identifier {
      * Returns the value of the '<em><b>Distinct Values Before Aggregation</b></em>' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The number of distinct data
      * values before aggregation.
-     * 
+     *
      * <!-- end-model-doc -->
-     * 
+     *
      * @return the value of the '<em>Distinct Values Before Aggregation</em>' attribute.
      * @see #setDistinctValuesBeforeAggregation(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregationStatistics_DistinctValuesBeforeAggregation()
@@ -54,7 +54,7 @@ public interface AggregationStatistics extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesBeforeAggregation
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Distinct Values Before Aggregation</em>' attribute.
      * @see #getDistinctValuesBeforeAggregation()
@@ -66,10 +66,10 @@ public interface AggregationStatistics extends EObject, Identifier {
      * Returns the value of the '<em><b>Distinct Values After Aggregation</b></em>' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The number of distinct data
      * values after aggregation.
-     * 
+     *
      * For example if measurements were aggregated to three different groups the number is three.
      * <!-- end-model-doc -->
-     * 
+     *
      * @return the value of the '<em>Distinct Values After Aggregation</em>' attribute.
      * @see #setDistinctValuesAfterAggregation(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregationStatistics_DistinctValuesAfterAggregation()
@@ -83,7 +83,7 @@ public interface AggregationStatistics extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesAfterAggregation
      * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Distinct Values After Aggregation</em>' attribute.
      * @see #getDistinctValuesAfterAggregation()
@@ -101,7 +101,7 @@ public interface AggregationStatistics extends EObject, Identifier {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #setAggregatedMeasurements(AggregatedMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregationStatistics_AggregatedMeasurements()
@@ -116,7 +116,7 @@ public interface AggregationStatistics extends EObject, Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #getAggregatedMeasurements()

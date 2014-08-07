@@ -25,8 +25,8 @@ public class NavigatorTreeFactoryImpl implements IObservableFactory {
         } else if (target instanceof Repository) {
             return EMFProperties.list(RepositoryPackage.Literals.REPOSITORY__EXPERIMENT_GROUPS).observe(target);
         } else if (target instanceof ExperimentGroup) {
-            return EMFProperties.list(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS).observe(
-                    target);
+            return EMFProperties.multiList(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS,
+                    ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS).observe(target);
         } else if (target instanceof ExperimentSetting) {
             return EMFProperties.list(ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS).observe(
                     target);

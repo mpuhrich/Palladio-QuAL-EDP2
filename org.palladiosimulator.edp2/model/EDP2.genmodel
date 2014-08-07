@@ -86,6 +86,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentGroup/purpose"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/repository"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/reports"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentSetting">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentSetting/description"/>
@@ -95,16 +97,14 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentSetting/experimentGroup"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentRun">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentRun/measurements"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentRun/startTime"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentRun/duration"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentRun/experimentSetting"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Measurements">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/measure"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/measurementsRanges"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/experimentRun"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/run"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Measure">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measure/experimentGroup"/>
@@ -162,6 +162,15 @@
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/TextualOrdinalStatistics/maximum"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/TextualOrdinalStatistics/median"/>
+      </genClasses>
+      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Run">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/Run/duration"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/Run/startTime"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Run/measurements"/>
+      </genClasses>
+      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentGroupRun">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroupRun/experimentgroup"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Repository" basePackage="org.palladiosimulator.edp2.models"

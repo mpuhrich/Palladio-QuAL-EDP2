@@ -192,6 +192,9 @@
           <details key="documentation" value="Repository in which this experiment group is stored."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reports" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/ExperimentGroupRun" containment="true"
+          eOpposite="#//ExperimentData/ExperimentGroupRun/experimentgroup"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExperimentSetting" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -207,25 +210,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentGroup" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/experimentSettings"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExperimentRun" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
+    <eClassifiers xsi:type="ecore:EClass" name="ExperimentRun" eSuperTypes="#//ExperimentData/Run">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Experiment runs contain the collected data (results) for each replication of an experiment. The data is collected for each sensor declared in the experiment setting. There is one instance of collected data for each declared sensor.&#xD;&#xA;&#xD;&#xA;The time when the experiment was started and how long it took are stored as attributes. The end of the experiment run can be calculated by: endTime = startTime + duration.&#xD;&#xA;self.experimentSetting.measure->size()=measurements->size() and &#xD;&#xA;self.experimentSetting.measure->forAll(s|self.measurements->collect(measure)->select(s2|s=s2)->size()=1)"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Measurements" containment="true"
-          eOpposite="#//ExperimentData/Measurements/experimentRun"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTime" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Instant at which the experiment run is started."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/EJSDurationMeasure">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Length of the duration in milli-seconds."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentSetting" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentSetting" eOpposite="#//ExperimentData/ExperimentSetting/experimentRuns"/>
     </eClassifiers>
@@ -238,8 +226,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="measurementsRanges" ordered="false"
           upperBound="-1" eType="#//ExperimentData/MeasurementsRange" containment="true"
           eOpposite="#//ExperimentData/MeasurementsRange/measurements"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="experimentRun" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/ExperimentRun" eOpposite="#//ExperimentData/ExperimentRun/measurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="run" lowerBound="1" eType="#//ExperimentData/Run"
+          eOpposite="#//ExperimentData/Run/measurements"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Measure" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -363,6 +351,27 @@
           lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//Identifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="median" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//Identifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Run" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          lowerBound="1" eType="#//ExperimentData/EJSDurationMeasure">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Length of the duration in milli-seconds."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTime" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Instant at which the experiment run is started."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/Measurements" containment="true"
+          eOpposite="#//ExperimentData/Measurements/run"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExperimentGroupRun" eSuperTypes="#//ExperimentData/Run">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="experimentgroup" lowerBound="1"
+          eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/reports"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="Repository" nsURI="http://palladiosimulator.org/EDP2/Repository/0.9.1"

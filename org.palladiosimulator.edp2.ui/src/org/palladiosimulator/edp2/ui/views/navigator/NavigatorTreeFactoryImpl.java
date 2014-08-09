@@ -6,6 +6,7 @@ import org.eclipse.core.databinding.observable.masterdetail.IObservableFactory;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.Repository.Repository;
@@ -30,6 +31,8 @@ public class NavigatorTreeFactoryImpl implements IObservableFactory {
         } else if (target instanceof ExperimentSetting) {
             return EMFProperties.list(ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS).observe(
                     target);
+        } else if (target instanceof ExperimentGroupRun) {
+            return EMFProperties.list(ExperimentDataPackage.Literals.RUN__MEASUREMENTS).observe(target);
         } else if (target instanceof ExperimentRun) {
             return EMFProperties.list(ExperimentDataPackage.Literals.RUN__MEASUREMENTS).observe(target);
         }

@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measure;
@@ -173,6 +174,15 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 @Override
                 public StyledString caseExperimentRun(final ExperimentRun object) {
                     final StyledString styledString = new StyledString("Experiment Run "
+                            + DATE_FORMAT.format(object.getStartTime()));
+                    final String decoration = " (" + object.getId() + ")";
+                    styledString.append(decoration, StyledString.COUNTER_STYLER);
+                    return styledString;
+                };
+
+                @Override
+                public StyledString caseExperimentGroupRun(final ExperimentGroupRun object) {
+                    final StyledString styledString = new StyledString("Group Reports "
                             + DATE_FORMAT.format(object.getStartTime()));
                     final String decoration = " (" + object.getId() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);

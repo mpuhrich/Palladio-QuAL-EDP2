@@ -67,6 +67,10 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     public Boolean caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
         final BinaryMeasurementsDao<Double, Quantity> bmd = (BinaryMeasurementsDao<Double, Quantity>) daoRegistry
                 .getMeasurementsDao(object.getValuesUuid());
+        if (bmd == null) {
+            throw new RuntimeException("Could not find DoubleBinaryMeasurement with unit "
+                    + object.getStorageUnit().toString() + " (ID " + object.getValuesUuid() + ")");
+        }
         if (!bmd.isOpen()) {
             try {
                 bmd.open();

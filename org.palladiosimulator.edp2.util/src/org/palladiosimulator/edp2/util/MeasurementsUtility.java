@@ -142,7 +142,7 @@ public class MeasurementsUtility {
         final MeasurementsRange lastRange = measurements.getMeasurementsRanges().get(size - 1);
         final RawMeasurements rm = lastRange.getRawMeasurements();
         if (rm != null) { // Add raw measurements
-            if (!measurement.getMetricDesciption().equals(measurements.getMeasure().getMetric())) {
+            if (!measurement.getMetricDesciption().getId().equals(measurements.getMeasure().getMetric().getId())) {
                 final String msg = "Tried to store measurement with a wrong metric. Expected: "
                         + measurements.getMeasure().getMetric() + ", provided: " + measurement.getMetricDesciption()
                         + ".";

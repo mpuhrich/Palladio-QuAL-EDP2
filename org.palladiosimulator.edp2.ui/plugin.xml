@@ -2,18 +2,19 @@
 <plugin>
    <extension
          point="org.eclipse.ui.views">
+      <category
+            id="org.palladiosimulator.edp2.ui.category"
+            name="EDP2">
+      </category>
       <view
             allowMultiple="false"
             category="org.palladiosimulator.edp2.ui.category"
             class="org.palladiosimulator.edp2.ui.views.navigator.Navigator"
             icon="icons/tree_root.gif"
             id="org.palladiosimulator.edp2.ui.views.navigator"
-            name="Experiments">
+            name="Experiments"
+            restorable="true">
       </view>
-      <category
-            id="org.palladiosimulator.edp2.ui.category"
-            name="EDP2">
-      </category>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">

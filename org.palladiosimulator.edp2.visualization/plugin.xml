@@ -2,8 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="jfreechart" name="JFreeChart Visualization" schema="schema/org.palladiosimulator.edp2.visualization.jfreechart.exsd"/>
-   <extension-point id="adapter" name="Adapter" schema="schema/org.palladiosimulator.edp2.adapter.exsd"/>
-   <extension-point id="filter" name="Filter" schema="schema/org.palladiosimulator.edp2.filter.exsd"/>
+   <extension-point id="adapter" name="Adapter" schema="schema/org.palladiosimulator.edp2.visualization.adapter.exsd"/>
+   <extension-point id="filter" name="Filter" schema="schema/org.palladiosimulator.edp2.visualization.filter.exsd"/>
    <extension-point id="defaultSequences" name="Default Sequences" schema="schema/defaultSequence.exsd"/>
    <extension-point id="datasink" name="Data Sink" schema="schema/datasink.exsd"/>
    <extension

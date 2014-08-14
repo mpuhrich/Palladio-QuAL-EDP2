@@ -3,7 +3,7 @@
 <schema targetNamespace="org.palladiosimulator.edp2.visualization" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.palladiosimulator.edp2.visualization" id="org.palladiosimulator.edp2.filter" name="Filter"/>
+         <meta.schema plugin="org.palladiosimulator.edp2.visualization" id="org.palladiosimulator.edp2.visualization.adapter" name="Adapter"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <sequence>
-            <element ref="filter" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="adapter" minOccurs="1" maxOccurs="unbounded"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,15 +47,20 @@
       </complexType>
    </element>
 
-   <element name="filter">
+   <element name="adapter">
+      <annotation>
+         <documentation>
+            The adapter and its corresponding factory.
+         </documentation>
+      </annotation>
       <complexType>
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The actual Adapter. A class which implements the IAdapter Interface.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.IFilter:"/>
+                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.IAdapter:"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -65,7 +70,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.palladiosimulator.edp2.visualization.datasource.ElementFactory:"/>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.ui.IElementFactory"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -75,7 +80,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.visualization.wizards.IFilterWizard"/>
+                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.visualization.wizards.IAdapterWizard"/>
                </appinfo>
             </annotation>
          </attribute>

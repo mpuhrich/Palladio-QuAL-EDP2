@@ -52,5 +52,35 @@
             id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
       </datasink> 
    </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="utilization"
+            name="Utilization">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="XYPlot"
+            name="XYPlot">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="histogram"
+            name="Histogram">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
+         </datasink>
+      </chainDescription>
+   </extension>
    
 </plugin>

@@ -1,7 +1,7 @@
 package org.palladiosimulator.edp2.visualization.properties.sections;
 
-import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -49,9 +49,9 @@ import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
  * GUI controls for {@link AbstractTransformation}s. Used to display and edit properties of applied
  * data transformations in the Eclipse Properties View if an {@link AbstractEditor} is the currently
  * active editor.
- * 
+ *
  * @author Roland Richter, Dominik Ernst
- * 
+ *
  */
 public class TransformationsPropertySection extends AbstractPropertySection implements ISelectionChangedListener {
     /** LOGGER */
@@ -85,7 +85,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     /**
      * Last, by the user selected {@link AbstractTransformation} in the {@link #treeViewer}.
      */
-    private AbstractAdapter selectedTransformation;
+    private AbstractAdapter selectedAdapter;
 
     /**
      * The last selected {@link AbstractVisualizationSingleDatastreamInput} in the
@@ -276,7 +276,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
      * for the properties table and call
      * {@link TransformationsPropertySection#updateProperties(String, Object)} of the value field is
      * let out by pressing ENTER.
-     * 
+     *
      * @param parentGroup
      *            the parent GUI Object
      */
@@ -339,7 +339,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
                                     case SWT.TRAVERSE_RETURN:
                                         item.setText(column, text.getText());
                                         updateProperties(
-                                        // first column
+                                                // first column
                                                 item.getText(0), text.getText());
 
                                     case SWT.TRAVERSE_ESCAPE:
@@ -374,7 +374,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
      * (org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
      */
@@ -403,7 +403,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     /**
      * Refresh the items in the filters properties table. It shows the properties of the selected
      * filter in the list.
-     * 
+     *
      * @param abstractTransformation
      */
     private void refreshPropertiesTable() {
@@ -411,8 +411,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
         transformationTable.clearAll();
         transformationTable.setItemCount(0);
 
-        // TODO: Get properties of adapter
-        final HashMap<String, Object> properties = (HashMap<String, Object>) Collections.EMPTY_MAP;
+        final Map<String, Object> properties = selectedAdapter.getConfiguration().getProperties();
 
         for (final Object key : properties.keySet()) {
             final TableItem item = new TableItem(transformationTable, SWT.NONE);
@@ -425,7 +424,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
      * Update the properties of the selected filter. It use the method
      * {@link AbstractTransformation#setProperties(HashMap)} to update the properties from the
      * Filter.
-     * 
+     *
      * @param key
      *            the key as String.
      * @param value
@@ -437,7 +436,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#refresh()
      */
     @Override
@@ -453,7 +452,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     public void selectionChanged(final SelectionChangedEvent event) {
         final ITreeSelection selection = (ITreeSelection) event.getSelectionProvider().getSelection();
         if (selection.getFirstElement() instanceof AbstractAdapter) {
-            selectedTransformation = (AbstractAdapter) selection.getFirstElement();
+            selectedAdapter = (AbstractAdapter) selection.getFirstElement();
             refreshPropertiesTable();
         } else {
             selectedInput = (IVisualisationSingleDatastreamInput) selection.getFirstElement();

@@ -273,7 +273,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
                 if (element != null) {
                     // the elements in the list are of type DefaultSequence
                     final ChainDescription sequenceElement = (ChainDescription) element;
-                    final StringBuilder shownString = new StringBuilder(sequenceElement.getSequenceName());
+                    final StringBuilder shownString = new StringBuilder(sequenceElement.getChainName());
                     // return the sequenceName as labels
                     return shownString.toString();
                 }

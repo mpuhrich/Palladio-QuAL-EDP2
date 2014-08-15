@@ -1,9 +1,5 @@
 package org.palladiosimulator.edp2.datastream.chaindescription;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
@@ -38,50 +34,15 @@ public class ChainDescription {
     /**
      * @return the sequenceID
      */
-    public String getSequenceID() {
+    public String getChainID() {
         return chainID;
     }
 
     /**
      * @return the sequenceName
      */
-    public String getSequenceName() {
+    public String getChainName() {
         return chainName;
-    }
-
-    /**
-     * @return the sequenceElements
-     */
-    public List<IDataSource> getSequenceElements() {
-        final LinkedList<IDataSource> result = new LinkedList<IDataSource>();
-        IDataSource current = this.lastChainElement;
-        do {
-            result.offer(current);
-            if (current instanceof IDataSink) {
-                current = ((IDataSink)current).getDataSource();
-            } else {
-                current = null;
-            }
-        } while (current != null);
-        return result;
-    }
-
-    /**
-     * Convenience method.
-     *
-     * @return the first element in <sequenceElements>
-     */
-    public IDataSource getFirstSequenceElement() {
-        return getSequenceElements().get(0);
-    }
-
-    /**
-     * Convenience method.
-     *
-     * @return the number of elements in <sequenceElements>
-     */
-    public int getSize() {
-        return getSequenceElements().size();
     }
 
     /**

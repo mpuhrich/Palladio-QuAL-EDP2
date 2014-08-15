@@ -1,25 +1,14 @@
 package org.palladiosimulator.edp2.visualization.properties.sections;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
-
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.TableLayout;
-import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.TableEditor;
-import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -27,15 +16,13 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
@@ -54,15 +41,6 @@ import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
  *
  */
 public class TransformationsPropertySection extends AbstractPropertySection implements ISelectionChangedListener {
-    /** LOGGER */
-    private static final Logger LOGGER = Logger.getLogger(TransformationsPropertySection.class.getCanonicalName());
-
-    /**
-     * Key which must be the same as the key under which the ID's / names of
-     * {@link AbstractTransformation}s are stored.
-     */
-    private static final String NAME_KEY = "elementName";
-
     /**
      * A tree, which contains the editor's inputs and their transformations (as children)
      */
@@ -70,12 +48,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     /**
      * The table for displaying attributes of a selected transformation.
      */
-    private Table transformationTable;
-
-    /**
-     * Viewer for the table containing the attributes of a transformation.
-     */
-    private TableViewer transformationTableViewer;
+    private EDP2PropertiesTable transformationTable;
 
     /**
      * The current editor which is an {@link ITabbedPropertySheetPageContributor}.
@@ -85,7 +58,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     /**
      * Last, by the user selected {@link AbstractTransformation} in the {@link #treeViewer}.
      */
-    private AbstractAdapter selectedAdapter;
+    private IDataSource selectedAdapter;
 
     /**
      * The last selected {@link AbstractVisualizationSingleDatastreamInput} in the
@@ -281,95 +254,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
      *            the parent GUI Object
      */
     private void initTransformationTable(final Composite parent) {
-
-        // initialize the table, which shows the properties of transformations
-        transformationTable = new Table(parent, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.FULL_SELECTION);
-
-        transformationTable.setLinesVisible(true);
-        transformationTable.setHeaderVisible(true);
-        final GridData gridData = new GridData(GridData.FILL_HORIZONTAL, GridData.FILL_VERTICAL, false, true, 1, 1);
-        gridData.heightHint = 220;
-        gridData.widthHint = 180;
-
-        transformationTable.setLayoutData(gridData);
-        // set width and height of the table
-        // transformationTable.setLayoutData(new RowData(250, 123));
-        // set the weight of the table columns
-        final TableLayout tableLayout = new TableLayout();
-        tableLayout.addColumnData(new ColumnWeightData(2));
-        tableLayout.addColumnData(new ColumnWeightData(1));
-        transformationTable.setLayout(tableLayout);
-
-        transformationTableViewer = new TableViewer(transformationTable);
-        final TableViewerColumn labelColumn = new TableViewerColumn(transformationTableViewer, SWT.NONE);
-        labelColumn.getColumn().setText("Property");
-
-        final TableViewerColumn valueColumn = new TableViewerColumn(transformationTableViewer, SWT.NONE);
-        valueColumn.getColumn().setText("Value");
-
-        // the editor for the cells
-        final TableEditor editor = new TableEditor(transformationTable);
-        editor.horizontalAlignment = SWT.LEFT;
-        editor.grabHorizontal = true;
-        transformationTable.addListener(SWT.MouseDown, new Listener() {
-            @Override
-            public void handleEvent(final Event event) {
-                final Rectangle clientArea = transformationTable.getClientArea();
-                final Point pt = new Point(event.x, event.y);
-                int index = transformationTable.getTopIndex();
-                while (index < transformationTable.getItemCount()) {
-                    boolean visible = false;
-                    final TableItem item = transformationTable.getItem(index);
-
-                    // look if the mouse event is in an editable cell
-                    final Rectangle rect = item.getBounds(1);
-                    if (rect.contains(pt)) {
-                        final int column = 1;
-                        final Text text = new Text(transformationTable, SWT.NONE);
-                        final Listener textListener = new Listener() {
-                            @Override
-                            public void handleEvent(final Event e) {
-                                switch (e.type) {
-                                case SWT.FocusOut:
-                                    item.setText(column, text.getText());
-                                    text.dispose();
-                                    break;
-                                case SWT.Traverse:
-                                    switch (e.detail) {
-                                    case SWT.TRAVERSE_RETURN:
-                                        item.setText(column, text.getText());
-                                        updateProperties(
-                                                // first column
-                                                item.getText(0), text.getText());
-
-                                    case SWT.TRAVERSE_ESCAPE:
-                                        text.dispose();
-                                        e.doit = false;
-                                    }
-                                    break;
-                                }
-                            }
-                        };
-                        text.addListener(SWT.FocusOut, textListener);
-                        text.addListener(SWT.Traverse, textListener);
-                        editor.setEditor(text, item, 1);
-                        text.setText(item.getText(1));
-                        text.selectAll();
-                        text.setFocus();
-                        return;
-                    }
-                    if (!visible && rect.intersects(clientArea)) {
-                        visible = true;
-                    }
-                    // }
-                    if (!visible) {
-                        return;
-                    }
-                    index++;
-                }
-            }
-        });
-
+        transformationTable = new EDP2PropertiesTable(parent);
     }
 
     /*
@@ -407,31 +292,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
      * @param abstractTransformation
      */
     private void refreshPropertiesTable() {
-
-        transformationTable.clearAll();
-        transformationTable.setItemCount(0);
-
-        final Map<String, Object> properties = selectedAdapter.getConfiguration().getProperties();
-
-        for (final Object key : properties.keySet()) {
-            final TableItem item = new TableItem(transformationTable, SWT.NONE);
-            item.setText(0, String.valueOf(key));
-            item.setText(1, String.valueOf(properties.get(key)));
-        }
-    }
-
-    /**
-     * Update the properties of the selected filter. It use the method
-     * {@link AbstractTransformation#setProperties(HashMap)} to update the properties from the
-     * Filter.
-     *
-     * @param key
-     *            the key as String.
-     * @param value
-     *            the value as an Object.
-     */
-    private void updateProperties(final String key, final Object value) {
-        // TODO selectedTransformation.setProperties(newProperties);
+        transformationTable.refreshTable();
     }
 
     /*
@@ -451,11 +312,13 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
         final ITreeSelection selection = (ITreeSelection) event.getSelectionProvider().getSelection();
-        if (selection.getFirstElement() instanceof AbstractAdapter) {
-            selectedAdapter = (AbstractAdapter) selection.getFirstElement();
+        if (selection.getFirstElement() instanceof IDataSource) {
+            selectedAdapter = (IDataSource) selection.getFirstElement();
+            this.transformationTable.setLastSelection(selectedAdapter.getConfiguration());
             refreshPropertiesTable();
         } else {
             selectedInput = (IVisualisationSingleDatastreamInput) selection.getFirstElement();
+            this.transformationTable.setLastSelection(null);
         }
     }
 

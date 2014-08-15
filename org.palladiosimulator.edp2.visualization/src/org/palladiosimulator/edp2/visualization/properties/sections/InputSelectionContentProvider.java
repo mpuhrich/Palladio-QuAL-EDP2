@@ -1,30 +1,36 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2.visualization.properties.sections;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.palladiosimulator.edp2.datastream.IDataSink;
-import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
+import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 
 /**
  * @author Dominik Ernst
- * 
+ *
  */
 public class InputSelectionContentProvider implements ITreeContentProvider {
 
     @Override
     public Object[] getChildren(final Object parentElement) {
-        final ArrayList<Object> transformations = new ArrayList<Object>();
-        IDataSink sinkParent = (IDataSink) parentElement;
-        while (sinkParent.getDataSource() instanceof AbstractAdapter) {
-            sinkParent = (AbstractAdapter) sinkParent.getDataSource();
-            transformations.add(sinkParent);
-        }
+        final List<Object> transformations = new LinkedList<Object>();
+        IDataSource source = ((IDataSink)parentElement).getDataSource();
+        do {
+            transformations.add(source);
+            if (source instanceof IDataSink) {
+                source = ((IDataSink)source).getDataSource();
+            } else {
+                source = null;
+            }
+        } while (source != null);
         return transformations.toArray();
     }
 
@@ -36,10 +42,7 @@ public class InputSelectionContentProvider implements ITreeContentProvider {
 
     @Override
     public boolean hasChildren(final Object element) {
-        if (element instanceof AbstractAdapter) {
-            return false;
-        }
-        return true;
+        return element instanceof IVisualisationSingleDatastreamInput;
     }
 
     @Override

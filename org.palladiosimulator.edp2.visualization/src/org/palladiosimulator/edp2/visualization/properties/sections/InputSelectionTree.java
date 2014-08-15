@@ -9,7 +9,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Tree;
-import org.palladiosimulator.edp2.datastream.IDataSink;
+import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 
@@ -34,8 +34,8 @@ public class InputSelectionTree extends Composite {
         public String getText(final Object element) {
             if (element instanceof IVisualisationSingleDatastreamInput) {
                 return ((IVisualisationSingleDatastreamInput) element).getInputName();
-            } else if (element instanceof IDataSink) {
-                return ((IDataSink) element).getDataSource().getClass().getName();
+            } else if (element instanceof IPropertyConfigurable) {
+                return element.getClass().getSimpleName();
             }
             return super.getText(element);
         }
@@ -43,7 +43,7 @@ public class InputSelectionTree extends Composite {
 
     /**
      * Create the composite.
-     * 
+     *
      * @param parent
      * @param style
      */

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang.ClassUtils;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -37,10 +38,13 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.views.properties.tabbed.ISection;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.palladiosimulator.commons.emfutils.EMFAdapterFactoryHelper;
 import org.palladiosimulator.edp2.visualization.AbstractInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
+
+import de.uka.ipd.sdq.dialogs.selection.SelectEObjectDialog;
 
 /**
  * GUI controls for displaying options of {@link JFreeChartEditor}s. Shows and allows to edit visual
@@ -253,6 +257,8 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
                             openTextDialog(index, commonPropertiesTable);
                         } else if (ClassUtils.isAssignable(Color.class, propertyType, true)) {
                             openColorAndTransparencyDialog(item, specificPropertiesTable);
+                        } else if (ClassUtils.isAssignable(EObject.class, propertyType, true)) {
+                            openEObjectDialog(item, specificPropertiesTable);
                         } else {
                             throw new RuntimeException("Unsupported property type found!");
                         }
@@ -388,6 +394,24 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
             updateColorCell(item, newColor);
             updateProperties(item.getText(labelColumn), newColor, table);
         }
+
+    }
+
+    /**
+     * Opens an {@link EObjectDialog} to change the EObject of the last selected
+     * {@link JFreeChartVisualizationSingleDatastreamInput}.
+     * 
+     * @param item
+     *            index the row-index of the cell to be edited
+     * @param shell
+     *            the Shell in which the dialog is displayed.
+     */
+    protected void openEObjectDialog(final TableItem item, final Table table) {
+        // FIXME
+        final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(), "EObject",
+                null, // FIXME
+                EMFAdapterFactoryHelper.ADPATER_FACTORY_CONTENT_PROVIDER,
+                EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER);
 
     }
 

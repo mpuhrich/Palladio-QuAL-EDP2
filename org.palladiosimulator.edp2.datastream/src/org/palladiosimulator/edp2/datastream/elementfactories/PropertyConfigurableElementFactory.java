@@ -10,10 +10,12 @@ import java.util.Map;
 
 import org.apache.commons.lang.ClassUtils;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.PlatformUI;
+import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 
 /**
@@ -53,6 +55,8 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
         if (ClassUtils.isAssignable(object.getClass(), Color.class, true)) {
             final Color col = (Color) object;
             return String.format("%08x", col.getRGB());
+        } else if (ClassUtils.isAssignable(object.getClass(), EObject.class, true)) {
+            return EMFLoadHelper.getResourceURI((EObject) object);
         }
         return object.toString();
     }
@@ -112,9 +116,10 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
         } else if (ClassUtils.isAssignable(propertyType, Double.class, true)) {
             return Double.parseDouble(string);
         } else if (ClassUtils.isAssignable(propertyType, Color.class, true)) {
-            Color col = Color.decode(string.substring(2));
-            col = new Color(col.getRed(), col.getBlue(), col.getBlue(), Integer.parseInt(string.substring(0, 1), 16));
-            return col;
+            final Color col = Color.decode(string.substring(2));
+            return new Color(col.getRed(), col.getBlue(), col.getBlue(), Integer.parseInt(string.substring(0, 1), 16));
+        } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
+            return EMFLoadHelper.loadModel(string);
         }
         throw new UnsupportedOperationException("Deserialize of unsupported type found: " + propertyType);
     }

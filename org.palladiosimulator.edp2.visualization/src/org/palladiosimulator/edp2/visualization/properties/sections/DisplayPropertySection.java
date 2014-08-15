@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.ClassUtils;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -407,12 +408,16 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
      *            the Shell in which the dialog is displayed.
      */
     protected void openEObjectDialog(final TableItem item, final Table table) {
-        // FIXME
         final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(), "EObject",
-                null, // FIXME
-                EMFAdapterFactoryHelper.ADPATER_FACTORY_CONTENT_PROVIDER,
+                new ResourceSetImpl(), EMFAdapterFactoryHelper.ADPATER_FACTORY_CONTENT_PROVIDER,
                 EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER);
 
+        selectEObjectDialog.setProvidedService(EObject.class);
+        selectEObjectDialog.open();
+        if (selectEObjectDialog.getResult() != null) {
+            final EObject eObject = selectEObjectDialog.getResult();
+            updateProperties(item.getText(labelColumn), eObject, table);
+        }
     }
 
     /**

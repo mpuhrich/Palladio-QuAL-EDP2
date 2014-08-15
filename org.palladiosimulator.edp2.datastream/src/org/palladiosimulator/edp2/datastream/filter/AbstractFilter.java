@@ -12,4 +12,8 @@ public abstract class AbstractFilter extends AbstractAdapter {
         }
     }
 
+    public AbstractFilter(final MetricDescription metricDescription) {
+        super(metricDescription);
+    }
+
 }

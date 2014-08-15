@@ -24,7 +24,7 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
 
             private final Iterator<Measurement> inputIterator;
 
-            private AdapterIterator(Iterator<Measurement> inputIterator) {
+            private AdapterIterator(final Iterator<Measurement> inputIterator) {
                 this.inputIterator = inputIterator;
 
                 this.next = findNext();
@@ -116,13 +116,15 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
         }
     }
 
-    protected final IDataStream<Measurement> inputDataStream;
-    private final IDataSource datasource;
+    private IDataSource datasource;
 
     public AbstractAdapter(final IDataSource datasource, final MetricDescription metricDescription) {
         super(metricDescription);
         this.datasource = datasource;
-        this.inputDataStream = datasource.getDataStream();
+    }
+
+    public AbstractAdapter(final MetricDescription metricDescription) {
+        super(metricDescription);
     }
 
     @Override
@@ -132,25 +134,26 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getDataStream()
      */
     @Override
     public IDataStream<Measurement> getDataStream() {
-        return new AdapterDataStream(this.inputDataStream);
+        final IDataStream<Measurement> inputDataStream = datasource.getDataStream();
+        return new AdapterDataStream(inputDataStream);
     }
 
-    protected boolean shouldSkip(Measurement next) {
+    protected boolean shouldSkip(final Measurement next) {
         return false;
     }
 
-    protected Measurement computeOutputFromInput(Measurement next) {
+    protected Measurement computeOutputFromInput(final Measurement next) {
         return next;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.datastream.AbstractDataSource#createProperties()
      */
     @Override
@@ -160,12 +163,17 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getMeasuringPoint()
      */
     @Override
     public MeasuringPoint getMeasuringPoint() {
         return datasource.getMeasuringPoint();
+    }
+
+    public void setDataSource(final IDataSource newDataSource) {
+        this.datasource = newDataSource;
+        this.datasourceChangedListener.getEventDispatcher().datasourceUpdated();
     }
 
 }

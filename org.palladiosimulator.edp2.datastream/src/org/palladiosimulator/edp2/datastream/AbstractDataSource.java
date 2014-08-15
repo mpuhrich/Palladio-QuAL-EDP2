@@ -13,7 +13,7 @@ import org.palladiosimulator.metricspec.metricentity.MetricEntity;
 public abstract class AbstractDataSource extends MetricEntity implements IDataSource, IPropertyConfigurable {
 
     private final PropertyConfigurable myProperties;
-    private final AbstractObservable<IDataSourceListener> listener = new AbstractObservable<IDataSourceListener>() {
+    protected final AbstractObservable<IDataSourceListener> datasourceChangedListener = new AbstractObservable<IDataSourceListener>() {
     };
 
     public AbstractDataSource() {
@@ -30,7 +30,7 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
 
     /**
      * @return
-     * 
+     *
      */
     private PropertyConfigurable setupProperties() {
         final PropertyConfigurable myProperties = createProperties();
@@ -42,7 +42,7 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
 
             @Override
             public void propertyChangeCompleted() {
-                AbstractDataSource.this.listener.getEventDispatcher().datasourceUpdated();
+                AbstractDataSource.this.datasourceChangedListener.getEventDispatcher().datasourceUpdated();
             }
         });
 
@@ -51,7 +51,7 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getConfiguration()
      */
     @SuppressWarnings("unchecked")
@@ -113,7 +113,7 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
      */
     @Override
     public void addObserver(final IDataSourceListener observer) {
-        listener.addObserver(observer);
+        datasourceChangedListener.addObserver(observer);
     }
 
     /**
@@ -122,12 +122,12 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
      */
     @Override
     public void removeObserver(final IDataSourceListener observer) {
-        listener.removeObserver(observer);
+        datasourceChangedListener.removeObserver(observer);
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(
      * java.lang.String)

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="jfreechart" name="JFreeChart Visualization" schema="schema/org.palladiosimulator.edp2.visualization.jfreechart.exsd"/>
-   <extension-point id="adapter" name="Adapter" schema="schema/org.palladiosimulator.edp2.visualization.adapter.exsd"/>
-   <extension-point id="filter" name="Filter" schema="schema/org.palladiosimulator.edp2.visualization.filter.exsd"/>
-   <extension-point id="defaultSequences" name="Default Sequences" schema="schema/defaultSequence.exsd"/>
-   <extension-point id="datasink" name="Data Sink" schema="schema/datasink.exsd"/>
+   <extension-point id="org.palladiosimulator.edp2.visualization.datasink" name="Data Sink" schema="schema/org.palladiosimulator.edp2.visualization.datasink.exsd"/>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
@@ -52,35 +48,4 @@
          
       </propertySections>
    </extension>
-   <extension
-         point="org.palladiosimulator.edp2.visualization.defaultSequences">
-      <defaultSequence
-            id="responseTime"
-            name="Response Time">
-         <inputMetric
-               UUID="_MenvIiUREd6gmLudJva2Dw"
-               description="default combination for 2-dimensional measurements of response time">
-         </inputMetric>
-         <datasink
-               sinkID="org.palladiosimulator.edp2.visualization.inputs.histogram.HistogramVisualizationInput">
-            <property
-                  key="numberOfBins"
-                  name="the number of bins"
-                  value="10">
-            </property>
-         </datasink>
-      </defaultSequence>
-      <defaultSequence
-            id="utilization"
-            name="Utilization">
-         <inputMetric
-               UUID="no_UUID"
-               description="2-dimensional data with repeating values">
-         </inputMetric>
-         <datasink
-               sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
-         </datasink>
-      </defaultSequence>
-   </extension>
-   
 </plugin>

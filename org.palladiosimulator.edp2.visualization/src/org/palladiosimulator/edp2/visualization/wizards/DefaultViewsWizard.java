@@ -9,6 +9,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
 
 /**
  * A wizard which is opened upon selection/doubleclick on an element containing Experiment Data.
@@ -38,7 +39,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
     /**
      * The default-combination, which was selected by the user.
      */
-    DefaultSequence selectedDefault;
+    ChainDescription selectedDefault;
 
     /**
      * Sets the <finishable> attribute to the specified value.
@@ -126,7 +127,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
     /**
      * @return the selected Default-combination
      */
-    public DefaultSequence getSelectedDefault() {
+    public ChainDescription getSelectedDefault() {
         return selectedDefault;
     }
 
@@ -134,7 +135,7 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
      * @param selectedDefault
      *            the selectedDefault to set
      */
-    public void setSelectedDefault(final DefaultSequence selectedDefault) {
+    public void setSelectedDefault(final ChainDescription selectedDefault) {
         this.selectedDefault = selectedDefault;
     }
 

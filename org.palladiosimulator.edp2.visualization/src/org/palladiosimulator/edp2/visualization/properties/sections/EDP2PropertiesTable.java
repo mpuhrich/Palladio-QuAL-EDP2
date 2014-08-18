@@ -1,12 +1,16 @@
 package org.palladiosimulator.edp2.visualization.properties.sections;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang.ClassUtils;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
@@ -29,7 +33,11 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.palladiosimulator.commons.emfutils.EMFAdapterFactoryHelper;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
+import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
+import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
+import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 
+import de.uka.ipd.sdq.dialogs.selection.FilteredItemsAdapterFactory;
 import de.uka.ipd.sdq.dialogs.selection.SelectEObjectDialog;
 
 class EDP2PropertiesTable {
@@ -44,6 +52,22 @@ class EDP2PropertiesTable {
      * Index of the column in the {@link #visualPropertiesTable} containing the properties' labels.
      */
     private static int labelColumn = 0;
+
+    /** Define the filter list. */
+    private static final ArrayList<Object> FILTER_LIST = new ArrayList<Object>();
+
+    /** Define the additional references. */
+    private static final ArrayList<EReference> ADDITIONAL_REFERENCES = new ArrayList<EReference>();
+
+    static {
+        // FIXME hardcoded reference to SLOs. Remove dependency from EDP2 once fixed.
+
+        FILTER_LIST.add(ServiceLevelObjectiveRepository.class);
+        FILTER_LIST.add(ServiceLevelObjective.class);
+
+        ADDITIONAL_REFERENCES.add(ServicelevelObjectivePackage.eINSTANCE
+                .getServiceLevelObjectiveRepository_Servicelevelobjectives());
+    }
 
     private final Table myTable;
 
@@ -89,8 +113,7 @@ class EDP2PropertiesTable {
                     // look if the mouse event is in the editable column
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
-                        final Class<?> propertyType = lastSelectedInput.getPropertyType(
-                                item.getText(labelColumn));
+                        final Class<?> propertyType = lastSelectedInput.getPropertyType(item.getText(labelColumn));
                         if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
                             openBooleanDialog(index, myTable);
                         } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
@@ -98,7 +121,7 @@ class EDP2PropertiesTable {
                         } else if (ClassUtils.isAssignable(Color.class, propertyType, true)) {
                             openColorAndTransparencyDialog(item, myTable);
                         } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
-                            openEObjectDialog(item, myTable);
+                            openEObjectDialog(item, myTable, propertyType, FILTER_LIST, ADDITIONAL_REFERENCES);
                         } else {
                             throw new RuntimeException("Unsupported property type found!");
                         }
@@ -144,12 +167,15 @@ class EDP2PropertiesTable {
      *
      * @param item
      *            index the row-index of the cell to be edited
+     * @param propertyType 
      * @param shell
      *            the Shell in which the dialog is displayed.
      */
-    protected void openEObjectDialog(final TableItem item, final Table table) {
-        final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(), "EObject",
-                new ResourceSetImpl(), EMFAdapterFactoryHelper.ADPATER_FACTORY_CONTENT_PROVIDER,
+    protected void openEObjectDialog(final TableItem item, final Table table, Class<?> propertyType, final Collection<?> filterList,
+            final Collection<EReference> additionalChildReferences) {
+        final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(), propertyType.getSimpleName(),
+                new ResourceSetImpl(), new AdapterFactoryContentProvider(new FilteredItemsAdapterFactory(
+                        EMFAdapterFactoryHelper.ADAPTER_FACTORY, filterList, additionalChildReferences)),
                 EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER);
 
         selectEObjectDialog.setProvidedService(EObject.class);
@@ -169,8 +195,8 @@ class EDP2PropertiesTable {
             item.setText(1, "(default Color)");
         } else {
             item.setText(1, "");
-            item.setBackground(1, new org.eclipse.swt.graphics.Color(myTable.getDisplay(),
-                    col.getRed(), col.getGreen(), col.getBlue()));
+            item.setBackground(1, new org.eclipse.swt.graphics.Color(myTable.getDisplay(), col.getRed(),
+                    col.getGreen(), col.getBlue()));
         }
     }
 
@@ -285,6 +311,7 @@ class EDP2PropertiesTable {
         final Map<String, Object> newProperties = new HashMap<String, Object>(lastSelectedInput.getProperties());
         newProperties.put(key, value);
         lastSelectedInput.setProperties(newProperties);
+        refreshTable();
     }
 
     /**
@@ -308,8 +335,9 @@ class EDP2PropertiesTable {
                     if (ClassUtils.isAssignable(propertyType, Color.class)) {
                         final Color col = (Color) properties.get(key);
                         updateColorCell(item, col);
-                    } else if (ClassUtils.isAssignable(EObject.class, propertyType)) {
-                        final String displayString = EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER.getText(properties.get(key));
+                    } else if (ClassUtils.isAssignable(propertyType, EObject.class)) {
+                        final String displayString = EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER
+                                .getText(properties.get(key));
                         item.setText(1, displayString);
                     } else {
                         item.setText(1, String.valueOf(properties.get(key)));

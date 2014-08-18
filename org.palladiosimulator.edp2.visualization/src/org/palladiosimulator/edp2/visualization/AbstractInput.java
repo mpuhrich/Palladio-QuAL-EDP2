@@ -9,7 +9,7 @@ import org.palladiosimulator.edp2.datastream.configurable.IPropertyListener;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 
 public abstract class AbstractInput extends AbstractObservable<IVisualisationInputListener> implements
-        IPropertyConfigurable {
+IPropertyConfigurable {
 
     private final PropertyConfigurable myProperties = createConfiguration();
 
@@ -77,7 +77,7 @@ public abstract class AbstractInput extends AbstractObservable<IVisualisationInp
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
      */
     @SuppressWarnings("rawtypes")
@@ -93,7 +93,7 @@ public abstract class AbstractInput extends AbstractObservable<IVisualisationInp
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable#getPropertyType(
      * java.lang.String)
@@ -101,5 +101,24 @@ public abstract class AbstractInput extends AbstractObservable<IVisualisationInp
     @Override
     public Class<?> getPropertyType(final String key) {
         return myProperties.getPropertyType(key);
+    }
+
+    /**
+     * @param key
+     * @return
+     * @see org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable#isPropertyNotSet(java.lang.String)
+     */
+    @Override
+    public boolean isPropertyNotSet(final String key) {
+        return myProperties.isPropertyNotSet(key);
+    }
+
+    /**
+     * @param key
+     * @see org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable#unsetProperty(java.lang.String)
+     */
+    @Override
+    public void unsetProperty(final String key) {
+        myProperties.unsetProperty(key);
     }
 }

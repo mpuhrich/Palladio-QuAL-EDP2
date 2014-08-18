@@ -13,4 +13,5 @@ import java.lang.annotation.Target;
 @Inherited
 public @interface ConfigurationProperty {
     String description();
+    boolean isUnsetable() default false;
 }

@@ -44,7 +44,7 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
 
     @Override
     public void propertyChanged(final String key, final Object oldValue, final Object newValue) {
-        if (keyFieldMap.containsKey(key)) {
+        if (newValue != getNotSetConstant() && keyFieldMap.containsKey(key)) {
             final Field f = keyFieldMap.get(key);
             try {
                 f.setAccessible(true);
@@ -62,7 +62,7 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
     }
 
     /**
-     * 
+     *
      */
     private void initKeyFieldMap() {
         if (keyFieldMap == null) {
@@ -94,4 +94,17 @@ public class ReflectivePropertyConfigurable extends PropertyConfigurable impleme
         return keyFieldMap.get(key).getType();
     }
 
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable#setProperties(java.util.Map)
+     */
+    @Override
+    public void setProperties(final Map<String, Object> newProperties) {
+        for (final String key : keyFieldMap.keySet()) {
+            if (newProperties.containsKey(key) && newProperties.get(key) == getNotSetConstant() &&
+                    !keyFieldMap.get(key).getAnnotation(ConfigurationProperty.class).isUnsetable()) {
+                throw new IllegalArgumentException("Tried to unset a field which is not declared unsetable");
+            }
+        }
+        super.setProperties(newProperties);
+    }
 }

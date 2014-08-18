@@ -137,4 +137,23 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
         return myProperties.getPropertyType(key);
     }
 
+    /**
+     * @param key
+     * @return
+     * @see org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable#isPropertyNotSet(java.lang.String)
+     */
+    @Override
+    public boolean isPropertyNotSet(final String key) {
+        return myProperties.isPropertyNotSet(key);
+    }
+
+    /**
+     * @param key
+     * @see org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable#unsetProperty(java.lang.String)
+     */
+    @Override
+    public void unsetProperty(final String key) {
+        myProperties.unsetProperty(key);
+    }
+
 }

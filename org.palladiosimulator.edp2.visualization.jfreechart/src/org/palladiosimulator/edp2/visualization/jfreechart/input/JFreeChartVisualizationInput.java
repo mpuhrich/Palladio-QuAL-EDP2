@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2.visualization.jfreechart.input;
 
@@ -23,16 +23,16 @@ import org.palladiosimulator.metricspec.BaseMetricDescription;
 /**
  * Implementation of an {@link AbstractVisualizationInput} for
  * {@link JFreeChartVisualizationSingleDatastreamInput}s.
- * 
+ *
  * @author Dominik Ernst
- * 
+ *
  */
 public abstract class JFreeChartVisualizationInput extends
-        AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
+AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.visualization.IVisualisationInput#createNewInput(org.palladiosimulator
      * .edp2.datastream.IDataSource)
@@ -61,7 +61,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IEditorInput#exists()
      */
     @Override
@@ -71,7 +71,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IEditorInput#getImageDescriptor()
      */
     @Override
@@ -81,7 +81,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IEditorInput#getName()
      */
     @Override
@@ -91,7 +91,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IEditorInput#getPersistable()
      */
     @Override
@@ -101,7 +101,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IEditorInput#getToolTipText()
      */
     @Override
@@ -111,7 +111,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
      */
     @Override
@@ -121,7 +121,7 @@ public abstract class JFreeChartVisualizationInput extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -161,8 +161,7 @@ public abstract class JFreeChartVisualizationInput extends
     protected void configureSeriesColors(final AbstractRenderer renderer) {
         for (int i = 0; i < getInputs().size(); i++) {
             final JFreeChartVisualizationSingleDatastreamConfiguration config = getInputs().get(i).getConfiguration();
-            if (config.getColor() != null
-                    && !config.getColor().equals(JFreeChartVisualizationSingleDatastreamConfiguration.NO_COLOR)) {
+            if (!config.isPropertyNotSet(JFreeChartVisualizationSingleDatastreamConfiguration.COLOR_KEY)) {
                 final Color col = config.getColor();
                 renderer.setSeriesPaint(i, col);
             } else {

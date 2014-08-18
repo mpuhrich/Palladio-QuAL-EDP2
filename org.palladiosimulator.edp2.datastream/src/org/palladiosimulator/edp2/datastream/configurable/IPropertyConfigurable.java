@@ -15,4 +15,8 @@ public interface IPropertyConfigurable extends IAdaptable {
     public void setProperties(Map<String, Object> properties);
 
     public abstract Map<? extends String, ? extends Object> getDefaultConfiguration();
+
+    public boolean isPropertyNotSet(final String key);
+
+    public void unsetProperty(final String key);
 }

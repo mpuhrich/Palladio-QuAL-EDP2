@@ -1,4 +1,4 @@
-package org.palladiosimulator.edp2.datastream.elementfactories;
+package org.palladiosimulator.edp2.datastream.configurable;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -16,13 +16,12 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.PlatformUI;
 import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
-import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 
 /**
  * A factory for persistence of {@link IDataFlow} elements.
- * 
+ *
  * @author Dominik Ernst
- * 
+ *
  */
 public abstract class PropertyConfigurableElementFactory implements IElementFactory {
 
@@ -31,7 +30,7 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IElementFactory#createElement(org.eclipse.ui.IMemento)
      */
     @Override
@@ -47,7 +46,11 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
         final Map<String, Object> props = configurable.getProperties();
 
         for (final String key : props.keySet()) {
-            memento.putString(key, serialize(props.get(key)));
+            if (!configurable.isPropertyNotSet(key)) {
+                memento.putString(key, serialize(props.get(key)));
+            } else {
+                memento.putString(key, null);
+            }
         }
     }
 
@@ -89,7 +92,7 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
     /**
      * Method used during restoration of persisted elements. It is the same for all implementations
      * of {@link IDataFlow}.
-     * 
+     *
      * @param memento
      *            the {@link IMemento} from which the properties are read
      * @param propertiesToOverride
@@ -99,7 +102,11 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
             final IPropertyConfigurable configurable) {
         final Map<String, Object> result = new HashMap<String, Object>();
         for (final String key : configurable.getKeys()) {
-            result.put(key, deserialize(memento.getString(key), configurable.getPropertyType(key)));
+            if (memento.getString(key) == null) {
+                result.put(key,PropertyConfigurable.NOT_SET);
+            } else {
+                result.put(key, deserialize(memento.getString(key), configurable.getPropertyType(key)));
+            }
         }
         return Collections.unmodifiableMap(result);
     }

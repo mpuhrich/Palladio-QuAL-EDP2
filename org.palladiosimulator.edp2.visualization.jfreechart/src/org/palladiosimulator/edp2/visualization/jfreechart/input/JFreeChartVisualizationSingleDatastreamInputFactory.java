@@ -8,7 +8,7 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistableElement;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
-import org.palladiosimulator.edp2.datastream.elementfactories.PropertyConfigurableElementFactory;
+import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurableElementFactory;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 
 public class JFreeChartVisualizationSingleDatastreamInputFactory extends PropertyConfigurableElementFactory {

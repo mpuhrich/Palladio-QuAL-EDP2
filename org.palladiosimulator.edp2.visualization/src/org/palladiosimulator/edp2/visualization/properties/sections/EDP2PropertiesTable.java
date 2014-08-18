@@ -300,11 +300,20 @@ class EDP2PropertiesTable {
             for (final String key : properties.keySet()) {
                 final TableItem item = new TableItem(myTable, SWT.NONE);
                 item.setText(0, String.valueOf(key));
-                item.setText(1, String.valueOf(properties.get(key)));
-                final Class<?> propertyType = lastSelectedInput.getPropertyType(key);
-                if (ClassUtils.isAssignable(propertyType, Color.class)) {
-                    final Color col = (Color) properties.get(key);
-                    updateColorCell(item, col);
+
+                if (lastSelectedInput.isPropertyNotSet(key)) {
+                    item.setText(1, "<not set>");
+                } else {
+                    final Class<?> propertyType = lastSelectedInput.getPropertyType(key);
+                    if (ClassUtils.isAssignable(propertyType, Color.class)) {
+                        final Color col = (Color) properties.get(key);
+                        updateColorCell(item, col);
+                    } else if (ClassUtils.isAssignable(EObject.class, propertyType)) {
+                        final String displayString = EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER.getText(properties.get(key));
+                        item.setText(1, displayString);
+                    } else {
+                        item.setText(1, String.valueOf(properties.get(key)));
+                    }
                 }
             }
         }

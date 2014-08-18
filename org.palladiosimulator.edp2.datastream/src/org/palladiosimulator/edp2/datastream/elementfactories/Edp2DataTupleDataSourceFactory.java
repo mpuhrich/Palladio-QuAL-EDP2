@@ -3,6 +3,7 @@ package org.palladiosimulator.edp2.datastream.elementfactories;
 import org.eclipse.ui.IMemento;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
+import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurableElementFactory;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;

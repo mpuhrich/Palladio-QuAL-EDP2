@@ -104,6 +104,9 @@ public abstract class AbstractDataSource extends MetricEntity implements IDataSo
     @Override
     @SuppressWarnings("rawtypes")
     public Object getAdapter(final Class adapter) {
+        if (adapter.isInstance(this)) {
+            return this;
+        }
         return myProperties.getAdapter(adapter);
     }
 

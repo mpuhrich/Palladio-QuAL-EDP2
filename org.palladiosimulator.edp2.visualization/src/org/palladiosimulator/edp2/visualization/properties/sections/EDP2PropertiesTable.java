@@ -117,7 +117,11 @@ class EDP2PropertiesTable {
                         if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
                             openBooleanDialog(index, myTable);
                         } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
-                            openTextDialog(index, myTable);
+                            openTextDialog(index, myTable, String.class);
+                        } else if (ClassUtils.isAssignable(Integer.class, propertyType, true)) {
+                            openTextDialog(index, myTable, Integer.class);
+                        } else if (ClassUtils.isAssignable(Float.class, propertyType, true)) {
+                            openTextDialog(index, myTable, Float.class);
                         } else if (ClassUtils.isAssignable(Color.class, propertyType, true)) {
                             openColorAndTransparencyDialog(item, myTable);
                         } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
@@ -167,16 +171,16 @@ class EDP2PropertiesTable {
      *
      * @param item
      *            index the row-index of the cell to be edited
-     * @param propertyType 
+     * @param propertyType
      * @param shell
      *            the Shell in which the dialog is displayed.
      */
-    protected void openEObjectDialog(final TableItem item, final Table table, Class<?> propertyType, final Collection<?> filterList,
-            final Collection<EReference> additionalChildReferences) {
-        final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(), propertyType.getSimpleName(),
-                new ResourceSetImpl(), new AdapterFactoryContentProvider(new FilteredItemsAdapterFactory(
-                        EMFAdapterFactoryHelper.ADAPTER_FACTORY, filterList, additionalChildReferences)),
-                EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER);
+    protected void openEObjectDialog(final TableItem item, final Table table, Class<?> propertyType,
+            final Collection<?> filterList, final Collection<EReference> additionalChildReferences) {
+        final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(),
+                propertyType.getSimpleName(), new ResourceSetImpl(), new AdapterFactoryContentProvider(
+                        new FilteredItemsAdapterFactory(EMFAdapterFactoryHelper.ADAPTER_FACTORY, filterList,
+                                additionalChildReferences)), EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER);
 
         selectEObjectDialog.setProvidedService(EObject.class);
         selectEObjectDialog.open();
@@ -205,8 +209,9 @@ class EDP2PropertiesTable {
      *
      * @param index
      *            the row-index of the cell to be edited
+     * @param clazz
      */
-    protected void openTextDialog(final int index, final Table table) {
+    protected void openTextDialog(final int index, final Table table, final Class<?> clazz) {
         final TableEditor editor = new TableEditor(table);
         editor.horizontalAlignment = SWT.LEFT;
         editor.grabHorizontal = true;
@@ -224,7 +229,19 @@ class EDP2PropertiesTable {
                     switch (e.detail) {
                     case SWT.TRAVERSE_RETURN:
                         table.getItem(index).setText(editColumn, text.getText());
-                        updateProperties(table.getItem(index).getText(labelColumn), text.getText(), table);
+
+                        // FIXME In case, e.g., Integer is expected but a String is entered,
+                        // Exceptions are thrown.
+                        Object resultValue = null;
+                        if (clazz == Float.class) {
+                            resultValue = Float.parseFloat(text.getText());
+                        } else if (clazz == Integer.class) {
+                            resultValue = Integer.parseInt(text.getText());
+                        } else if (clazz == String.class) {
+                            resultValue = text.getText();
+                        }
+
+                        updateProperties(table.getItem(index).getText(labelColumn), resultValue, table);
                         refreshTable();
                     case SWT.TRAVERSE_ESCAPE:
                         text.dispose();

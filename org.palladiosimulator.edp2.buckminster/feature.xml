@@ -6,6 +6,7 @@
       provider-name="palladiosimulator.org">
 
    <url>
+      <discovery label="Palladio" url="https://sdqweb.ipd.kit.edu/eclipse/palladio/nightly"/>
       <discovery label="Palladio Commons" url="http://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
       <discovery label="Third-Party Wrapper" url="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
       <discovery label="Metric Specification Framework" url="http://sdqweb.ipd.kit.edu/eclipse/metricspec/nightly/"/>

@@ -1,0 +1,1 @@
+For serializing and deserializing JScience Measures see ExperimentDataFactoryImpl.java.

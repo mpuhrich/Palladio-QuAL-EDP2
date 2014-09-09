@@ -1,9 +1,9 @@
 package org.palladiosimulator.edp2.util;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.Platform;
+import java.util.List;
+
 import org.eclipse.emf.ecore.util.Switch;
+import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 
 /**
@@ -17,32 +17,16 @@ public class MeasuringPointUtility {
         if (measuringPoint == null) {
             return "Measure";
         }
-        String result = null;
-        if (Platform.getExtensionRegistry() != null) {
-            try {
-                final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry()
-                        .getConfigurationElementsFor("org.palladiosimulator.edp2.util.formater");
-                for (final IConfigurationElement e : adapterExtensions) {
-                    try {
-                        @SuppressWarnings("unchecked")
-                        final Switch<String> formater = (Switch<String>) e.createExecutableExtension("class");
-                        result = formater.doSwitch(measuringPoint);
-                        if (result != null) {
-                            break;
-                        }
-                    } catch (final CoreException e1) {
-                        throw new RuntimeException();
-                    }
-                }
-            } catch (final Exception e) {
-                result = "<Unknown Measuring Point>";
+
+        final List<Switch<String>> formaters = ExtensionHelper.getExecutableExtensions(
+                "org.palladiosimulator.edp2.util.formater", "class");
+        for (Switch<String> formater : formaters) {
+            final String result = formater.doSwitch(measuringPoint);
+            if (result != null) {
+                return result;
             }
         }
 
-        if (result == null) {
-            throw new IllegalArgumentException("Unknown measuring point type: " + measuringPoint.getClass());
-        }
-
-        return result;
+        return "<Unknown Measuring Point>";
     }
 }

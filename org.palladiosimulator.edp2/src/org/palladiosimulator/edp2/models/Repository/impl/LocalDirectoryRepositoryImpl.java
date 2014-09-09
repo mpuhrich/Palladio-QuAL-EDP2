@@ -11,14 +11,12 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 import org.palladiosimulator.edp2.dao.MetaDaoDelegate;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
@@ -73,34 +71,21 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     }
 
     private MetaDaoDelegate getMetaDaoDelegate(final String wantedId) {
-        MetaDaoDelegate result = null;
-        if (Platform.getExtensionRegistry() != null) {
-            final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry()
-                    .getConfigurationElementsFor("org.palladiosimulator.edp2.dao");
-            for (final IConfigurationElement e : adapterExtensions) {
-                try {
-                    this.id = e.getAttribute("id");
-                    if (this.id.equals(wantedId)) {
-                        result = (MetaDaoDelegate) e.createExecutableExtension("class");
-                        break;
-                    }
-                } catch (final CoreException e1) {
-                    throw new RuntimeException();
-                }
-            }
-        } else {
-            try {
-                result = (MetaDaoDelegate) Class.forName(
-                        "org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMetaDao").newInstance();
-            } catch (final InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (final IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (final ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            return ExtensionHelper.getExecutableExtension("org.palladiosimulator.edp2.dao", "class", "id", wantedId);
+        } catch (final RuntimeException e) {
         }
-        return result;
+
+        try {
+            return (MetaDaoDelegate) Class.forName("org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMetaDao")
+                    .newInstance();
+        } catch (final InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (final IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (final ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

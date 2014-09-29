@@ -12,6 +12,8 @@ public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualizati
     public static final String RANGE_AXIS_LABEL_KEY = "rangeAxisLabel";
     public static final String SHOW_RANGE_AXIS_LABEL_KEY = "showRangeAxisLabel";
     public static final String SHOW_DOMAIN_AXIS_LABEL_KEY = "showDomainAxisLabel";
+    public static final String SHOW_SERIES_LINE_LABEL_KEY = "showSeriesLine";
+    public static final String SHOW_SERIES_SHAPES_LABEL_KEY = "showSeriesShapes";
 
     /**
      * Label for the number axis (= horizontal axis)
@@ -34,6 +36,12 @@ public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualizati
     @ConfigurationProperty(description = "Show Domain Axis Label")
     private boolean showDomainAxisLabel;
 
+    @ConfigurationProperty(description = "Show a line that connects all data points (series shapes).")
+    private boolean showSeriesLine;
+    
+    @ConfigurationProperty(description = "Show all the data points (series shapes).")
+    private boolean showSeriesShapes;
+    
     /*
      * (non-Javadoc)
      * 
@@ -47,6 +55,8 @@ public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualizati
         result.put(SHOW_RANGE_AXIS_LABEL_KEY, true);
         result.put(RANGE_AXIS_LABEL_KEY, "Y");
         result.put(DOMAIN_AXIS_LABEL_KEY, "X");
+        result.put(SHOW_SERIES_LINE_LABEL_KEY, false);
+        result.put(SHOW_SERIES_SHAPES_LABEL_KEY, true);
         return result;
     }
 
@@ -64,5 +74,13 @@ public class XYPlotVisualizationInputConfiguration extends JFreeChartVisualizati
 
     public boolean isShowDomainAxisLabel() {
         return showDomainAxisLabel;
+    }
+    
+    public boolean isShowSeriesLine() {
+        return this.showSeriesLine;
+    }
+    
+    public boolean isShowSeriesShapes() {
+        return this.showSeriesShapes;
     }
 }

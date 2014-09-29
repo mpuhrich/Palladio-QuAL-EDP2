@@ -28,11 +28,11 @@ import org.palladiosimulator.metricspec.BaseMetricDescription;
  *
  */
 public abstract class JFreeChartVisualizationInput extends
-AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
+        AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see
      * org.palladiosimulator.edp2.visualization.IVisualisationInput#createNewInput(org.palladiosimulator
      * .edp2.datastream.IDataSource)
@@ -61,7 +61,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IEditorInput#exists()
      */
     @Override
@@ -71,7 +71,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IEditorInput#getImageDescriptor()
      */
     @Override
@@ -81,7 +81,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IEditorInput#getName()
      */
     @Override
@@ -91,7 +91,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IEditorInput#getPersistable()
      */
     @Override
@@ -101,7 +101,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IEditorInput#getToolTipText()
      */
     @Override
@@ -111,7 +111,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.jface.viewers.ISelection#isEmpty()
      */
     @Override
@@ -121,7 +121,7 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -151,7 +151,9 @@ AbstractVisualizationInput<JFreeChartVisualizationSingleDatastreamInput> {
 
     protected String getAxisDefaultLabel(final int pos) {
         final BaseMetricDescription metric = MetricDescriptionUtility.toBaseMetricDescriptions(getInputs().get(0)
-                .getDataSource().getMetricDesciption())[pos];
+                .getDataSource().getDataStream().getMetricDesciption())[pos];
+        // use the metric description of the out put data stream (retrieved via getDataStream())
+        // here, as a filter may change the metrics of the output data (e.g., utilization filter)
         return metric.getName() + " [" + new DefaultUnitSwitch(metric).doSwitch(metric) + "]";
     }
 

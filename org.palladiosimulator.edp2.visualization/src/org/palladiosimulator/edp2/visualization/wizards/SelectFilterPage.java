@@ -4,6 +4,7 @@
 package org.palladiosimulator.edp2.visualization.wizards;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,12 +31,11 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 
 /**
- * @author Dominik Ernst
+ * @author Dominik Ernst, Florian Rosenthal
  */
 public class SelectFilterPage extends WizardPage implements ISelectionChangedListener {
 
@@ -46,27 +46,23 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
     private static final String FILTER_CLASS_ATTRIBUTE = "class";
     private static final String FILTER_WIZARD_ATTRIBUTE = "wizard";
 
-    AbstractDataSource selectedSource;
-    ArrayList<IFilterWizard> availableFilters;
-
-    List filterList;
-    IStatus selectionStatus;
-    Status statusOK;
-    IFilterWizard selectedFilterWizard;
-    TableViewer filterViewer;
-    AbstractFilter createdFilter;
-
+    private final AbstractDataSource selectedSource;
+    private IStatus selectionStatus;
+    private final Status statusOK;
+    private IFilterWizard selectedFilterWizard;
+    
     protected SelectFilterPage(final String pageName, final AbstractDataSource selectedSource) {
         super(pageName);
         this.selectedSource = selectedSource;
         setDescription("Select the Filter you wish to add.");
-        statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
-        selectionStatus = statusOK;
+        this.statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
+        this.selectionStatus = this.statusOK;
     }
 
     @Override
     public boolean canFlipToNextPage() {
-        return updatePageStatus().isOK();
+        // we can only proceed if a filter is available and has been chosen
+        return updatePageStatus().isOK() && this.selectedFilterWizard != null;
     }
 
     /*
@@ -77,22 +73,29 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
     @Override
     public void createControl(final Composite parent) {
         // create the composite to hold the widgets
-        GridData gd;
-        final Composite composite = new Composite(parent, SWT.NONE);
+        Composite composite = new Composite(parent, SWT.NONE);
 
         // create the desired layout for this wizard page
-        final GridLayout gl = new GridLayout();
+        GridLayout gl = new GridLayout();
         composite.setLayout(gl);
 
-        final Label label = new Label(composite, SWT.NONE);
+        Label label = new Label(composite, SWT.NONE);
         label.setText("Available Filters:");
 
-        final SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
-        gd = new GridData(GridData.FILL_BOTH);
+        SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
+        GridData gd = new GridData(GridData.FILL_BOTH);
         gd.widthHint = 200;
         sashForm.setLayoutData(gd);
 
-        filterViewer = new TableViewer(sashForm, SWT.BORDER);
+        initializeFilterTableViewer(sashForm);
+
+        // set the composite as the control for this page
+        setControl(composite);
+        updatePageStatus();
+    }
+
+    private void initializeFilterTableViewer(SashForm sashForm) {
+        TableViewer filterViewer = new TableViewer(sashForm, SWT.BORDER);
         filterViewer.setContentProvider(new IStructuredContentProvider() {
 
             @Override
@@ -103,7 +106,7 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
 
             @Override
             public Object[] getElements(final Object inputElement) {
-                return getApplicableFilters(selectedSource).toArray();
+                return getApplicableFilters(SelectFilterPage.this.selectedSource).toArray();
             }
 
             @Override
@@ -153,16 +156,12 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
             }
         });
 
-        filterViewer.setInput(getApplicableFilters(selectedSource));
+        filterViewer.setInput(getApplicableFilters(this.selectedSource));
         filterViewer.addSelectionChangedListener(this);
-
-        // set the composite as the control for this page
-        setControl(composite);
-        updatePageStatus();
     }
 
-    protected ArrayList<IFilterWizard> getApplicableFilters(final AbstractDataSource forSource) {
-        availableFilters = new ArrayList<IFilterWizard>();
+    protected List<IFilterWizard> getApplicableFilters(final AbstractDataSource forSource) {
+        List<IFilterWizard> availableFilters = new ArrayList<IFilterWizard>();
         // checks the extension registry for all registered filters and adds
         // them to the list
         final IConfigurationElement[] filterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
@@ -192,21 +191,25 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
      */
     @Override
     public IWizardPage getNextPage() {
-        selectedFilterWizard.setSourceFromCaller(selectedSource, this);
-        selectedFilterWizard.addPages();
-        return selectedFilterWizard.getStartingPage();
+        IWizardPage nextPage = null;
+        if (this.selectedFilterWizard != null) {
+            this.selectedFilterWizard.setSourceFromCaller(selectedSource, this);
+            this.selectedFilterWizard.addPages();
+            nextPage = this.selectedFilterWizard.getStartingPage();
+        }
+        return nextPage;
     }
 
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
-        selectionStatus = statusOK;
+        this.selectionStatus = this.statusOK;
         final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
-        selectedFilterWizard = null;
+        this.selectedFilterWizard = null;
         if (selection == null) {
-            selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select a Filter to proceed.", null);
+            this.selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select a Filter to proceed.", null);
         } else {
-            selectedFilterWizard = (IFilterWizard) selection.getFirstElement();
-            LOGGER.log(Level.INFO, selectedFilterWizard.getWindowTitle());
+            this.selectedFilterWizard = (IFilterWizard) selection.getFirstElement();
+            LOGGER.log(Level.INFO, this.selectedFilterWizard.getWindowTitle());
         }
 
         updatePageStatus();
@@ -215,36 +218,35 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
     }
 
     public IStatus updatePageStatus() {
-        IStatus pageStatus = statusOK;
-        switch (selectionStatus.getSeverity()) {
+        IStatus pageStatus = this.statusOK;
+        switch (this.selectionStatus.getSeverity()) {
         case IStatus.OK:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage());
-            pageStatus = statusOK;
+            setMessage(this.selectionStatus.getMessage());
+            pageStatus = this.statusOK;
             break;
         case IStatus.WARNING:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage(), WizardPage.WARNING);
-            pageStatus = selectionStatus;
+            setMessage(this.selectionStatus.getMessage(), WizardPage.WARNING);
+            pageStatus = this.selectionStatus;
             break;
         case IStatus.INFO:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage(), WizardPage.INFORMATION);
-            pageStatus = selectionStatus;
+            setMessage(this.selectionStatus.getMessage(), WizardPage.INFORMATION);
+            pageStatus = this.selectionStatus;
             break;
         default:
-            setErrorMessage(selectionStatus.getMessage());
+            setErrorMessage(this.selectionStatus.getMessage());
             setMessage(null);
-            pageStatus = selectionStatus;
+            pageStatus = this.selectionStatus;
             break;
         }
         return pageStatus;
     }
 
-    public void setFilter(final AbstractFilter filter) {
+    public void setFilter(AbstractFilter filter) {
         LOGGER.log(Level.INFO, "Filter of FilterWizard set");
-        this.createdFilter = filter;
-        final FilterWizard wizard = (FilterWizard) getWizard();
+        FilterWizard wizard = (FilterWizard) getWizard();
         wizard.setFilter(filter);
     }
 

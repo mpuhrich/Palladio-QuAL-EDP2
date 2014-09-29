@@ -31,7 +31,7 @@ public class InputElementContentProvider implements ITreeContentProvider {
 
     @Override
     public Object[] getElements(Object inputElement) {
-        return ((IVisualisationInput) inputElement).getInputs().toArray();
+        return ((IVisualisationInput<?>) inputElement).getInputs().toArray();
     }
 
     @Override

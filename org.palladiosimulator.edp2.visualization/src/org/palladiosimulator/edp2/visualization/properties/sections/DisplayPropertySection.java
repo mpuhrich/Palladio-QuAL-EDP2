@@ -1,6 +1,5 @@
 package org.palladiosimulator.edp2.visualization.properties.sections;
 
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
@@ -9,11 +8,10 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.views.properties.tabbed.ISection;
+import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.palladiosimulator.edp2.visualization.AbstractInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
@@ -25,10 +23,10 @@ import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
  * settings of the current Editor in the Eclipse Properties View if an {@link JFreeChartEditor} is
  * the currently active editor.
  *
- * @author Roland Richter, Dominik Ernst
+ * @author Roland Richter, Dominik Ernst, Florian Rosenthal
  *
  */
-public class DisplayPropertySection implements ISelectionChangedListener, ISection {
+public class DisplayPropertySection extends AbstractPropertySection implements ISelectionChangedListener {
 
     /**
      * The last active editor;
@@ -55,36 +53,31 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
      */
     private EDP2PropertiesTable commonPropertiesTable;
 
-    /**
-     * The property sheet page containing this section.
-     */
-    private TabbedPropertySheetPage tabbedPropertySheetPage;
-
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#createControls
      * (org.eclipse.swt.widgets.Composite,
      * org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
      */
     @Override
     public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
-        this.tabbedPropertySheetPage = aTabbedPropertySheetPage;
-        composite = getWidgetFactory().createFlatFormComposite(parent);
-        composite.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
-        composite.setSize(800, 275);
-        createLayout(composite);
+        super.createControls(parent, aTabbedPropertySheetPage);
+        this.composite = getWidgetFactory().createFlatFormComposite(parent);
+        this.composite.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+        this.composite.setSize(800, 275);
+        createLayout(this.composite);
 
-        final Group groupCommon = new Group(composite, SWT.NONE);
+        Group groupCommon = new Group(this.composite, SWT.NONE);
         groupCommon.setText("Common Options");
         groupCommon.setLayout(new GridLayout(1, false));
 
-        final Group groupSpecific = new Group(composite, SWT.NONE);
+        Group groupSpecific = new Group(this.composite, SWT.NONE);
         groupSpecific.setText("Input-specific Options");
         groupSpecific.setLayout(new GridLayout(2, false));
 
         // create empty input list
-        listViewer = new InputElementList(groupSpecific, SWT.EMBEDDED, null).getListViewer();
+        this.listViewer = new InputElementList(groupSpecific, SWT.EMBEDDED, null).getListViewer();
         createCommonPropertiesTable(groupCommon);
         createSpecificPropertiesTable(groupSpecific);
     }
@@ -96,7 +89,7 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
      *            the composite in which the table is created
      */
     private void createCommonPropertiesTable(final Composite parent) {
-        commonPropertiesTable = new EDP2PropertiesTable(parent);
+        this.commonPropertiesTable = new EDP2PropertiesTable(parent);
     }
 
     /**
@@ -106,46 +99,41 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
      *            the composite in which the table is created
      */
     private void createSpecificPropertiesTable(final Composite parent) {
-        specificPropertiesTable = new EDP2PropertiesTable(parent);
+        this.specificPropertiesTable = new EDP2PropertiesTable(parent);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
-     * (org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
-     */
-    @Override
-    public void setInput(final IWorkbenchPart part, final ISelection selection) {
-    }
-
-    /**
+     /**
      * Retrieves the input of the last active editor. <code>null</code> if no editor was active
      * during the current session.
      *
      * @return
      */
     private AbstractInput getInput() {
-        return (AbstractInput) editor.getEditorInput();
+        AbstractInput result = null;
+        if (editorExists()) {
+            result = (AbstractInput) this.editor.getEditorInput();
+        }
+        return result;
     }
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.views.properties.tabbed.ISection#refresh()
      */
     @Override
     public void refresh() {
-        if (editorExists() && listViewer.getInput() == null) {
-            commonPropertiesTable.setLastSelection(((AbstractVisualizationInput<?>)getInput()).getConfiguration());
-            listViewer.setInput(getInput());
-            listViewer.addSelectionChangedListener(this);
+        if (editorExists() && this.listViewer.getInput() == null) {
+            this.commonPropertiesTable
+                    .setLastSelection(((AbstractVisualizationInput<?>) getInput()).getConfiguration());
+            this.listViewer.setInput(getInput());
+            this.listViewer.addSelectionChangedListener(this);
         }
-        listViewer.refresh();
+        this.listViewer.refresh();
         if (getInput() != null) {
-            commonPropertiesTable.refreshTable();
+            this.commonPropertiesTable.refreshTable();
         }
-        composite.layout();
+        this.composite.layout();
     }
 
     private void createLayout(final Composite composite) {
@@ -155,66 +143,27 @@ public class DisplayPropertySection implements ISelectionChangedListener, ISecti
 
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
-        final IStructuredSelection selection = (IStructuredSelection) listViewer.getSelection();
-        final AbstractVisualizationSingleDatastreamInput lastSelectedInput = (AbstractVisualizationSingleDatastreamInput) selection.getFirstElement();
+        final IStructuredSelection selection = (IStructuredSelection) this.listViewer.getSelection();
+        final AbstractVisualizationSingleDatastreamInput lastSelectedInput = (AbstractVisualizationSingleDatastreamInput) selection
+                .getFirstElement();
         if (lastSelectedInput != null) {
-            specificPropertiesTable.setLastSelection(lastSelectedInput.getConfiguration());
+            this.specificPropertiesTable.setLastSelection(lastSelectedInput.getConfiguration());
         }
         refresh();
     }
 
-    @Override
-    public void aboutToBeHidden() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void aboutToBeShown() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void dispose() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public int getMinimumHeight() {
-        return SWT.DEFAULT;
-    }
-
     private boolean editorExists() {
-        final IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
-        if (window == null) {
-            editor = null;
-            return false;
-        } else if (window.getActivePage() == null) {
-            editor = null;
-            return false;
-        } else if (window.getActivePage().getActiveEditor() == null) {
-            editor = null;
-            return false;
-        } else {
-            editor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) window.getActivePage()
-                    .getActiveEditor();
-            return true;
+        IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
+        this.editor = null;
+
+        if (window != null && window.getActivePage() != null) {
+            IEditorPart activeEditor = window.getActivePage().getActiveEditor();
+            if (activeEditor != null) {
+                @SuppressWarnings("unchecked")
+                AbstractEditor<AbstractVisualizationSingleDatastreamInput> activeAbstractEditor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) activeEditor;
+                this.editor = activeAbstractEditor;
+            }
         }
-    }
-
-    @Override
-    public boolean shouldUseExtraSpace() {
-        return false;
-    }
-
-    /**
-     * Get the widget factory for the property sheet page.
-     *
-     * @return the widget factory.
-     */
-    public TabbedPropertySheetWidgetFactory getWidgetFactory() {
-        return tabbedPropertySheetPage.getWidgetFactory();
+        return this.editor != null;
     }
 }

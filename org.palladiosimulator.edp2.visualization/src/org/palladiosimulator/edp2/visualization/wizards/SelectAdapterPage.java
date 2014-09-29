@@ -4,6 +4,7 @@
 package org.palladiosimulator.edp2.visualization.wizards;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +31,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 
@@ -38,7 +38,7 @@ import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
  * {@link WizardPage}, which provides a list of all available adapters {@link AbstractAdapter}, that
  * are registered as extensions.
  * 
- * @author Dominik Ernst
+ * @author Dominik Ernst, Florian Rosenthal
  */
 public class SelectAdapterPage extends WizardPage implements ISelectionChangedListener {
 
@@ -49,27 +49,24 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
     private static final String ADAPTER_CLASS_ATTRIBUTE = "class";
     private static final String ADAPTER_WIZARD_ATTRIBUTE = "wizard";
 
-    AbstractDataSource selectedSource;
-    ArrayList<IAdapterWizard> availableAdapters;
+    private AbstractDataSource selectedSource;
 
-    List adapterList;
-    IStatus selectionStatus;
-    Status statusOK;
-    IAdapterWizard selectedAdapterWizard;
-    TableViewer adapterViewer;
-    AbstractAdapter createdAdapter;
+    private IStatus selectionStatus;
+    private final Status statusOK;
+    private IAdapterWizard selectedAdapterWizard;
 
     protected SelectAdapterPage(final String pageName, final AbstractDataSource selectedSource) {
         super(pageName);
         this.selectedSource = selectedSource;
         setDescription("Select the Adapter you wish to add.");
-        statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
-        selectionStatus = statusOK;
+        this.statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
+        this.selectionStatus = statusOK;
     }
 
     @Override
     public boolean canFlipToNextPage() {
-        return updatePageStatus().isOK();
+     // we can only proceed if an adapter is available and has been chosen
+        return updatePageStatus().isOK() && this.selectedAdapterWizard != null;
     }
 
     /*
@@ -80,7 +77,6 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
     @Override
     public void createControl(final Composite parent) {
         // create the composite to hold the widgets
-        GridData gd;
         final Composite composite = new Composite(parent, SWT.NONE);
 
         // create the desired layout for this wizard page
@@ -91,11 +87,19 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
         label.setText("Available Adapters:");
 
         final SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
-        gd = new GridData(GridData.FILL_BOTH);
+        GridData gd = new GridData(GridData.FILL_BOTH);
         gd.widthHint = 200;
         sashForm.setLayoutData(gd);
 
-        adapterViewer = new TableViewer(sashForm, SWT.BORDER);
+        initializeAdapterTableViewer(sashForm);
+
+        // set the composite as the control for this page
+        setControl(composite);
+        updatePageStatus();
+    }
+
+    private void initializeAdapterTableViewer(SashForm sashForm) {
+        TableViewer adapterViewer = new TableViewer(sashForm, SWT.BORDER);
         adapterViewer.setContentProvider(new IStructuredContentProvider() {
 
             @Override
@@ -106,7 +110,7 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
 
             @Override
             public Object[] getElements(final Object inputElement) {
-                return getApplicableAdapters(selectedSource).toArray();
+                return getApplicableAdapters(SelectAdapterPage.this.selectedSource).toArray();
             }
 
             @Override
@@ -156,16 +160,12 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
             }
         });
 
-        adapterViewer.setInput(getApplicableAdapters(selectedSource));
+        adapterViewer.setInput(getApplicableAdapters(this.selectedSource));
         adapterViewer.addSelectionChangedListener(this);
-
-        // set the composite as the control for this page
-        setControl(composite);
-        updatePageStatus();
     }
 
-    protected ArrayList<IAdapterWizard> getApplicableAdapters(final AbstractDataSource forSource) {
-        availableAdapters = new ArrayList<IAdapterWizard>();
+    protected List<IAdapterWizard> getApplicableAdapters(final AbstractDataSource forSource) {
+        List<IAdapterWizard> availableAdapters = new ArrayList<IAdapterWizard>();
         // checks the extension registry for all registered adapters and adds
         // them to the list
         final IConfigurationElement[] adapterExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
@@ -196,21 +196,25 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
      */
     @Override
     public IWizardPage getNextPage() {
-        selectedAdapterWizard.setSourceFromCaller(selectedSource, this);
-        selectedAdapterWizard.addPages();
-        return selectedAdapterWizard.getStartingPage();
+        IWizardPage nextPage = null;
+        if (this.selectedAdapterWizard != null) {
+            this.selectedAdapterWizard.setSourceFromCaller(this.selectedSource, this);
+            this.selectedAdapterWizard.addPages();
+            nextPage = this.selectedAdapterWizard.getStartingPage();
+        }
+        return nextPage;
     }
 
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
-        selectionStatus = statusOK;
+        this.selectionStatus = this.statusOK;
         final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
-        selectedAdapterWizard = null;
+        this.selectedAdapterWizard = null;
         if (selection == null) {
-            selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select an adapter to proceed.", null);
+            this.selectionStatus = new Status(IStatus.ERROR, "", 0, "Must select an adapter to proceed.", null);
         } else {
             selectedAdapterWizard = (IAdapterWizard) selection.getFirstElement();
-            LOGGER.log(Level.INFO, selectedAdapterWizard.getWindowTitle());
+            LOGGER.log(Level.INFO, this.selectedAdapterWizard.getWindowTitle());
         }
 
         updatePageStatus();
@@ -219,27 +223,27 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
     }
 
     public IStatus updatePageStatus() {
-        IStatus pageStatus = statusOK;
-        switch (selectionStatus.getSeverity()) {
+        IStatus pageStatus = this.statusOK;
+        switch (this.selectionStatus.getSeverity()) {
         case IStatus.OK:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage());
-            pageStatus = statusOK;
+            setMessage(this.selectionStatus.getMessage());
+            pageStatus = this.statusOK;
             break;
         case IStatus.WARNING:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage(), WizardPage.WARNING);
-            pageStatus = selectionStatus;
+            setMessage(this.selectionStatus.getMessage(), WizardPage.WARNING);
+            pageStatus = this.selectionStatus;
             break;
         case IStatus.INFO:
             setErrorMessage(null);
-            setMessage(selectionStatus.getMessage(), WizardPage.INFORMATION);
-            pageStatus = selectionStatus;
+            setMessage(this.selectionStatus.getMessage(), WizardPage.INFORMATION);
+            pageStatus = this.selectionStatus;
             break;
         default:
-            setErrorMessage(selectionStatus.getMessage());
+            setErrorMessage(this.selectionStatus.getMessage());
             setMessage(null);
-            pageStatus = selectionStatus;
+            pageStatus = this.selectionStatus;
             break;
         }
         return pageStatus;
@@ -247,8 +251,7 @@ public class SelectAdapterPage extends WizardPage implements ISelectionChangedLi
 
     public void setAdapter(final AbstractAdapter adapter) {
         LOGGER.log(Level.INFO, "adapter of AdapterWizard set");
-        this.createdAdapter = adapter;
-        final AdapterWizard wizard = (AdapterWizard) getWizard();
+        AdapterWizard wizard = (AdapterWizard) getWizard();
         wizard.setAdapter(adapter);
     }
 

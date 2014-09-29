@@ -47,7 +47,7 @@ public class InputSelectionContentProvider implements ITreeContentProvider {
 
     @Override
     public Object[] getElements(final Object inputElement) {
-        return ((IVisualisationInput) inputElement).getInputs().toArray();
+        return ((IVisualisationInput<?>) inputElement).getInputs().toArray();
     }
 
     @Override

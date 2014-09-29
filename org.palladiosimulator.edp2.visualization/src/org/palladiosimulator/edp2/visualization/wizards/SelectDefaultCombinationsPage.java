@@ -2,7 +2,6 @@ package org.palladiosimulator.edp2.visualization.wizards;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -29,7 +28,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
@@ -43,7 +41,7 @@ import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
  * visualizations only, and defaults as described by extensions to the extension point
  * <code>org.palladiosimulator.edp2.visualization.defaultSequences</code>.
  *
- * @author Dominik Ernst
+ * @author Dominik Ernst, slightly adapted by Florian Rosenthal
  */
 public class SelectDefaultCombinationsPage extends WizardPage implements ISelectionChangedListener {
 
@@ -63,10 +61,12 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
      * Attribute names and element IDs as used in extension points.
      */
     private static final String ELEMENT_ID_DATASINK = "datasink";
+    private static final String ELEMENT_ID_FILTER = "filter";
     private static final String ELEMENT_ID_PROPERTY = "property";
     private static final String PROPERTY_KEY_ATTRIBUTE = "key";
     private static final String PROPERTY_VALUE_ATTRIBUTE = "value";
     private static final String DATASINK_ID_ATTRIBUTE = "sinkID";
+    private static final String FILTER_CLASS_ATTRIBUTE = "filterClass";
 
     private static final String CLASS_ATTRIBUTE = "class";
     private static final String ID_ATTRIBUTE = "id";
@@ -91,6 +91,8 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
      * Viewer for the possible choices of Filter/Adapter/Chart combinations.
      */
     private TableViewer choiceViewer;
+    
+    private final List<ChainDescription> applicableSequences;
 
     /**
      * Constructor
@@ -103,103 +105,13 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
     protected SelectDefaultCombinationsPage(final String pageName, final IDataSource selectedSource) {
         super(pageName);
         this.selectedSource = selectedSource;
+        this.applicableSequences = getApplicableSequences();
         setDescription("Choose a combination of Filters/Adapters + Editor to display" + "the selected Data.");
         statusOK = new Status(IStatus.OK, "not_used", 0, "", null);
         selectionStatus = new Status(IStatus.INFO, "not_used", 0, "Please select a Visualization to proceed.", null);
     }
 
-    private List<ChainDescription> getChainDescriptionsFromExtensions() {
-        final Map<String, AbstractVisualizationInput<?>> charts = getRegisteredVisualizations();
-        final LinkedList<ChainDescription> result = new LinkedList<ChainDescription>();
-
-        final IConfigurationElement[] defaultSequencesExtensions = Platform.getExtensionRegistry()
-                .getConfigurationElementsFor(CHAIN_DESCRIPTION_EXTENSION_POINT_ID);
-
-        for (final IConfigurationElement e : defaultSequencesExtensions) {
-            final IConfigurationElement[] sequence = e.getChildren();
-
-            IPropertyConfigurable visualization = null;
-            IDataSource lastDataSource = null;
-            for (final IConfigurationElement element : sequence) {
-                final IPropertyConfigurable configurable = createAndConfigureChainElement(charts, element);
-                if (element.getName().equals(ELEMENT_ID_DATASINK)) {
-                    visualization = configurable;
-                } else if (configurable instanceof AbstractAdapter) {
-                    final AbstractAdapter adapter = (AbstractAdapter) configurable;
-                    if (lastDataSource != null) {
-                        adapter.setDataSource(lastDataSource);
-                    }
-                    lastDataSource = adapter;
-                }
-            }
-
-            final ChainDescription newChainDescription = new ChainDescription(
-                    e.getAttribute(ID_ATTRIBUTE),
-                    e.getAttribute(NAME_ATTRIBUTE),
-                    lastDataSource,
-                    visualization);
-            result.add(newChainDescription);
-        }
-        return result;
-    }
-
-    /**
-     * @param charts
-     * @param element
-     * @return
-     */
-    private IPropertyConfigurable createAndConfigureChainElement(
-            final Map<String, AbstractVisualizationInput<?>> charts, final IConfigurationElement element) {
-        final IPropertyConfigurable configurable = createChainElement(charts, element);
-        final Map<String, Object> elementProperties = new HashMap<String, Object>(configurable.getProperties());
-        for (final IConfigurationElement property : element.getChildren(ELEMENT_ID_PROPERTY)) {
-            elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
-                    property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
-        }
-        configurable.setProperties(elementProperties);
-        return configurable;
-    }
-
-    /**
-     * @param charts
-     * @param element
-     * @return
-     */
-    private IPropertyConfigurable createChainElement(final Map<String, AbstractVisualizationInput<?>> charts,
-            final IConfigurationElement element) {
-        try {
-            if (element.getName().equals(ELEMENT_ID_DATASINK)) {
-                return charts.get(element.getAttribute(DATASINK_ID_ATTRIBUTE));
-            } else if (element.getName().equals("filter")) {
-                return (IPropertyConfigurable) element.createExecutableExtension("filterClass");
-            }
-        } catch (final CoreException e1) {
-            LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
-            LOGGER.log(Level.SEVERE, e1.getMessage());
-            throw new RuntimeException(e1.getMessage());
-        }
-        throw new IllegalArgumentException("Configuration element found which is not supported");
-    }
-
-    private Map<String, AbstractVisualizationInput<?>> getRegisteredVisualizations() {
-        final Map<String, AbstractVisualizationInput<?>> result = new HashMap<String, AbstractVisualizationInput<?>>();
-        final IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
-                .getConfigurationElementsFor(DATASINK_EXTENSION_POINT_ID);
-        for (final IConfigurationElement e : visualizationExtensions) {
-            try {
-                final String id = e.getAttribute(ID_ATTRIBUTE);
-                final Object o = e.createExecutableExtension(CLASS_ATTRIBUTE);
-                result.put(id, (AbstractVisualizationInput<?>) o);
-            } catch (final CoreException e1) {
-                LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
-                LOGGER.log(Level.SEVERE, e1.getMessage());
-                throw new RuntimeException();
-            }
-        }
-        return result;
-    }
-
-    /*
+     /*
      * (non-Javadoc)
      *
      * @see org.eclipse.jface.wizard.WizardPage#canFlipToNextPage()
@@ -218,23 +130,30 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
     @Override
     public void createControl(final Composite parent) {
         // create the composite to hold the widgets
-        GridData gd;
-        final Composite composite = new Composite(parent, SWT.NONE);
+        Composite composite = new Composite(parent, SWT.NONE);
 
         // create the desired layout for this wizard page
-        final GridLayout gl = new GridLayout();
+        GridLayout gl = new GridLayout();
         composite.setLayout(gl);
 
-        final Label label = new Label(composite, SWT.NONE);
+        Label label = new Label(composite, SWT.NONE);
         label.setText("Available Choices:");
 
-        final SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
-        gd = new GridData(GridData.FILL_BOTH);
+        SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
+        GridData gd = new GridData(GridData.FILL_BOTH);
         gd.widthHint = 200;
         sashForm.setLayoutData(gd);
 
-        choiceViewer = new TableViewer(sashForm, SWT.BORDER);
-        choiceViewer.setContentProvider(new IStructuredContentProvider() {
+        this.choiceViewer = new TableViewer(sashForm, SWT.BORDER);
+        initializeChoiceViewer();
+
+        // set the composite as the control for this page
+        setControl(composite);
+        updatePageStatus();
+    }
+
+    private void initializeChoiceViewer() {
+        this.choiceViewer.setContentProvider(new IStructuredContentProvider() {
             @Override
             public void dispose() {
                 // do nothing here
@@ -242,7 +161,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
 
             @Override
             public Object[] getElements(final Object inputElement) {
-                return getApplicableSequences(selectedSource).toArray();
+                return SelectDefaultCombinationsPage.this.applicableSequences.toArray();
             }
 
             @Override
@@ -250,7 +169,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
                 // do nothing here
             }
         });
-        choiceViewer.setLabelProvider(new ILabelProvider() {
+        this.choiceViewer.setLabelProvider(new ILabelProvider() {
 
             @Override
             public void addListener(final ILabelProviderListener listener) {
@@ -264,18 +183,15 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
 
             @Override
             public Image getImage(final Object element) {
-                // do nothing here
                 return null;
             }
 
             @Override
             public String getText(final Object element) {
                 if (element != null) {
-                    // the elements in the list are of type DefaultSequence
-                    final ChainDescription sequenceElement = (ChainDescription) element;
-                    final StringBuilder shownString = new StringBuilder(sequenceElement.getChainName());
-                    // return the sequenceName as labels
-                    return shownString.toString();
+                    // the elements in the list are of type ChainDescription
+                    ChainDescription sequenceElement = (ChainDescription) element;
+                    return sequenceElement.getChainName();
                 }
                 return null;
             }
@@ -292,42 +208,106 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
             }
         });
 
-        choiceViewer.setInput(getApplicableSequences(selectedSource));
-        choiceViewer.addSelectionChangedListener(this);
-
-        // set the composite as the control for this page
-        setControl(composite);
-        updatePageStatus();
+        this.choiceViewer.setInput(this.applicableSequences);
+        this.choiceViewer.addSelectionChangedListener(this);
     }
 
     /**
-     * Method that checks if a given {@link AbstractDataSource} can be processed by any registered
-     * {@link ChainDescription}-objects and returns the possible results as a list.
+     * Method that checks if a the currently selected data source can be processed by any registered
+     * {@link ChainDescription}-objects and returns the possibilities in a list.
      *
-     * @param forSource
-     *            the {@link AbstractDataSource} for which sequences are returned
-     * @return list of {@link ChainDescription}-objects that can process the given source.
+     * @return list of {@link ChainDescription}-objects that can process the current data source.
      */
-    private ArrayList<ChainDescription> getApplicableSequences(final IDataSource forSource) {
-        final ArrayList<ChainDescription> applicableSequences = new ArrayList<ChainDescription>();
-
-        for (final ChainDescription seq : getChainDescriptionsFromExtensions()) {
-            // TODO FIXME
-            // if (seq.getSize() > 0) {
-            // if (seq.getFirstSequenceElement().canAccept(forSource)) {
-            // applicableSequences.add(seq);
-            // }
-            // } else {
-            // if (seq.getVisualization().canAccept(forSource)) {
-            // applicableSequences.add(seq);
-            // }
-            // }
-            applicableSequences.add(seq);
-        }
-
-        return applicableSequences;
+    private List<ChainDescription> getApplicableSequences() {
+        return getApplicableChainDescriptionsFromExtensions();
     }
 
+    private List<ChainDescription> getApplicableChainDescriptionsFromExtensions() {
+        List<ChainDescription> result = new ArrayList<ChainDescription>();
+        
+        Map<String, AbstractVisualizationInput<?>> charts = getRegisteredVisualizations();
+        IConfigurationElement[] chainDescriptionExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(CHAIN_DESCRIPTION_EXTENSION_POINT_ID);
+
+        for (IConfigurationElement e : chainDescriptionExtensions) {
+            
+            IPropertyConfigurable visualization = null;
+            IDataSource lastDataSource = null;
+            boolean isApplicable = true;
+            for (IConfigurationElement child : e.getChildren()) {
+                IPropertyConfigurable configurable = createAndConfigureChainElement(charts, child);
+                if (child.getName().equals(ELEMENT_ID_DATASINK)) {
+                    visualization = configurable;
+                } else if (configurable instanceof AbstractAdapter) { //at least one filter in chain
+                    AbstractAdapter adapter = (AbstractAdapter) configurable;
+                    if (!this.selectedSource.isCompatibleWith(adapter.getMetricDesciption())) {
+                        isApplicable = false; //filter is not applicable to selected data source
+                        break;
+                    }
+                    if (lastDataSource != null) {
+                        adapter.setDataSource(lastDataSource);
+                    }
+                    lastDataSource = adapter;
+                }
+            }
+            if (isApplicable) { //only if (optional) filters are applicable to data source
+                final ChainDescription newChainDescription = new ChainDescription(
+                        e.getAttribute(ID_ATTRIBUTE),
+                        e.getAttribute(NAME_ATTRIBUTE),
+                        lastDataSource,
+                        visualization);
+                result.add(newChainDescription);
+            }
+        }
+        return result;
+    }
+    
+    private IPropertyConfigurable createAndConfigureChainElement(
+            final Map<String, AbstractVisualizationInput<?>> charts, final IConfigurationElement element) {
+        final IPropertyConfigurable configurable = createChainElement(charts, element);
+        final Map<String, Object> elementProperties = new HashMap<String, Object>(configurable.getProperties());
+        for (final IConfigurationElement property : element.getChildren(ELEMENT_ID_PROPERTY)) {
+            elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
+                    property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
+        }
+        configurable.setProperties(elementProperties);
+        return configurable;
+    }
+
+   private IPropertyConfigurable createChainElement(final Map<String, AbstractVisualizationInput<?>> charts,
+            final IConfigurationElement element) {
+        try {
+            if (element.getName().equals(ELEMENT_ID_DATASINK)) {
+                return charts.get(element.getAttribute(DATASINK_ID_ATTRIBUTE));
+            } else if (element.getName().equals(ELEMENT_ID_FILTER)) {
+                return (IPropertyConfigurable) element.createExecutableExtension(FILTER_CLASS_ATTRIBUTE);
+            }
+        } catch (final CoreException e1) {
+            LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
+            LOGGER.log(Level.SEVERE, e1.getMessage());
+            throw new RuntimeException(e1.getMessage());
+        }
+        throw new IllegalArgumentException("Configuration element found which is not supported");
+    }
+
+    private Map<String, AbstractVisualizationInput<?>> getRegisteredVisualizations() {
+        Map<String, AbstractVisualizationInput<?>> result = new HashMap<String, AbstractVisualizationInput<?>>();
+        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(DATASINK_EXTENSION_POINT_ID);
+        for (IConfigurationElement e : visualizationExtensions) {
+            try {
+                String id = e.getAttribute(ID_ATTRIBUTE);
+                AbstractVisualizationInput<?> visualization = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
+                result.put(id, visualization);
+            } catch (CoreException e1) {
+                LOGGER.log(Level.SEVERE, "Error in creating a Visualization referenced in an extension: Respective Id is " + e.getAttribute(ID_ATTRIBUTE) + ".");
+                LOGGER.log(Level.SEVERE, e1.getMessage());
+                throw new RuntimeException();
+            }
+        }
+        return result;
+    }
+    
     /*
      * (non-Javadoc)
      *
@@ -343,7 +323,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
                     null);
         } else {
             final int index = choiceViewer.getTable().getSelectionIndex();
-            setSelectedDefault(getApplicableSequences(selectedSource).get(index));
+            setSelectedDefault(this.applicableSequences.get(index));
         }
 
         updatePageStatus();

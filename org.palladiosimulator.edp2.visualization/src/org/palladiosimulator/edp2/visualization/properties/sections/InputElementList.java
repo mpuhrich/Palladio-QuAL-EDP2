@@ -40,7 +40,7 @@ public class InputElementList extends Composite {
      * @param parent
      * @param style
      */
-    public InputElementList(Composite parent, int style, IVisualisationInput inputHandle) {
+    public InputElementList(Composite parent, int style, IVisualisationInput<?> inputHandle) {
         super(parent, SWT.EMBEDDED);
         setLayout(new GridLayout(1, false));
 

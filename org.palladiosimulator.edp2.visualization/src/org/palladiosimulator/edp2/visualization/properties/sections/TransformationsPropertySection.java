@@ -16,6 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
@@ -37,7 +38,7 @@ import org.palladiosimulator.edp2.visualization.wizards.FilterWizard;
  * data transformations in the Eclipse Properties View if an {@link AbstractEditor} is the currently
  * active editor.
  *
- * @author Roland Richter, Dominik Ernst
+ * @author Roland Richter, Dominik Ernst, Florian Rosenthal
  *
  */
 public class TransformationsPropertySection extends AbstractPropertySection implements ISelectionChangedListener {
@@ -53,7 +54,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     /**
      * The current editor which is an {@link ITabbedPropertySheetPageContributor}.
      */
-    private AbstractEditor editor;
+    private AbstractEditor<AbstractVisualizationSingleDatastreamInput> editor;
 
     /**
      * Last, by the user selected {@link AbstractTransformation} in the {@link #treeViewer}.
@@ -67,11 +68,6 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     private IVisualisationSingleDatastreamInput selectedInput;
 
     /**
-     * The parent container.
-     */
-    private Composite container;
-
-    /**
      * Create the look and items of the properties. It is called, if one of the editors in the
      * package visualization.editors is selected.
      */
@@ -80,7 +76,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
         super.createControls(parent, aTabbedPropertySheetPage);
 
-        container = getWidgetFactory().createFlatFormComposite(parent);
+        Composite container = getWidgetFactory().createFlatFormComposite(parent);
         container.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
         final GridLayout layout = new GridLayout(1, false);
         layout.marginWidth = 2;
@@ -98,16 +94,21 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
         initTransformationTable(group);
 
-        final Button buttonAdapter = new Button(group, SWT.PUSH);
+        Button buttonAdapter = new Button(group, SWT.PUSH);
         buttonAdapter.setText("Add new Adapter..");
         gridData = new GridData(SWT.FILL, SWT.FILL, false, false, 1, 1);
         gridData.widthHint = 120;
         buttonAdapter.setLayoutData(gridData);
-        final Button buttonFilter = new Button(group, SWT.PUSH);
+        Button buttonFilter = new Button(group, SWT.PUSH);
         buttonFilter.setText("Add new Filter..");
         buttonFilter.setLayoutData(gridData);
 
-        final Listener btnListener = new Listener() {
+        initializeButtonListeners(buttonAdapter, buttonFilter);
+
+    }
+
+    private void initializeButtonListeners(final Button buttonAdapter, final Button buttonFilter) {
+        Listener btnListener = new Listener() {
 
             // TODO fix references on previous transformations etc.
             @Override
@@ -119,38 +120,42 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
                             "To add a transformation, a data series, to which the transformation should "
                                     + "be added, must be selected first");
                 } else {
+                    boolean updateEditorContents = false;
                     if (event.widget == buttonAdapter) {
                         final AdapterWizard wizard = new AdapterWizard(
                                 (AbstractDataSource) selectedInput.getDataSource());
-                        AbstractAdapter adapter = null;
                         final WizardDialog wdialog = new WizardDialog(Activator.getDefault().getWorkbench()
                                 .getActiveWorkbenchWindow().getShell(), wizard);
                         wdialog.open();
                         if (wdialog.getReturnCode() == Window.OK) {
-                            adapter = wizard.getAdapter();
-                            handleSemanticChange(adapter);
+                            AbstractAdapter adapter = wizard.getAdapter();
+                            if (adapter != null) {
+                                handleSemanticChange(adapter);
+                                updateEditorContents = true;
+                            }
                         }
-
                     } else if (event.widget == buttonFilter) {
                         final FilterWizard wizard = new FilterWizard((AbstractDataSource) selectedInput.getDataSource());
-                        AbstractFilter filter = null;
                         final WizardDialog wdialog = new WizardDialog(Activator.getDefault().getWorkbench()
                                 .getActiveWorkbenchWindow().getShell(), wizard);
                         wdialog.open();
                         if (wdialog.getReturnCode() == Window.OK) {
-                            filter = wizard.getFilter();
-                            // TODO selectedInput.setSource(filter);
-                            refresh();
+                            AbstractFilter filter = wizard.getFilter();
+                            if (filter != null) {
+                                // TODO selectedInput.setSource(filter);
+                                refresh();
+                                updateEditorContents = true;
+                            }
                         }
                     }
-
-                    ((AbstractEditor<AbstractVisualizationSingleDatastreamInput>) editor).updateEditorContents();
+                    if (updateEditorContents && editor != null) {
+                        editor.updateEditorContents();
+                    }
                 }
             }
         };
         buttonAdapter.addListener(SWT.Selection, btnListener);
         buttonFilter.addListener(SWT.Selection, btnListener);
-
     }
 
     private void handleSemanticChange(final AbstractAdapter adapter) {
@@ -259,7 +264,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#setInput
      * (org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
      */
@@ -269,20 +274,18 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     }
 
     private boolean editorExists() {
-        final IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
-        if (window == null) {
-            editor = null;
-            return false;
-        } else if (window.getActivePage() == null) {
-            editor = null;
-            return false;
-        } else if (window.getActivePage().getActiveEditor() == null) {
-            editor = null;
-            return false;
-        } else {
-            editor = (AbstractEditor) window.getActivePage().getActiveEditor();
-            return true;
+        IWorkbenchWindow window = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow();
+        this.editor = null;
+
+        if (window != null && window.getActivePage() != null) {
+            IEditorPart activeEditor = window.getActivePage().getActiveEditor();
+            if (activeEditor != null) {
+                @SuppressWarnings("unchecked")
+                AbstractEditor<AbstractVisualizationSingleDatastreamInput> activeAbstractEditor = (AbstractEditor<AbstractVisualizationSingleDatastreamInput>) activeEditor;
+                this.editor = activeAbstractEditor;
+            }
         }
+        return this.editor != null;
     }
 
     /**
@@ -297,7 +300,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
 
     /*
      * (non-Javadoc)
-     *
+     * 
      * @see org.eclipse.ui.views.properties.tabbed.AbstractPropertySection#refresh()
      */
     @Override

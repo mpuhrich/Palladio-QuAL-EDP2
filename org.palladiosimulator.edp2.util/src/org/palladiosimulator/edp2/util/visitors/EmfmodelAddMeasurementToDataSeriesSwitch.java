@@ -44,7 +44,7 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     public Boolean caseIdentifierBasedMeasurements(
             final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
         @SuppressWarnings("unchecked")
-        final MeasurementsDao<Identifier, Dimensionless> dao = daoRegistry.getMeasurementsDao(object.getValuesUuid());
+        final MeasurementsDao<Identifier, Dimensionless> dao = (MeasurementsDao<Identifier, Dimensionless>) daoRegistry.getMeasurementsDao(object.getValuesUuid());
         if (!dao.isOpen()) {
             try {
                 dao.open();

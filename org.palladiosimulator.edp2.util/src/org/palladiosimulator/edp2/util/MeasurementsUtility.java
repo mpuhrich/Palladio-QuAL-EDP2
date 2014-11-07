@@ -187,7 +187,7 @@ public class MeasurementsUtility {
                 .getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory();
         final MeasurementsDao<?, Q> omd;
         if (daoFactory.getDaoRegistry().isRegistered(ds.getValuesUuid())) {
-            omd = daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
+            omd = (MeasurementsDao<?, Q>) daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
         } else {
             omd = new ExperimentDataSwitch<MeasurementsDao<?, Q>>() {
                 @Override

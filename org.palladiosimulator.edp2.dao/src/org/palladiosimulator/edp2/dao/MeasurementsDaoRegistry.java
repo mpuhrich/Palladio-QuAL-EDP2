@@ -20,7 +20,7 @@ public interface MeasurementsDaoRegistry {
      * @param uuid
      *            The UUID for which the DAO is responsible.
      */
-    public void register(MeasurementsDao dao, String uuid);
+    public void register(MeasurementsDao<?, ?> dao, String uuid);
 
     /**
      * Deregisters an registered DAO.
@@ -53,5 +53,5 @@ public interface MeasurementsDaoRegistry {
      *            The UUID of the DAO.
      * @return The DAO.
      */
-    public MeasurementsDao getMeasurementsDao(String uuid);
+    public MeasurementsDao<?, ?> getMeasurementsDao(String uuid);
 }

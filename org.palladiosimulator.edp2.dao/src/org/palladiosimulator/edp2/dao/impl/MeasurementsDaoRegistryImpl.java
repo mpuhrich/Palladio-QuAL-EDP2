@@ -26,13 +26,13 @@ public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
     private static final Logger LOGGER = Logger.getLogger(MeasurementsDaoRegistryImpl.class.getCanonicalName());
 
     /** Map of the registered DAOs. */
-    private ConcurrentMap<String, MeasurementsDao> registeredDaos;
+    private ConcurrentMap<String, MeasurementsDao<?, ?>> registeredDaos;
 
     /**
      * Initialize the registry.
      */
     public MeasurementsDaoRegistryImpl() {
-        registeredDaos = new ConcurrentHashMap<String, MeasurementsDao>();
+        registeredDaos = new ConcurrentHashMap<String, MeasurementsDao<?, ?>>();
     }
 
     /*
@@ -68,7 +68,7 @@ public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
      * java.lang.String)
      */
     @Override
-    public void register(MeasurementsDao dao, String uuid) {
+    public void register(MeasurementsDao<?, ?> dao, String uuid) {
         if (isRegistered(uuid)) {
             String msg = "Tried to register a DAO which was already registered. UUID was " + uuid + ".";
             LOGGER.log(Level.SEVERE, msg);
@@ -84,7 +84,7 @@ public class MeasurementsDaoRegistryImpl implements MeasurementsDaoRegistry {
      * @see org.palladiosimulator.edp2.Edp2DaoRegistry#getEdp2Dao(java.lang.String)
      */
     @Override
-    public MeasurementsDao getMeasurementsDao(String uuid) {
+    public MeasurementsDao<?, ?> getMeasurementsDao(String uuid) {
         return registeredDaos.get(uuid);
     }
 

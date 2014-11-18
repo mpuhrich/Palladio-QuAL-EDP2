@@ -15,24 +15,23 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  *
  * @generated
  */
-public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected MeasuringPointImpl() {
-        super();
-    }
+public abstract class MeasuringPointImpl extends EObjectImpl implements
+		MeasuringPoint {
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasuringPointImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return MeasuringpointPackage.Literals.MEASURING_POINT;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return MeasuringpointPackage.Literals.MEASURING_POINT;
+	}
 
 } // MeasuringPointImpl

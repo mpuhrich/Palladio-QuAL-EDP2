@@ -17,11 +17,9 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}</li>
- * <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}
- * </li>
- * <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getMeasurements <em>Measurements
- * </em>}</li>
+ *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}</li>
+ *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getMeasurements <em>Measurements</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,75 +28,67 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public interface Run extends Identifier, Propertyable {
-    /**
-     * Returns the value of the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc --> <!-- begin-model-doc --> Length of the duration in milli-seconds. <!--
-     * end-model-doc -->
-     *
-     * @return the value of the '<em>Duration</em>' attribute.
-     * @see #setDuration(Measure)
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_Duration()
-     * @model dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSDurationMeasure"
-     *        required="true" ordered="false"
-     * @generated
-     */
-    Measure getDuration();
+	/**
+	 * Returns the value of the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Length of the duration in milli-seconds. <!--
+	 * end-model-doc -->
+	 *
+	 * @return the value of the '<em>Duration</em>' attribute.
+	 * @see #setDuration(Measure)
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_Duration()
+	 * @model dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSDurationMeasure"
+	 *        required="true" ordered="false"
+	 * @generated
+	 */
+	Measure getDuration();
 
-    /**
-     * Sets the value of the '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Duration</em>' attribute.
-     * @see #getDuration()
-     * @generated
-     */
-    void setDuration(Measure value);
+	/**
+	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Duration</em>' attribute.
+	 * @see #getDuration()
+	 * @generated
+	 */
+	void setDuration(Measure value);
 
-    /**
-     * Returns the value of the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc --> <!-- begin-model-doc --> Instant at which the experiment run is started.
-     * <!-- end-model-doc -->
-     *
-     * @return the value of the '<em>Start Time</em>' attribute.
-     * @see #setStartTime(Date)
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_StartTime()
-     * @model required="true" ordered="false"
-     * @generated
-     */
-    Date getStartTime();
+	/**
+	 * Returns the value of the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Instant at which the experiment run is started.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Start Time</em>' attribute.
+	 * @see #setStartTime(Date)
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_StartTime()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Date getStartTime();
 
-    /**
-     * Sets the value of the '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}
-     * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Start Time</em>' attribute.
-     * @see #getStartTime()
-     * @generated
-     */
-    void setStartTime(Date value);
+	/**
+	 * Sets the value of the '{@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start Time</em>' attribute.
+	 * @see #getStartTime()
+	 * @generated
+	 */
+	void setStartTime(Date value);
 
-    /**
-     * Returns the value of the '<em><b>Measurements</b></em>' containment reference list. The list
-     * contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}.
-     * It is bidirectional and its opposite is '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements#getRun <em>Run</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Measurements</em>' containment reference list isn't clear, there
-     * really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     *
-     * @return the value of the '<em>Measurements</em>' containment reference list.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_Measurements()
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Measurements#getRun
-     * @model opposite="run" containment="true" ordered="false"
-     * @generated
-     */
-    EList<Measurements> getMeasurements();
+	/**
+	 * Returns the value of the '<em><b>Measurements</b></em>' containment reference list.
+	 * The list contents are of type {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}.
+	 * It is bidirectional and its opposite is '{@link org.palladiosimulator.edp2.models.ExperimentData.Measurements#getRun <em>Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Measurements</em>' containment reference list isn't clear, there
+	 * really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Measurements</em>' containment reference list.
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_Measurements()
+	 * @see org.palladiosimulator.edp2.models.ExperimentData.Measurements#getRun
+	 * @model opposite="run" containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Measurements> getMeasurements();
 
 } // Run

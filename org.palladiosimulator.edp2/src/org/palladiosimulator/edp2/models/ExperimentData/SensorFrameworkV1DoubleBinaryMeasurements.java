@@ -15,5 +15,6 @@ package org.palladiosimulator.edp2.models.ExperimentData;
  * @model
  * @generated
  */
-public interface SensorFrameworkV1DoubleBinaryMeasurements extends DoubleBinaryMeasurements {
+public interface SensorFrameworkV1DoubleBinaryMeasurements extends
+		DoubleBinaryMeasurements {
 } // SensorFrameworkV1DoubleBinaryMeasurements

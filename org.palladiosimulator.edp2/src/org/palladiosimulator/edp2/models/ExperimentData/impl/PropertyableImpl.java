@@ -23,134 +23,127 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl#getAdditionalInformation
- * <em>Additional Information</em>}</li>
+ *   <li>{@link org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl#getAdditionalInformation <em>Additional Information</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class PropertyableImpl extends EObjectImpl implements Propertyable {
-    /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
+public abstract class PropertyableImpl extends EObjectImpl implements
+		Propertyable {
+	/**
+	 * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}' map.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getAdditionalInformation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EMap<String, Object> additionalInformation;
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected PropertyableImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyableImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return ExperimentDataPackage.Literals.PROPERTYABLE;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ExperimentDataPackage.Literals.PROPERTYABLE;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EMap<String, Object> getAdditionalInformation() {
+		if (additionalInformation == null) {
+			additionalInformation = new EcoreEMap<String, Object>(
+					ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY,
+					EStringtoEObjectMapEntryImpl.class, this,
+					ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION);
+		}
+		return additionalInformation;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
-        switch (featureID) {
-        case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
+			return ((InternalEList<?>) getAdditionalInformation()).basicRemove(
+					otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
-        case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            if (coreType) {
-                return this.getAdditionalInformation();
-            } else {
-                return this.getAdditionalInformation().map();
-            }
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
+			if (coreType)
+				return getAdditionalInformation();
+			else
+				return getAdditionalInformation().map();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
+			((EStructuralFeature.Setting) getAdditionalInformation())
+					.set(newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            this.getAdditionalInformation().clear();
-            return;
-        }
-        super.eUnset(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
+			getAdditionalInformation().clear();
+			return;
+		}
+		super.eUnset(featureID);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
+			return additionalInformation != null
+					&& !additionalInformation.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } // PropertyableImpl

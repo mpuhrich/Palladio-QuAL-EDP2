@@ -15,5 +15,6 @@ package org.palladiosimulator.edp2.models.ExperimentData;
  * @model
  * @generated
  */
-public interface SensorFrameworkV1IdentifierBasedMeasurements extends IdentifierBasedMeasurements {
+public interface SensorFrameworkV1IdentifierBasedMeasurements extends
+		IdentifierBasedMeasurements {
 } // SensorFrameworkV1IdentifierBasedMeasurements

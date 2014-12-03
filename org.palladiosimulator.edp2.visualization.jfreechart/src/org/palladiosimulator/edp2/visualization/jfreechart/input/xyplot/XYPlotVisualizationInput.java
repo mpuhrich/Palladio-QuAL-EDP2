@@ -87,7 +87,8 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
     protected Plot generatePlot(PropertyConfigurable config, AbstractDataset dataset) {
         XYPlotVisualizationInputConfiguration configuration = (XYPlotVisualizationInputConfiguration) config;
         XYPlot plot = new XYPlot();
-
+        XYDataset xyDataset = (XYDataset) dataset;
+        
         ValueAxis domainAxis = new NumberAxis(
                 configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
         ValueAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel()
@@ -96,11 +97,16 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         plot.setRangeAxis(rangeAxis);
         plot.setDomainAxis(domainAxis);
 
-        plot.setDataset((XYDataset) dataset);
+        plot.setDataset(xyDataset);
 
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesLinesVisible(0, configuration.isShowSeriesLine());
-        renderer.setSeriesShapesVisible(0, configuration.isShowSeriesShapes());
+        boolean isShowSeriesLine = configuration.isShowSeriesLine();
+        boolean isShowSeriesShape = configuration.isShowSeriesShapes();
+        
+        for (int i = 0; i < xyDataset.getSeriesCount(); ++i) {
+            renderer.setSeriesLinesVisible(i, isShowSeriesLine);
+            renderer.setSeriesShapesVisible(i, isShowSeriesShape);
+        }
         plot.setRenderer(renderer);
 
         configureSeriesColors(renderer);

@@ -4,21 +4,64 @@
 package org.palladiosimulator.edp2.util;
 
 import javax.measure.Measure;
+import javax.measure.quantity.Quantity;
+import javax.measure.unit.Unit;
 
 import org.palladiosimulator.edp2.util.visitors.BaseMetricFromMetricSwitch;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.CaptureType;
 import org.palladiosimulator.metricspec.Identifier;
 import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**
  * Utility class to handle MetricDescription(s).
  * 
- * @author groenda
+ * @author groenda, partially extended by Florian Rosenthal
  */
-public class MetricDescriptionUtility {
+public final class MetricDescriptionUtility {
 
+    private MetricDescriptionUtility() {
+        
+    }
+    
+    /**
+     * Convenience method to get the default unit of a numerical metric description in a typesafe way.
+     * @param baseMetric The {@link NumericalBaseMetricDescription} whose default unit is to be retrieved.
+     * @param quantityDimension A {@link Class} object denoting the expected {@link Quantity} of the default unit.
+     * @return The default {@link Unit} of the given metric description as defined in the meta-model,
+     * expressed in the desired quantity.
+     * @throws ClassCastException If the dimension of the unit is different from the specified quantity dimension.<br>
+     * For instance, if {@code Power.class} is passed and the actual dimension is {@link Duration}, this exception is thrown.
+     * @see Unit#asType(Class)
+     * @see NumericalBaseMetricDescription#getDefaultUnit()
+     */
+    public static <T extends Quantity> Unit<T> getDefaultUnit(NumericalBaseMetricDescription baseMetric,
+            Class<T> quantityDimension) {
+        if (baseMetric == null || quantityDimension == null) {
+            throw new IllegalAccessError("Both arguments must not be null.");
+        }
+        return baseMetric.getDefaultUnit().asType(quantityDimension);
+    }
+    
+    /**
+     * Indicates whether a particular base metric description is specified/subsumed by a metric description.
+     * @param soughtFor The {@link BaseMetricDescription} which is looked for.
+     * @param description An arbitrary {@link MetricDescription} that might subsume more than one base metric descriptions.
+     * @return {@code true} whether the given base metric description is subsumed, {@code false} otherwise.
+     * @see #toBaseMetricDescriptions(MetricDescription)
+     */
+    public static boolean isBaseMetricDescriptionSubsumedByMetricDescription(BaseMetricDescription soughtFor, MetricDescription description) {
+        for (BaseMetricDescription baseMetric : toBaseMetricDescriptions(description)) {
+            if (soughtFor.equals(baseMetric)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+   
     /**
      * Returns all base metric descriptions in the order they are specified in a metric description.
      * 

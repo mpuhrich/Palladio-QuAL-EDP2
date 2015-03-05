@@ -51,6 +51,6 @@ public class Edp2DataTupleDataSource extends AbstractDataSource implements IData
 
     @Override
     public MeasuringPoint getMeasuringPoint() {
-        return MeasurementsUtility.getMeasureFromRawMeasurements(this.rawMeasurements).getMeasuringPoint();
+        return MeasurementsUtility.getMeasuringTypeFromRawMeasurements(this.rawMeasurements).getMeasuringPoint();
     }
 }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.palladiosimulator.measurementframework.BasicMeasurement;
-import org.palladiosimulator.measurementframework.Measurement;
+import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 
@@ -42,7 +42,7 @@ public class DataTupleStream extends DataStream<TupleMeasurement> {
 
             @Override
             public TupleMeasurement next() {
-                final List<Measurement> result = new ArrayList<Measurement>(subIterators.size());
+                final List<MeasuringValue> result = new ArrayList<MeasuringValue>(subIterators.size());
                 for (final Iterator<BasicMeasurement<?, ?>> subIterator : subIterators) {
                     result.add(subIterator.next());
                 }

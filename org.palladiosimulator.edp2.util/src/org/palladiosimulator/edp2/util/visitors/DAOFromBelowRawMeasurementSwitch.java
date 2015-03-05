@@ -66,7 +66,7 @@ public class DAOFromBelowRawMeasurementSwitch extends ExperimentDataSwitch<Boole
      * @return
      */
     protected MeasurementsDaoFactory getMeasurementsDaoFactoryFromMeasurements(final DataSeries dataSeries) {
-        return dataSeries.getRawMeasurements().getMeasurementsRange().getMeasurements().getMeasure()
+        return dataSeries.getRawMeasurements().getMeasurementRange().getMeasurement().getMeasuringType()
                 .getExperimentGroup().getRepository().getMeasurementsDaoFactory();
     }
 }

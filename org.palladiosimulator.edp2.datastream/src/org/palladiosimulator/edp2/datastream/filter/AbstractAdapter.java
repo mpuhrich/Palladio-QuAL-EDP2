@@ -9,22 +9,22 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.EmptyConfiguration;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
-import org.palladiosimulator.measurementframework.Measurement;
+import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 public abstract class AbstractAdapter extends AbstractDataSource implements IDataSink, IDataSource {
 
-    private final class AdapterDataStream implements IDataStream<Measurement> {
+    private final class AdapterDataStream implements IDataStream<MeasuringValue> {
 
-        private final class AdapterIterator implements Iterator<Measurement> {
+        private final class AdapterIterator implements Iterator<MeasuringValue> {
 
-            private Measurement next;
-            private Measurement nextNext;
+            private MeasuringValue next;
+            private MeasuringValue nextNext;
             private int count = 0;
 
-            private final Iterator<Measurement> inputIterator;
+            private final Iterator<MeasuringValue> inputIterator;
 
-            private AdapterIterator(final Iterator<Measurement> inputIterator) {
+            private AdapterIterator(final Iterator<MeasuringValue> inputIterator) {
                 this.inputIterator = inputIterator;
 
                 this.next = findNext();
@@ -37,8 +37,8 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
             }
 
             @Override
-            public Measurement next() {
-                final Measurement measurement = AbstractAdapter.this.computeOutputFromInput(this.next);
+            public MeasuringValue next() {
+                final MeasuringValue measurement = AbstractAdapter.this.computeOutputFromInput(this.next);
 
                 if (!isCompatibleWith(measurement.getMetricDesciption())) {
                     throw new RuntimeException("Metric \"" + measurement.getMetricDesciption().getName()
@@ -60,8 +60,8 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
             public void remove() {
             }
 
-            private Measurement findNext() {
-                Measurement result = null;
+            private MeasuringValue findNext() {
+                MeasuringValue result = null;
 
                 while (inputIterator.hasNext() && AbstractAdapter.this.shouldSkip(result = inputIterator.next())) {
                     ;
@@ -73,14 +73,14 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
 
         private int cachedSize = -1;
 
-        private final IDataStream<Measurement> inputDataStream;
+        private final IDataStream<MeasuringValue> inputDataStream;
 
-        private AdapterDataStream(final IDataStream<Measurement> inputDataStream) {
+        private AdapterDataStream(final IDataStream<MeasuringValue> inputDataStream) {
             this.inputDataStream = inputDataStream;
         }
 
         @Override
-        public Iterator<Measurement> iterator() {
+        public Iterator<MeasuringValue> iterator() {
             return new AdapterIterator(this.inputDataStream.iterator());
         }
 
@@ -106,7 +106,7 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
                 this.cachedSize = 0;
 
                 if (this.inputDataStream.size() != 0) {
-                    for (final Measurement measurement : this) {
+                    for (final MeasuringValue measurement : this) {
                         this.cachedSize++;
                     }
                 }
@@ -138,16 +138,16 @@ public abstract class AbstractAdapter extends AbstractDataSource implements IDat
      * @see org.palladiosimulator.edp2.datastream.IDataSource#getDataStream()
      */
     @Override
-    public IDataStream<Measurement> getDataStream() {
-        final IDataStream<Measurement> inputDataStream = datasource.getDataStream();
+    public IDataStream<MeasuringValue> getDataStream() {
+        final IDataStream<MeasuringValue> inputDataStream = datasource.getDataStream();
         return new AdapterDataStream(inputDataStream);
     }
 
-    protected boolean shouldSkip(final Measurement next) {
+    protected boolean shouldSkip(final MeasuringValue next) {
         return false;
     }
 
-    protected Measurement computeOutputFromInput(final Measurement next) {
+    protected MeasuringValue computeOutputFromInput(final MeasuringValue next) {
         return next;
     }
 

@@ -23,9 +23,9 @@ import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.Measure;
-import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
-import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.Repository;
@@ -33,7 +33,7 @@ import org.palladiosimulator.edp2.util.visitors.DAOFromBelowRawMeasurementSwitch
 import org.palladiosimulator.edp2.util.visitors.DataSeriesFromRawMeasurementsSwitch;
 import org.palladiosimulator.edp2.util.visitors.EmfmodelAddMeasurementToDataSeriesSwitch;
 import org.palladiosimulator.edp2.util.visitors.EmfmodelDataSeriesFromReferenceSwitch;
-import org.palladiosimulator.measurementframework.Measurement;
+import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.Identifier;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -56,18 +56,18 @@ public class MeasurementsUtility {
      * Creates a new MeasurementRange and contained elements if there are already existing elements
      * in another MeasurementRange. Does not set the startTime and endTime properties.
      * 
-     * @param measurements
+     * @param measurement
      *            Location where to add the range.
      * @return The newly created measurement range.
      */
-    public static MeasurementsRange addMeasurementRange(final Measurements measurements) {
+    public static MeasurementRange addMeasurementRange(final Measurement measurement) {
         // TODO: check if measurements or setting is better.
-        final MeasurementsDaoFactory daoFactory = measurements.getMeasure().getExperimentGroup().getRepository()
+        final MeasurementsDaoFactory daoFactory = measurement.getMeasuringType().getExperimentGroup().getRepository()
                 .getMeasurementsDaoFactory();
-        final MeasurementsRange mr = FACTORY.createMeasurementsRange(measurements);
-        if (measurements.getMeasurementsRanges().size() > 1) { // copy contents from existing
-                                                               // templates
-            final MeasurementsRange template = measurements.getMeasurementsRanges().get(0);
+        final MeasurementRange mr = FACTORY.createMeasurementRange(measurement);
+        if (measurement.getMeasurementRanges().size() > 1) { // copy contents from existing
+                                                             // templates
+            final MeasurementRange template = measurement.getMeasurementRanges().get(0);
             // copy raw measurements
             if (template.getRawMeasurements() != null) {
                 FACTORY.createRawMeasurements(mr);
@@ -102,15 +102,15 @@ public class MeasurementsUtility {
     public static void createDAOsForRawMeasurements(final RawMeasurements rm) {
         // input validation
         String errorMsg = "Could not create DAOs for raw measurements. A link to the DAO FACTORY was missing: ";
-        if (rm.getMeasurementsRange() == null) {
+        if (rm.getMeasurementRange() == null) {
             errorMsg = "RawMeasurements must be assigned to a measurement range.";
-        } else if (rm.getMeasurementsRange().getMeasurements() == null) {
+        } else if (rm.getMeasurementRange().getMeasurement() == null) {
             errorMsg = "RawMeasurements must be (indirectly) assigned to a measurement.";
-        } else if (rm.getMeasurementsRange().getMeasurements().getMeasure() == null) {
+        } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType() == null) {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to a measure (definition).";
-        } else if (rm.getMeasurementsRange().getMeasurements().getMeasure().getExperimentGroup() == null) {
+        } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType().getExperimentGroup() == null) {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to an experiment group.";
-        } else if (rm.getMeasurementsRange().getMeasurements().getMeasure().getExperimentGroup().getRepository() == null) {
+        } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType().getExperimentGroup().getRepository() == null) {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to an experiment group which must be assigned to a repository.";
         } else {
             errorMsg = null;
@@ -120,46 +120,47 @@ public class MeasurementsUtility {
             throw new IllegalArgumentException(errorMsg);
         }
         // creation
-        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementsRange().getMeasurements().getMeasure()
-                .getMetric());
+        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementRange().getMeasurement()
+                .getMeasuringType().getMetric());
         new DAOFromBelowRawMeasurementSwitch().doSwitch(rm);
     }
 
     /**
      * Stores a new measurement at the last existing range.
      * 
-     * @param measurements
+     * @param measuringValue
      *            The measurement of the experiment run for which a new measurement exists.
      * @param data
      *            The measurement (data) itself.
      */
-    public static void storeMeasurement(final Measurements measurements, final Measurement measurement) {
-        final int size = measurements.getMeasurementsRanges().size();
+    public static void storeMeasurement(final Measurement measurement, final MeasuringValue measuringValue) {
+        final int size = measurement.getMeasurementRanges().size();
         if (size == 0) {
             throw new IllegalArgumentException("Measurements have to include measurements ranges");
         }
 
-        final MeasurementsRange lastRange = measurements.getMeasurementsRanges().get(size - 1);
+        final MeasurementRange lastRange = measurement.getMeasurementRanges().get(size - 1);
         final RawMeasurements rm = lastRange.getRawMeasurements();
         if (rm != null) { // Add raw measurements
-            if (!measurement.getMetricDesciption().getId().equals(measurements.getMeasure().getMetric().getId())) {
+            if (!measuringValue.getMetricDesciption().getId()
+                    .equals(measurement.getMeasuringType().getMetric().getId())) {
                 final String msg = "Tried to store measurement with a wrong metric. Expected: "
-                        + measurements.getMeasure().getMetric() + ", provided: " + measurement.getMetricDesciption()
-                        + ".";
+                        + measurement.getMeasuringType().getMetric() + ", provided: "
+                        + measuringValue.getMetricDesciption() + ".";
                 LOGGER.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
             }
             final Iterator<DataSeries> iter = rm.getDataSeries().iterator();
             DataSeries ds;
             int index = -1;
-            final MeasurementsDaoRegistry daoRegistry = measurements.getMeasure().getExperimentGroup().getRepository()
-                    .getMeasurementsDaoFactory().getDaoRegistry();
+            final MeasurementsDaoRegistry daoRegistry = measurement.getMeasuringType().getExperimentGroup()
+                    .getRepository().getMeasurementsDaoFactory().getDaoRegistry();
             final EmfmodelAddMeasurementToDataSeriesSwitch addMmt = new EmfmodelAddMeasurementToDataSeriesSwitch(
                     daoRegistry);
             while (iter.hasNext()) {
                 ds = iter.next();
                 index++;
-                addMmt.setMeasurementToAdd(measurement.asList().get(index));
+                addMmt.setMeasurementToAdd(measuringValue.asList().get(index));
                 addMmt.doSwitch(ds);
                 // invalidate statistics as they do not include the added value
                 if (ds.getNumericalStatistics() != null) {
@@ -183,8 +184,8 @@ public class MeasurementsUtility {
      */
     @SuppressWarnings("unchecked")
     public static <Q extends Quantity> MeasurementsDao<?, Q> getMeasurementsDao(final DataSeries ds) {
-        final MeasurementsDaoFactory daoFactory = ds.getRawMeasurements().getMeasurementsRange().getMeasurements()
-                .getMeasure().getExperimentGroup().getRepository().getMeasurementsDaoFactory();
+        final MeasurementsDaoFactory daoFactory = ds.getRawMeasurements().getMeasurementRange().getMeasurement()
+                .getMeasuringType().getExperimentGroup().getRepository().getMeasurementsDaoFactory();
         final MeasurementsDao<?, Q> omd;
         if (daoFactory.getDaoRegistry().isRegistered(ds.getValuesUuid())) {
             omd = (MeasurementsDao<?, Q>) daoFactory.getDaoRegistry().getMeasurementsDao(ds.getValuesUuid());
@@ -233,12 +234,12 @@ public class MeasurementsUtility {
         return omd;
     }
 
-    public static Measure getMeasureFromRawMeasurements(final RawMeasurements rawMeasurements) {
-        return rawMeasurements.getMeasurementsRange().getMeasurements().getMeasure();
+    public static MeasuringType getMeasuringTypeFromRawMeasurements(final RawMeasurements rawMeasurements) {
+        return rawMeasurements.getMeasurementRange().getMeasurement().getMeasuringType();
     }
 
     public static MetricDescription getMetricDescriptionFromRawMeasurements(final RawMeasurements rawMeasurements) {
-        return getMeasureFromRawMeasurements(rawMeasurements).getMetric();
+        return getMeasuringTypeFromRawMeasurements(rawMeasurements).getMetric();
     }
 
     public static TextualBaseMetricDescription getTextualBaseMetricDescriptionFromIdentifierMeasurement(

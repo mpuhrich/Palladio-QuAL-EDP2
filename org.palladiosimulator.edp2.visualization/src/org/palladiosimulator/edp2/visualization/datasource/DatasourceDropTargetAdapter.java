@@ -10,7 +10,7 @@ import org.eclipse.swt.dnd.DropTargetAdapter;
 import org.eclipse.swt.dnd.DropTargetEvent;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
-import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
@@ -31,10 +31,10 @@ public class DatasourceDropTargetAdapter<T extends IVisualisationSingleDatastrea
     public void drop(final DropTargetEvent event) {
         final IStructuredSelection selection = (IStructuredSelection) LocalSelectionTransfer.getTransfer()
                 .getSelection();
-        if (selection.getFirstElement() instanceof Measurements) {
+        if (selection.getFirstElement() instanceof Measurement) {
 
-            final Measurements measurements = (Measurements) selection.getFirstElement();
-            final RawMeasurements rawMeasurements = measurements.getMeasurementsRanges().get(0).getRawMeasurements();
+            final Measurement measurement = (Measurement) selection.getFirstElement();
+            final RawMeasurements rawMeasurements = measurement.getMeasurementRanges().get(0).getRawMeasurements();
             final IDataSource newSource = new Edp2DataTupleDataSource(rawMeasurements);
             final IVisualisationSingleDatastreamInput newInput = visualizationInput.createNewInput(newSource);
             visualizationInput.addInput((T) newInput);

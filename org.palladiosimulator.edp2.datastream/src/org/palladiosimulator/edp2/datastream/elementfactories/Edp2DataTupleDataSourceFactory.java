@@ -37,7 +37,7 @@ public class Edp2DataTupleDataSourceFactory extends PropertyConfigurableElementF
 
     public static void saveState(final IMemento memento, final Edp2DataTupleDataSource edp2DataTupleDataSource) {
         final RawMeasurements measurements = edp2DataTupleDataSource.getRawMeasurements();
-        final Run run = measurements.getMeasurementsRange().getMeasurements().getRun();
+        final Run run = measurements.getMeasurementRange().getMeasurement().getRun();
 
         final ExperimentGroup experimentGroup;
         if (run instanceof ExperimentRun) {

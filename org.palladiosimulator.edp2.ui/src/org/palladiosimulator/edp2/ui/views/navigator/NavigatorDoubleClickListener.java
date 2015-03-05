@@ -10,7 +10,7 @@ import org.eclipse.ui.PartInitException;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
-import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
@@ -41,7 +41,7 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
             selectedObject = selection.getFirstElement();
         }
         // check for the object to contain actual data
-        if (selectedObject instanceof Measurements) {
+        if (selectedObject instanceof Measurement) {
             openChainSelectionDialog(selectedObject);
         }
     }
@@ -50,8 +50,8 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
      * @param selectedObject
      */
     private void openChainSelectionDialog(final Object selectedObject) {
-        final Measurements measurements = (Measurements) selectedObject;
-        final RawMeasurements rawMeasurements = measurements.getMeasurementsRanges().get(0).getRawMeasurements();
+        final Measurement measurement = (Measurement) selectedObject;
+        final RawMeasurements rawMeasurements = measurement.getMeasurementRanges().get(0).getRawMeasurements();
 
         if (rawMeasurements != null && !rawMeasurements.getDataSeries().isEmpty()) {
             final IDataSource edp2Source = new Edp2DataTupleDataSource(rawMeasurements);
@@ -71,8 +71,8 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
     // DefaultSequence
     private void openWizard(final IDataSource edp2Source) {
         final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
-        final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench()
-                .getActiveWorkbenchWindow().getShell(), wizard);
+        final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
+                .getShell(), wizard);
         wdialog.open();
 
         if (wdialog.getReturnCode() == Window.OK) {
@@ -89,8 +89,7 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
         final IVisualisationInput input = (IVisualisationInput) chainDescription.getVisualizationInput();
         input.addInput(input.createNewInput(chainDescription.attachRootDataSource(edp2Source)));
         try {
-            final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
-                    .getActivePage();
+            final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow().getActivePage();
             page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
         } catch (final PartInitException e) {
             throw new RuntimeException(e);

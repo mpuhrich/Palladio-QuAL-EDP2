@@ -25,7 +25,7 @@ import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
-import org.palladiosimulator.measurementframework.Measurement;
+import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -139,13 +139,13 @@ public class StoreLoadExample {
     private void streamResultData() throws DataNotAccessibleException {
         MeasurementsUtility.ensureOpenRepository(ldRepo);
         final IDataSource dataSource = new Edp2DataTupleDataSource(ldRepo.getExperimentGroups().get(0)
-                .getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurements().get(0)
-                .getMeasurementsRanges().get(0).getRawMeasurements());
+                .getExperimentSettings().get(0).getExperimentRuns().get(0).getMeasurement().get(0)
+                .getMeasurementRanges().get(0).getRawMeasurements());
         final AbstractFilter adapter = new AbstractFilter(dataSource, ldRepo.getExperimentGroups().get(0)
-                .getExperimentSettings().get(0).getMeasure().get(0).getMetric()) {
+                .getExperimentSettings().get(0).getMeasuringTypes().get(0).getMetric()) {
 
             @Override
-            protected Measurement computeOutputFromInput(final Measurement data) {
+            protected MeasuringValue computeOutputFromInput(final MeasuringValue data) {
                 final List<Measure<?, ?>> next = new ArrayList<Measure<?, ?>>(2);
                 for (final Measure m : data.asList()) {
                     final Measure<Double, Duration> newM = Measure
@@ -156,7 +156,7 @@ public class StoreLoadExample {
             }
 
         };
-        final IDataStream<Measurement> dataStream = adapter.getDataStream();
+        final IDataStream<MeasuringValue> dataStream = adapter.getDataStream();
         for (final IMeasureProvider tuple : dataStream) {
             System.out.println(tuple);
         }

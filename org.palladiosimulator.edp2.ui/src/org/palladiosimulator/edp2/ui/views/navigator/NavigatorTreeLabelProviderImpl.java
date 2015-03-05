@@ -25,9 +25,9 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
-import org.palladiosimulator.edp2.models.ExperimentData.Measure;
-import org.palladiosimulator.edp2.models.ExperimentData.Measurements;
-import org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange;
+import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
@@ -88,9 +88,9 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             final StyledString styledString = new ExperimentDataSwitch<StyledString>() {
 
                 @Override
-                public StyledString caseMeasurements(final Measurements object) {
-                    final Measure measure = object.getMeasure();
-                    final MetricDescription metricDescription = measure.getMetric();
+                public StyledString caseMeasurement(final Measurement object) {
+                    final MeasuringType measuringType = object.getMeasuringType();
+                    final MetricDescription metricDescription = measuringType.getMetric();
 
                     return new MetricSpecSwitch<StyledString>() {
                         @Override
@@ -190,7 +190,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 };
 
                 @Override
-                public StyledString caseMeasurementsRange(final MeasurementsRange object) {
+                public StyledString caseMeasurementRange(final MeasurementRange object) {
                     final StyledString styledString = new StyledString("Range");
                     if (object.getStartTime() != null && object.getEndTime() != null) {
                         final String decoration = " (" + object.getStartTime() + "-" + object.getEndTime() + ")";
@@ -214,7 +214,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 };
 
                 @Override
-                public StyledString caseMeasure(final org.palladiosimulator.edp2.models.ExperimentData.Measure object) {
+                public StyledString caseMeasuringType(final MeasuringType object) {
                     final MeasuringPoint measuringPoint = object.getMeasuringPoint();
 
                     final StyledString styledString = new StyledString(
@@ -226,17 +226,17 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 }
 
                 @Override
-                public StyledString caseMeasurements(final Measurements object) {
-                    final Measure measure = object.getMeasure();
-                    final MeasuringPoint measuringPoint = measure.getMeasuringPoint();
+                public StyledString caseMeasurement(final Measurement object) {
+                    final MeasuringType measuringType = object.getMeasuringType();
+                    final MeasuringPoint measuringPoint = measuringType.getMeasuringPoint();
 
                     final StyledString styledString = new StyledString(
                             MeasuringPointUtility.measuringPointToString(measuringPoint));
 
-                    final String decoration = " (" + measure.getMetric().getName() + ")";
+                    final String decoration = " (" + measuringType.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
 
-                    final IDataSource dataSource = new Edp2DataTupleDataSource(object.getMeasurementsRanges().get(0)
+                    final IDataSource dataSource = new Edp2DataTupleDataSource(object.getMeasurementRanges().get(0)
                             .getRawMeasurements());
                     if (dataSource.getDataStream().size() == 0) {
                         styledString.setStyle(0, styledString.length(),

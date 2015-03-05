@@ -569,9 +569,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
     protected void updateProblemIndication() {
         if (this.updateProblemIndication) {
             final BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.palladiosimulator.edp2.editor",
-                    0, null, new Object[] {
-                    this.editingDomain.getResourceSet()
-            });
+                    0, null, new Object[] { this.editingDomain.getResourceSet() });
             for (final Diagnostic childDiagnostic : this.resourceToDiagnosticMap.values()) {
                 if (childDiagnostic.getSeverity() != Diagnostic.OK) {
                     diagnostic.add(childDiagnostic);
@@ -889,9 +887,8 @@ IMenuListener, IViewerProvider, IGotoMarker {
         this.getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
         final int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-        final Transfer[] transfers = new Transfer[] {
-                LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance()
-        };
+        final Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(),
+                LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
         viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
         viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(this.editingDomain, viewer));
     }
@@ -932,16 +929,13 @@ IMenuListener, IViewerProvider, IGotoMarker {
         if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
             final BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
                     "org.palladiosimulator.edp2.editor", 0,
-                    getString("_UI_CreateModelError_message", resource.getURI()), new Object[] {
-                exception == null ? (Object) resource : exception
-            });
+                    getString("_UI_CreateModelError_message", resource.getURI()),
+                    new Object[] { exception == null ? (Object) resource : exception });
             basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
             return basicDiagnostic;
         } else if (exception != null) {
             return new BasicDiagnostic(Diagnostic.ERROR, "org.palladiosimulator.edp2.editor", 0, getString(
-                    "_UI_CreateModelError_message", resource.getURI()), new Object[] {
-                exception
-            });
+                    "_UI_CreateModelError_message", resource.getURI()), new Object[] { exception });
         } else {
             return Diagnostic.OK_INSTANCE;
         }
@@ -1112,9 +1106,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
                 selfColumn.setText(getString("_UI_SelfColumn_label"));
                 selfColumn.setResizable(true);
 
-                this.tableViewer.setColumnProperties(new String[] {
-                        "a", "b"
-                });
+                this.tableViewer.setColumnProperties(new String[] { "a", "b" });
                 this.tableViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
                 this.tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
@@ -1157,9 +1149,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
                 selfColumn.setResizable(true);
                 selfColumn.setWidth(200);
 
-                this.treeViewerWithColumns.setColumnProperties(new String[] {
-                        "a", "b"
-                });
+                this.treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
                 this.treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
                 this.treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
@@ -1689,9 +1679,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
      * @generated
      */
     private static String getString(final String key, final Object s1) {
-        return EDP2EditorPlugin.INSTANCE.getString(key, new Object[] {
-                s1
-        });
+        return EDP2EditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
     }
 
     /**

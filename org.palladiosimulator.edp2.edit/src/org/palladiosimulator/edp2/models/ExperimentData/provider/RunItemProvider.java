@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -98,7 +99,7 @@ public class RunItemProvider extends IdentifierItemProvider {
         if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION);
-            this.childrenFeatures.add(ExperimentDataPackage.Literals.RUN__MEASUREMENTS);
+            this.childrenFeatures.add(ExperimentDataPackage.Literals.RUN__MEASUREMENT);
         }
         return this.childrenFeatures;
     }
@@ -156,7 +157,7 @@ public class RunItemProvider extends IdentifierItemProvider {
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
-        case ExperimentDataPackage.RUN__MEASUREMENTS:
+        case ExperimentDataPackage.RUN__MEASUREMENT:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
@@ -177,8 +178,8 @@ public class RunItemProvider extends IdentifierItemProvider {
                 ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
                 ExperimentDataFactory.eINSTANCE.create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RUN__MEASUREMENTS,
-                ExperimentDataFactory.eINSTANCE.createMeasurements()));
+        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RUN__MEASUREMENT,
+                ExperimentDataFactory.eINSTANCE.createMeasurement()));
     }
 
     /**
@@ -189,7 +190,7 @@ public class RunItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
+        return ((IChildCreationExtender) this.adapterFactory).getResourceLocator();
     }
 
 }

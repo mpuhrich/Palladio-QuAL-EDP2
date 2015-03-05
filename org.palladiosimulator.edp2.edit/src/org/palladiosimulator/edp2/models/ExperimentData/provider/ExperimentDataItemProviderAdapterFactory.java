@@ -8,14 +8,19 @@ package org.palladiosimulator.edp2.models.ExperimentData.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
+import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,6 +28,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapterFactory;
 
 /**
@@ -35,7 +41,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapt
  * @generated
  */
 public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdapterFactory implements
-        ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+        ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -51,6 +57,14 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      * @generated
      */
     protected IChangeNotifier changeNotifier = new ChangeNotifier();
+
+    /**
+     * This helps manage the child creation extenders. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+            EDP2EditPlugin.INSTANCE, ExperimentDataPackage.eNS_URI);
 
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
@@ -75,27 +89,27 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange} instances. <!--
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected MeasurementsRangeItemProvider measurementsRangeItemProvider;
+    protected MeasurementRangeItemProvider measurementRangeItemProvider;
 
     /**
      * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementsRange}. <!--
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
-    public Adapter createMeasurementsRangeAdapter() {
-        if (this.measurementsRangeItemProvider == null) {
-            this.measurementsRangeItemProvider = new MeasurementsRangeItemProvider(this);
+    public Adapter createMeasurementRangeAdapter() {
+        if (this.measurementRangeItemProvider == null) {
+            this.measurementRangeItemProvider = new MeasurementRangeItemProvider(this);
         }
 
-        return this.measurementsRangeItemProvider;
+        return this.measurementRangeItemProvider;
     }
 
     /**
@@ -373,52 +387,52 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements} instances. <!--
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected MeasurementsItemProvider measurementsItemProvider;
+    protected MeasurementItemProvider measurementItemProvider;
 
     /**
      * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurements}. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createMeasurementsAdapter() {
-        if (this.measurementsItemProvider == null) {
-            this.measurementsItemProvider = new MeasurementsItemProvider(this);
-        }
-
-        return this.measurementsItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected MeasureItemProvider measureItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measure}. <!-- begin-user-doc -->
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
-    public Adapter createMeasureAdapter() {
-        if (this.measureItemProvider == null) {
-            this.measureItemProvider = new MeasureItemProvider(this);
+    public Adapter createMeasurementAdapter() {
+        if (this.measurementItemProvider == null) {
+            this.measurementItemProvider = new MeasurementItemProvider(this);
         }
 
-        return this.measureItemProvider;
+        return this.measurementItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected MeasuringTypeItemProvider measuringTypeItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType}. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createMeasuringTypeAdapter() {
+        if (this.measuringTypeItemProvider == null) {
+            this.measuringTypeItemProvider = new MeasuringTypeItemProvider(this);
+        }
+
+        return this.measuringTypeItemProvider;
     }
 
     /**
@@ -809,6 +823,35 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
     }
 
     /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public List<IChildCreationExtender> getChildCreationExtenders() {
+        return this.childCreationExtenderManager.getChildCreationExtenders();
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Collection<?> getNewChildDescriptors(final Object object, final EditingDomain editingDomain) {
+        return this.childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return this.childCreationExtenderManager;
+    }
+
+    /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
@@ -851,8 +894,8 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
      */
     @Override
     public void dispose() {
-        if (this.measurementsRangeItemProvider != null) {
-            this.measurementsRangeItemProvider.dispose();
+        if (this.measurementRangeItemProvider != null) {
+            this.measurementRangeItemProvider.dispose();
         }
         if (this.eStringtoEObjectMapEntryItemProvider != null) {
             this.eStringtoEObjectMapEntryItemProvider.dispose();
@@ -887,11 +930,11 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         if (this.experimentRunItemProvider != null) {
             this.experimentRunItemProvider.dispose();
         }
-        if (this.measurementsItemProvider != null) {
-            this.measurementsItemProvider.dispose();
+        if (this.measurementItemProvider != null) {
+            this.measurementItemProvider.dispose();
         }
-        if (this.measureItemProvider != null) {
-            this.measureItemProvider.dispose();
+        if (this.measuringTypeItemProvider != null) {
+            this.measuringTypeItemProvider.dispose();
         }
         if (this.aggregationStatisticsItemProvider != null) {
             this.aggregationStatisticsItemProvider.dispose();

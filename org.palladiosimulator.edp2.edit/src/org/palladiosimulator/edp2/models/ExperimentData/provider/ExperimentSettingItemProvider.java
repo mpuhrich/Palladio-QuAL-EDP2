@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -53,7 +54,7 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
             super.getPropertyDescriptors(object);
 
             this.addDescriptionPropertyDescriptor(object);
-            this.addMeasurePropertyDescriptor(object);
+            this.addMeasuringTypesPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
     }
@@ -74,18 +75,20 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Measure feature. <!-- begin-user-doc --> <!--
+     * This adds a property descriptor for the Measuring Types feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      */
-    protected void addMeasurePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentSetting_measure_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentSetting_measure_feature",
-                        "_UI_ExperimentSetting_type"), ExperimentDataPackage.Literals.EXPERIMENT_SETTING__MEASURE,
-                true, false, true, null, null, null));
+    protected void addMeasuringTypesPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors
+                .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
+                .getRootAdapterFactory(), this.getResourceLocator(), this
+                .getString("_UI_ExperimentSetting_measuringTypes_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_ExperimentSetting_measuringTypes_feature",
+                        "_UI_ExperimentSetting_type"),
+                        ExperimentDataPackage.Literals.EXPERIMENT_SETTING__MEASURING_TYPES, true, false, true, null,
+                        null, null));
     }
 
     /**
@@ -193,7 +196,7 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
+        return ((IChildCreationExtender) this.adapterFactory).getResourceLocator();
     }
 
 }

@@ -13,10 +13,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
@@ -154,7 +154,7 @@ public class RepositoryItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
+        return ((IChildCreationExtender) this.adapterFactory).getResourceLocator();
     }
 
 }

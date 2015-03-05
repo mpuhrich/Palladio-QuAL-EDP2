@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -166,7 +167,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
+        return ((IChildCreationExtender) this.adapterFactory).getResourceLocator();
     }
 
 }

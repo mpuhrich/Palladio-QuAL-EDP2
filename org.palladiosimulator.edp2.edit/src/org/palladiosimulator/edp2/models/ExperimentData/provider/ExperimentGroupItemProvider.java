@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -55,6 +56,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
             this.addPurposePropertyDescriptor(object);
             this.addRepositoryPropertyDescriptor(object);
             this.addReportsPropertyDescriptor(object);
+            this.addMeasuringPointRepositoriesPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
     }
@@ -105,6 +107,22 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Measuring Point Repositories feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addMeasuringPointRepositoriesPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_ExperimentGroup_measuringPointRepositories_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_measuringPointRepositories_feature",
+                        "_UI_ExperimentGroup_type"),
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES, true, false, true, null,
+                null, null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate
      * feature for an {@link org.eclipse.emf.edit.command.AddCommand},
      * {@link org.eclipse.emf.edit.command.RemoveCommand} or
@@ -119,7 +137,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS);
-            this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURE);
+            this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_TYPES);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS);
         }
         return this.childrenFeatures;
@@ -178,7 +196,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
             return;
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
         case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-        case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURE:
+        case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES:
         case ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -204,8 +222,9 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
                 ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS,
                 ExperimentDataFactory.eINSTANCE.createExperimentSetting()));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURE,
-                ExperimentDataFactory.eINSTANCE.createMeasure()));
+        newChildDescriptors.add(this.createChildParameter(
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_TYPES,
+                ExperimentDataFactory.eINSTANCE.createMeasuringType()));
 
         newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS,
                 ExperimentDataFactory.eINSTANCE.createExperimentGroupRun()));
@@ -219,7 +238,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return EDP2EditPlugin.INSTANCE;
+        return ((IChildCreationExtender) this.adapterFactory).getResourceLocator();
     }
 
 }

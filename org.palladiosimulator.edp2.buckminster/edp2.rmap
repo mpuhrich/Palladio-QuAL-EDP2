@@ -2,20 +2,20 @@
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 
   <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
+  <rm:locator pattern="^org\.palladiosimulator\.metricspec.*" searchPathRef="metricspec" failOnError="false"/>
+  <rm:locator pattern="^org\.palladiosimulator\.measurementframework.*" searchPathRef="measurementframework" failOnError="false"/>
+  <rm:locator pattern="^org\.palladiosimulator\.servicelevelobjective.*" searchPathRef="ServiceLevelObjectives" failOnError="false"/>
+  <rm:locator pattern="^org\.jfree\..*" searchPathRef="thirdparty" failOnError="false"/>
+  <rm:locator pattern="^org\.apache\..*" searchPathRef="thirdparty" failOnError="false"/>
+  <rm:locator pattern="^org\.jscience.*" searchPathRef="thirdparty" failOnError="false"/>  
   <rm:locator pattern="^de\.uka\.ipd\.sdq\..*" searchPathRef="Palladio" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\..*" searchPathRef="Palladio" failOnError="false"/>
   <rm:locator pattern="^de\.fzi\.se\..*" searchPathRef="Palladio" failOnError="false"/>
   <rm:locator pattern="^de\.uka\.ipd\.sdq\..*" searchPathRef="SDQ_Commons" failOnError="false"/>
   <rm:locator pattern="^edu\.kit\.ipd\.sdq\..*" searchPathRef="SDQ_Commons" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\..*" searchPathRef="SDQ_Commons" failOnError="false"/>
-  <rm:locator pattern="^org\.jscience.*" searchPathRef="thirdparty" failOnError="false"/>  
-  <rm:locator searchPathRef="thirdparty" failOnError="false" pattern="^org\.jfree\..*" />
-  <rm:locator searchPathRef="thirdparty" failOnError="false" pattern="^org\.apache\..*" />
-  <rm:locator pattern="^org\.palladiosimulator\.metricspec.*" searchPathRef="metricspec" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.measurementframework.*" searchPathRef="measurementframework" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.servicelevelobjective.*" searchPathRef="ServiceLevelObjectives" failOnError="false"/>
   <rm:locator searchPathRef="MDSDProfiles" failOnError="false"/>
-  <rm:locator searchPathRef="luna" failOnError="true" pattern="^org\.eclipse\..*" />
+  <rm:locator pattern="^org\.eclipse\..*" searchPathRef="luna" failOnError="true"/>
   <rm:locator searchPathRef="orbit" failOnError="true" />
   
   <rm:searchPath name="edp2svn">

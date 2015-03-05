@@ -18,23 +18,24 @@ import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
  *
  * @generated
  */
-public class JSXmlMeasurementsImpl extends DataSeriesImpl implements
-		JSXmlMeasurements {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JSXmlMeasurementsImpl() {
-		super();
-	}
+public class JSXmlMeasurementsImpl extends DataSeriesImpl implements JSXmlMeasurements {
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected JSXmlMeasurementsImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ExperimentDataPackage.Literals.JS_XML_MEASUREMENTS;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ExperimentDataPackage.Literals.JS_XML_MEASUREMENTS;
+    }
 
 } // JSXmlMeasurementsImpl

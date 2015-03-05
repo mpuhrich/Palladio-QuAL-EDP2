@@ -11,8 +11,8 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AggregatedMeasurements" abstract="true"
         eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementsRange" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/MeasurementsRange" eOpposite="#//ExperimentData/MeasurementsRange/aggregatedMeasurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementRange" ordered="false"
+          lowerBound="1" eType="#//ExperimentData/MeasurementRange" eOpposite="#//ExperimentData/MeasurementRange/aggregatedMeasurements"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="valid" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -37,14 +37,14 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MeasurementsRange" eSuperTypes="#//ExperimentData/Propertyable">
+    <eClassifiers xsi:type="ecore:EClass" name="MeasurementRange" eSuperTypes="#//ExperimentData/Propertyable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The&amp;nbsp;collected&amp;nbsp;data&amp;nbsp;can&amp;nbsp;be&amp;nbsp;split&amp;nbsp;into&amp;nbsp;several&amp;nbsp;measurement&amp;nbsp;ranges.&amp;nbsp;A&amp;nbsp;range&amp;nbsp;is&amp;nbsp;specified&amp;nbsp;as&amp;nbsp;time&amp;nbsp;interval&amp;nbsp;and&amp;nbsp;all&amp;nbsp;measurements&amp;nbsp;falling&amp;nbsp;into&amp;nbsp;a&amp;nbsp;range's&amp;nbsp;interval&amp;nbsp;belong&amp;nbsp;to&amp;nbsp;that&amp;nbsp;range.&amp;nbsp;And&amp;nbsp;only&amp;nbsp;these&amp;nbsp;measurements.&amp;nbsp;The&amp;nbsp;intervals&amp;nbsp;of&amp;nbsp;different&amp;nbsp;ranges&amp;nbsp;are&amp;nbsp;not&amp;nbsp;allowed&amp;nbsp;to&amp;nbsp;overlap.&amp;nbsp;They&amp;nbsp;have&amp;nbsp;to&amp;nbsp;be&amp;nbsp;disjunct.&amp;nbsp;There&amp;nbsp;might&amp;nbsp;be&amp;nbsp;time&amp;nbsp;between&#xD;&#xA;the&amp;nbsp;end&amp;nbsp;of&amp;nbsp;one&amp;nbsp;interval&amp;nbsp;and&amp;nbsp;the&amp;nbsp;beginning&amp;nbsp;of&amp;nbsp;the&amp;nbsp;next. It is not allowed&#xD;&#xA;to change ranges or shift measurements between subsequent ranges to readjust the range after measurements have been taken.&#xD;&#xA;Ranges can be used to differentiate the warm-up-phase from the measurement phase as well as to&amp;nbsp;implement sliding&#xD;&#xA;means."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rawMeasurements" ordered="false"
-          eType="#//ExperimentData/RawMeasurements" containment="true" eOpposite="#//ExperimentData/RawMeasurements/measurementsRange"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/Measurements" eOpposite="#//ExperimentData/Measurements/measurementsRanges"/>
+          eType="#//ExperimentData/RawMeasurements" containment="true" eOpposite="#//ExperimentData/RawMeasurements/measurementRange"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" ordered="false"
+          lowerBound="1" eType="#//ExperimentData/Measurement" eOpposite="#//ExperimentData/Measurement/measurementRanges"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" ordered="false"
           lowerBound="1" eType="#//ExperimentData/EJSDurationMeasure">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -59,7 +59,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="aggregatedMeasurements"
           ordered="false" upperBound="-1" eType="#//ExperimentData/AggregatedMeasurements"
-          containment="true" eOpposite="#//ExperimentData/AggregatedMeasurements/measurementsRange"/>
+          containment="true" eOpposite="#//ExperimentData/AggregatedMeasurements/measurementRange"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Propertyable" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="additionalInformation"
@@ -79,8 +79,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataSeries" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//ExperimentData/DataSeries" containment="true"
           eOpposite="#//ExperimentData/DataSeries/rawMeasurements"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementsRange" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/MeasurementsRange" eOpposite="#//ExperimentData/MeasurementsRange/rawMeasurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementRange" ordered="false"
+          lowerBound="1" eType="#//ExperimentData/MeasurementRange" eOpposite="#//ExperimentData/MeasurementRange/rawMeasurements"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DataSeries" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -182,8 +182,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentSettings" ordered="false"
           upperBound="-1" eType="#//ExperimentData/ExperimentSetting" containment="true"
           eOpposite="#//ExperimentData/ExperimentSetting/experimentGroup"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Measure" containment="true" eOpposite="#//ExperimentData/Measure/experimentGroup"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringTypes" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/MeasuringType" containment="true"
+          eOpposite="#//ExperimentData/MeasuringType/experimentGroup"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="repository" ordered="false"
@@ -195,6 +196,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="reports" ordered="false"
           upperBound="-1" eType="#//ExperimentData/ExperimentGroupRun" containment="true"
           eOpposite="#//ExperimentData/ExperimentGroupRun/experimentgroup"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringPointRepositories"
+          upperBound="-1" eType="#//measuringpoint/MeasuringPointRepository"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExperimentSetting" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -205,8 +208,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentRuns" ordered="false"
           upperBound="-1" eType="#//ExperimentData/ExperimentRun" containment="true"
           eOpposite="#//ExperimentData/ExperimentRun/experimentSetting"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Measure" eOpposite="#//ExperimentData/Measure/experimentSettings"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringTypes" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/MeasuringType" eOpposite="#//ExperimentData/MeasuringType/experimentSettings"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentGroup" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/experimentSettings"/>
     </eClassifiers>
@@ -217,30 +220,30 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentSetting" ordered="false"
           lowerBound="1" eType="#//ExperimentData/ExperimentSetting" eOpposite="#//ExperimentData/ExperimentSetting/experimentRuns"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Measurements" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
+    <eClassifiers xsi:type="ecore:EClass" name="Measurement" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//ExperimentData/Propertyable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="There&amp;nbsp;is&amp;nbsp;exactly&amp;nbsp;one&amp;nbsp;instance&amp;nbsp;of&amp;nbsp;this&amp;nbsp;class&amp;nbsp;for&amp;nbsp;each&amp;nbsp;combination&amp;nbsp;of&amp;nbsp;experiment&amp;nbsp;run&amp;nbsp;and&amp;nbsp;corresponding&amp;nbsp;measure&amp;nbsp;declaration.&#xD;&#xA;It indicates that the experiment run contains measurements for the linked Edp2Measure."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measure" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/Measure"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementsRanges" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/MeasurementsRange" containment="true"
-          eOpposite="#//ExperimentData/MeasurementsRange/measurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringType" ordered="false"
+          lowerBound="1" eType="#//ExperimentData/MeasuringType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurementRanges" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/MeasurementRange" containment="true"
+          eOpposite="#//ExperimentData/MeasurementRange/measurement"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="run" lowerBound="1" eType="#//ExperimentData/Run"
-          eOpposite="#//ExperimentData/Run/measurements"/>
+          eOpposite="#//ExperimentData/Run/measurement"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Measure" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="MeasuringType" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Describes&amp;nbsp;and&amp;nbsp;specifies&amp;nbsp;the&amp;nbsp;measure&amp;nbsp;used.&amp;nbsp;Needs&amp;nbsp;to&amp;nbsp;be&amp;nbsp;subclassed&amp;nbsp;to&amp;nbsp;create&amp;nbsp;concrete&amp;nbsp;Measures&amp;nbsp;which&amp;nbsp;can&amp;nbsp;handle&amp;nbsp;specific&amp;nbsp;data.&amp;nbsp;Measures&amp;nbsp;are&amp;nbsp;attached&amp;nbsp;to&amp;nbsp;ExperimentGroup&amp;nbsp;and&amp;nbsp;referenced&amp;nbsp;from&amp;nbsp;ExperimentSetting&amp;nbsp;to&amp;nbsp;allow&amp;nbsp;modeling&amp;nbsp;that&amp;nbsp;the&amp;nbsp;same&amp;nbsp;Measure&amp;nbsp;is&amp;nbsp;used&amp;nbsp;throughout&amp;nbsp;several&amp;nbsp;experiment&amp;nbsp;settings.&#xD;&#xA;An Edp2Measure can have one or more dimensions (see also the attribute metric).&lt;br />&#xD;&#xA;&lt;br />&#xD;&#xA;Characterizes&amp;nbsp;the&amp;nbsp;reading&amp;nbsp;point&amp;nbsp;how&amp;nbsp;the&amp;nbsp;measurements&amp;nbsp;are&amp;nbsp;collected.&amp;nbsp;The&amp;nbsp;Characerization&amp;nbsp;is&amp;nbsp;propertyable&amp;nbsp;if&amp;nbsp;additional&amp;nbsp;context-specific&amp;nbsp;information&amp;nbsp;should&amp;nbsp;be&amp;nbsp;stored&amp;nbsp;for&amp;nbsp;the&amp;nbsp;sensor.&lt;br />&#xD;&#xA;&lt;br />&#xD;&#xA;For&amp;nbsp;example&amp;nbsp;measuring&amp;nbsp;the&amp;nbsp;response&amp;nbsp;time&amp;nbsp;of&amp;nbsp;a&amp;nbsp;request&amp;nbsp;to&amp;nbsp;a&amp;nbsp;system&amp;nbsp;in&amp;nbsp;milliseconds&amp;nbsp;could&amp;nbsp;result&amp;nbsp;in&amp;nbsp;the&amp;nbsp;following&amp;nbsp;values&amp;nbsp;of&amp;nbsp;the&amp;nbsp;attributes:&amp;nbsp;metric='Response&amp;nbsp;Time',&amp;nbsp;measuredObject='System&amp;nbsp;External&amp;nbsp;Requests',&amp;nbsp;and&amp;nbsp;unitOfMeasurements='ms'.&amp;nbsp;Another&amp;nbsp;example&amp;nbsp;is&amp;nbsp;the&amp;nbsp;number&amp;nbsp;of&amp;nbsp;lines&amp;nbsp;of&amp;nbsp;code&amp;nbsp;of&amp;nbsp;the&amp;nbsp;class&amp;nbsp;java.lang.System:&amp;nbsp;metric='LOC',&amp;nbsp;measuredObject='Class&amp;nbsp;java.lang.System',&amp;nbsp;and&amp;nbsp;unitOfMeasurement='Positive&amp;nbsp;Integer'."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentGroup" ordered="false"
-          lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/measure"/>
+          lowerBound="1" eType="#//ExperimentData/ExperimentGroup" eOpposite="#//ExperimentData/ExperimentGroup/measuringTypes"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentSettings" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/ExperimentSetting" eOpposite="#//ExperimentData/ExperimentSetting/measure"/>
+          upperBound="-1" eType="#//ExperimentData/ExperimentSetting" eOpposite="#//ExperimentData/ExperimentSetting/measuringTypes"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="metric" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//MetricDescription"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="measuringPoint" lowerBound="1"
-          eType="#//measuringpoint/MeasuringPoint" containment="true"/>
+          eType="#//measuringpoint/MeasuringPoint"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="EJSDurationMeasure" instanceClassName="javax.measure.Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="AggregationStatistics" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
@@ -365,9 +368,9 @@
           <details key="documentation" value="Instant at which the experiment run is started."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" ordered="false"
-          upperBound="-1" eType="#//ExperimentData/Measurements" containment="true"
-          eOpposite="#//ExperimentData/Measurements/run"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" ordered="false"
+          upperBound="-1" eType="#//ExperimentData/Measurement" containment="true"
+          eOpposite="#//ExperimentData/Measurement/run"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExperimentGroupRun" eSuperTypes="#//ExperimentData/Run">
       <eStructuralFeatures xsi:type="ecore:EReference" name="experimentgroup" lowerBound="1"
@@ -449,7 +452,10 @@
   </eSubpackages>
   <eSubpackages name="measuringpoint" nsURI="http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1"
       nsPrefix="org.palladiosimulator.edp2.models">
-    <eClassifiers xsi:type="ecore:EClass" name="MeasuringPoint" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MeasuringPoint" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measuringPointRepository"
+          lowerBound="1" eType="#//measuringpoint/MeasuringPointRepository" eOpposite="#//measuringpoint/MeasuringPointRepository/measuringPoints"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StringMeasuringPoint" eSuperTypes="#//measuringpoint/MeasuringPoint">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuringPoint" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -458,9 +464,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceURI" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MeasuringPointRepository">
+    <eClassifiers xsi:type="ecore:EClass" name="MeasuringPointRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="measuringPoints" upperBound="-1"
-          eType="#//measuringpoint/MeasuringPoint" containment="true"/>
+          eType="#//measuringpoint/MeasuringPoint" containment="true" eOpposite="#//measuringpoint/MeasuringPoint/measuringPointRepository"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

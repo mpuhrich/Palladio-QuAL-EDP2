@@ -3,152 +3,168 @@
 package org.palladiosimulator.edp2.models.measuringpoint.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Measuring Point Repository</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Measuring Point Repository</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointRepositoryImpl#getContains <em>Contains</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointRepositoryImpl#getMeasuringPoints
+ * <em>Measuring Points</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MeasuringPointRepositoryImpl extends EObjectImpl implements
-		MeasuringPointRepository {
-	/**
-	 * The cached value of the '{@link #getContains() <em>Contains</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContains()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MeasuringPoint> contains;
+public class MeasuringPointRepositoryImpl extends IdentifierImpl implements MeasuringPointRepository {
+    /**
+     * The cached value of the '{@link #getMeasuringPoints() <em>Measuring Points</em>}' containment
+     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getMeasuringPoints()
+     * @generated
+     * @ordered
+     */
+    protected EList<MeasuringPoint> measuringPoints;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MeasuringPointRepositoryImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected MeasuringPointRepositoryImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return MeasuringpointPackage.Literals.MEASURING_POINT_REPOSITORY;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return MeasuringpointPackage.Literals.MEASURING_POINT_REPOSITORY;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<MeasuringPoint> getContains() {
-		if (contains == null) {
-			contains = new EObjectContainmentEList<MeasuringPoint>(
-					MeasuringPoint.class, this,
-					MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS);
-		}
-		return contains;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EList<MeasuringPoint> getMeasuringPoints() {
+        if (this.measuringPoints == null) {
+            this.measuringPoints = new EObjectContainmentWithInverseEList<MeasuringPoint>(MeasuringPoint.class, this,
+                    MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS,
+                    MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY);
+        }
+        return this.measuringPoints;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS:
-			return ((InternalEList<?>) getContains()).basicRemove(otherEnd,
-					msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasuringPoints()).basicAdd(otherEnd,
+                    msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS:
-			return getContains();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            return ((InternalEList<?>) this.getMeasuringPoints()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS:
-			getContains().clear();
-			getContains().addAll(
-					(Collection<? extends MeasuringPoint>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            return this.getMeasuringPoints();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS:
-			getContains().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            this.getMeasuringPoints().clear();
+            this.getMeasuringPoints().addAll((Collection<? extends MeasuringPoint>) newValue);
+            return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__CONTAINS:
-			return contains != null && !contains.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void eUnset(final int featureID) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            this.getMeasuringPoints().clear();
+            return;
+        }
+        super.eUnset(featureID);
+    }
 
-} //MeasuringPointRepositoryImpl
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public boolean eIsSet(final int featureID) {
+        switch (featureID) {
+        case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
+            return this.measuringPoints != null && !this.measuringPoints.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
+
+} // MeasuringPointRepositoryImpl

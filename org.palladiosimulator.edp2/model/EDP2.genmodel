@@ -6,16 +6,16 @@
     cleanup="true">
   <foreignModel>EDP2.ecore</foreignModel>
   <genPackages prefix="Models" basePackage="org.palladiosimulator.edp2" disposableProviderFactory="true"
-      ecorePackage="EDP2.ecore#/">
+      extensibleProviderFactory="true" ecorePackage="EDP2.ecore#/">
     <nestedGenPackages prefix="ExperimentData" basePackage="org.palladiosimulator.edp2.models"
-        disposableProviderFactory="true" ecorePackage="EDP2.ecore#//ExperimentData">
+        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//ExperimentData">
       <genDataTypes ecoreDataType="EDP2.ecore#//ExperimentData/EJSMeasure">
         <genTypeParameters ecoreTypeParameter="EDP2.ecore#//ExperimentData/EJSMeasure/V"/>
         <genTypeParameters ecoreTypeParameter="EDP2.ecore#//ExperimentData/EJSMeasure/Q"/>
       </genDataTypes>
       <genDataTypes ecoreDataType="EDP2.ecore#//ExperimentData/EJSDurationMeasure"/>
       <genClasses image="false" ecoreClass="EDP2.ecore#//ExperimentData/AggregatedMeasurements">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/AggregatedMeasurements/measurementsRange"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/AggregatedMeasurements/measurementRange"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/AggregatedMeasurements/valid"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/AggregatedMeasurements/function"/>
@@ -25,12 +25,12 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/AggregatedMeasurements/metric"/>
       </genClasses>
-      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/MeasurementsRange">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementsRange/rawMeasurements"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementsRange/measurements"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/MeasurementsRange/endTime"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/MeasurementsRange/startTime"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementsRange/aggregatedMeasurements"/>
+      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/MeasurementRange">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementRange/rawMeasurements"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementRange/measurement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/MeasurementRange/endTime"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/MeasurementRange/startTime"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasurementRange/aggregatedMeasurements"/>
       </genClasses>
       <genClasses image="false" ecoreClass="EDP2.ecore#//ExperimentData/Propertyable">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Propertyable/additionalInformation"/>
@@ -41,7 +41,7 @@
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/RawMeasurements">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/RawMeasurements/dataSeries"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/RawMeasurements/measurementsRange"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/RawMeasurements/measurementRange"/>
       </genClasses>
       <genClasses image="false" ecoreClass="EDP2.ecore#//ExperimentData/DataSeries">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/DataSeries/numericalStatistics"/>
@@ -83,38 +83,40 @@
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentGroup">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/experimentSettings"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/measure"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/measuringTypes"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentGroup/purpose"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/repository"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/reports"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/measuringPointRepositories"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentSetting">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/ExperimentSetting/description"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentSetting/experimentRuns"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentSetting/measure"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentSetting/measuringTypes"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentSetting/experimentGroup"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentRun">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentRun/experimentSetting"/>
       </genClasses>
-      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Measurements">
+      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Measurement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/measure"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/measurementsRanges"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurement/measuringType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurement/measurementRanges"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurements/run"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measurement/run"/>
       </genClasses>
-      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Measure">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measure/experimentGroup"/>
+      <genClasses ecoreClass="EDP2.ecore#//ExperimentData/MeasuringType">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasuringType/experimentGroup"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measure/experimentSettings"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasuringType/experimentSettings"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measure/metric"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasuringType/metric"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Measure/measuringPoint"/>
+            ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/MeasuringType/measuringPoint"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/AggregationStatistics">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/AggregationStatistics/distinctValuesBeforeAggregation"/>
@@ -167,7 +169,7 @@
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/Run">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/Run/duration"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//ExperimentData/Run/startTime"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Run/measurements"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/Run/measurement"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentGroupRun">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -175,7 +177,7 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Repository" basePackage="org.palladiosimulator.edp2.models"
-        disposableProviderFactory="true" ecorePackage="EDP2.ecore#//Repository">
+        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//Repository">
       <genClasses ecoreClass="EDP2.ecore#//Repository/LocalDirectoryRepository">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//Repository/LocalDirectoryRepository/uri"/>
         <genOperations ecoreOperation="EDP2.ecore#//Repository/LocalDirectoryRepository/convertUriStringToFile">
@@ -212,8 +214,11 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Measuringpoint" basePackage="org.palladiosimulator.edp2.models"
-        disposableProviderFactory="true" ecorePackage="EDP2.ecore#//measuringpoint">
-      <genClasses image="false" ecoreClass="EDP2.ecore#//measuringpoint/MeasuringPoint"/>
+        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//measuringpoint">
+      <genClasses image="false" ecoreClass="EDP2.ecore#//measuringpoint/MeasuringPoint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference EDP2.ecore#//measuringpoint/MeasuringPoint/measuringPointRepository"/>
+      </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//measuringpoint/StringMeasuringPoint">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/StringMeasuringPoint/measuringPoint"/>
       </genClasses>
@@ -221,7 +226,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/ResourceURIMeasuringPoint/resourceURI"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//measuringpoint/MeasuringPointRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//measuringpoint/MeasuringPointRepository/contains"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EDP2.ecore#//measuringpoint/MeasuringPointRepository/measuringPoints"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

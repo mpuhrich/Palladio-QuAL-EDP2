@@ -35,7 +35,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ExperimentGroupItemProvider(final AdapterFactory adapterFactory) {
@@ -45,7 +45,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Purpose feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addPurposePropertyDescriptor(final Object object) {
@@ -73,13 +73,13 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_ExperimentGroup_purpose_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_purpose_feature",
                         "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__PURPOSE, true,
-                false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                        false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Repository feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addRepositoryPropertyDescriptor(final Object object) {
@@ -88,13 +88,13 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_ExperimentGroup_repository_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_repository_feature",
                         "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY, true,
-                false, true, null, null, null));
+                        false, true, null, null, null));
     }
 
     /**
      * This adds a property descriptor for the Reports feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addReportsPropertyDescriptor(final Object object) {
@@ -103,7 +103,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_ExperimentGroup_reports_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_reports_feature",
                         "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS, true,
-                false, true, null, null, null));
+                        false, true, null, null, null));
     }
 
     /**
@@ -118,8 +118,8 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_ExperimentGroup_measuringPointRepositories_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_measuringPointRepositories_feature",
                         "_UI_ExperimentGroup_type"),
-                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES, true, false, true, null,
-                null, null));
+                        ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES, true, false, true, null,
+                        null, null));
     }
 
     /**
@@ -145,7 +145,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -158,7 +158,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns ExperimentGroup.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -183,7 +183,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -207,7 +207,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -233,7 +233,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

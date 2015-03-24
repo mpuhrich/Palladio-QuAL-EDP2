@@ -33,8 +33,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * For&nbsp;example&nbsp;measuring&nbsp;the&nbsp;response&nbsp;time&nbsp;of&nbsp;a&nbsp;request&nbsp
  * ;to&nbsp;a&nbsp;system&nbsp;in&nbsp;milliseconds&nbsp;could&nbsp;result&nbsp;in&nbsp;the&nbsp;
  * following&nbsp;values&nbsp;of&nbsp;the&nbsp;attributes:&nbsp;metric=
- * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Integ
- * e r ' . <!-- end-model-doc -->
+ * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Integer
+ * ' . <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:

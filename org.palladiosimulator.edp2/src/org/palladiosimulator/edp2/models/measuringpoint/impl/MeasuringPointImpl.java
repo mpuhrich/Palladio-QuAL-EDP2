@@ -22,12 +22,38 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  * <li>
  * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl#getMeasuringPointRepository
  * <em>Measuring Point Repository</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl#getStringRepresentation
+ * <em>String Representation</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl#getResourceURIRepresentation
+ * <em>Resource URI Representation</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
+    /**
+     * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getStringRepresentation()
+     * @generated
+     * @ordered
+     */
+    protected static final String STRING_REPRESENTATION_EDEFAULT = null;
+    /**
+     * The default value of the '{@link #getResourceURIRepresentation()
+     * <em>Resource URI Representation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @see #getResourceURIRepresentation()
+     * @generated
+     * @ordered
+     */
+    protected static final String RESOURCE_URI_REPRESENTATION_EDEFAULT = null;
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -107,6 +133,22 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
+     * @generated NOT
+     */
+    @Override
+    public abstract String getStringRepresentation();
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public abstract String getResourceURIRepresentation();
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -162,6 +204,10 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
         switch (featureID) {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.getMeasuringPointRepository();
+        case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
+            return this.getStringRepresentation();
+        case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
+            return this.getResourceURIRepresentation();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -206,6 +252,12 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
         switch (featureID) {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.getMeasuringPointRepository() != null;
+        case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
+            return STRING_REPRESENTATION_EDEFAULT == null ? this.getStringRepresentation() != null
+                    : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
+        case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
+            return RESOURCE_URI_REPRESENTATION_EDEFAULT == null ? this.getResourceURIRepresentation() != null
+                    : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
         }
         return super.eIsSet(featureID);
     }

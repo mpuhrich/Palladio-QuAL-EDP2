@@ -35,7 +35,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public AggregatedMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -45,7 +45,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Valid feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addValidPropertyDescriptor(final Object object) {
@@ -73,14 +73,14 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_AggregatedMeasurements_valid_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_AggregatedMeasurements_valid_feature",
                         "_UI_AggregatedMeasurements_type"),
-                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__VALID, true, false, false,
-                ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+                        ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__VALID, true, false, false,
+                        ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Function feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addFunctionPropertyDescriptor(final Object object) {
@@ -89,13 +89,13 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_AggregatedMeasurements_function_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_AggregatedMeasurements_function_feature",
                         "_UI_AggregatedMeasurements_type"),
-                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__FUNCTION, true, false, true, null, null, null));
+                        ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__FUNCTION, true, false, true, null, null, null));
     }
 
     /**
      * This adds a property descriptor for the Aggregation On feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addAggregationOnPropertyDescriptor(final Object object) {
@@ -104,14 +104,14 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_AggregatedMeasurements_aggregationOn_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_AggregatedMeasurements_aggregationOn_feature",
                         "_UI_AggregatedMeasurements_type"),
-                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, true, false, true, null, null,
-                null));
+                        ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, true, false, true, null, null,
+                        null));
     }
 
     /**
      * This adds a property descriptor for the Metric feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMetricPropertyDescriptor(final Object object) {
@@ -120,7 +120,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_AggregatedMeasurements_metric_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_AggregatedMeasurements_metric_feature",
                         "_UI_AggregatedMeasurements_type"),
-                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__METRIC, true, false, true, null, null, null));
+                        ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__METRIC, true, false, true, null, null, null));
     }
 
     /**
@@ -143,7 +143,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -171,7 +171,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -192,7 +192,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -207,7 +207,7 @@ public class AggregatedMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

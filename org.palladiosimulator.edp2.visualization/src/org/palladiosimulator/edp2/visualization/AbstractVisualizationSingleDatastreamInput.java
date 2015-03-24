@@ -6,7 +6,6 @@ import java.util.Map;
 import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSourceListener;
-import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 
 /**
  * Interface used to describe elements that are managed by an {@link AbstractVisualizationInput}. It
@@ -43,6 +42,7 @@ public abstract class AbstractVisualizationSingleDatastreamInput extends Abstrac
         return source;
     }
 
+    @Override
     public void setDataSource(final IDataSource source) {
         this.source = source;
         final Map<String, Object> properties = new HashMap<String, Object>(getConfiguration().getProperties());
@@ -64,7 +64,7 @@ public abstract class AbstractVisualizationSingleDatastreamInput extends Abstrac
      */
     private String getDefaultName() {
         if (getDataSource() != null) {
-            return MeasuringPointUtility.measuringPointToString(source.getMeasuringPoint());
+            return source.getMeasuringPoint().getStringRepresentation();
         } else {
             return "noSourceSet";
         }

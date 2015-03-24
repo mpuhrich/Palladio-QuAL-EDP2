@@ -35,7 +35,6 @@ import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProvi
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
-import org.palladiosimulator.edp2.util.MeasuringPointUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -217,8 +216,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 public StyledString caseMeasuringType(final MeasuringType object) {
                     final MeasuringPoint measuringPoint = object.getMeasuringPoint();
 
-                    final StyledString styledString = new StyledString(
-                            MeasuringPointUtility.measuringPointToString(measuringPoint));
+                    final StyledString styledString = new StyledString(measuringPoint.getStringRepresentation());
 
                     final String decoration = " (" + object.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);
@@ -230,8 +228,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     final MeasuringType measuringType = object.getMeasuringType();
                     final MeasuringPoint measuringPoint = measuringType.getMeasuringPoint();
 
-                    final StyledString styledString = new StyledString(
-                            MeasuringPointUtility.measuringPointToString(measuringPoint));
+                    final StyledString styledString = new StyledString(measuringPoint.getStringRepresentation());
 
                     final String decoration = " (" + measuringType.getMetric().getName() + ")";
                     styledString.append(decoration, StyledString.COUNTER_STYLER);

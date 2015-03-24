@@ -165,4 +165,24 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
         return result.toString();
     }
 
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public String getStringRepresentation() {
+        return this.measuringPoint;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public String getResourceURIRepresentation() {
+        return "Unkown Resource URI -- String Measuring Point only!";
+    }
+
 } // StringMeasuringPointImpl

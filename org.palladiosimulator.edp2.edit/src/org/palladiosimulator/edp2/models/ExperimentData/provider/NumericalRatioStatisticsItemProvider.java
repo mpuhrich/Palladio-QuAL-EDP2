@@ -29,7 +29,7 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NumericalRatioStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -39,7 +39,7 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -57,7 +57,7 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
     /**
      * This adds a property descriptor for the Coefficient Of Variation feature. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addCoefficientOfVariationPropertyDescriptor(final Object object) {
@@ -67,14 +67,14 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
                         "_UI_PropertyDescriptor_description",
                         "_UI_NumericalRatioStatistics_coefficientOfVariation_feature",
                         "_UI_NumericalRatioStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION, true, false,
-                false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                        ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION, true, false,
+                        false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Geometric Mean feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addGeometricMeanPropertyDescriptor(final Object object) {
@@ -83,14 +83,14 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
                 this.getString("_UI_NumericalRatioStatistics_geometricMean_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_geometricMean_feature",
                         "_UI_NumericalRatioStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                        ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN, true, false, false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Harmonic Mean feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addHarmonicMeanPropertyDescriptor(final Object object) {
@@ -99,13 +99,13 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
                 this.getString("_UI_NumericalRatioStatistics_harmonicMean_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_NumericalRatioStatistics_harmonicMean_feature",
                         "_UI_NumericalRatioStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                        ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN, true, false, false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This returns NumericalRatioStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -130,7 +130,7 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +150,7 @@ public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStati
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

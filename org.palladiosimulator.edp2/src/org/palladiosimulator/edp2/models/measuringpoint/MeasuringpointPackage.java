@@ -75,13 +75,31 @@ public interface MeasuringpointPackage extends EPackage {
     int MEASURING_POINT__MEASURING_POINT_REPOSITORY = 0;
 
     /**
+     * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int MEASURING_POINT__STRING_REPRESENTATION = 1;
+
+    /**
+     * The feature id for the '<em><b>Resource URI Representation</b></em>' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int MEASURING_POINT__RESOURCE_URI_REPRESENTATION = 2;
+
+    /**
      * The number of structural features of the '<em>Measuring Point</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int MEASURING_POINT_FEATURE_COUNT = 1;
+    int MEASURING_POINT_FEATURE_COUNT = 3;
 
     /**
      * The meta object id for the '
@@ -102,6 +120,24 @@ public interface MeasuringpointPackage extends EPackage {
      * @ordered
      */
     int STRING_MEASURING_POINT__MEASURING_POINT_REPOSITORY = MEASURING_POINT__MEASURING_POINT_REPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int STRING_MEASURING_POINT__STRING_REPRESENTATION = MEASURING_POINT__STRING_REPRESENTATION;
+
+    /**
+     * The feature id for the '<em><b>Resource URI Representation</b></em>' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int STRING_MEASURING_POINT__RESOURCE_URI_REPRESENTATION = MEASURING_POINT__RESOURCE_URI_REPRESENTATION;
 
     /**
      * The feature id for the '<em><b>Measuring Point</b></em>' attribute. <!-- begin-user-doc -->
@@ -140,6 +176,24 @@ public interface MeasuringpointPackage extends EPackage {
      * @ordered
      */
     int RESOURCE_URI_MEASURING_POINT__MEASURING_POINT_REPOSITORY = STRING_MEASURING_POINT__MEASURING_POINT_REPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int RESOURCE_URI_MEASURING_POINT__STRING_REPRESENTATION = STRING_MEASURING_POINT__STRING_REPRESENTATION;
+
+    /**
+     * The feature id for the '<em><b>Resource URI Representation</b></em>' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int RESOURCE_URI_MEASURING_POINT__RESOURCE_URI_REPRESENTATION = STRING_MEASURING_POINT__RESOURCE_URI_REPRESENTATION;
 
     /**
      * The feature id for the '<em><b>Measuring Point</b></em>' attribute. <!-- begin-user-doc -->
@@ -228,6 +282,30 @@ public interface MeasuringpointPackage extends EPackage {
      * @generated
      */
     EReference getMeasuringPoint_MeasuringPointRepository();
+
+    /**
+     * Returns the meta object for the attribute '
+     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getStringRepresentation
+     * <em>String Representation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>String Representation</em>'.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getStringRepresentation()
+     * @see #getMeasuringPoint()
+     * @generated
+     */
+    EAttribute getMeasuringPoint_StringRepresentation();
+
+    /**
+     * Returns the meta object for the attribute '
+     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getResourceURIRepresentation
+     * <em>Resource URI Representation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Resource URI Representation</em>'.
+     * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getResourceURIRepresentation()
+     * @see #getMeasuringPoint()
+     * @generated
+     */
+    EAttribute getMeasuringPoint_ResourceURIRepresentation();
 
     /**
      * Returns the meta object for class '
@@ -338,6 +416,23 @@ public interface MeasuringpointPackage extends EPackage {
          * @generated
          */
         EReference MEASURING_POINT__MEASURING_POINT_REPOSITORY = eINSTANCE.getMeasuringPoint_MeasuringPointRepository();
+
+        /**
+         * The meta object literal for the '<em><b>String Representation</b></em>' attribute
+         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute MEASURING_POINT__STRING_REPRESENTATION = eINSTANCE.getMeasuringPoint_StringRepresentation();
+
+        /**
+         * The meta object literal for the '<em><b>Resource URI Representation</b></em>' attribute
+         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute MEASURING_POINT__RESOURCE_URI_REPRESENTATION = eINSTANCE
+                .getMeasuringPoint_ResourceURIRepresentation();
 
         /**
          * The meta object literal for the '

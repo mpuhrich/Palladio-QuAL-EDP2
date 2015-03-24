@@ -34,11 +34,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
  * @generated
  */
 public class TextualMassDistributionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public TextualMassDistributionItemProvider(final AdapterFactory adapterFactory) {
@@ -48,7 +48,7 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -65,7 +65,7 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
     /**
      * This adds a property descriptor for the Frequency feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addFrequencyPropertyDescriptor(final Object object) {
@@ -74,14 +74,14 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
                 this.getString("_UI_TextualMassDistribution_frequency_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_TextualMassDistribution_frequency_feature",
                         "_UI_TextualMassDistribution_type"),
-                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, true, false, false,
-                ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+                        ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, true, false, false,
+                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Identifier feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addIdentifierPropertyDescriptor(final Object object) {
@@ -90,13 +90,13 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
                 this.getString("_UI_TextualMassDistribution_identifier_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_TextualMassDistribution_identifier_feature",
                         "_UI_TextualMassDistribution_type"),
-                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, true, false, true, null, null,
-                null));
+                        ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, true, false, true, null, null,
+                        null));
     }
 
     /**
      * This returns TextualMassDistribution.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +120,7 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -149,7 +149,7 @@ public class TextualMassDistributionItemProvider extends ItemProviderAdapter imp
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

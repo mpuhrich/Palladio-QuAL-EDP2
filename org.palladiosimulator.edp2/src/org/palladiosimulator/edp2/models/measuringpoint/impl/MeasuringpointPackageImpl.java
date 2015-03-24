@@ -161,6 +161,26 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
      * @generated
      */
     @Override
+    public EAttribute getMeasuringPoint_StringRepresentation() {
+        return (EAttribute) this.measuringPointEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EAttribute getMeasuringPoint_ResourceURIRepresentation() {
+        return (EAttribute) this.measuringPointEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EClass getStringMeasuringPoint() {
         return this.stringMeasuringPointEClass;
     }
@@ -247,6 +267,8 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         // Create classes and their features
         this.measuringPointEClass = this.createEClass(MEASURING_POINT);
         this.createEReference(this.measuringPointEClass, MEASURING_POINT__MEASURING_POINT_REPOSITORY);
+        this.createEAttribute(this.measuringPointEClass, MEASURING_POINT__STRING_REPRESENTATION);
+        this.createEAttribute(this.measuringPointEClass, MEASURING_POINT__RESOURCE_URI_REPRESENTATION);
 
         this.stringMeasuringPointEClass = this.createEClass(STRING_MEASURING_POINT);
         this.createEAttribute(this.stringMeasuringPointEClass, STRING_MEASURING_POINT__MEASURING_POINT);
@@ -302,6 +324,12 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
                 this.getMeasuringPointRepository_MeasuringPoints(), "measuringPointRepository", null, 1, 1,
                 MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(this.getMeasuringPoint_StringRepresentation(), this.ecorePackage.getEString(),
+                "stringRepresentation", null, 1, 1, MeasuringPoint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(this.getMeasuringPoint_ResourceURIRepresentation(), this.ecorePackage.getEString(),
+                "resourceURIRepresentation", null, 1, 1, MeasuringPoint.class, IS_TRANSIENT, IS_VOLATILE,
+                !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.stringMeasuringPointEClass, StringMeasuringPoint.class, "StringMeasuringPoint",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

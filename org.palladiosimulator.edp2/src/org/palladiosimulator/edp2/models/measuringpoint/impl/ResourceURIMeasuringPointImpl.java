@@ -164,4 +164,13 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
         return result.toString();
     }
 
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public String getResourceURIRepresentation() {
+        return this.resourceURI;
+    }
 } // ResourceURIMeasuringPointImpl

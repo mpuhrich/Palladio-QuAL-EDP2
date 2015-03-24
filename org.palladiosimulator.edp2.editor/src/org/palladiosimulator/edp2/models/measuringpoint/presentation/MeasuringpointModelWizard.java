@@ -68,7 +68,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
@@ -78,7 +78,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static final String FORMATTED_FILE_EXTENSIONS = EDP2EditorPlugin.INSTANCE.getString(
@@ -86,28 +86,28 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringpointPackage measuringpointPackage = MeasuringpointPackage.eINSTANCE;
 
     /**
      * This caches an instance of the model factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringpointFactory measuringpointFactory = this.measuringpointPackage.getMeasuringpointFactory();
 
     /**
      * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringpointModelWizardNewFileCreationPage newFileCreationPage;
 
     /**
      * This is the initial object creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringpointModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -122,7 +122,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * Remember the workbench during initialization. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IWorkbench workbench;
@@ -130,14 +130,14 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * Caches the names of the types that can be created as the root object. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected List<String> initialObjectNames;
 
     /**
      * This just records the information. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -152,7 +152,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * Returns the names of the types that can be created as the root object. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<String> getInitialObjectNames() {
@@ -173,7 +173,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected EObject createInitialModel() {
@@ -185,7 +185,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * Do the work after everything is specified. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -271,13 +271,13 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public class MeasuringpointModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
         /**
          * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         public MeasuringpointModelWizardNewFileCreationPage(final String pageId, final IStructuredSelection selection) {
@@ -287,7 +287,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
         /**
          * The framework calls this to see if the file is correct. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @generated
          */
         @Override
@@ -308,7 +308,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         public IFile getModelFile() {
@@ -320,13 +320,13 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * This is the page where the type of object to create is selected. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public class MeasuringpointModelWizardInitialObjectCreationPage extends WizardPage {
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         protected Combo initialObjectField;
@@ -338,14 +338,14 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         protected Combo encodingField;
 
         /**
          * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         public MeasuringpointModelWizardInitialObjectCreationPage(final String pageId) {
@@ -354,7 +354,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         @Override
@@ -428,7 +428,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         protected ModifyListener validator = new ModifyListener() {
@@ -441,7 +441,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         protected boolean validatePage() {
@@ -450,7 +450,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         @Override
@@ -469,7 +469,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         public String getInitialObjectName() {
@@ -485,7 +485,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         public String getEncoding() {
@@ -509,7 +509,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         protected Collection<String> getEncodings() {
@@ -527,7 +527,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
     /**
      * The framework calls this to create the contents of the wizard. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -586,7 +586,7 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
     /**
      * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public IFile getModelFile() {

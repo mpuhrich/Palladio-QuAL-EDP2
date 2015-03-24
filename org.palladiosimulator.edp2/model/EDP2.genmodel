@@ -218,6 +218,8 @@
       <genClasses image="false" ecoreClass="EDP2.ecore#//measuringpoint/MeasuringPoint">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//measuringpoint/MeasuringPoint/measuringPointRepository"/>
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/MeasuringPoint/stringRepresentation"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/MeasuringPoint/resourceURIRepresentation"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//measuringpoint/StringMeasuringPoint">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//measuringpoint/StringMeasuringPoint/measuringPoint"/>

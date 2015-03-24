@@ -27,6 +27,21 @@ public final class MetricDescriptionUtility {
     }
     
     /**
+     * Gets whether the given {@link MetricDescription}s can be considered equal with respect to their ids.
+     * @param first A {@link MetricDescription} instance.
+     * @param second A {@link MetricDescription} instance.
+     * @return {@code true} whether the ids of the given metric descriptions are equal
+     * (i.e., {@code first.getId().equals(second.getId())} yields true), {@code false} otherwise.
+     * @throws IllegalArgumentException In case either argument is {@code null}. 
+     */
+    public static boolean metricDescriptionIdsEqual(MetricDescription first, MetricDescription second) {
+        if (first == null || second == null) {
+            throw new IllegalArgumentException("Either of the given instances is null.");
+        }
+        return first.getId().equals(second.getId());
+    }
+    
+    /**
      * Convenience method to get the default unit of a numerical metric description in a typesafe way.
      * @param baseMetric The {@link NumericalBaseMetricDescription} whose default unit is to be retrieved.
      * @param quantityDimension A {@link Class} object denoting the expected {@link Quantity} of the default unit.
@@ -54,7 +69,7 @@ public final class MetricDescriptionUtility {
      */
     public static boolean isBaseMetricDescriptionSubsumedByMetricDescription(BaseMetricDescription soughtFor, MetricDescription description) {
         for (BaseMetricDescription baseMetric : toBaseMetricDescriptions(description)) {
-            if (soughtFor.equals(baseMetric)) {
+            if (metricDescriptionIdsEqual(soughtFor, baseMetric)) {
                 return true;
             }
         }

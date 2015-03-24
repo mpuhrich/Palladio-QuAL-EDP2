@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 
@@ -21,12 +22,13 @@ public class MeasuringPointUtility {
     
     /**
      * Creates a {@link StringMeasuringPoint} based on the given {@link MeasuringPoint} and an
-     * optional name suffix.
-     * 
+     * optional name suffix.<br><br>
+     * Note, that this method has a <b>side effect</b>: The newly created and returned {@code StringMeasuringPoint} is added to the
+     * {@link MeasuringPointRepository} the given {@code measuringPoint} is associated with.
      * @param measuringPoint The {@link MeasuringPoint} on which the newly created one bases on.
      * @param nameSuffix A suffix that is appended to the name of the new measuring point.<br>
      * If no suffix is required, {@code null} or the empty string is to be passed.
-     * @return A{@link StringMeasuringPoint} basing on the given {@code measuringPoint.}
+     * @return A {@link StringMeasuringPoint} basing on the given {@code measuringPoint.}
      * @throws IllegalArgumentException In case the given {@code measuringPoint} is {@code null}.
      */
     public static StringMeasuringPoint createStringMeasuringPointFromMeasuringPoint(MeasuringPoint measuringPoint,
@@ -39,6 +41,8 @@ public class MeasuringPointUtility {
                 .measuringPointToString(measuringPoint) + nameSuffix : MeasuringPointUtility
                 .measuringPointToString(measuringPoint);
         result.setMeasuringPoint(mpName);
+        result.setMeasuringPointRepository(measuringPoint.getMeasuringPointRepository());
+        measuringPoint.getMeasuringPointRepository().getMeasuringPoints().add(result);
 
         return result;
     }

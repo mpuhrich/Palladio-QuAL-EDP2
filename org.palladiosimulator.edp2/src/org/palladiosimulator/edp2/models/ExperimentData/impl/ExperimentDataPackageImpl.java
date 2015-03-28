@@ -357,7 +357,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         // Obtain or create and register package
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                : new ExperimentDataPackageImpl());
+                        : new ExperimentDataPackageImpl());
 
         isInited = true;
 
@@ -367,10 +367,10 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         // Obtain or create and register interdependencies
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+                        .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
+                        .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theExperimentDataPackage.createPackageContents();
@@ -2040,8 +2040,8 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getExperimentGroup_MeasuringPointRepositories(),
                 theMeasuringpointPackage.getMeasuringPointRepository(), null, "measuringPointRepositories", null, 0,
-                -1, ExperimentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                -1, ExperimentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.experimentSettingEClass, ExperimentSetting.class, "ExperimentSetting", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

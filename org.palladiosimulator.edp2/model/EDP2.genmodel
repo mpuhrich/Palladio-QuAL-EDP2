@@ -89,7 +89,7 @@
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/repository"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/reports"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference EDP2.ecore#//ExperimentData/ExperimentGroup/measuringPointRepositories"/>
       </genClasses>
       <genClasses ecoreClass="EDP2.ecore#//ExperimentData/ExperimentSetting">

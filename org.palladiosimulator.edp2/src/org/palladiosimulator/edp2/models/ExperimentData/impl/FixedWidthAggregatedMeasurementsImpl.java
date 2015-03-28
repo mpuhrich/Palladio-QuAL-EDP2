@@ -39,7 +39,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeas
  * @generated
  */
 public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurementsImpl implements
-        FixedWidthAggregatedMeasurements {
+FixedWidthAggregatedMeasurements {
     /**
      * The cached value of the '{@link #getIntervals() <em>Intervals</em>}' containment reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -33,7 +33,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public FixedIntervalsItemProvider(final AdapterFactory adapterFactory) {
@@ -43,7 +43,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -61,7 +61,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Lower Bound feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addLowerBoundPropertyDescriptor(final Object object) {
@@ -70,13 +70,13 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_FixedIntervals_lowerBound_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_lowerBound_feature",
                         "_UI_FixedIntervals_type"), ExperimentDataPackage.Literals.FIXED_INTERVALS__LOWER_BOUND, true,
-                        false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Width feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addWidthPropertyDescriptor(final Object object) {
@@ -85,13 +85,13 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_FixedIntervals_width_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_width_feature",
                         "_UI_FixedIntervals_type"), ExperimentDataPackage.Literals.FIXED_INTERVALS__WIDTH, true, false,
-                        false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Number Of Intervals feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addNumberOfIntervalsPropertyDescriptor(final Object object) {
@@ -100,13 +100,13 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
                 this.getString("_UI_FixedIntervals_numberOfIntervals_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_FixedIntervals_numberOfIntervals_feature",
                         "_UI_FixedIntervals_type"),
-                        ExperimentDataPackage.Literals.FIXED_INTERVALS__NUMBER_OF_INTERVALS, true, false, false,
-                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__NUMBER_OF_INTERVALS, true, false, false,
+                ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
     }
 
     /**
      * This returns FixedIntervals.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -162,7 +162,7 @@ public class FixedIntervalsItemProvider extends IdentifierItemProvider {
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

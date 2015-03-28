@@ -142,7 +142,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
         switch (featureID) {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
             return MEASURING_POINT_EDEFAULT == null ? this.measuringPoint != null : !MEASURING_POINT_EDEFAULT
-                    .equals(this.measuringPoint);
+            .equals(this.measuringPoint);
         }
         return super.eIsSet(featureID);
     }

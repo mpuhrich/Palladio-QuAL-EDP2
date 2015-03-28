@@ -37,11 +37,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapt
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdapterFactory implements
-ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+        ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -60,7 +60,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * This helps manage the child creation extenders. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
@@ -69,14 +69,14 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ExperimentDataItemProviderAdapterFactory() {
@@ -123,7 +123,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
     /**
      * This creates an adapter for a {@link java.util.Map.Entry}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -148,7 +148,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -164,7 +164,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalNominalStatisticsItemProvider numericalNominalStatisticsItemProvider;
@@ -189,7 +189,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalMassDistributionItemProvider numericalMassDistributionItemProvider;
@@ -214,7 +214,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedWidthAggregatedMeasurementsItemProvider fixedWidthAggregatedMeasurementsItemProvider;
@@ -223,7 +223,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -248,7 +248,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -264,7 +264,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualNominalStatisticsItemProvider textualNominalStatisticsItemProvider;
@@ -289,7 +289,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualMassDistributionItemProvider textualMassDistributionItemProvider;
@@ -323,7 +323,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -373,7 +373,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -398,7 +398,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -423,7 +423,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -439,7 +439,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected AggregationStatisticsItemProvider aggregationStatisticsItemProvider;
@@ -464,7 +464,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DoubleBinaryMeasurementsItemProvider doubleBinaryMeasurementsItemProvider;
@@ -489,7 +489,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalIntervalStatisticsItemProvider numericalIntervalStatisticsItemProvider;
@@ -514,7 +514,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalOrdinalStatisticsItemProvider numericalOrdinalStatisticsItemProvider;
@@ -589,7 +589,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected LongBinaryMeasurementsItemProvider longBinaryMeasurementsItemProvider;
@@ -614,7 +614,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IdentifierBasedMeasurementsItemProvider identifierBasedMeasurementsItemProvider;
@@ -639,7 +639,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalRatioStatisticsItemProvider numericalRatioStatisticsItemProvider;
@@ -664,7 +664,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected SensorFrameworkV1DoubleBinaryMeasurementsItemProvider sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
@@ -673,7 +673,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -690,7 +690,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected SensorFrameworkV1IdentifierBasedMeasurementsItemProvider sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
@@ -699,7 +699,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -716,7 +716,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualOrdinalStatisticsItemProvider textualOrdinalStatisticsItemProvider;
@@ -765,7 +765,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -776,7 +776,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -786,7 +786,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -807,7 +807,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -824,7 +824,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -833,7 +833,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -843,7 +843,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -853,7 +853,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -863,7 +863,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -889,7 +889,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

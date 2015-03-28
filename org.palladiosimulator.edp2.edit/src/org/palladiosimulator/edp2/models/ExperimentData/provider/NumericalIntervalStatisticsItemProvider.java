@@ -29,7 +29,7 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NumericalIntervalStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -39,7 +39,7 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -58,7 +58,7 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
     /**
      * This adds a property descriptor for the Arithmethic Mean feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addArithmethicMeanPropertyDescriptor(final Object object) {
@@ -68,14 +68,14 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
                         "_UI_PropertyDescriptor_description",
                         "_UI_NumericalIntervalStatistics_arithmethicMean_feature",
                         "_UI_NumericalIntervalStatistics_type"),
-                        ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Variance feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addVariancePropertyDescriptor(final Object object) {
@@ -84,14 +84,14 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
                 this.getString("_UI_NumericalIntervalStatistics_variance_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_NumericalIntervalStatistics_variance_feature",
                         "_UI_NumericalIntervalStatistics_type"),
-                        ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__VARIANCE, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__VARIANCE, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Standard Deviation feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addStandardDeviationPropertyDescriptor(final Object object) {
@@ -101,14 +101,14 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
                         "_UI_PropertyDescriptor_description",
                         "_UI_NumericalIntervalStatistics_standardDeviation_feature",
                         "_UI_NumericalIntervalStatistics_type"),
-                        ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Sum feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addSumPropertyDescriptor(final Object object) {
@@ -117,13 +117,13 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
                 this.getString("_UI_NumericalIntervalStatistics_sum_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_NumericalIntervalStatistics_sum_feature",
                         "_UI_NumericalIntervalStatistics_type"),
-                        ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__SUM, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                ExperimentDataPackage.Literals.NUMERICAL_INTERVAL_STATISTICS__SUM, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This returns NumericalIntervalStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -148,7 +148,7 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -169,7 +169,7 @@ public class NumericalIntervalStatisticsItemProvider extends NumericalOrdinalSta
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

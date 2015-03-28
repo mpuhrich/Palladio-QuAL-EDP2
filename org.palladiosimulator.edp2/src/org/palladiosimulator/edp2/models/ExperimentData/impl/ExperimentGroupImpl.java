@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -135,8 +135,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * The cached value of the '{@link #getMeasuringPointRepositories()
-     * <em>Measuring Point Repositories</em>}' reference list. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * <em>Measuring Point Repositories</em>}' containment reference list. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      *
      * @see #getMeasuringPointRepositories()
      * @generated
@@ -307,7 +307,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     @Override
     public EList<MeasuringPointRepository> getMeasuringPointRepositories() {
         if (this.measuringPointRepositories == null) {
-            this.measuringPointRepositories = new EObjectResolvingEList<MeasuringPointRepository>(
+            this.measuringPointRepositories = new EObjectContainmentEList<MeasuringPointRepository>(
                     MeasuringPointRepository.class, this,
                     ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES);
         }
@@ -385,6 +385,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
             return this.basicSetRepository(null, msgs);
         case ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS:
             return ((InternalEList<?>) this.getReports()).basicRemove(otherEnd, msgs);
+        case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES:
+            return ((InternalEList<?>) this.getMeasuringPointRepositories()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }

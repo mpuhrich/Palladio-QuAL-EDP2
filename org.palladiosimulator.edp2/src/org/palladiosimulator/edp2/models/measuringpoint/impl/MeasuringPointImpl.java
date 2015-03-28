@@ -254,10 +254,10 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
             return this.getMeasuringPointRepository() != null;
         case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
             return STRING_REPRESENTATION_EDEFAULT == null ? this.getStringRepresentation() != null
-                    : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
+            : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
         case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
             return RESOURCE_URI_REPRESENTATION_EDEFAULT == null ? this.getResourceURIRepresentation() != null
-                    : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
+            : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
         }
         return super.eIsSet(featureID);
     }

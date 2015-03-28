@@ -204,7 +204,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
             return URI_EDEFAULT == null ? this.uri != null : !URI_EDEFAULT.equals(this.uri);
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS:
             return IMPORT_SETTINGS_EDEFAULT == null ? this.importSettings != null : !IMPORT_SETTINGS_EDEFAULT
-                    .equals(this.importSettings);
+            .equals(this.importSettings);
         }
         return super.eIsSet(featureID);
     }

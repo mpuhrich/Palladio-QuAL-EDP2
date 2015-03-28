@@ -29,7 +29,7 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public LocalSensorFrameworkRepositoryItemProvider(final AdapterFactory adapterFactory) {
@@ -39,7 +39,7 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -56,7 +56,7 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
     /**
      * This adds a property descriptor for the Uri feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addUriPropertyDescriptor(final Object object) {
@@ -65,14 +65,14 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
                 this.getString("_UI_LocalSensorFrameworkRepository_uri_feature"), this.getString(
                         "_UI_PropertyDescriptor_description", "_UI_LocalSensorFrameworkRepository_uri_feature",
                         "_UI_LocalSensorFrameworkRepository_type"),
-                        RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
      * This adds a property descriptor for the Import Settings feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addImportSettingsPropertyDescriptor(final Object object) {
@@ -82,8 +82,8 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
                         "_UI_PropertyDescriptor_description",
                         "_UI_LocalSensorFrameworkRepository_importSettings_feature",
                         "_UI_LocalSensorFrameworkRepository_type"),
-                        RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -115,7 +115,7 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public class LocalSensorFrameworkRepositoryItemProvider extends RepositoryItemPr
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

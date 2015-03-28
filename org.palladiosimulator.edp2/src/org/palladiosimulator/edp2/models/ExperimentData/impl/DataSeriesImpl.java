@@ -527,7 +527,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
             return this.getAggregatedMeasurements() != null;
         case ExperimentDataPackage.DATA_SERIES__VALUES_UUID:
             return VALUES_UUID_EDEFAULT == null ? this.valuesUuid != null : !VALUES_UUID_EDEFAULT
-            .equals(this.valuesUuid);
+                    .equals(this.valuesUuid);
         case ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS:
             return this.textualStatistics != null;
         case ExperimentDataPackage.DATA_SERIES__RAW_MEASUREMENTS:

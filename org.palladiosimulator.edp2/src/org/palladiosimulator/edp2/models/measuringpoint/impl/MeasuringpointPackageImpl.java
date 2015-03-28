@@ -102,7 +102,7 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         // Obtain or create and register package
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                : new MeasuringpointPackageImpl());
+                        : new MeasuringpointPackageImpl());
 
         isInited = true;
 
@@ -112,10 +112,10 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         // Obtain or create and register interdependencies
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
+                        .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+                        .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
 
         // Create package meta-data objects
         theMeasuringpointPackage.createPackageContents();

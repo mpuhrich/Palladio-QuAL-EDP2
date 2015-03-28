@@ -2978,11 +2978,12 @@ public interface ExperimentDataPackage extends EPackage {
     EReference getExperimentGroup_Reports();
 
     /**
-     * Returns the meta object for the reference list '
+     * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringPointRepositories
      * <em>Measuring Point Repositories</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @return the meta object for the reference list '<em>Measuring Point Repositories</em>'.
+     * @return the meta object for the containment reference list '
+     *         <em>Measuring Point Repositories</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringPointRepositories()
      * @see #getExperimentGroup()
      * @generated
@@ -4227,8 +4228,8 @@ public interface ExperimentDataPackage extends EPackage {
         EReference EXPERIMENT_GROUP__REPORTS = eINSTANCE.getExperimentGroup_Reports();
 
         /**
-         * The meta object literal for the '<em><b>Measuring Point Repositories</b></em>' reference
-         * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '<em><b>Measuring Point Repositories</b></em>'
+         * containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @generated
          */

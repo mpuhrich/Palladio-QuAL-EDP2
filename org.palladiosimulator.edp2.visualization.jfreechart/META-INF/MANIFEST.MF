@@ -6,7 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.jfree.jfreechart;bundle-version="1.0.9",
- org.palladiosimulator.edp2.visualization;bundle-version="1.0.0",
  org.palladiosimulator.edp2;bundle-version="2.0.0",
  org.palladiosimulator.edp2.datastream;bundle-version="1.0.0",
  org.eclipse.ui;bundle-version="3.105.0",
@@ -21,9 +20,13 @@ Require-Bundle: org.jfree.jfreechart;bundle-version="1.0.9",
  org.apache.batik.svggen;bundle-version="1.6.0",
  org.palladiosimulator.measurementframework,
  org.palladiosimulator.edp2.util;bundle-version="1.0.0",
- org.apache.commons.lang;bundle-version="2.6.0"
-Export-Package: org.palladiosimulator.edp2.visualization.jfreechart.editor,
+ org.apache.commons.lang;bundle-version="2.6.0",
+ org.palladiosimulator.edp2.visualization;bundle-version="1.0.0"
+Import-Package: org.apache.commons.math.stat.descriptive;version="2.1.0",
+ org.palladiosimulator.servicelevelobjective
+Export-Package:  org.palladiosimulator.edp2.visualization.jfreechart.editor,
  org.palladiosimulator.edp2.visualization.jfreechart.input,
  org.palladiosimulator.edp2.visualization.jfreechart.input.histogram,
  org.palladiosimulator.edp2.visualization.jfreechart.input.pie,
- org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot
+ org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot,
+ org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective

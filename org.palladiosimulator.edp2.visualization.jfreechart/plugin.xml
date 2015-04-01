@@ -19,6 +19,14 @@
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory"
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory">
       </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInputFactory">
+      </factory>
    </extension>
 
    <extension
@@ -50,6 +58,18 @@
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
             factory="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
+      </datasink>
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.SLOQuantitativeInput">
+      </datasink>
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.SLOQualitativeInput">
       </datasink> 
    </extension>
    <extension
@@ -79,6 +99,26 @@
             name="Histogram">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="SLOQualitative"
+            name="Service Level Objective Fullfilment Report Qualitative">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.SLOQualitativeInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="SLOQuantitative"
+            name="Service Level Objective Fullfilment Report Quantitative">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.SLOQuantitativeInput">
          </datasink>
       </chainDescription>
    </extension>

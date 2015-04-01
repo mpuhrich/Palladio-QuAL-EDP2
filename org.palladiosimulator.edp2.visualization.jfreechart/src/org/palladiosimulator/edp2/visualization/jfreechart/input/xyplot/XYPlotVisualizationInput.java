@@ -52,7 +52,8 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         }
         for (BaseMetricDescription md : mds) {
             if (!(md instanceof NumericalBaseMetricDescription)) {
-                return false; // only metrics that use real or integer values can be plotted
+                return false; // only metrics that use real or integer values
+                              // can be plotted
             }
         }
         return true;
@@ -88,7 +89,7 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         XYPlotVisualizationInputConfiguration configuration = (XYPlotVisualizationInputConfiguration) config;
         XYPlot plot = new XYPlot();
         XYDataset xyDataset = (XYDataset) dataset;
-        
+
         ValueAxis domainAxis = new NumberAxis(
                 configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
         ValueAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel()
@@ -102,11 +103,12 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         boolean isShowSeriesLine = configuration.isShowSeriesLine();
         boolean isShowSeriesShape = configuration.isShowSeriesShapes();
-        
+
         for (int i = 0; i < xyDataset.getSeriesCount(); ++i) {
             renderer.setSeriesLinesVisible(i, isShowSeriesLine);
             renderer.setSeriesShapesVisible(i, isShowSeriesShape);
         }
+
         plot.setRenderer(renderer);
 
         configureSeriesColors(renderer);
@@ -132,8 +134,10 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
                 @SuppressWarnings("unchecked")
                 Measure<?, Quantity>[] measurement = (Measure<?, Quantity>[]) tuple.asArray();
 
-                result[0][i] = measurement[getXPos()].doubleValue(domainUnit); // x (domain)
-                result[1][i] = measurement[getYPos()].doubleValue(rangeUnit); // y (range)
+                result[0][i] = measurement[getXPos()].doubleValue(domainUnit); // x
+                                                                               // (domain)
+                result[1][i] = measurement[getYPos()].doubleValue(rangeUnit); // y
+                                                                              // (range)
 
                 i++;
             }

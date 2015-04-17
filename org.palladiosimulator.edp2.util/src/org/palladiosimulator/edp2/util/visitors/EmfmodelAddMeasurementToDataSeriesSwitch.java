@@ -6,15 +6,18 @@ package org.palladiosimulator.edp2.util.visitors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.measure.Measure;
 import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
+import javax.measure.unit.Unit;
 
-import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
+import org.palladiosimulator.edp2.dao.Edp2Dao;
 import org.palladiosimulator.edp2.dao.MeasurementsDao;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoRegistry;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
+import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
+import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
@@ -29,31 +32,43 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
     /** Logger for this class. */
     private static final Logger LOGGER = Logger.getLogger(EmfmodelAddMeasurementToDataSeriesSwitch.class
             .getCanonicalName());
-    /** Factory of EDP2 EMF model. */
-    private static final ExperimentDataFactory FACTORY = ExperimentDataFactory.eINSTANCE;
     /** Registry for the DAOs. */
     private final MeasurementsDaoRegistry daoRegistry;
-    /** AbstractMeasureProvider to add. */
-    private Object measurementToAdd;
-
+    /** Measure to add. */
+    private Measure<?, ?> measurementToAdd;
+    
     public EmfmodelAddMeasurementToDataSeriesSwitch(final MeasurementsDaoRegistry daoRegistry) {
         this.daoRegistry = daoRegistry;
     }
 
-    @Override
-    public Boolean caseIdentifierBasedMeasurements(
-            final org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements object) {
-        @SuppressWarnings("unchecked")
-        final MeasurementsDao<Identifier, Dimensionless> dao = (MeasurementsDao<Identifier, Dimensionless>) daoRegistry.getMeasurementsDao(object.getValuesUuid());
+    private static boolean openDaoForDataSeries(Edp2Dao dao, DataSeries dataSeries) {
         if (!dao.isOpen()) {
             try {
                 dao.open();
-            } catch (final DataNotAccessibleException e) {
-                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
+            } catch (DataNotAccessibleException e) {
+                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + dataSeries.getValuesUuid());
                 return false;
             }
         }
-        dao.getMeasurements().add((javax.measure.Measure<Identifier, Dimensionless>) measurementToAdd);
+        return true;
+    }
+    
+    private <V, Q extends Quantity> MeasurementsDao<V, Q> getMeasurementsDaoByValuesUuid(String valuesUuid) {
+        MeasurementsDao<?, ?> dao = this.daoRegistry.getMeasurementsDao(valuesUuid);
+        @SuppressWarnings("unchecked")
+        MeasurementsDao<V, Q> result = (MeasurementsDao<V, Q>) dao;
+        return result;
+    }
+    
+    @Override
+    public Boolean caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object) {
+        MeasurementsDao<Identifier, Dimensionless> dao = getMeasurementsDaoByValuesUuid(object.getValuesUuid());
+        if (!openDaoForDataSeries(dao, object)) {
+            return false;
+        }
+        @SuppressWarnings("unchecked")
+        Measure<Identifier, Dimensionless> measurement = (Measure<Identifier, Dimensionless>) this.measurementToAdd;
+        dao.getMeasurements().add(measurement);
         return true;
     }
 
@@ -62,41 +77,42 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public Boolean caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
-        final BinaryMeasurementsDao<Double, Quantity> bmd = (BinaryMeasurementsDao<Double, Quantity>) daoRegistry
-                .getMeasurementsDao(object.getValuesUuid());
-        if (bmd == null) {
+    public <Q extends Quantity> Boolean caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements<Q> object) {
+        MeasurementsDao<Double, Q> dao = getMeasurementsDaoByValuesUuid(object.getValuesUuid());
+        if (dao == null) {
             throw new RuntimeException("Could not find DoubleBinaryMeasurement with unit "
-                    + object.getStorageUnit().toString() + " (ID " + object.getValuesUuid() + ")");
+                  + object.getStorageUnit().toString() + " (ID " + object.getValuesUuid() + ")");
         }
-        if (!bmd.isOpen()) {
-            try {
-                bmd.open();
-            } catch (final DataNotAccessibleException e) {
-                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
-                return false;
-            }
+        if (!openDaoForDataSeries(dao, object)) {
+            return false;
         }
-        bmd.getMeasurements().add((javax.measure.Measure<Double, Quantity>) measurementToAdd);
+        Unit<Q> storageUnit = object.getStorageUnit();
+        @SuppressWarnings("unchecked")
+        Measure<Double, Q> measureToAdd = (Measure<Double, Q>) this.measurementToAdd;
+        //convert into desired unit as defined by the corresponding metric
+        if (!storageUnit.equals(measureToAdd.getUnit())) {
+            measureToAdd = Measure.valueOf(measureToAdd.doubleValue(storageUnit), storageUnit);
+        }
+        dao.getMeasurements().add(measureToAdd);
         return true;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public Boolean caseLongBinaryMeasurements(final LongBinaryMeasurements object) {
-        final BinaryMeasurementsDao<Long, Quantity> bmd = (BinaryMeasurementsDao<Long, Quantity>) daoRegistry
-                .getMeasurementsDao(object.getValuesUuid());
-        if (!bmd.isOpen()) {
-            try {
-                bmd.open();
-            } catch (final DataNotAccessibleException e) {
-                LOGGER.log(Level.SEVERE, "Could not access DAO with valuesUuid=" + object.getValuesUuid());
-                return false;
-            }
+        MeasurementsDao<Long, Quantity> dao = getMeasurementsDaoByValuesUuid(object.getValuesUuid());
+        if (!openDaoForDataSeries(dao, object)) {
+            return false;
         }
-        bmd.getMeasurements().add((javax.measure.Measure<Long, Quantity>) measurementToAdd);
+        @SuppressWarnings("unchecked")
+        Unit<Quantity> storageUnit = object.getStorageUnit();
+        @SuppressWarnings("unchecked")
+        Measure<Long, Quantity> measureToAdd = (Measure<Long, Quantity>) this.measurementToAdd;
+        //convert into desired unit as defined by the corresponding metric
+        if (!storageUnit.equals(measureToAdd.getUnit())) {
+            measureToAdd = Measure.valueOf(measureToAdd.longValue(storageUnit), storageUnit);
+        }
+        dao.getMeasurements().add(measureToAdd);
         return true;
     }
 
@@ -104,14 +120,14 @@ public class EmfmodelAddMeasurementToDataSeriesSwitch extends ExperimentDataSwit
      * @return the measurementToAdd
      */
     public Object getMeasurementToAdd() {
-        return measurementToAdd;
+        return this.measurementToAdd;
     }
 
     /**
      * @param measurementToAdd
      *            the measurementToAdd to set
      */
-    public void setMeasurementToAdd(final Object measurementToAdd) {
+    public void setMeasurementToAdd(final Measure<?, ?> measurementToAdd) {
         this.measurementToAdd = measurementToAdd;
     }
 

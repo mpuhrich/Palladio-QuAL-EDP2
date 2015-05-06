@@ -9,15 +9,12 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
+import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
-import org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInput;
-import org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInput;
 import org.palladiosimulator.edp2.visualization.wizards.DefaultViewsWizard;
-import org.palladiosimulator.edp2.visualization.wizards.SLOViewsWizard;
 
 /**
  * Listener for selections in the {@link Navigator}. Creates a new {@link EDP2Source}, which is
@@ -27,11 +24,11 @@ import org.palladiosimulator.edp2.visualization.wizards.SLOViewsWizard;
  * combinations are objects of the Type {@link ChainDescription} and displayed in the
  * {@link DefaultViewsWizard}.
  *
- * TODO This is a copied and adapted version of /org.palladiosimulator.edp2.editor/src-man/de/uka
- * /ipd/sdq/edp2/models/ExperimentData /presentation/NavigatorDoubleClickListener.java. Get rid of
+ * TODO This is a copied version of /org.palladiosimulator.edp2.editor/src-man/de/uka
+ * /ipd/sdq/edp2/models/ExperimentData/presentation/NavigatorDoubleClickListener.java. Get rid of
  * redundancies.
  *
- * @author Sebastian Lehrig, Andreas Flohre
+ * @author Sebastian Lehrig
  *
  */
 public class NavigatorDoubleClickListener implements IDoubleClickListener {
@@ -43,32 +40,43 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
             final IStructuredSelection selection = (IStructuredSelection) event.getSelection();
             selectedObject = selection.getFirstElement();
         }
+        // check for the object to contain actual data
         if (selectedObject instanceof Measurement) {
-            openSLOWizard(selectedObject, false);
-            // openChainSelectionDialog(selectedObject);
-        }
-        if (selectedObject instanceof ExperimentRun) {
-            openSLOWizard(selectedObject, true);
+            openChainSelectionDialog(selectedObject);
         }
     }
 
-    private void openSLOWizard(Object selectedObject, boolean startedFromExperimentRun) {
-        SLOViewsWizard wizard;
-        if (startedFromExperimentRun) {
-            final ExperimentRun experimentRun = (ExperimentRun) selectedObject;
-            wizard = new SLOViewsWizard(experimentRun);
+    /**
+     * @param selectedObject
+     */
+    private void openChainSelectionDialog(final Object selectedObject) {
+        final Measurement measurement = (Measurement) selectedObject;
+        final RawMeasurements rawMeasurements = measurement.getMeasurementRanges().get(0).getRawMeasurements();
+
+        if (rawMeasurements != null && !rawMeasurements.getDataSeries().isEmpty()) {
+            final IDataSource edp2Source = new Edp2DataTupleDataSource(rawMeasurements);
+            final int dataStreamSize = edp2Source.getDataStream().size();
+            edp2Source.getDataStream().close();
+
+            if (dataStreamSize > 0) {
+                openWizard(edp2Source);
+            }
         } else {
-            final Measurement measurements = (Measurement) selectedObject;
-
-            wizard = new SLOViewsWizard(measurements);
+            throw new RuntimeException("Empty Measurements!");
         }
+    }
 
+    // open the wizard with reference to the selected source
+    // it shows possible visualizations, which are instances of
+    // DefaultSequence
+    private void openWizard(final IDataSource edp2Source) {
+        final DefaultViewsWizard wizard = new DefaultViewsWizard(edp2Source);
         final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
                 .getShell(), wizard);
         wdialog.open();
 
         if (wdialog.getReturnCode() == Window.OK) {
-            openEditor(wizard.returnDataTupleFromMeasurement(), wizard);
+            openEditor(edp2Source, wizard);
         }
     }
 
@@ -76,25 +84,9 @@ public class NavigatorDoubleClickListener implements IDoubleClickListener {
      * @param edp2Source
      * @param wizard
      */
-    private void openEditor(final IDataSource edp2Source, final SLOViewsWizard wizard) {
+    private void openEditor(final IDataSource edp2Source, final DefaultViewsWizard wizard) {
         final ChainDescription chainDescription = wizard.getSelectedDefault();
         final IVisualisationInput input = (IVisualisationInput) chainDescription.getVisualizationInput();
-        if (input instanceof SLOQualitativePlotInput) {
-            if (wizard.getAggregatedData() != null) {
-                ((SLOQualitativePlotInput) input).setAggregatedData(wizard.getAggregatedData());
-                ((SLOQualitativePlotInput) input).setMeasuringPointLabel(wizard.getMeasuringPointLabel());
-            }
-            ((SLOQualitativePlotInput) input).setSlo(wizard.getSelectedSLO());
-            ((SLOQualitativePlotInput) input).setTimestep(wizard.getSelectedTimestepInterval());
-        }
-
-        if (input instanceof SLOQuantitativePlotInput) {
-            if (wizard.getAggregatedData() != null) {
-                ((SLOQuantitativePlotInput) input).setAggregatedData(wizard.getAggregatedData());
-                ((SLOQuantitativePlotInput) input).setMeasuringPointLabel(wizard.getMeasuringPointLabel());
-            }
-            ((SLOQuantitativePlotInput) input).setSlo(wizard.getSelectedSLO());
-        }
         input.addInput(input.createNewInput(chainDescription.attachRootDataSource(edp2Source)));
         try {
             final IWorkbenchPage page = EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow().getActivePage();

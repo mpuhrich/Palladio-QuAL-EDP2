@@ -28,5 +28,4 @@ Export-Package:  org.palladiosimulator.edp2.visualization.jfreechart.editor,
  org.palladiosimulator.edp2.visualization.jfreechart.input,
  org.palladiosimulator.edp2.visualization.jfreechart.input.histogram,
  org.palladiosimulator.edp2.visualization.jfreechart.input.pie,
- org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot,
- org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective
+ org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot

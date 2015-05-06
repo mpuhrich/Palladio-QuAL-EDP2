@@ -31,6 +31,6 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.edp2.visualization.jfreechart;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.palladiosimulator.edp2.ui.EDP2UIPlugin
-Export-Package: org.palladiosimulator.edp2.ui.dialogs.datasource
+Export-Package: org.palladiosimulator.edp2.ui,
+ org.palladiosimulator.edp2.ui.dialogs.datasource
 Bundle-Vendor: palladiosimulator.org
-Import-Package: org.palladiosimulator.servicelevelobjective, org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective

@@ -126,7 +126,7 @@ public abstract class PropertyConfigurableElementFactory implements IElementFact
             final Color col = Color.decode(string.substring(2));
             return new Color(col.getRed(), col.getBlue(), col.getBlue(), Integer.parseInt(string.substring(0, 1), 16));
         } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
-            return EMFLoadHelper.loadModel(string);
+            return EMFLoadHelper.loadAndResolveEObject(string);
         }
         throw new UnsupportedOperationException("Deserialize of unsupported type found: " + propertyType);
     }

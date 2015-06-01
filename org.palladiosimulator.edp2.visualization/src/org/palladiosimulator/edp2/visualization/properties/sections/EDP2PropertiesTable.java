@@ -42,9 +42,6 @@ import org.eclipse.swt.widgets.Text;
 import org.palladiosimulator.commons.emfutils.EMFAdapterFactoryHelper;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.configurable.reflective.ConfigurationProperty;
-import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
-import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
-import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 
 import de.uka.ipd.sdq.dialogs.selection.FilteredItemsAdapterFactory;
 import de.uka.ipd.sdq.dialogs.selection.SelectEObjectDialog;
@@ -71,17 +68,17 @@ class EDP2PropertiesTable {
     static {
         // FIXME hardcoded reference to SLOs. Remove dependency from EDP2 once fixed.
 
-        FILTER_LIST.add(ServiceLevelObjectiveRepository.class);
-        FILTER_LIST.add(ServiceLevelObjective.class);
-
-        ADDITIONAL_REFERENCES.add(ServicelevelObjectivePackage.eINSTANCE
-                .getServiceLevelObjectiveRepository_Servicelevelobjectives());
+        // FILTER_LIST.add(ServiceLevelObjectiveRepository.class);
+        // FILTER_LIST.add(ServiceLevelObjective.class);
+        //
+        // ADDITIONAL_REFERENCES.add(ServicelevelObjectivePackage.eINSTANCE
+        // .getServiceLevelObjectiveRepository_Servicelevelobjectives());
     }
 
     private final Table myTable;
-    
+
     private static final String MEASURE_PARSE_ERROR_MESSAGE = "The given input could not be recognized as a valid measurement.\nRequired is a value follwed by a unit!\n\nDetailed error message:\n %s";
-    //assume that we use '.' as decimal point rather than ',' -> English locale 
+    // assume that we use '.' as decimal point rather than ',' -> English locale
     private static final Locale NUMBER_FORMAT_LOCALE = Locale.ENGLISH;
     private final MeasureFormat measureFormat;
 
@@ -99,15 +96,15 @@ class EDP2PropertiesTable {
     }
 
     private MeasureFormat initializeMeasureFormat() {
-    	NumberFormat numberFormat = NumberFormat.getInstance(NUMBER_FORMAT_LOCALE);
-    	numberFormat.setMinimumFractionDigits(1);
-    	    	
-    	return MeasureFormat.getInstance(numberFormat, UnitFormat.getInstance());
-    	
+        NumberFormat numberFormat = NumberFormat.getInstance(NUMBER_FORMAT_LOCALE);
+        numberFormat.setMinimumFractionDigits(1);
+
+        return MeasureFormat.getInstance(numberFormat, UnitFormat.getInstance());
+
     }
-    
-	private void initializeTable() {
-		myTable.setLinesVisible(true);
+
+    private void initializeTable() {
+        myTable.setLinesVisible(true);
         myTable.setHeaderVisible(true);
 
         // set the table layout
@@ -154,8 +151,8 @@ class EDP2PropertiesTable {
                             openColorAndTransparencyDialog(item, myTable);
                         } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
                             openEObjectDialog(item, myTable, propertyType, FILTER_LIST, ADDITIONAL_REFERENCES);
-                        } else if(ClassUtils.isAssignable(Measure.class, propertyType, true)) {
-                        	openMeasureDialog(index, myTable); 
+                        } else if (ClassUtils.isAssignable(Measure.class, propertyType, true)) {
+                            openMeasureDialog(index, myTable);
                         } else {
                             throw new RuntimeException("Unsupported property type found!");
                         }
@@ -171,7 +168,7 @@ class EDP2PropertiesTable {
                 }
             }
         });
-	}
+    }
 
     /**
      * Opens a {@link ColorDialog} to change the color of the last selected
@@ -233,20 +230,20 @@ class EDP2PropertiesTable {
         }
     }
 
-    
     /**
      * Opens a {@link TableEditor} to change a {@link Measure} {@link ConfigurationProperty}.
      *
      * @param index
-     *            An integer denoting the row-index of the cell containing {@link ConfigurationProperty} to be edited.
-    * @param table
+     *            An integer denoting the row-index of the cell containing
+     *            {@link ConfigurationProperty} to be edited.
+     * @param table
      *            The {@link Table} containing the {@link ConfigurationProperty} to be edited.
      */
     protected void openMeasureDialog(final int index, final Table table) {
-    	TableEditor editor = new TableEditor(table);
+        TableEditor editor = new TableEditor(table);
         editor.horizontalAlignment = SWT.LEFT;
         editor.grabHorizontal = true;
-        
+
         final Text text = new Text(table, SWT.NONE);
         final Listener textListener = new Listener() {
             @Override
@@ -259,7 +256,7 @@ class EDP2PropertiesTable {
                 case SWT.Traverse:
                     switch (e.detail) {
                     case SWT.TRAVERSE_RETURN:
-                    	handleTraverseReturn();
+                        handleTraverseReturn();
                     case SWT.TRAVERSE_ESCAPE:
                         text.dispose();
                         e.doit = false;
@@ -267,21 +264,21 @@ class EDP2PropertiesTable {
                     break;
                 }
             }
-                      
+
             private void handleTraverseReturn() {
-            	String input = text.getText();
-            	Measure<?, ?> result = null;
-        		try {
-        			result = (Measure<?, ?>) measureFormat.parseObject(input);
-				} catch (ParseException e) {
-					showErrorDialog(e);
-				}
-        		if (result != null) {
-        			updateProperties(table.getItem(index).getText(labelColumn), result, table);
-	        		refreshTable();
-        		}
+                String input = text.getText();
+                Measure<?, ?> result = null;
+                try {
+                    result = (Measure<?, ?>) measureFormat.parseObject(input);
+                } catch (ParseException e) {
+                    showErrorDialog(e);
+                }
+                if (result != null) {
+                    updateProperties(table.getItem(index).getText(labelColumn), result, table);
+                    refreshTable();
+                }
             }
-            
+
             private void showErrorDialog(Exception e) {
                 MessageBox errorDialog = new MessageBox(table.getShell(), SWT.OK | SWT.ICON_ERROR);
                 errorDialog.setText("Error");
@@ -296,7 +293,7 @@ class EDP2PropertiesTable {
         text.selectAll();
         text.setFocus();
     }
-    
+
     /**
      * Opens a text dialog for editing cells in the {@link #visualPropertiesTable} by entering text.
      *
@@ -364,9 +361,7 @@ class EDP2PropertiesTable {
         editor.horizontalAlignment = SWT.LEFT;
         editor.grabHorizontal = true;
         final Combo comboBox = new Combo(table, SWT.DROP_DOWN);
-        comboBox.setItems(new String[] {
-                "true", "false"
-        });
+        comboBox.setItems(new String[] { "true", "false" });
         // set the currently selected item to the value stored in the cell
         comboBox.select(table.getItem(index).getText(editColumn).equals("true") ? 0 : 1);
 
@@ -449,22 +444,21 @@ class EDP2PropertiesTable {
     }
 
     private void prettyPrintProperty(TableItem item, Object value) {
-    	Class<?> propertyType = value.getClass();
-    	if (ClassUtils.isAssignable(propertyType, Color.class)) {
-		    final Color col = (Color) value;
-		    updateColorCell(item, col);
-		} else if (ClassUtils.isAssignable(propertyType, EObject.class)) {
-		    final String displayString = EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER
-		            .getText(value);
-		    item.setText(1, displayString);
-		} else if(ClassUtils.isAssignable(propertyType, Measure.class)) {
-			item.setText(1, this.measureFormat.format(value));
-		} else {
-		    item.setText(1, String.valueOf(value));
-		}
+        Class<?> propertyType = value.getClass();
+        if (ClassUtils.isAssignable(propertyType, Color.class)) {
+            final Color col = (Color) value;
+            updateColorCell(item, col);
+        } else if (ClassUtils.isAssignable(propertyType, EObject.class)) {
+            final String displayString = EMFAdapterFactoryHelper.ADAPTER_FACTORY_LABEL_PROVIDER.getText(value);
+            item.setText(1, displayString);
+        } else if (ClassUtils.isAssignable(propertyType, Measure.class)) {
+            item.setText(1, this.measureFormat.format(value));
+        } else {
+            item.setText(1, String.valueOf(value));
+        }
     }
-    
-	public void setLastSelection(final IPropertyConfigurable iPropertyConfigurable) {
+
+    public void setLastSelection(final IPropertyConfigurable iPropertyConfigurable) {
         this.lastSelectedInput = iPropertyConfigurable;
         refreshTable();
     }

@@ -8,8 +8,6 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -50,7 +48,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface FixedIntervals extends EObject, Identifier {
+public interface FixedIntervals extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Lower Bound</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

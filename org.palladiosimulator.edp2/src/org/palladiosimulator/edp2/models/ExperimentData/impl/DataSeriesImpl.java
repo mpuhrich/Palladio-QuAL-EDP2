@@ -46,6 +46,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
  * @generated
  */
 public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
+
     /**
      * The cached value of the '{@link #getNumericalStatistics() <em>Numerical Statistics</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->

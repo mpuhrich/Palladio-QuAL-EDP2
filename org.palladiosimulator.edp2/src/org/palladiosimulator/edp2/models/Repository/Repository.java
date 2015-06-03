@@ -7,7 +7,6 @@
 package org.palladiosimulator.edp2.models.Repository;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.edp2.dao.MetaDao;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.metricspec.Description;
@@ -45,7 +44,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  *        "de.uka.ipd.sdq.identifier.Identifier org.palladiosimulator.edp2.models.Repository.MetaDao"
  * @generated
  */
-public interface Repository extends EObject, Identifier, MetaDao {
+public interface Repository extends Identifier, MetaDao {
+
     /**
      * Returns the value of the '<em><b>Repositories</b></em>' container reference. It is
      * bidirectional and its opposite is '

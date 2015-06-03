@@ -30,6 +30,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public interface Run extends Identifier, Propertyable {
+
     /**
      * Returns the value of the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc --> <!-- begin-model-doc --> Length of the duration in milli-seconds. <!--

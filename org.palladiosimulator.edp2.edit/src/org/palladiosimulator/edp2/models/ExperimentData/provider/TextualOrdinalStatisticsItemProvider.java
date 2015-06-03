@@ -24,6 +24,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
  * @generated
  */
 public class TextualOrdinalStatisticsItemProvider extends TextualNominalStatisticsItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

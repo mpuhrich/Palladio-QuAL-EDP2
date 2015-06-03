@@ -42,6 +42,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasurements {
+
     /**
      * The cached value of the '{@link #getDataSeries() <em>Data Series</em>}' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -40,6 +40,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public interface ExperimentSetting extends Identifier, Propertyable {
+
     /**
      * Returns the value of the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

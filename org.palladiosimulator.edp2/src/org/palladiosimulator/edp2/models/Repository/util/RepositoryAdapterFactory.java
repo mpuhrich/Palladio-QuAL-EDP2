@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -33,6 +34,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class RepositoryAdapterFactory extends AdapterFactoryImpl {
+
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -77,6 +79,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     protected RepositorySwitch<Adapter> modelSwitch = new RepositorySwitch<Adapter>() {
+
         @Override
         public Adapter caseLocalDirectoryRepository(final LocalDirectoryRepository object) {
             return RepositoryAdapterFactory.this.createLocalDirectoryRepositoryAdapter();
@@ -125,6 +128,11 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseRepository(final Repository object) {
             return RepositoryAdapterFactory.this.createRepositoryAdapter();
+        }
+
+        @Override
+        public Adapter caseStereotypableElement(final StereotypableElement object) {
+            return RepositoryAdapterFactory.this.createStereotypableElementAdapter();
         }
 
         @Override
@@ -296,6 +304,21 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createRepositoryAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * <em>Stereotypable Element</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * @generated
+     */
+    public Adapter createStereotypableElementAdapter() {
         return null;
     }
 

@@ -34,6 +34,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  * @generated
  */
 public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
+
     /**
      * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

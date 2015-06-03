@@ -25,6 +25,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public interface MeasuringpointPackage extends EPackage {
+
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -234,6 +235,15 @@ public interface MeasuringpointPackage extends EPackage {
     int MEASURING_POINT_REPOSITORY = 3;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int MEASURING_POINT_REPOSITORY__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -398,6 +408,7 @@ public interface MeasuringpointPackage extends EPackage {
      * @generated
      */
     interface Literals {
+
         /**
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl

@@ -30,6 +30,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMemoryRepository {
+
     /**
      * The default value of the '{@link #getDomain() <em>Domain</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -67,7 +68,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
              */
             @Override
@@ -78,7 +79,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#close()
              */
             @Override
@@ -89,7 +90,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.MetaDaoImpl#getMeasurementsDaoFactory()
              */
             @Override

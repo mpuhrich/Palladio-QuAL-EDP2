@@ -38,6 +38,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public interface ExperimentDataPackage extends EPackage {
+
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -77,6 +78,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int AGGREGATED_MEASUREMENTS = 0;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int AGGREGATED_MEASUREMENTS__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -325,6 +335,15 @@ public interface ExperimentDataPackage extends EPackage {
     int RAW_MEASUREMENTS = 4;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int RAW_MEASUREMENTS__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -424,6 +443,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int NUMERICAL_NOMINAL_STATISTICS = 6;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int NUMERICAL_NOMINAL_STATISTICS__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -530,6 +558,15 @@ public interface ExperimentDataPackage extends EPackage {
     int FIXED_WIDTH_AGGREGATED_MEASUREMENTS = 8;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int FIXED_WIDTH_AGGREGATED_MEASUREMENTS__PROFILEABLE_ELEMENT = AGGREGATED_MEASUREMENTS__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -618,6 +655,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @ordered
      */
     int FIXED_WIDTH_AGGREGATED_MEASUREMENTS_FEATURE_COUNT = AGGREGATED_MEASUREMENTS_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int FIXED_INTERVALS__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -779,6 +825,15 @@ public interface ExperimentDataPackage extends EPackage {
     int EXPERIMENT_GROUP = 12;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int EXPERIMENT_GROUP__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -893,6 +948,15 @@ public interface ExperimentDataPackage extends EPackage {
     int EXPERIMENT_GROUP_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int EXPERIMENT_SETTING__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -967,6 +1031,15 @@ public interface ExperimentDataPackage extends EPackage {
     int RUN = 31;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int RUN__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -1019,6 +1092,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @ordered
      */
     int RUN_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int EXPERIMENT_RUN__PROFILEABLE_ELEMENT = RUN__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1095,6 +1177,15 @@ public interface ExperimentDataPackage extends EPackage {
     int MEASUREMENT = 15;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int MEASUREMENT__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -1160,6 +1251,15 @@ public interface ExperimentDataPackage extends EPackage {
     int MEASURING_TYPE = 16;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int MEASURING_TYPE__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -1212,6 +1312,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @ordered
      */
     int MEASURING_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int AGGREGATION_STATISTICS__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The meta object id for the '
@@ -1376,6 +1485,15 @@ public interface ExperimentDataPackage extends EPackage {
     int NUMERICAL_ORDINAL_STATISTICS = 20;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int NUMERICAL_ORDINAL_STATISTICS__PROFILEABLE_ELEMENT = NUMERICAL_NOMINAL_STATISTICS__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -1466,6 +1584,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int NUMERICAL_INTERVAL_STATISTICS = 19;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int NUMERICAL_INTERVAL_STATISTICS__PROFILEABLE_ELEMENT = NUMERICAL_ORDINAL_STATISTICS__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1594,6 +1721,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int NUMERICAL_PERCENTILE = 21;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int NUMERICAL_PERCENTILE__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1832,6 +1968,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int NUMERICAL_RATIO_STATISTICS = 25;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int NUMERICAL_RATIO_STATISTICS__PROFILEABLE_ELEMENT = NUMERICAL_INTERVAL_STATISTICS__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2232,6 +2377,15 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     int EXPERIMENT_GROUP_RUN = 32;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int EXPERIMENT_GROUP_RUN__PROFILEABLE_ELEMENT = RUN__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3726,6 +3880,7 @@ public interface ExperimentDataPackage extends EPackage {
      * @generated
      */
     interface Literals {
+
         /**
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl

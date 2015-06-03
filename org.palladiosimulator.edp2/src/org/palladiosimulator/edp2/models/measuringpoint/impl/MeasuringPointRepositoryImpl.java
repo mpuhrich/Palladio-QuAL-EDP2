@@ -31,6 +31,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class MeasuringPointRepositoryImpl extends IdentifierImpl implements MeasuringPointRepository {
+
     /**
      * The cached value of the '{@link #getMeasuringPoints() <em>Measuring Points</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->

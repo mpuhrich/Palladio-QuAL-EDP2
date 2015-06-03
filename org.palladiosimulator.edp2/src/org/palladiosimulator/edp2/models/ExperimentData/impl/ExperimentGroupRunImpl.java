@@ -27,6 +27,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
  * @generated
  */
 public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRun {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

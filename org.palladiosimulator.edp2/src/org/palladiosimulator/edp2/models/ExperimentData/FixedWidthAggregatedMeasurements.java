@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface FixedWidthAggregatedMeasurements extends AggregatedMeasurements {
+
     /**
      * Returns the value of the '<em><b>Intervals</b></em>' containment reference. It is
      * bidirectional and its opposite is '

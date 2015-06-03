@@ -21,6 +21,7 @@ import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -35,6 +36,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class RepositorySwitch<T> extends Switch<T> {
+
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -89,6 +91,9 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(localDirectoryRepository);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(localDirectoryRepository);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -114,6 +119,9 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(localMemoryRepository);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(localMemoryRepository);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -131,6 +139,9 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(remoteCdoRepository);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(remoteCdoRepository);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -146,6 +157,9 @@ public class RepositorySwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseMetaDao(localSensorFrameworkRepository);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(localSensorFrameworkRepository);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -192,6 +206,9 @@ public class RepositorySwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseMetaDao(repository);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(repository);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -355,6 +372,22 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseRepository(final Repository object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Stereotypable Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

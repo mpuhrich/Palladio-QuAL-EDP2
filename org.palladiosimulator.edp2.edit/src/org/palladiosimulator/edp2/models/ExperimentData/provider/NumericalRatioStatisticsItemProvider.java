@@ -26,6 +26,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
  * @generated
  */
 public class NumericalRatioStatisticsItemProvider extends NumericalIntervalStatisticsItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

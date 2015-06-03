@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface TextualNominalStatistics extends EObject {
+
     /**
      * Returns the value of the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * -->

@@ -3,7 +3,6 @@
 package org.palladiosimulator.edp2.models.measuringpoint;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -24,7 +23,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface MeasuringPointRepository extends EObject, Identifier {
+public interface MeasuringPointRepository extends Identifier {
 
     /**
      * Returns the value of the '<em><b>Measuring Points</b></em>' containment reference list. The

@@ -47,6 +47,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
  * @generated
  */
 public class MeasurementRangeImpl extends PropertyableImpl implements MeasurementRange {
+
     /**
      * The cached value of the '{@link #getRawMeasurements() <em>Raw Measurements</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->

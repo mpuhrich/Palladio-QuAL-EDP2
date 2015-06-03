@@ -9,7 +9,6 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 import javax.measure.Measure;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -39,7 +38,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface NumericalNominalStatistics extends EObject, Identifier {
+public interface NumericalNominalStatistics extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc --> <!-- begin-model-doc --> Number of measurements in the data series.

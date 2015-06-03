@@ -19,6 +19,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
  * @generated
  */
 public class MeasuringpointFactoryImpl extends EFactoryImpl implements MeasuringpointFactory {
+
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
      *

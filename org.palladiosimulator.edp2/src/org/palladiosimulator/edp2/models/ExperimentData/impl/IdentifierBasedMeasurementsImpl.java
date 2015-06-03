@@ -19,6 +19,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasureme
  * @generated
  */
 public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements IdentifierBasedMeasurements {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

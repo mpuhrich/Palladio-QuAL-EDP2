@@ -30,6 +30,7 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
  * @generated
  */
 public interface LocalDirectoryRepository extends Repository {
+
     /**
      * Returns the value of the '<em><b>Uri</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

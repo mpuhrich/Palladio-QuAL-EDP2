@@ -39,6 +39,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class AggregationStatisticsImpl extends IdentifierImpl implements AggregationStatistics {
+
     /**
      * The default value of the '{@link #getDistinctValuesBeforeAggregation()
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--

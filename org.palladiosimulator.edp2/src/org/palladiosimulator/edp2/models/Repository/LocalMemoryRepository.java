@@ -27,6 +27,7 @@ package org.palladiosimulator.edp2.models.Repository;
  * @generated
  */
 public interface LocalMemoryRepository extends Repository {
+
     /**
      * Returns the value of the '<em><b>Domain</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

@@ -36,6 +36,7 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface NumericalOrdinalStatistics extends NumericalNominalStatistics {
+
     /**
      * Returns the value of the '<em><b>Minimum</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Propertyable extends EObject {
+
     /**
      * Returns the value of the '<em><b>Additional Information</b></em>' map. The key is of type
      * {@link java.lang.String}, and the value is of type {@link java.lang.Object}, <!--

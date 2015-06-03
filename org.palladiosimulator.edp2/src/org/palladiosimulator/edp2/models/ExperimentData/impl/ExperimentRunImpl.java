@@ -31,6 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
  * @generated
  */
 public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

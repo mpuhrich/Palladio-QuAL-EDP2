@@ -33,6 +33,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class EStringtoEObjectMapEntryImpl extends EObjectImpl implements BasicEMap.Entry<String, Object> {
+
     /**
      * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->

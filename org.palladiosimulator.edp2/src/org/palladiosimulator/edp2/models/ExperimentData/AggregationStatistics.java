@@ -6,8 +6,6 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -33,7 +31,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface AggregationStatistics extends EObject, Identifier {
+public interface AggregationStatistics extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Distinct Values Before Aggregation</b></em>' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The number of distinct data

@@ -34,6 +34,7 @@ import javax.measure.Measure;
  * @generated
  */
 public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics {
+
     /**
      * Returns the value of the '<em><b>Arithmethic Mean</b></em>' attribute. <!-- begin-user-doc
      * -->

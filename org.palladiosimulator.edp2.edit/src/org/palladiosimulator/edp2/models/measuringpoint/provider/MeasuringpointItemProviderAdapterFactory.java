@@ -39,6 +39,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointAdapt
  */
 public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdapterFactory implements
         ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->

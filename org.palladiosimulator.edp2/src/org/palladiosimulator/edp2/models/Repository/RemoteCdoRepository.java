@@ -25,6 +25,7 @@ package org.palladiosimulator.edp2.models.Repository;
  * @generated
  */
 public interface RemoteCdoRepository extends Repository {
+
     /**
      * Returns the value of the '<em><b>Url</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

@@ -10,6 +10,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -24,6 +25,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class MeasuringpointSwitch<T> extends Switch<T> {
+
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -105,6 +107,9 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(measuringPointRepository);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(measuringPointRepository);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -174,6 +179,22 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseMeasuringPointRepository(final MeasuringPointRepository object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Stereotypable Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

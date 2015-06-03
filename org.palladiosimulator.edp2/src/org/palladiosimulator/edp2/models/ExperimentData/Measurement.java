@@ -33,6 +33,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public interface Measurement extends Identifier, Propertyable {
+
     /**
      * Returns the value of the '<em><b>Measuring Type</b></em>' reference. <!-- begin-user-doc -->
      * <p>

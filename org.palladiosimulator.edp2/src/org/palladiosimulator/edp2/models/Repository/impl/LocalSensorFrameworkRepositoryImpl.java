@@ -30,6 +30,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implements LocalSensorFrameworkRepository {
+
     /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->

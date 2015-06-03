@@ -28,6 +28,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatisti
  * @generated
  */
 public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStatisticsItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

@@ -45,6 +45,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
+
     /**
      * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}'
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->

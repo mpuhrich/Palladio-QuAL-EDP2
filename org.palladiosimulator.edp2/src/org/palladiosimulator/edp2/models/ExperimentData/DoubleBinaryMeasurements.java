@@ -32,6 +32,7 @@ import javax.measure.unit.Unit;
  * @generated
  */
 public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries {
+
     /**
      * Returns the value of the '<em><b>Storage Unit</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

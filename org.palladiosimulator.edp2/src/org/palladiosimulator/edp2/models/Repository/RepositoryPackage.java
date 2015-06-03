@@ -34,6 +34,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public interface RepositoryPackage extends EPackage {
+
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -72,6 +73,15 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     int REPOSITORY = 9;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -137,6 +147,15 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     int LOCAL_DIRECTORY_REPOSITORY = 0;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int LOCAL_DIRECTORY_REPOSITORY__PROFILEABLE_ELEMENT = REPOSITORY__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -232,6 +251,15 @@ public interface RepositoryPackage extends EPackage {
     int LOCAL_MEMORY_REPOSITORY = 2;
 
     /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int LOCAL_MEMORY_REPOSITORY__PROFILEABLE_ELEMENT = REPOSITORY__PROFILEABLE_ELEMENT;
+
+    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -304,6 +332,15 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     int REMOTE_CDO_REPOSITORY = 3;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int REMOTE_CDO_REPOSITORY__PROFILEABLE_ELEMENT = REPOSITORY__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -379,6 +416,15 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     int LOCAL_SENSOR_FRAMEWORK_REPOSITORY = 4;
+
+    /**
+     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int LOCAL_SENSOR_FRAMEWORK_REPOSITORY__PROFILEABLE_ELEMENT = REPOSITORY__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -812,6 +858,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     interface Literals {
+
         /**
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.Repository.impl.LocalDirectoryRepositoryImpl

@@ -23,6 +23,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoin
  * @generated
  */
 public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl implements ResourceURIMeasuringPoint {
+
     /**
      * The default value of the '{@link #getResourceURI() <em>Resource URI</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

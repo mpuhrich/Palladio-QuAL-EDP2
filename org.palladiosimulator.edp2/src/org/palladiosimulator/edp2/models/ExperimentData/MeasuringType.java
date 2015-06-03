@@ -3,7 +3,6 @@
 package org.palladiosimulator.edp2.models.ExperimentData;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.metricspec.MetricDescription;
 
@@ -54,7 +53,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface MeasuringType extends EObject, Identifier {
+public interface MeasuringType extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Experiment Group</b></em>' container reference. It is
      * bidirectional and its opposite is '

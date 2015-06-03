@@ -41,6 +41,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class NumericalPercentileImpl extends IdentifierImpl implements NumericalPercentile {
+
     /**
      * The default value of the '{@link #getPercentile() <em>Percentile</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

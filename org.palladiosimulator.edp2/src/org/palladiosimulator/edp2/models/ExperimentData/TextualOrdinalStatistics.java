@@ -29,6 +29,7 @@ import org.palladiosimulator.metricspec.Identifier;
  * @generated
  */
 public interface TextualOrdinalStatistics extends TextualNominalStatistics {
+
     /**
      * Returns the value of the '<em><b>Minimum</b></em>' reference. <!-- begin-user-doc -->
      * <p>

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface NumericalMassDistribution extends EObject {
+
     /**
      * Returns the value of the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

@@ -11,6 +11,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -22,6 +23,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
+
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -66,6 +68,7 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     protected MeasuringpointSwitch<Adapter> modelSwitch = new MeasuringpointSwitch<Adapter>() {
+
         @Override
         public Adapter caseMeasuringPoint(final MeasuringPoint object) {
             return MeasuringpointAdapterFactory.this.createMeasuringPointAdapter();
@@ -84,6 +87,11 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseMeasuringPointRepository(final MeasuringPointRepository object) {
             return MeasuringpointAdapterFactory.this.createMeasuringPointRepositoryAdapter();
+        }
+
+        @Override
+        public Adapter caseStereotypableElement(final StereotypableElement object) {
+            return MeasuringpointAdapterFactory.this.createStereotypableElementAdapter();
         }
 
         @Override
@@ -167,6 +175,21 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createMeasuringPointRepositoryAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * <em>Stereotypable Element</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * @generated
+     */
+    public Adapter createStereotypableElementAdapter() {
         return null;
     }
 

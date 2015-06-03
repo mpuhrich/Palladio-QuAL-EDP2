@@ -20,6 +20,7 @@ package org.palladiosimulator.edp2.models.measuringpoint;
  * @generated
  */
 public interface ResourceURIMeasuringPoint extends StringMeasuringPoint {
+
     /**
      * Returns the value of the '<em><b>Resource URI</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

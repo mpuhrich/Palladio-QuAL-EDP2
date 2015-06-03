@@ -46,6 +46,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1Identif
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -57,6 +58,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
+
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -101,6 +103,7 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     protected ExperimentDataSwitch<Adapter> modelSwitch = new ExperimentDataSwitch<Adapter>() {
+
         @Override
         public Adapter caseAggregatedMeasurements(final AggregatedMeasurements object) {
             return ExperimentDataAdapterFactory.this.createAggregatedMeasurementsAdapter();
@@ -266,6 +269,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseExperimentGroupRun(final ExperimentGroupRun object) {
             return ExperimentDataAdapterFactory.this.createExperimentGroupRunAdapter();
+        }
+
+        @Override
+        public Adapter caseStereotypableElement(final StereotypableElement object) {
+            return ExperimentDataAdapterFactory.this.createStereotypableElementAdapter();
         }
 
         @Override
@@ -781,6 +789,21 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createExperimentGroupRunAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * <em>Stereotypable Element</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * @generated
+     */
+    public Adapter createStereotypableElementAdapter() {
         return null;
     }
 

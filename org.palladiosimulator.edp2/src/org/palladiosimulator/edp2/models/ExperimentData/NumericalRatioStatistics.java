@@ -32,6 +32,7 @@ import javax.measure.Measure;
  * @generated
  */
 public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
+
     /**
      * Returns the value of the '<em><b>Coefficient Of Variation</b></em>' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->

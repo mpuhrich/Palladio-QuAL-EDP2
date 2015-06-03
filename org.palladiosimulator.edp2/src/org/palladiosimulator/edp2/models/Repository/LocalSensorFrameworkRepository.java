@@ -32,6 +32,7 @@ package org.palladiosimulator.edp2.models.Repository;
  * @generated
  */
 public interface LocalSensorFrameworkRepository extends Repository {
+
     /**
      * Returns the value of the '<em><b>Uri</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

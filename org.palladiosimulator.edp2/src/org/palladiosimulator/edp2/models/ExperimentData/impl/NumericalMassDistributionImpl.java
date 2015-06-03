@@ -40,6 +40,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatisti
  * @generated
  */
 public class NumericalMassDistributionImpl extends EObjectImpl implements NumericalMassDistribution {
+
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

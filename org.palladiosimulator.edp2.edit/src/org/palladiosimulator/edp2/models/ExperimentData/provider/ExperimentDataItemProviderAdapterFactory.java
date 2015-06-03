@@ -42,6 +42,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataAdapt
  */
 public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdapterFactory implements
         ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->

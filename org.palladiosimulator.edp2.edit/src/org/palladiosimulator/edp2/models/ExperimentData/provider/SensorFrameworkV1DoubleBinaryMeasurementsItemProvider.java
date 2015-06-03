@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleB
  * @generated
  */
 public class SensorFrameworkV1DoubleBinaryMeasurementsItemProvider extends DoubleBinaryMeasurementsItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

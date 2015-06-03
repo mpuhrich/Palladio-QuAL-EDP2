@@ -32,6 +32,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
  * @generated
  */
 public abstract class PropertyableImpl extends EObjectImpl implements Propertyable {
+
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->

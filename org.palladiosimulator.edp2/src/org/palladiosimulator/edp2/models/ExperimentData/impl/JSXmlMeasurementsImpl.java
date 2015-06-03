@@ -19,6 +19,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
  * @generated
  */
 public class JSXmlMeasurementsImpl extends DataSeriesImpl implements JSXmlMeasurements {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

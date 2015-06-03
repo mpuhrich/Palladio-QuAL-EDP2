@@ -26,6 +26,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdoRepository {
+
     /**
      * The default value of the '{@link #getUrl() <em>Url</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->

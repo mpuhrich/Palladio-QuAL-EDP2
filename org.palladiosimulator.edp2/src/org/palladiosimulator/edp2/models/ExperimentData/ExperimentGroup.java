@@ -47,6 +47,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public interface ExperimentGroup extends Identifier, Propertyable {
+
     /**
      * Returns the value of the '<em><b>Experiment Settings</b></em>' containment reference list.
      * The list contents are of type

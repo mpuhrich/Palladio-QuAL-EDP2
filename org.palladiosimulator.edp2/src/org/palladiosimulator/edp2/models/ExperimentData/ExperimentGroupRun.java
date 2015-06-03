@@ -20,6 +20,7 @@ package org.palladiosimulator.edp2.models.ExperimentData;
  * @generated
  */
 public interface ExperimentGroupRun extends Run {
+
     /**
      * Returns the value of the '<em><b>Experimentgroup</b></em>' container reference. It is
      * bidirectional and its opposite is '

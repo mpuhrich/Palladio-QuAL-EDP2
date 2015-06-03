@@ -43,6 +43,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals {
+
     /**
      * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

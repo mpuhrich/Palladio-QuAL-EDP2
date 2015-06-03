@@ -32,6 +32,7 @@ import org.palladiosimulator.metricspec.Identifier;
  * @generated
  */
 public interface TextualMassDistribution extends EObject {
+
     /**
      * Returns the value of the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

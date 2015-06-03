@@ -65,6 +65,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public class ExperimentDataPackageImpl extends EPackageImpl implements ExperimentDataPackage {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

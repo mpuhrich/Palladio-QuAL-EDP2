@@ -35,6 +35,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
  * @generated
  */
 public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImpl implements NumericalRatioStatistics {
+
     /**
      * The cached value of the '{@link #getCoefficientOfVariation()
      * <em>Coefficient Of Variation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

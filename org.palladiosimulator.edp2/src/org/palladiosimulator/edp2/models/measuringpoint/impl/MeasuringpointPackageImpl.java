@@ -27,6 +27,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public class MeasuringpointPackageImpl extends EPackageImpl implements MeasuringpointPackage {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

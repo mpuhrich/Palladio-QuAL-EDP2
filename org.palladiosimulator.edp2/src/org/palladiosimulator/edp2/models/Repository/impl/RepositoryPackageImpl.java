@@ -39,6 +39,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

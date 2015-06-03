@@ -20,6 +20,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
  * @generated
  */
 public class ExperimentGroupRunItemProvider extends RunItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

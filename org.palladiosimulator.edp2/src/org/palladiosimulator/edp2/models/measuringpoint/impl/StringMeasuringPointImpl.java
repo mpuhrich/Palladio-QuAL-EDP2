@@ -23,6 +23,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
  * @generated
  */
 public class StringMeasuringPointImpl extends MeasuringPointImpl implements StringMeasuringPoint {
+
     /**
      * The default value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->

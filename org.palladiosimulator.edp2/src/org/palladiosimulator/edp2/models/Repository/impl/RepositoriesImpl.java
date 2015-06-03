@@ -42,6 +42,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @generated
  */
 public class RepositoriesImpl extends EObjectImpl implements Repositories {
+
     /**
      * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->

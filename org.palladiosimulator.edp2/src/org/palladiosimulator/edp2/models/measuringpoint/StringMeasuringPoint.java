@@ -20,6 +20,7 @@ package org.palladiosimulator.edp2.models.measuringpoint;
  * @generated
  */
 public interface StringMeasuringPoint extends MeasuringPoint {
+
     /**
      * Returns the value of the '<em><b>Measuring Point</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

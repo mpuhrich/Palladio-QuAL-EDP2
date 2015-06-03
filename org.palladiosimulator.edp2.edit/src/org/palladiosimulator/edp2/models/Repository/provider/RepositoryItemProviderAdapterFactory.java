@@ -43,6 +43,7 @@ import org.palladiosimulator.edp2.models.Repository.util.RepositoryAdapterFactor
  */
 public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFactory implements
         ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->

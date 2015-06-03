@@ -35,6 +35,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
  */
 public class PropertyableItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
         IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

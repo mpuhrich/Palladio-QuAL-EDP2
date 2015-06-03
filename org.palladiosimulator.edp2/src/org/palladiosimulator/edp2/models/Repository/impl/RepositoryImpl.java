@@ -50,6 +50,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public abstract class RepositoryImpl extends IdentifierImpl implements Repository {
+
     /**
      * The cached value of the '{@link #getExperimentGroups() <em>Experiment Groups</em>}' reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1Identif
  * @generated
  */
 public class SensorFrameworkV1IdentifierBasedMeasurementsItemProvider extends IdentifierBasedMeasurementsItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

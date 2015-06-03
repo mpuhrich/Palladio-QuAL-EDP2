@@ -6,7 +6,6 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
-import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.metricspec.AggregationFunctionDescription;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
@@ -42,7 +41,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model abstract="true"
  * @generated
  */
-public interface AggregatedMeasurements extends EObject, Identifier {
+public interface AggregatedMeasurements extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Measurement Range</b></em>' container reference. It is
      * bidirectional and its opposite is '

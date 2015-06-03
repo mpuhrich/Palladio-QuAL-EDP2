@@ -69,6 +69,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
  * @generated
  */
 public class ExperimentDataFactoryImpl extends EFactoryImpl implements ExperimentDataFactory {
+
     /**
      * Logger for this class.
      *

@@ -8,8 +8,6 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -33,7 +31,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface NumericalPercentile extends EObject, Identifier {
+public interface NumericalPercentile extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Percentile</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

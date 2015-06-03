@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoin
  * @generated
  */
 public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

@@ -29,6 +29,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
  * @generated
  */
 public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBinaryMeasurements {
+
     /**
      * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

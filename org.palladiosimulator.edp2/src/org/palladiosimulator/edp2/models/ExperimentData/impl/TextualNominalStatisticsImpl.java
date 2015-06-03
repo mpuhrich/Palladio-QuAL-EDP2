@@ -44,6 +44,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
  * @generated
  */
 public class TextualNominalStatisticsImpl extends EObjectImpl implements TextualNominalStatistics {
+
     /**
      * The default value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

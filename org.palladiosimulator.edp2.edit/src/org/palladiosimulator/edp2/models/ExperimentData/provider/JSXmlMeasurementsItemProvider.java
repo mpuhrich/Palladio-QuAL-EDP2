@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements;
  * @generated
  */
 public class JSXmlMeasurementsItemProvider extends DataSeriesItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

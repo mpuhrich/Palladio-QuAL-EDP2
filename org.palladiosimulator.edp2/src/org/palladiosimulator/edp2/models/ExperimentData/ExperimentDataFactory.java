@@ -21,6 +21,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
  * @generated
  */
 public interface ExperimentDataFactory extends EFactory {
+
     /**
      * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
      *

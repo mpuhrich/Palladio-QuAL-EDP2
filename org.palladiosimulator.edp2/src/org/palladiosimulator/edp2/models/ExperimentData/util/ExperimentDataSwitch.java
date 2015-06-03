@@ -45,6 +45,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1Identif
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -59,6 +60,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class ExperimentDataSwitch<T> extends Switch<T> {
+
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -107,6 +109,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(aggregatedMeasurements);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(aggregatedMeasurements);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -146,6 +151,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(rawMeasurements);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(rawMeasurements);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -163,6 +171,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseNumericalNominalStatistics(numericalNominalStatistics);
             if (result == null) {
                 result = this.caseIdentifier(numericalNominalStatistics);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(numericalNominalStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -187,6 +198,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(fixedWidthAggregatedMeasurements);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(fixedWidthAggregatedMeasurements);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -196,6 +210,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseFixedIntervals(fixedIntervals);
             if (result == null) {
                 result = this.caseIdentifier(fixedIntervals);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(fixedIntervals);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -228,6 +245,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(experimentGroup);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(experimentGroup);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -240,6 +260,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.casePropertyable(experimentSetting);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(experimentSetting);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -259,6 +282,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(experimentRun);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(experimentRun);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -273,6 +299,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(measurement);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(measurement);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -284,6 +313,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(measuringType);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(measuringType);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -293,6 +325,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseAggregationStatistics(aggregationStatistics);
             if (result == null) {
                 result = this.caseIdentifier(aggregationStatistics);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(aggregationStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -323,6 +358,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(numericalIntervalStatistics);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(numericalIntervalStatistics);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -337,6 +375,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(numericalOrdinalStatistics);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(numericalOrdinalStatistics);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -346,6 +387,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseNumericalPercentile(numericalPercentile);
             if (result == null) {
                 result = this.caseIdentifier(numericalPercentile);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(numericalPercentile);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -399,6 +443,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseIdentifier(numericalRatioStatistics);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(numericalRatioStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -471,6 +518,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(run);
             }
             if (result == null) {
+                result = this.caseStereotypableElement(run);
+            }
+            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -486,6 +536,9 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.casePropertyable(experimentGroupRun);
+            }
+            if (result == null) {
+                result = this.caseStereotypableElement(experimentGroupRun);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -1013,6 +1066,22 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseExperimentGroupRun(final ExperimentGroupRun object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Stereotypable Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

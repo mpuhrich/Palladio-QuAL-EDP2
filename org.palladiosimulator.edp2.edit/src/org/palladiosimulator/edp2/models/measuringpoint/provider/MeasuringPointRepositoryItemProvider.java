@@ -26,6 +26,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
  * @generated
  */
 public class MeasuringPointRepositoryItemProvider extends IdentifierItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

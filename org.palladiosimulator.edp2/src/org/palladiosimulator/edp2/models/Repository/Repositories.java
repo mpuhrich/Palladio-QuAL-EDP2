@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @generated
  */
 public interface Repositories extends EObject {
+
     /**
      * Returns the value of the '<em><b>Available Repositories</b></em>' containment reference list.
      * The list contents are of type {@link org.palladiosimulator.edp2.models.Repository.Repository}

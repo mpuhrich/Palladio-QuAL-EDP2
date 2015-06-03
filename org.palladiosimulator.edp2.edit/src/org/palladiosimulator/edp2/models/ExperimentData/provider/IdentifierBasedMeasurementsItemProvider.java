@@ -22,6 +22,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasureme
  * @generated
  */
 public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

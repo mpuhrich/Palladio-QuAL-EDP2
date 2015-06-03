@@ -35,6 +35,7 @@ import org.palladiosimulator.metricspec.Identifier;
  * @generated
  */
 public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl implements TextualOrdinalStatistics {
+
     /**
      * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->

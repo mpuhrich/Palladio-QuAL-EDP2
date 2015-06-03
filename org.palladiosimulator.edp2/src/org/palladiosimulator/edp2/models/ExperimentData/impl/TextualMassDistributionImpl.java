@@ -39,6 +39,7 @@ import org.palladiosimulator.metricspec.Identifier;
  * @generated
  */
 public class TextualMassDistributionImpl extends EObjectImpl implements TextualMassDistribution {
+
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

@@ -52,6 +52,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implements AggregatedMeasurements {
+
     /**
      * The default value of the '{@link #isValid() <em>Valid</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->

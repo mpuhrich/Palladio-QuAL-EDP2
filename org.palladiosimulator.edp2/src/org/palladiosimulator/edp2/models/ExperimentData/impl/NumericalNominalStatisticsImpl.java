@@ -47,6 +47,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class NumericalNominalStatisticsImpl extends IdentifierImpl implements NumericalNominalStatistics {
+
     /**
      * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

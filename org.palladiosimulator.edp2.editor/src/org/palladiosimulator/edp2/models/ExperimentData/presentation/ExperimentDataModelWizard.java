@@ -69,6 +69,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
  * @generated
  */
 public class ExperimentDataModelWizard extends Wizard implements INewWizard {
+
     /**
      * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
@@ -201,6 +202,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             // Do the work within an operation.
             //
             final WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+
                 @Override
                 protected void execute(final IProgressMonitor progressMonitor) {
                     try {
@@ -247,6 +249,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
             if (activePart instanceof ISetSelectionTarget) {
                 final ISelection targetSelection = new StructuredSelection(modelFile);
                 this.getShell().getDisplay().asyncExec(new Runnable() {
+
                     @Override
                     public void run() {
                         ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
@@ -278,6 +281,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
      * @generated
      */
     public class ExperimentDataModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+
         /**
          * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
          * 
@@ -327,6 +331,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
      * @generated
      */
     public class ExperimentDataModelWizardInitialObjectCreationPage extends WizardPage {
+
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
          * 
@@ -435,6 +440,7 @@ public class ExperimentDataModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         protected ModifyListener validator = new ModifyListener() {
+
             @Override
             public void modifyText(final ModifyEvent e) {
                 ExperimentDataModelWizardInitialObjectCreationPage.this

@@ -47,6 +47,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
  */
 public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsImpl implements
 NumericalOrdinalStatistics {
+
     /**
      * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

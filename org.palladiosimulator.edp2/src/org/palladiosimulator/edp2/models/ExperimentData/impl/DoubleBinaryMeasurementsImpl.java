@@ -31,6 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  */
 public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements
 DoubleBinaryMeasurements<Q> {
+
     /**
      * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

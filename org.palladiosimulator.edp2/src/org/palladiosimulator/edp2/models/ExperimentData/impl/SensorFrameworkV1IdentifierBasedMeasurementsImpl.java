@@ -20,6 +20,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1Identif
  */
 public class SensorFrameworkV1IdentifierBasedMeasurementsImpl extends IdentifierBasedMeasurementsImpl implements
 SensorFrameworkV1IdentifierBasedMeasurements {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

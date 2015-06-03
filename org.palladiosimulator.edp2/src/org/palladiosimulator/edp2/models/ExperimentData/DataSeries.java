@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DataSeries extends EObject {
+
     /**
      * Returns the value of the '<em><b>Numerical Statistics</b></em>' containment reference. It is
      * bidirectional and its opposite is '

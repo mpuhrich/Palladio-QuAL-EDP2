@@ -23,7 +23,7 @@ SensorFrameworkV1IdentifierBasedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected SensorFrameworkV1IdentifierBasedMeasurementsImpl() {
@@ -32,7 +32,7 @@ SensorFrameworkV1IdentifierBasedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

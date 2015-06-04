@@ -28,7 +28,7 @@ public interface ResourceURIMeasuringPoint extends StringMeasuringPoint {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Resource URI</em>' attribute.
      * @see #setResourceURI(String)
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage#getResourceURIMeasuringPoint_ResourceURI()
@@ -41,7 +41,7 @@ public interface ResourceURIMeasuringPoint extends StringMeasuringPoint {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint#getResourceURI
      * <em>Resource URI</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Resource URI</em>' attribute.
      * @see #getResourceURI()

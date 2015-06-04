@@ -46,7 +46,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ResourceURIMeasuringPointImpl() {
@@ -55,7 +55,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -65,7 +65,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -104,7 +104,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -149,7 +149,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

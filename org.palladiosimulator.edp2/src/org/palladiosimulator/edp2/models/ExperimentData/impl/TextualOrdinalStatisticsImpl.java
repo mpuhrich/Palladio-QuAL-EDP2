@@ -59,7 +59,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
     /**
      * The cached value of the '{@link #getMedian() <em>Median</em>}' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMedian()
      * @generated
      * @ordered
@@ -68,7 +68,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TextualOrdinalStatisticsImpl() {
@@ -77,7 +77,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,7 +87,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -107,7 +107,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMinimum() {
@@ -116,7 +116,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMaximum() {
@@ -160,7 +160,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -175,7 +175,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMedian() {
@@ -204,7 +204,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -219,7 +219,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,7 +246,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -267,7 +267,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -288,7 +288,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

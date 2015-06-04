@@ -19,7 +19,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory
  * @model kind="package"
  * @generated
@@ -28,28 +28,28 @@ public interface MeasuringpointPackage extends EPackage {
 
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "measuringpoint";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_URI = "http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "org.palladiosimulator.edp2.models";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     MeasuringpointPackage eINSTANCE = org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl
@@ -59,7 +59,7 @@ public interface MeasuringpointPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl
      * <em>Measuring Point</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getMeasuringPoint()
      * @generated
@@ -78,7 +78,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -106,7 +106,7 @@ public interface MeasuringpointPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.StringMeasuringPointImpl
      * <em>String Measuring Point</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.StringMeasuringPointImpl
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getStringMeasuringPoint()
      * @generated
@@ -125,7 +125,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -143,7 +143,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measuring Point</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -162,7 +162,7 @@ public interface MeasuringpointPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.ResourceURIMeasuringPointImpl
      * <em>Resource URI Measuring Point</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.ResourceURIMeasuringPointImpl
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getResourceURIMeasuringPoint()
      * @generated
@@ -181,7 +181,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>String Representation</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -199,7 +199,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measuring Point</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -208,7 +208,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Resource URI</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -227,7 +227,7 @@ public interface MeasuringpointPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointRepositoryImpl
      * <em>Measuring Point Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointRepositoryImpl
      * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getMeasuringPointRepository()
      * @generated
@@ -235,18 +235,9 @@ public interface MeasuringpointPackage extends EPackage {
     int MEASURING_POINT_REPOSITORY = 3;
 
     /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int MEASURING_POINT_REPOSITORY__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
-
-    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -274,7 +265,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint
      * <em>Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Measuring Point</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint
      * @generated
@@ -285,7 +276,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getMeasuringPointRepository
      * <em>Measuring Point Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Measuring Point Repository</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getMeasuringPointRepository()
      * @see #getMeasuringPoint()
@@ -297,7 +288,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getStringRepresentation
      * <em>String Representation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>String Representation</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getStringRepresentation()
      * @see #getMeasuringPoint()
@@ -309,7 +300,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getResourceURIRepresentation
      * <em>Resource URI Representation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Resource URI Representation</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getResourceURIRepresentation()
      * @see #getMeasuringPoint()
@@ -321,7 +312,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint
      * <em>String Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>String Measuring Point</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint
      * @generated
@@ -332,7 +323,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint#getMeasuringPoint
      * <em>Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Measuring Point</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint#getMeasuringPoint()
      * @see #getStringMeasuringPoint()
@@ -344,7 +335,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint
      * <em>Resource URI Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Resource URI Measuring Point</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint
      * @generated
@@ -355,7 +346,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint#getResourceURI
      * <em>Resource URI</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Resource URI</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint#getResourceURI()
      * @see #getResourceURIMeasuringPoint()
@@ -367,7 +358,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
      * <em>Measuring Point Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Measuring Point Repository</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
      * @generated
@@ -378,7 +369,7 @@ public interface MeasuringpointPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository#getMeasuringPoints
      * <em>Measuring Points</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Measuring Points</em>'.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository#getMeasuringPoints()
      * @see #getMeasuringPointRepository()
@@ -389,7 +380,7 @@ public interface MeasuringpointPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -404,7 +395,7 @@ public interface MeasuringpointPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
@@ -413,7 +404,7 @@ public interface MeasuringpointPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl
          * <em>Measuring Point</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringPointImpl
          * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getMeasuringPoint()
          * @generated
@@ -423,7 +414,7 @@ public interface MeasuringpointPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measuring Point Repository</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASURING_POINT__MEASURING_POINT_REPOSITORY = eINSTANCE.getMeasuringPoint_MeasuringPointRepository();
@@ -431,7 +422,7 @@ public interface MeasuringpointPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>String Representation</b></em>' attribute
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute MEASURING_POINT__STRING_REPRESENTATION = eINSTANCE.getMeasuringPoint_StringRepresentation();
@@ -439,7 +430,7 @@ public interface MeasuringpointPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Resource URI Representation</b></em>' attribute
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute MEASURING_POINT__RESOURCE_URI_REPRESENTATION = eINSTANCE
@@ -449,7 +440,7 @@ public interface MeasuringpointPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.measuringpoint.impl.StringMeasuringPointImpl
          * <em>String Measuring Point</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.measuringpoint.impl.StringMeasuringPointImpl
          * @see org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl#getStringMeasuringPoint()
          * @generated
@@ -499,7 +490,7 @@ public interface MeasuringpointPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measuring Points</b></em>' containment reference
          * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASURING_POINT_REPOSITORY__MEASURING_POINTS = eINSTANCE

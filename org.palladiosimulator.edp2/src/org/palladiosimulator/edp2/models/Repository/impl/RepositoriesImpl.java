@@ -46,7 +46,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
     /**
      * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAvailableRepositories()
      * @generated
      * @ordered
@@ -56,7 +56,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
     /**
      * The cached value of the '{@link #getCommonResourceSet() <em>Common Resource Set</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getCommonResourceSet()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,7 +87,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -124,7 +124,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ResourceSet basicGetCommonResourceSet() {
@@ -133,7 +133,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -148,7 +148,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -165,7 +165,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -180,7 +180,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -199,7 +199,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -219,7 +219,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -237,7 +237,7 @@ public class RepositoriesImpl extends EObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

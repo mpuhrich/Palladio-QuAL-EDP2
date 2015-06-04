@@ -35,77 +35,77 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass localDirectoryRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass fileEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass localMemoryRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass remoteCdoRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass localSensorFrameworkRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass repositoriesEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass iResourceSetEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass measurementsDaoFactoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass metaDaoEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass repositoryEClass = null;
@@ -118,7 +118,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#eNS_URI
      * @see #init()
@@ -130,7 +130,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private static boolean isInited = false;
@@ -143,7 +143,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -192,7 +192,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -202,7 +202,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -212,7 +212,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -222,7 +222,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -232,7 +232,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -242,7 +242,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -252,7 +252,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -262,7 +262,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -272,7 +272,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -282,7 +282,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -292,7 +292,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -302,7 +302,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -312,7 +312,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -322,7 +322,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -332,7 +332,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -342,7 +342,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -352,7 +352,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -362,7 +362,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -372,7 +372,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -382,7 +382,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -392,7 +392,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -402,7 +402,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -412,7 +412,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isCreated = false;
@@ -420,7 +420,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void createPackageContents() {
@@ -465,7 +465,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isInitialized = false;
@@ -473,7 +473,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void initializePackageContents() {

@@ -50,7 +50,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAdditionalInformation()
      * @generated
      * @ordered
@@ -100,7 +100,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     /**
      * The cached value of the '{@link #getMeasurement() <em>Measurement</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasurement()
      * @generated
      * @ordered
@@ -109,7 +109,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RunImpl() {
@@ -118,7 +118,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -153,7 +153,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -178,7 +178,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -193,7 +193,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -207,7 +207,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -223,7 +223,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -240,7 +240,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -264,7 +264,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -290,7 +290,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -314,7 +314,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -334,7 +334,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -352,7 +352,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -370,7 +370,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

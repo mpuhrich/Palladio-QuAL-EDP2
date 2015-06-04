@@ -30,7 +30,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentGroupRunImpl() {
@@ -39,7 +39,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -49,7 +49,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentgroup(final ExperimentGroup newExperimentgroup, NotificationChain msgs) {
@@ -73,7 +73,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -103,7 +103,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +120,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,7 +135,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +150,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -164,7 +164,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -179,7 +179,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -194,7 +194,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

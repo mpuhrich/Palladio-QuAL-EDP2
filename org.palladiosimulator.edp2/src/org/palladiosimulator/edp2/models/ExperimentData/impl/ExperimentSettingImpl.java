@@ -61,7 +61,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAdditionalInformation()
      * @generated
      * @ordered
@@ -91,7 +91,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     /**
      * The cached value of the '{@link #getExperimentRuns() <em>Experiment Runs</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getExperimentRuns()
      * @generated
      * @ordered
@@ -101,7 +101,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     /**
      * The cached value of the '{@link #getMeasuringTypes() <em>Measuring Types</em>}' reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringTypes()
      * @generated
      * @ordered
@@ -110,7 +110,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentSettingImpl() {
@@ -119,7 +119,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -144,7 +144,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -154,7 +154,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -169,7 +169,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -184,7 +184,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -199,7 +199,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -212,7 +212,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentGroup(final ExperimentGroup newExperimentGroup, NotificationChain msgs) {
@@ -223,7 +223,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -253,7 +253,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -277,7 +277,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -298,7 +298,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -313,7 +313,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -339,7 +339,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -369,7 +369,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -396,7 +396,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -419,7 +419,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -437,7 +437,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -455,7 +455,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

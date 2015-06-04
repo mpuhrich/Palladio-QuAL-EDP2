@@ -23,7 +23,7 @@ SensorFrameworkV1DoubleBinaryMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected SensorFrameworkV1DoubleBinaryMeasurementsImpl() {
@@ -32,7 +32,7 @@ SensorFrameworkV1DoubleBinaryMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

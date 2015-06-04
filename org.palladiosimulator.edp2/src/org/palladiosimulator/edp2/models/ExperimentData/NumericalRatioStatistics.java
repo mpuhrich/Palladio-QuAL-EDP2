@@ -55,7 +55,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getCoefficientOfVariation
      * <em>Coefficient Of Variation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Coefficient Of Variation</em>' attribute.
      * @see #getCoefficientOfVariation()
@@ -70,7 +70,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Geometric Mean</em>' attribute.
      * @see #setGeometricMean(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics_GeometricMean()
@@ -84,7 +84,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getGeometricMean
      * <em>Geometric Mean</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Geometric Mean</em>' attribute.
      * @see #getGeometricMean()
@@ -99,7 +99,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Harmonic Mean</em>' attribute.
      * @see #setHarmonicMean(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalRatioStatistics_HarmonicMean()
@@ -113,7 +113,7 @@ public interface NumericalRatioStatistics extends NumericalIntervalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getHarmonicMean
      * <em>Harmonic Mean</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Harmonic Mean</em>' attribute.
      * @see #getHarmonicMean()

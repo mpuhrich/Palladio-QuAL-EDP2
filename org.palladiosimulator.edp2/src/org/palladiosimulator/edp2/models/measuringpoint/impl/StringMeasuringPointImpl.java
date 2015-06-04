@@ -27,7 +27,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
     /**
      * The default value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringPoint()
      * @generated
      * @ordered
@@ -37,7 +37,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
     /**
      * The cached value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringPoint()
      * @generated
      * @ordered
@@ -46,7 +46,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected StringMeasuringPointImpl() {
@@ -55,7 +55,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -65,7 +65,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +120,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,7 +135,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +150,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

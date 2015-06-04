@@ -67,7 +67,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAdditionalInformation()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     /**
      * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getExperimentSettings()
      * @generated
      * @ordered
@@ -87,7 +87,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     /**
      * The cached value of the '{@link #getMeasuringTypes() <em>Measuring Types</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringTypes()
      * @generated
      * @ordered
@@ -127,7 +127,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     /**
      * The cached value of the '{@link #getReports() <em>Reports</em>}' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getReports()
      * @generated
      * @ordered
@@ -138,7 +138,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      * The cached value of the '{@link #getMeasuringPointRepositories()
      * <em>Measuring Point Repositories</em>}' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringPointRepositories()
      * @generated
      * @ordered
@@ -147,7 +147,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentGroupImpl() {
@@ -156,7 +156,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -166,7 +166,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -196,7 +196,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -211,7 +211,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +231,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Repository basicGetRepository() {
@@ -240,7 +240,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetRepository(final Repository newRepository, NotificationChain msgs) {
@@ -260,7 +260,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -287,7 +287,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -302,7 +302,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -317,7 +317,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -327,7 +327,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -342,7 +342,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -369,7 +369,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -394,7 +394,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -427,7 +427,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -465,7 +465,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -498,7 +498,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -524,7 +524,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -542,7 +542,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -560,7 +560,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

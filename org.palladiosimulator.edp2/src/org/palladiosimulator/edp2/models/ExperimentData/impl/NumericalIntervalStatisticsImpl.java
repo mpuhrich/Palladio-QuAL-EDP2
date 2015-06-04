@@ -43,7 +43,7 @@ NumericalIntervalStatistics {
     /**
      * The cached value of the '{@link #getArithmethicMean() <em>Arithmethic Mean</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getArithmethicMean()
      * @generated
      * @ordered
@@ -63,7 +63,7 @@ NumericalIntervalStatistics {
     /**
      * The cached value of the '{@link #getStandardDeviation() <em>Standard Deviation</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStandardDeviation()
      * @generated
      * @ordered
@@ -73,7 +73,7 @@ NumericalIntervalStatistics {
     /**
      * The cached value of the '{@link #getSum() <em>Sum</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getSum()
      * @generated
      * @ordered
@@ -82,7 +82,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalIntervalStatisticsImpl() {
@@ -91,7 +91,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -101,7 +101,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -127,7 +127,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -137,7 +137,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -152,7 +152,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -162,7 +162,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -178,7 +178,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -188,7 +188,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -203,7 +203,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -223,7 +223,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -247,7 +247,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -271,7 +271,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -291,7 +291,7 @@ NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

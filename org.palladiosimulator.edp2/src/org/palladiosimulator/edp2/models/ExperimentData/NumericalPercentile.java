@@ -40,7 +40,7 @@ public interface NumericalPercentile extends Identifier {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Percentile</em>' attribute.
      * @see #setPercentile(double)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_Percentile()
@@ -53,7 +53,7 @@ public interface NumericalPercentile extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getPercentile
      * <em>Percentile</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Percentile</em>' attribute.
      * @see #getPercentile()
@@ -68,7 +68,7 @@ public interface NumericalPercentile extends Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_Value()
@@ -82,7 +82,7 @@ public interface NumericalPercentile extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getValue
      * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()
@@ -100,7 +100,7 @@ public interface NumericalPercentile extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Ordinal Statistics</em>' container reference.
      * @see #setOrdinalStatistics(NumericalOrdinalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalPercentile_OrdinalStatistics()

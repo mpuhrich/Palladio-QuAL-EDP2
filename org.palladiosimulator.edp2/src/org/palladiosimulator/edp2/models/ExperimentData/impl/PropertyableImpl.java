@@ -36,7 +36,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
      * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAdditionalInformation()
      * @generated
      * @ordered
@@ -45,7 +45,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected PropertyableImpl() {
@@ -54,7 +54,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -79,7 +79,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -94,7 +94,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -112,7 +112,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -127,7 +127,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public abstract class PropertyableImpl extends EObjectImpl implements Propertyab
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

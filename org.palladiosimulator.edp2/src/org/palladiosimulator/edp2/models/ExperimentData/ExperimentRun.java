@@ -44,7 +44,7 @@ public interface ExperimentRun extends Run {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Experiment Setting</em>' container reference.
      * @see #setExperimentSetting(ExperimentSetting)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentRun_ExperimentSetting()

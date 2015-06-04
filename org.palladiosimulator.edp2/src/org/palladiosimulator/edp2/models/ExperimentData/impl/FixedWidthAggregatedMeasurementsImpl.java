@@ -44,7 +44,7 @@ FixedWidthAggregatedMeasurements {
     /**
      * The cached value of the '{@link #getIntervals() <em>Intervals</em>}' containment reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getIntervals()
      * @generated
      * @ordered
@@ -54,7 +54,7 @@ FixedWidthAggregatedMeasurements {
     /**
      * The cached value of the '{@link #getDataSeries() <em>Data Series</em>}' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getDataSeries()
      * @generated
      * @ordered
@@ -63,7 +63,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedWidthAggregatedMeasurementsImpl() {
@@ -72,7 +72,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -82,7 +82,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetIntervals(final FixedIntervals newIntervals, NotificationChain msgs) {
@@ -112,7 +112,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -139,7 +139,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -154,7 +154,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -175,7 +175,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -192,7 +192,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -208,7 +208,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -228,7 +228,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,7 +246,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

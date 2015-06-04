@@ -44,7 +44,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      * The default value of the '{@link #getDistinctValuesBeforeAggregation()
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesBeforeAggregation()
      * @generated
      * @ordered
@@ -55,7 +55,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      * The cached value of the '{@link #getDistinctValuesBeforeAggregation()
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesBeforeAggregation()
      * @generated
      * @ordered
@@ -66,7 +66,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      * The default value of the '{@link #getDistinctValuesAfterAggregation()
      * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesAfterAggregation()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      * The cached value of the '{@link #getDistinctValuesAfterAggregation()
      * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesAfterAggregation()
      * @generated
      * @ordered
@@ -86,7 +86,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected AggregationStatisticsImpl() {
@@ -95,7 +95,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -115,7 +115,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -170,7 +170,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(final AggregatedMeasurements newAggregatedMeasurements,
@@ -182,7 +182,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -214,7 +214,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +231,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,7 +246,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -262,7 +262,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -280,7 +280,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -301,7 +301,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -322,7 +322,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -340,7 +340,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

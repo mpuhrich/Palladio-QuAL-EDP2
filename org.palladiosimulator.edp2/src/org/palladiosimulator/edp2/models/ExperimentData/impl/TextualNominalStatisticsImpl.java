@@ -48,7 +48,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
     /**
      * The default value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getNumberMeasurements()
      * @generated
      * @ordered
@@ -58,7 +58,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
     /**
      * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getNumberMeasurements()
      * @generated
      * @ordered
@@ -68,7 +68,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
     /**
      * The cached value of the '{@link #getMassDistribution() <em>Mass Distribution</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMassDistribution()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TextualNominalStatisticsImpl() {
@@ -86,7 +86,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -106,7 +106,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -122,7 +122,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetDataSeries(final DataSeries newDataSeries, NotificationChain msgs) {
@@ -162,7 +162,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -192,7 +192,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -213,7 +213,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -245,7 +245,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -263,7 +263,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -286,7 +286,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -307,7 +307,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -325,7 +325,7 @@ public class TextualNominalStatisticsImpl extends EObjectImpl implements Textual
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

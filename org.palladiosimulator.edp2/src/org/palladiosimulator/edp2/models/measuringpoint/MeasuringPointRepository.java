@@ -37,7 +37,7 @@ public interface MeasuringPointRepository extends Identifier {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Points</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage#getMeasuringPointRepository_MeasuringPoints()
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getMeasuringPointRepository

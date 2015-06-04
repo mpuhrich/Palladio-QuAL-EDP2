@@ -65,7 +65,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getValue()
      * @generated
      * @ordered
@@ -74,7 +74,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalPercentileImpl() {
@@ -83,7 +83,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -93,7 +93,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -103,7 +103,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -156,7 +156,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetOrdinalStatistics(final NumericalOrdinalStatistics newOrdinalStatistics,
@@ -168,7 +168,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -200,7 +200,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -232,7 +232,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -248,7 +248,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -266,7 +266,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -287,7 +287,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -308,7 +308,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -326,7 +326,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

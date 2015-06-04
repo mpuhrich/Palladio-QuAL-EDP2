@@ -224,19 +224,14 @@ litigation.
       <import plugin="org.eclipse.core.databinding.property" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.databinding.beans" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.codec" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.measurementframework"/>
+      <import plugin="org.palladiosimulator.measurementframework" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.metricspec" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.pcm"/>
-      <import plugin="de.uka.ipd.sdq.probfunction"/>
-      <import plugin="de.uka.ipd.sdq.stoex"/>
-      <import plugin="de.uka.ipd.sdq.units"/>
+      <import plugin="org.palladiosimulator.edp2.dao" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.commons"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
       <import plugin="org.palladiosimulator.metricspec.edit"/>
-      <import plugin="de.uka.ipd.sdq.pcm.edit"/>
-      <import plugin="de.uka.ipd.sdq.probfunction.edit"/>
-      <import plugin="de.uka.ipd.sdq.stoex.edit"/>
-      <import plugin="de.uka.ipd.sdq.units.edit"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
@@ -245,9 +240,14 @@ litigation.
       <import plugin="org.palladiosimulator.edp2.visualization" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2.datastream" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.measurementframework" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.metricspec.resources" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.commons"/>
+      <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.edp2.util" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.edp2.dao.localfile" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.registry"/>
+      <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.net4j.util"/>
+      <import plugin="org.eclipse.core.runtime" version="3.9.100" match="greaterOrEqual"/>
    </requires>
 
    <plugin

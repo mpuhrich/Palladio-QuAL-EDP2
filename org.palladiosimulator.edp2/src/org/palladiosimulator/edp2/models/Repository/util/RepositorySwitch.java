@@ -21,7 +21,6 @@ import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
-import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -31,7 +30,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage
  * @generated
  */
@@ -39,14 +38,14 @@ public class RepositorySwitch<T> extends Switch<T> {
 
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static RepositoryPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RepositorySwitch() {
@@ -58,7 +57,7 @@ public class RepositorySwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
@@ -71,7 +70,7 @@ public class RepositorySwitch<T> extends Switch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -89,9 +88,6 @@ public class RepositorySwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseMetaDao(localDirectoryRepository);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(localDirectoryRepository);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -119,9 +115,6 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(localMemoryRepository);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(localMemoryRepository);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -139,9 +132,6 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(remoteCdoRepository);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(remoteCdoRepository);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -157,9 +147,6 @@ public class RepositorySwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseMetaDao(localSensorFrameworkRepository);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(localSensorFrameworkRepository);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -208,9 +195,6 @@ public class RepositorySwitch<T> extends Switch<T> {
                 result = this.caseMetaDao(repository);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(repository);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -224,7 +208,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Directory Repository</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -255,7 +239,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Memory Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -271,7 +255,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Remote Cdo Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -287,7 +271,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Local Sensor Framework Repository</em>'. <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -318,7 +302,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>IResource Set</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>IResource Set</em>'.
@@ -333,7 +317,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Measurements Dao Factory</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -372,22 +356,6 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseRepository(final Repository object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
-     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Stereotypable Element</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

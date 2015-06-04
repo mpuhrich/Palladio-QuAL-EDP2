@@ -15,14 +15,14 @@ import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MeasuringpointFactoryImpl extends EFactoryImpl implements MeasuringpointFactory {
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static MeasuringpointFactory init() {
@@ -40,7 +40,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringpointFactoryImpl() {
@@ -49,7 +49,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -68,7 +68,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -79,7 +79,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -101,7 +101,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

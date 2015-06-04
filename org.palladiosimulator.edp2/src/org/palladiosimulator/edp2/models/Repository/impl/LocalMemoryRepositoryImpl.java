@@ -44,7 +44,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
     /**
      * The cached value of the '{@link #getDomain() <em>Domain</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getDomain()
      * @generated
      * @ordered
@@ -104,7 +104,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -124,7 +124,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -139,7 +139,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -153,7 +153,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -183,7 +183,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -197,7 +197,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

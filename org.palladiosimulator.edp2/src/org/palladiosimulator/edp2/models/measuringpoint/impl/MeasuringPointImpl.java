@@ -38,7 +38,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
     /**
      * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getStringRepresentation()
      * @generated
      * @ordered
@@ -57,7 +57,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringPointImpl() {
@@ -66,7 +66,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -76,7 +76,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetMeasuringPointRepository(
@@ -101,7 +101,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -149,7 +149,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -166,7 +166,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -197,7 +197,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -215,7 +215,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -245,7 +245,7 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,10 +255,10 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
             return this.getMeasuringPointRepository() != null;
         case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
             return STRING_REPRESENTATION_EDEFAULT == null ? this.getStringRepresentation() != null
-            : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
+                    : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
         case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
             return RESOURCE_URI_REPRESENTATION_EDEFAULT == null ? this.getResourceURIRepresentation() != null
-            : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
+                    : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
         }
         return super.eIsSet(featureID);
     }

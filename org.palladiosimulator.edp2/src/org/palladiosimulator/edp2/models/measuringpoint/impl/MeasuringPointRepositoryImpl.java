@@ -35,7 +35,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
     /**
      * The cached value of the '{@link #getMeasuringPoints() <em>Measuring Points</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMeasuringPoints()
      * @generated
      * @ordered
@@ -44,7 +44,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringPointRepositoryImpl() {
@@ -53,7 +53,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -95,7 +95,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -124,7 +124,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -141,7 +141,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -156,7 +156,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

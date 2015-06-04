@@ -45,7 +45,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1Identif
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
-import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -55,7 +54,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage
  * @generated
  */
@@ -63,14 +62,14 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
 
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static ExperimentDataPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ExperimentDataSwitch() {
@@ -82,7 +81,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
@@ -95,7 +94,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -107,9 +106,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseAggregatedMeasurements(aggregatedMeasurements);
             if (result == null) {
                 result = this.caseIdentifier(aggregatedMeasurements);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(aggregatedMeasurements);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -151,9 +147,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(rawMeasurements);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(rawMeasurements);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -171,9 +164,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseNumericalNominalStatistics(numericalNominalStatistics);
             if (result == null) {
                 result = this.caseIdentifier(numericalNominalStatistics);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(numericalNominalStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -198,9 +188,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(fixedWidthAggregatedMeasurements);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(fixedWidthAggregatedMeasurements);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -210,9 +197,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseFixedIntervals(fixedIntervals);
             if (result == null) {
                 result = this.caseIdentifier(fixedIntervals);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(fixedIntervals);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -245,9 +229,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(experimentGroup);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(experimentGroup);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -260,9 +241,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.casePropertyable(experimentSetting);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(experimentSetting);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -282,9 +260,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(experimentRun);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(experimentRun);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -299,9 +274,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(measurement);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(measurement);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -313,9 +285,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(measuringType);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(measuringType);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -325,9 +294,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseAggregationStatistics(aggregationStatistics);
             if (result == null) {
                 result = this.caseIdentifier(aggregationStatistics);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(aggregationStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -358,9 +324,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(numericalIntervalStatistics);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(numericalIntervalStatistics);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -375,9 +338,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(numericalOrdinalStatistics);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(numericalOrdinalStatistics);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -387,9 +347,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             T result = this.caseNumericalPercentile(numericalPercentile);
             if (result == null) {
                 result = this.caseIdentifier(numericalPercentile);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(numericalPercentile);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -443,9 +400,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseIdentifier(numericalRatioStatistics);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(numericalRatioStatistics);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -518,9 +472,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(run);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(run);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -538,9 +489,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
                 result = this.casePropertyable(experimentGroupRun);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(experimentGroupRun);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -554,7 +502,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Aggregated Measurements</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -570,7 +518,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measurement Range</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measurement Range</em>'.
@@ -600,7 +548,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>EStringto EObject Map Entry</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -616,7 +564,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Raw Measurements</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Raw Measurements</em>'.
@@ -646,7 +594,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Nominal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -662,7 +610,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Mass Distribution</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -678,7 +626,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Fixed Width Aggregated Measurements</em>'. <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -694,7 +642,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Fixed Intervals</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Fixed Intervals</em>'.
@@ -709,7 +657,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Nominal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -725,7 +673,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Mass Distribution</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -741,7 +689,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Group</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Group</em>'.
@@ -756,7 +704,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Setting</em>
      * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Setting</em>
@@ -772,7 +720,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Experiment Run</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Experiment Run</em>'.
@@ -802,7 +750,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Measuring Type</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Measuring Type</em>'.
@@ -817,7 +765,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Aggregation Statistics</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -833,7 +781,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Double Binary Measurements</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -849,7 +797,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Interval Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -865,7 +813,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Ordinal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -881,7 +829,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Percentile</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -897,7 +845,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>JS Xml Measurements</em>
      * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>JS Xml Measurements</em>
@@ -913,7 +861,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Long Binary Measurements</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -929,7 +877,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Identifier Based Measurements</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -945,7 +893,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Numerical Ratio Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -962,7 +910,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * <em>Sensor Framework V1 Double Binary Measurements</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!--
      * end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -979,7 +927,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * <em>Sensor Framework V1 Identifier Based Measurements</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!--
      * end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -1026,7 +974,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Textual Ordinal Statistics</em>'. <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -1057,7 +1005,7 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Experiment Group Run</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
+     *
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -1066,22 +1014,6 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseExperimentGroupRun(final ExperimentGroupRun object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
-     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Stereotypable Element</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

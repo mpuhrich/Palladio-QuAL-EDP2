@@ -34,7 +34,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getUri()
      * @generated
      * @ordered
@@ -44,7 +44,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     /**
      * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getUri()
      * @generated
      * @ordered
@@ -54,7 +54,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     /**
      * The default value of the '{@link #getImportSettings() <em>Import Settings</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getImportSettings()
      * @generated
      * @ordered
@@ -64,7 +64,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     /**
      * The cached value of the '{@link #getImportSettings() <em>Import Settings</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getImportSettings()
      * @generated
      * @ordered
@@ -73,7 +73,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected LocalSensorFrameworkRepositoryImpl() {
@@ -82,7 +82,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -102,7 +102,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -117,7 +117,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -127,7 +127,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -177,7 +177,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,14 +205,14 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
             return URI_EDEFAULT == null ? this.uri != null : !URI_EDEFAULT.equals(this.uri);
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS:
             return IMPORT_SETTINGS_EDEFAULT == null ? this.importSettings != null : !IMPORT_SETTINGS_EDEFAULT
-            .equals(this.importSettings);
+                    .equals(this.importSettings);
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

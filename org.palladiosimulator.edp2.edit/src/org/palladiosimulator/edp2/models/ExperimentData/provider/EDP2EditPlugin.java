@@ -8,10 +8,6 @@ package org.palladiosimulator.edp2.models.ExperimentData.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-import org.modelversioning.emfprofile.provider.EMFProfileEditPlugin;
-import org.modelversioning.emfprofileapplication.provider.EMFProfileApplicationEditPlugin;
-import org.palladiosimulator.mdsdprofiles.provider.MdsdprofilesEditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
@@ -44,9 +40,7 @@ public final class EDP2EditPlugin extends EMFPlugin {
      * @generated
      */
     public EDP2EditPlugin() {
-        super(new ResourceLocator[] { IdentifierEditPlugin.INSTANCE, MetricSpecEditPlugin.INSTANCE,
-                MdsdprofilesEditPlugin.INSTANCE, EMFProfileEditPlugin.INSTANCE,
-                EMFProfileApplicationEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, });
+        super(new ResourceLocator[] { IdentifierEditPlugin.INSTANCE, MetricSpecEditPlugin.INSTANCE, });
     }
 
     /**

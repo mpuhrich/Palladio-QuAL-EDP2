@@ -57,7 +57,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getWidth()
      * @generated
      * @ordered
@@ -67,7 +67,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The default value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberOfIntervals()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     /**
      * The cached value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberOfIntervals()
      * @generated
      * @ordered
@@ -86,7 +86,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedIntervalsImpl() {
@@ -95,7 +95,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -115,7 +115,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -130,7 +130,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -165,7 +165,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -194,7 +194,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(
@@ -206,7 +206,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -238,7 +238,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +255,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -270,7 +270,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -286,7 +286,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -306,7 +306,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -330,7 +330,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -354,7 +354,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -374,7 +374,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

@@ -30,7 +30,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements
-DoubleBinaryMeasurements<Q> {
+        DoubleBinaryMeasurements<Q> {
 
     /**
      * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
@@ -44,7 +44,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DoubleBinaryMeasurementsImpl() {
@@ -53,7 +53,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -73,7 +73,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -88,7 +88,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -102,7 +102,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -118,7 +118,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -133,7 +133,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

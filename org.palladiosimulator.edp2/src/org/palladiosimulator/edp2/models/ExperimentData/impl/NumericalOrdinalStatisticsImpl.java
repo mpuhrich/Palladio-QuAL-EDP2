@@ -46,7 +46,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
  * @generated
  */
 public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsImpl implements
-NumericalOrdinalStatistics {
+        NumericalOrdinalStatistics {
 
     /**
      * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' attribute. <!--
@@ -71,7 +71,7 @@ NumericalOrdinalStatistics {
     /**
      * The cached value of the '{@link #getMedian() <em>Median</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMedian()
      * @generated
      * @ordered
@@ -81,7 +81,7 @@ NumericalOrdinalStatistics {
     /**
      * The cached value of the '{@link #getPercentiles() <em>Percentiles</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getPercentiles()
      * @generated
      * @ordered
@@ -90,7 +90,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalOrdinalStatisticsImpl() {
@@ -99,7 +99,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -109,7 +109,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -144,7 +144,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -169,7 +169,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -184,7 +184,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -199,7 +199,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -215,7 +215,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -250,7 +250,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -276,7 +276,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -300,7 +300,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -320,7 +320,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

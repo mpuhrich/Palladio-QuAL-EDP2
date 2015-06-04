@@ -56,7 +56,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     /**
      * The default value of the '{@link #isValid() <em>Valid</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #isValid()
      * @generated
      * @ordered
@@ -66,7 +66,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     /**
      * The cached value of the '{@link #isValid() <em>Valid</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #isValid()
      * @generated
      * @ordered
@@ -86,7 +86,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     /**
      * The cached value of the '{@link #getAggregationStatistics() <em>Aggregation Statistics</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getAggregationStatistics()
      * @generated
      * @ordered
@@ -106,7 +106,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     /**
      * The cached value of the '{@link #getMetric() <em>Metric</em>}' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMetric()
      * @generated
      * @ordered
@@ -115,7 +115,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected AggregatedMeasurementsImpl() {
@@ -124,7 +124,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetMeasurementRange(final MeasurementRange newMeasurementRange, NotificationChain msgs) {
@@ -158,7 +158,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -189,7 +189,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -199,7 +199,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -214,7 +214,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -234,7 +234,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public AggregationFunctionDescription basicGetFunction() {
@@ -243,7 +243,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -258,7 +258,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -268,7 +268,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetAggregationStatistics(final AggregationStatistics newAggregationStatistics,
@@ -290,7 +290,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -320,7 +320,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -341,7 +341,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public BaseMetricDescription basicGetAggregationOn() {
@@ -350,7 +350,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -365,7 +365,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -385,7 +385,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MetricDescription basicGetMetric() {
@@ -394,7 +394,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -409,7 +409,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -432,7 +432,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -449,7 +449,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -464,7 +464,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -497,7 +497,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -527,7 +527,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -557,7 +557,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -581,7 +581,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

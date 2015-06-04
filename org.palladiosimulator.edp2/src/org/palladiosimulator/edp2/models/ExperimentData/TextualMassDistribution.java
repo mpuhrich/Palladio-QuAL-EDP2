@@ -40,7 +40,7 @@ public interface TextualMassDistribution extends EObject {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Frequency</em>' attribute.
      * @see #setFrequency(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualMassDistribution_Frequency()
@@ -53,7 +53,7 @@ public interface TextualMassDistribution extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getFrequency
      * <em>Frequency</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Frequency</em>' attribute.
      * @see #getFrequency()
@@ -68,7 +68,7 @@ public interface TextualMassDistribution extends EObject {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Identifier</em>' reference.
      * @see #setIdentifier(Identifier)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualMassDistribution_Identifier()
@@ -81,7 +81,7 @@ public interface TextualMassDistribution extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getIdentifier
      * <em>Identifier</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Identifier</em>' reference.
      * @see #getIdentifier()
@@ -99,7 +99,7 @@ public interface TextualMassDistribution extends EObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Textual Nominal Statistics</em>' container reference.
      * @see #setTextualNominalStatistics(TextualNominalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualMassDistribution_TextualNominalStatistics()
@@ -114,7 +114,7 @@ public interface TextualMassDistribution extends EObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getTextualNominalStatistics
      * <em>Textual Nominal Statistics</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Textual Nominal Statistics</em>' container reference.
      * @see #getTextualNominalStatistics()

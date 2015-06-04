@@ -32,8 +32,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * For&nbsp;example&nbsp;measuring&nbsp;the&nbsp;response&nbsp;time&nbsp;of&nbsp;a&nbsp;request&nbsp
  * ;to&nbsp;a&nbsp;system&nbsp;in&nbsp;milliseconds&nbsp;could&nbsp;result&nbsp;in&nbsp;the&nbsp;
  * following&nbsp;values&nbsp;of&nbsp;the&nbsp;attributes:&nbsp;metric=
- * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Integer'
- * . <!-- end-model-doc -->
+ * 'Response&nbsp;Time',&nbsp;measuredObject='System&nbsp;External&nbsp;Requests',&nbsp;and&nbsp;unitOfMeasurements='ms'.&nbsp;Another&nbsp;example&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;lines&nbsp;of&nbsp;code&nbsp;of&nbsp;the&nbsp;class&nbsp;java.lang.System:&nbsp;metric='LOC',&nbsp;measuredObject='Class&nbsp;java.lang.System',&nbsp;and&nbsp;unitOfMeasurement='Positive&nbsp;Integ
+ * e r ' . <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
@@ -65,7 +65,7 @@ public interface MeasuringType extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Group</em>' container reference.
      * @see #setExperimentGroup(ExperimentGroup)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasuringType_ExperimentGroup()
@@ -100,7 +100,7 @@ public interface MeasuringType extends Identifier {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Settings</em>' reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasuringType_ExperimentSettings()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getMeasuringTypes
@@ -116,7 +116,7 @@ public interface MeasuringType extends Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Metric</em>' reference.
      * @see #setMetric(MetricDescription)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasuringType_Metric()
@@ -129,7 +129,7 @@ public interface MeasuringType extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMetric
      * <em>Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Metric</em>' reference.
      * @see #getMetric()
@@ -144,7 +144,7 @@ public interface MeasuringType extends Identifier {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Point</em>' reference.
      * @see #setMeasuringPoint(MeasuringPoint)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasuringType_MeasuringPoint()
@@ -157,7 +157,7 @@ public interface MeasuringType extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMeasuringPoint
      * <em>Measuring Point</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measuring Point</em>' reference.
      * @see #getMeasuringPoint()

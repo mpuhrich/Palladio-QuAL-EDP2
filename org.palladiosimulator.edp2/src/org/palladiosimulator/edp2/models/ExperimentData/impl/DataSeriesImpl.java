@@ -50,7 +50,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
     /**
      * The cached value of the '{@link #getNumericalStatistics() <em>Numerical Statistics</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumericalStatistics()
      * @generated
      * @ordered
@@ -80,7 +80,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
     /**
      * The cached value of the '{@link #getTextualStatistics() <em>Textual Statistics</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getTextualStatistics()
      * @generated
      * @ordered
@@ -89,7 +89,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DataSeriesImpl() {
@@ -98,7 +98,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -108,7 +108,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetNumericalStatistics(final NumericalNominalStatistics newNumericalStatistics,
@@ -140,7 +140,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -170,7 +170,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -183,7 +183,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(
@@ -195,7 +195,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -227,7 +227,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -237,7 +237,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -252,7 +252,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -262,7 +262,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetTextualStatistics(final TextualNominalStatistics newTextualStatistics,
@@ -283,7 +283,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -312,7 +312,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -325,7 +325,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRawMeasurements(final RawMeasurements newRawMeasurements, NotificationChain msgs) {
@@ -336,7 +336,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -366,7 +366,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -400,7 +400,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -421,7 +421,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -440,7 +440,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -462,7 +462,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -489,7 +489,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -516,7 +516,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -528,7 +528,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
             return this.getAggregatedMeasurements() != null;
         case ExperimentDataPackage.DATA_SERIES__VALUES_UUID:
             return VALUES_UUID_EDEFAULT == null ? this.valuesUuid != null : !VALUES_UUID_EDEFAULT
-                    .equals(this.valuesUuid);
+            .equals(this.valuesUuid);
         case ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS:
             return this.textualStatistics != null;
         case ExperimentDataPackage.DATA_SERIES__RAW_MEASUREMENTS:
@@ -539,7 +539,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

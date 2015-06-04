@@ -22,7 +22,7 @@ public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements I
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IdentifierBasedMeasurementsImpl() {
@@ -31,7 +31,7 @@ public class IdentifierBasedMeasurementsImpl extends DataSeriesImpl implements I
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

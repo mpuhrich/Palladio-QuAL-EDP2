@@ -49,7 +49,7 @@ public interface Repositories extends EObject {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Available Repositories</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_AvailableRepositories()
      * @see org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
@@ -66,7 +66,7 @@ public interface Repositories extends EObject {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Common Resource Set</em>' reference.
      * @see #setCommonResourceSet(ResourceSet)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories_CommonResourceSet()
@@ -80,7 +80,7 @@ public interface Repositories extends EObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories#getCommonResourceSet
      * <em>Common Resource Set</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Common Resource Set</em>' reference.
      * @see #getCommonResourceSet()

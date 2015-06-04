@@ -51,7 +51,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
     /**
      * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumberMeasurements()
      * @generated
      * @ordered
@@ -62,7 +62,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      * The cached value of the '{@link #getNumericalMassDistribution()
      * <em>Numerical Mass Distribution</em>}' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getNumericalMassDistribution()
      * @generated
      * @ordered
@@ -71,7 +71,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalNominalStatisticsImpl() {
@@ -80,7 +80,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -116,7 +116,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetDataSeries(final DataSeries newDataSeries, NotificationChain msgs) {
@@ -156,7 +156,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -186,7 +186,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -207,7 +207,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -224,7 +224,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -239,7 +239,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -257,7 +257,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -280,7 +280,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -301,7 +301,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -319,7 +319,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

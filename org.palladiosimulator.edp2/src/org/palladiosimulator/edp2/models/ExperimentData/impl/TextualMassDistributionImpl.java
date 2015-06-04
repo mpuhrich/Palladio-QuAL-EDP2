@@ -72,7 +72,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TextualMassDistributionImpl() {
@@ -81,7 +81,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -101,7 +101,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -116,7 +116,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Identifier basicGetIdentifier() {
@@ -145,7 +145,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -160,7 +160,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -173,7 +173,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetTextualNominalStatistics(
@@ -185,7 +185,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -234,7 +234,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -249,7 +249,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -265,7 +265,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -286,7 +286,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -307,7 +307,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -328,7 +328,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -346,7 +346,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

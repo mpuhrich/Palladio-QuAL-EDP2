@@ -8,6 +8,7 @@ import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.window.ToolTip;
 import org.eclipse.swt.SWT;
@@ -15,6 +16,8 @@ import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSourceEvent;
 import org.eclipse.swt.dnd.DragSourceListener;
 import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
@@ -22,7 +25,10 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.palladiosimulator.edp2.EDP2Plugin;
+import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
+import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
 /**
  * ViewPart for the Navigator.
@@ -44,13 +50,13 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
     @Override
     public void createPartControl(final Composite parent) {
         parent.setLayout(new FillLayout());
-        treeViewer = new TreeViewer(parent, SWT.FULL_SELECTION);
-        treeViewer.setAutoExpandLevel(8);
-        ColumnViewerToolTipSupport.enableFor(treeViewer,ToolTip.NO_RECREATE);
+        this.treeViewer = new TreeViewer(parent, SWT.FULL_SELECTION);
+        this.treeViewer.setAutoExpandLevel(8);
+        ColumnViewerToolTipSupport.enableFor(this.treeViewer, ToolTip.NO_RECREATE);
 
         final ObservableListTreeContentProvider contentProvider = new ObservableListTreeContentProvider(
                 new NavigatorTreeFactoryImpl(), new NavigatorTreeStructureAdvisorImpl());
-        treeViewer.setContentProvider(contentProvider);
+        this.treeViewer.setContentProvider(contentProvider);
 
         // Label Provider; Observe model for change wrt to labels
         final IObservableSet set = contentProvider.getKnownElements();
@@ -59,41 +65,75 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         map[1] = EMFProperties.value(RepositoryPackage.Literals.LOCAL_MEMORY_REPOSITORY__DOMAIN).observeDetail(set);
         map[2] = EMFProperties.value(RepositoryPackage.Literals.REMOTE_CDO_REPOSITORY__URL).observeDetail(set);
         // TODO: Observe other labels
-        treeViewer.setLabelProvider(new NavigatorTreeLabelProviderImpl(map));
+        this.treeViewer.setLabelProvider(new NavigatorTreeLabelProviderImpl(map));
 
         final IEMFListProperty nodes = EMFProperties
                 .list(RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES);
-        treeViewer.setInput(nodes.observe(EDP2Plugin.INSTANCE.getRepositories()));
+        this.treeViewer.setInput(nodes.observe(EDP2Plugin.INSTANCE.getRepositories()));
 
-        // Add double click listener
-        treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
-        treeViewer.addDragSupport(DND.DROP_LINK, new Transfer[] {
-            LocalSelectionTransfer.getTransfer()
-        }, new DragSourceListener() {
+        // Add key listener
+        this.treeViewer.getControl().addKeyListener(new KeyAdapter() {
 
             @Override
-            public void dragStart(final DragSourceEvent event) {
-                event.doit = true;
+            public void keyReleased(final KeyEvent e) {
+                super.keyReleased(e);
+
+                if (e.keyCode == SWT.DEL) {
+                    final IStructuredSelection selection = (IStructuredSelection) Navigator.this.treeViewer
+                            .getSelection();
+
+                    if (selection.isEmpty()) {
+                        return;
+                    }
+
+                    handleDelete(selection);
+                }
             }
 
-            @Override
-            public void dragSetData(final DragSourceEvent event) {
-                final IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
-                LocalSelectionTransfer.getTransfer().setSelection(selection);
+            private void handleDelete(final IStructuredSelection selection) {
+                if (selection instanceof TreeSelection) {
+                    final TreeSelection treeSelection = (TreeSelection) selection;
+                    final Repository repo = (Repository) treeSelection.getFirstElement();
+                    try {
+                        MeasurementsUtility.ensureClosedRepository(repo);
+                        EDP2Plugin.INSTANCE.getRepositories().getAvailableRepositories().remove(repo);
+                    } catch (final DataNotAccessibleException e) {
+                        throw new RuntimeException("Could not close EDP data source");
+                    }
+                }
             }
 
-            @Override
-            public void dragFinished(final DragSourceEvent event) {
-            }
         });
 
-        getSite().setSelectionProvider(treeViewer);
+        // Add double click listener
+        this.treeViewer.addDoubleClickListener(new NavigatorDoubleClickListener());
+        this.treeViewer.addDragSupport(DND.DROP_LINK, new Transfer[] { LocalSelectionTransfer.getTransfer() },
+                new DragSourceListener() {
+
+                    @Override
+                    public void dragStart(final DragSourceEvent event) {
+                        event.doit = true;
+                    }
+
+                    @Override
+                    public void dragSetData(final DragSourceEvent event) {
+                        final IStructuredSelection selection = (IStructuredSelection) Navigator.this.treeViewer
+                                .getSelection();
+                        LocalSelectionTransfer.getTransfer().setSelection(selection);
+                    }
+
+                    @Override
+                    public void dragFinished(final DragSourceEvent event) {
+                    }
+                });
+
+        getSite().setSelectionProvider(this.treeViewer);
     }
 
     // it is important to implement setFocus()!
     @Override
     public void setFocus() {
-        treeViewer.getTree().setFocus();
+        this.treeViewer.getTree().setFocus();
     }
 
     @Override
@@ -109,12 +149,13 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
         }
         return super.getAdapter(adapter);
     }
-    
+
     public void collapseTree() {
         this.treeViewer.collapseAll();
     }
-    
+
     public void expandTree() {
-        this.treeViewer.expandAll();;
+        this.treeViewer.expandAll();
+        ;
     }
 }

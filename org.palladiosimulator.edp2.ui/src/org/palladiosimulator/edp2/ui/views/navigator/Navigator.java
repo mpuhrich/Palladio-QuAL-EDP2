@@ -156,6 +156,5 @@ public class Navigator extends ViewPart implements ITabbedPropertySheetPageContr
 
     public void expandTree() {
         this.treeViewer.expandAll();
-        ;
     }
 }

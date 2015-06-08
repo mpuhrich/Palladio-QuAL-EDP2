@@ -6,7 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 import org.palladiosimulator.metricspec.Identifier;
 
 /**
@@ -29,9 +29,10 @@ import org.palladiosimulator.metricspec.Identifier;
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualMassDistribution()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface TextualMassDistribution extends EObject {
+public interface TextualMassDistribution extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc -->

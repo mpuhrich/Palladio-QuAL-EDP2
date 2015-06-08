@@ -11,8 +11,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
@@ -45,7 +45,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
  *
  * @generated
  */
-public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
+public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries {
 
     /**
      * The cached value of the '{@link #getNumericalStatistics() <em>Numerical Statistics</em>}'
@@ -528,7 +528,7 @@ public abstract class DataSeriesImpl extends EObjectImpl implements DataSeries {
             return this.getAggregatedMeasurements() != null;
         case ExperimentDataPackage.DATA_SERIES__VALUES_UUID:
             return VALUES_UUID_EDEFAULT == null ? this.valuesUuid != null : !VALUES_UUID_EDEFAULT
-            .equals(this.valuesUuid);
+                    .equals(this.valuesUuid);
         case ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS:
             return this.textualStatistics != null;
         case ExperimentDataPackage.DATA_SERIES__RAW_MEASUREMENTS:

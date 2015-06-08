@@ -142,7 +142,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
         switch (featureID) {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             return RESOURCE_URI_EDEFAULT == null ? this.resourceURI != null : !RESOURCE_URI_EDEFAULT
-            .equals(this.resourceURI);
+                    .equals(this.resourceURI);
         }
         return super.eIsSet(featureID);
     }

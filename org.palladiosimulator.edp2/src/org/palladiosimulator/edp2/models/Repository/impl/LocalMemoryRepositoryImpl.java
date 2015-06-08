@@ -68,7 +68,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
              */
             @Override
@@ -79,7 +79,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#close()
              */
             @Override
@@ -90,7 +90,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.MetaDaoImpl#getMeasurementsDaoFactory()
              */
             @Override

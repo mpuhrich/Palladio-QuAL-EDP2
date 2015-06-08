@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.impl.resource.EmfModelXMIResourceFactoryImpl;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
@@ -41,7 +41,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  *
  * @generated
  */
-public class RepositoriesImpl extends EObjectImpl implements Repositories {
+public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}'

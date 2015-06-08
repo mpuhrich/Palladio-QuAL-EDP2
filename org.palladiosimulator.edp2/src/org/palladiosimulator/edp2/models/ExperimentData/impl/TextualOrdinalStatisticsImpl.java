@@ -8,6 +8,7 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -92,7 +93,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public Identifier getMinimum() {
-        if (this.minimum != null && this.minimum.eIsProxy()) {
+        if (this.minimum != null && ((EObject) this.minimum).eIsProxy()) {
             final InternalEObject oldMinimum = (InternalEObject) this.minimum;
             this.minimum = (Identifier) this.eResolveProxy(oldMinimum);
             if (this.minimum != oldMinimum) {
@@ -136,7 +137,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public Identifier getMaximum() {
-        if (this.maximum != null && this.maximum.eIsProxy()) {
+        if (this.maximum != null && ((EObject) this.maximum).eIsProxy()) {
             final InternalEObject oldMaximum = (InternalEObject) this.maximum;
             this.maximum = (Identifier) this.eResolveProxy(oldMaximum);
             if (this.maximum != oldMaximum) {
@@ -180,7 +181,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public Identifier getMedian() {
-        if (this.median != null && this.median.eIsProxy()) {
+        if (this.median != null && ((EObject) this.median).eIsProxy()) {
             final InternalEObject oldMedian = (InternalEObject) this.median;
             this.median = (Identifier) this.eResolveProxy(oldMedian);
             if (this.median != oldMedian) {

@@ -406,7 +406,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
             return this.additionalInformation != null && !this.additionalInformation.isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION:
             return DESCRIPTION_EDEFAULT == null ? this.description != null : !DESCRIPTION_EDEFAULT
-            .equals(this.description);
+                    .equals(this.description);
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS:
             return this.experimentRuns != null && !this.experimentRuns.isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES:

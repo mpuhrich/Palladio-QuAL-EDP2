@@ -13,8 +13,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics;
@@ -39,7 +39,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatisti
  *
  * @generated
  */
-public class NumericalMassDistributionImpl extends EObjectImpl implements NumericalMassDistribution {
+public class NumericalMassDistributionImpl extends CDOObjectImpl implements NumericalMassDistribution {
 
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--

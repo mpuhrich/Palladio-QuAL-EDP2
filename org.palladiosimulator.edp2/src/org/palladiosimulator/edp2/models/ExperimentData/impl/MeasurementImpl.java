@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -120,7 +121,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public MeasuringType getMeasuringType() {
-        if (this.measuringType != null && this.measuringType.eIsProxy()) {
+        if (this.measuringType != null && ((EObject) this.measuringType).eIsProxy()) {
             final InternalEObject oldMeasuringType = (InternalEObject) this.measuringType;
             this.measuringType = (MeasuringType) this.eResolveProxy(oldMeasuringType);
             if (this.measuringType != oldMeasuringType) {

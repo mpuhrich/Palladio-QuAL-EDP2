@@ -9,10 +9,11 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
@@ -38,7 +39,7 @@ import org.palladiosimulator.metricspec.Identifier;
  *
  * @generated
  */
-public class TextualMassDistributionImpl extends EObjectImpl implements TextualMassDistribution {
+public class TextualMassDistributionImpl extends CDOObjectImpl implements TextualMassDistribution {
 
     /**
      * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
@@ -121,7 +122,7 @@ public class TextualMassDistributionImpl extends EObjectImpl implements TextualM
      */
     @Override
     public Identifier getIdentifier() {
-        if (this.identifier != null && this.identifier.eIsProxy()) {
+        if (this.identifier != null && ((EObject) this.identifier).eIsProxy()) {
             final InternalEObject oldIdentifier = (InternalEObject) this.identifier;
             this.identifier = (Identifier) this.eResolveProxy(oldIdentifier);
             if (this.identifier != oldIdentifier) {

@@ -6,7 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Data Series</b></em>'. <!--
@@ -36,9 +36,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface DataSeries extends EObject {
+public interface DataSeries extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Numerical Statistics</b></em>' containment reference. It is

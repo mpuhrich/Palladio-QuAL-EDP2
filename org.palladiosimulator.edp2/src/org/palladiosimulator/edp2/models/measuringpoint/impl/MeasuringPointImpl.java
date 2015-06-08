@@ -7,8 +7,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
@@ -33,7 +33,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  *
  * @generated
  */
-public abstract class MeasuringPointImpl extends EObjectImpl implements MeasuringPoint {
+public abstract class MeasuringPointImpl extends CDOObjectImpl implements MeasuringPoint {
 
     /**
      * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
@@ -255,10 +255,10 @@ public abstract class MeasuringPointImpl extends EObjectImpl implements Measurin
             return this.getMeasuringPointRepository() != null;
         case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
             return STRING_REPRESENTATION_EDEFAULT == null ? this.getStringRepresentation() != null
-                    : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
+            : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
         case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
             return RESOURCE_URI_REPRESENTATION_EDEFAULT == null ? this.getResourceURIRepresentation() != null
-                    : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
+            : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
         }
         return super.eIsSet(featureID);
     }

@@ -157,7 +157,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register package
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new RepositoryPackageImpl());
+                : new RepositoryPackageImpl());
 
         isInited = true;
 
@@ -167,10 +167,10 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register interdependencies
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
+                        .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
+                        .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theRepositoryPackage.createPackageContents();

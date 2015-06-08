@@ -8,7 +8,7 @@ package org.palladiosimulator.edp2.models.ExperimentData;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -30,9 +30,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface NumericalMassDistribution extends EObject {
+public interface NumericalMassDistribution extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc -->

@@ -9,6 +9,7 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -219,7 +220,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public AggregationFunctionDescription getFunction() {
-        if (this.function != null && this.function.eIsProxy()) {
+        if (this.function != null && ((EObject) this.function).eIsProxy()) {
             final InternalEObject oldFunction = (InternalEObject) this.function;
             this.function = (AggregationFunctionDescription) this.eResolveProxy(oldFunction);
             if (this.function != oldFunction) {
@@ -325,7 +326,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public BaseMetricDescription getAggregationOn() {
-        if (this.aggregationOn != null && this.aggregationOn.eIsProxy()) {
+        if (this.aggregationOn != null && ((EObject) this.aggregationOn).eIsProxy()) {
             final InternalEObject oldAggregationOn = (InternalEObject) this.aggregationOn;
             this.aggregationOn = (BaseMetricDescription) this.eResolveProxy(oldAggregationOn);
             if (this.aggregationOn != oldAggregationOn) {
@@ -370,7 +371,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public MetricDescription getMetric() {
-        if (this.metric != null && this.metric.eIsProxy()) {
+        if (this.metric != null && ((EObject) this.metric).eIsProxy()) {
             final InternalEObject oldMetric = (InternalEObject) this.metric;
             this.metric = (MetricDescription) this.eResolveProxy(oldMetric);
             if (this.metric != oldMetric) {

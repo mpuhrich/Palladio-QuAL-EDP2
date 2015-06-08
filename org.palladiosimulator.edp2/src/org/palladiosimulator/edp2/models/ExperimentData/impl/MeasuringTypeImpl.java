@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -171,7 +172,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public MetricDescription getMetric() {
-        if (this.metric != null && this.metric.eIsProxy()) {
+        if (this.metric != null && ((EObject) this.metric).eIsProxy()) {
             final InternalEObject oldMetric = (InternalEObject) this.metric;
             this.metric = (MetricDescription) this.eResolveProxy(oldMetric);
             if (this.metric != oldMetric) {
@@ -215,7 +216,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public MeasuringPoint getMeasuringPoint() {
-        if (this.measuringPoint != null && this.measuringPoint.eIsProxy()) {
+        if (this.measuringPoint != null && ((EObject) this.measuringPoint).eIsProxy()) {
             final InternalEObject oldMeasuringPoint = (InternalEObject) this.measuringPoint;
             this.measuringPoint = (MeasuringPoint) this.eResolveProxy(oldMeasuringPoint);
             if (this.measuringPoint != oldMeasuringPoint) {

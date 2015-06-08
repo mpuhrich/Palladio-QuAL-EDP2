@@ -2,7 +2,7 @@
  */
 package org.palladiosimulator.edp2.models.measuringpoint;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Measuring Point</b></em>'.
@@ -25,9 +25,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage#getMeasuringPoint()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface MeasuringPoint extends EObject {
+public interface MeasuringPoint extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Measuring Point Repository</b></em>' container reference. It

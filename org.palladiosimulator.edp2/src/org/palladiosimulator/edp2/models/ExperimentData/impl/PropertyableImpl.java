@@ -11,9 +11,9 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 
@@ -31,7 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
  *
  * @generated
  */
-public abstract class PropertyableImpl extends EObjectImpl implements Propertyable {
+public abstract class PropertyableImpl extends CDOObjectImpl implements Propertyable {
 
     /**
      * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'

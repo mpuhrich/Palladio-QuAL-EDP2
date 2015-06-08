@@ -6,8 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -33,9 +33,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualNominalStatistics()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface TextualNominalStatistics extends EObject {
+public interface TextualNominalStatistics extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc

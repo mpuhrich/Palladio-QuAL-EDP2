@@ -14,10 +14,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
@@ -43,7 +43,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
  *
  * @generated
  */
-public class TextualNominalStatisticsImpl extends EObjectImpl implements TextualNominalStatistics {
+public class TextualNominalStatisticsImpl extends CDOObjectImpl implements TextualNominalStatistics {
 
     /**
      * The default value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'

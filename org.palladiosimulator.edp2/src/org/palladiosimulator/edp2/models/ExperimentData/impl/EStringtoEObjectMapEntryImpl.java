@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 
 /**
@@ -32,7 +32,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  *
  * @generated
  */
-public class EStringtoEObjectMapEntryImpl extends EObjectImpl implements BasicEMap.Entry<String, Object> {
+public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements BasicEMap.Entry<String, Object> {
 
     /**
      * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute. <!-- begin-user-doc

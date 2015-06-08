@@ -38,7 +38,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatist
  * @generated
  */
 public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsImpl implements
-        NumericalIntervalStatistics {
+NumericalIntervalStatistics {
 
     /**
      * The cached value of the '{@link #getArithmethicMean() <em>Arithmethic Mean</em>}' attribute.

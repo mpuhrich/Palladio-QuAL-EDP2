@@ -6,8 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.Repository;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
@@ -34,9 +34,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepositories()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface Repositories extends EObject {
+public interface Repositories extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Available Repositories</b></em>' containment reference list.

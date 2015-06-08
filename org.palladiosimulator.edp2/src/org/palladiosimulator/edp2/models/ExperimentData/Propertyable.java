@@ -6,8 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Propertyable</b></em>'. <!--
@@ -24,9 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getPropertyable()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface Propertyable extends EObject {
+public interface Propertyable extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Additional Information</b></em>' map. The key is of type

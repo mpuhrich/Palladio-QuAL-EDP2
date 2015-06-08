@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -216,7 +217,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public Repository getRepository() {
-        if (this.repository != null && this.repository.eIsProxy()) {
+        if (this.repository != null && ((EObject) this.repository).eIsProxy()) {
             final InternalEObject oldRepository = (InternalEObject) this.repository;
             this.repository = (Repository) this.eResolveProxy(oldRepository);
             if (this.repository != oldRepository) {

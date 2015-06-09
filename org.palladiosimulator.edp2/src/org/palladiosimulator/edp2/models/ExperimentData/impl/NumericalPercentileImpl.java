@@ -8,12 +8,9 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
@@ -53,28 +50,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
     protected static final double PERCENTILE_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getPercentile() <em>Percentile</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getPercentile()
-     * @generated
-     * @ordered
-     */
-    protected double percentile = PERCENTILE_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
-    protected Measure value;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalPercentileImpl() {
@@ -83,7 +60,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -93,70 +70,63 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public double getPercentile() {
-        return this.percentile;
+        return (Double) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__PERCENTILE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setPercentile(final double newPercentile) {
-        final double oldPercentile = this.percentile;
-        this.percentile = newPercentile;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE, oldPercentile, this.percentile));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__PERCENTILE, newPercentile);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getValue() {
-        return this.value;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__VALUE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setValue(final Measure newValue) {
-        final Measure oldValue = this.value;
-        this.value = newValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE, oldValue, this.value));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__VALUE, newValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public NumericalOrdinalStatistics getOrdinalStatistics() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS) {
-            return null;
-        }
-        return (NumericalOrdinalStatistics) this.eInternalContainer();
+        return (NumericalOrdinalStatistics) this.eDynamicGet(
+                ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetOrdinalStatistics(final NumericalOrdinalStatistics newOrdinalStatistics,
@@ -168,39 +138,18 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setOrdinalStatistics(final NumericalOrdinalStatistics newOrdinalStatistics) {
-        if (newOrdinalStatistics != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS && newOrdinalStatistics != null)) {
-            if (EcoreUtil.isAncestor(this, newOrdinalStatistics)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newOrdinalStatistics != null) {
-                msgs = ((InternalEObject) newOrdinalStatistics).eInverseAdd(this,
-                        ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
-                        NumericalOrdinalStatistics.class, msgs);
-            }
-            msgs = this.basicSetOrdinalStatistics(newOrdinalStatistics, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, newOrdinalStatistics,
-                    newOrdinalStatistics));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS,
+                ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS, newOrdinalStatistics);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -217,7 +166,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -232,7 +181,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -248,7 +197,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -266,7 +215,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -287,7 +236,7 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -308,40 +257,20 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
-            return this.percentile != PERCENTILE_EDEFAULT;
+            return this.getPercentile() != PERCENTILE_EDEFAULT;
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
-            return this.value != null;
+            return this.getValue() != null;
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
             return this.getOrdinalStatistics() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (percentile: ");
-        result.append(this.percentile);
-        result.append(", value: ");
-        result.append(this.value);
-        result.append(')');
-        return result.toString();
     }
 
 } // NumericalPercentileImpl

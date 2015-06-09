@@ -8,14 +8,10 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -44,18 +40,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasurements {
 
     /**
-     * The cached value of the '{@link #getDataSeries() <em>Data Series</em>}' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDataSeries()
-     * @generated
-     * @ordered
-     */
-    protected EList<DataSeries> dataSeries;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RawMeasurementsImpl() {
@@ -64,7 +50,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -74,35 +60,30 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<DataSeries> getDataSeries() {
-        if (this.dataSeries == null) {
-            this.dataSeries = new EObjectContainmentWithInverseEList<DataSeries>(DataSeries.class, this,
-                    ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES,
-                    ExperimentDataPackage.DATA_SERIES__RAW_MEASUREMENTS);
-        }
-        return this.dataSeries;
+        return (EList<DataSeries>) this.eDynamicGet(ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES,
+                ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MeasurementRange getMeasurementRange() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE) {
-            return null;
-        }
-        return (MeasurementRange) this.eInternalContainer();
+        return (MeasurementRange) this.eDynamicGet(ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE,
+                ExperimentDataPackage.Literals.RAW_MEASUREMENTS__MEASUREMENT_RANGE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetMeasurementRange(final MeasurementRange newMeasurementRange, NotificationChain msgs) {
@@ -113,37 +94,18 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasurementRange(final MeasurementRange newMeasurementRange) {
-        if (newMeasurementRange != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE && newMeasurementRange != null)) {
-            if (EcoreUtil.isAncestor(this, newMeasurementRange)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newMeasurementRange != null) {
-                msgs = ((InternalEObject) newMeasurementRange).eInverseAdd(this,
-                        ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, MeasurementRange.class, msgs);
-            }
-            msgs = this.basicSetMeasurementRange(newMeasurementRange, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE, newMeasurementRange, newMeasurementRange));
-        }
+        this.eDynamicSet(ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE,
+                ExperimentDataPackage.Literals.RAW_MEASUREMENTS__MEASUREMENT_RANGE, newMeasurementRange);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -163,7 +125,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -180,7 +142,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +157,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -211,7 +173,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -231,7 +193,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -249,14 +211,14 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
-            return this.dataSeries != null && !this.dataSeries.isEmpty();
+            return !this.getDataSeries().isEmpty();
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.getMeasurementRange() != null;
         }

@@ -2,12 +2,9 @@
  */
 package org.palladiosimulator.edp2.models.measuringpoint.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
@@ -38,7 +35,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
     /**
      * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStringRepresentation()
      * @generated
      * @ordered
@@ -57,7 +54,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasuringPointImpl() {
@@ -66,7 +63,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -76,20 +73,29 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
-    public MeasuringPointRepository getMeasuringPointRepository() {
-        if (this.eContainerFeatureID() != MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY) {
-            return null;
-        }
-        return (MeasuringPointRepository) this.eInternalContainer();
+    protected int eStaticFeatureCount() {
+        return 0;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @Override
+    public MeasuringPointRepository getMeasuringPointRepository() {
+        return (MeasuringPointRepository) this.eDynamicGet(
+                MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY,
+                MeasuringpointPackage.Literals.MEASURING_POINT__MEASURING_POINT_REPOSITORY, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public NotificationChain basicSetMeasuringPointRepository(
@@ -101,34 +107,13 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasuringPointRepository(final MeasuringPointRepository newMeasuringPointRepository) {
-        if (newMeasuringPointRepository != this.eInternalContainer()
-                || (this.eContainerFeatureID() != MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY && newMeasuringPointRepository != null)) {
-            if (EcoreUtil.isAncestor(this, newMeasuringPointRepository)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newMeasuringPointRepository != null) {
-                msgs = ((InternalEObject) newMeasuringPointRepository).eInverseAdd(this,
-                        MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS,
-                        MeasuringPointRepository.class, msgs);
-            }
-            msgs = this.basicSetMeasuringPointRepository(newMeasuringPointRepository, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY, newMeasuringPointRepository,
-                    newMeasuringPointRepository));
-        }
+        this.eDynamicSet(MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY,
+                MeasuringpointPackage.Literals.MEASURING_POINT__MEASURING_POINT_REPOSITORY, newMeasuringPointRepository);
     }
 
     /**
@@ -149,7 +134,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -166,7 +151,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -181,7 +166,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -197,7 +182,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -215,7 +200,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -230,7 +215,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -245,7 +230,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

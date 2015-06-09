@@ -6,11 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
 import org.palladiosimulator.metricspec.Identifier;
@@ -38,38 +34,8 @@ import org.palladiosimulator.metricspec.Identifier;
 public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl implements TextualOrdinalStatistics {
 
     /**
-     * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMinimum()
-     * @generated
-     * @ordered
-     */
-    protected Identifier minimum;
-
-    /**
-     * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMaximum()
-     * @generated
-     * @ordered
-     */
-    protected Identifier maximum;
-
-    /**
-     * The cached value of the '{@link #getMedian() <em>Median</em>}' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getMedian()
-     * @generated
-     * @ordered
-     */
-    protected Identifier median;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TextualOrdinalStatisticsImpl() {
@@ -78,7 +44,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -88,139 +54,103 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Identifier getMinimum() {
-        if (this.minimum != null && ((EObject) this.minimum).eIsProxy()) {
-            final InternalEObject oldMinimum = (InternalEObject) this.minimum;
-            this.minimum = (Identifier) this.eResolveProxy(oldMinimum);
-            if (this.minimum != oldMinimum) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, oldMinimum, this.minimum));
-                }
-            }
-        }
-        return this.minimum;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMinimum() {
-        return this.minimum;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMinimum(final Identifier newMinimum) {
-        final Identifier oldMinimum = this.minimum;
-        this.minimum = newMinimum;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, oldMinimum, this.minimum));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MINIMUM, newMinimum);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Identifier getMaximum() {
-        if (this.maximum != null && ((EObject) this.maximum).eIsProxy()) {
-            final InternalEObject oldMaximum = (InternalEObject) this.maximum;
-            this.maximum = (Identifier) this.eResolveProxy(oldMaximum);
-            if (this.maximum != oldMaximum) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, oldMaximum, this.maximum));
-                }
-            }
-        }
-        return this.maximum;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMaximum() {
-        return this.maximum;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMaximum(final Identifier newMaximum) {
-        final Identifier oldMaximum = this.maximum;
-        this.maximum = newMaximum;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, oldMaximum, this.maximum));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM, newMaximum);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Identifier getMedian() {
-        if (this.median != null && ((EObject) this.median).eIsProxy()) {
-            final InternalEObject oldMedian = (InternalEObject) this.median;
-            this.median = (Identifier) this.eResolveProxy(oldMedian);
-            if (this.median != oldMedian) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, oldMedian, this.median));
-                }
-            }
-        }
-        return this.median;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetMedian() {
-        return this.median;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMedian(final Identifier newMedian) {
-        final Identifier oldMedian = this.median;
-        this.median = newMedian;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, oldMedian, this.median));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN,
+                ExperimentDataPackage.Literals.TEXTUAL_ORDINAL_STATISTICS__MEDIAN, newMedian);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -247,7 +177,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -268,7 +198,7 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -289,18 +219,18 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM:
-            return this.minimum != null;
+            return this.basicGetMinimum() != null;
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM:
-            return this.maximum != null;
+            return this.basicGetMaximum() != null;
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MEDIAN:
-            return this.median != null;
+            return this.basicGetMedian() != null;
         }
         return super.eIsSet(featureID);
     }

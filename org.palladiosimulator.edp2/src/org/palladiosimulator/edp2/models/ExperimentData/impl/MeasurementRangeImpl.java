@@ -6,14 +6,10 @@ import java.util.Collection;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -49,16 +45,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 public class MeasurementRangeImpl extends PropertyableImpl implements MeasurementRange {
 
     /**
-     * The cached value of the '{@link #getRawMeasurements() <em>Raw Measurements</em>}' containment
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getRawMeasurements()
-     * @generated
-     * @ordered
-     */
-    protected RawMeasurements rawMeasurements;
-
-    /**
      * The default value of the '{@link #getEndTime() <em>End Time</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -67,16 +53,6 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
      * @ordered
      */
     protected static final Measure END_TIME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getEndTime() <em>End Time</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getEndTime()
-     * @generated
-     * @ordered
-     */
-    protected Measure endTime = END_TIME_EDEFAULT;
 
     /**
      * The default value of the '{@link #getStartTime() <em>Start Time</em>}' attribute. <!--
@@ -89,29 +65,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
     protected static final Measure START_TIME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getStartTime() <em>Start Time</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getStartTime()
-     * @generated
-     * @ordered
-     */
-    protected Measure startTime = START_TIME_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getAggregatedMeasurements()
-     * <em>Aggregated Measurements</em>}' containment reference list. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getAggregatedMeasurements()
-     * @generated
-     * @ordered
-     */
-    protected EList<AggregatedMeasurements> aggregatedMeasurements;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasurementRangeImpl() {
@@ -120,7 +75,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -130,77 +85,51 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public RawMeasurements getRawMeasurements() {
-        return this.rawMeasurements;
+        return (RawMeasurements) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__RAW_MEASUREMENTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetRawMeasurements(final RawMeasurements newRawMeasurements, NotificationChain msgs) {
-        final RawMeasurements oldRawMeasurements = this.rawMeasurements;
-        this.rawMeasurements = newRawMeasurements;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, oldRawMeasurements, newRawMeasurements);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newRawMeasurements,
+                ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setRawMeasurements(final RawMeasurements newRawMeasurements) {
-        if (newRawMeasurements != this.rawMeasurements) {
-            NotificationChain msgs = null;
-            if (this.rawMeasurements != null) {
-                msgs = ((InternalEObject) this.rawMeasurements).eInverseRemove(this,
-                        ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE, RawMeasurements.class, msgs);
-            }
-            if (newRawMeasurements != null) {
-                msgs = ((InternalEObject) newRawMeasurements).eInverseAdd(this,
-                        ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE, RawMeasurements.class, msgs);
-            }
-            msgs = this.basicSetRawMeasurements(newRawMeasurements, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, newRawMeasurements, newRawMeasurements));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__RAW_MEASUREMENTS, newRawMeasurements);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measurement getMeasurement() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT) {
-            return null;
-        }
-        return (Measurement) this.eInternalContainer();
+        return (Measurement) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__MEASUREMENT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetMeasurement(final Measurement newMeasurement, NotificationChain msgs) {
@@ -211,103 +140,75 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasurement(final Measurement newMeasurement) {
-        if (newMeasurement != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT && newMeasurement != null)) {
-            if (EcoreUtil.isAncestor(this, newMeasurement)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newMeasurement != null) {
-                msgs = ((InternalEObject) newMeasurement).eInverseAdd(this,
-                        ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES, Measurement.class, msgs);
-            }
-            msgs = this.basicSetMeasurement(newMeasurement, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT, newMeasurement, newMeasurement));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__MEASUREMENT, newMeasurement);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getEndTime() {
-        return this.endTime;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT_RANGE__END_TIME,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__END_TIME, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setEndTime(final Measure newEndTime) {
-        final Measure oldEndTime = this.endTime;
-        this.endTime = newEndTime;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__END_TIME, oldEndTime, this.endTime));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT_RANGE__END_TIME,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__END_TIME, newEndTime);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getStartTime() {
-        return this.startTime;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT_RANGE__START_TIME,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__START_TIME, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setStartTime(final Measure newStartTime) {
-        final Measure oldStartTime = this.startTime;
-        this.startTime = newStartTime;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__START_TIME, oldStartTime, this.startTime));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT_RANGE__START_TIME,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__START_TIME, newStartTime);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<AggregatedMeasurements> getAggregatedMeasurements() {
-        if (this.aggregatedMeasurements == null) {
-            this.aggregatedMeasurements = new EObjectContainmentWithInverseEList<AggregatedMeasurements>(
-                    AggregatedMeasurements.class, this,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE);
-        }
-        return this.aggregatedMeasurements;
+        return (EList<AggregatedMeasurements>) this.eDynamicGet(
+                ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS,
+                ExperimentDataPackage.Literals.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -315,8 +216,9 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
-            if (this.rawMeasurements != null) {
-                msgs = ((InternalEObject) this.rawMeasurements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            final RawMeasurements rawMeasurements = this.getRawMeasurements();
+            if (rawMeasurements != null) {
+                msgs = ((InternalEObject) rawMeasurements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                         - ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, null, msgs);
             }
             return this.basicSetRawMeasurements((RawMeasurements) otherEnd, msgs);
@@ -334,7 +236,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -353,7 +255,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -368,7 +270,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -390,7 +292,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -419,7 +321,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -446,44 +348,25 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
-            return this.rawMeasurements != null;
+            return this.getRawMeasurements() != null;
         case ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT:
             return this.getMeasurement() != null;
         case ExperimentDataPackage.MEASUREMENT_RANGE__END_TIME:
-            return END_TIME_EDEFAULT == null ? this.endTime != null : !END_TIME_EDEFAULT.equals(this.endTime);
+            return END_TIME_EDEFAULT == null ? this.getEndTime() != null : !END_TIME_EDEFAULT.equals(this.getEndTime());
         case ExperimentDataPackage.MEASUREMENT_RANGE__START_TIME:
-            return START_TIME_EDEFAULT == null ? this.startTime != null : !START_TIME_EDEFAULT.equals(this.startTime);
+            return START_TIME_EDEFAULT == null ? this.getStartTime() != null : !START_TIME_EDEFAULT.equals(this
+                    .getStartTime());
         case ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS:
-            return this.aggregatedMeasurements != null && !this.aggregatedMeasurements.isEmpty();
+            return !this.getAggregatedMeasurements().isEmpty();
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (endTime: ");
-        result.append(this.endTime);
-        result.append(", startTime: ");
-        result.append(this.startTime);
-        result.append(')');
-        return result.toString();
     }
 
 } // MeasurementRangeImpl

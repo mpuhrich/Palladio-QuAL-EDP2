@@ -4,18 +4,12 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
@@ -51,38 +45,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
-
-    /**
-     * The cached value of the '{@link #getMeasuringType() <em>Measuring Type</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringType()
-     * @generated
-     * @ordered
-     */
-    protected MeasuringType measuringType;
-
-    /**
-     * The cached value of the '{@link #getMeasurementRanges() <em>Measurement Ranges</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasurementRanges()
-     * @generated
-     * @ordered
-     */
-    protected EList<MeasurementRange> measurementRanges;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasurementImpl() {
@@ -91,7 +55,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -101,94 +65,74 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
+        return (EMap<String, Object>) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION,
+                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MeasuringType getMeasuringType() {
-        if (this.measuringType != null && ((EObject) this.measuringType).eIsProxy()) {
-            final InternalEObject oldMeasuringType = (InternalEObject) this.measuringType;
-            this.measuringType = (MeasuringType) this.eResolveProxy(oldMeasuringType);
-            if (this.measuringType != oldMeasuringType) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE, oldMeasuringType, this.measuringType));
-                }
-            }
-        }
-        return this.measuringType;
+        return (MeasuringType) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE,
+                ExperimentDataPackage.Literals.MEASUREMENT__MEASURING_TYPE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasuringType basicGetMeasuringType() {
-        return this.measuringType;
+        return (MeasuringType) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE,
+                ExperimentDataPackage.Literals.MEASUREMENT__MEASURING_TYPE, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasuringType(final MeasuringType newMeasuringType) {
-        final MeasuringType oldMeasuringType = this.measuringType;
-        this.measuringType = newMeasuringType;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE, oldMeasuringType, this.measuringType));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE,
+                ExperimentDataPackage.Literals.MEASUREMENT__MEASURING_TYPE, newMeasuringType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<MeasurementRange> getMeasurementRanges() {
-        if (this.measurementRanges == null) {
-            this.measurementRanges = new EObjectContainmentWithInverseEList<MeasurementRange>(MeasurementRange.class,
-                    this, ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT);
-        }
-        return this.measurementRanges;
+        return (EList<MeasurementRange>) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES,
+                ExperimentDataPackage.Literals.MEASUREMENT__MEASUREMENT_RANGES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Run getRun() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENT__RUN) {
-            return null;
-        }
-        return (Run) this.eInternalContainer();
+        return (Run) this.eDynamicGet(ExperimentDataPackage.MEASUREMENT__RUN,
+                ExperimentDataPackage.Literals.MEASUREMENT__RUN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetRun(final Run newRun, NotificationChain msgs) {
@@ -198,37 +142,18 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setRun(final Run newRun) {
-        if (newRun != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.MEASUREMENT__RUN && newRun != null)) {
-            if (EcoreUtil.isAncestor(this, newRun)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newRun != null) {
-                msgs = ((InternalEObject) newRun).eInverseAdd(this, ExperimentDataPackage.RUN__MEASUREMENT, Run.class,
-                        msgs);
-            }
-            msgs = this.basicSetRun(newRun, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASUREMENT__RUN, newRun,
-                    newRun));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASUREMENT__RUN, ExperimentDataPackage.Literals.MEASUREMENT__RUN,
+                newRun);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -249,7 +174,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -268,7 +193,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -283,7 +208,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -310,7 +235,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -336,7 +261,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -360,18 +285,18 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
+            return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE:
-            return this.measuringType != null;
+            return this.basicGetMeasuringType() != null;
         case ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES:
-            return this.measurementRanges != null && !this.measurementRanges.isEmpty();
+            return !this.getMeasurementRanges().isEmpty();
         case ExperimentDataPackage.MEASUREMENT__RUN:
             return this.getRun() != null;
         }
@@ -380,7 +305,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -398,7 +323,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

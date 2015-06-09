@@ -2,9 +2,7 @@
  */
 package org.palladiosimulator.edp2.models.measuringpoint.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 
@@ -27,7 +25,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
     /**
      * The default value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasuringPoint()
      * @generated
      * @ordered
@@ -35,18 +33,8 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
     protected static final String MEASURING_POINT_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringPoint()
-     * @generated
-     * @ordered
-     */
-    protected String measuringPoint = MEASURING_POINT_EDEFAULT;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected StringMeasuringPointImpl() {
@@ -55,7 +43,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -65,33 +53,29 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getMeasuringPoint() {
-        return this.measuringPoint;
+        return (String) this.eDynamicGet(MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT,
+                MeasuringpointPackage.Literals.STRING_MEASURING_POINT__MEASURING_POINT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasuringPoint(final String newMeasuringPoint) {
-        final String oldMeasuringPoint = this.measuringPoint;
-        this.measuringPoint = newMeasuringPoint;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT, oldMeasuringPoint,
-                    this.measuringPoint));
-        }
+        this.eDynamicSet(MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT,
+                MeasuringpointPackage.Literals.STRING_MEASURING_POINT__MEASURING_POINT, newMeasuringPoint);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +89,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +104,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,35 +119,17 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
-            return MEASURING_POINT_EDEFAULT == null ? this.measuringPoint != null : !MEASURING_POINT_EDEFAULT
-            .equals(this.measuringPoint);
+            return MEASURING_POINT_EDEFAULT == null ? this.getMeasuringPoint() != null : !MEASURING_POINT_EDEFAULT
+                    .equals(this.getMeasuringPoint());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (measuringPoint: ");
-        result.append(this.measuringPoint);
-        result.append(')');
-        return result.toString();
     }
 
     /**
@@ -173,7 +139,7 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
      */
     @Override
     public String getStringRepresentation() {
-        return this.measuringPoint;
+        return this.getMeasuringPoint();
     }
 
     /**

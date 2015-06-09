@@ -6,12 +6,9 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -44,7 +41,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      * The default value of the '{@link #getDistinctValuesBeforeAggregation()
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesBeforeAggregation()
      * @generated
      * @ordered
@@ -52,21 +49,10 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
     protected static final long DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT = 0L;
 
     /**
-     * The cached value of the '{@link #getDistinctValuesBeforeAggregation()
-     * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getDistinctValuesBeforeAggregation()
-     * @generated
-     * @ordered
-     */
-    protected long distinctValuesBeforeAggregation = DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT;
-
-    /**
      * The default value of the '{@link #getDistinctValuesAfterAggregation()
      * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDistinctValuesAfterAggregation()
      * @generated
      * @ordered
@@ -74,19 +60,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
     protected static final long DISTINCT_VALUES_AFTER_AGGREGATION_EDEFAULT = 0L;
 
     /**
-     * The cached value of the '{@link #getDistinctValuesAfterAggregation()
-     * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getDistinctValuesAfterAggregation()
-     * @generated
-     * @ordered
-     */
-    protected long distinctValuesAfterAggregation = DISTINCT_VALUES_AFTER_AGGREGATION_EDEFAULT;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected AggregationStatisticsImpl() {
@@ -95,7 +70,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,72 +80,66 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public long getDistinctValuesBeforeAggregation() {
-        return this.distinctValuesBeforeAggregation;
+        return (Long) this.eDynamicGet(
+                ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDistinctValuesBeforeAggregation(final long newDistinctValuesBeforeAggregation) {
-        final long oldDistinctValuesBeforeAggregation = this.distinctValuesBeforeAggregation;
-        this.distinctValuesBeforeAggregation = newDistinctValuesBeforeAggregation;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION,
-                    oldDistinctValuesBeforeAggregation, this.distinctValuesBeforeAggregation));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION,
+                newDistinctValuesBeforeAggregation);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public long getDistinctValuesAfterAggregation() {
-        return this.distinctValuesAfterAggregation;
+        return (Long) this.eDynamicGet(ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDistinctValuesAfterAggregation(final long newDistinctValuesAfterAggregation) {
-        final long oldDistinctValuesAfterAggregation = this.distinctValuesAfterAggregation;
-        this.distinctValuesAfterAggregation = newDistinctValuesAfterAggregation;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION,
-                    oldDistinctValuesAfterAggregation, this.distinctValuesAfterAggregation));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION,
+                newDistinctValuesAfterAggregation);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public AggregatedMeasurements getAggregatedMeasurements() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS) {
-            return null;
-        }
-        return (AggregatedMeasurements) this.eInternalContainer();
+        return (AggregatedMeasurements) this.eDynamicGet(
+                ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(final AggregatedMeasurements newAggregatedMeasurements,
@@ -182,39 +151,19 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setAggregatedMeasurements(final AggregatedMeasurements newAggregatedMeasurements) {
-        if (newAggregatedMeasurements != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS && newAggregatedMeasurements != null)) {
-            if (EcoreUtil.isAncestor(this, newAggregatedMeasurements)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newAggregatedMeasurements != null) {
-                msgs = ((InternalEObject) newAggregatedMeasurements).eInverseAdd(this,
-                        ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS,
-                        AggregatedMeasurements.class, msgs);
-            }
-            msgs = this.basicSetAggregatedMeasurements(newAggregatedMeasurements, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS, newAggregatedMeasurements,
-                    newAggregatedMeasurements));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS,
+                ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS,
+                newAggregatedMeasurements);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +180,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,7 +195,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -262,7 +211,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -280,7 +229,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -301,7 +250,7 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -322,40 +271,20 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION:
-            return this.distinctValuesBeforeAggregation != DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT;
+            return this.getDistinctValuesBeforeAggregation() != DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT;
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION:
-            return this.distinctValuesAfterAggregation != DISTINCT_VALUES_AFTER_AGGREGATION_EDEFAULT;
+            return this.getDistinctValuesAfterAggregation() != DISTINCT_VALUES_AFTER_AGGREGATION_EDEFAULT;
         case ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS:
             return this.getAggregatedMeasurements() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (distinctValuesBeforeAggregation: ");
-        result.append(this.distinctValuesBeforeAggregation);
-        result.append(", distinctValuesAfterAggregation: ");
-        result.append(this.distinctValuesAfterAggregation);
-        result.append(')');
-        return result.toString();
     }
 
 } // AggregationStatisticsImpl

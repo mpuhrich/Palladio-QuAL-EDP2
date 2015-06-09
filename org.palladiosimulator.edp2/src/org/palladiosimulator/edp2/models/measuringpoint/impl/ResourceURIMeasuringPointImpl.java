@@ -2,9 +2,7 @@
  */
 package org.palladiosimulator.edp2.models.measuringpoint.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 
@@ -35,18 +33,8 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
     protected static final String RESOURCE_URI_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getResourceURI() <em>Resource URI</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getResourceURI()
-     * @generated
-     * @ordered
-     */
-    protected String resourceURI = RESOURCE_URI_EDEFAULT;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ResourceURIMeasuringPointImpl() {
@@ -55,7 +43,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -65,32 +53,39 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getResourceURI() {
-        return this.resourceURI;
+        return (String) this.eDynamicGet(MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI,
+                MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setResourceURI(final String newResourceURI) {
-        final String oldResourceURI = this.resourceURI;
-        this.resourceURI = newResourceURI;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, oldResourceURI, this.resourceURI));
-        }
+        this.eDynamicSet(MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI,
+                MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, newResourceURI);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
+     * @generated NOT
+     */
+    @Override
+    public String getResourceURIRepresentation() {
+        return this.getResourceURI();
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -104,7 +99,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -119,7 +114,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -134,44 +129,17 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
-            return RESOURCE_URI_EDEFAULT == null ? this.resourceURI != null : !RESOURCE_URI_EDEFAULT
-                    .equals(this.resourceURI);
+            return RESOURCE_URI_EDEFAULT == null ? this.getResourceURI() != null : !RESOURCE_URI_EDEFAULT.equals(this
+                    .getResourceURI());
         }
         return super.eIsSet(featureID);
     }
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (resourceURI: ");
-        result.append(this.resourceURI);
-        result.append(')');
-        return result.toString();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated NOT
-     */
-    @Override
-    public String getResourceURIRepresentation() {
-        return this.resourceURI;
-    }
 } // ResourceURIMeasuringPointImpl

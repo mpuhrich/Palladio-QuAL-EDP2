@@ -4,15 +4,10 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
@@ -48,38 +43,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
-     * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}'
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getExperimentSettings()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExperimentSetting> experimentSettings;
-
-    /**
-     * The cached value of the '{@link #getMetric() <em>Metric</em>}' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getMetric()
-     * @generated
-     * @ordered
-     */
-    protected MetricDescription metric;
-
-    /**
-     * The cached value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringPoint()
-     * @generated
-     * @ordered
-     */
-    protected MeasuringPoint measuringPoint;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasuringTypeImpl() {
@@ -88,7 +53,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -98,20 +63,18 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public ExperimentGroup getExperimentGroup() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP) {
-            return null;
-        }
-        return (ExperimentGroup) this.eInternalContainer();
+        return (ExperimentGroup) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__EXPERIMENT_GROUP, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentGroup(final ExperimentGroup newExperimentGroup, NotificationChain msgs) {
@@ -122,141 +85,94 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setExperimentGroup(final ExperimentGroup newExperimentGroup) {
-        if (newExperimentGroup != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP && newExperimentGroup != null)) {
-            if (EcoreUtil.isAncestor(this, newExperimentGroup)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newExperimentGroup != null) {
-                msgs = ((InternalEObject) newExperimentGroup).eInverseAdd(this,
-                        ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES, ExperimentGroup.class, msgs);
-            }
-            msgs = this.basicSetExperimentGroup(newExperimentGroup, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP, newExperimentGroup, newExperimentGroup));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__EXPERIMENT_GROUP, newExperimentGroup);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<ExperimentSetting> getExperimentSettings() {
-        if (this.experimentSettings == null) {
-            this.experimentSettings = new EObjectWithInverseResolvingEList.ManyInverse<ExperimentSetting>(
-                    ExperimentSetting.class, this, ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES);
-        }
-        return this.experimentSettings;
+        return (EList<ExperimentSetting>) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__EXPERIMENT_SETTINGS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MetricDescription getMetric() {
-        if (this.metric != null && ((EObject) this.metric).eIsProxy()) {
-            final InternalEObject oldMetric = (InternalEObject) this.metric;
-            this.metric = (MetricDescription) this.eResolveProxy(oldMetric);
-            if (this.metric != oldMetric) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.MEASURING_TYPE__METRIC, oldMetric, this.metric));
-                }
-            }
-        }
-        return this.metric;
+        return (MetricDescription) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__METRIC,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__METRIC, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MetricDescription basicGetMetric() {
-        return this.metric;
+        return (MetricDescription) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__METRIC,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__METRIC, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMetric(final MetricDescription newMetric) {
-        final MetricDescription oldMetric = this.metric;
-        this.metric = newMetric;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.MEASURING_TYPE__METRIC,
-                    oldMetric, this.metric));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASURING_TYPE__METRIC,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__METRIC, newMetric);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MeasuringPoint getMeasuringPoint() {
-        if (this.measuringPoint != null && ((EObject) this.measuringPoint).eIsProxy()) {
-            final InternalEObject oldMeasuringPoint = (InternalEObject) this.measuringPoint;
-            this.measuringPoint = (MeasuringPoint) this.eResolveProxy(oldMeasuringPoint);
-            if (this.measuringPoint != oldMeasuringPoint) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT, oldMeasuringPoint,
-                            this.measuringPoint));
-                }
-            }
-        }
-        return this.measuringPoint;
+        return (MeasuringPoint) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__MEASURING_POINT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasuringPoint basicGetMeasuringPoint() {
-        return this.measuringPoint;
+        return (MeasuringPoint) this.eDynamicGet(ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__MEASURING_POINT, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasuringPoint(final MeasuringPoint newMeasuringPoint) {
-        final MeasuringPoint oldMeasuringPoint = this.measuringPoint;
-        this.measuringPoint = newMeasuringPoint;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT, oldMeasuringPoint, this.measuringPoint));
-        }
+        this.eDynamicSet(ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT,
+                ExperimentDataPackage.Literals.MEASURING_TYPE__MEASURING_POINT, newMeasuringPoint);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -277,7 +193,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -294,7 +210,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -309,7 +225,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -335,7 +251,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -361,7 +277,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -385,7 +301,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -394,11 +310,11 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             return this.getExperimentGroup() != null;
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS:
-            return this.experimentSettings != null && !this.experimentSettings.isEmpty();
+            return !this.getExperimentSettings().isEmpty();
         case ExperimentDataPackage.MEASURING_TYPE__METRIC:
-            return this.metric != null;
+            return this.basicGetMetric() != null;
         case ExperimentDataPackage.MEASURING_TYPE__MEASURING_POINT:
-            return this.measuringPoint != null;
+            return this.basicGetMeasuringPoint() != null;
         }
         return super.eIsSet(featureID);
     }

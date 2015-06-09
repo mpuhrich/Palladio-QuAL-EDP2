@@ -38,7 +38,7 @@ public interface LocalDirectoryRepository extends Repository {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Uri</em>' attribute.
      * @see #setUri(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalDirectoryRepository_Uri()
@@ -51,7 +51,7 @@ public interface LocalDirectoryRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository#getUri
      * <em>Uri</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Uri</em>' attribute.
      * @see #getUri()

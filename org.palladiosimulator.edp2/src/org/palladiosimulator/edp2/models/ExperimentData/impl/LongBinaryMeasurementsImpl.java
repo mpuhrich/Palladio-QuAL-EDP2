@@ -8,9 +8,7 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import javax.measure.unit.Unit;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 
@@ -31,18 +29,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements;
 public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBinaryMeasurements {
 
     /**
-     * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getStorageUnit()
-     * @generated
-     * @ordered
-     */
-    protected Unit storageUnit;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected LongBinaryMeasurementsImpl() {
@@ -51,7 +39,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -61,32 +49,29 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Unit getStorageUnit() {
-        return this.storageUnit;
+        return (Unit) this.eDynamicGet(ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT,
+                ExperimentDataPackage.Literals.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setStorageUnit(final Unit newStorageUnit) {
-        final Unit oldStorageUnit = this.storageUnit;
-        this.storageUnit = newStorageUnit;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT, oldStorageUnit, this.storageUnit));
-        }
+        this.eDynamicSet(ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT,
+                ExperimentDataPackage.Literals.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT, newStorageUnit);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -100,7 +85,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -115,7 +100,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -130,34 +115,16 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            return this.storageUnit != null;
+            return this.getStorageUnit() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (storageUnit: ");
-        result.append(this.storageUnit);
-        result.append(')');
-        return result.toString();
     }
 
 } // LongBinaryMeasurementsImpl

@@ -10,13 +10,10 @@ import java.util.Collection;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics;
@@ -49,48 +46,8 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 NumericalOrdinalStatistics {
 
     /**
-     * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMinimum()
-     * @generated
-     * @ordered
-     */
-    protected Measure minimum;
-
-    /**
-     * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMaximum()
-     * @generated
-     * @ordered
-     */
-    protected Measure maximum;
-
-    /**
-     * The cached value of the '{@link #getMedian() <em>Median</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getMedian()
-     * @generated
-     * @ordered
-     */
-    protected Measure median;
-
-    /**
-     * The cached value of the '{@link #getPercentiles() <em>Percentiles</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getPercentiles()
-     * @generated
-     * @ordered
-     */
-    protected EList<NumericalPercentile> percentiles;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalOrdinalStatisticsImpl() {
@@ -99,7 +56,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -109,97 +66,86 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getMinimum() {
-        return this.minimum;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MINIMUM, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMinimum(final Measure newMinimum) {
-        final Measure oldMinimum = this.minimum;
-        this.minimum = newMinimum;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM, oldMinimum, this.minimum));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MINIMUM, newMinimum);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getMaximum() {
-        return this.maximum;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMaximum(final Measure newMaximum) {
-        final Measure oldMaximum = this.maximum;
-        this.maximum = newMaximum;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM, oldMaximum, this.maximum));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM, newMaximum);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getMedian() {
-        return this.median;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MEDIAN,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MEDIAN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMedian(final Measure newMedian) {
-        final Measure oldMedian = this.median;
-        this.median = newMedian;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MEDIAN, oldMedian, this.median));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MEDIAN,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MEDIAN, newMedian);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<NumericalPercentile> getPercentiles() {
-        if (this.percentiles == null) {
-            this.percentiles = new EObjectContainmentWithInverseEList<NumericalPercentile>(NumericalPercentile.class,
-                    this, ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
-                    ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS);
-        }
-        return this.percentiles;
+        return (EList<NumericalPercentile>) this.eDynamicGet(
+                ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
+                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -215,7 +161,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -230,7 +176,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -250,7 +196,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -276,7 +222,7 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -300,44 +246,22 @@ NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
-            return this.minimum != null;
+            return this.getMinimum() != null;
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM:
-            return this.maximum != null;
+            return this.getMaximum() != null;
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MEDIAN:
-            return this.median != null;
+            return this.getMedian() != null;
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES:
-            return this.percentiles != null && !this.percentiles.isEmpty();
+            return !this.getPercentiles().isEmpty();
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (minimum: ");
-        result.append(this.minimum);
-        result.append(", maximum: ");
-        result.append(this.maximum);
-        result.append(", median: ");
-        result.append(this.median);
-        result.append(')');
-        return result.toString();
     }
 
 } // NumericalOrdinalStatisticsImpl

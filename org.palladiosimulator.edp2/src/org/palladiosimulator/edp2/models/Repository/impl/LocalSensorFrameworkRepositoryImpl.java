@@ -6,9 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.Repository.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
@@ -34,7 +32,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getUri()
      * @generated
      * @ordered
@@ -42,19 +40,9 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     protected static final String URI_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getUri()
-     * @generated
-     * @ordered
-     */
-    protected String uri = URI_EDEFAULT;
-
-    /**
      * The default value of the '{@link #getImportSettings() <em>Import Settings</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getImportSettings()
      * @generated
      * @ordered
@@ -62,18 +50,8 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
     protected static final String IMPORT_SETTINGS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getImportSettings() <em>Import Settings</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getImportSettings()
-     * @generated
-     * @ordered
-     */
-    protected String importSettings = IMPORT_SETTINGS_EDEFAULT;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected LocalSensorFrameworkRepositoryImpl() {
@@ -82,7 +60,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,58 +70,51 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getUri() {
-        return this.uri;
+        return (String) this.eDynamicGet(RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI,
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setUri(final String newUri) {
-        final String oldUri = this.uri;
-        this.uri = newUri;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI, oldUri, this.uri));
-        }
+        this.eDynamicSet(RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI,
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI, newUri);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getImportSettings() {
-        return this.importSettings;
+        return (String) this.eDynamicGet(RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS,
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setImportSettings(final String newImportSettings) {
-        final String oldImportSettings = this.importSettings;
-        this.importSettings = newImportSettings;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS, oldImportSettings,
-                    this.importSettings));
-        }
+        this.eDynamicSet(RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS,
+                RepositoryPackage.Literals.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS, newImportSettings);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -159,7 +130,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -177,7 +148,7 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,39 +166,19 @@ public class LocalSensorFrameworkRepositoryImpl extends RepositoryImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__URI:
-            return URI_EDEFAULT == null ? this.uri != null : !URI_EDEFAULT.equals(this.uri);
+            return URI_EDEFAULT == null ? this.getUri() != null : !URI_EDEFAULT.equals(this.getUri());
         case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY__IMPORT_SETTINGS:
-            return IMPORT_SETTINGS_EDEFAULT == null ? this.importSettings != null : !IMPORT_SETTINGS_EDEFAULT
-            .equals(this.importSettings);
+            return IMPORT_SETTINGS_EDEFAULT == null ? this.getImportSettings() != null : !IMPORT_SETTINGS_EDEFAULT
+            .equals(this.getImportSettings());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (uri: ");
-        result.append(this.uri);
-        result.append(", importSettings: ");
-        result.append(this.importSettings);
-        result.append(')');
-        return result.toString();
     }
 
 } // LocalSensorFrameworkRepositoryImpl

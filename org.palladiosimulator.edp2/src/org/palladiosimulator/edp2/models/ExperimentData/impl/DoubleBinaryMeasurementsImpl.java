@@ -9,9 +9,7 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 
@@ -33,18 +31,8 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 DoubleBinaryMeasurements<Q> {
 
     /**
-     * The cached value of the '{@link #getStorageUnit() <em>Storage Unit</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getStorageUnit()
-     * @generated
-     * @ordered
-     */
-    protected Unit<Q> storageUnit;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DoubleBinaryMeasurementsImpl() {
@@ -53,7 +41,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -63,32 +51,29 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Unit<Q> getStorageUnit() {
-        return this.storageUnit;
+        return (Unit<Q>) this.eDynamicGet(ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT,
+                ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setStorageUnit(final Unit<Q> newStorageUnit) {
-        final Unit<Q> oldStorageUnit = this.storageUnit;
-        this.storageUnit = newStorageUnit;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, oldStorageUnit, this.storageUnit));
-        }
+        this.eDynamicSet(ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT,
+                ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT, newStorageUnit);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -102,7 +87,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -118,7 +103,7 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -133,34 +118,16 @@ DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
-            return this.storageUnit != null;
+            return this.getStorageUnit() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (storageUnit: ");
-        result.append(this.storageUnit);
-        result.append(')');
-        return result.toString();
     }
 
 } // DoubleBinaryMeasurementsImpl

@@ -6,9 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.Repository.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.MetaDaoImpl;
@@ -40,16 +38,6 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
      * @ordered
      */
     protected static final String DOMAIN_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getDomain() <em>Domain</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getDomain()
-     * @generated
-     * @ordered
-     */
-    protected String domain = DOMAIN_EDEFAULT;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -104,7 +92,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,32 +102,29 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getDomain() {
-        return this.domain;
+        return (String) this.eDynamicGet(RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN,
+                RepositoryPackage.Literals.LOCAL_MEMORY_REPOSITORY__DOMAIN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDomain(final String newDomain) {
-        final String oldDomain = this.domain;
-        this.domain = newDomain;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN, oldDomain, this.domain));
-        }
+        this.eDynamicSet(RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN,
+                RepositoryPackage.Literals.LOCAL_MEMORY_REPOSITORY__DOMAIN, newDomain);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -153,7 +138,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -168,7 +153,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -183,34 +168,16 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
-            return DOMAIN_EDEFAULT == null ? this.domain != null : !DOMAIN_EDEFAULT.equals(this.domain);
+            return DOMAIN_EDEFAULT == null ? this.getDomain() != null : !DOMAIN_EDEFAULT.equals(this.getDomain());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (domain: ");
-        result.append(this.domain);
-        result.append(')');
-        return result.toString();
     }
 
 } // LocalMemoryRepositoryImpl

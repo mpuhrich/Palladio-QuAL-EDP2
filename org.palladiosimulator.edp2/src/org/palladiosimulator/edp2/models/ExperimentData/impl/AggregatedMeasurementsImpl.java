@@ -6,13 +6,9 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -57,7 +53,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     /**
      * The default value of the '{@link #isValid() <em>Valid</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #isValid()
      * @generated
      * @ordered
@@ -65,58 +61,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     protected static final boolean VALID_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isValid() <em>Valid</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #isValid()
-     * @generated
-     * @ordered
-     */
-    protected boolean valid = VALID_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getFunction() <em>Function</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getFunction()
-     * @generated
-     * @ordered
-     */
-    protected AggregationFunctionDescription function;
-
-    /**
-     * The cached value of the '{@link #getAggregationStatistics() <em>Aggregation Statistics</em>}'
-     * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAggregationStatistics()
-     * @generated
-     * @ordered
-     */
-    protected AggregationStatistics aggregationStatistics;
-
-    /**
-     * The cached value of the '{@link #getAggregationOn() <em>Aggregation On</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAggregationOn()
-     * @generated
-     * @ordered
-     */
-    protected BaseMetricDescription aggregationOn;
-
-    /**
-     * The cached value of the '{@link #getMetric() <em>Metric</em>}' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getMetric()
-     * @generated
-     * @ordered
-     */
-    protected MetricDescription metric;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected AggregatedMeasurementsImpl() {
@@ -125,7 +71,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,20 +81,18 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MeasurementRange getMeasurementRange() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE) {
-            return null;
-        }
-        return (MeasurementRange) this.eInternalContainer();
+        return (MeasurementRange) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetMeasurementRange(final MeasurementRange newMeasurementRange, NotificationChain msgs) {
@@ -159,258 +103,174 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasurementRange(final MeasurementRange newMeasurementRange) {
-        if (newMeasurementRange != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE && newMeasurementRange != null)) {
-            if (EcoreUtil.isAncestor(this, newMeasurementRange)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newMeasurementRange != null) {
-                msgs = ((InternalEObject) newMeasurementRange).eInverseAdd(this,
-                        ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS, MeasurementRange.class, msgs);
-            }
-            msgs = this.basicSetMeasurementRange(newMeasurementRange, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE, newMeasurementRange,
-                    newMeasurementRange));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE, newMeasurementRange);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean isValid() {
-        return this.valid;
+        return (Boolean) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__VALID, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setValid(final boolean newValid) {
-        final boolean oldValid = this.valid;
-        this.valid = newValid;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID, oldValid, this.valid));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__VALID, newValid);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public AggregationFunctionDescription getFunction() {
-        if (this.function != null && ((EObject) this.function).eIsProxy()) {
-            final InternalEObject oldFunction = (InternalEObject) this.function;
-            this.function = (AggregationFunctionDescription) this.eResolveProxy(oldFunction);
-            if (this.function != oldFunction) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION, oldFunction, this.function));
-                }
-            }
-        }
-        return this.function;
+        return (AggregationFunctionDescription) this.eDynamicGet(
+                ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__FUNCTION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public AggregationFunctionDescription basicGetFunction() {
-        return this.function;
+        return (AggregationFunctionDescription) this.eDynamicGet(
+                ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__FUNCTION, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setFunction(final AggregationFunctionDescription newFunction) {
-        final AggregationFunctionDescription oldFunction = this.function;
-        this.function = newFunction;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION, oldFunction, this.function));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__FUNCTION, newFunction);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public AggregationStatistics getAggregationStatistics() {
-        return this.aggregationStatistics;
+        return (AggregationStatistics) this.eDynamicGet(
+                ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetAggregationStatistics(final AggregationStatistics newAggregationStatistics,
             NotificationChain msgs) {
-        final AggregationStatistics oldAggregationStatistics = this.aggregationStatistics;
-        this.aggregationStatistics = newAggregationStatistics;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS, oldAggregationStatistics,
-                    newAggregationStatistics);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newAggregationStatistics,
+                ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setAggregationStatistics(final AggregationStatistics newAggregationStatistics) {
-        if (newAggregationStatistics != this.aggregationStatistics) {
-            NotificationChain msgs = null;
-            if (this.aggregationStatistics != null) {
-                msgs = ((InternalEObject) this.aggregationStatistics).eInverseRemove(this,
-                        ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS,
-                        AggregationStatistics.class, msgs);
-            }
-            if (newAggregationStatistics != null) {
-                msgs = ((InternalEObject) newAggregationStatistics).eInverseAdd(this,
-                        ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS,
-                        AggregationStatistics.class, msgs);
-            }
-            msgs = this.basicSetAggregationStatistics(newAggregationStatistics, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS, newAggregationStatistics,
-                    newAggregationStatistics));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS,
+                newAggregationStatistics);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public BaseMetricDescription getAggregationOn() {
-        if (this.aggregationOn != null && ((EObject) this.aggregationOn).eIsProxy()) {
-            final InternalEObject oldAggregationOn = (InternalEObject) this.aggregationOn;
-            this.aggregationOn = (BaseMetricDescription) this.eResolveProxy(oldAggregationOn);
-            if (this.aggregationOn != oldAggregationOn) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, oldAggregationOn,
-                            this.aggregationOn));
-                }
-            }
-        }
-        return this.aggregationOn;
+        return (BaseMetricDescription) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public BaseMetricDescription basicGetAggregationOn() {
-        return this.aggregationOn;
+        return (BaseMetricDescription) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setAggregationOn(final BaseMetricDescription newAggregationOn) {
-        final BaseMetricDescription oldAggregationOn = this.aggregationOn;
-        this.aggregationOn = newAggregationOn;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, oldAggregationOn, this.aggregationOn));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__AGGREGATION_ON, newAggregationOn);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MetricDescription getMetric() {
-        if (this.metric != null && ((EObject) this.metric).eIsProxy()) {
-            final InternalEObject oldMetric = (InternalEObject) this.metric;
-            this.metric = (MetricDescription) this.eResolveProxy(oldMetric);
-            if (this.metric != oldMetric) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC, oldMetric, this.metric));
-                }
-            }
-        }
-        return this.metric;
+        return (MetricDescription) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__METRIC, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MetricDescription basicGetMetric() {
-        return this.metric;
+        return (MetricDescription) this.eDynamicGet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__METRIC, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMetric(final MetricDescription newMetric) {
-        final MetricDescription oldMetric = this.metric;
-        this.metric = newMetric;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC, oldMetric, this.metric));
-        }
+        this.eDynamicSet(ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC,
+                ExperimentDataPackage.Literals.AGGREGATED_MEASUREMENTS__METRIC, newMetric);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -422,8 +282,9 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
             }
             return this.basicSetMeasurementRange((MeasurementRange) otherEnd, msgs);
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS:
-            if (this.aggregationStatistics != null) {
-                msgs = ((InternalEObject) this.aggregationStatistics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            final AggregationStatistics aggregationStatistics = this.getAggregationStatistics();
+            if (aggregationStatistics != null) {
+                msgs = ((InternalEObject) aggregationStatistics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                         - ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS, null, msgs);
             }
             return this.basicSetAggregationStatistics((AggregationStatistics) otherEnd, msgs);
@@ -433,7 +294,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -450,7 +311,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -465,7 +326,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -498,7 +359,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -528,7 +389,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -558,7 +419,7 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -567,35 +428,17 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.getMeasurementRange() != null;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID:
-            return this.valid != VALID_EDEFAULT;
+            return this.isValid() != VALID_EDEFAULT;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__FUNCTION:
-            return this.function != null;
+            return this.basicGetFunction() != null;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS:
-            return this.aggregationStatistics != null;
+            return this.getAggregationStatistics() != null;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_ON:
-            return this.aggregationOn != null;
+            return this.basicGetAggregationOn() != null;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__METRIC:
-            return this.metric != null;
+            return this.basicGetMetric() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (valid: ");
-        result.append(this.valid);
-        result.append(')');
-        return result.toString();
     }
 
 } // AggregatedMeasurementsImpl

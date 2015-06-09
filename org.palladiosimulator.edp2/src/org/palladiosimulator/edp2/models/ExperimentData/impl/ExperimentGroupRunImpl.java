@@ -2,12 +2,9 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun;
@@ -30,7 +27,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentGroupRunImpl() {
@@ -39,7 +36,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -49,20 +46,18 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public ExperimentGroup getExperimentgroup() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP) {
-            return null;
-        }
-        return (ExperimentGroup) this.eInternalContainer();
+        return (ExperimentGroup) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentgroup(final ExperimentGroup newExperimentgroup, NotificationChain msgs) {
@@ -73,37 +68,18 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setExperimentgroup(final ExperimentGroup newExperimentgroup) {
-        if (newExperimentgroup != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP && newExperimentgroup != null)) {
-            if (EcoreUtil.isAncestor(this, newExperimentgroup)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newExperimentgroup != null) {
-                msgs = ((InternalEObject) newExperimentgroup).eInverseAdd(this,
-                        ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS, ExperimentGroup.class, msgs);
-            }
-            msgs = this.basicSetExperimentgroup(newExperimentgroup, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP, newExperimentgroup, newExperimentgroup));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP, newExperimentgroup);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +96,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,7 +111,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +126,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -164,7 +140,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -179,7 +155,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -194,7 +170,7 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

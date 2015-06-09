@@ -43,7 +43,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Arithmethic Mean</em>' attribute.
      * @see #setArithmethicMean(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalIntervalStatistics_ArithmethicMean()
@@ -57,7 +57,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getArithmethicMean
      * <em>Arithmethic Mean</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Arithmethic Mean</em>' attribute.
      * @see #getArithmethicMean()
@@ -87,7 +87,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getVariance
      * <em>Variance</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Variance</em>' attribute.
      * @see #getVariance()
@@ -117,7 +117,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getStandardDeviation
      * <em>Standard Deviation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Standard Deviation</em>' attribute.
      * @see #getStandardDeviation()
@@ -132,7 +132,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Sum</em>' attribute.
      * @see #setSum(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalIntervalStatistics_Sum()
@@ -146,7 +146,7 @@ public interface NumericalIntervalStatistics extends NumericalOrdinalStatistics 
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getSum
      * <em>Sum</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Sum</em>' attribute.
      * @see #getSum()

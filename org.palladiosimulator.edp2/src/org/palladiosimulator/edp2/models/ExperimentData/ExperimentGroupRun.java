@@ -31,7 +31,7 @@ public interface ExperimentGroupRun extends Run {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Experimentgroup</em>' container reference.
      * @see #setExperimentgroup(ExperimentGroup)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentGroupRun_Experimentgroup()
@@ -45,7 +45,7 @@ public interface ExperimentGroupRun extends Run {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun#getExperimentgroup
      * <em>Experimentgroup</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Experimentgroup</em>' container reference.
      * @see #getExperimentgroup()

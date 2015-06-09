@@ -41,28 +41,28 @@ public interface ExperimentDataPackage extends EPackage {
 
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "ExperimentData";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_URI = "http://palladiosimulator.org/EDP2/ExperimentData/0.9.1";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "org.palladiosimulator.edp2.models";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     ExperimentDataPackage eINSTANCE = org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl
@@ -72,7 +72,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl
      * <em>Aggregated Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregatedMeasurements()
      * @generated
@@ -82,7 +82,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -100,7 +100,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Valid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -109,7 +109,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Function</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -127,7 +127,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Aggregation On</b></em>' reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -136,7 +136,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Metric</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -155,7 +155,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.DataSeriesImpl
      * <em>Data Series</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.DataSeriesImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataSeries()
      * @generated
@@ -166,7 +166,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.FixedIntervalsImpl
      * <em>Fixed Intervals</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.FixedIntervalsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedIntervals()
      * @generated
@@ -177,7 +177,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl
      * <em>Propertyable</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPropertyable()
      * @generated
@@ -187,7 +187,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -196,7 +196,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Propertyable</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -206,7 +206,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementRangeImpl
      * <em>Measurement Range</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementRangeImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurementRange()
      * @generated
@@ -216,7 +216,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -234,7 +234,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measurement</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -243,7 +243,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>End Time</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -252,7 +252,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -261,7 +261,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Aggregated Measurements</b></em>' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -280,7 +280,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.EStringtoEObjectMapEntryImpl
      * <em>EStringto EObject Map Entry</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.EStringtoEObjectMapEntryImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEStringtoEObjectMapEntry()
      * @generated
@@ -290,7 +290,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Key</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -299,7 +299,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -318,7 +318,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.RawMeasurementsImpl
      * <em>Raw Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.RawMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getRawMeasurements()
      * @generated
@@ -328,7 +328,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -382,7 +382,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -409,7 +409,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Data Series</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -419,7 +419,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalNominalStatisticsImpl
      * <em>Numerical Nominal Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalNominalStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalNominalStatistics()
      * @generated
@@ -429,7 +429,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -438,7 +438,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -447,7 +447,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Numerical Mass Distribution</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -456,7 +456,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -475,7 +475,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalMassDistributionImpl
      * <em>Numerical Mass Distribution</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalMassDistributionImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalMassDistribution()
      * @generated
@@ -485,7 +485,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -494,7 +494,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -503,7 +503,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Numerical Nominal Statistics</b></em>' container reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -523,7 +523,7 @@ public interface ExperimentDataPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.FixedWidthAggregatedMeasurementsImpl
      * <em>Fixed Width Aggregated Measurements</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.FixedWidthAggregatedMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedWidthAggregatedMeasurements()
      * @generated
@@ -533,7 +533,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -551,7 +551,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Valid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -560,7 +560,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Function</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -578,7 +578,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Aggregation On</b></em>' reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -587,7 +587,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Metric</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -596,7 +596,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Intervals</b></em>' containment reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -614,7 +614,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Fixed Width Aggregated Measurements</em>'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -623,7 +623,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -632,7 +632,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Lower Bound</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -641,7 +641,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Width</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -650,7 +650,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Of Intervals</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -678,7 +678,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualNominalStatisticsImpl
      * <em>Textual Nominal Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualNominalStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualNominalStatistics()
      * @generated
@@ -688,7 +688,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -706,7 +706,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -725,7 +725,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualMassDistributionImpl
      * <em>Textual Mass Distribution</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualMassDistributionImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualMassDistribution()
      * @generated
@@ -735,7 +735,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Frequency</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -744,7 +744,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Identifier</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -772,7 +772,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupImpl
      * <em>Experiment Group</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentGroup()
      * @generated
@@ -782,7 +782,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -792,7 +792,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentSettingImpl
      * <em>Experiment Setting</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentSettingImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentSetting()
      * @generated
@@ -803,7 +803,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentRunImpl
      * <em>Experiment Run</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentRunImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentRun()
      * @generated
@@ -814,7 +814,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl
      * <em>Aggregation Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregationStatistics()
      * @generated
@@ -824,7 +824,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -851,7 +851,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Purpose</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -860,7 +860,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repository</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -896,7 +896,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -905,7 +905,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -914,7 +914,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -932,7 +932,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measuring Types</b></em>' reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -960,7 +960,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.RunImpl <em>Run</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.RunImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getRun()
      * @generated
@@ -970,7 +970,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -979,7 +979,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -988,7 +988,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -997,7 +997,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1015,7 +1015,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Run</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1024,7 +1024,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1033,7 +1033,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1042,7 +1042,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1051,7 +1051,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1078,7 +1078,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Experiment Run</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1088,7 +1088,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementImpl
      * <em>Measurement</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurement()
      * @generated
@@ -1098,7 +1098,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1107,7 +1107,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1116,7 +1116,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measuring Type</b></em>' reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1134,7 +1134,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Run</b></em>' container reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1143,7 +1143,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Measurement</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1153,7 +1153,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasuringTypeImpl
      * <em>Measuring Type</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasuringTypeImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasuringType()
      * @generated
@@ -1163,7 +1163,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1190,7 +1190,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Metric</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1199,7 +1199,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Measuring Point</b></em>' reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1208,7 +1208,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Measuring Type</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1218,7 +1218,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.LongBinaryMeasurementsImpl
      * <em>Long Binary Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.LongBinaryMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getLongBinaryMeasurements()
      * @generated
@@ -1229,7 +1229,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.DoubleBinaryMeasurementsImpl
      * <em>Double Binary Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.DoubleBinaryMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDoubleBinaryMeasurements()
      * @generated
@@ -1240,7 +1240,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.JSXmlMeasurementsImpl
      * <em>JS Xml Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.JSXmlMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getJSXmlMeasurements()
      * @generated
@@ -1250,7 +1250,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The meta object id for the '{@link javax.measure.quantity.Duration <em>IJS Duration</em>}'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see javax.measure.quantity.Duration
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSDuration()
      * @generated
@@ -1260,7 +1260,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1323,7 +1323,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1350,7 +1350,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Storage Unit</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1369,7 +1369,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalOrdinalStatisticsImpl
      * <em>Numerical Ordinal Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalOrdinalStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalOrdinalStatistics()
      * @generated
@@ -1379,7 +1379,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1388,7 +1388,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1397,7 +1397,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Numerical Mass Distribution</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1406,7 +1406,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1415,7 +1415,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Minimum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1424,7 +1424,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Maximum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1433,7 +1433,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Median</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1461,7 +1461,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalIntervalStatisticsImpl
      * <em>Numerical Interval Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalIntervalStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalIntervalStatistics()
      * @generated
@@ -1471,7 +1471,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1480,7 +1480,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1489,7 +1489,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Numerical Mass Distribution</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1498,7 +1498,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1507,7 +1507,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Minimum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1516,7 +1516,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Maximum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1525,7 +1525,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Median</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1543,7 +1543,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Arithmethic Mean</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1552,7 +1552,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variance</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1561,7 +1561,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Standard Deviation</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1570,7 +1570,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1589,7 +1589,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl
      * <em>Numerical Percentile</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalPercentile()
      * @generated
@@ -1599,7 +1599,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1608,7 +1608,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Percentile</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1617,7 +1617,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1662,7 +1662,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1716,7 +1716,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1743,7 +1743,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Storage Unit</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1762,7 +1762,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierBasedMeasurementsImpl
      * <em>Identifier Based Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.IdentifierBasedMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIdentifierBasedMeasurements()
      * @generated
@@ -1790,7 +1790,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1827,7 +1827,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalRatioStatisticsImpl
      * <em>Numerical Ratio Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalRatioStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalRatioStatistics()
      * @generated
@@ -1837,7 +1837,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1846,7 +1846,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1855,7 +1855,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Numerical Mass Distribution</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1864,7 +1864,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1873,7 +1873,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Minimum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1882,7 +1882,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Maximum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1891,7 +1891,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Median</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1909,7 +1909,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Arithmethic Mean</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1918,7 +1918,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variance</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1927,7 +1927,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Standard Deviation</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1936,7 +1936,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sum</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1954,7 +1954,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Geometric Mean</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1963,7 +1963,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Harmonic Mean</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1983,7 +1983,7 @@ public interface ExperimentDataPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1DoubleBinaryMeasurementsImpl
      * <em>Sensor Framework V1 Double Binary Measurements</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1DoubleBinaryMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1DoubleBinaryMeasurements()
      * @generated
@@ -2011,7 +2011,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2038,7 +2038,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Storage Unit</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2048,7 +2048,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The number of structural features of the '
      * <em>Sensor Framework V1 Double Binary Measurements</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2059,7 +2059,7 @@ public interface ExperimentDataPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1IdentifierBasedMeasurementsImpl
      * <em>Sensor Framework V1 Identifier Based Measurements</em>}' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1IdentifierBasedMeasurementsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1IdentifierBasedMeasurements()
      * @generated
@@ -2087,7 +2087,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values Uuid</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2115,7 +2115,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The number of structural features of the '
      * <em>Sensor Framework V1 Identifier Based Measurements</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2124,7 +2124,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>IJS Duration</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2143,7 +2143,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The number of structural features of the '<em>EComparable</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2153,7 +2153,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualOrdinalStatisticsImpl
      * <em>Textual Ordinal Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualOrdinalStatisticsImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualOrdinalStatistics()
      * @generated
@@ -2163,7 +2163,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Number Measurements</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2181,7 +2181,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Data Series</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2190,7 +2190,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Minimum</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2199,7 +2199,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Maximum</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2208,7 +2208,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Median</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2227,7 +2227,7 @@ public interface ExperimentDataPackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupRunImpl
      * <em>Experiment Group Run</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupRunImpl
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentGroupRun()
      * @generated
@@ -2237,7 +2237,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2246,7 +2246,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Information</b></em>' map. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2255,7 +2255,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Duration</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2264,7 +2264,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Start Time</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2300,7 +2300,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The meta object id for the '<em>EJS Measure</em>' data type. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see javax.measure.Measure
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSMeasure()
      * @generated
@@ -2310,7 +2310,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * The meta object id for the '<em>EJS Duration Measure</em>' data type. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see javax.measure.Measure
      * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSDurationMeasure()
      * @generated
@@ -2321,7 +2321,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
      * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Aggregated Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
      * @generated
@@ -2332,7 +2332,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMeasurementRange
      * <em>Measurement Range</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Measurement Range</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMeasurementRange()
      * @see #getAggregatedMeasurements()
@@ -2344,7 +2344,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#isValid
      * <em>Valid</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Valid</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#isValid()
      * @see #getAggregatedMeasurements()
@@ -2356,7 +2356,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getFunction
      * <em>Function</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Function</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getFunction()
      * @see #getAggregatedMeasurements()
@@ -2368,7 +2368,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationStatistics
      * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Aggregation Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationStatistics()
      * @see #getAggregatedMeasurements()
@@ -2380,7 +2380,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationOn
      * <em>Aggregation On</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Aggregation On</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationOn()
      * @see #getAggregatedMeasurements()
@@ -2392,7 +2392,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMetric
      * <em>Metric</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Metric</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMetric()
      * @see #getAggregatedMeasurements()
@@ -2404,7 +2404,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
      * <em>Measurement Range</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Measurement Range</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
      * @generated
@@ -2415,7 +2415,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getRawMeasurements
      * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Raw Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getRawMeasurements()
      * @see #getMeasurementRange()
@@ -2427,7 +2427,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getMeasurement
      * <em>Measurement</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Measurement</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getMeasurement()
      * @see #getMeasurementRange()
@@ -2439,7 +2439,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getEndTime
      * <em>End Time</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>End Time</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getEndTime()
      * @see #getMeasurementRange()
@@ -2451,7 +2451,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getStartTime
      * <em>Start Time</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Start Time</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getStartTime()
      * @see #getMeasurementRange()
@@ -2463,7 +2463,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Aggregated Measurements</em>
      *         '.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getAggregatedMeasurements()
@@ -2476,7 +2476,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries <em>Data Series</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Data Series</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries
      * @generated
@@ -2487,7 +2487,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getNumericalStatistics
      * <em>Numerical Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Numerical Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getNumericalStatistics()
      * @see #getDataSeries()
@@ -2499,7 +2499,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Aggregated Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getAggregatedMeasurements()
      * @see #getDataSeries()
@@ -2511,7 +2511,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getValuesUuid
      * <em>Values Uuid</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Values Uuid</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getValuesUuid()
      * @see #getDataSeries()
@@ -2523,7 +2523,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getTextualStatistics
      * <em>Textual Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Textual Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getTextualStatistics()
      * @see #getDataSeries()
@@ -2535,7 +2535,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getRawMeasurements
      * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Raw Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getRawMeasurements()
      * @see #getDataSeries()
@@ -2547,7 +2547,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
      * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Nominal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
      * @generated
@@ -2558,7 +2558,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getNumberMeasurements
      * <em>Number Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Number Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getNumberMeasurements()
      * @see #getNumericalNominalStatistics()
@@ -2570,7 +2570,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getNumericalMassDistribution
      * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '
      *         <em>Numerical Mass Distribution</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getNumericalMassDistribution()
@@ -2583,7 +2583,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getDataSeries
      * <em>Data Series</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Data Series</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getDataSeries()
      * @see #getNumericalNominalStatistics()
@@ -2595,7 +2595,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
      * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Mass Distribution</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
      * @generated
@@ -2606,7 +2606,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getFrequency
      * <em>Frequency</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Frequency</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getFrequency()
      * @see #getNumericalMassDistribution()
@@ -2618,7 +2618,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getValue
      * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getValue()
      * @see #getNumericalMassDistribution()
@@ -2630,7 +2630,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getNumericalNominalStatistics
      * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Numerical Nominal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getNumericalNominalStatistics()
      * @see #getNumericalMassDistribution()
@@ -2642,7 +2642,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
      * <em>Fixed Width Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Fixed Width Aggregated Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
      * @generated
@@ -2653,7 +2653,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements#getIntervals
      * <em>Intervals</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Intervals</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements#getIntervals()
      * @see #getFixedWidthAggregatedMeasurements()
@@ -2665,7 +2665,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements#getDataSeries
      * <em>Data Series</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Data Series</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements#getDataSeries()
      * @see #getFixedWidthAggregatedMeasurements()
@@ -2677,7 +2677,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
      * <em>Fixed Intervals</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Fixed Intervals</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
      * @generated
@@ -2688,7 +2688,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getLowerBound
      * <em>Lower Bound</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Lower Bound</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getLowerBound()
      * @see #getFixedIntervals()
@@ -2700,7 +2700,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getWidth
      * <em>Width</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Width</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getWidth()
      * @see #getFixedIntervals()
@@ -2712,7 +2712,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getNumberOfIntervals
      * <em>Number Of Intervals</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Number Of Intervals</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getNumberOfIntervals()
      * @see #getFixedIntervals()
@@ -2724,7 +2724,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Aggregated Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getAggregatedMeasurements()
      * @see #getFixedIntervals()
@@ -2736,7 +2736,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
      * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Textual Nominal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
      * @generated
@@ -2747,7 +2747,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getNumberMeasurements
      * <em>Number Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Number Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getNumberMeasurements()
      * @see #getTextualNominalStatistics()
@@ -2759,7 +2759,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getMassDistribution
      * <em>Mass Distribution</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Mass Distribution</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getMassDistribution()
      * @see #getTextualNominalStatistics()
@@ -2771,7 +2771,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getDataSeries
      * <em>Data Series</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Data Series</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics#getDataSeries()
      * @see #getTextualNominalStatistics()
@@ -2783,7 +2783,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
      * <em>Textual Mass Distribution</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Textual Mass Distribution</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
      * @generated
@@ -2794,7 +2794,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getFrequency
      * <em>Frequency</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Frequency</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getFrequency()
      * @see #getTextualMassDistribution()
@@ -2806,7 +2806,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getIdentifier
      * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Identifier</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getIdentifier()
      * @see #getTextualMassDistribution()
@@ -2818,7 +2818,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getTextualNominalStatistics
      * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Textual Nominal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution#getTextualNominalStatistics()
      * @see #getTextualMassDistribution()
@@ -2830,7 +2830,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable <em>Propertyable</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Propertyable</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Propertyable
      * @generated
@@ -2841,7 +2841,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the map '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable#getAdditionalInformation
      * <em>Additional Information</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the map '<em>Additional Information</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Propertyable#getAdditionalInformation()
      * @see #getPropertyable()
@@ -2852,7 +2852,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link java.util.Map.Entry
      * <em>EStringto EObject Map Entry</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>EStringto EObject Map Entry</em>'.
      * @see java.util.Map.Entry
      * @model keyDataType="org.eclipse.emf.ecore.EString" keyRequired="true" keyOrdered="false"
@@ -2888,7 +2888,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
      * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Raw Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
      * @generated
@@ -2899,7 +2899,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements#getDataSeries
      * <em>Data Series</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Data Series</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements#getDataSeries()
      * @see #getRawMeasurements()
@@ -2911,7 +2911,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements#getMeasurementRange
      * <em>Measurement Range</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Measurement Range</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements#getMeasurementRange()
      * @see #getRawMeasurements()
@@ -2923,7 +2923,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
      * <em>Experiment Group</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Experiment Group</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
      * @generated
@@ -2934,7 +2934,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getExperimentSettings
      * <em>Experiment Settings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Experiment Settings</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getExperimentSettings()
      * @see #getExperimentGroup()
@@ -2946,7 +2946,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringTypes
      * <em>Measuring Types</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Measuring Types</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringTypes()
      * @see #getExperimentGroup()
@@ -2958,7 +2958,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository
      * <em>Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Repository</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository()
      * @see #getExperimentGroup()
@@ -2970,7 +2970,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getReports
      * <em>Reports</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Reports</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getReports()
      * @see #getExperimentGroup()
@@ -2982,7 +2982,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringPointRepositories
      * <em>Measuring Point Repositories</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '
      *         <em>Measuring Point Repositories</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getMeasuringPointRepositories()
@@ -2995,7 +2995,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getPurpose
      * <em>Purpose</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Purpose</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getPurpose()
      * @see #getExperimentGroup()
@@ -3007,7 +3007,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
      * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Experiment Setting</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
      * @generated
@@ -3018,7 +3018,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getDescription
      * <em>Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Description</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getDescription()
      * @see #getExperimentSetting()
@@ -3030,7 +3030,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentRuns
      * <em>Experiment Runs</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Experiment Runs</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentRuns()
      * @see #getExperimentSetting()
@@ -3042,7 +3042,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getMeasuringTypes
      * <em>Measuring Types</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Measuring Types</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getMeasuringTypes()
      * @see #getExperimentSetting()
@@ -3054,7 +3054,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentGroup
      * <em>Experiment Group</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Experiment Group</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentGroup()
      * @see #getExperimentSetting()
@@ -3066,7 +3066,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
      * <em>Experiment Run</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Experiment Run</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
      * @generated
@@ -3077,7 +3077,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun#getExperimentSetting
      * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Experiment Setting</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun#getExperimentSetting()
      * @see #getExperimentRun()
@@ -3089,7 +3089,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement <em>Measurement</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Measurement</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement
      * @generated
@@ -3100,7 +3100,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement#getMeasuringType
      * <em>Measuring Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Measuring Type</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement#getMeasuringType()
      * @see #getMeasurement()
@@ -3112,7 +3112,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement#getMeasurementRanges
      * <em>Measurement Ranges</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Measurement Ranges</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement#getMeasurementRanges()
      * @see #getMeasurement()
@@ -3124,7 +3124,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement#getRun <em>Run</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Run</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement#getRun()
      * @see #getMeasurement()
@@ -3136,7 +3136,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
      * <em>Measuring Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Measuring Type</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
      * @generated
@@ -3147,7 +3147,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentGroup
      * <em>Experiment Group</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Experiment Group</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentGroup()
      * @see #getMeasuringType()
@@ -3159,7 +3159,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentSettings
      * <em>Experiment Settings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Experiment Settings</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentSettings()
      * @see #getMeasuringType()
@@ -3171,7 +3171,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMetric
      * <em>Metric</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Metric</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMetric()
      * @see #getMeasuringType()
@@ -3183,7 +3183,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMeasuringPoint
      * <em>Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Measuring Point</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getMeasuringPoint()
      * @see #getMeasuringType()
@@ -3195,7 +3195,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
      * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Aggregation Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
      * @generated
@@ -3206,7 +3206,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesBeforeAggregation
      * <em>Distinct Values Before Aggregation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Distinct Values Before Aggregation</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesBeforeAggregation()
      * @see #getAggregationStatistics()
@@ -3218,7 +3218,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesAfterAggregation
      * <em>Distinct Values After Aggregation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Distinct Values After Aggregation</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesAfterAggregation()
      * @see #getAggregationStatistics()
@@ -3230,7 +3230,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Aggregated Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getAggregatedMeasurements()
      * @see #getAggregationStatistics()
@@ -3242,7 +3242,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
      * <em>Long Binary Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Long Binary Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
      * @generated
@@ -3253,7 +3253,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements#getStorageUnit
      * <em>Storage Unit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Storage Unit</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements#getStorageUnit()
      * @see #getLongBinaryMeasurements()
@@ -3265,7 +3265,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
      * <em>Double Binary Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Double Binary Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
      * @generated
@@ -3276,7 +3276,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements#getStorageUnit
      * <em>Storage Unit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Storage Unit</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements#getStorageUnit()
      * @see #getDoubleBinaryMeasurements()
@@ -3288,7 +3288,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
      * <em>Numerical Interval Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Interval Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
      * @generated
@@ -3299,7 +3299,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getArithmethicMean
      * <em>Arithmethic Mean</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Arithmethic Mean</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getArithmethicMean()
      * @see #getNumericalIntervalStatistics()
@@ -3311,7 +3311,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getVariance
      * <em>Variance</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Variance</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getVariance()
      * @see #getNumericalIntervalStatistics()
@@ -3323,7 +3323,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getStandardDeviation
      * <em>Standard Deviation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Standard Deviation</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getStandardDeviation()
      * @see #getNumericalIntervalStatistics()
@@ -3335,7 +3335,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getSum
      * <em>Sum</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Sum</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics#getSum()
      * @see #getNumericalIntervalStatistics()
@@ -3347,7 +3347,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
      * <em>Numerical Ordinal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Ordinal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
      * @generated
@@ -3358,7 +3358,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMinimum
      * <em>Minimum</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Minimum</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMinimum()
      * @see #getNumericalOrdinalStatistics()
@@ -3370,7 +3370,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMaximum
      * <em>Maximum</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Maximum</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMaximum()
      * @see #getNumericalOrdinalStatistics()
@@ -3382,7 +3382,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMedian
      * <em>Median</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Median</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getMedian()
      * @see #getNumericalOrdinalStatistics()
@@ -3394,7 +3394,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getPercentiles
      * <em>Percentiles</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Percentiles</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics#getPercentiles()
      * @see #getNumericalOrdinalStatistics()
@@ -3406,7 +3406,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
      * <em>Numerical Percentile</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Percentile</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
      * @generated
@@ -3417,7 +3417,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getPercentile
      * <em>Percentile</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Percentile</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getPercentile()
      * @see #getNumericalPercentile()
@@ -3429,7 +3429,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getValue
      * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getValue()
      * @see #getNumericalPercentile()
@@ -3441,7 +3441,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getOrdinalStatistics
      * <em>Ordinal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Ordinal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile#getOrdinalStatistics()
      * @see #getNumericalPercentile()
@@ -3453,7 +3453,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
      * <em>JS Xml Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>JS Xml Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
      * @generated
@@ -3463,7 +3463,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link javax.measure.quantity.Duration
      * <em>IJS Duration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>IJS Duration</em>'.
      * @see javax.measure.quantity.Duration
      * @model instanceClass="javax.measure.quantity.Duration"
@@ -3486,7 +3486,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
      * <em>Textual Ordinal Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Textual Ordinal Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
      * @generated
@@ -3497,7 +3497,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMinimum
      * <em>Minimum</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Minimum</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMinimum()
      * @see #getTextualOrdinalStatistics()
@@ -3509,7 +3509,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMaximum
      * <em>Maximum</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Maximum</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMaximum()
      * @see #getTextualOrdinalStatistics()
@@ -3521,7 +3521,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMedian
      * <em>Median</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Median</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMedian()
      * @see #getTextualOrdinalStatistics()
@@ -3544,7 +3544,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Duration</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration()
      * @see #getRun()
@@ -3556,7 +3556,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}
      * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Start Time</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime()
      * @see #getRun()
@@ -3568,7 +3568,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getMeasurement
      * <em>Measurement</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Measurement</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Run#getMeasurement()
      * @see #getRun()
@@ -3580,7 +3580,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
      * <em>Experiment Group Run</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Experiment Group Run</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
      * @generated
@@ -3591,7 +3591,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun#getExperimentgroup
      * <em>Experimentgroup</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the container reference '<em>Experimentgroup</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun#getExperimentgroup()
      * @see #getExperimentGroupRun()
@@ -3603,7 +3603,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
      * <em>Identifier Based Measurements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Identifier Based Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
      * @generated
@@ -3614,7 +3614,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
      * <em>Numerical Ratio Statistics</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Numerical Ratio Statistics</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
      * @generated
@@ -3625,7 +3625,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getCoefficientOfVariation
      * <em>Coefficient Of Variation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Coefficient Of Variation</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getCoefficientOfVariation()
      * @see #getNumericalRatioStatistics()
@@ -3637,7 +3637,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getGeometricMean
      * <em>Geometric Mean</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Geometric Mean</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getGeometricMean()
      * @see #getNumericalRatioStatistics()
@@ -3649,7 +3649,7 @@ public interface ExperimentDataPackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getHarmonicMean
      * <em>Harmonic Mean</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Harmonic Mean</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics#getHarmonicMean()
      * @see #getNumericalRatioStatistics()
@@ -3662,7 +3662,7 @@ public interface ExperimentDataPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements
      * <em>Sensor Framework V1 Double Binary Measurements</em>}'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Sensor Framework V1 Double Binary Measurements</em>'.
      * @see org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements
      * @generated
@@ -3674,7 +3674,7 @@ public interface ExperimentDataPackage extends EPackage {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements
      * <em>Sensor Framework V1 Identifier Based Measurements</em>}'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Sensor Framework V1 Identifier Based Measurements</em>
      *         '.
      * @see org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements
@@ -3685,7 +3685,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * Returns the meta object for data type '{@link javax.measure.Measure <em>EJS Measure</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for data type '<em>EJS Measure</em>'.
      * @see javax.measure.Measure
      * @model instanceClass="javax.measure.Measure" typeParameters="V Q"
@@ -3697,7 +3697,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * Returns the meta object for data type '{@link javax.measure.Measure
      * <em>EJS Duration Measure</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for data type '<em>EJS Duration Measure</em>'.
      * @see javax.measure.Measure
      * @model instanceClass="javax.measure.Measure"
@@ -3708,7 +3708,7 @@ public interface ExperimentDataPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -3723,7 +3723,7 @@ public interface ExperimentDataPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
@@ -3732,7 +3732,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl
          * <em>Aggregated Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregatedMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregatedMeasurements()
          * @generated
@@ -3742,7 +3742,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measurement Range</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE = eINSTANCE.getAggregatedMeasurements_MeasurementRange();
@@ -3766,7 +3766,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Aggregation Statistics</b></em>' containment
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS = eINSTANCE
@@ -3792,7 +3792,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementRangeImpl
          * <em>Measurement Range</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementRangeImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurementRange()
          * @generated
@@ -3802,7 +3802,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Raw Measurements</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASUREMENT_RANGE__RAW_MEASUREMENTS = eINSTANCE.getMeasurementRange_RawMeasurements();
@@ -3810,7 +3810,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measurement</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASUREMENT_RANGE__MEASUREMENT = eINSTANCE.getMeasurementRange_Measurement();
@@ -3834,7 +3834,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Aggregated Measurements</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS = eINSTANCE.getMeasurementRange_AggregatedMeasurements();
@@ -3843,7 +3843,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.DataSeriesImpl
          * <em>Data Series</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.DataSeriesImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getDataSeries()
          * @generated
@@ -3853,7 +3853,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Numerical Statistics</b></em>' containment
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DATA_SERIES__NUMERICAL_STATISTICS = eINSTANCE.getDataSeries_NumericalStatistics();
@@ -3861,7 +3861,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Aggregated Measurements</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DATA_SERIES__AGGREGATED_MEASUREMENTS = eINSTANCE.getDataSeries_AggregatedMeasurements();
@@ -3877,7 +3877,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Textual Statistics</b></em>' containment
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DATA_SERIES__TEXTUAL_STATISTICS = eINSTANCE.getDataSeries_TextualStatistics();
@@ -3885,7 +3885,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Raw Measurements</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DATA_SERIES__RAW_MEASUREMENTS = eINSTANCE.getDataSeries_RawMeasurements();
@@ -3905,7 +3905,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Number Measurements</b></em>' attribute feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS = eINSTANCE
@@ -3914,7 +3914,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Numerical Mass Distribution</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION = eINSTANCE
@@ -3923,7 +3923,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Data Series</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES = eINSTANCE.getNumericalNominalStatistics_DataSeries();
@@ -3959,7 +3959,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Numerical Nominal Statistics</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS = eINSTANCE
@@ -3970,7 +3970,7 @@ public interface ExperimentDataPackage extends EPackage {
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.FixedWidthAggregatedMeasurementsImpl
          * <em>Fixed Width Aggregated Measurements</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.FixedWidthAggregatedMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedWidthAggregatedMeasurements()
          * @generated
@@ -3980,7 +3980,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Intervals</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS = eINSTANCE
@@ -3989,7 +3989,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Data Series</b></em>' containment reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES = eINSTANCE
@@ -3999,7 +3999,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.FixedIntervalsImpl
          * <em>Fixed Intervals</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.FixedIntervalsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getFixedIntervals()
          * @generated
@@ -4025,7 +4025,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Number Of Intervals</b></em>' attribute feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute FIXED_INTERVALS__NUMBER_OF_INTERVALS = eINSTANCE.getFixedIntervals_NumberOfIntervals();
@@ -4033,7 +4033,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Aggregated Measurements</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference FIXED_INTERVALS__AGGREGATED_MEASUREMENTS = eINSTANCE.getFixedIntervals_AggregatedMeasurements();
@@ -4053,7 +4053,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Number Measurements</b></em>' attribute feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS = eINSTANCE
@@ -4062,7 +4062,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Mass Distribution</b></em>' containment reference
          * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION = eINSTANCE
@@ -4071,7 +4071,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Data Series</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference TEXTUAL_NOMINAL_STATISTICS__DATA_SERIES = eINSTANCE.getTextualNominalStatistics_DataSeries();
@@ -4080,7 +4080,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.TextualMassDistributionImpl
          * <em>Textual Mass Distribution</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.TextualMassDistributionImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getTextualMassDistribution()
          * @generated
@@ -4106,7 +4106,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Textual Nominal Statistics</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS = eINSTANCE
@@ -4116,7 +4116,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl
          * <em>Propertyable</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.PropertyableImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getPropertyable()
          * @generated
@@ -4126,7 +4126,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Additional Information</b></em>' map feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference PROPERTYABLE__ADDITIONAL_INFORMATION = eINSTANCE.getPropertyable_AdditionalInformation();
@@ -4163,7 +4163,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.RawMeasurementsImpl
          * <em>Raw Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.RawMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getRawMeasurements()
          * @generated
@@ -4173,7 +4173,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Data Series</b></em>' containment reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference RAW_MEASUREMENTS__DATA_SERIES = eINSTANCE.getRawMeasurements_DataSeries();
@@ -4181,7 +4181,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measurement Range</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference RAW_MEASUREMENTS__MEASUREMENT_RANGE = eINSTANCE.getRawMeasurements_MeasurementRange();
@@ -4190,7 +4190,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupImpl
          * <em>Experiment Group</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentGroup()
          * @generated
@@ -4200,7 +4200,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Settings</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_GROUP__EXPERIMENT_SETTINGS = eINSTANCE.getExperimentGroup_ExperimentSettings();
@@ -4208,7 +4208,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measuring Types</b></em>' containment reference
          * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_GROUP__MEASURING_TYPES = eINSTANCE.getExperimentGroup_MeasuringTypes();
@@ -4224,7 +4224,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reports</b></em>' containment reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_GROUP__REPORTS = eINSTANCE.getExperimentGroup_Reports();
@@ -4232,7 +4232,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measuring Point Repositories</b></em>'
          * containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES = eINSTANCE
@@ -4250,7 +4250,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentSettingImpl
          * <em>Experiment Setting</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentSettingImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentSetting()
          * @generated
@@ -4268,7 +4268,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Runs</b></em>' containment reference
          * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_SETTING__EXPERIMENT_RUNS = eINSTANCE.getExperimentSetting_ExperimentRuns();
@@ -4276,7 +4276,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measuring Types</b></em>' reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_SETTING__MEASURING_TYPES = eINSTANCE.getExperimentSetting_MeasuringTypes();
@@ -4284,7 +4284,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Group</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_SETTING__EXPERIMENT_GROUP = eINSTANCE.getExperimentSetting_ExperimentGroup();
@@ -4293,7 +4293,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentRunImpl
          * <em>Experiment Run</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentRunImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentRun()
          * @generated
@@ -4303,7 +4303,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Setting</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_RUN__EXPERIMENT_SETTING = eINSTANCE.getExperimentRun_ExperimentSetting();
@@ -4312,7 +4312,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementImpl
          * <em>Measurement</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasurementImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasurement()
          * @generated
@@ -4330,7 +4330,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measurement Ranges</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASUREMENT__MEASUREMENT_RANGES = eINSTANCE.getMeasurement_MeasurementRanges();
@@ -4347,7 +4347,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.MeasuringTypeImpl
          * <em>Measuring Type</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.MeasuringTypeImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getMeasuringType()
          * @generated
@@ -4357,7 +4357,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Group</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASURING_TYPE__EXPERIMENT_GROUP = eINSTANCE.getMeasuringType_ExperimentGroup();
@@ -4365,7 +4365,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experiment Settings</b></em>' reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MEASURING_TYPE__EXPERIMENT_SETTINGS = eINSTANCE.getMeasuringType_ExperimentSettings();
@@ -4390,7 +4390,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl
          * <em>Aggregation Statistics</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.AggregationStatisticsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getAggregationStatistics()
          * @generated
@@ -4400,7 +4400,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Distinct Values Before Aggregation</b></em>'
          * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION = eINSTANCE
@@ -4409,7 +4409,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Distinct Values After Aggregation</b></em>'
          * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION = eINSTANCE
@@ -4418,7 +4418,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Aggregated Measurements</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS = eINSTANCE
@@ -4428,7 +4428,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.LongBinaryMeasurementsImpl
          * <em>Long Binary Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.LongBinaryMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getLongBinaryMeasurements()
          * @generated
@@ -4478,7 +4478,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Arithmethic Mean</b></em>' attribute feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN = eINSTANCE
@@ -4495,7 +4495,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Standard Deviation</b></em>' attribute feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute NUMERICAL_INTERVAL_STATISTICS__STANDARD_DEVIATION = eINSTANCE
@@ -4548,7 +4548,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Percentiles</b></em>' containment reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NUMERICAL_ORDINAL_STATISTICS__PERCENTILES = eINSTANCE.getNumericalOrdinalStatistics_Percentiles();
@@ -4557,7 +4557,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl
          * <em>Numerical Percentile</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.NumericalPercentileImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getNumericalPercentile()
          * @generated
@@ -4583,7 +4583,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Ordinal Statistics</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NUMERICAL_PERCENTILE__ORDINAL_STATISTICS = eINSTANCE.getNumericalPercentile_OrdinalStatistics();
@@ -4592,7 +4592,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.JSXmlMeasurementsImpl
          * <em>JS Xml Measurements</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.JSXmlMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getJSXmlMeasurements()
          * @generated
@@ -4602,7 +4602,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '{@link javax.measure.quantity.Duration
          * <em>IJS Duration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see javax.measure.quantity.Duration
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getIJSDuration()
          * @generated
@@ -4612,7 +4612,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '{@link java.lang.Comparable <em>EComparable</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see java.lang.Comparable
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEComparable()
          * @generated
@@ -4659,7 +4659,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.RunImpl <em>Run</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.RunImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getRun()
          * @generated
@@ -4685,7 +4685,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Measurement</b></em>' containment reference list
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference RUN__MEASUREMENT = eINSTANCE.getRun_Measurement();
@@ -4694,7 +4694,7 @@ public interface ExperimentDataPackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupRunImpl
          * <em>Experiment Group Run</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentGroupRunImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getExperimentGroupRun()
          * @generated
@@ -4704,7 +4704,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Experimentgroup</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP = eINSTANCE.getExperimentGroupRun_Experimentgroup();
@@ -4736,7 +4736,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Coefficient Of Variation</b></em>' attribute
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION = eINSTANCE
@@ -4763,7 +4763,7 @@ public interface ExperimentDataPackage extends EPackage {
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1DoubleBinaryMeasurementsImpl
          * <em>Sensor Framework V1 Double Binary Measurements</em>}' class. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1DoubleBinaryMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1DoubleBinaryMeasurements()
          * @generated
@@ -4776,7 +4776,7 @@ public interface ExperimentDataPackage extends EPackage {
          * {@link org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1IdentifierBasedMeasurementsImpl
          * <em>Sensor Framework V1 Identifier Based Measurements</em>}' class. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.SensorFrameworkV1IdentifierBasedMeasurementsImpl
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getSensorFrameworkV1IdentifierBasedMeasurements()
          * @generated
@@ -4787,7 +4787,7 @@ public interface ExperimentDataPackage extends EPackage {
         /**
          * The meta object literal for the '<em>EJS Measure</em>' data type. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @see javax.measure.Measure
          * @see org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl#getEJSMeasure()
          * @generated

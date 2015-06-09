@@ -8,12 +8,9 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution;
@@ -52,28 +49,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
     protected static final long FREQUENCY_EDEFAULT = 0L;
 
     /**
-     * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getFrequency()
-     * @generated
-     * @ordered
-     */
-    protected long frequency = FREQUENCY_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
-    protected Measure value;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalMassDistributionImpl() {
@@ -82,7 +59,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,70 +69,73 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public long getFrequency() {
-        return this.frequency;
+        return (Long) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setFrequency(final long newFrequency) {
-        final long oldFrequency = this.frequency;
-        this.frequency = newFrequency;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, this.frequency));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY, newFrequency);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getValue() {
-        return this.value;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__VALUE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setValue(final Measure newValue) {
-        final Measure oldValue = this.value;
-        this.value = newValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE, oldValue, this.value));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__VALUE, newValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public NumericalNominalStatistics getNumericalNominalStatistics() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS) {
-            return null;
-        }
-        return (NumericalNominalStatistics) this.eInternalContainer();
+        return (NumericalNominalStatistics) this.eDynamicGet(
+                ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetNumericalNominalStatistics(
@@ -167,39 +147,19 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setNumericalNominalStatistics(final NumericalNominalStatistics newNumericalNominalStatistics) {
-        if (newNumericalNominalStatistics != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS && newNumericalNominalStatistics != null)) {
-            if (EcoreUtil.isAncestor(this, newNumericalNominalStatistics)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newNumericalNominalStatistics != null) {
-                msgs = ((InternalEObject) newNumericalNominalStatistics).eInverseAdd(this,
-                        ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
-                        NumericalNominalStatistics.class, msgs);
-            }
-            msgs = this.basicSetNumericalNominalStatistics(newNumericalNominalStatistics, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS,
-                    newNumericalNominalStatistics, newNumericalNominalStatistics));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS,
+                ExperimentDataPackage.Literals.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS,
+                newNumericalNominalStatistics);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -216,7 +176,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +191,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -247,7 +207,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -265,7 +225,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -286,7 +246,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -307,40 +267,20 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
-            return this.frequency != FREQUENCY_EDEFAULT;
+            return this.getFrequency() != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
-            return this.value != null;
+            return this.getValue() != null;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
             return this.getNumericalNominalStatistics() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (frequency: ");
-        result.append(this.frequency);
-        result.append(", value: ");
-        result.append(this.value);
-        result.append(')');
-        return result.toString();
     }
 
 } // NumericalMassDistributionImpl

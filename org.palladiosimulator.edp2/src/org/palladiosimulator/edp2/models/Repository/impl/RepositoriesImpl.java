@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.impl.resource.EmfModelXMIResourceFactoryImpl;
@@ -44,26 +43,6 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
-     * The cached value of the '{@link #getAvailableRepositories() <em>Available Repositories</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAvailableRepositories()
-     * @generated
-     * @ordered
-     */
-    protected EList<Repository> availableRepositories;
-
-    /**
-     * The cached value of the '{@link #getCommonResourceSet() <em>Common Resource Set</em>}'
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getCommonResourceSet()
-     * @generated
-     * @ordered
-     */
-    protected ResourceSet commonResourceSet;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated NOT
@@ -71,13 +50,13 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
     protected RepositoriesImpl() {
         super();
         // DEFAULT: Generate a new resource set by which all EMF resources are managed.
-        this.commonResourceSet = EmfModelXMIResourceFactoryImpl.createResourceSet();
+        this.setCommonResourceSet(EmfModelXMIResourceFactoryImpl.createResourceSet());
         // EmfmodelPackageImpl.eINSTANCE.eClass();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,16 +66,24 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
     public EList<Repository> getAvailableRepositories() {
-        if (this.availableRepositories == null) {
-            this.availableRepositories = new EObjectContainmentWithInverseEList<Repository>(Repository.class, this,
-                    RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, RepositoryPackage.REPOSITORY__REPOSITORIES);
-        }
-        return this.availableRepositories;
+        return (EList<Repository>) this.eDynamicGet(RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES,
+                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES, true, true);
     }
 
     /**
@@ -107,48 +94,45 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
     @Override
     public ResourceSet getCommonResourceSet() {
         // Added "commonResourceSet instanceof EObject && " as this returns an error
-        if (this.commonResourceSet != null && this.commonResourceSet instanceof EObject
-                && ((EObject) this.commonResourceSet).eIsProxy()) {
-            final InternalEObject oldCommonResourceSet = (InternalEObject) this.commonResourceSet;
-            this.commonResourceSet = (ResourceSet) this.eResolveProxy(oldCommonResourceSet);
-            if (this.commonResourceSet != oldCommonResourceSet) {
+        if (this.basicGetCommonResourceSet() != null && this.basicGetCommonResourceSet() instanceof EObject
+                && ((EObject) this.basicGetCommonResourceSet()).eIsProxy()) {
+            final InternalEObject oldCommonResourceSet = (InternalEObject) this.basicGetCommonResourceSet();
+            this.setCommonResourceSet((ResourceSet) this.eResolveProxy(oldCommonResourceSet));
+            if (this.basicGetCommonResourceSet() != oldCommonResourceSet) {
                 if (this.eNotificationRequired()) {
                     this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet,
-                            this.commonResourceSet));
+                            RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, this
+                            .basicGetCommonResourceSet()));
                 }
             }
         }
-        return this.commonResourceSet;
+        return this.basicGetCommonResourceSet();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ResourceSet basicGetCommonResourceSet() {
-        return this.commonResourceSet;
+        return (ResourceSet) this.eDynamicGet(RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET,
+                RepositoryPackage.Literals.REPOSITORIES__COMMON_RESOURCE_SET, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setCommonResourceSet(final ResourceSet newCommonResourceSet) {
-        final ResourceSet oldCommonResourceSet = this.commonResourceSet;
-        this.commonResourceSet = newCommonResourceSet;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, this.commonResourceSet));
-        }
+        this.eDynamicSet(RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET,
+                RepositoryPackage.Literals.REPOSITORIES__COMMON_RESOURCE_SET, newCommonResourceSet);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -165,7 +149,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -180,7 +164,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -199,7 +183,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -219,7 +203,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -237,16 +221,16 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
-            return this.availableRepositories != null && !this.availableRepositories.isEmpty();
+            return !this.getAvailableRepositories().isEmpty();
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
-            return this.commonResourceSet != null;
+            return this.basicGetCommonResourceSet() != null;
         }
         return super.eIsSet(featureID);
     }

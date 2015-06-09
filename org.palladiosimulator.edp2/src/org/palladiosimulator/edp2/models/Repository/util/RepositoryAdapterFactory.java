@@ -28,7 +28,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
  * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage
  * @generated
  */
@@ -36,14 +36,14 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static RepositoryPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RepositoryAdapterFactory() {
@@ -56,7 +56,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc
      * --> This implementation returns <code>true</code> if the object is either the model's package
      * or is an instance object of the model. <!-- end-user-doc -->
-     *
+     * 
      * @return whether this factory is applicable for the type of the object.
      * @generated
      */
@@ -74,7 +74,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
     /**
      * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RepositorySwitch<Adapter> modelSwitch = new RepositorySwitch<Adapter>() {
@@ -142,7 +142,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
@@ -159,7 +159,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Local Directory Repository</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
      * @generated
@@ -188,7 +188,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Local Memory Repository</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
      * @generated
@@ -203,7 +203,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Remote Cdo Repository</em>}'. <!-- begin-user-doc --> This default implementation returns
      * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
      * catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
      * @generated
@@ -218,7 +218,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Local Sensor Framework Repository</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository
      * @generated
@@ -233,7 +233,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.Repositories
      * @generated
@@ -263,7 +263,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Measurements Dao Factory</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * @generated
@@ -277,7 +277,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Meta Dao</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
      * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
      * cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.edp2.dao.MetaDao
      * @generated
@@ -306,7 +306,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
@@ -318,7 +318,7 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
      * implementation returns null. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @generated
      */

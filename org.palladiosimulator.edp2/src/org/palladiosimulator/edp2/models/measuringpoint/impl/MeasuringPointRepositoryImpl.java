@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
@@ -33,18 +32,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class MeasuringPointRepositoryImpl extends IdentifierImpl implements MeasuringPointRepository {
 
     /**
-     * The cached value of the '{@link #getMeasuringPoints() <em>Measuring Points</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringPoints()
-     * @generated
-     * @ordered
-     */
-    protected EList<MeasuringPoint> measuringPoints;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasuringPointRepositoryImpl() {
@@ -53,7 +42,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -63,22 +52,20 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<MeasuringPoint> getMeasuringPoints() {
-        if (this.measuringPoints == null) {
-            this.measuringPoints = new EObjectContainmentWithInverseEList<MeasuringPoint>(MeasuringPoint.class, this,
-                    MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS,
-                    MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY);
-        }
-        return this.measuringPoints;
+        return (EList<MeasuringPoint>) this.eDynamicGet(
+                MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS,
+                MeasuringpointPackage.Literals.MEASURING_POINT_REPOSITORY__MEASURING_POINTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -95,7 +82,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +97,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -124,7 +111,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -141,7 +128,7 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -156,14 +143,14 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
-            return this.measuringPoints != null && !this.measuringPoints.isEmpty();
+            return !this.getMeasuringPoints().isEmpty();
         }
         return super.eIsSet(featureID);
     }

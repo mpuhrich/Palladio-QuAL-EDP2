@@ -6,13 +6,9 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
@@ -52,28 +48,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
     protected static final long FREQUENCY_EDEFAULT = 0L;
 
     /**
-     * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getFrequency()
-     * @generated
-     * @ordered
-     */
-    protected long frequency = FREQUENCY_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getIdentifier()
-     * @generated
-     * @ordered
-     */
-    protected Identifier identifier;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TextualMassDistributionImpl() {
@@ -82,7 +58,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,89 +68,83 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public long getFrequency() {
-        return this.frequency;
+        return (Long) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setFrequency(final long newFrequency) {
-        final long oldFrequency = this.frequency;
-        this.frequency = newFrequency;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, oldFrequency, this.frequency));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY, newFrequency);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Identifier getIdentifier() {
-        if (this.identifier != null && ((EObject) this.identifier).eIsProxy()) {
-            final InternalEObject oldIdentifier = (InternalEObject) this.identifier;
-            this.identifier = (Identifier) this.eResolveProxy(oldIdentifier);
-            if (this.identifier != oldIdentifier) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, this.identifier));
-                }
-            }
-        }
-        return this.identifier;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Identifier basicGetIdentifier() {
-        return this.identifier;
+        return (Identifier) this.eDynamicGet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setIdentifier(final Identifier newIdentifier) {
-        final Identifier oldIdentifier = this.identifier;
-        this.identifier = newIdentifier;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, oldIdentifier, this.identifier));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER, newIdentifier);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public TextualNominalStatistics getTextualNominalStatistics() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS) {
-            return null;
-        }
-        return (TextualNominalStatistics) this.eInternalContainer();
+        return (TextualNominalStatistics) this.eDynamicGet(
+                ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetTextualNominalStatistics(
@@ -186,39 +156,19 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setTextualNominalStatistics(final TextualNominalStatistics newTextualNominalStatistics) {
-        if (newTextualNominalStatistics != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS && newTextualNominalStatistics != null)) {
-            if (EcoreUtil.isAncestor(this, newTextualNominalStatistics)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newTextualNominalStatistics != null) {
-                msgs = ((InternalEObject) newTextualNominalStatistics).eInverseAdd(this,
-                        ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
-                        TextualNominalStatistics.class, msgs);
-            }
-            msgs = this.basicSetTextualNominalStatistics(newTextualNominalStatistics, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS,
-                    newTextualNominalStatistics, newTextualNominalStatistics));
-        }
+        this.eDynamicSet(ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS,
+                ExperimentDataPackage.Literals.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS,
+                newTextualNominalStatistics);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -235,7 +185,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -250,7 +200,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -266,7 +216,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -287,7 +237,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -308,7 +258,7 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -329,38 +279,20 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
-            return this.frequency != FREQUENCY_EDEFAULT;
+            return this.getFrequency() != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
-            return this.identifier != null;
+            return this.basicGetIdentifier() != null;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
             return this.getTextualNominalStatistics() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (frequency: ");
-        result.append(this.frequency);
-        result.append(')');
-        return result.toString();
     }
 
 } // TextualMassDistributionImpl

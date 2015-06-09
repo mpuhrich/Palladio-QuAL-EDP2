@@ -8,18 +8,12 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
@@ -66,36 +60,6 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGroup {
 
     /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
-
-    /**
-     * The cached value of the '{@link #getExperimentSettings() <em>Experiment Settings</em>}'
-     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getExperimentSettings()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExperimentSetting> experimentSettings;
-
-    /**
-     * The cached value of the '{@link #getMeasuringTypes() <em>Measuring Types</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringTypes()
-     * @generated
-     * @ordered
-     */
-    protected EList<MeasuringType> measuringTypes;
-
-    /**
      * The default value of the '{@link #getPurpose() <em>Purpose</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -106,49 +70,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     protected static final String PURPOSE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getPurpose()
-     * @generated
-     * @ordered
-     */
-    protected String purpose = PURPOSE_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getRepository() <em>Repository</em>}' reference. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getRepository()
-     * @generated
-     * @ordered
-     */
-    protected Repository repository;
-
-    /**
-     * The cached value of the '{@link #getReports() <em>Reports</em>}' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getReports()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExperimentGroupRun> reports;
-
-    /**
-     * The cached value of the '{@link #getMeasuringPointRepositories()
-     * <em>Measuring Point Repositories</em>}' containment reference list. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getMeasuringPointRepositories()
-     * @generated
-     * @ordered
-     */
-    protected EList<MeasuringPointRepository> measuringPointRepositories;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentGroupImpl() {
@@ -157,7 +80,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -167,183 +90,133 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
+        return (EMap<String, Object>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION,
+                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<ExperimentSetting> getExperimentSettings() {
-        if (this.experimentSettings == null) {
-            this.experimentSettings = new EObjectContainmentWithInverseEList<ExperimentSetting>(
-                    ExperimentSetting.class, this, ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP);
-        }
-        return this.experimentSettings;
+        return (EList<ExperimentSetting>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<MeasuringType> getMeasuringTypes() {
-        if (this.measuringTypes == null) {
-            this.measuringTypes = new EObjectContainmentWithInverseEList<MeasuringType>(MeasuringType.class, this,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES,
-                    ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP);
-        }
-        return this.measuringTypes;
+        return (EList<MeasuringType>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_TYPES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Repository getRepository() {
-        if (this.repository != null && ((EObject) this.repository).eIsProxy()) {
-            final InternalEObject oldRepository = (InternalEObject) this.repository;
-            this.repository = (Repository) this.eResolveProxy(oldRepository);
-            if (this.repository != oldRepository) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, this.repository));
-                }
-            }
-        }
-        return this.repository;
+        return (Repository) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Repository basicGetRepository() {
-        return this.repository;
+        return (Repository) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetRepository(final Repository newRepository, NotificationChain msgs) {
-        final Repository oldRepository = this.repository;
-        this.repository = newRepository;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, oldRepository, newRepository);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newRepository,
+                ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setRepository(final Repository newRepository) {
-        if (newRepository != this.repository) {
-            NotificationChain msgs = null;
-            if (this.repository != null) {
-                msgs = ((InternalEObject) this.repository).eInverseRemove(this,
-                        RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
-            }
-            if (newRepository != null) {
-                msgs = ((InternalEObject) newRepository).eInverseAdd(this,
-                        RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
-            }
-            msgs = this.basicSetRepository(newRepository, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, newRepository, newRepository));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY, newRepository);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<ExperimentGroupRun> getReports() {
-        if (this.reports == null) {
-            this.reports = new EObjectContainmentWithInverseEList<ExperimentGroupRun>(ExperimentGroupRun.class, this,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS,
-                    ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP);
-        }
-        return this.reports;
+        return (EList<ExperimentGroupRun>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<MeasuringPointRepository> getMeasuringPointRepositories() {
-        if (this.measuringPointRepositories == null) {
-            this.measuringPointRepositories = new EObjectContainmentEList<MeasuringPointRepository>(
-                    MeasuringPointRepository.class, this,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES);
-        }
-        return this.measuringPointRepositories;
+        return (EList<MeasuringPointRepository>) this.eDynamicGet(
+                ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getPurpose() {
-        return this.purpose;
+        return (String) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__PURPOSE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setPurpose(final String newPurpose) {
-        final String oldPurpose = this.purpose;
-        this.purpose = newPurpose;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE,
-                    oldPurpose, this.purpose));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE,
+                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__PURPOSE, newPurpose);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -357,8 +230,9 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasuringTypes()).basicAdd(otherEnd,
                     msgs);
         case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-            if (this.repository != null) {
-                msgs = ((InternalEObject) this.repository).eInverseRemove(this,
+            final Repository repository = this.basicGetRepository();
+            if (repository != null) {
+                msgs = ((InternalEObject) repository).eInverseRemove(this,
                         RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS, Repository.class, msgs);
             }
             return this.basicSetRepository((Repository) otherEnd, msgs);
@@ -370,7 +244,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -395,7 +269,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -428,7 +302,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -466,7 +340,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -499,33 +373,33 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
+            return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
-            return this.experimentSettings != null && !this.experimentSettings.isEmpty();
+            return !this.getExperimentSettings().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES:
-            return this.measuringTypes != null && !this.measuringTypes.isEmpty();
+            return !this.getMeasuringTypes().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
-            return PURPOSE_EDEFAULT == null ? this.purpose != null : !PURPOSE_EDEFAULT.equals(this.purpose);
+            return PURPOSE_EDEFAULT == null ? this.getPurpose() != null : !PURPOSE_EDEFAULT.equals(this.getPurpose());
         case ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY:
-            return this.repository != null;
+            return this.basicGetRepository() != null;
         case ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS:
-            return this.reports != null && !this.reports.isEmpty();
+            return !this.getReports().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES:
-            return this.measuringPointRepositories != null && !this.measuringPointRepositories.isEmpty();
+            return !this.getMeasuringPointRepositories().isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -543,7 +417,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -557,24 +431,6 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (purpose: ");
-        result.append(this.purpose);
-        result.append(')');
-        return result.toString();
     }
 
 } // ExperimentGroupImpl

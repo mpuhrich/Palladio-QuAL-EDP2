@@ -40,7 +40,7 @@ public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Storage Unit</em>' attribute.
      * @see #setStorageUnit(Unit)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDoubleBinaryMeasurements_StorageUnit()
@@ -53,7 +53,7 @@ public interface DoubleBinaryMeasurements<Q extends Quantity> extends DataSeries
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements#getStorageUnit
      * <em>Storage Unit</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Storage Unit</em>' attribute.
      * @see #getStorageUnit()

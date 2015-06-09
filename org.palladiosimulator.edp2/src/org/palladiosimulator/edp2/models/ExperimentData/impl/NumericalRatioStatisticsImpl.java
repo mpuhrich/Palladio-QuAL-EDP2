@@ -8,9 +8,7 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics;
 
@@ -37,38 +35,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
 public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImpl implements NumericalRatioStatistics {
 
     /**
-     * The cached value of the '{@link #getCoefficientOfVariation()
-     * <em>Coefficient Of Variation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getCoefficientOfVariation()
-     * @generated
-     * @ordered
-     */
-    protected Measure coefficientOfVariation;
-
-    /**
-     * The cached value of the '{@link #getGeometricMean() <em>Geometric Mean</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getGeometricMean()
-     * @generated
-     * @ordered
-     */
-    protected Measure geometricMean;
-
-    /**
-     * The cached value of the '{@link #getHarmonicMean() <em>Harmonic Mean</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getHarmonicMean()
-     * @generated
-     * @ordered
-     */
-    protected Measure harmonicMean;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalRatioStatisticsImpl() {
@@ -77,7 +45,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,84 +55,74 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getCoefficientOfVariation() {
-        return this.coefficientOfVariation;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setCoefficientOfVariation(final Measure newCoefficientOfVariation) {
-        final Measure oldCoefficientOfVariation = this.coefficientOfVariation;
-        this.coefficientOfVariation = newCoefficientOfVariation;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
-                    oldCoefficientOfVariation, this.coefficientOfVariation));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION,
+                newCoefficientOfVariation);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getGeometricMean() {
-        return this.geometricMean;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setGeometricMean(final Measure newGeometricMean) {
-        final Measure oldGeometricMean = this.geometricMean;
-        this.geometricMean = newGeometricMean;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN, oldGeometricMean,
-                    this.geometricMean));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN, newGeometricMean);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getHarmonicMean() {
-        return this.harmonicMean;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setHarmonicMean(final Measure newHarmonicMean) {
-        final Measure oldHarmonicMean = this.harmonicMean;
-        this.harmonicMean = newHarmonicMean;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN, oldHarmonicMean, this.harmonicMean));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN,
+                ExperimentDataPackage.Literals.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN, newHarmonicMean);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -182,7 +140,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -203,7 +161,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -224,42 +182,20 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
-            return this.coefficientOfVariation != null;
+            return this.getCoefficientOfVariation() != null;
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN:
-            return this.geometricMean != null;
+            return this.getGeometricMean() != null;
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN:
-            return this.harmonicMean != null;
+            return this.getHarmonicMean() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (coefficientOfVariation: ");
-        result.append(this.coefficientOfVariation);
-        result.append(", geometricMean: ");
-        result.append(this.geometricMean);
-        result.append(", harmonicMean: ");
-        result.append(this.harmonicMean);
-        result.append(')');
-        return result.toString();
     }
 
 } // NumericalRatioStatisticsImpl

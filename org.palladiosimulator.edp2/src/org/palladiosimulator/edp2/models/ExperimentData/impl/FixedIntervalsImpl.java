@@ -8,12 +8,9 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals;
 import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements;
@@ -45,29 +42,9 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals {
 
     /**
-     * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getLowerBound()
-     * @generated
-     * @ordered
-     */
-    protected Measure lowerBound;
-
-    /**
-     * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getWidth()
-     * @generated
-     * @ordered
-     */
-    protected Measure width;
-
-    /**
      * The default value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getNumberOfIntervals()
      * @generated
      * @ordered
@@ -75,18 +52,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     protected static final long NUMBER_OF_INTERVALS_EDEFAULT = 0L;
 
     /**
-     * The cached value of the '{@link #getNumberOfIntervals() <em>Number Of Intervals</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getNumberOfIntervals()
-     * @generated
-     * @ordered
-     */
-    protected long numberOfIntervals = NUMBER_OF_INTERVALS_EDEFAULT;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedIntervalsImpl() {
@@ -95,7 +62,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,96 +72,85 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getLowerBound() {
-        return this.lowerBound;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__LOWER_BOUND, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setLowerBound(final Measure newLowerBound) {
-        final Measure oldLowerBound = this.lowerBound;
-        this.lowerBound = newLowerBound;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND, oldLowerBound, this.lowerBound));
-        }
+        this.eDynamicSet(ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__LOWER_BOUND, newLowerBound);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getWidth() {
-        return this.width;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.FIXED_INTERVALS__WIDTH,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__WIDTH, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setWidth(final Measure newWidth) {
-        final Measure oldWidth = this.width;
-        this.width = newWidth;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.FIXED_INTERVALS__WIDTH,
-                    oldWidth, this.width));
-        }
+        this.eDynamicSet(ExperimentDataPackage.FIXED_INTERVALS__WIDTH,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__WIDTH, newWidth);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public long getNumberOfIntervals() {
-        return this.numberOfIntervals;
+        return (Long) this.eDynamicGet(ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__NUMBER_OF_INTERVALS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setNumberOfIntervals(final long newNumberOfIntervals) {
-        final long oldNumberOfIntervals = this.numberOfIntervals;
-        this.numberOfIntervals = newNumberOfIntervals;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS, oldNumberOfIntervals,
-                    this.numberOfIntervals));
-        }
+        this.eDynamicSet(ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__NUMBER_OF_INTERVALS, newNumberOfIntervals);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public FixedWidthAggregatedMeasurements getAggregatedMeasurements() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS) {
-            return null;
-        }
-        return (FixedWidthAggregatedMeasurements) this.eInternalContainer();
+        return (FixedWidthAggregatedMeasurements) this.eDynamicGet(
+                ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(
@@ -206,39 +162,18 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setAggregatedMeasurements(final FixedWidthAggregatedMeasurements newAggregatedMeasurements) {
-        if (newAggregatedMeasurements != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS && newAggregatedMeasurements != null)) {
-            if (EcoreUtil.isAncestor(this, newAggregatedMeasurements)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newAggregatedMeasurements != null) {
-                msgs = ((InternalEObject) newAggregatedMeasurements).eInverseAdd(this,
-                        ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
-                        FixedWidthAggregatedMeasurements.class, msgs);
-            }
-            msgs = this.basicSetAggregatedMeasurements(newAggregatedMeasurements, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, newAggregatedMeasurements,
-                    newAggregatedMeasurements));
-        }
+        this.eDynamicSet(ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS,
+                ExperimentDataPackage.Literals.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, newAggregatedMeasurements);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -255,7 +190,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -270,7 +205,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -286,7 +221,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -306,7 +241,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -330,7 +265,7 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -354,44 +289,22 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
-            return this.lowerBound != null;
+            return this.getLowerBound() != null;
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
-            return this.width != null;
+            return this.getWidth() != null;
         case ExperimentDataPackage.FIXED_INTERVALS__NUMBER_OF_INTERVALS:
-            return this.numberOfIntervals != NUMBER_OF_INTERVALS_EDEFAULT;
+            return this.getNumberOfIntervals() != NUMBER_OF_INTERVALS_EDEFAULT;
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
             return this.getAggregatedMeasurements() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (lowerBound: ");
-        result.append(this.lowerBound);
-        result.append(", width: ");
-        result.append(this.width);
-        result.append(", numberOfIntervals: ");
-        result.append(this.numberOfIntervals);
-        result.append(')');
-        return result.toString();
     }
 
 } // FixedIntervalsImpl

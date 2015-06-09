@@ -11,7 +11,6 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -34,18 +33,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 public abstract class PropertyableImpl extends CDOObjectImpl implements Propertyable {
 
     /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected PropertyableImpl() {
@@ -54,7 +43,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,22 +53,29 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
-    public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
+    protected int eStaticFeatureCount() {
+        return 0;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public EMap<String, Object> getAdditionalInformation() {
+        return (EMap<String, Object>) this.eDynamicGet(ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION,
+                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -94,7 +90,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -112,7 +108,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -127,7 +123,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,14 +138,14 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
+            return !this.getAdditionalInformation().isEmpty();
         }
         return super.eIsSet(featureID);
     }

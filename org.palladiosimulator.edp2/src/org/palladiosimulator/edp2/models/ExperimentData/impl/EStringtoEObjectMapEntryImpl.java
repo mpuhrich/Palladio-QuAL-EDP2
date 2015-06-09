@@ -6,12 +6,10 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 
@@ -37,22 +35,12 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
     /**
      * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getTypedKey()
      * @generated
      * @ordered
      */
     protected static final String KEY_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getTypedKey()
-     * @generated
-     * @ordered
-     */
-    protected String key = KEY_EDEFAULT;
 
     /**
      * The default value of the '{@link #getTypedValue() <em>Value</em>}' attribute. <!--
@@ -65,18 +53,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
     protected static final Object VALUE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getTypedValue() <em>Value</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getTypedValue()
-     * @generated
-     * @ordered
-     */
-    protected Object value = VALUE_EDEFAULT;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EStringtoEObjectMapEntryImpl() {
@@ -85,7 +63,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,53 +73,57 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public String getTypedKey() {
-        return this.key;
+        return (String) this.eDynamicGet(ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY,
+                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void setTypedKey(final String newKey) {
-        final String oldKey = this.key;
-        this.key = newKey;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY, oldKey, this.key));
-        }
+        this.eDynamicSet(ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY,
+                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY, newKey);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Object getTypedValue() {
-        return this.value;
+        return this.eDynamicGet(ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE,
+                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void setTypedValue(final Object newValue) {
-        final Object oldValue = this.value;
-        this.value = newValue;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE, oldValue, this.value));
-        }
+        this.eDynamicSet(ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE,
+                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE, newValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +139,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -175,7 +157,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -193,50 +175,30 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
-            return KEY_EDEFAULT == null ? this.key != null : !KEY_EDEFAULT.equals(this.key);
+            return KEY_EDEFAULT == null ? this.getTypedKey() != null : !KEY_EDEFAULT.equals(this.getTypedKey());
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE:
-            return VALUE_EDEFAULT == null ? this.value != null : !VALUE_EDEFAULT.equals(this.value);
+            return VALUE_EDEFAULT == null ? this.getTypedValue() != null : !VALUE_EDEFAULT.equals(this.getTypedValue());
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (key: ");
-        result.append(this.key);
-        result.append(", value: ");
-        result.append(this.value);
-        result.append(')');
-        return result.toString();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected int hash = -1;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -250,7 +212,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -260,7 +222,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -270,7 +232,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -280,7 +242,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -290,7 +252,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -302,7 +264,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")

@@ -6,12 +6,9 @@
  */
 package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
@@ -34,7 +31,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentRunImpl() {
@@ -43,7 +40,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -53,20 +50,18 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public ExperimentSetting getExperimentSetting() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING) {
-            return null;
-        }
-        return (ExperimentSetting) this.eInternalContainer();
+        return (ExperimentSetting) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING,
+                ExperimentDataPackage.Literals.EXPERIMENT_RUN__EXPERIMENT_SETTING, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentSetting(final ExperimentSetting newExperimentSetting,
@@ -78,38 +73,18 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setExperimentSetting(final ExperimentSetting newExperimentSetting) {
-        if (newExperimentSetting != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING && newExperimentSetting != null)) {
-            if (EcoreUtil.isAncestor(this, newExperimentSetting)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newExperimentSetting != null) {
-                msgs = ((InternalEObject) newExperimentSetting).eInverseAdd(this,
-                        ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS, ExperimentSetting.class, msgs);
-            }
-            msgs = this.basicSetExperimentSetting(newExperimentSetting, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING, newExperimentSetting,
-                    newExperimentSetting));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING,
+                ExperimentDataPackage.Literals.EXPERIMENT_RUN__EXPERIMENT_SETTING, newExperimentSetting);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -127,7 +102,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,7 +117,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +132,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -171,7 +146,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -187,7 +162,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -202,7 +177,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

@@ -8,18 +8,12 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
@@ -59,16 +53,6 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentSetting {
 
     /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
-
-    /**
      * The default value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -79,38 +63,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     protected static final String DESCRIPTION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDescription()
-     * @generated
-     * @ordered
-     */
-    protected String description = DESCRIPTION_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getExperimentRuns() <em>Experiment Runs</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getExperimentRuns()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExperimentRun> experimentRuns;
-
-    /**
-     * The cached value of the '{@link #getMeasuringTypes() <em>Measuring Types</em>}' reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasuringTypes()
-     * @generated
-     * @ordered
-     */
-    protected EList<MeasuringType> measuringTypes;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentSettingImpl() {
@@ -119,7 +73,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -129,90 +83,77 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
+        return (EMap<String, Object>) this.eDynamicGet(
+                ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION,
+                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getDescription() {
-        return this.description;
+        return (String) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__DESCRIPTION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDescription(final String newDescription) {
-        final String oldDescription = this.description;
-        this.description = newDescription;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION, oldDescription, this.description));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__DESCRIPTION, newDescription);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<ExperimentRun> getExperimentRuns() {
-        if (this.experimentRuns == null) {
-            this.experimentRuns = new EObjectContainmentWithInverseEList<ExperimentRun>(ExperimentRun.class, this,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
-                    ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING);
-        }
-        return this.experimentRuns;
+        return (EList<ExperimentRun>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<MeasuringType> getMeasuringTypes() {
-        if (this.measuringTypes == null) {
-            this.measuringTypes = new EObjectWithInverseResolvingEList.ManyInverse<MeasuringType>(MeasuringType.class,
-                    this, ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES,
-                    ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS);
-        }
-        return this.measuringTypes;
+        return (EList<MeasuringType>) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__MEASURING_TYPES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public ExperimentGroup getExperimentGroup() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP) {
-            return null;
-        }
-        return (ExperimentGroup) this.eInternalContainer();
+        return (ExperimentGroup) this.eDynamicGet(ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_GROUP, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetExperimentGroup(final ExperimentGroup newExperimentGroup, NotificationChain msgs) {
@@ -223,37 +164,18 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setExperimentGroup(final ExperimentGroup newExperimentGroup) {
-        if (newExperimentGroup != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP && newExperimentGroup != null)) {
-            if (EcoreUtil.isAncestor(this, newExperimentGroup)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newExperimentGroup != null) {
-                msgs = ((InternalEObject) newExperimentGroup).eInverseAdd(this,
-                        ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS, ExperimentGroup.class, msgs);
-            }
-            msgs = this.basicSetExperimentGroup(newExperimentGroup, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP, newExperimentGroup, newExperimentGroup));
-        }
+        this.eDynamicSet(ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP,
+                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_GROUP, newExperimentGroup);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -277,7 +199,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -298,7 +220,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -313,7 +235,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -339,7 +261,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -369,7 +291,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -396,21 +318,21 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
+            return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION:
-            return DESCRIPTION_EDEFAULT == null ? this.description != null : !DESCRIPTION_EDEFAULT
-                    .equals(this.description);
+            return DESCRIPTION_EDEFAULT == null ? this.getDescription() != null : !DESCRIPTION_EDEFAULT.equals(this
+                    .getDescription());
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS:
-            return this.experimentRuns != null && !this.experimentRuns.isEmpty();
+            return !this.getExperimentRuns().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES:
-            return this.measuringTypes != null && !this.measuringTypes.isEmpty();
+            return !this.getMeasuringTypes().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP:
             return this.getExperimentGroup() != null;
         }
@@ -419,7 +341,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -437,7 +359,7 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -451,24 +373,6 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (description: ");
-        result.append(this.description);
-        result.append(')');
-        return result.toString();
     }
 
 } // ExperimentSettingImpl

@@ -40,7 +40,7 @@ public interface FixedWidthAggregatedMeasurements extends AggregatedMeasurements
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Intervals</em>' containment reference.
      * @see #setIntervals(FixedIntervals)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedWidthAggregatedMeasurements_Intervals()
@@ -54,7 +54,7 @@ public interface FixedWidthAggregatedMeasurements extends AggregatedMeasurements
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements#getIntervals
      * <em>Intervals</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Intervals</em>' containment reference.
      * @see #getIntervals()
@@ -73,7 +73,7 @@ public interface FixedWidthAggregatedMeasurements extends AggregatedMeasurements
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Data Series</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedWidthAggregatedMeasurements_DataSeries()
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getAggregatedMeasurements

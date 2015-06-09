@@ -40,22 +40,12 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getUri()
      * @generated
      * @ordered
      */
     protected static final String URI_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getUri()
-     * @generated
-     * @ordered
-     */
-    protected String uri = URI_EDEFAULT;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -90,7 +80,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -100,12 +90,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getUri() {
-        return this.uri;
+        return (String) this.eDynamicGet(RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI,
+                RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI, true, true);
     }
 
     /**
@@ -115,12 +106,13 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public void setUri(final String newUri) {
-        final String oldUri = this.uri;
-        this.uri = newUri;
-        this.id = newUri;
+        final String oldUri = this.getUri();
+        this.eDynamicSet(RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI,
+                RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI, newUri);
+        this.setId(newUri);
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI, oldUri, this.uri));
+                    RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI, oldUri, this.getUri()));
         }
     }
 
@@ -176,7 +168,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -190,7 +182,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -205,7 +197,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -220,34 +212,16 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
-            return URI_EDEFAULT == null ? this.uri != null : !URI_EDEFAULT.equals(this.uri);
+            return URI_EDEFAULT == null ? this.getUri() != null : !URI_EDEFAULT.equals(this.getUri());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (uri: ");
-        result.append(this.uri);
-        result.append(')');
-        return result.toString();
     }
 
 } // LocalDirectoryRepositoryImpl

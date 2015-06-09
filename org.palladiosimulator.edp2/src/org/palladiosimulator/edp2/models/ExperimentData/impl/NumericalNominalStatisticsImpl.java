@@ -10,14 +10,10 @@ import java.util.Collection;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -49,29 +45,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class NumericalNominalStatisticsImpl extends IdentifierImpl implements NumericalNominalStatistics {
 
     /**
-     * The cached value of the '{@link #getNumberMeasurements() <em>Number Measurements</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getNumberMeasurements()
-     * @generated
-     * @ordered
-     */
-    protected Measure numberMeasurements;
-
-    /**
-     * The cached value of the '{@link #getNumericalMassDistribution()
-     * <em>Numerical Mass Distribution</em>}' containment reference list. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getNumericalMassDistribution()
-     * @generated
-     * @ordered
-     */
-    protected EList<NumericalMassDistribution> numericalMassDistribution;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalNominalStatisticsImpl() {
@@ -80,7 +55,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -90,62 +65,53 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getNumberMeasurements() {
-        return this.numberMeasurements;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS,
+                ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setNumberMeasurements(final Measure newNumberMeasurements) {
-        final Measure oldNumberMeasurements = this.numberMeasurements;
-        this.numberMeasurements = newNumberMeasurements;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS, oldNumberMeasurements,
-                    this.numberMeasurements));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS,
+                ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS, newNumberMeasurements);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<NumericalMassDistribution> getNumericalMassDistribution() {
-        if (this.numericalMassDistribution == null) {
-            this.numericalMassDistribution = new EObjectContainmentWithInverseEList<NumericalMassDistribution>(
-                    NumericalMassDistribution.class, this,
-                    ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
-                    ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS);
-        }
-        return this.numericalMassDistribution;
+        return (EList<NumericalMassDistribution>) this.eDynamicGet(
+                ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
+                ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public DataSeries getDataSeries() {
-        if (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES) {
-            return null;
-        }
-        return (DataSeries) this.eInternalContainer();
+        return (DataSeries) this.eDynamicGet(ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES,
+                ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetDataSeries(final DataSeries newDataSeries, NotificationChain msgs) {
@@ -156,37 +122,18 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDataSeries(final DataSeries newDataSeries) {
-        if (newDataSeries != this.eInternalContainer()
-                || (this.eContainerFeatureID() != ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES && newDataSeries != null)) {
-            if (EcoreUtil.isAncestor(this, newDataSeries)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newDataSeries != null) {
-                msgs = ((InternalEObject) newDataSeries).eInverseAdd(this,
-                        ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS, DataSeries.class, msgs);
-            }
-            msgs = this.basicSetDataSeries(newDataSeries, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES, newDataSeries, newDataSeries));
-        }
+        this.eDynamicSet(ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES,
+                ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES, newDataSeries);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -207,7 +154,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -224,7 +171,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -239,7 +186,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -257,7 +204,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -280,7 +227,7 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -301,38 +248,20 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
-            return this.numberMeasurements != null;
+            return this.getNumberMeasurements() != null;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
-            return this.numericalMassDistribution != null && !this.numericalMassDistribution.isEmpty();
+            return !this.getNumericalMassDistribution().isEmpty();
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
             return this.getDataSeries() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (numberMeasurements: ");
-        result.append(this.numberMeasurements);
-        result.append(')');
-        return result.toString();
     }
 
 } // NumericalNominalStatisticsImpl

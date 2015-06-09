@@ -8,13 +8,10 @@ package org.palladiosimulator.edp2.models.ExperimentData.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
@@ -42,28 +39,8 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 FixedWidthAggregatedMeasurements {
 
     /**
-     * The cached value of the '{@link #getIntervals() <em>Intervals</em>}' containment reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getIntervals()
-     * @generated
-     * @ordered
-     */
-    protected FixedIntervals intervals;
-
-    /**
-     * The cached value of the '{@link #getDataSeries() <em>Data Series</em>}' containment reference
-     * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDataSeries()
-     * @generated
-     * @ordered
-     */
-    protected EList<DataSeries> dataSeries;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedWidthAggregatedMeasurementsImpl() {
@@ -72,7 +49,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -82,79 +59,53 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public FixedIntervals getIntervals() {
-        return this.intervals;
+        return (FixedIntervals) this.eDynamicGet(ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
+                ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetIntervals(final FixedIntervals newIntervals, NotificationChain msgs) {
-        final FixedIntervals oldIntervals = this.intervals;
-        this.intervals = newIntervals;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, oldIntervals, newIntervals);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newIntervals,
+                ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setIntervals(final FixedIntervals newIntervals) {
-        if (newIntervals != this.intervals) {
-            NotificationChain msgs = null;
-            if (this.intervals != null) {
-                msgs = ((InternalEObject) this.intervals).eInverseRemove(this,
-                        ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, FixedIntervals.class, msgs);
-            }
-            if (newIntervals != null) {
-                msgs = ((InternalEObject) newIntervals).eInverseAdd(this,
-                        ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS, FixedIntervals.class, msgs);
-            }
-            msgs = this.basicSetIntervals(newIntervals, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, newIntervals, newIntervals));
-        }
+        this.eDynamicSet(ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
+                ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, newIntervals);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<DataSeries> getDataSeries() {
-        if (this.dataSeries == null) {
-            this.dataSeries = new EObjectContainmentWithInverseEList<DataSeries>(DataSeries.class, this,
-                    ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                    ExperimentDataPackage.DATA_SERIES__AGGREGATED_MEASUREMENTS);
-        }
-        return this.dataSeries;
+        return (EList<DataSeries>) this.eDynamicGet(
+                ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
+                ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -162,8 +113,9 @@ FixedWidthAggregatedMeasurements {
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
-            if (this.intervals != null) {
-                msgs = ((InternalEObject) this.intervals).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            final FixedIntervals intervals = this.getIntervals();
+            if (intervals != null) {
+                msgs = ((InternalEObject) intervals).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                         - ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS, null, msgs);
             }
             return this.basicSetIntervals((FixedIntervals) otherEnd, msgs);
@@ -175,7 +127,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -192,7 +144,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -208,7 +160,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -228,7 +180,7 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,16 +198,16 @@ FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
-            return this.intervals != null;
+            return this.getIntervals() != null;
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES:
-            return this.dataSeries != null && !this.dataSeries.isEmpty();
+            return !this.getDataSeries().isEmpty();
         }
         return super.eIsSet(featureID);
     }

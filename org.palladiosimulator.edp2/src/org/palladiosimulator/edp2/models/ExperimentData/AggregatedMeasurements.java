@@ -53,7 +53,7 @@ public interface AggregatedMeasurements extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Measurement Range</em>' container reference.
      * @see #setMeasurementRange(MeasurementRange)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregatedMeasurements_MeasurementRange()
@@ -93,7 +93,7 @@ public interface AggregatedMeasurements extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#isValid
      * <em>Valid</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Valid</em>' attribute.
      * @see #isValid()
@@ -108,7 +108,7 @@ public interface AggregatedMeasurements extends Identifier {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Function</em>' reference.
      * @see #setFunction(AggregationFunctionDescription)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregatedMeasurements_Function()
@@ -121,7 +121,7 @@ public interface AggregatedMeasurements extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getFunction
      * <em>Function</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Function</em>' reference.
      * @see #getFunction()
@@ -139,7 +139,7 @@ public interface AggregatedMeasurements extends Identifier {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Aggregation Statistics</em>' containment reference.
      * @see #setAggregationStatistics(AggregationStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregatedMeasurements_AggregationStatistics()
@@ -154,7 +154,7 @@ public interface AggregatedMeasurements extends Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationStatistics
      * <em>Aggregation Statistics</em>}' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Aggregation Statistics</em>' containment reference.
      * @see #getAggregationStatistics()
@@ -180,7 +180,7 @@ public interface AggregatedMeasurements extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getAggregationOn
      * <em>Aggregation On</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Aggregation On</em>' reference.
      * @see #getAggregationOn()
@@ -205,7 +205,7 @@ public interface AggregatedMeasurements extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMetric
      * <em>Metric</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Metric</em>' reference.
      * @see #getMetric()

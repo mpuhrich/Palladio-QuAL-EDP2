@@ -7,16 +7,12 @@ import java.util.Date;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
@@ -48,16 +44,6 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
-     * The cached value of the '{@link #getAdditionalInformation() <em>Additional Information</em>}'
-     * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getAdditionalInformation()
-     * @generated
-     * @ordered
-     */
-    protected EMap<String, Object> additionalInformation;
-
-    /**
      * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -66,16 +52,6 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      * @ordered
      */
     protected static final Measure DURATION_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDuration()
-     * @generated
-     * @ordered
-     */
-    protected Measure duration = DURATION_EDEFAULT;
 
     /**
      * The default value of the '{@link #getStartTime() <em>Start Time</em>}' attribute. <!--
@@ -88,28 +64,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     protected static final Date START_TIME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getStartTime() <em>Start Time</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getStartTime()
-     * @generated
-     * @ordered
-     */
-    protected Date startTime = START_TIME_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getMeasurement() <em>Measurement</em>}' containment
-     * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasurement()
-     * @generated
-     * @ordered
-     */
-    protected EList<Measurement> measurement;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RunImpl() {
@@ -118,7 +74,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,86 +84,74 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EMap<String, Object> getAdditionalInformation() {
-        if (this.additionalInformation == null) {
-            this.additionalInformation = new EcoreEMap<String, Object>(
-                    ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY, EStringtoEObjectMapEntryImpl.class,
-                    this, ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION);
-        }
-        return this.additionalInformation;
+        return (EMap<String, Object>) this.eDynamicGet(ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION,
+                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure getDuration() {
-        return this.duration;
+        return (Measure) this.eDynamicGet(ExperimentDataPackage.RUN__DURATION,
+                ExperimentDataPackage.Literals.RUN__DURATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDuration(final Measure newDuration) {
-        final Measure oldDuration = this.duration;
-        this.duration = newDuration;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.RUN__DURATION,
-                    oldDuration, this.duration));
-        }
+        this.eDynamicSet(ExperimentDataPackage.RUN__DURATION, ExperimentDataPackage.Literals.RUN__DURATION, newDuration);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Date getStartTime() {
-        return this.startTime;
+        return (Date) this.eDynamicGet(ExperimentDataPackage.RUN__START_TIME,
+                ExperimentDataPackage.Literals.RUN__START_TIME, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setStartTime(final Date newStartTime) {
-        final Date oldStartTime = this.startTime;
-        this.startTime = newStartTime;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, ExperimentDataPackage.RUN__START_TIME,
-                    oldStartTime, this.startTime));
-        }
+        this.eDynamicSet(ExperimentDataPackage.RUN__START_TIME, ExperimentDataPackage.Literals.RUN__START_TIME,
+                newStartTime);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<Measurement> getMeasurement() {
-        if (this.measurement == null) {
-            this.measurement = new EObjectContainmentWithInverseEList<Measurement>(Measurement.class, this,
-                    ExperimentDataPackage.RUN__MEASUREMENT, ExperimentDataPackage.MEASUREMENT__RUN);
-        }
-        return this.measurement;
+        return (EList<Measurement>) this.eDynamicGet(ExperimentDataPackage.RUN__MEASUREMENT,
+                ExperimentDataPackage.Literals.RUN__MEASUREMENT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -223,7 +167,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -240,7 +184,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -264,7 +208,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -290,7 +234,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -314,27 +258,29 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
-            return this.additionalInformation != null && !this.additionalInformation.isEmpty();
+            return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.RUN__DURATION:
-            return DURATION_EDEFAULT == null ? this.duration != null : !DURATION_EDEFAULT.equals(this.duration);
+            return DURATION_EDEFAULT == null ? this.getDuration() != null : !DURATION_EDEFAULT.equals(this
+                    .getDuration());
         case ExperimentDataPackage.RUN__START_TIME:
-            return START_TIME_EDEFAULT == null ? this.startTime != null : !START_TIME_EDEFAULT.equals(this.startTime);
+            return START_TIME_EDEFAULT == null ? this.getStartTime() != null : !START_TIME_EDEFAULT.equals(this
+                    .getStartTime());
         case ExperimentDataPackage.RUN__MEASUREMENT:
-            return this.measurement != null && !this.measurement.isEmpty();
+            return !this.getMeasurement().isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -352,7 +298,7 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -366,26 +312,6 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (duration: ");
-        result.append(this.duration);
-        result.append(", startTime: ");
-        result.append(this.startTime);
-        result.append(')');
-        return result.toString();
     }
 
 } // RunImpl

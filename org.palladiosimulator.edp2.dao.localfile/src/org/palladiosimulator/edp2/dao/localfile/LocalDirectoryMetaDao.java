@@ -52,6 +52,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     private LocalDirectoryRepository managedRepo;
 
     private final Adapter reposAdapter = new AdapterImpl() {
+
         @Override
         public void notifyChanged(final Notification msg) {
             if (msg.getFeature().equals(RepositoryPackage.Literals.REPOSITORY__REPOSITORIES)) {
@@ -73,17 +74,17 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     public void setParent(final MetaDao repo) {
         this.managedRepo = (LocalDirectoryRepository) repo;
         // observe changes on the assignment of the repository
-        managedRepo.eAdapters().add(reposAdapter);
+        this.managedRepo.eAdapters().add(this.reposAdapter);
         // observe changes on the ExperimentGroup list
-        final Adapter descAdapter = new LocalDirectoryMetaResourceAdapter(managedRepo,
+        final Adapter descAdapter = new LocalDirectoryMetaResourceAdapter(this.managedRepo,
                 RepositoryPackage.Literals.REPOSITORY__DESCRIPTIONS,
                 EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION);
-        managedRepo.eAdapters().add(descAdapter);
+        this.managedRepo.eAdapters().add(descAdapter);
         // observe changes on the Descriptions list
-        final Adapter expGroupAdapter = new LocalDirectoryMetaResourceAdapter(managedRepo,
+        final Adapter expGroupAdapter = new LocalDirectoryMetaResourceAdapter(this.managedRepo,
                 RepositoryPackage.Literals.REPOSITORY__EXPERIMENT_GROUPS,
                 EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION);
-        managedRepo.eAdapters().add(expGroupAdapter);
+        this.managedRepo.eAdapters().add(expGroupAdapter);
     }
 
     /*
@@ -93,7 +94,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      */
     @Override
     public MeasurementsDaoFactory getMeasurementsDaoFactory() {
-        return mmtDaoFactory;
+        return this.mmtDaoFactory;
     }
 
     /*
@@ -107,12 +108,12 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             return false;
         }
         try {
-            if (managedRepo.getRepositories() == null) {
+            if (this.managedRepo.getRepositories() == null) {
                 return false;
             }
             File directory = null;
             try {
-                directory = managedRepo.convertUriStringToFile(managedRepo.getUri());
+                directory = this.managedRepo.convertUriStringToFile(this.managedRepo.getUri());
             } catch (final DataNotAccessibleException e) {
                 return false;
             }
@@ -206,13 +207,13 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      *
      */
     private void closeRepository() {
-        if (mmtDaoFactory.isActive()) {
-            mmtDaoFactory.setActive(false);
+        if (this.mmtDaoFactory.isActive()) {
+            this.mmtDaoFactory.setActive(false);
         }
         // Warning: Cannot clear lists as this would affect data on background storage
         // TODO: FIXME
-        managedRepo.getDescriptions().clear();
-        managedRepo.resetExperimentGroups();
+        this.managedRepo.getDescriptions().clear();
+        this.managedRepo.resetExperimentGroups();
         setClosed();
     }
 
@@ -220,30 +221,12 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      * @throws DataNotAccessibleException
      */
     private void persistMetaData(final boolean flushOnly) throws DataNotAccessibleException {
-        final URI uri = URI.createURI(managedRepo.getUri());
+        final URI uri = URI.createURI(this.managedRepo.getUri());
 
-        File directory = null;
-        if (uri.isFile()) {
-            directory = new File(uri.toFileString());
-
-            if (!directory.isDirectory()) {
-                final String msg = "URI does not point to a directory.";
-                LOGGER.log(Level.WARNING, msg);
-                throw new DataNotAccessibleException(msg, null);
-            }
-
-            // load descriptions
-            saveDescriptions(directory, flushOnly);
-            // load experiment groups
-            saveExperimentGroups(directory, flushOnly);
-        } else if (uri.isPlatformResource()) {
-            LOGGER.log(Level.WARNING, "Platform resource deletion currently only partly supported!");
-            // throw new
-            // UnsupportedOperationException("Platform resource deletion currently only partly supported!");
-        } else {
-            LOGGER.log(Level.WARNING, "Unsupported URI format.");
-            // throw new UnsupportedOperationException("Unsupported URI format.");
-        }
+        // load descriptions
+        saveDescriptions(uri, flushOnly);
+        // load experiment groups
+        saveExperimentGroups(uri, flushOnly);
     }
 
     /*
@@ -338,8 +321,8 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         super.open();
         // open directory
         try {
-            final File directory = managedRepo.convertUriStringToFile(managedRepo.getUri());
-            if (managedRepo.getRepositories() == null) {
+            final File directory = this.managedRepo.convertUriStringToFile(this.managedRepo.getUri());
+            if (this.managedRepo.getRepositories() == null) {
                 final String msg = "Every repository must be attached to an instance of Repositories in order to be opened.";
                 LOGGER.log(Level.SEVERE, msg);
                 throw new DataNotAccessibleException(msg, null);
@@ -348,12 +331,12 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             loadDescriptions(directory);
             // load experiment groups
             loadExperimentGroups(directory);
-            mmtDaoFactory = LocalDirectoryMeasurementsDaoFactory.getRegisteredFactory(directory);
-            if (mmtDaoFactory == null) { // DaoFactory not previously initialized
-                mmtDaoFactory = new LocalDirectoryMeasurementsDaoFactory(directory);
+            this.mmtDaoFactory = LocalDirectoryMeasurementsDaoFactory.getRegisteredFactory(directory);
+            if (this.mmtDaoFactory == null) { // DaoFactory not previously initialized
+                this.mmtDaoFactory = new LocalDirectoryMeasurementsDaoFactory(directory);
             } else {
-                if (!mmtDaoFactory.isActive()) {
-                    mmtDaoFactory.setActive(true);
+                if (!this.mmtDaoFactory.isActive()) {
+                    this.mmtDaoFactory.setActive(true);
                 }
             }
             setOpen();
@@ -386,31 +369,32 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     /**
      * Saves all descriptions to description files within the specified directory.
      * 
-     * @param directory
+     * @param uri
      *            The EDP2 data directory.
      * @param flushOnly
      */
-    private void saveDescriptions(final File directory, final boolean flushOnly) {
-        for (final Description desc : managedRepo.getDescriptions()) {
-            saveDescription(directory, desc, flushOnly);
+    private void saveDescriptions(final URI uri, final boolean flushOnly) {
+        for (final Description desc : this.managedRepo.getDescriptions()) {
+            saveDescription(uri, desc, flushOnly);
         }
     }
 
     /**
      * Saves a description in the provided directory.
      * 
-     * @param directory
+     * @param uri
      *            The EDP2 data directory.
      * @param desc
      *            The description to save.
      * @param flushOnly
      */
-    private void saveDescription(final File directory, final Description desc, final boolean flushOnly) {
-        final String descFileLocation = directory.getAbsoluteFile() + File.separator + desc.getId() + "."
-                + EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION;
-        final Resource resource = getResourceForURI(URI.createFileURI(descFileLocation));
+    private void saveDescription(final URI uri, final Description desc, final boolean flushOnly) {
+        final URI descFileURI = uri.appendSegment(desc.getId()).appendFileExtension(
+                EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION);
+        final Resource resource = getResourceForURI(descFileURI);
+
         if (resource == null) {
-            final String msg = "Could not create resource to save the description file " + descFileLocation;
+            final String msg = "Could not create resource to save the description file " + descFileURI;
             LOGGER.log(Level.WARNING, msg);
         } else {
             if (desc.eResource() == null) {
@@ -427,7 +411,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 // TODO: Test
                 // resource.getResourceSet().getResources().remove(resource);
             } catch (final IOException e) {
-                final String msg = "Could not save the description file " + descFileLocation;
+                final String msg = "Could not save the description file " + descFileURI;
                 LOGGER.log(Level.WARNING, msg, e);
             }
         }
@@ -436,13 +420,13 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
     /**
      * Saves all experiment groups to files within the specified directory.
      * 
-     * @param directory
+     * @param uri
      *            The EDP2 data directory.
      * @param flushOnly
      */
-    private void saveExperimentGroups(final File directory, final boolean flushOnly) {
-        for (final ExperimentGroup eg : managedRepo.getExperimentGroups()) {
-            saveExperimentGroup(directory, eg, flushOnly);
+    private void saveExperimentGroups(final URI uri, final boolean flushOnly) {
+        for (final ExperimentGroup eg : this.managedRepo.getExperimentGroups()) {
+            saveExperimentGroup(uri, eg, flushOnly);
         }
     }
 
@@ -454,24 +438,24 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      * @return created resource.
      */
     private Resource getResourceForURI(final URI uri) {
-        return managedRepo.getRepositories().getCommonResourceSet().getResource(uri, true);
+        return this.managedRepo.getRepositories().getCommonResourceSet().getResource(uri, true);
     }
 
     /**
      * Saves an experiment group in the provided directory.
      * 
-     * @param directory
+     * @param uri
      *            The EDP2 data directory.
      * @param expGroup
      *            The experiment group to save.
      * @param flushOnly
      */
-    private void saveExperimentGroup(final File directory, final ExperimentGroup expGroup, final boolean flushOnly) {
-        final String egFileLocation = directory.getAbsoluteFile() + File.separator + expGroup.getId() + "."
-                + EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
-        final Resource resource = getResourceForURI(URI.createFileURI(egFileLocation));
+    private void saveExperimentGroup(final URI uri, final ExperimentGroup expGroup, final boolean flushOnly) {
+        final URI egFileURI = uri.appendSegment(expGroup.getId()).appendFileExtension(
+                EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION);
+        final Resource resource = getResourceForURI(egFileURI);
         if (resource == null) {
-            final String msg = "Could not create resource to save the experiment group file " + egFileLocation;
+            final String msg = "Could not create resource to save the experiment group file " + egFileURI;
             LOGGER.log(Level.SEVERE, msg);
             throw new RuntimeException("Unable to persist experiment group: " + expGroup);
         } else {
@@ -492,7 +476,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                     resource.unload();
                 }
             } catch (final IOException e) {
-                final String msg = "Could not save the experiment group file " + egFileLocation;
+                final String msg = "Could not save the experiment group file " + egFileURI;
                 LOGGER.log(Level.WARNING, msg, e);
             }
         }
@@ -505,7 +489,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      *            The description file containing the EMF model of the description.
      */
     private void loadDescription(final File descriptionFile) {
-        assert (managedRepo.getRepositories() != null);
+        assert (this.managedRepo.getRepositories() != null);
         final Resource resource = getResourceForURI(URI.createFileURI(descriptionFile.getAbsolutePath()));
         String errorMessage = null;
         try {
@@ -515,7 +499,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             if (resource != null) {
                 if (resource.getContents().size() == 1 && resource.getWarnings().size() == 0
                         && resource.getErrors().size() == 0 && resource.getContents().get(0) instanceof Description) {
-                    managedRepo.getDescriptions().add((Description) resource.getContents().get(0));
+                    this.managedRepo.getDescriptions().add((Description) resource.getContents().get(0));
                 } else {
                     errorMessage = "There was more or less than one root element or there were errors parsing the file.";
                 }
@@ -579,6 +563,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                 if (resource.getContents().size() == 1 && resource.getWarnings().size() == 0
                         && resource.getErrors().size() == 0) {
                     if (new ExperimentDataSwitch<Boolean>() {
+
                         @Override
                         public Boolean caseExperimentGroup(final ExperimentGroup object) {
                             return true;
@@ -589,7 +574,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
                             return false;
                         }
                     }.doSwitch(resource.getContents().get(0)) == true) {
-                        managedRepo.getExperimentGroups().add((ExperimentGroup) resource.getContents().get(0));
+                        this.managedRepo.getExperimentGroups().add((ExperimentGroup) resource.getContents().get(0));
                     } else {
                         errorMessage = "Root model element was not of type ExperimentGroup.";
                     }
@@ -613,6 +598,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      *
      */
     private final class LocalDirectoryMetaResourceAdapter extends AdapterImpl {
+
         /** Local directory repository which contains the feature. */
         private final LocalDirectoryRepository repo;
         /** Structural feature which is observed. */
@@ -630,7 +616,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         @SuppressWarnings("unchecked")
         @Override
         public void notifyChanged(final Notification msg) {
-            if (msg.getFeature().equals(feature)) {
+            if (msg.getFeature().equals(this.feature)) {
                 if (msg.getEventType() == Notification.ADD) {
                     final Identifier id = (Identifier) msg.getNewValue();
                     assignResource(id);
@@ -660,9 +646,9 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
          */
         private void assignResource(final Identifier id) {
             if (id.eResource() == null) {
-                final URI uri = URI.createURI(repo.getUri()).appendSegment(id.getId())
-                        .appendFileExtension(fileExtension);
-                final Resource resource = repo.getRepositories().getCommonResourceSet().createResource(uri);
+                final URI uri = URI.createURI(this.repo.getUri()).appendSegment(id.getId())
+                        .appendFileExtension(this.fileExtension);
+                final Resource resource = this.repo.getRepositories().getCommonResourceSet().createResource(uri);
                 resource.getContents().add(id);
                 assert id.eResource() != null;
             }
@@ -691,6 +677,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      * @author groenda
      */
     class FilenameExtensionFiler implements FilenameFilter {
+
         /** Valid extension of the files. */
         private final String extension;
 
@@ -706,7 +693,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
 
         @Override
         public boolean accept(final File arg0, final String arg1) {
-            return arg1.endsWith(extension);
+            return arg1.endsWith(this.extension);
         }
     }
 

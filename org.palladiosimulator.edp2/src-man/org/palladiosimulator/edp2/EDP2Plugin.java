@@ -19,7 +19,6 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
-import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
@@ -33,6 +32,7 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
  * @author Sebastian Lehrig
  */
 public class EDP2Plugin extends Plugin {
+
     /** Logger for this class. */
     private static final Logger LOGGER = Logger.getLogger(EDP2Plugin.class.getCanonicalName());
 
@@ -59,15 +59,15 @@ public class EDP2Plugin extends Plugin {
      */
     public EDP2Plugin() {
         // initialize
-        IScopeContext context = new ConfigurationScope();
-        IEclipsePreferences node = context.getNode(PLUGIN_ID);
+        final IScopeContext context = new ConfigurationScope();
+        final IEclipsePreferences node = context.getNode(PLUGIN_ID);
         Boolean populate = false;
         if (node != null) {
             populate = node.getBoolean(SETTING_INITIALLY_POPULATE_REPOSITORY, false);
             node.putBoolean(SETTING_INITIALLY_POPULATE_REPOSITORY, populate);
             try {
                 node.flush();
-            } catch (BackingStoreException e) {
+            } catch (final BackingStoreException e) {
                 LOGGER.log(Level.SEVERE, "Could not load/store preferences. ", e);
             }
         }
@@ -84,7 +84,7 @@ public class EDP2Plugin extends Plugin {
      * @see org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
      */
     @Override
-    public void start(BundleContext context) throws Exception {
+    public void start(final BundleContext context) throws Exception {
         super.start(context);
 
         // initialize persistent repositories storage
@@ -98,7 +98,7 @@ public class EDP2Plugin extends Plugin {
      * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
      */
     @Override
-    public void stop(BundleContext context) throws Exception {
+    public void stop(final BundleContext context) throws Exception {
         saveRepositories();
         super.stop(context);
     }
@@ -111,19 +111,19 @@ public class EDP2Plugin extends Plugin {
      */
     private void initializeRepositories() {
         try {
-            Repositories repositories = (Repositories) resource.getContents().get(0);
+            final Repositories repositories = (Repositories) this.resource.getContents().get(0);
 
             getRepositories().getAvailableRepositories().addAll(repositories.getAvailableRepositories());
-            for (Repository repo : getRepositories().getAvailableRepositories()) {
+            for (final Repository repo : getRepositories().getAvailableRepositories()) {
                 if (repo.canOpen()) {
                     try {
                         repo.open();
-                    } catch (DataNotAccessibleException e) {
+                    } catch (final DataNotAccessibleException e) {
                         LOGGER.log(Level.WARNING, "Could not open repository after reloading. Repository is " + repo);
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             LOGGER.warning("No preexisting EDP2 dataset configuration file. Resetting configuration...");
             if (getRepositories().getAvailableRepositories().size() == 0) {
                 // TODO add EDP2 main memory repository once available
@@ -138,11 +138,11 @@ public class EDP2Plugin extends Plugin {
      *            This plugin's bundle context
      */
     private void saveRepositories() {
-        resource.getContents().clear();
-        resource.getContents().add(getRepositories());
+        this.resource.getContents().clear();
+        this.resource.getContents().add(getRepositories());
         try {
-            resource.save(Collections.EMPTY_MAP);
-        } catch (IOException e) {
+            this.resource.save(Collections.EMPTY_MAP);
+        } catch (final IOException e) {
             LOGGER.warning("Saving dataset configuration failed.");
         }
     }
@@ -153,15 +153,15 @@ public class EDP2Plugin extends Plugin {
      */
     private void initializeResource() {
         // register repositories package for persistent storage
-        rs.getPackageRegistry().put(RepositoryPackage.eNS_URI, RepositoryPackage.eINSTANCE);
+        this.rs.getPackageRegistry().put(RepositoryPackage.eNS_URI, RepositoryPackage.eINSTANCE);
 
         // File file = context.getDataFile(PLUGIN_ID);
-        URI uri = URI.createURI(METADATA_LOCATION_REPOSITORIES, true);
+        final URI uri = URI.createURI(METADATA_LOCATION_REPOSITORIES, true);
 
         try {
-            resource = rs.getResource(uri, true);
-        } catch (Exception e) {
-            resource = rs.createResource(uri);
+            this.resource = this.rs.getResource(uri, true);
+        } catch (final Exception e) {
+            this.resource = this.rs.createResource(uri);
         }
     }
 
@@ -170,24 +170,21 @@ public class EDP2Plugin extends Plugin {
      * Creation is controlled via a properties file.
      */
     private void populateRepository() {
-        RepositoryFactory repoFactory = RepositoryFactory.eINSTANCE;
-        Repositories repos = getRepositories();
+        final RepositoryFactory repoFactory = RepositoryFactory.eINSTANCE;
+        final Repositories repos = getRepositories();
 
-        LocalDirectoryRepository ldRepo = repoFactory.createLocalDirectoryRepository();
+        final LocalDirectoryRepository ldRepo = repoFactory.createLocalDirectoryRepository();
         ldRepo.setUri(URI.createPlatformPluginURI("/org.palladiosimulator.edp2.examples/LocalRepository", true)
                 .toString());
         RepositoryManager.addRepository(repos, ldRepo);
 
-        RemoteCdoRepository rcRepo = repoFactory.createRemoteCdoRepository();
+        final RemoteCdoRepository rcRepo = repoFactory.createRemoteCdoRepository();
         rcRepo.setUrl("tcp://localhost:2036");
         RepositoryManager.addRepository(repos, rcRepo);
 
-        LocalMemoryRepository lmRepo = repoFactory.createLocalMemoryRepository();
+        final LocalMemoryRepository lmRepo = repoFactory.createLocalMemoryRepository();
         lmRepo.setDomain("Domain 1");
         RepositoryManager.addRepository(repos, lmRepo);
-
-        LocalSensorFrameworkRepository lsfRepo = repoFactory.createLocalSensorFrameworkRepository();
-        RepositoryManager.addRepository(repos, lsfRepo);
     }
 
     /**

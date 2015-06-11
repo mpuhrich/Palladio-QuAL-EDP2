@@ -22,7 +22,7 @@ public class ConfigureDatasourceDialog extends DatasourceDialog {
     public static String OPEN_WIZARD_TITLE = "Load a source storage for EDP2.";
     public static String ADD_WIZARD_TITLE = "Select/create a storage for EDP2.";
 
-    public ConfigureDatasourceDialog(Shell parentShell, String dialogTitel, boolean makeValidation) {
+    public ConfigureDatasourceDialog(final Shell parentShell, final String dialogTitel, final boolean makeValidation) {
         super(parentShell, dialogTitel, EDP2Plugin.INSTANCE.getRepositories().getAvailableRepositories(),
                 makeValidation);
         create();
@@ -35,8 +35,8 @@ public class ConfigureDatasourceDialog extends DatasourceDialog {
              * SelectionEvent)
              */
             @Override
-            public void widgetSelected(SelectionEvent e) {
-                Repository selectedRepository = (Repository) getResult();
+            public void widgetSelected(final SelectionEvent e) {
+                final Repository selectedRepository = (Repository) getResult();
                 RepositoryManager.removeRepository(EDP2Plugin.INSTANCE.getRepositories(), selectedRepository);
                 refresh();
             }
@@ -51,13 +51,13 @@ public class ConfigureDatasourceDialog extends DatasourceDialog {
              * SelectionEvent)
              */
             @Override
-            public void widgetSelected(SelectionEvent e) {
-                OpenDataSourceWizard w = new OpenDataSourceWizard();
+            public void widgetSelected(final SelectionEvent e) {
+                final OpenDataSourceWizard w = new OpenDataSourceWizard();
                 // AddNewDataSourceWizard w = new AddNewDataSourceWizard();
                 // w.init(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getWorkbench(),
                 // null);
                 // Instantiates the wizard container with the wizard and opens it
-                WizardDialog dialog = new WizardDialog(e.display.getActiveShell(), w);
+                final WizardDialog dialog = new WizardDialog(e.display.getActiveShell(), w);
                 dialog.create();
                 dialog.setTitle(ADD_WIZARD_TITLE);
                 dialog.open();
@@ -75,12 +75,11 @@ public class ConfigureDatasourceDialog extends DatasourceDialog {
              * SelectionEvent)
              */
             @Override
-            public void widgetSelected(SelectionEvent e) {
-
-                OpenDataSourceWizard w = new OpenDataSourceWizard();
+            public void widgetSelected(final SelectionEvent e) {
+                final OpenDataSourceWizard w = new OpenDataSourceWizard();
 
                 // Instantiates the wizard container with the wizard and opens it
-                WizardDialog dialog = new WizardDialog(e.display.getActiveShell(), w);
+                final WizardDialog dialog = new WizardDialog(e.display.getActiveShell(), w);
                 dialog.create();
                 dialog.setTitle(OPEN_WIZARD_TITLE);
                 dialog.open();

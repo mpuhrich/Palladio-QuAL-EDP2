@@ -6,51 +6,40 @@ import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
-import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
-import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 
 /**
  * @author groenda, Sebastian Lehrig
  */
 public class OpenDataSourceWizard extends Wizard {
-    Repositories repos;
+
+    private final LocalDirectoryRepository ldRepo;
+    private final LocalMemoryRepository lmRepo;
+    private final RemoteCdoRepository rcRepo;
+
     private DiscoverLocalDirectoryPage discoverLocalFilePage;
     private DiscoverLocalMemoryPage discoverLocalMemoryPage;
     private DiscoverRemotePage discoverRemotePage;
-    private DiscoverSensorFrameworkV1Page discoverSensorFrameworkV1Page;
-    private ImportSensorFrameworkV1Page importSensorFrameworkV1Page;
     private SelectDataSourceTypePage selectDataSourceTypePage;
-    private final LocalDirectoryRepository ldRepo;
-    private final LocalMemoryRepository lmRepo;
-    private final LocalSensorFrameworkRepository lsfRepo;
-    private final RemoteCdoRepository rcRepo;
 
     public OpenDataSourceWizard() {
         // Create empty list of storage nodes
-        ldRepo = RepositoryFactory.eINSTANCE.createLocalDirectoryRepository();
-        lmRepo = RepositoryFactory.eINSTANCE.createLocalMemoryRepository();
-        lsfRepo = RepositoryFactory.eINSTANCE.createLocalSensorFrameworkRepository();
-        rcRepo = RepositoryFactory.eINSTANCE.createRemoteCdoRepository();
+        this.ldRepo = RepositoryFactory.eINSTANCE.createLocalDirectoryRepository();
+        this.lmRepo = RepositoryFactory.eINSTANCE.createLocalMemoryRepository();
+        this.rcRepo = RepositoryFactory.eINSTANCE.createRemoteCdoRepository();
     }
 
     @Override
     public void addPages() {
         // Select type of storage node and store it in the list of nodes
-        selectDataSourceTypePage = new SelectDataSourceTypePage();
-        addPage(selectDataSourceTypePage);
-        discoverLocalFilePage = new DiscoverLocalDirectoryPage(ldRepo);
-        addPage(discoverLocalFilePage);
-        discoverLocalMemoryPage = new DiscoverLocalMemoryPage(lmRepo);
-        addPage(discoverLocalMemoryPage);
-        discoverRemotePage = new DiscoverRemotePage(rcRepo);
-        // addPage(discoverRemotePage); // TODO Add support for DiscoverRemotePage
-        discoverSensorFrameworkV1Page = new DiscoverSensorFrameworkV1Page(lsfRepo);
-        // addPage(discoverSensorFrameworkV1Page); // TODO Add support for
-        // DiscoverSensorFrameworkV1Page
-        importSensorFrameworkV1Page = new ImportSensorFrameworkV1Page(lsfRepo);
-        // addPage(importSensorFrameworkV1Page); // TODO Add support for ImportSensorFrameworkV1Page
+        this.selectDataSourceTypePage = new SelectDataSourceTypePage();
+        addPage(this.selectDataSourceTypePage);
+        this.discoverLocalFilePage = new DiscoverLocalDirectoryPage(this.ldRepo);
+        addPage(this.discoverLocalFilePage);
+        this.discoverLocalMemoryPage = new DiscoverLocalMemoryPage(this.lmRepo);
+        addPage(this.discoverLocalMemoryPage);
+        this.discoverRemotePage = new DiscoverRemotePage(this.rcRepo);
     }
 
     @Override
@@ -59,50 +48,41 @@ public class OpenDataSourceWizard extends Wizard {
     }
 
     @Override
-    public IWizardPage getNextPage(IWizardPage page) {
-        if (page == selectDataSourceTypePage) {
+    public IWizardPage getNextPage(final IWizardPage page) {
+        if (page == this.selectDataSourceTypePage) {
             // Initial Data Source Selection Page
-            if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.NO_TYPE_SELECTED)) {
+            if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.NO_TYPE_SELECTED)) {
                 return null;
-            } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
-                return discoverLocalFilePage;
-            } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
-                return discoverLocalMemoryPage;
-            } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
-                return discoverRemotePage;
-            } else if (selectDataSourceTypePage.getSelection().equals(
-                    SelectDataSourceTypePage.SENSORFRAMEWORK_V1_DATA_SOURCE)) {
-                return discoverSensorFrameworkV1Page;
+            } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
+                return this.discoverLocalFilePage;
+            } else if (this.selectDataSourceTypePage.getSelection().equals(
+                    SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
+                return this.discoverLocalMemoryPage;
+            } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
+                return this.discoverRemotePage;
             } else {
                 // This line should never be reached. Otherwise there likely are unaccounted data
                 // source types.
                 assert (false);
             }
         }
-        if (page == discoverSensorFrameworkV1Page) {
-            return importSensorFrameworkV1Page;
-        }
         return null;
     }
 
     @Override
     public boolean canFinish() {
-        if (selectDataSourceTypePage.isPageComplete()) {
-            if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
-                if (discoverLocalFilePage.isPageComplete()) {
+        if (this.selectDataSourceTypePage.isPageComplete()) {
+            if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
+                if (this.discoverLocalFilePage.isPageComplete()) {
                     return true;
                 }
-            } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
-                if (discoverLocalMemoryPage.isPageComplete()) {
+            } else if (this.selectDataSourceTypePage.getSelection().equals(
+                    SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
+                if (this.discoverLocalMemoryPage.isPageComplete()) {
                     return true;
                 }
-            } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
-                if (discoverRemotePage.isPageComplete()) {
-                    return true;
-                }
-            } else if (selectDataSourceTypePage.getSelection().equals(
-                    SelectDataSourceTypePage.SENSORFRAMEWORK_V1_DATA_SOURCE)) {
-                if (discoverSensorFrameworkV1Page.isPageComplete() && importSensorFrameworkV1Page.isPageComplete()) {
+            } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
+                if (this.discoverRemotePage.isPageComplete()) {
                     return true;
                 }
             }
@@ -117,17 +97,14 @@ public class OpenDataSourceWizard extends Wizard {
      */
     @Override
     public boolean performFinish() {
-        assert (!selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.NO_TYPE_SELECTED));
+        assert (!this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.NO_TYPE_SELECTED));
 
-        if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), ldRepo);
-        } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), lmRepo);
-        } else if (selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), rcRepo);
-        } else if (selectDataSourceTypePage.getSelection().equals(
-                SelectDataSourceTypePage.SENSORFRAMEWORK_V1_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), lsfRepo);
+        if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
+            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), this.ldRepo);
+        } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
+            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), this.lmRepo);
+        } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.REMOTE_DATA_SOURCE)) {
+            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), this.rcRepo);
         } else {
             // This line should never be reached. Otherwise there likely are unaccounted data source
             // types.

@@ -663,58 +663,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
-     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected SensorFrameworkV1DoubleBinaryMeasurementsItemProvider sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements}
-     * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createSensorFrameworkV1DoubleBinaryMeasurementsAdapter() {
-        if (this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider == null) {
-            this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider = new SensorFrameworkV1DoubleBinaryMeasurementsItemProvider(
-                    this);
-        }
-
-        return this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
-     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected SensorFrameworkV1IdentifierBasedMeasurementsItemProvider sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements}
-     * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createSensorFrameworkV1IdentifierBasedMeasurementsAdapter() {
-        if (this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider == null) {
-            this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider = new SensorFrameworkV1IdentifierBasedMeasurementsItemProvider(
-                    this);
-        }
-
-        return this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -963,12 +911,6 @@ public class ExperimentDataItemProviderAdapterFactory extends ExperimentDataAdap
         }
         if (this.numericalRatioStatisticsItemProvider != null) {
             this.numericalRatioStatisticsItemProvider.dispose();
-        }
-        if (this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider != null) {
-            this.sensorFrameworkV1DoubleBinaryMeasurementsItemProvider.dispose();
-        }
-        if (this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider != null) {
-            this.sensorFrameworkV1IdentifierBasedMeasurementsItemProvider.dispose();
         }
         if (this.textualOrdinalStatisticsItemProvider != null) {
             this.textualOrdinalStatisticsItemProvider.dispose();

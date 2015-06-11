@@ -42,7 +42,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Frequency</em>' attribute.
      * @see #setFrequency(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_Frequency()
@@ -55,7 +55,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getFrequency
      * <em>Frequency</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Frequency</em>' attribute.
      * @see #getFrequency()
@@ -70,7 +70,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_Value()
@@ -84,7 +84,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getValue
      * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()
@@ -102,7 +102,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Numerical Nominal Statistics</em>' container reference.
      * @see #setNumericalNominalStatistics(NumericalNominalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalMassDistribution_NumericalNominalStatistics()
@@ -117,7 +117,7 @@ public interface NumericalMassDistribution extends CDOObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getNumericalNominalStatistics
      * <em>Numerical Nominal Statistics</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Numerical Nominal Statistics</em>' container reference.
      * @see #getNumericalNominalStatistics()

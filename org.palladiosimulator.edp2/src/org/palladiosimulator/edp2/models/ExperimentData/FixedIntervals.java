@@ -57,7 +57,7 @@ public interface FixedIntervals extends Identifier {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Lower Bound</em>' attribute.
      * @see #setLowerBound(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedIntervals_LowerBound()
@@ -71,7 +71,7 @@ public interface FixedIntervals extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getLowerBound
      * <em>Lower Bound</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Lower Bound</em>' attribute.
      * @see #getLowerBound()
@@ -86,7 +86,7 @@ public interface FixedIntervals extends Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Width</em>' attribute.
      * @see #setWidth(Measure)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedIntervals_Width()
@@ -100,7 +100,7 @@ public interface FixedIntervals extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getWidth
      * <em>Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Width</em>' attribute.
      * @see #getWidth()
@@ -116,7 +116,7 @@ public interface FixedIntervals extends Identifier {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Number Of Intervals</em>' attribute.
      * @see #setNumberOfIntervals(long)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedIntervals_NumberOfIntervals()
@@ -129,7 +129,7 @@ public interface FixedIntervals extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getNumberOfIntervals
      * <em>Number Of Intervals</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Number Of Intervals</em>' attribute.
      * @see #getNumberOfIntervals()
@@ -147,7 +147,7 @@ public interface FixedIntervals extends Identifier {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #setAggregatedMeasurements(FixedWidthAggregatedMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getFixedIntervals_AggregatedMeasurements()
@@ -162,7 +162,7 @@ public interface FixedIntervals extends Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #getAggregatedMeasurements()

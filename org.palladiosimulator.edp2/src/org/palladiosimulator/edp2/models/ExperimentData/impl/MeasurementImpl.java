@@ -46,7 +46,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasurementImpl() {
@@ -55,7 +55,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -65,7 +65,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -77,7 +77,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -88,7 +88,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringType basicGetMeasuringType() {
@@ -98,7 +98,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -109,7 +109,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -121,7 +121,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRun(final Run newRun, NotificationChain msgs) {
@@ -142,7 +142,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -153,7 +153,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -174,7 +174,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -193,7 +193,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -208,7 +208,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -235,7 +235,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -261,7 +261,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -285,7 +285,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -305,7 +305,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -323,7 +323,7 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

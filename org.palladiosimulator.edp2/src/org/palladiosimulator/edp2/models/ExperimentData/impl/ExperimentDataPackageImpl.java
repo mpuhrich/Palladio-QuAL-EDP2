@@ -46,8 +46,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
 import org.palladiosimulator.edp2.models.ExperimentData.Propertyable;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.Run;
-import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
@@ -55,258 +53,245 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.Repository.impl.RepositoryPackageImpl;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.impl.MeasuringpointPackageImpl;
+import org.palladiosimulator.mdsdprofiles.MdsdprofilesPackage;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExperimentDataPackageImpl extends EPackageImpl implements ExperimentDataPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass aggregatedMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass measurementRangeEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass dataSeriesEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalNominalStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalMassDistributionEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass fixedWidthAggregatedMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass fixedIntervalsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass textualNominalStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass textualMassDistributionEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass propertyableEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass eStringtoEObjectMapEntryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass rawMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass experimentGroupEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass experimentSettingEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass experimentRunEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass measurementEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass measuringTypeEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass aggregationStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass longBinaryMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass doubleBinaryMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalIntervalStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalOrdinalStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalPercentileEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass jsXmlMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass ijsDurationEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass eComparableEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass textualOrdinalStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass runEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass experimentGroupRunEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass identifierBasedMeasurementsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass numericalRatioStatisticsEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    private EClass sensorFrameworkV1DoubleBinaryMeasurementsEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    private EClass sensorFrameworkV1IdentifierBasedMeasurementsEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EDataType ejsMeasureEDataType = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EDataType ejsDurationMeasureEDataType = null;
@@ -319,7 +304,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#eNS_URI
      * @see #init()
@@ -331,7 +316,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private static boolean isInited = false;
@@ -344,7 +329,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
      * This method is used to initialize {@link ExperimentDataPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -364,6 +349,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         // Initialize simple dependencies
         MetricSpecPackage.eINSTANCE.eClass();
+        MdsdprofilesPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
@@ -393,7 +379,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -403,7 +389,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -413,7 +399,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -423,7 +409,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -433,7 +419,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -443,7 +429,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -453,7 +439,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -463,7 +449,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -473,7 +459,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -483,7 +469,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -493,7 +479,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -503,7 +489,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -513,7 +499,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -523,7 +509,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -533,7 +519,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -543,7 +529,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -553,7 +539,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -563,7 +549,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -573,7 +559,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -583,7 +569,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -593,7 +579,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -603,7 +589,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -613,7 +599,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -623,7 +609,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -633,7 +619,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -643,7 +629,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -653,7 +639,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -663,7 +649,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -673,7 +659,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -683,7 +669,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -693,7 +679,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -703,7 +689,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -713,7 +699,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -723,7 +709,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -733,7 +719,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -743,7 +729,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -753,7 +739,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -763,7 +749,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -773,7 +759,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -783,7 +769,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -793,7 +779,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -803,7 +789,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -813,7 +799,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -823,7 +809,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -833,7 +819,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -843,7 +829,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -853,7 +839,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -863,7 +849,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -873,7 +859,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -883,7 +869,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -893,7 +879,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -903,7 +889,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -913,7 +899,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -923,7 +909,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -933,7 +919,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -943,7 +929,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -953,7 +939,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -963,7 +949,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -973,7 +959,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -983,7 +969,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -993,7 +979,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1003,7 +989,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1013,7 +999,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1023,7 +1009,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1033,7 +1019,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1043,7 +1029,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1053,7 +1039,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1063,7 +1049,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1073,7 +1059,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1083,7 +1069,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1093,7 +1079,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1103,7 +1089,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1113,7 +1099,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1123,7 +1109,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1133,7 +1119,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1143,7 +1129,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1153,7 +1139,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1163,7 +1149,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1173,7 +1159,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1183,7 +1169,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1193,7 +1179,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1203,7 +1189,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1213,7 +1199,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1223,7 +1209,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1233,7 +1219,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1243,7 +1229,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1253,7 +1239,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1263,7 +1249,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1273,7 +1259,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1283,7 +1269,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1293,7 +1279,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1303,7 +1289,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1313,7 +1299,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1323,7 +1309,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1333,7 +1319,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1343,7 +1329,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1353,7 +1339,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1363,7 +1349,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1373,7 +1359,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1383,7 +1369,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1393,7 +1379,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1403,7 +1389,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1413,7 +1399,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1423,7 +1409,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1433,7 +1419,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1443,7 +1429,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1453,7 +1439,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1463,7 +1449,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1473,7 +1459,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1483,7 +1469,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1493,7 +1479,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1503,7 +1489,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1513,7 +1499,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1523,7 +1509,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1533,27 +1519,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public EClass getSensorFrameworkV1DoubleBinaryMeasurements() {
-        return this.sensorFrameworkV1DoubleBinaryMeasurementsEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public EClass getSensorFrameworkV1IdentifierBasedMeasurements() {
-        return this.sensorFrameworkV1IdentifierBasedMeasurementsEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1563,7 +1529,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1573,7 +1539,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -1583,7 +1549,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isCreated = false;
@@ -1591,7 +1557,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void createPackageContents() {
@@ -1735,12 +1701,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.createEAttribute(this.numericalRatioStatisticsEClass, NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN);
         this.createEAttribute(this.numericalRatioStatisticsEClass, NUMERICAL_RATIO_STATISTICS__HARMONIC_MEAN);
 
-        this.sensorFrameworkV1DoubleBinaryMeasurementsEClass = this
-                .createEClass(SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS);
-
-        this.sensorFrameworkV1IdentifierBasedMeasurementsEClass = this
-                .createEClass(SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS);
-
         this.ijsDurationEClass = this.createEClass(IJS_DURATION);
 
         this.eComparableEClass = this.createEClass(ECOMPARABLE);
@@ -1765,7 +1725,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isInitialized = false;
@@ -1773,7 +1733,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void initializePackageContents() {
@@ -1833,9 +1793,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.longBinaryMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         this.identifierBasedMeasurementsEClass.getESuperTypes().add(this.getDataSeries());
         this.numericalRatioStatisticsEClass.getESuperTypes().add(this.getNumericalIntervalStatistics());
-        this.sensorFrameworkV1DoubleBinaryMeasurementsEClass.getESuperTypes().add(this.getDoubleBinaryMeasurements());
-        this.sensorFrameworkV1IdentifierBasedMeasurementsEClass.getESuperTypes().add(
-                this.getIdentifierBasedMeasurements());
         this.textualOrdinalStatisticsEClass.getESuperTypes().add(this.getTextualNominalStatistics());
         this.runEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         this.runEClass.getESuperTypes().add(this.getPropertyable());
@@ -2190,14 +2147,6 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.initEAttribute(this.getNumericalRatioStatistics_HarmonicMean(), this.getEJSMeasure(), "harmonicMean",
                 null, 1, 1, NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
                 !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        this.initEClass(this.sensorFrameworkV1DoubleBinaryMeasurementsEClass,
-                SensorFrameworkV1DoubleBinaryMeasurements.class, "SensorFrameworkV1DoubleBinaryMeasurements",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        this.initEClass(this.sensorFrameworkV1IdentifierBasedMeasurementsEClass,
-                SensorFrameworkV1IdentifierBasedMeasurements.class, "SensorFrameworkV1IdentifierBasedMeasurements",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.ijsDurationEClass, Duration.class, "IJSDuration", IS_ABSTRACT, IS_INTERFACE,
                 !IS_GENERATED_INSTANCE_CLASS);

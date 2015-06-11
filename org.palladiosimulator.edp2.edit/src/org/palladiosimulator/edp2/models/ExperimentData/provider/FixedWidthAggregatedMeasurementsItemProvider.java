@@ -158,14 +158,6 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
         newChildDescriptors.add(this.createChildParameter(
                 ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
                 ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createSensorFrameworkV1DoubleBinaryMeasurements()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createSensorFrameworkV1IdentifierBasedMeasurements()));
     }
 
 }

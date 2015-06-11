@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
-import org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
@@ -21,14 +20,14 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFactory {
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static RepositoryFactory init() {
@@ -46,7 +45,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RepositoryFactoryImpl() {
@@ -55,7 +54,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,8 +66,6 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
             return this.createLocalMemoryRepository();
         case RepositoryPackage.REMOTE_CDO_REPOSITORY:
             return this.createRemoteCdoRepository();
-        case RepositoryPackage.LOCAL_SENSOR_FRAMEWORK_REPOSITORY:
-            return this.createLocalSensorFrameworkRepository();
         case RepositoryPackage.REPOSITORIES:
             return this.createRepositories();
         default:
@@ -78,7 +75,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +86,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -100,7 +97,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,18 +108,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public LocalSensorFrameworkRepository createLocalSensorFrameworkRepository() {
-        final LocalSensorFrameworkRepositoryImpl localSensorFrameworkRepository = new LocalSensorFrameworkRepositoryImpl();
-        return localSensorFrameworkRepository;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -133,7 +119,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -143,7 +129,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

@@ -23,11 +23,11 @@ import org.eclipse.swt.widgets.Label;
  * Allows to select the type of a data source. All known (and selectable) data sources are available
  * as constants.
  * 
- * @author groenda
+ * @author groenda, Sebastian Lehrig
  *
  */
 public class SelectDataSourceTypePage extends WizardPage {
-    public static final String SENSORFRAMEWORK_V1_DATA_SOURCE = "Sensorframework V1 data source";
+
     public static final String IN_MEMORY_DATA_SOURCE = "In-Memory data source";
     public static final String REMOTE_DATA_SOURCE = "Remote data source";
     public static final String FILE_DATA_SOURCE = "File data source";
@@ -44,7 +44,7 @@ public class SelectDataSourceTypePage extends WizardPage {
 
         setTitle("Select Type of Data Source");
         setDescription("Please select the type of the data source you want to open.");
-        selection = NO_TYPE_SELECTED;
+        this.selection = NO_TYPE_SELECTED;
     }
 
     /*
@@ -53,34 +53,34 @@ public class SelectDataSourceTypePage extends WizardPage {
      * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
      */
     @Override
-    public void createControl(Composite parent) {
-        Composite container = new Composite(parent, SWT.NULL);
+    public void createControl(final Composite parent) {
+        final Composite container = new Composite(parent, SWT.NULL);
         setControl(container);
 
-        Label label = new Label(container, SWT.NONE);
+        final Label label = new Label(container, SWT.NONE);
         label.setText("Type of data source: ");
         label.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
         final Combo selectedDataTypeCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
         selectedDataTypeCombo.addSelectionListener(new SelectionListener() {
 
-            public void widgetDefaultSelected(SelectionEvent e) {
+            @Override
+            public void widgetDefaultSelected(final SelectionEvent e) {
                 widgetSelected(e);
             }
 
-            public void widgetSelected(SelectionEvent e) {
+            @Override
+            public void widgetSelected(final SelectionEvent e) {
                 boolean success = false;
-                selection = selectedDataTypeCombo.getText();
-                if (selection.equals(FILE_DATA_SOURCE)) {
+                SelectDataSourceTypePage.this.selection = selectedDataTypeCombo.getText();
+                if (SelectDataSourceTypePage.this.selection.equals(FILE_DATA_SOURCE)) {
                     success = true;
-                } else if (selection.equals(IN_MEMORY_DATA_SOURCE)) {
+                } else if (SelectDataSourceTypePage.this.selection.equals(IN_MEMORY_DATA_SOURCE)) {
                     success = true;
-                } else if (selection.equals(REMOTE_DATA_SOURCE)) {
-                    success = true;
-                } else if (selection.equals(SENSORFRAMEWORK_V1_DATA_SOURCE)) {
+                } else if (SelectDataSourceTypePage.this.selection.equals(REMOTE_DATA_SOURCE)) {
                     success = true;
                 }
-                ControlDecoration decoration = decoratorMap.get(selectedDataTypeCombo);
+                final ControlDecoration decoration = decoratorMap.get(selectedDataTypeCombo);
                 if (decoration != null) {
                     if (success) {
                         decoration.hide();
@@ -105,15 +105,14 @@ public class SelectDataSourceTypePage extends WizardPage {
      * @param selectedDataType
      *            Combo box to be populated.
      */
-    private void populateComboBox(Combo selectedDataType) {
+    private void populateComboBox(final Combo selectedDataType) {
         // Add default
         selectedDataType.add(FILE_DATA_SOURCE);
         selectedDataType.select(0);
-        selection = FILE_DATA_SOURCE;
+        this.selection = FILE_DATA_SOURCE;
         // Add other types
         selectedDataType.add(REMOTE_DATA_SOURCE);
         selectedDataType.add(IN_MEMORY_DATA_SOURCE);
-        selectedDataType.add(SENSORFRAMEWORK_V1_DATA_SOURCE);
     }
 
     /**
@@ -122,9 +121,9 @@ public class SelectDataSourceTypePage extends WizardPage {
      * @param control
      *            The control which should get be decorated.
      */
-    private void createControlDecoration(Control control) {
-        ControlDecoration controlDecoration = new ControlDecoration(control, SWT.LEFT | SWT.TOP);
-        FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault().getFieldDecoration(
+    private void createControlDecoration(final Control control) {
+        final ControlDecoration controlDecoration = new ControlDecoration(control, SWT.LEFT | SWT.TOP);
+        final FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault().getFieldDecoration(
                 FieldDecorationRegistry.DEC_ERROR);
         controlDecoration.setImage(fieldDecoration.getImage());
         controlDecoration.hide();
@@ -138,7 +137,7 @@ public class SelectDataSourceTypePage extends WizardPage {
      * @return The string representing the selection.
      */
     public String getSelection() {
-        return selection;
+        return this.selection;
     }
 
 }

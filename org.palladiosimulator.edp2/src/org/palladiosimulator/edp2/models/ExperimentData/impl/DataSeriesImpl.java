@@ -56,7 +56,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DataSeriesImpl() {
@@ -65,7 +65,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -85,7 +85,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetNumericalStatistics(final NumericalNominalStatistics newNumericalStatistics,
@@ -108,7 +108,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetAggregatedMeasurements(
@@ -143,7 +143,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -154,7 +154,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -165,7 +165,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -176,7 +176,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -187,7 +187,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetTextualStatistics(final TextualNominalStatistics newTextualStatistics,
@@ -199,7 +199,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -210,7 +210,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -221,7 +221,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRawMeasurements(final RawMeasurements newRawMeasurements, NotificationChain msgs) {
@@ -232,7 +232,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -243,7 +243,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -279,7 +279,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -300,7 +300,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -319,7 +319,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -341,7 +341,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -368,7 +368,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -395,7 +395,7 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

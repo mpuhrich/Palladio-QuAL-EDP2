@@ -150,12 +150,6 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
 
         newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
                 ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
-
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createSensorFrameworkV1DoubleBinaryMeasurements()));
-
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createSensorFrameworkV1IdentifierBasedMeasurements()));
     }
 
     /**

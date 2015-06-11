@@ -48,7 +48,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Description</em>' attribute.
      * @see #setDescription(String)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_Description()
@@ -61,7 +61,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getDescription
      * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Description</em>' attribute.
      * @see #getDescription()
@@ -81,7 +81,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Runs</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_ExperimentRuns()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun#getExperimentSetting
@@ -101,7 +101,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Types</em>' reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_MeasuringTypes()
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentSettings
@@ -120,7 +120,7 @@ public interface ExperimentSetting extends Identifier, Propertyable {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Group</em>' container reference.
      * @see #setExperimentGroup(ExperimentGroup)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentSetting_ExperimentGroup()

@@ -71,7 +71,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ExperimentGroupImpl() {
@@ -80,7 +80,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -102,7 +102,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -114,7 +114,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -126,7 +126,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -137,7 +137,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Repository basicGetRepository() {
@@ -147,7 +147,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRepository(final Repository newRepository, NotificationChain msgs) {
@@ -158,7 +158,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -169,7 +169,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -181,7 +181,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -194,7 +194,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -216,7 +216,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -244,7 +244,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -269,7 +269,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -302,7 +302,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -340,7 +340,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -373,7 +373,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -399,7 +399,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -417,7 +417,7 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

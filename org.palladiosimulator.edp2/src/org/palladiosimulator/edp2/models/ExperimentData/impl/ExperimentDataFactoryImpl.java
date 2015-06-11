@@ -55,8 +55,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatisti
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
 import org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1DoubleBinaryMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.SensorFrameworkV1IdentifierBasedMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics;
 import org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics;
@@ -65,7 +63,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExperimentDataFactoryImpl extends EFactoryImpl implements ExperimentDataFactory {
@@ -79,7 +77,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static ExperimentDataFactory init() {
@@ -97,7 +95,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ExperimentDataFactoryImpl() {
@@ -106,7 +104,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -158,10 +156,6 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
             return this.createIdentifierBasedMeasurements();
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS:
             return this.createNumericalRatioStatistics();
-        case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_DOUBLE_BINARY_MEASUREMENTS:
-            return this.createSensorFrameworkV1DoubleBinaryMeasurements();
-        case ExperimentDataPackage.SENSOR_FRAMEWORK_V1_IDENTIFIER_BASED_MEASUREMENTS:
-            return this.createSensorFrameworkV1IdentifierBasedMeasurements();
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS:
             return this.createTextualOrdinalStatistics();
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN:
@@ -173,7 +167,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -190,7 +184,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -207,7 +201,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -218,7 +212,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -229,7 +223,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -240,7 +234,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -251,7 +245,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -262,7 +256,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Map.Entry<String, Object> createEStringtoEObjectMapEntry() {
@@ -272,7 +266,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -283,7 +277,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -294,7 +288,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -305,7 +299,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -316,7 +310,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -327,7 +321,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -338,7 +332,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -349,7 +343,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -485,7 +479,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -496,7 +490,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -507,7 +501,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -518,7 +512,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -529,7 +523,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -540,7 +534,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -551,7 +545,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -562,7 +556,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -573,7 +567,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -584,29 +578,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public SensorFrameworkV1DoubleBinaryMeasurements createSensorFrameworkV1DoubleBinaryMeasurements() {
-        final SensorFrameworkV1DoubleBinaryMeasurementsImpl sensorFrameworkV1DoubleBinaryMeasurements = new SensorFrameworkV1DoubleBinaryMeasurementsImpl();
-        return sensorFrameworkV1DoubleBinaryMeasurements;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public SensorFrameworkV1IdentifierBasedMeasurements createSensorFrameworkV1IdentifierBasedMeasurements() {
-        final SensorFrameworkV1IdentifierBasedMeasurementsImpl sensorFrameworkV1IdentifierBasedMeasurements = new SensorFrameworkV1IdentifierBasedMeasurementsImpl();
-        return sensorFrameworkV1IdentifierBasedMeasurements;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -617,7 +589,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -709,7 +681,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -719,7 +691,7 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

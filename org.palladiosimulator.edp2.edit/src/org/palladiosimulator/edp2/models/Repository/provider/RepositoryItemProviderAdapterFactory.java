@@ -166,31 +166,6 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository}
-     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected LocalSensorFrameworkRepositoryItemProvider localSensorFrameworkRepositoryItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createLocalSensorFrameworkRepositoryAdapter() {
-        if (this.localSensorFrameworkRepositoryItemProvider == null) {
-            this.localSensorFrameworkRepositoryItemProvider = new LocalSensorFrameworkRepositoryItemProvider(this);
-        }
-
-        return this.localSensorFrameworkRepositoryItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.Repository.Repositories} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -354,9 +329,6 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
         }
         if (this.remoteCdoRepositoryItemProvider != null) {
             this.remoteCdoRepositoryItemProvider.dispose();
-        }
-        if (this.localSensorFrameworkRepositoryItemProvider != null) {
-            this.localSensorFrameworkRepositoryItemProvider.dispose();
         }
         if (this.repositoriesItemProvider != null) {
             this.repositoriesItemProvider.dispose();

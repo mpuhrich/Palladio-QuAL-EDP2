@@ -40,7 +40,7 @@ public interface MeasuringPoint extends CDOObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Point Repository</em>' container reference.
      * @see #setMeasuringPointRepository(MeasuringPointRepository)
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage#getMeasuringPoint_MeasuringPointRepository()
@@ -55,7 +55,7 @@ public interface MeasuringPoint extends CDOObject {
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getMeasuringPointRepository
      * <em>Measuring Point Repository</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measuring Point Repository</em>' container reference.
      * @see #getMeasuringPointRepository()

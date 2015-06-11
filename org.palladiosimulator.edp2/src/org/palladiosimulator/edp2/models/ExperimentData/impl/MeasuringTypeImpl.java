@@ -44,7 +44,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringTypeImpl() {
@@ -53,7 +53,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -74,7 +74,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetExperimentGroup(final ExperimentGroup newExperimentGroup, NotificationChain msgs) {
@@ -85,7 +85,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -108,7 +108,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MetricDescription basicGetMetric() {
@@ -129,7 +129,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringPoint basicGetMeasuringPoint() {
@@ -161,7 +161,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -172,7 +172,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -193,7 +193,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -210,7 +210,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -225,7 +225,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -251,7 +251,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -277,7 +277,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -301,7 +301,7 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

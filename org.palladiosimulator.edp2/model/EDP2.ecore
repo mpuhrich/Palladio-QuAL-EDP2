@@ -339,10 +339,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="harmonicMean" ordered="false"
           lowerBound="1" eType="#//ExperimentData/EJSMeasure"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SensorFrameworkV1DoubleBinaryMeasurements"
-        eSuperTypes="#//ExperimentData/DoubleBinaryMeasurements"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SensorFrameworkV1IdentifierBasedMeasurements"
-        eSuperTypes="#//ExperimentData/IdentifierBasedMeasurements"/>
     <eClassifiers xsi:type="ecore:EClass" name="IJSDuration" instanceClassName="javax.measure.quantity.Duration"
         abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="EComparable" instanceClassName="java.lang.Comparable"
@@ -406,15 +402,6 @@
         <details key="documentation" value="Provides access to data stored in a remote location on a CDO server."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LocalSensorFrameworkRepository" eSuperTypes="#//Repository/Repository">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Provides&amp;nbsp;access&amp;nbsp;to&amp;nbsp;data&amp;nbsp;stored&amp;nbsp;in&amp;nbsp;the&amp;nbsp;SensorFramework&amp;nbsp;format&amp;nbsp;in&amp;nbsp;a&amp;nbsp;local&amp;nbsp;directory.&#xD;&#xA;Also contains the import settings which provide the necessary additional information to process the information from the&#xD;&#xA;SensorFramework."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="importSettings" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Repositories">

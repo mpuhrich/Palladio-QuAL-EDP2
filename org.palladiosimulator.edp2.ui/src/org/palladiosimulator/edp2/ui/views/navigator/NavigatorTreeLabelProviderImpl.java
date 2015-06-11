@@ -60,6 +60,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
     }
 
     private final IMapChangeListener mapChangeListener = new IMapChangeListener() {
+
         @Override
         public void handleMapChange(final MapChangeEvent event) {
             final Set<?> affectedElements = event.diff.getChangedKeys();
@@ -73,7 +74,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
     public NavigatorTreeLabelProviderImpl(final IObservableMap[] attributeMaps) {
         for (int i = 0; i < attributeMaps.length; i++) {
-            attributeMaps[i].addMapChangeListener(mapChangeListener);
+            attributeMaps[i].addMapChangeListener(this.mapChangeListener);
         }
     }
 
@@ -92,6 +93,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                     final MetricDescription metricDescription = measuringType.getMetric();
 
                     return new MetricSpecSwitch<StyledString>() {
+
                         @Override
                         public final StyledString caseBaseMetricDescription(final BaseMetricDescription object) {
                             final StyledString styledString = new StyledString(object.getName() == null ? "Base Metric"
@@ -112,7 +114,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                         };
 
                         @Override
-                        public StyledString caseMetricSetDescription(MetricSetDescription object) {
+                        public StyledString caseMetricSetDescription(final MetricSetDescription object) {
                             final StyledString styledString = new StyledString("MetricSet [\n");
 
                             final int subsumedMetrics = object.getSubsumedMetrics().size();
@@ -154,6 +156,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             final EObject eObject = (EObject) cell.getElement();
             StyledString styledString = null;
             styledString = new ExperimentDataSwitch<StyledString>() {
+
                 @Override
                 public StyledString caseExperimentGroup(final ExperimentGroup object) {
                     final StyledString styledString = new StyledString("Experiment Group ");
@@ -246,6 +249,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             }.doSwitch(eObject);
             if (styledString == null) {
                 styledString = new MetricSpecSwitch<StyledString>() {
+
                     @Override
                     public final StyledString caseBaseMetricDescription(final BaseMetricDescription object) {
                         final StyledString styledString = new StyledString(object.getName() == null ? "Base Metric"
@@ -275,6 +279,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             }
             if (styledString == null) {
                 styledString = new RepositorySwitch<StyledString>() {
+
                     @Override
                     public StyledString caseLocalDirectoryRepository(
                             final org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository object) {
@@ -302,14 +307,6 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                         return styledString;
                     };
 
-                    @Override
-                    public StyledString caseLocalSensorFrameworkRepository(
-                            final org.palladiosimulator.edp2.models.Repository.LocalSensorFrameworkRepository object) {
-                        final StyledString styledString = new StyledString("Local Sensor Framework V1");
-                        final String decoration = " (" + object.getUri() + ")";
-                        styledString.append(decoration, StyledString.COUNTER_STYLER);
-                        return styledString;
-                    };
                 }.doSwitch(eObject);
             }
             if (styledString == null) {

@@ -28,7 +28,7 @@ public interface StringMeasuringPoint extends MeasuringPoint {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Point</em>' attribute.
      * @see #setMeasuringPoint(String)
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage#getStringMeasuringPoint_MeasuringPoint()
@@ -41,7 +41,7 @@ public interface StringMeasuringPoint extends MeasuringPoint {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint#getMeasuringPoint
      * <em>Measuring Point</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measuring Point</em>' attribute.
      * @see #getMeasuringPoint()

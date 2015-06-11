@@ -76,7 +76,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -86,7 +86,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -97,7 +97,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRepositories(final Repositories newRepositories, NotificationChain msgs) {
@@ -108,7 +108,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -130,7 +130,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -153,7 +153,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -179,7 +179,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -200,7 +200,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -232,7 +232,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -252,7 +252,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -279,7 +279,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -303,7 +303,7 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

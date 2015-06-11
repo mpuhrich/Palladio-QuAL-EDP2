@@ -46,7 +46,7 @@ public interface RawMeasurements extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Data Series</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRawMeasurements_DataSeries()
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getRawMeasurements
@@ -65,7 +65,7 @@ public interface RawMeasurements extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measurement Range</em>' container reference.
      * @see #setMeasurementRange(MeasurementRange)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRawMeasurements_MeasurementRange()

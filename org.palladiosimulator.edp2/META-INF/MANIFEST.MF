@@ -33,6 +33,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.apache.commons.codec;bundle-version="1.4.0",
  org.palladiosimulator.measurementframework;bundle-version="1.0.0",
  org.palladiosimulator.metricspec;bundle-version="1.0.0";visibility:=reexport,
+ org.palladiosimulator.mdsdprofiles;visibility:=reexport,
+ org.modelversioning.emfprofile;visibility:=reexport,
  org.palladiosimulator.edp2.dao;bundle-version="1.0.0",
  org.palladiosimulator.commons
 Bundle-Activator: org.palladiosimulator.edp2.EDP2Plugin

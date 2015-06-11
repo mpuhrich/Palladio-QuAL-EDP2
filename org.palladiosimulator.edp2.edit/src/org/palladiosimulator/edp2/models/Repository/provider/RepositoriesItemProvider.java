@@ -170,10 +170,6 @@ public class RepositoriesItemProvider extends ItemProviderAdapter implements IEd
         newChildDescriptors.add(this.createChildParameter(
                 RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                 RepositoryFactory.eINSTANCE.createRemoteCdoRepository()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
-                RepositoryFactory.eINSTANCE.createLocalSensorFrameworkRepository()));
     }
 
     /**

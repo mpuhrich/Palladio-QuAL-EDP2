@@ -41,7 +41,7 @@ public interface Measurement extends Identifier, Propertyable {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Type</em>' reference.
      * @see #setMeasuringType(MeasuringType)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurement_MeasuringType()
@@ -54,7 +54,7 @@ public interface Measurement extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement#getMeasuringType
      * <em>Measuring Type</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Measuring Type</em>' reference.
      * @see #getMeasuringType()
@@ -74,7 +74,7 @@ public interface Measurement extends Identifier, Propertyable {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measurement Ranges</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurement_MeasurementRanges()
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getMeasurement
@@ -92,7 +92,7 @@ public interface Measurement extends Identifier, Propertyable {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Run</em>' container reference.
      * @see #setRun(Run)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurement_Run()
@@ -106,7 +106,7 @@ public interface Measurement extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement#getRun <em>Run</em>}'
      * container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Run</em>' container reference.
      * @see #getRun()

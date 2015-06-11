@@ -22,7 +22,7 @@ public class JSXmlMeasurementsImpl extends DataSeriesImpl implements JSXmlMeasur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected JSXmlMeasurementsImpl() {
@@ -31,7 +31,7 @@ public class JSXmlMeasurementsImpl extends DataSeriesImpl implements JSXmlMeasur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

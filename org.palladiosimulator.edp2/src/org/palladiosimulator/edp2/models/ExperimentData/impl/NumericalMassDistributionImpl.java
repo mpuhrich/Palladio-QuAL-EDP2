@@ -50,7 +50,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalMassDistributionImpl() {
@@ -59,7 +59,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -69,7 +69,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -79,7 +79,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -101,7 +101,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -112,7 +112,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -123,7 +123,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -135,7 +135,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetNumericalNominalStatistics(
@@ -147,7 +147,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -176,7 +176,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -191,7 +191,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -207,7 +207,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -225,7 +225,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -246,7 +246,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -267,7 +267,7 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

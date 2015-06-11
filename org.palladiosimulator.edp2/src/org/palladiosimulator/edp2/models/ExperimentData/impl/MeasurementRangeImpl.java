@@ -66,7 +66,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasurementRangeImpl() {
@@ -75,7 +75,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -85,7 +85,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetRawMeasurements(final RawMeasurements newRawMeasurements, NotificationChain msgs) {
@@ -107,7 +107,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetMeasurement(final Measurement newMeasurement, NotificationChain msgs) {
@@ -140,7 +140,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -162,7 +162,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -173,7 +173,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -184,7 +184,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -208,7 +208,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -236,7 +236,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +255,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -270,7 +270,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -292,7 +292,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -321,7 +321,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -348,7 +348,7 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

@@ -35,7 +35,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
     /**
      * The default value of the '{@link #getStringRepresentation() <em>String Representation</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getStringRepresentation()
      * @generated
      * @ordered
@@ -54,7 +54,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuringPointImpl() {
@@ -63,7 +63,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -73,7 +73,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -83,7 +83,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetMeasuringPointRepository(
@@ -107,7 +107,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -166,7 +166,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -182,7 +182,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -200,7 +200,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -215,7 +215,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

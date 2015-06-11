@@ -40,7 +40,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
     /**
      * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getUri()
      * @generated
      * @ordered
@@ -80,7 +80,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -182,7 +182,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -197,7 +197,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -212,7 +212,7 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

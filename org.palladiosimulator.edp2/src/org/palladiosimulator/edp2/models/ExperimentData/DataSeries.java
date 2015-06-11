@@ -51,7 +51,7 @@ public interface DataSeries extends CDOObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Numerical Statistics</em>' containment reference.
      * @see #setNumericalStatistics(NumericalNominalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries_NumericalStatistics()
@@ -66,7 +66,7 @@ public interface DataSeries extends CDOObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getNumericalStatistics
      * <em>Numerical Statistics</em>}' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Numerical Statistics</em>' containment reference.
      * @see #getNumericalStatistics()
@@ -84,7 +84,7 @@ public interface DataSeries extends CDOObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #setAggregatedMeasurements(FixedWidthAggregatedMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries_AggregatedMeasurements()
@@ -99,7 +99,7 @@ public interface DataSeries extends CDOObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #getAggregatedMeasurements()
@@ -114,7 +114,7 @@ public interface DataSeries extends CDOObject {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Values Uuid</em>' attribute.
      * @see #setValuesUuid(String)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries_ValuesUuid()
@@ -127,7 +127,7 @@ public interface DataSeries extends CDOObject {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getValuesUuid
      * <em>Values Uuid</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Values Uuid</em>' attribute.
      * @see #getValuesUuid()
@@ -145,7 +145,7 @@ public interface DataSeries extends CDOObject {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Textual Statistics</em>' containment reference.
      * @see #setTextualStatistics(TextualNominalStatistics)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries_TextualStatistics()
@@ -160,7 +160,7 @@ public interface DataSeries extends CDOObject {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries#getTextualStatistics
      * <em>Textual Statistics</em>}' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Textual Statistics</em>' containment reference.
      * @see #getTextualStatistics()
@@ -178,7 +178,7 @@ public interface DataSeries extends CDOObject {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Raw Measurements</em>' container reference.
      * @see #setRawMeasurements(RawMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getDataSeries_RawMeasurements()

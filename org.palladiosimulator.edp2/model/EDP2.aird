@@ -8,10 +8,8 @@
   <models xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.mdsdprofiles/model/mdsdprofiles.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#/"/>
-  <models xmi:type="genmodel:GenModel" href="platform:/plugin/org.palladiosimulator.mdsdprofiles/model/mdsdprofiles.genmodel#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_CzmfgBh6EeSoUsjueZK-JA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_J7WlUBh6EeSoUsjueZK-JA" name="ExperimentData class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_J7WlVhh6EeSoUsjueZK-JA" source="GMF_DIAGRAMS">

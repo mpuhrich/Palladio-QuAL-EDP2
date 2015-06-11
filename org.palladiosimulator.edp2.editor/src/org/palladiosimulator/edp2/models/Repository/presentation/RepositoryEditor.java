@@ -43,7 +43,6 @@ import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -121,13 +120,10 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
-import org.modelversioning.emfprofile.provider.EMFProfileItemProviderAdapterFactory;
-import org.modelversioning.emfprofileapplication.provider.EMFProfileApplicationItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.presentation.EDP2EditorPlugin;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
-import org.palladiosimulator.mdsdprofiles.provider.MdsdprofilesItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
@@ -662,10 +658,6 @@ IMenuListener, IViewerProvider, IGotoMarker {
         this.adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
-        this.adapterFactory.addAdapterFactory(new MdsdprofilesItemProviderAdapterFactory());
-        this.adapterFactory.addAdapterFactory(new EMFProfileItemProviderAdapterFactory());
-        this.adapterFactory.addAdapterFactory(new EMFProfileApplicationItemProviderAdapterFactory());
-        this.adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
         // Create the command stack that will notify this editor as commands are executed.

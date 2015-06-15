@@ -5,12 +5,13 @@
       version="1.0.0.qualifier"
       provider-name="palladiosimulator.org">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="https://sdqweb.ipd.kit.edu/wiki/PCM_AddOns#Experiment_Data_Persistency_.26_Presentation_.28EDP2.29_AddOn">
+      Allows to store received measurements, e.g., in a database, an XML file, or a binary file. Also comes with visualizations for stored measurements.
+Documentation is available via: https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/QualityAnalysisLab/Documentation/trunk/org.palladiosimulator.qual.docs/QualityAnalysisLab.pdf
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright url="http://www.palladio-simulator.com/about_palladio/contact/">
+      This plugin is protected by copyright held by the members of Palladio – The Software Quality People
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">

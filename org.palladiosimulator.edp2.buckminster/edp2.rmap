@@ -8,8 +8,6 @@
   <rm:locator pattern="^de\.uka\.ipd\.sdq\..*" searchPathRef="Palladio" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\..*" searchPathRef="Palladio" failOnError="false"/>
   <rm:locator pattern="^de\.fzi\.se\..*" searchPathRef="Palladio" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\.xtext.*" searchPathRef="xtext" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\.xtend.*" searchPathRef="xtext" failOnError="false"/>
 
   <rm:redirect pattern=".*" href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Build/trunk/org.palladiosimulator.targetPlatformBuild/commons.rmap"/>
   

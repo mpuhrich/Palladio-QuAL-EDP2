@@ -3,7 +3,6 @@
       id="org.palladiosimulator.edp2.buckminster"
       label="Buckminster Build for EDP2 features"
       version="1.0.0.qualifier"
-      provider-name="palladiosimulator.org"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 

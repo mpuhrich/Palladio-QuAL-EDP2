@@ -5,7 +5,7 @@
       version="1.0.0.qualifier"
       provider-name="palladiosimulator.org"
       license-feature="org.palladiosimulator.license"
-      license-feature-version="1.0.0.qualifier">
+      license-feature-version="1.0.0">
 
    <description url="https://sdqweb.ipd.kit.edu/wiki/PCM_AddOns#Experiment_Data_Persistency_.26_Presentation_.28EDP2.29_AddOn">
       Allows to store received measurements, e.g., in a database, an XML file, or a binary file. Also comes with visualizations for stored measurements.

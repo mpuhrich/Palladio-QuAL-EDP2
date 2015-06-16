@@ -11,11 +11,6 @@
       Allows to store received measurements, e.g., in a database, an XML file, or a binary file. Also comes with visualizations for stored measurements.
 Documentation is available via: https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/QualityAnalysisLab/Documentation/trunk/org.palladiosimulator.qual.docs/QualityAnalysisLab.pdf
    </description>
-
-   <copyright url="http://www.palladio-simulator.com/about_palladio/contact/">
-      This plugin is protected by copyright held by the members of Palladio – The Software Quality People
-   </copyright>
-
    
    <requires>
       <import plugin="org.eclipse.core.runtime"/>

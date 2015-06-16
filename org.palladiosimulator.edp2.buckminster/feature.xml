@@ -3,8 +3,11 @@
       id="org.palladiosimulator.edp2.buckminster"
       label="Buckminster Build for EDP2 features"
       version="1.0.0.qualifier"
-      provider-name="palladiosimulator.org">
+      provider-name="palladiosimulator.org"
+      license-feature="org.palladiosimulator.license"
+      license-feature-version="1.0.0.qualifier">
 
+   
    <url>
       <discovery label="Palladio" url="https://sdqweb.ipd.kit.edu/eclipse/palladio/nightly"/>
       <discovery label="Palladio Commons" url="https://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>

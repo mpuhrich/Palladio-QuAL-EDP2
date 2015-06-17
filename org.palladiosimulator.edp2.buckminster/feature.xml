@@ -6,17 +6,6 @@
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 
-   
-   <url>
-      <discovery label="Palladio" url="https://sdqweb.ipd.kit.edu/eclipse/palladio/nightly"/>
-      <discovery label="Palladio Commons" url="https://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
-      <discovery label="Third-Party Wrapper" url="https://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
-      <discovery label="Metric Specification Framework" url="https://sdqweb.ipd.kit.edu/eclipse/metricspec/nightly/"/>
-      <discovery label="Measurement Framework Update Site" url="https://sdqweb.ipd.kit.edu/eclipse/measurementframework/nightly/"/>
-      <discovery label="Eclipse Release" url="http://download.eclipse.org/releases/luna/"/>
-      <discovery label="Eclipse Orbit" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
-   </url>
-
    <includes
          id="org.palladiosimulator.edp2.feature"
          version="0.0.0"/>

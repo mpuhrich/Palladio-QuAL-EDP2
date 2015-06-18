@@ -19,14 +19,6 @@
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory"
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory">
       </factory>
-      <factory
-            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInputFactory"
-            id="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQualitativePlotInputFactory">
-      </factory>
-      <factory
-            class="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInputFactory"
-            id="org.palladiosimulator.edp2.visualization.jfreechart.input.serviceLevelObjective.SLOQuantitativePlotInputFactory">
-      </factory>
    </extension>
 
    <extension

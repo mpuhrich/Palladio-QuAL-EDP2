@@ -326,11 +326,11 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
                 MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getMeasuringPoint_StringRepresentation(), this.ecorePackage.getEString(),
-                "stringRepresentation", null, 1, 1, MeasuringPoint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+                "stringRepresentation", null, 1, 1, MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getMeasuringPoint_ResourceURIRepresentation(), this.ecorePackage.getEString(),
-                "resourceURIRepresentation", null, 1, 1, MeasuringPoint.class, IS_TRANSIENT, IS_VOLATILE,
-                !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+                "resourceURIRepresentation", null, 1, 1, MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.stringMeasuringPointEClass, StringMeasuringPoint.class, "StringMeasuringPoint",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

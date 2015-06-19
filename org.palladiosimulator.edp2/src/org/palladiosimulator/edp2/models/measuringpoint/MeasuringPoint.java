@@ -80,6 +80,18 @@ public interface MeasuringPoint extends CDOObject {
     String getStringRepresentation();
 
     /**
+     * Sets the value of the '
+     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getStringRepresentation
+     * <em>String Representation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>String Representation</em>' attribute.
+     * @see #getStringRepresentation()
+     * @generated
+     */
+    void setStringRepresentation(String value);
+
+    /**
      * Returns the value of the '<em><b>Resource URI Representation</b></em>' attribute. <!--
      * begin-user-doc -->
      * <p>
@@ -94,4 +106,17 @@ public interface MeasuringPoint extends CDOObject {
      * @generated
      */
     String getResourceURIRepresentation();
+
+    /**
+     * Sets the value of the '
+     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint#getResourceURIRepresentation
+     * <em>Resource URI Representation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @param value
+     *            the new value of the '<em>Resource URI Representation</em>' attribute.
+     * @see #getResourceURIRepresentation()
+     * @generated
+     */
+    void setResourceURIRepresentation(String value);
 } // MeasuringPoint

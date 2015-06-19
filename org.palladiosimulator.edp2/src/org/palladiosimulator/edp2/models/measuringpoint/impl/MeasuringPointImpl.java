@@ -119,18 +119,47 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated NOT
+     * @generated
      */
     @Override
-    public abstract String getStringRepresentation();
+    public String getStringRepresentation() {
+        return (String) this.eDynamicGet(MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION,
+                MeasuringpointPackage.Literals.MEASURING_POINT__STRING_REPRESENTATION, true, true);
+    }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated NOT
+     * @generated
      */
     @Override
-    public abstract String getResourceURIRepresentation();
+    public void setStringRepresentation(final String newStringRepresentation) {
+        this.eDynamicSet(MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION,
+                MeasuringpointPackage.Literals.MEASURING_POINT__STRING_REPRESENTATION, newStringRepresentation);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getResourceURIRepresentation() {
+        return (String) this.eDynamicGet(MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION,
+                MeasuringpointPackage.Literals.MEASURING_POINT__RESOURCE_URI_REPRESENTATION, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setResourceURIRepresentation(final String newResourceURIRepresentation) {
+        this.eDynamicSet(MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION,
+                MeasuringpointPackage.Literals.MEASURING_POINT__RESOURCE_URI_REPRESENTATION,
+                newResourceURIRepresentation);
+    }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -209,6 +238,12 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             this.setMeasuringPointRepository((MeasuringPointRepository) newValue);
             return;
+        case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
+            this.setStringRepresentation((String) newValue);
+            return;
+        case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
+            this.setResourceURIRepresentation((String) newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
@@ -223,6 +258,12 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
         switch (featureID) {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             this.setMeasuringPointRepository((MeasuringPointRepository) null);
+            return;
+        case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
+            this.setStringRepresentation(STRING_REPRESENTATION_EDEFAULT);
+            return;
+        case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
+            this.setResourceURIRepresentation(RESOURCE_URI_REPRESENTATION_EDEFAULT);
             return;
         }
         super.eUnset(featureID);

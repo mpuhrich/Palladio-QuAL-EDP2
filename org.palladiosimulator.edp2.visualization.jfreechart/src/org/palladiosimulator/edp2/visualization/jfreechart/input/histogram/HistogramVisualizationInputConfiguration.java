@@ -1,13 +1,10 @@
 package org.palladiosimulator.edp2.visualization.jfreechart.input.histogram;
 
-import java.text.ParseException;
-import java.text.ParsePosition;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
-import javax.measure.unit.UnitFormat;
 
 import org.palladiosimulator.edp2.datastream.configurable.reflective.ConfigurationProperty;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputConfiguration;
@@ -71,16 +68,6 @@ public class HistogramVisualizationInputConfiguration extends XYPlotVisualizatio
         return numberOfBins;
     }
 
-    private void parseJScienceUnit(final String unit) {
-        final ParsePosition pos = new ParsePosition(0);
-        Unit<?> parsedUnit = null;
-        try {
-            parsedUnit = UnitFormat.getInstance().parseSingleUnit(unit, pos);
-        } catch (final ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @SuppressWarnings("unchecked")
     public <Q extends Quantity> Unit<Q> getUnit() {
         return (Unit<Q>) unit;
@@ -100,7 +87,7 @@ public class HistogramVisualizationInputConfiguration extends XYPlotVisualizatio
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualisationConfiguration#
      * getDefaultConfiguration()
      */

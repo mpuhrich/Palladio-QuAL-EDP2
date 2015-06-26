@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2.ui.wizards.datasource;
 
@@ -22,16 +22,14 @@ import org.eclipse.swt.widgets.Label;
 /**
  * Allows to select the type of a data source. All known (and selectable) data sources are available
  * as constants.
- * 
+ *
  * @author groenda, Sebastian Lehrig
  *
  */
 public class SelectDataSourceTypePage extends WizardPage {
 
     public static final String IN_MEMORY_DATA_SOURCE = "In-Memory data source";
-    public static final String REMOTE_DATA_SOURCE = "Remote data source";
     public static final String FILE_DATA_SOURCE = "File data source";
-    public static final String NO_TYPE_SELECTED = "";
 
     /** Maps controls and their decoration. Used to display validation errors. */
     private static HashMap<Control, ControlDecoration> decoratorMap = new HashMap<Control, ControlDecoration>();
@@ -44,12 +42,11 @@ public class SelectDataSourceTypePage extends WizardPage {
 
         setTitle("Select Type of Data Source");
         setDescription("Please select the type of the data source you want to open.");
-        this.selection = NO_TYPE_SELECTED;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
      */
     @Override
@@ -77,8 +74,6 @@ public class SelectDataSourceTypePage extends WizardPage {
                     success = true;
                 } else if (SelectDataSourceTypePage.this.selection.equals(IN_MEMORY_DATA_SOURCE)) {
                     success = true;
-                } else if (SelectDataSourceTypePage.this.selection.equals(REMOTE_DATA_SOURCE)) {
-                    success = true;
                 }
                 final ControlDecoration decoration = decoratorMap.get(selectedDataTypeCombo);
                 if (decoration != null) {
@@ -101,23 +96,20 @@ public class SelectDataSourceTypePage extends WizardPage {
 
     /**
      * Populates the combo box with all selectable data source types.
-     * 
+     *
      * @param selectedDataType
      *            Combo box to be populated.
      */
     private void populateComboBox(final Combo selectedDataType) {
-        // Add default
-        selectedDataType.add(FILE_DATA_SOURCE);
-        selectedDataType.select(0);
-        this.selection = FILE_DATA_SOURCE;
-        // Add other types
-        selectedDataType.add(REMOTE_DATA_SOURCE);
         selectedDataType.add(IN_MEMORY_DATA_SOURCE);
+        selectedDataType.select(0);
+        selectedDataType.add(FILE_DATA_SOURCE);
+        this.selection = IN_MEMORY_DATA_SOURCE;
     }
 
     /**
      * Creates the decoration for the elements to allow showing validation messages.
-     * 
+     *
      * @param control
      *            The control which should get be decorated.
      */
@@ -133,7 +125,7 @@ public class SelectDataSourceTypePage extends WizardPage {
     /**
      * Get the current selected data type. Returns an empty string if no data source type is
      * selected.
-     * 
+     *
      * @return The string representing the selection.
      */
     public String getSelection() {

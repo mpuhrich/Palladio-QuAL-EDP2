@@ -3,11 +3,6 @@
  */
 package org.palladiosimulator.edp2.ui.wizards.datasource;
 
-import java.util.HashMap;
-
-import org.eclipse.jface.fieldassist.ControlDecoration;
-import org.eclipse.jface.fieldassist.FieldDecoration;
-import org.eclipse.jface.fieldassist.FieldDecorationRegistry;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
@@ -16,7 +11,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 
 /**
@@ -30,9 +24,6 @@ public class SelectDataSourceTypePage extends WizardPage {
 
     public static final String IN_MEMORY_DATA_SOURCE = "In-Memory data source";
     public static final String FILE_DATA_SOURCE = "File data source";
-
-    /** Maps controls and their decoration. Used to display validation errors. */
-    private static HashMap<Control, ControlDecoration> decoratorMap = new HashMap<Control, ControlDecoration>();
 
     /** Contains the representation of the current selection. */
     private String selection;
@@ -68,27 +59,11 @@ public class SelectDataSourceTypePage extends WizardPage {
 
             @Override
             public void widgetSelected(final SelectionEvent e) {
-                boolean success = false;
                 SelectDataSourceTypePage.this.selection = selectedDataTypeCombo.getText();
-                if (SelectDataSourceTypePage.this.selection.equals(FILE_DATA_SOURCE)) {
-                    success = true;
-                } else if (SelectDataSourceTypePage.this.selection.equals(IN_MEMORY_DATA_SOURCE)) {
-                    success = true;
-                }
-                final ControlDecoration decoration = decoratorMap.get(selectedDataTypeCombo);
-                if (decoration != null) {
-                    if (success) {
-                        decoration.hide();
-                    } else {
-                        decoration.setDescriptionText("Please select a data type.");
-                        decoration.show();
-                    }
-                }
-                setPageComplete(success);
+                setPageComplete(true);
             }
         });
         populateComboBox(selectedDataTypeCombo);
-        createControlDecoration(selectedDataTypeCombo);
 
         // The additional spacing (default is 5,5) is for the decorations
         GridLayoutFactory.swtDefaults().numColumns(2).spacing(10, 5).generateLayout(container);
@@ -105,21 +80,6 @@ public class SelectDataSourceTypePage extends WizardPage {
         selectedDataType.select(0);
         selectedDataType.add(FILE_DATA_SOURCE);
         this.selection = IN_MEMORY_DATA_SOURCE;
-    }
-
-    /**
-     * Creates the decoration for the elements to allow showing validation messages.
-     *
-     * @param control
-     *            The control which should get be decorated.
-     */
-    private void createControlDecoration(final Control control) {
-        final ControlDecoration controlDecoration = new ControlDecoration(control, SWT.LEFT | SWT.TOP);
-        final FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault().getFieldDecoration(
-                FieldDecorationRegistry.DEC_ERROR);
-        controlDecoration.setImage(fieldDecoration.getImage());
-        controlDecoration.hide();
-        decoratorMap.put(control, controlDecoration);
     }
 
     /**

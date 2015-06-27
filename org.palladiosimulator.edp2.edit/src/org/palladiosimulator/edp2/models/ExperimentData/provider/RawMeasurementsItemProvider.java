@@ -34,7 +34,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RawMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -44,12 +44,13 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
         }
@@ -67,7 +68,8 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES);
         }
@@ -76,7 +78,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -89,7 +91,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns RawMeasurements.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -106,22 +108,24 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((RawMeasurements) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_RawMeasurements_type") : this
-                .getString("_UI_RawMeasurements_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_RawMeasurements_type") :
+                    this.getString("_UI_RawMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(RawMeasurements.class)) {
+        switch (notification.getFeatureID(RawMeasurements.class))
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -132,30 +136,38 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                                ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                                ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                                ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                                ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

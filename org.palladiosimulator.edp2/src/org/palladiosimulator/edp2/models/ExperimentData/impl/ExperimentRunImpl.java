@@ -90,7 +90,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -108,7 +109,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             return this.basicSetExperimentSetting(null, msgs);
         }
@@ -122,10 +124,12 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS, ExperimentSetting.class, msgs);
+                    ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
+                    ExperimentSetting.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -137,7 +141,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             return this.getExperimentSetting();
         }
@@ -152,7 +157,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             this.setExperimentSetting((ExperimentSetting) newValue);
             return;
@@ -167,7 +173,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             this.setExperimentSetting((ExperimentSetting) null);
             return;
@@ -182,7 +189,8 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_RUN__EXPERIMENT_SETTING:
             return this.getExperimentSetting() != null;
         }

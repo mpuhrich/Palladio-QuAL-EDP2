@@ -81,13 +81,16 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      * @generated
      */
     public static ExperimentDataFactory init() {
-        try {
+        try
+        {
             final ExperimentDataFactory theExperimentDataFactory = (ExperimentDataFactory) EPackage.Registry.INSTANCE
                     .getEFactory(ExperimentDataPackage.eNS_URI);
-            if (theExperimentDataFactory != null) {
+            if (theExperimentDataFactory != null)
+            {
                 return theExperimentDataFactory;
             }
-        } catch (final Exception exception) {
+        } catch (final Exception exception)
+        {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new ExperimentDataFactoryImpl();
@@ -109,7 +112,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
+        switch (eClass.getClassifierID())
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE:
             return this.createMeasurementRange();
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY:
@@ -172,7 +176,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      */
     @Override
     public Object createFromString(final EDataType eDataType, final String initialValue) {
-        switch (eDataType.getClassifierID()) {
+        switch (eDataType.getClassifierID())
+        {
         case ExperimentDataPackage.EJS_MEASURE:
             return this.createEJSMeasureFromString(eDataType, initialValue);
         case ExperimentDataPackage.EJS_DURATION_MEASURE:
@@ -189,7 +194,8 @@ public class ExperimentDataFactoryImpl extends EFactoryImpl implements Experimen
      */
     @Override
     public String convertToString(final EDataType eDataType, final Object instanceValue) {
-        switch (eDataType.getClassifierID()) {
+        switch (eDataType.getClassifierID())
+        {
         case ExperimentDataPackage.EJS_MEASURE:
             return this.convertEJSMeasureToString(eDataType, instanceValue);
         case ExperimentDataPackage.EJS_DURATION_MEASURE:

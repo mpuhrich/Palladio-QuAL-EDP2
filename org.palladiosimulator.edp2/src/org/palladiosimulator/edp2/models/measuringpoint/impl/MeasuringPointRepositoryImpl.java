@@ -72,7 +72,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasuringPoints()).basicAdd(otherEnd,
                     msgs);
@@ -88,7 +89,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             return ((InternalEList<?>) this.getMeasuringPoints()).basicRemove(otherEnd, msgs);
         }
@@ -102,7 +104,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             return this.getMeasuringPoints();
         }
@@ -117,7 +120,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             this.getMeasuringPoints().clear();
             this.getMeasuringPoints().addAll((Collection<? extends MeasuringPoint>) newValue);
@@ -133,7 +137,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             this.getMeasuringPoints().clear();
             return;
@@ -148,7 +153,8 @@ public class MeasuringPointRepositoryImpl extends IdentifierImpl implements Meas
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS:
             return !this.getMeasuringPoints().isEmpty();
         }

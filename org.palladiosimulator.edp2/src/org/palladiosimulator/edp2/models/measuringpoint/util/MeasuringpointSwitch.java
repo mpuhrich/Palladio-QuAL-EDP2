@@ -38,7 +38,8 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      * @generated
      */
     public MeasuringpointSwitch() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = MeasuringpointPackage.eINSTANCE;
         }
     }
@@ -65,7 +66,8 @@ public class MeasuringpointSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID) {
+        switch (classifierID)
+        {
         case MeasuringpointPackage.MEASURING_POINT: {
             final MeasuringPoint measuringPoint = (MeasuringPoint) theEObject;
             T result = this.caseMeasuringPoint(measuringPoint);

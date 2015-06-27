@@ -32,7 +32,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NumericalOrdinalStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -42,12 +42,13 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addMinimumPropertyDescriptor(object);
@@ -60,49 +61,76 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds a property descriptor for the Minimum feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMinimumPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_NumericalOrdinalStatistics_minimum_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_NumericalOrdinalStatistics_minimum_feature",
-                        "_UI_NumericalOrdinalStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MINIMUM, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors
+        .add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_NumericalOrdinalStatistics_minimum_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_NumericalOrdinalStatistics_minimum_feature",
+                                        "_UI_NumericalOrdinalStatistics_type"),
+                                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MINIMUM,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Maximum feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMaximumPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_NumericalOrdinalStatistics_maximum_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_NumericalOrdinalStatistics_maximum_feature",
-                        "_UI_NumericalOrdinalStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors
+        .add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_NumericalOrdinalStatistics_maximum_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_NumericalOrdinalStatistics_maximum_feature",
+                                        "_UI_NumericalOrdinalStatistics_type"),
+                                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Median feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMedianPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_NumericalOrdinalStatistics_median_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_NumericalOrdinalStatistics_median_feature",
-                        "_UI_NumericalOrdinalStatistics_type"),
-                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MEDIAN, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors
+        .add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_NumericalOrdinalStatistics_median_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_NumericalOrdinalStatistics_median_feature",
+                                        "_UI_NumericalOrdinalStatistics_type"),
+                                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MEDIAN,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
@@ -116,7 +144,8 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES);
         }
@@ -125,7 +154,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,7 +167,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
 
     /**
      * This returns NumericalOrdinalStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -155,22 +184,24 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     @Override
     public String getText(final Object object) {
         final String label = ((NumericalOrdinalStatistics) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_NumericalOrdinalStatistics_type") : this
-                .getString("_UI_NumericalOrdinalStatistics_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_NumericalOrdinalStatistics_type") :
+                    this.getString("_UI_NumericalOrdinalStatistics_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(NumericalOrdinalStatistics.class)) {
+        switch (notification.getFeatureID(NumericalOrdinalStatistics.class))
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM:
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MEDIAN:
@@ -186,16 +217,17 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
-                ExperimentDataFactory.eINSTANCE.createNumericalPercentile()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
+                                ExperimentDataFactory.eINSTANCE.createNumericalPercentile()));
     }
 
 }

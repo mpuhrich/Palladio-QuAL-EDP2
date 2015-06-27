@@ -214,7 +214,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             final RawMeasurements rawMeasurements = this.getRawMeasurements();
             if (rawMeasurements != null) {
@@ -229,7 +230,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
             return this.basicSetMeasurement((Measurement) otherEnd, msgs);
         case ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getAggregatedMeasurements()).basicAdd(
-                    otherEnd, msgs);
+                    otherEnd,
+                    msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -242,7 +244,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             return this.basicSetRawMeasurements(null, msgs);
         case ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT:
@@ -260,10 +263,12 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES, Measurement.class, msgs);
+                    ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES,
+                    Measurement.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -275,7 +280,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             return this.getRawMeasurements();
         case ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT:
@@ -298,7 +304,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             this.setRawMeasurements((RawMeasurements) newValue);
             return;
@@ -326,7 +333,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             this.setRawMeasurements((RawMeasurements) null);
             return;
@@ -353,7 +361,8 @@ public class MeasurementRangeImpl extends PropertyableImpl implements Measuremen
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS:
             return this.getRawMeasurements() != null;
         case ExperimentDataPackage.MEASUREMENT_RANGE__MEASUREMENT:

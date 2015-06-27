@@ -178,7 +178,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -186,7 +187,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
             return this.basicSetExperimentGroup((ExperimentGroup) otherEnd, msgs);
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getExperimentSettings()).basicAdd(
-                    otherEnd, msgs);
+                    otherEnd,
+                    msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -199,7 +201,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             return this.basicSetExperimentGroup(null, msgs);
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS:
@@ -215,10 +218,12 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES, ExperimentGroup.class, msgs);
+                    ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES,
+                    ExperimentGroup.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -230,7 +235,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             return this.getExperimentGroup();
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS:
@@ -257,7 +263,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             this.setExperimentGroup((ExperimentGroup) newValue);
             return;
@@ -282,7 +289,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             this.setExperimentGroup((ExperimentGroup) null);
             return;
@@ -306,7 +314,8 @@ public class MeasuringTypeImpl extends IdentifierImpl implements MeasuringType {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_GROUP:
             return this.getExperimentGroup() != null;
         case ExperimentDataPackage.MEASURING_TYPE__EXPERIMENT_SETTINGS:

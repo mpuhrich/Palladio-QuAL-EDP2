@@ -152,7 +152,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     public NotificationChain basicSetRepository(final Repository newRepository, NotificationChain msgs) {
         msgs = this.eDynamicInverseAdd((InternalEObject) newRepository,
-                ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY, msgs);
+                ExperimentDataPackage.EXPERIMENT_GROUP__REPOSITORY,
+                msgs);
         return msgs;
     }
 
@@ -222,10 +223,12 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getExperimentSettings()).basicAdd(
-                    otherEnd, msgs);
+                    otherEnd,
+                    msgs);
         case ExperimentDataPackage.EXPERIMENT_GROUP__MEASURING_TYPES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasuringTypes()).basicAdd(otherEnd,
                     msgs);
@@ -250,7 +253,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
             return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
@@ -274,7 +278,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
             if (coreType) {
                 return this.getAdditionalInformation();
@@ -308,7 +313,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
             ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
@@ -345,7 +351,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
             this.getAdditionalInformation().clear();
             return;
@@ -378,7 +385,8 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
             return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS:
@@ -404,8 +412,10 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (derivedFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (derivedFeatureID)
+            {
             case ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
             default:
@@ -422,8 +432,10 @@ public class ExperimentGroupImpl extends IdentifierImpl implements ExperimentGro
      */
     @Override
     public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (baseFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (baseFeatureID)
+            {
             case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.EXPERIMENT_GROUP__ADDITIONAL_INFORMATION;
             default:

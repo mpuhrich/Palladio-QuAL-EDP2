@@ -168,7 +168,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -186,7 +187,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.basicSetMeasuringPointRepository(null, msgs);
         }
@@ -200,7 +202,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.eInternalContainer().eInverseRemove(this,
                     MeasuringpointPackage.MEASURING_POINT_REPOSITORY__MEASURING_POINTS, MeasuringPointRepository.class,
@@ -216,7 +219,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.getMeasuringPointRepository();
         case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
@@ -234,7 +238,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             this.setMeasuringPointRepository((MeasuringPointRepository) newValue);
             return;
@@ -255,7 +260,8 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             this.setMeasuringPointRepository((MeasuringPointRepository) null);
             return;
@@ -276,15 +282,16 @@ public abstract class MeasuringPointImpl extends CDOObjectImpl implements Measur
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.MEASURING_POINT__MEASURING_POINT_REPOSITORY:
             return this.getMeasuringPointRepository() != null;
         case MeasuringpointPackage.MEASURING_POINT__STRING_REPRESENTATION:
             return STRING_REPRESENTATION_EDEFAULT == null ? this.getStringRepresentation() != null
-            : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
+                    : !STRING_REPRESENTATION_EDEFAULT.equals(this.getStringRepresentation());
         case MeasuringpointPackage.MEASURING_POINT__RESOURCE_URI_REPRESENTATION:
             return RESOURCE_URI_REPRESENTATION_EDEFAULT == null ? this.getResourceURIRepresentation() != null
-            : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
+                    : !RESOURCE_URI_REPRESENTATION_EDEFAULT.equals(this.getResourceURIRepresentation());
         }
         return super.eIsSet(featureID);
     }

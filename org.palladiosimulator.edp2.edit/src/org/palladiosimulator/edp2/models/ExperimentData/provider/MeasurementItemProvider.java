@@ -23,7 +23,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class MeasurementItemProvider extends IdentifierItemProvider {
@@ -31,7 +31,7 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasurementItemProvider(final AdapterFactory adapterFactory) {
@@ -41,12 +41,13 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addMeasuringTypePropertyDescriptor(object);
@@ -58,30 +59,48 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Measuring Type feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMeasuringTypePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_Measurement_measuringType_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_Measurement_measuringType_feature",
-                        "_UI_Measurement_type"), ExperimentDataPackage.Literals.MEASUREMENT__MEASURING_TYPE, true,
-                false, true, null, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_Measurement_measuringType_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_Measurement_measuringType_feature",
+                                        "_UI_Measurement_type"),
+                                ExperimentDataPackage.Literals.MEASUREMENT__MEASURING_TYPE,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Run feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addRunPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_Measurement_run_feature"), this.getString("_UI_PropertyDescriptor_description",
-                        "_UI_Measurement_run_feature", "_UI_Measurement_type"),
-                        ExperimentDataPackage.Literals.MEASUREMENT__RUN, true, false, true, null, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_Measurement_run_feature"),
+                                this.getString("_UI_PropertyDescriptor_description", "_UI_Measurement_run_feature",
+                                        "_UI_Measurement_type"),
+                                ExperimentDataPackage.Literals.MEASUREMENT__RUN,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
@@ -95,7 +114,8 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.MEASUREMENT__MEASUREMENT_RANGES);
@@ -105,7 +125,7 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -118,7 +138,7 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns Measurement.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,22 +155,24 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((Measurement) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_Measurement_type") : this
-                .getString("_UI_Measurement_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_Measurement_type") :
+                    this.getString("_UI_Measurement_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(Measurement.class)) {
+        switch (notification.getFeatureID(Measurement.class))
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
         case ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -162,26 +184,29 @@ public class MeasurementItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
-                ExperimentDataFactory.eINSTANCE.create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
+                                ExperimentDataFactory.eINSTANCE
+                                        .create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.MEASUREMENT__MEASUREMENT_RANGES,
-                ExperimentDataFactory.eINSTANCE.createMeasurementRange()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.MEASUREMENT__MEASUREMENT_RANGES,
+                                ExperimentDataFactory.eINSTANCE.createMeasurementRange()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

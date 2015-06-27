@@ -83,7 +83,8 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
             return this.getUrl();
         }
@@ -97,7 +98,8 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
             this.setUrl((String) newValue);
             return;
@@ -112,7 +114,8 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
             this.setUrl(URL_EDEFAULT);
             return;
@@ -127,7 +130,8 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
             return URL_EDEFAULT == null ? this.getUrl() != null : !URL_EDEFAULT.equals(this.getUrl());
         }

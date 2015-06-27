@@ -114,7 +114,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     @Override
     public void setRepositories(final Repositories newRepositories) {
         this.eDynamicSet(RepositoryPackage.REPOSITORY__REPOSITORIES,
-                RepositoryPackage.Literals.REPOSITORY__REPOSITORIES, newRepositories);
+                RepositoryPackage.Literals.REPOSITORY__REPOSITORIES,
+                newRepositories);
     }
 
     /**
@@ -185,7 +186,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -206,7 +208,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             return this.basicSetRepositories(null, msgs);
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
@@ -222,10 +225,12 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             return this.eInternalContainer().eInverseRemove(this,
-                    RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES, Repositories.class, msgs);
+                    RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES,
+                    Repositories.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -237,7 +242,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             return this.getRepositories();
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:
@@ -258,7 +264,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             this.setRepositories((Repositories) newValue);
             return;
@@ -284,7 +291,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             this.setRepositories((Repositories) null);
             return;
@@ -308,7 +316,8 @@ public abstract class RepositoryImpl extends IdentifierImpl implements Repositor
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORY__REPOSITORIES:
             return this.getRepositories() != null;
         case RepositoryPackage.REPOSITORY__EXPERIMENT_GROUPS:

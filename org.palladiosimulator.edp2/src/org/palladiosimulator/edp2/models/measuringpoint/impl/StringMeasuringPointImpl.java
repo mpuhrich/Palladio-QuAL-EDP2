@@ -80,7 +80,8 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
             return this.getMeasuringPoint();
         }
@@ -94,7 +95,8 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
             this.setMeasuringPoint((String) newValue);
             return;
@@ -109,7 +111,8 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
             this.setMeasuringPoint(MEASURING_POINT_EDEFAULT);
             return;
@@ -124,7 +127,8 @@ public class StringMeasuringPointImpl extends MeasuringPointImpl implements Stri
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.STRING_MEASURING_POINT__MEASURING_POINT:
             return MEASURING_POINT_EDEFAULT == null ? this.getMeasuringPoint() != null : !MEASURING_POINT_EDEFAULT
                     .equals(this.getMeasuringPoint());

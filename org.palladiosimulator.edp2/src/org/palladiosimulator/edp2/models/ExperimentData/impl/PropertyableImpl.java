@@ -81,7 +81,8 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
             return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         }
@@ -95,7 +96,8 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
             if (coreType) {
                 return this.getAdditionalInformation();
@@ -113,7 +115,8 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
             ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
@@ -128,7 +131,8 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
             this.getAdditionalInformation().clear();
             return;
@@ -143,7 +147,8 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
             return !this.getAdditionalInformation().isEmpty();
         }

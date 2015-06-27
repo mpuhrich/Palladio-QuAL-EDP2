@@ -36,7 +36,7 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ExperimentSettingItemProvider(final AdapterFactory adapterFactory) {
@@ -46,12 +46,13 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addDescriptionPropertyDescriptor(object);
@@ -63,33 +64,49 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Description feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addDescriptionPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentSetting_description_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentSetting_description_feature",
-                        "_UI_ExperimentSetting_type"), ExperimentDataPackage.Literals.EXPERIMENT_SETTING__DESCRIPTION,
-                true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentSetting_description_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentSetting_description_feature",
+                                        "_UI_ExperimentSetting_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__DESCRIPTION,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Measuring Types feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMeasuringTypesPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors
-                .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
-                .getRootAdapterFactory(), this.getResourceLocator(), this
-                .getString("_UI_ExperimentSetting_measuringTypes_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentSetting_measuringTypes_feature",
-                        "_UI_ExperimentSetting_type"),
-                        ExperimentDataPackage.Literals.EXPERIMENT_SETTING__MEASURING_TYPES, true, false, true, null,
-                        null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentSetting_measuringTypes_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentSetting_measuringTypes_feature",
+                                        "_UI_ExperimentSetting_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__MEASURING_TYPES,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
@@ -103,7 +120,8 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS);
@@ -113,7 +131,7 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -126,7 +144,7 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns ExperimentSetting.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,22 +161,24 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((ExperimentSetting) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_ExperimentSetting_type") : this
-                .getString("_UI_ExperimentSetting_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_ExperimentSetting_type") :
+                    this.getString("_UI_ExperimentSetting_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(ExperimentSetting.class)) {
+        switch (notification.getFeatureID(ExperimentSetting.class))
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -173,26 +193,29 @@ public class ExperimentSettingItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
-                ExperimentDataFactory.eINSTANCE.create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
+                                ExperimentDataFactory.eINSTANCE
+                                        .create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
-                ExperimentDataFactory.eINSTANCE.createExperimentRun()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.EXPERIMENT_SETTING__EXPERIMENT_RUNS,
+                                ExperimentDataFactory.eINSTANCE.createExperimentRun()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

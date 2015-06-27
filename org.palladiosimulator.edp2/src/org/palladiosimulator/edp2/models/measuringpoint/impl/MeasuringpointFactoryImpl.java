@@ -26,13 +26,16 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
      * @generated
      */
     public static MeasuringpointFactory init() {
-        try {
+        try
+        {
             final MeasuringpointFactory theMeasuringpointFactory = (MeasuringpointFactory) EPackage.Registry.INSTANCE
                     .getEFactory(MeasuringpointPackage.eNS_URI);
-            if (theMeasuringpointFactory != null) {
+            if (theMeasuringpointFactory != null)
+            {
                 return theMeasuringpointFactory;
             }
-        } catch (final Exception exception) {
+        } catch (final Exception exception)
+        {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new MeasuringpointFactoryImpl();
@@ -54,7 +57,8 @@ public class MeasuringpointFactoryImpl extends EFactoryImpl implements Measuring
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
+        switch (eClass.getClassifierID())
+        {
         case MeasuringpointPackage.STRING_MEASURING_POINT:
             return this.createStringMeasuringPoint();
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT:

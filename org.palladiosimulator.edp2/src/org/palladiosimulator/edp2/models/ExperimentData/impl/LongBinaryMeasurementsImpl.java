@@ -76,7 +76,8 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT:
             return this.getStorageUnit();
         }
@@ -90,7 +91,8 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT:
             this.setStorageUnit((Unit) newValue);
             return;
@@ -105,7 +107,8 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT:
             this.setStorageUnit((Unit) null);
             return;
@@ -120,7 +123,8 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT:
             return this.getStorageUnit() != null;
         }

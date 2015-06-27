@@ -84,7 +84,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -102,7 +103,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             return this.basicSetExperimentgroup(null, msgs);
         }
@@ -116,7 +118,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             return this.eInternalContainer().eInverseRemove(this, ExperimentDataPackage.EXPERIMENT_GROUP__REPORTS,
                     ExperimentGroup.class, msgs);
@@ -131,7 +134,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             return this.getExperimentgroup();
         }
@@ -145,7 +149,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             this.setExperimentgroup((ExperimentGroup) newValue);
             return;
@@ -160,7 +165,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             this.setExperimentgroup((ExperimentGroup) null);
             return;
@@ -175,7 +181,8 @@ public class ExperimentGroupRunImpl extends RunImpl implements ExperimentGroupRu
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP_RUN__EXPERIMENTGROUP:
             return this.getExperimentgroup() != null;
         }

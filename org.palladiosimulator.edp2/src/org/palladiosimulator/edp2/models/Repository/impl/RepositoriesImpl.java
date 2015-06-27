@@ -102,7 +102,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
                 if (this.eNotificationRequired()) {
                     this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, this
-                            .basicGetCommonResourceSet()));
+                                    .basicGetCommonResourceSet()));
                 }
             }
         }
@@ -139,10 +139,12 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getAvailableRepositories()).basicAdd(
-                    otherEnd, msgs);
+                    otherEnd,
+                    msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -155,7 +157,8 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             return ((InternalEList<?>) this.getAvailableRepositories()).basicRemove(otherEnd, msgs);
         }
@@ -169,7 +172,8 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             return this.getAvailableRepositories();
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:
@@ -189,7 +193,8 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             this.getAvailableRepositories().clear();
             this.getAvailableRepositories().addAll((Collection<? extends Repository>) newValue);
@@ -208,7 +213,8 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             this.getAvailableRepositories().clear();
             return;
@@ -226,7 +232,8 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.REPOSITORIES__AVAILABLE_REPOSITORIES:
             return !this.getAvailableRepositories().isEmpty();
         case RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET:

@@ -139,7 +139,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getNumericalMassDistribution()).basicAdd(
                     otherEnd, msgs);
@@ -160,7 +161,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
             return ((InternalEList<?>) this.getNumericalMassDistribution()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
@@ -176,10 +178,12 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__DATA_SERIES:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS, DataSeries.class, msgs);
+                    ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS,
+                    DataSeries.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -191,7 +195,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             return this.getNumberMeasurements();
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:
@@ -210,7 +215,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             this.setNumberMeasurements((Measure) newValue);
             return;
@@ -232,7 +238,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             this.setNumberMeasurements((Measure) null);
             return;
@@ -253,7 +260,8 @@ public class NumericalNominalStatisticsImpl extends IdentifierImpl implements Nu
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             return this.getNumberMeasurements() != null;
         case ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION:

@@ -31,13 +31,16 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
      * @generated
      */
     public static RepositoryFactory init() {
-        try {
+        try
+        {
             final RepositoryFactory theRepositoryFactory = (RepositoryFactory) EPackage.Registry.INSTANCE
                     .getEFactory(RepositoryPackage.eNS_URI);
-            if (theRepositoryFactory != null) {
+            if (theRepositoryFactory != null)
+            {
                 return theRepositoryFactory;
             }
-        } catch (final Exception exception) {
+        } catch (final Exception exception)
+        {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new RepositoryFactoryImpl();
@@ -59,7 +62,8 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
+        switch (eClass.getClassifierID())
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY:
             return this.createLocalDirectoryRepository();
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY:

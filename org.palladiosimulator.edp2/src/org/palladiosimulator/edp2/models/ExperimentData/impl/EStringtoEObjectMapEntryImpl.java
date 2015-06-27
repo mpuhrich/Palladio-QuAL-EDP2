@@ -128,7 +128,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
             return this.getTypedKey();
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE:
@@ -144,7 +145,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
             this.setTypedKey((String) newValue);
             return;
@@ -162,7 +164,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
             this.setTypedKey(KEY_EDEFAULT);
             return;
@@ -180,7 +183,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
             return KEY_EDEFAULT == null ? this.getTypedKey() != null : !KEY_EDEFAULT.equals(this.getTypedKey());
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE:
@@ -203,7 +207,8 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
      */
     @Override
     public int getHash() {
-        if (this.hash == -1) {
+        if (this.hash == -1)
+        {
             final Object theKey = this.getKey();
             this.hash = (theKey == null ? 0 : theKey.hashCode());
         }

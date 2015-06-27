@@ -28,7 +28,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements
-DoubleBinaryMeasurements<Q> {
+        DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -78,7 +78,8 @@ DoubleBinaryMeasurements<Q> {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
             return this.getStorageUnit();
         }
@@ -93,7 +94,8 @@ DoubleBinaryMeasurements<Q> {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
             this.setStorageUnit((Unit<Q>) newValue);
             return;
@@ -108,7 +110,8 @@ DoubleBinaryMeasurements<Q> {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
             this.setStorageUnit((Unit<Q>) null);
             return;
@@ -123,7 +126,8 @@ DoubleBinaryMeasurements<Q> {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT:
             return this.getStorageUnit() != null;
         }

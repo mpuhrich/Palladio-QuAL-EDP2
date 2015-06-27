@@ -148,8 +148,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
         // Obtain or create and register package
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
-                .get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                : new RepositoryPackageImpl());
+                .get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
+                        .get(eNS_URI) : new RepositoryPackageImpl());
 
         isInited = true;
 
@@ -159,10 +159,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register interdependencies
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
+                .getEPackage(ExperimentDataPackage.eNS_URI)
+                        : ExperimentDataPackage.eINSTANCE);
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
+                .getEPackage(MeasuringpointPackage.eNS_URI)
+                        : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theRepositoryPackage.createPackageContents();
@@ -465,21 +467,25 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.localDirectoryRepositoryEClass, LocalDirectoryRepository.class,
-                "LocalDirectoryRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "LocalDirectoryRepository",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getLocalDirectoryRepository_Uri(), this.ecorePackage.getEString(), "uri", null, 1, 1,
                 LocalDirectoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         final EOperation op = this.addEOperation(this.localDirectoryRepositoryEClass, this.getFile(),
-                "convertUriStringToFile", 1, 1, IS_UNIQUE, !IS_ORDERED);
+                "convertUriStringToFile", 1, 1,
+                IS_UNIQUE, !IS_ORDERED);
         this.addEParameter(op, this.ecorePackage.getEString(), "uriString", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
         this.initEClass(this.fileEClass, File.class, "File", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.localMemoryRepositoryEClass, LocalMemoryRepository.class, "LocalMemoryRepository",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getLocalMemoryRepository_Domain(), this.ecorePackage.getEString(), "domain", null, 1,
-                1, LocalMemoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                1,
+                LocalMemoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.remoteCdoRepositoryEClass, RemoteCdoRepository.class, "RemoteCdoRepository", !IS_ABSTRACT,
@@ -495,14 +501,16 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getRepositories_CommonResourceSet(), this.getIResourceSet(), null,
-                "commonResourceSet", null, 1, 1, Repositories.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "commonResourceSet", null, 1,
+                1, Repositories.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.iResourceSetEClass, ResourceSet.class, "IResourceSet", IS_ABSTRACT, IS_INTERFACE,
                 !IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.measurementsDaoFactoryEClass, MeasurementsDaoFactory.class, "MeasurementsDaoFactory",
-                IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+                IS_ABSTRACT,
+                IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.metaDaoEClass, MetaDao.class, "MetaDao", IS_ABSTRACT, IS_INTERFACE,
                 !IS_GENERATED_INSTANCE_CLASS);
@@ -518,11 +526,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
                 Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getRepository_ReadOnly(), this.ecorePackage.getEBoolean(), "readOnly", null, 1, 1,
-                Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, !IS_ORDERED);
+                Repository.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getRepository_Descriptions(), theMetricSpecPackage.getDescription(), null,
-                "descriptions", null, 0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "descriptions", null,
+                0, -1, Repository.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.addEOperation(this.repositoryEClass, null, "resetExperimentGroups", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

@@ -164,7 +164,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -182,7 +183,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
             return this.basicSetNumericalNominalStatistics(null, msgs);
         }
@@ -196,7 +198,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__NUMERICAL_NOMINAL_STATISTICS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
@@ -212,7 +215,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
             return this.getFrequency();
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:
@@ -230,7 +234,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
             this.setFrequency((Long) newValue);
             return;
@@ -251,7 +256,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
             this.setFrequency(FREQUENCY_EDEFAULT);
             return;
@@ -272,7 +278,8 @@ public class NumericalMassDistributionImpl extends CDOObjectImpl implements Nume
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__FREQUENCY:
             return this.getFrequency() != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.NUMERICAL_MASS_DISTRIBUTION__VALUE:

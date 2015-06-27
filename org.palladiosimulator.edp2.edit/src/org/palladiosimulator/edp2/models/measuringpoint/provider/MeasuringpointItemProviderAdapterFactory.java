@@ -34,11 +34,11 @@ import org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointAdapt
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdapterFactory implements
-        ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
@@ -58,7 +58,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * This helps manage the child creation extenders. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
@@ -67,14 +67,14 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasuringpointItemProviderAdapterFactory() {
@@ -103,7 +103,8 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
      */
     @Override
     public Adapter createStringMeasuringPointAdapter() {
-        if (this.stringMeasuringPointItemProvider == null) {
+        if (this.stringMeasuringPointItemProvider == null)
+        {
             this.stringMeasuringPointItemProvider = new StringMeasuringPointItemProvider(this);
         }
 
@@ -114,7 +115,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ResourceURIMeasuringPointItemProvider resourceURIMeasuringPointItemProvider;
@@ -128,7 +129,8 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
      */
     @Override
     public Adapter createResourceURIMeasuringPointAdapter() {
-        if (this.resourceURIMeasuringPointItemProvider == null) {
+        if (this.resourceURIMeasuringPointItemProvider == null)
+        {
             this.resourceURIMeasuringPointItemProvider = new ResourceURIMeasuringPointItemProvider(this);
         }
 
@@ -139,7 +141,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
      * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasuringPointRepositoryItemProvider measuringPointRepositoryItemProvider;
@@ -153,7 +155,8 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
      */
     @Override
     public Adapter createMeasuringPointRepositoryAdapter() {
-        if (this.measuringPointRepositoryItemProvider == null) {
+        if (this.measuringPointRepositoryItemProvider == null)
+        {
             this.measuringPointRepositoryItemProvider = new MeasuringPointRepositoryItemProvider(this);
         }
 
@@ -163,7 +166,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -174,7 +177,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -184,7 +187,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -205,14 +208,16 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type)) {
+        if (this.isFactoryForType(type))
+        {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
+            {
                 return adapter;
             }
         }
@@ -222,7 +227,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -231,7 +236,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -241,7 +246,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -251,7 +256,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -261,7 +266,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -279,7 +284,8 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null) {
+        if (this.parentAdapterFactory != null)
+        {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
@@ -287,7 +293,7 @@ public class MeasuringpointItemProviderAdapterFactory extends MeasuringpointAdap
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

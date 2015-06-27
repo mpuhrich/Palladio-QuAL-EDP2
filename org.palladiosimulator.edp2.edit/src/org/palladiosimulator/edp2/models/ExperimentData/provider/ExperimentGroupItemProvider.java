@@ -37,7 +37,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ExperimentGroupItemProvider(final AdapterFactory adapterFactory) {
@@ -47,12 +47,13 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addPurposePropertyDescriptor(object);
@@ -66,46 +67,73 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Purpose feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addPurposePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentGroup_purpose_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_purpose_feature",
-                        "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__PURPOSE, true,
-                false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentGroup_purpose_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentGroup_purpose_feature",
+                                        "_UI_ExperimentGroup_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__PURPOSE,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Repository feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addRepositoryPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentGroup_repository_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_repository_feature",
-                        "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY, true,
-                false, true, null, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentGroup_repository_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentGroup_repository_feature",
+                                        "_UI_ExperimentGroup_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPOSITORY,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Reports feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addReportsPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentGroup_reports_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_reports_feature",
-                        "_UI_ExperimentGroup_type"), ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS, true,
-                false, true, null, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentGroup_reports_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentGroup_reports_feature",
+                                        "_UI_ExperimentGroup_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
@@ -115,13 +143,21 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
      * @generated
      */
     protected void addMeasuringPointRepositoriesPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ExperimentGroup_measuringPointRepositories_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ExperimentGroup_measuringPointRepositories_feature",
-                        "_UI_ExperimentGroup_type"),
-                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES, true, false, true, null,
-                null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ExperimentGroup_measuringPointRepositories_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ExperimentGroup_measuringPointRepositories_feature",
+                                        "_UI_ExperimentGroup_type"),
+                                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
@@ -135,7 +171,8 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION);
             this.childrenFeatures.add(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS);
@@ -148,7 +185,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -161,7 +198,7 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns ExperimentGroup.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -178,22 +215,24 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((ExperimentGroup) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_ExperimentGroup_type") : this
-                .getString("_UI_ExperimentGroup_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_ExperimentGroup_type") :
+                    this.getString("_UI_ExperimentGroup_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(ExperimentGroup.class)) {
+        switch (notification.getFeatureID(ExperimentGroup.class))
+        {
         case ExperimentDataPackage.EXPERIMENT_GROUP__PURPOSE:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -211,37 +250,44 @@ public class ExperimentGroupItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
-                ExperimentDataFactory.eINSTANCE.create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
+                                ExperimentDataFactory.eINSTANCE
+                                        .create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS,
-                ExperimentDataFactory.eINSTANCE.createExperimentSetting()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS,
+                                ExperimentDataFactory.eINSTANCE.createExperimentSetting()));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_TYPES,
-                ExperimentDataFactory.eINSTANCE.createMeasuringType()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_TYPES,
+                                ExperimentDataFactory.eINSTANCE.createMeasuringType()));
 
-        newChildDescriptors.add(this.createChildParameter(ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS,
-                ExperimentDataFactory.eINSTANCE.createExperimentGroupRun()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.EXPERIMENT_GROUP__REPORTS,
+                                ExperimentDataFactory.eINSTANCE.createExperimentGroupRun()));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES,
-                MeasuringpointFactory.eINSTANCE.createMeasuringPointRepository()));
+        newChildDescriptors.add
+        (this.createChildParameter
+                        (ExperimentDataPackage.Literals.EXPERIMENT_GROUP__MEASURING_POINT_REPOSITORIES,
+                                MeasuringpointFactory.eINSTANCE.createMeasuringPointRepository()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

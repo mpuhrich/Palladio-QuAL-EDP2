@@ -127,7 +127,8 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
             return this.getCoefficientOfVariation();
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN:
@@ -145,7 +146,8 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
             this.setCoefficientOfVariation((Measure) newValue);
             return;
@@ -166,7 +168,8 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
             this.setCoefficientOfVariation((Measure) null);
             return;
@@ -187,7 +190,8 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__COEFFICIENT_OF_VARIATION:
             return this.getCoefficientOfVariation() != null;
         case ExperimentDataPackage.NUMERICAL_RATIO_STATISTICS__GEOMETRIC_MEAN:

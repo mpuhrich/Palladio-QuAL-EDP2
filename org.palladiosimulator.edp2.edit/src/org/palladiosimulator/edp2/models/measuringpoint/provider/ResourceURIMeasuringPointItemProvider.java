@@ -26,7 +26,7 @@ public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointI
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ResourceURIMeasuringPointItemProvider(final AdapterFactory adapterFactory) {
@@ -36,12 +36,13 @@ public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointI
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addResourceURIPropertyDescriptor(object);
@@ -52,22 +53,30 @@ public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointI
     /**
      * This adds a property descriptor for the Resource URI feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addResourceURIPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ResourceURIMeasuringPoint_resourceURI_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ResourceURIMeasuringPoint_resourceURI_feature",
-                        "_UI_ResourceURIMeasuringPoint_type"),
-                MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_ResourceURIMeasuringPoint_resourceURI_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_ResourceURIMeasuringPoint_resourceURI_feature",
+                                        "_UI_ResourceURIMeasuringPoint_type"),
+                                MeasuringpointPackage.Literals.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This returns ResourceURIMeasuringPoint.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -84,22 +93,24 @@ public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointI
     @Override
     public String getText(final Object object) {
         final String label = ((ResourceURIMeasuringPoint) object).getStringRepresentation();
-        return label == null || label.length() == 0 ? this.getString("_UI_ResourceURIMeasuringPoint_type") : this
-                .getString("_UI_ResourceURIMeasuringPoint_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_ResourceURIMeasuringPoint_type") :
+                    this.getString("_UI_ResourceURIMeasuringPoint_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(ResourceURIMeasuringPoint.class)) {
+        switch (notification.getFeatureID(ResourceURIMeasuringPoint.class))
+        {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -110,7 +121,7 @@ public class ResourceURIMeasuringPointItemProvider extends StringMeasuringPointI
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

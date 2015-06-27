@@ -30,7 +30,7 @@ public class RemoteCdoRepositoryItemProvider extends RepositoryItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RemoteCdoRepositoryItemProvider(final AdapterFactory adapterFactory) {
@@ -40,12 +40,13 @@ public class RemoteCdoRepositoryItemProvider extends RepositoryItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addUrlPropertyDescriptor(object);
@@ -56,21 +57,30 @@ public class RemoteCdoRepositoryItemProvider extends RepositoryItemProvider {
     /**
      * This adds a property descriptor for the Url feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addUrlPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_RemoteCdoRepository_url_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_RemoteCdoRepository_url_feature",
-                        "_UI_RemoteCdoRepository_type"), RepositoryPackage.Literals.REMOTE_CDO_REPOSITORY__URL, true,
-                false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_RemoteCdoRepository_url_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_RemoteCdoRepository_url_feature",
+                                        "_UI_RemoteCdoRepository_type"),
+                                RepositoryPackage.Literals.REMOTE_CDO_REPOSITORY__URL,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This returns RemoteCdoRepository.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,22 +97,24 @@ public class RemoteCdoRepositoryItemProvider extends RepositoryItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((RemoteCdoRepository) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_RemoteCdoRepository_type") : this
-                .getString("_UI_RemoteCdoRepository_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_RemoteCdoRepository_type") :
+                    this.getString("_UI_RemoteCdoRepository_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(RemoteCdoRepository.class)) {
+        switch (notification.getFeatureID(RemoteCdoRepository.class))
+        {
         case RepositoryPackage.REMOTE_CDO_REPOSITORY__URL:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -113,7 +125,7 @@ public class RemoteCdoRepositoryItemProvider extends RepositoryItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

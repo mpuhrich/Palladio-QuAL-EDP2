@@ -342,7 +342,7 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         // Obtain or create and register package
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new ExperimentDataPackageImpl());
+                : new ExperimentDataPackageImpl());
 
         isInited = true;
 
@@ -352,10 +352,11 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         // Obtain or create and register interdependencies
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+                .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(MeasuringpointPackage.eNS_URI) : MeasuringpointPackage.eINSTANCE);
+                .getEPackage(MeasuringpointPackage.eNS_URI)
+                        : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theExperimentDataPackage.createPackageContents();
@@ -1798,32 +1799,36 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.aggregatedMeasurementsEClass, AggregatedMeasurements.class, "AggregatedMeasurements",
-                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getAggregatedMeasurements_MeasurementRange(), this.getMeasurementRange(),
                 this.getMeasurementRange_AggregatedMeasurements(), "measurementRange", null, 1, 1,
                 AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getAggregatedMeasurements_Valid(), this.ecorePackage.getEBoolean(), "valid", null, 1,
-                1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                1,
+                AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getAggregatedMeasurements_Function(),
-                theMetricSpecPackage.getAggregationFunctionDescription(), null, "function", null, 1, 1,
-                AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                theMetricSpecPackage.getAggregationFunctionDescription(),
+                null, "function", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getAggregatedMeasurements_AggregationStatistics(), this.getAggregationStatistics(),
                 this.getAggregationStatistics_AggregatedMeasurements(), "aggregationStatistics", null, 0, 1,
                 AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getAggregatedMeasurements_AggregationOn(),
-                theMetricSpecPackage.getBaseMetricDescription(), null, "aggregationOn", null, 1, 1,
-                AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                theMetricSpecPackage.getBaseMetricDescription(),
+                null, "aggregationOn", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getAggregatedMeasurements_Metric(), theMetricSpecPackage.getMetricDescription(), null,
-                "metric", null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "metric",
+                null, 1, 1, AggregatedMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.measurementRangeEClass, MeasurementRange.class, "MeasurementRange", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getMeasurementRange_RawMeasurements(), this.getRawMeasurements(),
                 this.getRawMeasurements_MeasurementRange(), "rawMeasurements", null, 0, 1, MeasurementRange.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1836,8 +1841,9 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 MeasurementRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getMeasurementRange_StartTime(), this.getEJSDurationMeasure(), "startTime", null, 1,
-                1, MeasurementRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                1,
+                MeasurementRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getMeasurementRange_AggregatedMeasurements(), this.getAggregatedMeasurements(),
                 this.getAggregatedMeasurements_MeasurementRange(), "aggregatedMeasurements", null, 0, -1,
                 MeasurementRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
@@ -1855,15 +1861,17 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getEStringtoEObjectMapEntry_Value(), this.ecorePackage.getEJavaObject(), "value",
-                null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.rawMeasurementsEClass, RawMeasurements.class, "RawMeasurements", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getRawMeasurements_DataSeries(), this.getDataSeries(),
-                this.getDataSeries_RawMeasurements(), "dataSeries", null, 1, -1, RawMeasurements.class, !IS_TRANSIENT,
-                !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-                !IS_ORDERED);
+                this.getDataSeries_RawMeasurements(),
+                "dataSeries", null, 1, -1, RawMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getRawMeasurements_MeasurementRange(), this.getMeasurementRange(),
                 this.getMeasurementRange_RawMeasurements(), "measurementRange", null, 1, 1, RawMeasurements.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1892,32 +1900,37 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.numericalNominalStatisticsEClass, NumericalNominalStatistics.class,
-                "NumericalNominalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "NumericalNominalStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalNominalStatistics_NumberMeasurements(), this.getEJSMeasure(),
-                "numberMeasurements", null, 1, 1, NumericalNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "numberMeasurements",
+                null, 1, 1, NumericalNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getNumericalNominalStatistics_NumericalMassDistribution(),
-                this.getNumericalMassDistribution(), this.getNumericalMassDistribution_NumericalNominalStatistics(),
-                "numericalMassDistribution", null, 0, -1, NumericalNominalStatistics.class, !IS_TRANSIENT,
-                !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-                !IS_ORDERED);
+                this.getNumericalMassDistribution(),
+                this.getNumericalMassDistribution_NumericalNominalStatistics(), "numericalMassDistribution", null, 0,
+                -1, NumericalNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getNumericalNominalStatistics_DataSeries(), this.getDataSeries(),
                 this.getDataSeries_NumericalStatistics(), "dataSeries", null, 1, 1, NumericalNominalStatistics.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.numericalMassDistributionEClass, NumericalMassDistribution.class,
-                "NumericalMassDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "NumericalMassDistribution",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalMassDistribution_Frequency(), this.ecorePackage.getELong(), "frequency",
-                null, 1, 1, NumericalMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                NumericalMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalMassDistribution_Value(), this.getEJSMeasure(), "value", null, 1, 1,
                 NumericalMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getNumericalMassDistribution_NumericalNominalStatistics(),
-                this.getNumericalNominalStatistics(), this.getNumericalNominalStatistics_NumericalMassDistribution(),
-                "numericalNominalStatistics", null, 1, 1, NumericalMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                this.getNumericalNominalStatistics(),
+                this.getNumericalNominalStatistics_NumericalMassDistribution(), "numericalNominalStatistics", null, 1,
+                1, NumericalMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.fixedWidthAggregatedMeasurementsEClass, FixedWidthAggregatedMeasurements.class,
                 "FixedWidthAggregatedMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1936,21 +1949,25 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 FixedIntervals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getFixedIntervals_Width(), this.getEJSMeasure(), "width", null, 1, 1,
+                FixedIntervals.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        this.initEAttribute(this.getFixedIntervals_NumberOfIntervals(), this.ecorePackage.getELong(),
+                "numberOfIntervals", null, 1, 1,
                 FixedIntervals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, !IS_ORDERED);
-        this.initEAttribute(this.getFixedIntervals_NumberOfIntervals(), this.ecorePackage.getELong(),
-                "numberOfIntervals", null, 1, 1, FixedIntervals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getFixedIntervals_AggregatedMeasurements(),
-                this.getFixedWidthAggregatedMeasurements(), this.getFixedWidthAggregatedMeasurements_Intervals(),
-                "aggregatedMeasurements", null, 1, 1, FixedIntervals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                this.getFixedWidthAggregatedMeasurements(),
+                this.getFixedWidthAggregatedMeasurements_Intervals(), "aggregatedMeasurements", null, 1, 1,
+                FixedIntervals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.textualNominalStatisticsEClass, TextualNominalStatistics.class,
-                "TextualNominalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "TextualNominalStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getTextualNominalStatistics_NumberMeasurements(), this.ecorePackage.getELong(),
-                "numberMeasurements", null, 1, 1, TextualNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "numberMeasurements",
+                null, 1, 1, TextualNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getTextualNominalStatistics_MassDistribution(), this.getTextualMassDistribution(),
                 this.getTextualMassDistribution_TextualNominalStatistics(), "massDistribution", null, 0, -1,
                 TextualNominalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
@@ -1963,18 +1980,21 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.initEClass(this.textualMassDistributionEClass, TextualMassDistribution.class, "TextualMassDistribution",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getTextualMassDistribution_Frequency(), this.ecorePackage.getELong(), "frequency",
-                null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getTextualMassDistribution_Identifier(), theMetricSpecPackage.getIdentifier(), null,
                 "identifier", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getTextualMassDistribution_TextualNominalStatistics(),
-                this.getTextualNominalStatistics(), this.getTextualNominalStatistics_MassDistribution(),
-                "textualNominalStatistics", null, 1, 1, TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                this.getTextualNominalStatistics(),
+                this.getTextualNominalStatistics_MassDistribution(), "textualNominalStatistics", null, 1, 1,
+                TextualMassDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.experimentGroupEClass, ExperimentGroup.class, "ExperimentGroup", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getExperimentGroup_ExperimentSettings(), this.getExperimentSetting(),
                 this.getExperimentSetting_ExperimentGroup(), "experimentSettings", null, 0, -1, ExperimentGroup.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -2000,10 +2020,12 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.experimentSettingEClass, ExperimentSetting.class, "ExperimentSetting", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getExperimentSetting_Description(), this.ecorePackage.getEString(), "description",
-                null, 1, 1, ExperimentSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                ExperimentSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getExperimentSetting_ExperimentRuns(), this.getExperimentRun(),
                 this.getExperimentRun_ExperimentSetting(), "experimentRuns", null, 0, -1, ExperimentSetting.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -2027,7 +2049,8 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.initEClass(this.measurementEClass, Measurement.class, "Measurement", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getMeasurement_MeasuringType(), this.getMeasuringType(), null, "measuringType", null,
-                1, 1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                1, 1,
+                Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getMeasurement_MeasurementRanges(), this.getMeasurementRange(),
                 this.getMeasurementRange_Measurement(), "measurementRanges", null, 0, -1, Measurement.class,
@@ -2048,29 +2071,32 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getMeasuringType_Metric(), theMetricSpecPackage.getMetricDescription(), null,
-                "metric", null, 1, 1, MeasuringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "metric", null, 1,
+                1, MeasuringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getMeasuringType_MeasuringPoint(), theMeasuringpointPackage.getMeasuringPoint(), null,
                 "measuringPoint", null, 1, 1, MeasuringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.aggregationStatisticsEClass, AggregationStatistics.class, "AggregationStatistics",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getAggregationStatistics_DistinctValuesBeforeAggregation(),
-                this.ecorePackage.getELong(), "distinctValuesBeforeAggregation", null, 1, 1,
-                AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                this.ecorePackage.getELong(),
+                "distinctValuesBeforeAggregation", null, 1, 1, AggregationStatistics.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getAggregationStatistics_DistinctValuesAfterAggregation(),
-                this.ecorePackage.getELong(), "distinctValuesAfterAggregation", null, 1, 1,
-                AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                this.ecorePackage.getELong(),
+                "distinctValuesAfterAggregation", null, 1, 1, AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getAggregationStatistics_AggregatedMeasurements(), this.getAggregatedMeasurements(),
                 this.getAggregatedMeasurements_AggregationStatistics(), "aggregatedMeasurements", null, 1, 1,
                 AggregationStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.doubleBinaryMeasurementsEClass, DoubleBinaryMeasurements.class,
-                "DoubleBinaryMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "DoubleBinaryMeasurements",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         g1 = this.createEGenericType(theMetricSpecPackage.getEJSUnit());
         final EGenericType g2 = this.createEGenericType(doubleBinaryMeasurementsEClass_Q);
         g1.getETypeArguments().add(g2);
@@ -2079,22 +2105,27 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.numericalIntervalStatisticsEClass, NumericalIntervalStatistics.class,
-                "NumericalIntervalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "NumericalIntervalStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalIntervalStatistics_ArithmethicMean(), this.getEJSMeasure(),
-                "arithmethicMean", null, 1, 1, NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        this.initEAttribute(this.getNumericalIntervalStatistics_Variance(), this.getEJSMeasure(), "variance", null, 1,
-                1, NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+                "arithmethicMean", null,
+                1, 1, NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
                 !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        this.initEAttribute(this.getNumericalIntervalStatistics_Variance(), this.getEJSMeasure(), "variance", null, 1,
+                1,
+                NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalIntervalStatistics_StandardDeviation(), this.getEJSMeasure(),
-                "standardDeviation", null, 1, 1, NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "standardDeviation",
+                null, 1, 1, NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalIntervalStatistics_Sum(), this.getEJSMeasure(), "sum", null, 1, 1,
                 NumericalIntervalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.numericalOrdinalStatisticsEClass, NumericalOrdinalStatistics.class,
-                "NumericalOrdinalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "NumericalOrdinalStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalOrdinalStatistics_Minimum(), this.getEJSMeasure(), "minimum", null, 1, 1,
                 NumericalOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2112,8 +2143,9 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
         this.initEClass(this.numericalPercentileEClass, NumericalPercentile.class, "NumericalPercentile", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalPercentile_Percentile(), this.ecorePackage.getEDouble(), "percentile",
-                null, 1, 1, NumericalPercentile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                NumericalPercentile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalPercentile_Value(), this.getEJSMeasure(), "value", null, 1, 1,
                 NumericalPercentile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2123,28 +2155,35 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.jsXmlMeasurementsEClass, JSXmlMeasurements.class, "JSXmlMeasurements", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.longBinaryMeasurementsEClass, LongBinaryMeasurements.class, "LongBinaryMeasurements",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getLongBinaryMeasurements_StorageUnit(), theMetricSpecPackage.getEJSUnit(),
-                "storageUnit", null, 1, 1, LongBinaryMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "storageUnit", null,
+                1, 1, LongBinaryMeasurements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.identifierBasedMeasurementsEClass, IdentifierBasedMeasurements.class,
-                "IdentifierBasedMeasurements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "IdentifierBasedMeasurements",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.numericalRatioStatisticsEClass, NumericalRatioStatistics.class,
-                "NumericalRatioStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "NumericalRatioStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNumericalRatioStatistics_CoefficientOfVariation(), this.getEJSMeasure(),
                 "coefficientOfVariation", null, 1, 1, NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalRatioStatistics_GeometricMean(), this.getEJSMeasure(), "geometricMean",
-                null, 1, 1, NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getNumericalRatioStatistics_HarmonicMean(), this.getEJSMeasure(), "harmonicMean",
-                null, 1, 1, NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-                !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                null, 1, 1,
+                NumericalRatioStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.ijsDurationEClass, Duration.class, "IJSDuration", IS_ABSTRACT, IS_INTERFACE,
                 !IS_GENERATED_INSTANCE_CLASS);
@@ -2153,24 +2192,30 @@ public class ExperimentDataPackageImpl extends EPackageImpl implements Experimen
                 !IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.textualOrdinalStatisticsEClass, TextualOrdinalStatistics.class,
-                "TextualOrdinalStatistics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "TextualOrdinalStatistics",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getTextualOrdinalStatistics_Minimum(), theMetricSpecPackage.getIdentifier(), null,
-                "minimum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "minimum",
+                null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getTextualOrdinalStatistics_Maximum(), theMetricSpecPackage.getIdentifier(), null,
-                "maximum", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "maximum",
+                null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getTextualOrdinalStatistics_Median(), theMetricSpecPackage.getIdentifier(), null,
-                "median", null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                "median",
+                null, 1, 1, TextualOrdinalStatistics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.runEClass, Run.class, "Run", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getRun_Duration(), this.getEJSDurationMeasure(), "duration", null, 1, 1, Run.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEAttribute(this.getRun_StartTime(), this.ecorePackage.getEDate(), "startTime", null, 1, 1, Run.class,
-                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+                !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
         this.initEReference(this.getRun_Measurement(), this.getMeasurement(), this.getMeasurement_Run(), "measurement",
-                null, 0, -1, Run.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                null, 0,
+                -1, Run.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.experimentGroupRunEClass, ExperimentGroupRun.class, "ExperimentGroupRun", !IS_ABSTRACT,

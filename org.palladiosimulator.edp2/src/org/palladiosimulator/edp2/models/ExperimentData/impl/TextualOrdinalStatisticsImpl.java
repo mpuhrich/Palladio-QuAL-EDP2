@@ -155,7 +155,8 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM:
             if (resolve) {
                 return this.getMinimum();
@@ -182,7 +183,8 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM:
             this.setMinimum((Identifier) newValue);
             return;
@@ -203,7 +205,8 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM:
             this.setMinimum((Identifier) null);
             return;
@@ -224,7 +227,8 @@ public class TextualOrdinalStatisticsImpl extends TextualNominalStatisticsImpl i
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MINIMUM:
             return this.basicGetMinimum() != null;
         case ExperimentDataPackage.TEXTUAL_ORDINAL_STATISTICS__MAXIMUM:

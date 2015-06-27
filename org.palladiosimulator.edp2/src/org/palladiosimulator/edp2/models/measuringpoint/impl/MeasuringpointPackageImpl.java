@@ -103,7 +103,7 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         // Obtain or create and register package
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new MeasuringpointPackageImpl());
+                : new MeasuringpointPackageImpl());
 
         isInited = true;
 
@@ -113,10 +113,11 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
         // Obtain or create and register interdependencies
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(ExperimentDataPackage.eNS_URI) : ExperimentDataPackage.eINSTANCE);
+                .getEPackage(ExperimentDataPackage.eNS_URI)
+                        : ExperimentDataPackage.eINSTANCE);
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+                .getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
 
         // Create package meta-data objects
         theMeasuringpointPackage.createPackageContents();
@@ -326,26 +327,32 @@ public class MeasuringpointPackageImpl extends EPackageImpl implements Measuring
                 MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getMeasuringPoint_StringRepresentation(), this.ecorePackage.getEString(),
-                "stringRepresentation", null, 1, 1, MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                "stringRepresentation",
+                null, 1, 1, MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getMeasuringPoint_ResourceURIRepresentation(), this.ecorePackage.getEString(),
                 "resourceURIRepresentation", null, 1, 1, MeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.stringMeasuringPointEClass, StringMeasuringPoint.class, "StringMeasuringPoint",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getStringMeasuringPoint_MeasuringPoint(), this.ecorePackage.getEString(),
-                "measuringPoint", null, 1, 1, StringMeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                "measuringPoint", null, 1,
+                1, StringMeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.resourceURIMeasuringPointEClass, ResourceURIMeasuringPoint.class,
-                "ResourceURIMeasuringPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "ResourceURIMeasuringPoint",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getResourceURIMeasuringPoint_ResourceURI(), this.ecorePackage.getEString(),
-                "resourceURI", null, 1, 1, ResourceURIMeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                "resourceURI", null, 1,
+                1, ResourceURIMeasuringPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.measuringPointRepositoryEClass, MeasuringPointRepository.class,
-                "MeasuringPointRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "MeasuringPointRepository",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getMeasuringPointRepository_MeasuringPoints(), this.getMeasuringPoint(),
                 this.getMeasuringPoint_MeasuringPointRepository(), "measuringPoints", null, 0, -1,
                 MeasuringPointRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,

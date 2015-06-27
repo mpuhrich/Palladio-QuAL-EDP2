@@ -48,7 +48,8 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @generated
      */
     public RepositorySwitch() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = RepositoryPackage.eINSTANCE;
         }
     }
@@ -75,7 +76,8 @@ public class RepositorySwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID) {
+        switch (classifierID)
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY: {
             final LocalDirectoryRepository localDirectoryRepository = (LocalDirectoryRepository) theEObject;
             T result = this.caseLocalDirectoryRepository(localDirectoryRepository);

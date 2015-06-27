@@ -168,7 +168,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -186,7 +187,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS:
             return this.basicSetAggregatedMeasurements(null, msgs);
         }
@@ -200,7 +202,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__AGGREGATED_MEASUREMENTS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS,
@@ -216,7 +219,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION:
             return this.getDistinctValuesBeforeAggregation();
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION:
@@ -234,7 +238,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION:
             this.setDistinctValuesBeforeAggregation((Long) newValue);
             return;
@@ -255,7 +260,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION:
             this.setDistinctValuesBeforeAggregation(DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT);
             return;
@@ -276,7 +282,8 @@ public class AggregationStatisticsImpl extends IdentifierImpl implements Aggrega
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION:
             return this.getDistinctValuesBeforeAggregation() != DISTINCT_VALUES_BEFORE_AGGREGATION_EDEFAULT;
         case ExperimentDataPackage.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION:

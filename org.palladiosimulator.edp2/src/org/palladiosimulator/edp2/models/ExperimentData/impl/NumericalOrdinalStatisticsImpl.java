@@ -43,7 +43,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
  * @generated
  */
 public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsImpl implements
-NumericalOrdinalStatistics {
+        NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -152,7 +152,8 @@ NumericalOrdinalStatistics {
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPercentiles()).basicAdd(otherEnd, msgs);
         }
@@ -167,7 +168,8 @@ NumericalOrdinalStatistics {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES:
             return ((InternalEList<?>) this.getPercentiles()).basicRemove(otherEnd, msgs);
         }
@@ -181,7 +183,8 @@ NumericalOrdinalStatistics {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
             return this.getMinimum();
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM:
@@ -202,7 +205,8 @@ NumericalOrdinalStatistics {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
             this.setMinimum((Measure) newValue);
             return;
@@ -227,7 +231,8 @@ NumericalOrdinalStatistics {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
             this.setMinimum((Measure) null);
             return;
@@ -251,7 +256,8 @@ NumericalOrdinalStatistics {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MINIMUM:
             return this.getMinimum() != null;
         case ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM:

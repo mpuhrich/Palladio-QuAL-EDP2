@@ -71,7 +71,8 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      * @generated
      */
     public ExperimentDataSwitch() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = ExperimentDataPackage.eINSTANCE;
         }
     }
@@ -98,7 +99,8 @@ public class ExperimentDataSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID) {
+        switch (classifierID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS: {
             final AggregatedMeasurements aggregatedMeasurements = (AggregatedMeasurements) theEObject;
             T result = this.caseAggregatedMeasurements(aggregatedMeasurements);

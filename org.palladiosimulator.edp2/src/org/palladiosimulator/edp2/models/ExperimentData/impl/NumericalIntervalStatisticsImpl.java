@@ -36,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatist
  * @generated
  */
 public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsImpl implements
-NumericalIntervalStatistics {
+        NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -152,7 +152,8 @@ NumericalIntervalStatistics {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
             return this.getArithmethicMean();
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:
@@ -172,7 +173,8 @@ NumericalIntervalStatistics {
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
             this.setArithmethicMean((Measure) newValue);
             return;
@@ -196,7 +198,8 @@ NumericalIntervalStatistics {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
             this.setArithmethicMean((Measure) null);
             return;
@@ -220,7 +223,8 @@ NumericalIntervalStatistics {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__ARITHMETHIC_MEAN:
             return this.getArithmethicMean() != null;
         case ExperimentDataPackage.NUMERICAL_INTERVAL_STATISTICS__VARIANCE:

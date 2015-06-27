@@ -159,10 +159,11 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasurementRanges()).basicAdd(otherEnd,
-                    msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasurementRanges())
+                    .basicAdd(otherEnd, msgs);
         case ExperimentDataPackage.MEASUREMENT__RUN:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -180,7 +181,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
             return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.MEASUREMENT__MEASUREMENT_RANGES:
@@ -198,7 +200,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.MEASUREMENT__RUN:
             return this.eInternalContainer().eInverseRemove(this, ExperimentDataPackage.RUN__MEASUREMENT, Run.class,
                     msgs);
@@ -213,7 +216,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
             if (coreType) {
                 return this.getAdditionalInformation();
@@ -241,7 +245,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
             ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
@@ -266,7 +271,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
             this.getAdditionalInformation().clear();
             return;
@@ -290,7 +296,8 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
             return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.MEASUREMENT__MEASURING_TYPE:
@@ -310,8 +317,10 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (derivedFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (derivedFeatureID)
+            {
             case ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
             default:
@@ -328,8 +337,10 @@ public class MeasurementImpl extends IdentifierImpl implements Measurement {
      */
     @Override
     public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (baseFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (baseFeatureID)
+            {
             case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.MEASUREMENT__ADDITIONAL_INFORMATION;
             default:

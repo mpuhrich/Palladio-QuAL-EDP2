@@ -111,7 +111,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getDataSeries()).basicAdd(otherEnd, msgs);
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:
@@ -131,7 +132,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             return ((InternalEList<?>) this.getDataSeries()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:
@@ -147,10 +149,12 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS, MeasurementRange.class, msgs);
+                    ExperimentDataPackage.MEASUREMENT_RANGE__RAW_MEASUREMENTS,
+                    MeasurementRange.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -162,7 +166,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             return this.getDataSeries();
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:
@@ -179,7 +184,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             this.getDataSeries().clear();
             this.getDataSeries().addAll((Collection<? extends DataSeries>) newValue);
@@ -198,7 +204,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             this.getDataSeries().clear();
             return;
@@ -216,7 +223,8 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RAW_MEASUREMENTS__DATA_SERIES:
             return !this.getDataSeries().isEmpty();
         case ExperimentDataPackage.RAW_MEASUREMENTS__MEASUREMENT_RANGE:

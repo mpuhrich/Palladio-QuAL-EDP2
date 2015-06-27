@@ -46,7 +46,8 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public RepositoryAdapterFactory() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = RepositoryPackage.eINSTANCE;
         }
     }
@@ -61,10 +62,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType(final Object object) {
-        if (object == modelPackage) {
+        if (object == modelPackage)
+        {
             return true;
         }
-        if (object instanceof EObject) {
+        if (object instanceof EObject)
+        {
             return ((EObject) object).eClass().getEPackage() == modelPackage;
         }
         return false;
@@ -76,70 +79,81 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      *
      * @generated
      */
-    protected RepositorySwitch<Adapter> modelSwitch = new RepositorySwitch<Adapter>() {
-
+    protected RepositorySwitch<Adapter> modelSwitch = new RepositorySwitch<Adapter>()
+    {
         @Override
-        public Adapter caseLocalDirectoryRepository(final LocalDirectoryRepository object) {
+        public Adapter caseLocalDirectoryRepository(final LocalDirectoryRepository object)
+        {
             return RepositoryAdapterFactory.this.createLocalDirectoryRepositoryAdapter();
         }
 
         @Override
-        public Adapter caseFile(final File object) {
+        public Adapter caseFile(final File object)
+        {
             return RepositoryAdapterFactory.this.createFileAdapter();
         }
 
         @Override
-        public Adapter caseLocalMemoryRepository(final LocalMemoryRepository object) {
+        public Adapter caseLocalMemoryRepository(final LocalMemoryRepository object)
+        {
             return RepositoryAdapterFactory.this.createLocalMemoryRepositoryAdapter();
         }
 
         @Override
-        public Adapter caseRemoteCdoRepository(final RemoteCdoRepository object) {
+        public Adapter caseRemoteCdoRepository(final RemoteCdoRepository object)
+        {
             return RepositoryAdapterFactory.this.createRemoteCdoRepositoryAdapter();
         }
 
         @Override
-        public Adapter caseRepositories(final Repositories object) {
+        public Adapter caseRepositories(final Repositories object)
+        {
             return RepositoryAdapterFactory.this.createRepositoriesAdapter();
         }
 
         @Override
-        public Adapter caseIResourceSet(final ResourceSet object) {
+        public Adapter caseIResourceSet(final ResourceSet object)
+        {
             return RepositoryAdapterFactory.this.createIResourceSetAdapter();
         }
 
         @Override
-        public Adapter caseMeasurementsDaoFactory(final MeasurementsDaoFactory object) {
+        public Adapter caseMeasurementsDaoFactory(final MeasurementsDaoFactory object)
+        {
             return RepositoryAdapterFactory.this.createMeasurementsDaoFactoryAdapter();
         }
 
         @Override
-        public Adapter caseMetaDao(final MetaDao object) {
+        public Adapter caseMetaDao(final MetaDao object)
+        {
             return RepositoryAdapterFactory.this.createMetaDaoAdapter();
         }
 
         @Override
-        public Adapter caseRepository(final Repository object) {
+        public Adapter caseRepository(final Repository object)
+        {
             return RepositoryAdapterFactory.this.createRepositoryAdapter();
         }
 
         @Override
-        public Adapter caseIdentifier(final Identifier object) {
+        public Adapter caseIdentifier(final Identifier object)
+        {
             return RepositoryAdapterFactory.this.createIdentifierAdapter();
         }
 
         @Override
-        public Adapter defaultCase(final EObject object) {
+        public Adapter defaultCase(final EObject object)
+        {
             return RepositoryAdapterFactory.this.createEObjectAdapter();
         }
     };
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param target
-     *            the object to adapt.
-     * @return the adapter for the <code>target</code>.
+             *
+             * @param target
+             *            the object to adapt.
+             * @return the adapter for the <code>target</code>.
      * @generated
      */
     @Override
@@ -149,12 +163,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
-     * <em>Local Directory Repository</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
+             * <em>Local Directory Repository</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository
      * @generated
      */
@@ -178,12 +192,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
-     * <em>Local Memory Repository</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
+             * <em>Local Memory Repository</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository
      * @generated
      */
@@ -193,12 +207,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
-     * <em>Remote Cdo Repository</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
+             * <em>Remote Cdo Repository</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository
      * @generated
      */
@@ -208,12 +222,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.Repository.Repositories <em>Repositories</em>}'.
+             * {@link org.palladiosimulator.edp2.models.Repository.Repositories <em>Repositories</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
      *
-     * @return the new adapter.
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.Repository.Repositories
      * @generated
      */
@@ -238,12 +252,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
-     * <em>Measurements Dao Factory</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
+             * <em>Measurements Dao Factory</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.dao.MeasurementsDaoFactory
      * @generated
      */
@@ -253,11 +267,11 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link org.palladiosimulator.edp2.dao.MetaDao
-     * <em>Meta Dao</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>Meta Dao</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+             * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+             * cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.dao.MetaDao
      * @generated
      */
@@ -282,11 +296,11 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
-     * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+             * the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
      */
@@ -296,9 +310,9 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
-     * implementation returns null. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * implementation returns null. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @generated
      */
     public Adapter createEObjectAdapter() {

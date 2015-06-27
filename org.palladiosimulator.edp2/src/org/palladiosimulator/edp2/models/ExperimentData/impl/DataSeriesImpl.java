@@ -248,7 +248,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             final NumericalNominalStatistics numericalStatistics = this.getNumericalStatistics();
             if (numericalStatistics != null) {
@@ -285,7 +286,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             return this.basicSetNumericalStatistics(null, msgs);
         case ExperimentDataPackage.DATA_SERIES__AGGREGATED_MEASUREMENTS:
@@ -305,7 +307,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.DATA_SERIES__AGGREGATED_MEASUREMENTS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
@@ -324,7 +327,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             return this.getNumericalStatistics();
         case ExperimentDataPackage.DATA_SERIES__AGGREGATED_MEASUREMENTS:
@@ -346,7 +350,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             this.setNumericalStatistics((NumericalNominalStatistics) newValue);
             return;
@@ -373,7 +378,8 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             this.setNumericalStatistics((NumericalNominalStatistics) null);
             return;
@@ -400,14 +406,15 @@ public abstract class DataSeriesImpl extends CDOObjectImpl implements DataSeries
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.DATA_SERIES__NUMERICAL_STATISTICS:
             return this.getNumericalStatistics() != null;
         case ExperimentDataPackage.DATA_SERIES__AGGREGATED_MEASUREMENTS:
             return this.getAggregatedMeasurements() != null;
         case ExperimentDataPackage.DATA_SERIES__VALUES_UUID:
-            return VALUES_UUID_EDEFAULT == null ? this.getValuesUuid() != null : !VALUES_UUID_EDEFAULT.equals(this
-                    .getValuesUuid());
+            return VALUES_UUID_EDEFAULT == null ? this.getValuesUuid() != null : !VALUES_UUID_EDEFAULT
+                    .equals(this.getValuesUuid());
         case ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS:
             return this.getTextualStatistics() != null;
         case ExperimentDataPackage.DATA_SERIES__RAW_MEASUREMENTS:

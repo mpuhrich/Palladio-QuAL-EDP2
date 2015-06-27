@@ -181,7 +181,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getExperimentRuns()).basicAdd(otherEnd,
                     msgs);
@@ -205,7 +206,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
             return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS:
@@ -225,7 +227,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_GROUP:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.EXPERIMENT_GROUP__EXPERIMENT_SETTINGS, ExperimentGroup.class, msgs);
@@ -240,7 +243,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
             if (coreType) {
                 return this.getAdditionalInformation();
@@ -267,7 +271,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
             ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
@@ -296,7 +301,8 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
             this.getAdditionalInformation().clear();
             return;
@@ -323,12 +329,13 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
             return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__DESCRIPTION:
-            return DESCRIPTION_EDEFAULT == null ? this.getDescription() != null : !DESCRIPTION_EDEFAULT.equals(this
-                    .getDescription());
+            return DESCRIPTION_EDEFAULT == null ? this.getDescription() != null : !DESCRIPTION_EDEFAULT
+                    .equals(this.getDescription());
         case ExperimentDataPackage.EXPERIMENT_SETTING__EXPERIMENT_RUNS:
             return !this.getExperimentRuns().isEmpty();
         case ExperimentDataPackage.EXPERIMENT_SETTING__MEASURING_TYPES:
@@ -346,8 +353,10 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (derivedFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (derivedFeatureID)
+            {
             case ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
             default:
@@ -364,8 +373,10 @@ public class ExperimentSettingImpl extends IdentifierImpl implements ExperimentS
      */
     @Override
     public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (baseFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (baseFeatureID)
+            {
             case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.EXPERIMENT_SETTING__ADDITIONAL_INFORMATION;
             default:

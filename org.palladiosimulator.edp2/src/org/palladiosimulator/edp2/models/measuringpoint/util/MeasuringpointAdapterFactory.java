@@ -36,7 +36,8 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public MeasuringpointAdapterFactory() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = MeasuringpointPackage.eINSTANCE;
         }
     }
@@ -51,10 +52,12 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType(final Object object) {
-        if (object == modelPackage) {
+        if (object == modelPackage)
+        {
             return true;
         }
-        if (object instanceof EObject) {
+        if (object instanceof EObject)
+        {
             return ((EObject) object).eClass().getEPackage() == modelPackage;
         }
         return false;
@@ -66,45 +69,51 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
      *
      * @generated
      */
-    protected MeasuringpointSwitch<Adapter> modelSwitch = new MeasuringpointSwitch<Adapter>() {
-
+    protected MeasuringpointSwitch<Adapter> modelSwitch = new MeasuringpointSwitch<Adapter>()
+    {
         @Override
-        public Adapter caseMeasuringPoint(final MeasuringPoint object) {
+        public Adapter caseMeasuringPoint(final MeasuringPoint object)
+        {
             return MeasuringpointAdapterFactory.this.createMeasuringPointAdapter();
         }
 
         @Override
-        public Adapter caseStringMeasuringPoint(final StringMeasuringPoint object) {
+        public Adapter caseStringMeasuringPoint(final StringMeasuringPoint object)
+        {
             return MeasuringpointAdapterFactory.this.createStringMeasuringPointAdapter();
         }
 
         @Override
-        public Adapter caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint object) {
+        public Adapter caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint object)
+        {
             return MeasuringpointAdapterFactory.this.createResourceURIMeasuringPointAdapter();
         }
 
         @Override
-        public Adapter caseMeasuringPointRepository(final MeasuringPointRepository object) {
+        public Adapter caseMeasuringPointRepository(final MeasuringPointRepository object)
+        {
             return MeasuringpointAdapterFactory.this.createMeasuringPointRepositoryAdapter();
         }
 
         @Override
-        public Adapter caseIdentifier(final Identifier object) {
+        public Adapter caseIdentifier(final Identifier object)
+        {
             return MeasuringpointAdapterFactory.this.createIdentifierAdapter();
         }
 
         @Override
-        public Adapter defaultCase(final EObject object) {
+        public Adapter defaultCase(final EObject object)
+        {
             return MeasuringpointAdapterFactory.this.createEObjectAdapter();
         }
     };
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param target
-     *            the object to adapt.
-     * @return the adapter for the <code>target</code>.
+             *
+             * @param target
+             *            the object to adapt.
+             * @return the adapter for the <code>target</code>.
      * @generated
      */
     @Override
@@ -114,12 +123,12 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint
-     * <em>Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint
+             * <em>Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint
      * @generated
      */
@@ -129,12 +138,12 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint
-     * <em>String Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint
+             * <em>String Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint
      * @generated
      */
@@ -144,12 +153,12 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint
-     * <em>Resource URI Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint
+             * <em>Resource URI Measuring Point</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint
      * @generated
      */
@@ -159,12 +168,12 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
-     * <em>Measuring Point Repository</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
+             * <em>Measuring Point Repository</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository
      * @generated
      */
@@ -174,11 +183,11 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
-     * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+             * the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
      */
@@ -188,9 +197,9 @@ public class MeasuringpointAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
-     * implementation returns null. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * implementation returns null. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @generated
      */
     public Adapter createEObjectAdapter() {

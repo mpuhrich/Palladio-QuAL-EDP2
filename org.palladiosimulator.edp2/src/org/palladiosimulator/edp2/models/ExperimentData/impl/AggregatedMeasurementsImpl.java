@@ -275,7 +275,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -300,7 +301,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.basicSetMeasurementRange(null, msgs);
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__AGGREGATION_STATISTICS:
@@ -316,7 +318,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.MEASUREMENT_RANGE__AGGREGATED_MEASUREMENTS, MeasurementRange.class, msgs);
@@ -331,7 +334,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.getMeasurementRange();
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID:
@@ -364,7 +368,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             this.setMeasurementRange((MeasurementRange) newValue);
             return;
@@ -394,7 +399,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             this.setMeasurementRange((MeasurementRange) null);
             return;
@@ -424,7 +430,8 @@ public abstract class AggregatedMeasurementsImpl extends IdentifierImpl implemen
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__MEASUREMENT_RANGE:
             return this.getMeasurementRange() != null;
         case ExperimentDataPackage.AGGREGATED_MEASUREMENTS__VALID:

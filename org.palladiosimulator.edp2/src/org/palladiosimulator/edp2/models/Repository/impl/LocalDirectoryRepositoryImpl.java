@@ -173,7 +173,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
             return this.getUri();
         }
@@ -187,7 +188,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
             this.setUri((String) newValue);
             return;
@@ -202,7 +204,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
             this.setUri(URI_EDEFAULT);
             return;
@@ -217,7 +220,8 @@ public class LocalDirectoryRepositoryImpl extends RepositoryImpl implements Loca
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY__URI:
             return URI_EDEFAULT == null ? this.getUri() != null : !URI_EDEFAULT.equals(this.getUri());
         }

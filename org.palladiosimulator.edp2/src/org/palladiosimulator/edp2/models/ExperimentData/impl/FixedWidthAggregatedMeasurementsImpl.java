@@ -36,7 +36,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeas
  * @generated
  */
 public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurementsImpl implements
-FixedWidthAggregatedMeasurements {
+        FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -111,7 +111,8 @@ FixedWidthAggregatedMeasurements {
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             final FixedIntervals intervals = this.getIntervals();
             if (intervals != null) {
@@ -133,7 +134,8 @@ FixedWidthAggregatedMeasurements {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             return this.basicSetIntervals(null, msgs);
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES:
@@ -149,7 +151,8 @@ FixedWidthAggregatedMeasurements {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             return this.getIntervals();
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES:
@@ -166,7 +169,8 @@ FixedWidthAggregatedMeasurements {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             this.setIntervals((FixedIntervals) newValue);
             return;
@@ -185,7 +189,8 @@ FixedWidthAggregatedMeasurements {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             this.setIntervals((FixedIntervals) null);
             return;
@@ -203,7 +208,8 @@ FixedWidthAggregatedMeasurements {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS:
             return this.getIntervals() != null;
         case ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES:

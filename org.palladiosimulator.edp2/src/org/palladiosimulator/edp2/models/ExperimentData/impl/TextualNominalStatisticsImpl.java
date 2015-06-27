@@ -156,7 +156,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMassDistribution()).basicAdd(otherEnd,
                     msgs);
@@ -177,7 +178,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION:
             return ((InternalEList<?>) this.getMassDistribution()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__DATA_SERIES:
@@ -193,10 +195,12 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__DATA_SERIES:
             return this.eInternalContainer().eInverseRemove(this,
-                    ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS, DataSeries.class, msgs);
+                    ExperimentDataPackage.DATA_SERIES__TEXTUAL_STATISTICS,
+                    DataSeries.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -208,7 +212,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             return this.getNumberMeasurements();
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION:
@@ -227,7 +232,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             this.setNumberMeasurements((Long) newValue);
             return;
@@ -249,7 +255,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             this.setNumberMeasurements(NUMBER_MEASUREMENTS_EDEFAULT);
             return;
@@ -270,7 +277,8 @@ public class TextualNominalStatisticsImpl extends CDOObjectImpl implements Textu
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS:
             return this.getNumberMeasurements() != NUMBER_MEASUREMENTS_EDEFAULT;
         case ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION:

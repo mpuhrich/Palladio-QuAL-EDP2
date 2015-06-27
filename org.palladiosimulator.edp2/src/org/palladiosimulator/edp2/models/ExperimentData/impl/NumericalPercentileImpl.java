@@ -154,7 +154,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -172,7 +173,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
             return this.basicSetOrdinalStatistics(null, msgs);
         }
@@ -186,7 +188,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__ORDINAL_STATISTICS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES, NumericalOrdinalStatistics.class,
@@ -202,7 +205,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
             return this.getPercentile();
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:
@@ -220,7 +224,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
             this.setPercentile((Double) newValue);
             return;
@@ -241,7 +246,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
             this.setPercentile(PERCENTILE_EDEFAULT);
             return;
@@ -262,7 +268,8 @@ public class NumericalPercentileImpl extends IdentifierImpl implements Numerical
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__PERCENTILE:
             return this.getPercentile() != PERCENTILE_EDEFAULT;
         case ExperimentDataPackage.NUMERICAL_PERCENTILE__VALUE:

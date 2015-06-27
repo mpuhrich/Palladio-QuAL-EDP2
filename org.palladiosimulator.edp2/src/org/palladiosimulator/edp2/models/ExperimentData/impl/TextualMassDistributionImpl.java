@@ -173,7 +173,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -191,7 +192,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
             return this.basicSetTextualNominalStatistics(null, msgs);
         }
@@ -205,7 +207,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__TEXTUAL_NOMINAL_STATISTICS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
@@ -221,7 +224,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
             return this.getFrequency();
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:
@@ -242,7 +246,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
             this.setFrequency((Long) newValue);
             return;
@@ -263,7 +268,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
             this.setFrequency(FREQUENCY_EDEFAULT);
             return;
@@ -284,7 +290,8 @@ public class TextualMassDistributionImpl extends CDOObjectImpl implements Textua
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__FREQUENCY:
             return this.getFrequency() != FREQUENCY_EDEFAULT;
         case ExperimentDataPackage.TEXTUAL_MASS_DISTRIBUTION__IDENTIFIER:

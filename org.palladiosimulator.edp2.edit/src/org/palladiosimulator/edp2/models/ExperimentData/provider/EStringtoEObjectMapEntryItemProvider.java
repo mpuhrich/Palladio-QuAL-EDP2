@@ -29,16 +29,16 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 /**
  * This is the item provider adapter for a {@link java.util.Map.Entry} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public EStringtoEObjectMapEntryItemProvider(final AdapterFactory adapterFactory) {
@@ -48,12 +48,13 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addKeyPropertyDescriptor(object);
@@ -65,38 +66,54 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     /**
      * This adds a property descriptor for the Key feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addKeyPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_EStringtoEObjectMapEntry_key_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_EStringtoEObjectMapEntry_key_feature",
-                        "_UI_EStringtoEObjectMapEntry_type"),
-                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_EStringtoEObjectMapEntry_key_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_EStringtoEObjectMapEntry_key_feature",
+                                        "_UI_EStringtoEObjectMapEntry_type"),
+                                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addValuePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_EStringtoEObjectMapEntry_value_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_EStringtoEObjectMapEntry_value_feature",
-                        "_UI_EStringtoEObjectMapEntry_type"),
-                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+        (this.createItemPropertyDescriptor
+                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                                this.getResourceLocator(),
+                                this.getString("_UI_EStringtoEObjectMapEntry_value_feature"),
+                                this.getString("_UI_PropertyDescriptor_description",
+                                        "_UI_EStringtoEObjectMapEntry_value_feature",
+                                        "_UI_EStringtoEObjectMapEntry_type"),
+                                ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
      * This returns EStringtoEObjectMapEntry.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,14 +137,15 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(Map.Entry.class)) {
+        switch (notification.getFeatureID(Map.Entry.class))
+        {
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__KEY:
         case ExperimentDataPackage.ESTRINGTO_EOBJECT_MAP_ENTRY__VALUE:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -139,7 +157,7 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +168,7 @@ public class EStringtoEObjectMapEntryItemProvider extends ItemProviderAdapter im
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

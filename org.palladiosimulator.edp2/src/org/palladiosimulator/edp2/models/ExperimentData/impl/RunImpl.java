@@ -102,7 +102,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     @Override
     public Measure getDuration() {
         return (Measure) this.eDynamicGet(ExperimentDataPackage.RUN__DURATION,
-                ExperimentDataPackage.Literals.RUN__DURATION, true, true);
+                ExperimentDataPackage.Literals.RUN__DURATION,
+                true, true);
     }
 
     /**
@@ -158,7 +159,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__MEASUREMENT:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMeasurement()).basicAdd(otherEnd, msgs);
         }
@@ -173,7 +175,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
             return ((InternalEList<?>) this.getAdditionalInformation()).basicRemove(otherEnd, msgs);
         case ExperimentDataPackage.RUN__MEASUREMENT:
@@ -189,7 +192,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
             if (coreType) {
                 return this.getAdditionalInformation();
@@ -214,7 +218,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
             ((EStructuralFeature.Setting) this.getAdditionalInformation()).set(newValue);
             return;
@@ -239,7 +244,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
             this.getAdditionalInformation().clear();
             return;
@@ -263,7 +269,8 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
             return !this.getAdditionalInformation().isEmpty();
         case ExperimentDataPackage.RUN__DURATION:
@@ -285,8 +292,10 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      */
     @Override
     public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (derivedFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (derivedFeatureID)
+            {
             case ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION;
             default:
@@ -303,8 +312,10 @@ public abstract class RunImpl extends IdentifierImpl implements Run {
      */
     @Override
     public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
-        if (baseClass == Propertyable.class) {
-            switch (baseFeatureID) {
+        if (baseClass == Propertyable.class)
+        {
+            switch (baseFeatureID)
+            {
             case ExperimentDataPackage.PROPERTYABLE__ADDITIONAL_INFORMATION:
                 return ExperimentDataPackage.RUN__ADDITIONAL_INFORMATION;
             default:

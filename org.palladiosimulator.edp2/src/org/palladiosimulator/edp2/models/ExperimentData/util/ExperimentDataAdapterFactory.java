@@ -69,7 +69,8 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public ExperimentDataAdapterFactory() {
-        if (modelPackage == null) {
+        if (modelPackage == null)
+        {
             modelPackage = ExperimentDataPackage.eINSTANCE;
         }
     }
@@ -84,10 +85,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType(final Object object) {
-        if (object == modelPackage) {
+        if (object == modelPackage)
+        {
             return true;
         }
-        if (object instanceof EObject) {
+        if (object instanceof EObject)
+        {
             return ((EObject) object).eClass().getEPackage() == modelPackage;
         }
         return false;
@@ -99,180 +102,213 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      *
      * @generated
      */
-    protected ExperimentDataSwitch<Adapter> modelSwitch = new ExperimentDataSwitch<Adapter>() {
-
+    protected ExperimentDataSwitch<Adapter> modelSwitch = new ExperimentDataSwitch<Adapter>()
+    {
         @Override
-        public Adapter caseAggregatedMeasurements(final AggregatedMeasurements object) {
+        public Adapter caseAggregatedMeasurements(final AggregatedMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createAggregatedMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseMeasurementRange(final MeasurementRange object) {
+        public Adapter caseMeasurementRange(final MeasurementRange object)
+        {
             return ExperimentDataAdapterFactory.this.createMeasurementRangeAdapter();
         }
 
         @Override
-        public Adapter casePropertyable(final Propertyable object) {
+        public Adapter casePropertyable(final Propertyable object)
+        {
             return ExperimentDataAdapterFactory.this.createPropertyableAdapter();
         }
 
         @Override
-        public Adapter caseEStringtoEObjectMapEntry(final Map.Entry<String, Object> object) {
+        public Adapter caseEStringtoEObjectMapEntry(final Map.Entry<String, Object> object)
+        {
             return ExperimentDataAdapterFactory.this.createEStringtoEObjectMapEntryAdapter();
         }
 
         @Override
-        public Adapter caseRawMeasurements(final RawMeasurements object) {
+        public Adapter caseRawMeasurements(final RawMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createRawMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseDataSeries(final DataSeries object) {
+        public Adapter caseDataSeries(final DataSeries object)
+        {
             return ExperimentDataAdapterFactory.this.createDataSeriesAdapter();
         }
 
         @Override
-        public Adapter caseNumericalNominalStatistics(final NumericalNominalStatistics object) {
+        public Adapter caseNumericalNominalStatistics(final NumericalNominalStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalNominalStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseNumericalMassDistribution(final NumericalMassDistribution object) {
+        public Adapter caseNumericalMassDistribution(final NumericalMassDistribution object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalMassDistributionAdapter();
         }
 
         @Override
-        public Adapter caseFixedWidthAggregatedMeasurements(final FixedWidthAggregatedMeasurements object) {
+        public Adapter caseFixedWidthAggregatedMeasurements(final FixedWidthAggregatedMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createFixedWidthAggregatedMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseFixedIntervals(final FixedIntervals object) {
+        public Adapter caseFixedIntervals(final FixedIntervals object)
+        {
             return ExperimentDataAdapterFactory.this.createFixedIntervalsAdapter();
         }
 
         @Override
-        public Adapter caseTextualNominalStatistics(final TextualNominalStatistics object) {
+        public Adapter caseTextualNominalStatistics(final TextualNominalStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createTextualNominalStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseTextualMassDistribution(final TextualMassDistribution object) {
+        public Adapter caseTextualMassDistribution(final TextualMassDistribution object)
+        {
             return ExperimentDataAdapterFactory.this.createTextualMassDistributionAdapter();
         }
 
         @Override
-        public Adapter caseExperimentGroup(final ExperimentGroup object) {
+        public Adapter caseExperimentGroup(final ExperimentGroup object)
+        {
             return ExperimentDataAdapterFactory.this.createExperimentGroupAdapter();
         }
 
         @Override
-        public Adapter caseExperimentSetting(final ExperimentSetting object) {
+        public Adapter caseExperimentSetting(final ExperimentSetting object)
+        {
             return ExperimentDataAdapterFactory.this.createExperimentSettingAdapter();
         }
 
         @Override
-        public Adapter caseExperimentRun(final ExperimentRun object) {
+        public Adapter caseExperimentRun(final ExperimentRun object)
+        {
             return ExperimentDataAdapterFactory.this.createExperimentRunAdapter();
         }
 
         @Override
-        public Adapter caseMeasurement(final Measurement object) {
+        public Adapter caseMeasurement(final Measurement object)
+        {
             return ExperimentDataAdapterFactory.this.createMeasurementAdapter();
         }
 
         @Override
-        public Adapter caseMeasuringType(final MeasuringType object) {
+        public Adapter caseMeasuringType(final MeasuringType object)
+        {
             return ExperimentDataAdapterFactory.this.createMeasuringTypeAdapter();
         }
 
         @Override
-        public Adapter caseAggregationStatistics(final AggregationStatistics object) {
+        public Adapter caseAggregationStatistics(final AggregationStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createAggregationStatisticsAdapter();
         }
 
         @Override
-        public <Q extends Quantity> Adapter caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements<Q> object) {
+        public <Q extends Quantity> Adapter caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements<Q> object)
+        {
             return ExperimentDataAdapterFactory.this.createDoubleBinaryMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseNumericalIntervalStatistics(final NumericalIntervalStatistics object) {
+        public Adapter caseNumericalIntervalStatistics(final NumericalIntervalStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalIntervalStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseNumericalOrdinalStatistics(final NumericalOrdinalStatistics object) {
+        public Adapter caseNumericalOrdinalStatistics(final NumericalOrdinalStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalOrdinalStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseNumericalPercentile(final NumericalPercentile object) {
+        public Adapter caseNumericalPercentile(final NumericalPercentile object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalPercentileAdapter();
         }
 
         @Override
-        public Adapter caseJSXmlMeasurements(final JSXmlMeasurements object) {
+        public Adapter caseJSXmlMeasurements(final JSXmlMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createJSXmlMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseLongBinaryMeasurements(final LongBinaryMeasurements object) {
+        public Adapter caseLongBinaryMeasurements(final LongBinaryMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createLongBinaryMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object) {
+        public Adapter caseIdentifierBasedMeasurements(final IdentifierBasedMeasurements object)
+        {
             return ExperimentDataAdapterFactory.this.createIdentifierBasedMeasurementsAdapter();
         }
 
         @Override
-        public Adapter caseNumericalRatioStatistics(final NumericalRatioStatistics object) {
+        public Adapter caseNumericalRatioStatistics(final NumericalRatioStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createNumericalRatioStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseIJSDuration(final Duration object) {
+        public Adapter caseIJSDuration(final Duration object)
+        {
             return ExperimentDataAdapterFactory.this.createIJSDurationAdapter();
         }
 
         @Override
-        public Adapter caseEComparable(final Comparable object) {
+        public Adapter caseEComparable(final Comparable object)
+        {
             return ExperimentDataAdapterFactory.this.createEComparableAdapter();
         }
 
         @Override
-        public Adapter caseTextualOrdinalStatistics(final TextualOrdinalStatistics object) {
+        public Adapter caseTextualOrdinalStatistics(final TextualOrdinalStatistics object)
+        {
             return ExperimentDataAdapterFactory.this.createTextualOrdinalStatisticsAdapter();
         }
 
         @Override
-        public Adapter caseRun(final Run object) {
+        public Adapter caseRun(final Run object)
+        {
             return ExperimentDataAdapterFactory.this.createRunAdapter();
         }
 
         @Override
-        public Adapter caseExperimentGroupRun(final ExperimentGroupRun object) {
+        public Adapter caseExperimentGroupRun(final ExperimentGroupRun object)
+        {
             return ExperimentDataAdapterFactory.this.createExperimentGroupRunAdapter();
         }
 
         @Override
-        public Adapter caseIdentifier(final Identifier object) {
+        public Adapter caseIdentifier(final Identifier object)
+        {
             return ExperimentDataAdapterFactory.this.createIdentifierAdapter();
         }
 
         @Override
-        public Adapter defaultCase(final EObject object) {
+        public Adapter defaultCase(final EObject object)
+        {
             return ExperimentDataAdapterFactory.this.createEObjectAdapter();
         }
     };
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param target
-     *            the object to adapt.
-     * @return the adapter for the <code>target</code>.
+             *
+             * @param target
+             *            the object to adapt.
+             * @return the adapter for the <code>target</code>.
      * @generated
      */
     @Override
@@ -282,12 +318,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
-     * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
+             * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
      * @generated
      */
@@ -297,12 +333,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
-     * <em>Measurement Range</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
+             * <em>Measurement Range</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
      * @generated
      */
@@ -312,12 +348,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable <em>Propertyable</em>}'.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable <em>Propertyable</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
      *
-     * @return the new adapter.
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Propertyable
      * @generated
      */
@@ -327,11 +363,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link java.util.Map.Entry
-     * <em>EStringto EObject Map Entry</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>EStringto EObject Map Entry</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see java.util.Map.Entry
      * @generated
      */
@@ -341,12 +377,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
-     * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
+             * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
      * @generated
      */
@@ -356,12 +392,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries <em>Data Series</em>}'.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries <em>Data Series</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
      *
-     * @return the new adapter.
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries
      * @generated
      */
@@ -371,12 +407,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
-     * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
+             * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
      * @generated
      */
@@ -386,12 +422,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
-     * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
+             * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
      * @generated
      */
@@ -401,12 +437,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
-     * <em>Fixed Width Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default
-     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
+             * <em>Fixed Width Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default
+             * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+             * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
      * @generated
      */
@@ -416,12 +452,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
-     * <em>Fixed Intervals</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
+             * <em>Fixed Intervals</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
      * @generated
      */
@@ -431,12 +467,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
-     * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
+             * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
      * @generated
      */
@@ -446,12 +482,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
-     * <em>Textual Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
+             * <em>Textual Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
      * @generated
      */
@@ -461,12 +497,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
-     * <em>Experiment Group</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
+             * <em>Experiment Group</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
      * @generated
      */
@@ -476,12 +512,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
-     * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
+             * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
      * @generated
      */
@@ -491,12 +527,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
-     * <em>Experiment Run</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
+             * <em>Experiment Run</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
      * @generated
      */
@@ -506,12 +542,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement <em>Measurement</em>}'.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement <em>Measurement</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
      *
-     * @return the new adapter.
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement
      * @generated
      */
@@ -521,12 +557,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
-     * <em>Measuring Type</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
+             * <em>Measuring Type</em>}'. <!-- begin-user-doc --> This default implementation returns null
+             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+             * all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
      * @generated
      */
@@ -536,12 +572,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
-     * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
+             * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
      * @generated
      */
@@ -551,12 +587,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
-     * <em>Double Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
+             * <em>Double Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
      * @generated
      */
@@ -566,12 +602,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
-     * <em>Numerical Interval Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
+             * <em>Numerical Interval Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
      * @generated
      */
@@ -581,12 +617,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
-     * <em>Numerical Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
+             * <em>Numerical Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
      * @generated
      */
@@ -596,12 +632,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
-     * <em>Numerical Percentile</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
+             * <em>Numerical Percentile</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
      * @generated
      */
@@ -611,12 +647,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
-     * <em>JS Xml Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
+             * <em>JS Xml Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
      * @generated
      */
@@ -626,12 +662,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
-     * <em>Long Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
+             * <em>Long Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
      * @generated
      */
@@ -641,12 +677,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
-     * <em>Identifier Based Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
+             * <em>Identifier Based Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
      * @generated
      */
@@ -656,12 +692,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
-     * <em>Numerical Ratio Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
+             * <em>Numerical Ratio Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
      * @generated
      */
@@ -671,11 +707,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link javax.measure.quantity.Duration
-     * <em>IJS Duration</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>IJS Duration</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+             * the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see javax.measure.quantity.Duration
      * @generated
      */
@@ -685,11 +721,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link java.lang.Comparable
-     * <em>EComparable</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>EComparable</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+             * the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see java.lang.Comparable
      * @generated
      */
@@ -699,12 +735,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
-     * <em>Textual Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-     * returns null so that we can easily ignore cases; it's useful to ignore a case when
-     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
+             * <em>Textual Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+             * returns null so that we can easily ignore cases; it's useful to ignore a case when
+             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
      * @generated
      */
@@ -729,12 +765,12 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
-     * <em>Experiment Group Run</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
+             * <em>Experiment Group Run</em>}'. <!-- begin-user-doc --> This default implementation returns
+             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+             * catch all the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
      * @generated
      */
@@ -744,11 +780,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
-     * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+             * the cases anyway. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
      */
@@ -758,9 +794,9 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
-     * implementation returns null. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
+             * implementation returns null. <!-- end-user-doc -->
+             *
+             * @return the new adapter.
      * @generated
      */
     public Adapter createEObjectAdapter() {

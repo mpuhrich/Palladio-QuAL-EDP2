@@ -178,7 +178,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -196,7 +197,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
             return this.basicSetAggregatedMeasurements(null, msgs);
         }
@@ -210,7 +212,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+        switch (this.eContainerFeatureID())
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__AGGREGATED_MEASUREMENTS:
             return this.eInternalContainer().eInverseRemove(this,
                     ExperimentDataPackage.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
@@ -226,7 +229,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
             return this.getLowerBound();
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:
@@ -246,7 +250,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
             this.setLowerBound((Measure) newValue);
             return;
@@ -270,7 +275,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
             this.setLowerBound((Measure) null);
             return;
@@ -294,7 +300,8 @@ public class FixedIntervalsImpl extends IdentifierImpl implements FixedIntervals
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case ExperimentDataPackage.FIXED_INTERVALS__LOWER_BOUND:
             return this.getLowerBound() != null;
         case ExperimentDataPackage.FIXED_INTERVALS__WIDTH:

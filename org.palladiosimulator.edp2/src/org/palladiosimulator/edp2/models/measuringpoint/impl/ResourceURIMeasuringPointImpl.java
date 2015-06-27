@@ -90,7 +90,8 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             return this.getResourceURI();
         }
@@ -104,7 +105,8 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             this.setResourceURI((String) newValue);
             return;
@@ -119,7 +121,8 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             this.setResourceURI(RESOURCE_URI_EDEFAULT);
             return;
@@ -134,10 +137,11 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
-            return RESOURCE_URI_EDEFAULT == null ? this.getResourceURI() != null : !RESOURCE_URI_EDEFAULT.equals(this
-                    .getResourceURI());
+            return RESOURCE_URI_EDEFAULT == null ? this.getResourceURI() != null : !RESOURCE_URI_EDEFAULT
+                    .equals(this.getResourceURI());
         }
         return super.eIsSet(featureID);
     }

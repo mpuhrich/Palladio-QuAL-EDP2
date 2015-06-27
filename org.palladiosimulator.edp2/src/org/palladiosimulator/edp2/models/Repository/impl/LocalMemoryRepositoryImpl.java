@@ -56,7 +56,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
              */
             @Override
@@ -67,7 +67,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#close()
              */
             @Override
@@ -78,7 +78,7 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
 
             /*
              * (non-Javadoc)
-             * 
+             *
              * @see org.palladiosimulator.edp2.dao.impl.MetaDaoImpl#getMeasurementsDaoFactory()
              */
             @Override
@@ -129,7 +129,8 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
             return this.getDomain();
         }
@@ -143,7 +144,8 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
             this.setDomain((String) newValue);
             return;
@@ -158,7 +160,8 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
             this.setDomain(DOMAIN_EDEFAULT);
             return;
@@ -173,7 +176,8 @@ public class LocalMemoryRepositoryImpl extends RepositoryImpl implements LocalMe
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID) {
+        switch (featureID)
+        {
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY__DOMAIN:
             return DOMAIN_EDEFAULT == null ? this.getDomain() != null : !DOMAIN_EDEFAULT.equals(this.getDomain());
         }

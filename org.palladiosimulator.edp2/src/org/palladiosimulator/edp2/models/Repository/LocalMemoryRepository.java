@@ -35,7 +35,7 @@ public interface LocalMemoryRepository extends Repository {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Domain</em>' attribute.
      * @see #setDomain(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getLocalMemoryRepository_Domain()
@@ -48,7 +48,7 @@ public interface LocalMemoryRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository#getDomain
      * <em>Domain</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Domain</em>' attribute.
      * @see #getDomain()

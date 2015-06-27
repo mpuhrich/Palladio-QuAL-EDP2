@@ -50,7 +50,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
  * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage
  * @generated
  */
@@ -58,14 +58,14 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static ExperimentDataPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ExperimentDataAdapterFactory() {
@@ -79,7 +79,7 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
      * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc
      * --> This implementation returns <code>true</code> if the object is either the model's package
      * or is an instance object of the model. <!-- end-user-doc -->
-     *
+     * 
      * @return whether this factory is applicable for the type of the object.
      * @generated
      */
@@ -99,11 +99,11 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
     /**
      * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ExperimentDataSwitch<Adapter> modelSwitch = new ExperimentDataSwitch<Adapter>()
-    {
+            {
         @Override
         public Adapter caseAggregatedMeasurements(final AggregatedMeasurements object)
         {
@@ -301,506 +301,506 @@ public class ExperimentDataAdapterFactory extends AdapterFactoryImpl {
         {
             return ExperimentDataAdapterFactory.this.createEObjectAdapter();
         }
-    };
+            };
 
-    /**
-     * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
-             * @param target
-             *            the object to adapt.
-             * @return the adapter for the <code>target</code>.
-     * @generated
-     */
-    @Override
-    public Adapter createAdapter(final Notifier target) {
-        return this.modelSwitch.doSwitch((EObject) target);
-    }
+            /**
+             * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
+     * @param target
+     *            the object to adapt.
+     * @return the adapter for the <code>target</code>.
+             * @generated
+             */
+            @Override
+            public Adapter createAdapter(final Notifier target) {
+                return this.modelSwitch.doSwitch((EObject) target);
+            }
 
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
-             * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
-     * @generated
-     */
-    public Adapter createAggregatedMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
-             * <em>Measurement Range</em>}'. <!-- begin-user-doc --> This default implementation returns
-             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-             * catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
-     * @generated
-     */
-    public Adapter createMeasurementRangeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable <em>Propertyable</em>}'.
-     * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
-     *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Propertyable
-     * @generated
-     */
-    public Adapter createPropertyableAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link java.util.Map.Entry
-             * <em>EStringto EObject Map Entry</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see java.util.Map.Entry
-     * @generated
-     */
-    public Adapter createEStringtoEObjectMapEntryAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
-             * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns null
-             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-             * all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
-     * @generated
-     */
-    public Adapter createRawMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries <em>Data Series</em>}'.
-     * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
-     *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries
-     * @generated
-     */
-    public Adapter createDataSeriesAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
-             * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
-     * @generated
-     */
-    public Adapter createNumericalNominalStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
-             * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
-     * @generated
-     */
-    public Adapter createNumericalMassDistributionAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
-             * <em>Fixed Width Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default
-             * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-             * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
-     * @generated
-     */
-    public Adapter createFixedWidthAggregatedMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
-             * <em>Fixed Intervals</em>}'. <!-- begin-user-doc --> This default implementation returns null
-             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-             * all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
-     * @generated
-     */
-    public Adapter createFixedIntervalsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
-             * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
-     * @generated
-     */
-    public Adapter createTextualNominalStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
-             * <em>Textual Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
-     * @generated
-     */
-    public Adapter createTextualMassDistributionAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
-             * <em>Experiment Group</em>}'. <!-- begin-user-doc --> This default implementation returns null
-             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-             * all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
-     * @generated
-     */
-    public Adapter createExperimentGroupAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
-             * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> This default implementation returns
-             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-             * catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
-     * @generated
-     */
-    public Adapter createExperimentSettingAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
-             * <em>Experiment Run</em>}'. <!-- begin-user-doc --> This default implementation returns null
-             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-             * all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
-     * @generated
-     */
-    public Adapter createExperimentRunAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement <em>Measurement</em>}'.
-     * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
-     *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement
-     * @generated
-     */
-    public Adapter createMeasurementAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
-             * <em>Measuring Type</em>}'. <!-- begin-user-doc --> This default implementation returns null
-             * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-             * all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
-     * @generated
-     */
-    public Adapter createMeasuringTypeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
-             * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
-     * @generated
-     */
-    public Adapter createAggregationStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
-             * <em>Double Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
-     * @generated
-     */
-    public Adapter createDoubleBinaryMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
-             * <em>Numerical Interval Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
-     * @generated
-     */
-    public Adapter createNumericalIntervalStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
-             * <em>Numerical Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
-     * @generated
-     */
-    public Adapter createNumericalOrdinalStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
-             * <em>Numerical Percentile</em>}'. <!-- begin-user-doc --> This default implementation returns
-             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-             * catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
-     * @generated
-     */
-    public Adapter createNumericalPercentileAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
-             * <em>JS Xml Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns
-             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-             * catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
-     * @generated
-     */
-    public Adapter createJSXmlMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
-             * <em>Long Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
-     * @generated
-     */
-    public Adapter createLongBinaryMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
-             * <em>Identifier Based Measurements</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
-     * @generated
-     */
-    public Adapter createIdentifierBasedMeasurementsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
-             * <em>Numerical Ratio Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
-     * @generated
-     */
-    public Adapter createNumericalRatioStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link javax.measure.quantity.Duration
-             * <em>IJS Duration</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-             * the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see javax.measure.quantity.Duration
-     * @generated
-     */
-    public Adapter createIJSDurationAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link java.lang.Comparable
-             * <em>EComparable</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-             * the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see java.lang.Comparable
-     * @generated
-     */
-    public Adapter createEComparableAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
-             * <em>Textual Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
-             * returns null so that we can easily ignore cases; it's useful to ignore a case when
-             * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
-     * @generated
-     */
-    public Adapter createTextualOrdinalStatisticsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.edp2.models.ExperimentData.Run <em>Run</em>}'. <!--
-     * begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
-     *
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
+     * <em>Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
      * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.Run
-     * @generated
-     */
-    public Adapter createRunAdapter() {
-        return null;
-    }
+             * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements
+             * @generated
+             */
+            public Adapter createAggregatedMeasurementsAdapter() {
+                return null;
+            }
 
-    /**
-     * Creates a new adapter for an object of class '
-             * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
-             * <em>Experiment Group Run</em>}'. <!-- begin-user-doc --> This default implementation returns
-             * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-             * catch all the cases anyway. <!-- end-user-doc -->
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
+     * <em>Measurement Range</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange
+             * @generated
+             */
+            public Adapter createMeasurementRangeAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.Propertyable <em>Propertyable</em>}'.
+             * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+             * end-user-doc -->
+             * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.Propertyable
+             * @generated
+             */
+            public Adapter createPropertyableAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '{@link java.util.Map.Entry
+     * <em>EStringto EObject Map Entry</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see java.util.Map.Entry
+             * @generated
+             */
+            public Adapter createEStringtoEObjectMapEntryAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
+     * <em>Raw Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements
+             * @generated
+             */
+            public Adapter createRawMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries <em>Data Series</em>}'.
+             * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+             * end-user-doc -->
+             * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.DataSeries
+             * @generated
+             */
+            public Adapter createDataSeriesAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
+     * <em>Numerical Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics
+             * @generated
+             */
+            public Adapter createNumericalNominalStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
+     * <em>Numerical Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution
+             * @generated
+             */
+            public Adapter createNumericalMassDistributionAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
+     * <em>Fixed Width Aggregated Measurements</em>}'. <!-- begin-user-doc --> This default
+     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements
+             * @generated
+             */
+            public Adapter createFixedWidthAggregatedMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
+     * <em>Fixed Intervals</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.FixedIntervals
+             * @generated
+             */
+            public Adapter createFixedIntervalsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
+     * <em>Textual Nominal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
+             * @generated
+             */
+            public Adapter createTextualNominalStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
+     * <em>Textual Mass Distribution</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.TextualMassDistribution
+             * @generated
+             */
+            public Adapter createTextualMassDistributionAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
+     * <em>Experiment Group</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup
+             * @generated
+             */
+            public Adapter createExperimentGroupAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
+     * <em>Experiment Setting</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting
+             * @generated
+             */
+            public Adapter createExperimentSettingAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
+     * <em>Experiment Run</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun
+             * @generated
+             */
+            public Adapter createExperimentRunAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.Measurement <em>Measurement</em>}'.
+             * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+             * end-user-doc -->
+             * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement
+             * @generated
+             */
+            public Adapter createMeasurementAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
+     * <em>Measuring Type</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType
+             * @generated
+             */
+            public Adapter createMeasuringTypeAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
+     * <em>Aggregation Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics
+             * @generated
+             */
+            public Adapter createAggregationStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
+     * <em>Double Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.DoubleBinaryMeasurements
+             * @generated
+             */
+            public Adapter createDoubleBinaryMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
+     * <em>Numerical Interval Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatistics
+             * @generated
+             */
+            public Adapter createNumericalIntervalStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
+     * <em>Numerical Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalOrdinalStatistics
+             * @generated
+             */
+            public Adapter createNumericalOrdinalStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
+     * <em>Numerical Percentile</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile
+             * @generated
+             */
+            public Adapter createNumericalPercentileAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
+     * <em>JS Xml Measurements</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.JSXmlMeasurements
+             * @generated
+             */
+            public Adapter createJSXmlMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
+     * <em>Long Binary Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.LongBinaryMeasurements
+             * @generated
+             */
+            public Adapter createLongBinaryMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
+     * <em>Identifier Based Measurements</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.IdentifierBasedMeasurements
+             * @generated
+             */
+            public Adapter createIdentifierBasedMeasurementsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
+     * <em>Numerical Ratio Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalRatioStatistics
+             * @generated
+             */
+            public Adapter createNumericalRatioStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '{@link javax.measure.quantity.Duration
+     * <em>IJS Duration</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see javax.measure.quantity.Duration
+             * @generated
+             */
+            public Adapter createIJSDurationAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '{@link java.lang.Comparable
+     * <em>EComparable</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see java.lang.Comparable
+             * @generated
+             */
+            public Adapter createEComparableAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
+     * <em>Textual Ordinal Statistics</em>}'. <!-- begin-user-doc --> This default implementation
+     * returns null so that we can easily ignore cases; it's useful to ignore a case when
+     * inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics
+             * @generated
+             */
+            public Adapter createTextualOrdinalStatisticsAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for an object of class '
+             * {@link org.palladiosimulator.edp2.models.ExperimentData.Run <em>Run</em>}'. <!--
+             * begin-user-doc --> This default implementation returns null so that we can easily ignore
+             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+             * end-user-doc -->
              *
              * @return the new adapter.
-     * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
-     * @generated
-     */
-    public Adapter createExperimentGroupRunAdapter() {
-        return null;
-    }
+             * @see org.palladiosimulator.edp2.models.ExperimentData.Run
+             * @generated
+             */
+            public Adapter createRunAdapter() {
+                return null;
+            }
 
-    /**
-     * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
-             * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-             * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-             * the cases anyway. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @see de.uka.ipd.sdq.identifier.Identifier
-     * @generated
-     */
-    public Adapter createIdentifierAdapter() {
-        return null;
-    }
+            /**
+             * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
+     * <em>Experiment Group Run</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun
+             * @generated
+             */
+            public Adapter createExperimentGroupRunAdapter() {
+                return null;
+            }
 
-    /**
-     * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
-             * implementation returns null. <!-- end-user-doc -->
-             *
-             * @return the new adapter.
-     * @generated
-     */
-    public Adapter createEObjectAdapter() {
-        return null;
-    }
+            /**
+             * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
+     * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @see de.uka.ipd.sdq.identifier.Identifier
+             * @generated
+             */
+            public Adapter createIdentifierAdapter() {
+                return null;
+            }
+
+            /**
+             * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
+     * implementation returns null. <!-- end-user-doc -->
+     * 
+     * @return the new adapter.
+             * @generated
+             */
+            public Adapter createEObjectAdapter() {
+                return null;
+            }
 
 } // ExperimentDataAdapterFactory

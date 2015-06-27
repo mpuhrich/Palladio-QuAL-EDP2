@@ -31,6 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
+import org.palladiosimulator.edp2.models.Repository.Repository;
 import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
@@ -281,10 +282,11 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                 styledString = new RepositorySwitch<StyledString>() {
 
                     @Override
-                    public StyledString caseLocalDirectoryRepository(
-                            final org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository object) {
-                        final StyledString styledString = new StyledString("Local File");
-                        final String decoration = " (" + object.getUri() + ")";
+                    public StyledString caseRepository(
+                            final Repository object) {
+                        final StyledString styledString = new StyledString(object.eClass().getName());
+                        // TODO: Implement a generic decoration
+                        final String decoration = " (" + object.getId() + ")";
                         styledString.append(decoration, StyledString.COUNTER_STYLER);
                         return styledString;
                     };

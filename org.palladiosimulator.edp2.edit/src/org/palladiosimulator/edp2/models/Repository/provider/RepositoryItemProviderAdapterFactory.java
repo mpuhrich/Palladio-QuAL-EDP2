@@ -91,32 +91,6 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected LocalDirectoryRepositoryItemProvider localDirectoryRepositoryItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createLocalDirectoryRepositoryAdapter() {
-        if (this.localDirectoryRepositoryItemProvider == null)
-        {
-            this.localDirectoryRepositoryItemProvider = new LocalDirectoryRepositoryItemProvider(this);
-        }
-
-        return this.localDirectoryRepositoryItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
      * {@link org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -328,9 +302,6 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender 
      */
     @Override
     public void dispose() {
-        if (this.localDirectoryRepositoryItemProvider != null) {
-            this.localDirectoryRepositoryItemProvider.dispose();
-        }
         if (this.localMemoryRepositoryItemProvider != null) {
             this.localMemoryRepositoryItemProvider.dispose();
         }

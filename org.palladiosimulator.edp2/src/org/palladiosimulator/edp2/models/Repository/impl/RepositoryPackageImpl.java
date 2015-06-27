@@ -6,11 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.Repository.impl;
 
-import java.io.File;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -19,7 +16,6 @@ import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.MetaDao;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataPackageImpl;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
@@ -34,70 +30,56 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EClass localDirectoryRepositoryEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EClass fileEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass localMemoryRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass remoteCdoRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass repositoriesEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass iResourceSetEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass measurementsDaoFactoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass metaDaoEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass repositoryEClass = null;
@@ -110,7 +92,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#eNS_URI
      * @see #init()
@@ -122,7 +104,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private static boolean isInited = false;
@@ -135,7 +117,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -149,7 +131,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register package
         final RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE
-                        .get(eNS_URI) : new RepositoryPackageImpl());
+                .get(eNS_URI) : new RepositoryPackageImpl());
 
         isInited = true;
 
@@ -159,12 +141,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register interdependencies
         final ExperimentDataPackageImpl theExperimentDataPackage = (ExperimentDataPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI) instanceof ExperimentDataPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(ExperimentDataPackage.eNS_URI)
-                        : ExperimentDataPackage.eINSTANCE);
+                        .getEPackage(ExperimentDataPackage.eNS_URI)
+                : ExperimentDataPackage.eINSTANCE);
         final MeasuringpointPackageImpl theMeasuringpointPackage = (MeasuringpointPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(MeasuringpointPackage.eNS_URI) instanceof MeasuringpointPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(MeasuringpointPackage.eNS_URI)
-                        : MeasuringpointPackage.eINSTANCE);
+                        .getEPackage(MeasuringpointPackage.eNS_URI)
+                : MeasuringpointPackage.eINSTANCE);
 
         // Create package meta-data objects
         theRepositoryPackage.createPackageContents();
@@ -186,37 +168,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EClass getLocalDirectoryRepository() {
-        return this.localDirectoryRepositoryEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EAttribute getLocalDirectoryRepository_Uri() {
-        return (EAttribute) this.localDirectoryRepositoryEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EClass getFile() {
-        return this.fileEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -226,7 +178,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -236,7 +188,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -246,7 +198,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -256,7 +208,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -266,7 +218,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -276,7 +228,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -286,7 +238,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -296,7 +248,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -306,7 +258,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -316,7 +268,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -326,7 +278,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -336,7 +288,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -346,7 +298,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -356,7 +308,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -366,7 +318,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -376,7 +328,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isCreated = false;
@@ -384,7 +336,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void createPackageContents() {
@@ -394,11 +346,6 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         this.isCreated = true;
 
         // Create classes and their features
-        this.localDirectoryRepositoryEClass = this.createEClass(LOCAL_DIRECTORY_REPOSITORY);
-        this.createEAttribute(this.localDirectoryRepositoryEClass, LOCAL_DIRECTORY_REPOSITORY__URI);
-
-        this.fileEClass = this.createEClass(FILE);
-
         this.localMemoryRepositoryEClass = this.createEClass(LOCAL_MEMORY_REPOSITORY);
         this.createEAttribute(this.localMemoryRepositoryEClass, LOCAL_MEMORY_REPOSITORY__DOMAIN);
 
@@ -424,7 +371,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isInitialized = false;
@@ -432,7 +379,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void initializePackageContents() {
@@ -459,27 +406,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.localDirectoryRepositoryEClass.getESuperTypes().add(this.getRepository());
         this.localMemoryRepositoryEClass.getESuperTypes().add(this.getRepository());
         this.remoteCdoRepositoryEClass.getESuperTypes().add(this.getRepository());
         this.repositoryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         this.repositoryEClass.getESuperTypes().add(this.getMetaDao());
 
         // Initialize classes and features; add operations and parameters
-        this.initEClass(this.localDirectoryRepositoryEClass, LocalDirectoryRepository.class,
-                "LocalDirectoryRepository",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getLocalDirectoryRepository_Uri(), this.ecorePackage.getEString(), "uri", null, 1, 1,
-                LocalDirectoryRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-        final EOperation op = this.addEOperation(this.localDirectoryRepositoryEClass, this.getFile(),
-                "convertUriStringToFile", 1, 1,
-                IS_UNIQUE, !IS_ORDERED);
-        this.addEParameter(op, this.ecorePackage.getEString(), "uriString", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-        this.initEClass(this.fileEClass, File.class, "File", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-
         this.initEClass(this.localMemoryRepositoryEClass, LocalMemoryRepository.class, "LocalMemoryRepository",
                 !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

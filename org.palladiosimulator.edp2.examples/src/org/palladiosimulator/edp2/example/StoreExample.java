@@ -6,14 +6,15 @@ import java.util.logging.Logger;
 
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.repository.local.LocalDirectoryRepositoryHelper;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
 /**
  * Contains an example how data can be stored with EDP2. Please note that repeated execution of this
  * class can lead to errors. This behavior is due to brevity and clarity of the example and does
  * demonstrate a general shortcoming.
- * 
+ *
  * @author groenda, Sebastian Lehrig
  */
 public class StoreExample {
@@ -23,7 +24,7 @@ public class StoreExample {
     private static final Logger LOGGER = Logger.getLogger(StoreExample.class.getCanonicalName());
 
     /** Repository which is used to store the data. */
-    private final LocalDirectoryRepository ldRepo;
+    private final Repository ldRepo;
     /** Helper class used to process data for the example. */
     private final ExampleData exampleData;
 
@@ -36,7 +37,7 @@ public class StoreExample {
 
     /**
      * Initializes an instance of this class.
-     * 
+     *
      * @param directory
      *            Directory to be used to store measurements.
      */
@@ -47,13 +48,13 @@ public class StoreExample {
 
     /**
      * Initializes the repository in which the data will be stored.
-     * 
+     *
      * @param directory
      *            Path to directory in which the data should be stored.
      * @return the initialized repository.
      */
-    private LocalDirectoryRepository initializeRepository(final String directory) {
-        final LocalDirectoryRepository repo = RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
+    private Repository initializeRepository(final String directory) {
+        final Repository repo = LocalDirectoryRepositoryHelper.initializeLocalDirectoryRepository(new File(directory));
         /*
          * Add repository to a (optional) central directory of repositories. This can be useful to
          * manage more than one repository or have links between different existing repositories. A
@@ -85,7 +86,7 @@ public class StoreExample {
 
     /**
      * Main method to run the example.
-     * 
+     *
      * @param args
      *            Not used.
      */

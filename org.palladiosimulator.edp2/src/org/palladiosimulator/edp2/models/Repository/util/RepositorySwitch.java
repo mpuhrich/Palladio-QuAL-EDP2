@@ -6,15 +6,12 @@
  */
 package org.palladiosimulator.edp2.models.Repository.util;
 
-import java.io.File;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.MetaDao;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
@@ -29,7 +26,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage
  * @generated
  */
@@ -37,14 +34,14 @@ public class RepositorySwitch<T> extends Switch<T> {
 
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static RepositoryPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RepositorySwitch() {
@@ -57,7 +54,7 @@ public class RepositorySwitch<T> extends Switch<T> {
     /**
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @parameter ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
@@ -70,7 +67,7 @@ public class RepositorySwitch<T> extends Switch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
      * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -78,31 +75,6 @@ public class RepositorySwitch<T> extends Switch<T> {
     protected T doSwitch(final int classifierID, final EObject theEObject) {
         switch (classifierID)
         {
-        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY: {
-            final LocalDirectoryRepository localDirectoryRepository = (LocalDirectoryRepository) theEObject;
-            T result = this.caseLocalDirectoryRepository(localDirectoryRepository);
-            if (result == null) {
-                result = this.caseRepository(localDirectoryRepository);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(localDirectoryRepository);
-            }
-            if (result == null) {
-                result = this.caseMetaDao(localDirectoryRepository);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case RepositoryPackage.FILE: {
-            final File file = (File) theEObject;
-            T result = this.caseFile(file);
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY: {
             final LocalMemoryRepository localMemoryRepository = (LocalMemoryRepository) theEObject;
             T result = this.caseLocalMemoryRepository(localMemoryRepository);
@@ -190,40 +162,9 @@ public class RepositorySwitch<T> extends Switch<T> {
 
     /**
      * Returns the result of interpreting the object as an instance of '
-     * <em>Local Directory Repository</em>'. <!-- begin-user-doc --> This implementation returns
-     * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Local Directory Repository</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseLocalDirectoryRepository(final LocalDirectoryRepository object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>File</em>'. <!--
-     * begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>File</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseFile(final File object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '
      * <em>Local Memory Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -239,7 +180,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Remote Cdo Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '
@@ -270,7 +211,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>IResource Set</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>IResource Set</em>'.
@@ -285,7 +226,7 @@ public class RepositorySwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '
      * <em>Measurements Dao Factory</em>'. <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '

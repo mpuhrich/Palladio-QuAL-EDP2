@@ -34,7 +34,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ResourceURIMeasuringPointImpl() {
@@ -43,7 +43,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -53,7 +53,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -85,7 +85,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -116,7 +116,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class ResourceURIMeasuringPointImpl extends StringMeasuringPointImpl impl
         {
         case MeasuringpointPackage.RESOURCE_URI_MEASURING_POINT__RESOURCE_URI:
             return RESOURCE_URI_EDEFAULT == null ? this.getResourceURI() != null : !RESOURCE_URI_EDEFAULT
-                    .equals(this.getResourceURI());
+            .equals(this.getResourceURI());
         }
         return super.eIsSet(featureID);
     }

@@ -12,12 +12,13 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.repository.local.LocalDirectoryRepositoryHelper;
 import org.palladiosimulator.edp2.util.MeasurementsUtility;
 
 /**
  * Contains an example how data can be loaded with EDP2.
- * 
+ *
  * @author groenda
  *
  */
@@ -30,7 +31,7 @@ public class LoadExample {
     /** Helper class used to process data for the example. */
     private final ExampleData exampleData;
     /** Repository which is used to store the data. */
-    private final LocalDirectoryRepository ldRepo;
+    private final Repository ldRepo;
 
     /**
      * Initializes an instance of the class with the default directory.
@@ -41,7 +42,7 @@ public class LoadExample {
 
     /**
      * Initializes an instance of this class.
-     * 
+     *
      * @param directory
      *            Directory to be used to store measurements.
      */
@@ -54,13 +55,13 @@ public class LoadExample {
 
     /**
      * Initializes the repository in which the data will be stored.
-     * 
+     *
      * @param directory
      *            Path to directory in which the data should be stored.
      * @return the initialized repository.
      */
-    private LocalDirectoryRepository initializeRepository(final String directory) {
-        final LocalDirectoryRepository repo = RepositoryManager.initializeLocalDirectoryRepository(new File(directory));
+    private Repository initializeRepository(final String directory) {
+        final Repository repo = LocalDirectoryRepositoryHelper.initializeLocalDirectoryRepository(new File(directory));
         /*
          * Add repository to a (optional) central directory of repositories. This can be useful to
          * manage more than one repository or have links between different existing repositories. A
@@ -107,7 +108,7 @@ public class LoadExample {
 
     /**
      * Main method to run the example.
-     * 
+     *
      * @param args
      *            Not used.
      */

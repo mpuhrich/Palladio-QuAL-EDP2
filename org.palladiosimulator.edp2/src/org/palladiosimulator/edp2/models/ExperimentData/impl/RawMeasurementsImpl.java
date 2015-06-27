@@ -41,7 +41,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RawMeasurementsImpl() {
@@ -50,7 +50,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -60,7 +60,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -72,7 +72,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -83,7 +83,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetMeasurementRange(final MeasurementRange newMeasurementRange, NotificationChain msgs) {
@@ -94,7 +94,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -126,7 +126,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -144,7 +144,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -161,7 +161,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -178,7 +178,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -199,7 +199,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -218,7 +218,7 @@ public class RawMeasurementsImpl extends IdentifierImpl implements RawMeasuremen
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

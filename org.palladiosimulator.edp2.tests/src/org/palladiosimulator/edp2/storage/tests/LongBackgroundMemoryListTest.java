@@ -12,13 +12,13 @@ import javax.measure.unit.Unit;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.BackgroundMemoryListImpl;
-import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.BackgroundMemoryListImpl.BinaryRepresentation;
-import org.palladiosimulator.edp2.dao.localfile.internal.backgroundlist.serializer.LongSerializer;
+import org.palladiosimulator.edp2.repository.local.dao.internal.backgroundlist.BackgroundMemoryListImpl;
+import org.palladiosimulator.edp2.repository.local.dao.internal.backgroundlist.BackgroundMemoryListImpl.BinaryRepresentation;
+import org.palladiosimulator.edp2.repository.local.dao.internal.backgroundlist.serializer.LongSerializer;
 
 /**
  * Tests the behavior of the BackgroundMemoryList and DoubleSerialiser.
- * 
+ *
  * @author Henning Groenda
  */
 public class LongBackgroundMemoryListTest {
@@ -43,7 +43,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks if a single value can be serialized and deserialized successfully.
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -69,7 +69,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks the behavior at chunk size limit (limit - 1).
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -82,7 +82,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks the behavior at chunk size limit (limit - 1).
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -95,7 +95,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks the behavior at chunk size limit (limit - 1).
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -109,15 +109,15 @@ public class LongBackgroundMemoryListTest {
     /**
      * Creates the specified number of elements in the list, closes it, and checks if values are the
      * same. Asserts correct file size.
-     * 
+     *
      * @param numberElements
      *            Number of data elements to create.
      * @param valueOffset
      *            Offset to add on the values stored.
      * @throws IOException
      */
-    public void basicDeserializationChunkSize(long numberElements, int valueOffset) throws IOException {
-        long oldListSize = list.size();
+    public void basicDeserializationChunkSize(final long numberElements, final int valueOffset) throws IOException {
+        final long oldListSize = list.size();
 
         // create and serialize elements
         for (long i = 0; i < numberElements; i++) {
@@ -141,7 +141,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks the behavior for large number of elements.
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -155,7 +155,7 @@ public class LongBackgroundMemoryListTest {
     /**
      * Checks if repetitive writing is possible. Also checks if there are errors when writing if all
      * chunks are full.
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -172,7 +172,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks if an exception is throw if null Objects are added to the list.
-     * 
+     *
      * @throws IOException
      */
     @Test(expected = IllegalArgumentException.class)
@@ -185,7 +185,7 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks if empty lists are serialized and deserialized correctly.
-     * 
+     *
      * @throws IOException
      */
     @Test
@@ -245,14 +245,14 @@ public class LongBackgroundMemoryListTest {
 
     /**
      * Checks if the same file can be read correctly using different chunk sizes.
-     * 
+     *
      * @throws IOException
      */
     @Test
     public void differentChunkSizes() throws IOException {
         list = new BackgroundMemoryListImpl<Long, Duration>(tempFile.getAbsolutePath(), new LongSerializer(),
                 BinaryRepresentation.LONG, unit);
-        long numberElements = BackgroundMemoryListImpl.DEFAULT_CHUNK_SIZE + 2;
+        final long numberElements = BackgroundMemoryListImpl.DEFAULT_CHUNK_SIZE + 2;
         // create and serialize elements
         for (long i = 0; i < numberElements; i++) {
             list.add(Measure.valueOf(i + 1, unit));
@@ -272,9 +272,9 @@ public class LongBackgroundMemoryListTest {
     @SuppressWarnings("static-access")
     @Test
     public void settingElementsInList() throws IOException {
-        int numberElements = list.DEFAULT_CHUNK_SIZE + 20;
-        int valueOffset = 30;
-        long[] values = new long[numberElements];
+        final int numberElements = list.DEFAULT_CHUNK_SIZE + 20;
+        final int valueOffset = 30;
+        final long[] values = new long[numberElements];
         // create elements
         list = new BackgroundMemoryListImpl<Long, Duration>(tempFile.getAbsolutePath(), new LongSerializer(),
                 BinaryRepresentation.LONG, unit);
@@ -290,9 +290,9 @@ public class LongBackgroundMemoryListTest {
                 BinaryRepresentation.LONG, unit);
         // select chunk and set value in another chunk
         list.get(0);
-        long newValue = Math.round(Math.random() * 100000);
+        final long newValue = Math.round(Math.random() * 100000);
         Measure<Long, Duration> oldValue;
-        int positionOfChange = numberElements - 10;
+        final int positionOfChange = numberElements - 10;
         oldValue = list.set(positionOfChange, Measure.valueOf(newValue, unit));
         assertEquals("Value must not be changed by serialization and setting a new value.", values[positionOfChange],
                 oldValue.longValue(unit));

@@ -49,7 +49,7 @@ public interface Run extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getDuration <em>Duration</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Duration</em>' attribute.
      * @see #getDuration()
@@ -74,7 +74,7 @@ public interface Run extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.Run#getStartTime <em>Start Time</em>}
      * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Start Time</em>' attribute.
      * @see #getStartTime()
@@ -93,7 +93,7 @@ public interface Run extends Identifier, Propertyable {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Measurement</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getRun_Measurement()
      * @see org.palladiosimulator.edp2.models.ExperimentData.Measurement#getRun

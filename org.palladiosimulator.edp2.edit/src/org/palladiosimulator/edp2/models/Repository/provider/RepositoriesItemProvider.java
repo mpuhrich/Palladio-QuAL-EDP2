@@ -174,11 +174,6 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
         newChildDescriptors.add
         (this.createChildParameter
                         (RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
-                                RepositoryFactory.eINSTANCE.createLocalDirectoryRepository()));
-
-        newChildDescriptors.add
-        (this.createChildParameter
-                        (RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
                                 RepositoryFactory.eINSTANCE.createLocalMemoryRepository()));
 
         newChildDescriptors.add

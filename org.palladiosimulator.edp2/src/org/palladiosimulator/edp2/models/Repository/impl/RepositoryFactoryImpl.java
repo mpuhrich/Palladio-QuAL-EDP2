@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
 import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
@@ -20,14 +19,14 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFactory {
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public static RepositoryFactory init() {
@@ -48,7 +47,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RepositoryFactoryImpl() {
@@ -57,15 +56,13 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public EObject create(final EClass eClass) {
         switch (eClass.getClassifierID())
         {
-        case RepositoryPackage.LOCAL_DIRECTORY_REPOSITORY:
-            return this.createLocalDirectoryRepository();
         case RepositoryPackage.LOCAL_MEMORY_REPOSITORY:
             return this.createLocalMemoryRepository();
         case RepositoryPackage.REMOTE_CDO_REPOSITORY:
@@ -79,18 +76,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public LocalDirectoryRepository createLocalDirectoryRepository() {
-        final LocalDirectoryRepositoryImpl localDirectoryRepository = new LocalDirectoryRepositoryImpl();
-        return localDirectoryRepository;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -101,7 +87,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -112,7 +98,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -123,7 +109,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -133,7 +119,7 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @deprecated
      * @generated
      */

@@ -28,11 +28,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * @generated
  */
 public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeriesImpl implements
-        DoubleBinaryMeasurements<Q> {
+DoubleBinaryMeasurements<Q> {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DoubleBinaryMeasurementsImpl() {
@@ -41,7 +41,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -51,7 +51,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -73,7 +73,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -88,7 +88,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -105,7 +105,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class DoubleBinaryMeasurementsImpl<Q extends Quantity> extends DataSeries
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

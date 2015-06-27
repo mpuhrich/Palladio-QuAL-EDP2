@@ -4,8 +4,6 @@ import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
-import org.palladiosimulator.edp2.models.Repository.LocalMemoryRepository;
 import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
 
 /**
@@ -13,22 +11,18 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
  */
 public class OpenDataSourceWizard extends Wizard {
 
-    private final LocalDirectoryRepository ldRepo;
-    private final LocalMemoryRepository lmRepo;
-
     private DiscoverLocalDirectoryPage discoverLocalFilePage;
     private SelectDataSourceTypePage selectDataSourceTypePage;
 
     public OpenDataSourceWizard() {
-        this.ldRepo = RepositoryFactory.eINSTANCE.createLocalDirectoryRepository();
-        this.lmRepo = RepositoryFactory.eINSTANCE.createLocalMemoryRepository();
+        super();
     }
 
     @Override
     public void addPages() {
         this.selectDataSourceTypePage = new SelectDataSourceTypePage();
         addPage(this.selectDataSourceTypePage);
-        this.discoverLocalFilePage = new DiscoverLocalDirectoryPage(this.ldRepo);
+        this.discoverLocalFilePage = new DiscoverLocalDirectoryPage();
         addPage(this.discoverLocalFilePage);
     }
 
@@ -77,9 +71,9 @@ public class OpenDataSourceWizard extends Wizard {
     @Override
     public boolean performFinish() {
         if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), this.ldRepo);
+            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), discoverLocalFilePage.getRepositoryOnFinish());
         } else if (this.selectDataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
-            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), this.lmRepo);
+            RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), RepositoryFactory.eINSTANCE.createLocalMemoryRepository());
         } else {
             // This line should never be reached. Otherwise there likely are unaccounted data source
             // types.

@@ -28,7 +28,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
     /**
      * The default value of the '{@link #getUrl() <em>Url</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getUrl()
      * @generated
      * @ordered
@@ -37,7 +37,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected RemoteCdoRepositoryImpl() {
@@ -46,7 +46,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -56,7 +56,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -67,7 +67,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -93,7 +93,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -109,7 +109,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class RemoteCdoRepositoryImpl extends RepositoryImpl implements RemoteCdo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

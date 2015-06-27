@@ -15,9 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * &nbsp;measurement&nbsp
  * ;ranges.&nbsp;A&nbsp;range&nbsp;is&nbsp;specified&nbsp;as&nbsp;time&nbsp;interval
  * &nbsp;and&nbsp;all&nbsp;measurements&nbsp;falling&nbsp;into&nbsp;a&nbsp;range
- * 's&nbsp;interval&nbsp;belong&nbsp;to&nbsp;that&nbsp;range.&nbsp;And&nbsp;only&nbsp;these&nbsp;measurements.&nbsp;The&nbsp;intervals&nbsp;of&nbsp;different&nbsp;ranges&nbsp;are&nbsp;not&nbsp;allowed&nbsp;to&nbsp;overlap.&nbsp;They&nbsp;have&nbsp;to&nbsp;be&nbsp;disjunct.&nbsp;There&nbsp;might&nbsp;be&nbsp;time&nbsp;betwe
- * e n
- * the&nbsp;end&nbsp;of&nbsp;one&nbsp;interval&nbsp;and&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&
+ * 's&nbsp;interval&nbsp;belong&nbsp;to&nbsp;that&nbsp;range.&nbsp;And&nbsp;only&nbsp;these&nbsp;measurements.&nbsp;The&nbsp;intervals&nbsp;of&nbsp;different&nbsp;ranges&nbsp;are&nbsp;not&nbsp;allowed&nbsp;to&nbsp;overlap.&nbsp;They&nbsp;have&nbsp;to&nbsp;be&nbsp;disjunct.&nbsp;There&nbsp;might&nbsp;be&nbsp;time&nbsp;betwee
+ * n the&nbsp;end&nbsp;of&nbsp;one&nbsp;interval&nbsp;and&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&
  * nbsp;next. It is not allowed to change ranges or shift measurements between subsequent ranges to
  * readjust the range after measurements have been taken. Ranges can be used to differentiate the
  * warm-up-phase from the measurement phase as well as to&nbsp;implement sliding means. <!--
@@ -56,7 +55,7 @@ public interface MeasurementRange extends Propertyable {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Raw Measurements</em>' containment reference.
      * @see #setRawMeasurements(RawMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurementRange_RawMeasurements()
@@ -89,7 +88,7 @@ public interface MeasurementRange extends Propertyable {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Measurement</em>' container reference.
      * @see #setMeasurement(Measurement)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurementRange_Measurement()
@@ -103,7 +102,7 @@ public interface MeasurementRange extends Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getMeasurement
      * <em>Measurement</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Measurement</em>' container reference.
      * @see #getMeasurement()
@@ -134,7 +133,7 @@ public interface MeasurementRange extends Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getEndTime
      * <em>End Time</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>End Time</em>' attribute.
      * @see #getEndTime()
@@ -165,7 +164,7 @@ public interface MeasurementRange extends Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange#getStartTime
      * <em>Start Time</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Start Time</em>' attribute.
      * @see #getStartTime()
@@ -185,7 +184,7 @@ public interface MeasurementRange extends Propertyable {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Aggregated Measurements</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getMeasurementRange_AggregatedMeasurements()
      * @see org.palladiosimulator.edp2.models.ExperimentData.AggregatedMeasurements#getMeasurementRange

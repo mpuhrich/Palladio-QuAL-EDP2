@@ -53,7 +53,7 @@ public interface AggregationStatistics extends Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesBeforeAggregation
      * <em>Distinct Values Before Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Distinct Values Before Aggregation</em>' attribute.
      * @see #getDistinctValuesBeforeAggregation()
@@ -82,7 +82,7 @@ public interface AggregationStatistics extends Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getDistinctValuesAfterAggregation
      * <em>Distinct Values After Aggregation</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Distinct Values After Aggregation</em>' attribute.
      * @see #getDistinctValuesAfterAggregation()
@@ -100,7 +100,7 @@ public interface AggregationStatistics extends Identifier {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #setAggregatedMeasurements(AggregatedMeasurements)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getAggregationStatistics_AggregatedMeasurements()
@@ -115,7 +115,7 @@ public interface AggregationStatistics extends Identifier {
      * {@link org.palladiosimulator.edp2.models.ExperimentData.AggregationStatistics#getAggregatedMeasurements
      * <em>Aggregated Measurements</em>}' container reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Aggregated Measurements</em>' container reference.
      * @see #getAggregatedMeasurements()

@@ -378,18 +378,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    Contains&amp;nbsp;all&amp;nbsp;elements&amp;nbsp;to&amp;nbsp;handle&amp;nbsp;repositories.&amp;nbsp;Repositories&amp;nbsp;are&amp;nbsp;responsible&amp;nbsp;to&amp;nbsp;load/store&amp;nbsp;experiment&amp;nbsp;data.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="LocalDirectoryRepository" eSuperTypes="#//Repository/Repository">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Repository which provides access to data stored in a local directory."/>
-      </eAnnotations>
-      <eOperations name="convertUriStringToFile" ordered="false" lowerBound="1" eType="#//Repository/File">
-        <eParameters name="uriString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="File" instanceClassName="java.io.File"
-        abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="LocalMemoryRepository" eSuperTypes="#//Repository/Repository">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Repository&amp;nbsp;which&amp;nbsp;provides&amp;nbsp;access&amp;nbsp;to&amp;nbsp;data&amp;nbsp;stored&amp;nbsp;in&amp;nbsp;local&amp;nbsp;memory (RAM)."/>

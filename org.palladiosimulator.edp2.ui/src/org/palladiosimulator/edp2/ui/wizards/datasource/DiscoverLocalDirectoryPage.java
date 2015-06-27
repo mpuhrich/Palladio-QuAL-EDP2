@@ -29,22 +29,23 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
-import org.palladiosimulator.edp2.models.Repository.LocalDirectoryRepository;
-import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.edp2.local.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.local.localFactory;
+import org.palladiosimulator.edp2.local.localPackage;
+import org.palladiosimulator.edp2.models.Repository.Repository;
 
 /**
  * Wizard page to discover and select a local directory based repository.
- * 
+ *
  * @author groenda, Sebastian Lehrig
  */
 public class DiscoverLocalDirectoryPage extends WizardPage {
     private static final HashMap<Control, ControlDecoration> DECORATOR_MAP = new HashMap<Control, ControlDecoration>();
-
     private final LocalDirectoryRepository ldRepo;
 
-    public DiscoverLocalDirectoryPage(LocalDirectoryRepository ldRepo) {
+    public DiscoverLocalDirectoryPage() {
         super("wizardPage");
-        this.ldRepo = ldRepo;
+        this.ldRepo = localFactory.eINSTANCE.createLocalDirectoryRepository();
 
         setTitle("Discover Local File Data Source");
         setDescription("Please select the data source you want to open.");
@@ -53,15 +54,15 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
      */
     @Override
-    public void createControl(Composite parent) {
-        Composite container = new Composite(parent, SWT.NULL);
+    public void createControl(final Composite parent) {
+        final Composite container = new Composite(parent, SWT.NULL);
         setControl(container);
 
-        Text locationText = new Text(container, SWT.BORDER);
+        final Text locationText = new Text(container, SWT.BORDER);
         createDirectoryInputSection(container, "Location: ", locationText);
         createControlDecoration(locationText);
 
@@ -74,27 +75,27 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
         WizardPageSupport.create(this, dbc);
 
         dbc.bindValue(SWTObservables.observeText(locationText, SWT.Modify), EMFObservables.observeValue(ldRepo,
-                RepositoryPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI), new UpdateValueStrategy()
-                .setAfterConvertValidator(new UriPointsToLocalDirectoryValidator("location", ldRepo)), null);
+                localPackage.Literals.LOCAL_DIRECTORY_REPOSITORY__URI), new UpdateValueStrategy()
+        .setAfterConvertValidator(new UriPointsToLocalDirectoryValidator("location", ldRepo)), null);
 
         final AggregateValidationStatus aggregateValidationStatus = new AggregateValidationStatus(
                 dbc.getValidationStatusProviders(), AggregateValidationStatus.MAX_SEVERITY);
 
         aggregateValidationStatus.addValueChangeListener(new IValueChangeListener() {
             @Override
-            public void handleValueChange(ValueChangeEvent event) {
+            public void handleValueChange(final ValueChangeEvent event) {
                 // the invocation of the getValue method is necessary
                 // the further changes will be fired
                 aggregateValidationStatus.getValue();
-                for (Object o : dbc.getBindings()) {
-                    Binding binding = (Binding) o;
-                    IStatus status = (IStatus) binding.getValidationStatus().getValue();
+                for (final Object o : dbc.getBindings()) {
+                    final Binding binding = (Binding) o;
+                    final IStatus status = (IStatus) binding.getValidationStatus().getValue();
                     Control control = null;
                     if (binding.getTarget() instanceof ISWTObservable) {
-                        ISWTObservable swtObservable = (ISWTObservable) binding.getTarget();
+                        final ISWTObservable swtObservable = (ISWTObservable) binding.getTarget();
                         control = (Control) swtObservable.getWidget();
                     }
-                    ControlDecoration decoration = DECORATOR_MAP.get(control);
+                    final ControlDecoration decoration = DECORATOR_MAP.get(control);
                     if (decoration != null) {
                         if (status.isOK()) {
                             decoration.hide();
@@ -111,13 +112,13 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 
     /**
      * Creates a decoration for a control to show validation errors.
-     * 
+     *
      * @param control
      *            The control which should be decorated.
      */
-    private void createControlDecoration(Control control) {
-        ControlDecoration controlDecoration = new ControlDecoration(control, SWT.LEFT | SWT.TOP);
-        FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault().getFieldDecoration(
+    private void createControlDecoration(final Control control) {
+        final ControlDecoration controlDecoration = new ControlDecoration(control, SWT.LEFT | SWT.TOP);
+        final FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault().getFieldDecoration(
                 FieldDecorationRegistry.DEC_ERROR);
         controlDecoration.setImage(fieldDecoration.getImage());
         controlDecoration.hide();
@@ -133,13 +134,13 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
 
         private final String label;
 
-        public NotEmptyValidator(String label) {
+        public NotEmptyValidator(final String label) {
             this.label = label;
         }
 
         @Override
-        public IStatus validate(Object value) {
-            String string = (String) value;
+        public IStatus validate(final Object value) {
+            final String string = (String) value;
             if (string == null || string.trim().length() == 0) {
                 return ValidationStatus.error("Please enter a value for " + label + ".");
             }
@@ -150,7 +151,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
     /**
      * Validator which checks if that the content of a field points to a directory within the local
      * file system.
-     * 
+     *
      * @author groenda
      */
     public static class UriPointsToLocalDirectoryValidator implements IValidator {
@@ -162,14 +163,14 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
         /** Repository which is used for validating the provided input. */
         private final LocalDirectoryRepository ldRepo;
 
-        public UriPointsToLocalDirectoryValidator(String label, LocalDirectoryRepository ldRepo) {
+        public UriPointsToLocalDirectoryValidator(final String label, final LocalDirectoryRepository ldRepo) {
             this.label = label;
             this.ldRepo = ldRepo;
         }
 
         @Override
-        public IStatus validate(Object value) {
-            String input = (String) value;
+        public IStatus validate(final Object value) {
+            final String input = (String) value;
             // there must be any input
             if (input == null || input.trim().length() == 0) {
                 return ValidationStatus.error("Please enter a value for " + label + ".");
@@ -177,7 +178,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
             // validate input
             try {
                 ldRepo.convertUriStringToFile(input);
-            } catch (DataNotAccessibleException e1) {
+            } catch (final DataNotAccessibleException e1) {
                 return ValidationStatus.error("The value entered in " + label + " is not valid: " + e1.getMessage());
             }
             return ValidationStatus.ok();
@@ -189,7 +190,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
      * Creates a section in the parent container for selection files. Creates a {@link Group} with a
      * label. Inside the group, a text field for the file with the given extension, a button to load
      * from the workspace and a button to load from the file system are displayed.
-     * 
+     *
      * @param container
      *            The parent container
      * @param modelFileLabel
@@ -197,11 +198,11 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
      * @param textFileNameToLoad
      *            The text field that contains the filename. Its parent will be reset to the
      *            appropriate group within this method.
-     * 
+     *
      * @author Palladio.Workflow::FileNamesInputTab
      */
     public void createDirectoryInputSection(final Composite container, final String modelFileLabel,
-            Text textFileNameToLoad) {
+            final Text textFileNameToLoad) {
 
         final Group fileInputGroup = new Group(container, SWT.NONE);
         final GridLayout glFileInputGroup = new GridLayout();
@@ -222,5 +223,9 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
         final Button buttonUsage = new Button(fileInputGroup, SWT.NONE);
         buttonUsage.setText("File System...");
         buttonUsage.addSelectionListener(new FileSystemButtonSelectionAdater(getShell(), textFileNameToLoad));
+    }
+
+    Repository getRepositoryOnFinish() {
+        return this.ldRepo;
     }
 }

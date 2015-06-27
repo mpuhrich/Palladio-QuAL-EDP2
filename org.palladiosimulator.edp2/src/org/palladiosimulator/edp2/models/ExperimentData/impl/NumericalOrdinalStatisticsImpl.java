@@ -43,11 +43,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalPercentile;
  * @generated
  */
 public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsImpl implements
-        NumericalOrdinalStatistics {
+NumericalOrdinalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalOrdinalStatisticsImpl() {
@@ -56,7 +56,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -77,7 +77,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -88,7 +88,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -99,7 +99,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -145,7 +145,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -162,7 +162,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -178,7 +178,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -199,7 +199,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -226,7 +226,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -251,7 +251,7 @@ public class NumericalOrdinalStatisticsImpl extends NumericalNominalStatisticsIm
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

@@ -9,7 +9,7 @@ import java.io.File;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
-import org.palladiosimulator.edp2.dao.localfile.LocalDirectoryMeasurementsDaoFactory;
+import org.palladiosimulator.edp2.repository.local.dao.LocalDirectoryMeasurementsDaoFactory;
 
 /**
  * JUnit test for file-backed DoubleBinaryMeasurementsDao.

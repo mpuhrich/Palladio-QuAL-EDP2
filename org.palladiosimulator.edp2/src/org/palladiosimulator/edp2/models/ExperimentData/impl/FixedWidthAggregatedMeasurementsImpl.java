@@ -36,11 +36,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeas
  * @generated
  */
 public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurementsImpl implements
-        FixedWidthAggregatedMeasurements {
+FixedWidthAggregatedMeasurements {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedWidthAggregatedMeasurementsImpl() {
@@ -49,7 +49,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -59,7 +59,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -70,7 +70,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetIntervals(final FixedIntervals newIntervals, NotificationChain msgs) {
@@ -81,7 +81,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -105,7 +105,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -128,7 +128,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -146,7 +146,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -163,7 +163,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -184,7 +184,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -203,7 +203,7 @@ public class FixedWidthAggregatedMeasurementsImpl extends AggregatedMeasurements
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

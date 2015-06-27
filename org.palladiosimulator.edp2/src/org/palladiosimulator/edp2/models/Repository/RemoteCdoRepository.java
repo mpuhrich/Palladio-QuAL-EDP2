@@ -33,7 +33,7 @@ public interface RemoteCdoRepository extends Repository {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Url</em>' attribute.
      * @see #setUrl(String)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRemoteCdoRepository_Url()
@@ -46,7 +46,7 @@ public interface RemoteCdoRepository extends Repository {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.RemoteCdoRepository#getUrl <em>Url</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Url</em>' attribute.
      * @see #getUrl()

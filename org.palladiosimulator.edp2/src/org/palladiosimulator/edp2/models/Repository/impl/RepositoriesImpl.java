@@ -56,7 +56,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -76,7 +76,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -102,7 +102,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
                 if (this.eNotificationRequired()) {
                     this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             RepositoryPackage.REPOSITORIES__COMMON_RESOURCE_SET, oldCommonResourceSet, this
-                                    .basicGetCommonResourceSet()));
+                            .basicGetCommonResourceSet()));
                 }
             }
         }
@@ -111,7 +111,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ResourceSet basicGetCommonResourceSet() {
@@ -121,7 +121,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -151,7 +151,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -167,7 +167,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -187,7 +187,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -208,7 +208,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -227,7 +227,7 @@ public class RepositoriesImpl extends CDOObjectImpl implements Repositories {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

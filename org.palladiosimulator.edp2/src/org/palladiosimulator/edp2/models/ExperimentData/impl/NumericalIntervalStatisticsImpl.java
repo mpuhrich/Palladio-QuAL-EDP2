@@ -36,11 +36,11 @@ import org.palladiosimulator.edp2.models.ExperimentData.NumericalIntervalStatist
  * @generated
  */
 public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsImpl implements
-        NumericalIntervalStatistics {
+NumericalIntervalStatistics {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NumericalIntervalStatisticsImpl() {
@@ -49,7 +49,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -59,7 +59,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -70,7 +70,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -81,7 +81,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -103,7 +103,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -193,7 +193,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -218,7 +218,7 @@ public class NumericalIntervalStatisticsImpl extends NumericalOrdinalStatisticsI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

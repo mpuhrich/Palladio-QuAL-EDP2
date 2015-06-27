@@ -10,7 +10,7 @@
       Allows to store received measurements, e.g., in a database, an XML file, or a binary file. Also comes with visualizations for stored measurements.
 Documentation is available via: https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/QualityAnalysisLab/Documentation/trunk/org.palladiosimulator.qual.docs/QualityAnalysisLab.pdf
    </description>
-   
+
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
@@ -43,7 +43,7 @@ Documentation is available via: https://anonymous:anonymous@svnserver.informatik
       <import plugin="org.palladiosimulator.metricspec.resources" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2.util" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.dao.localfile" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.edp2.repository.local.dao" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.equinox.registry"/>
       <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.net4j.util"/>
@@ -93,14 +93,21 @@ Documentation is available via: https://anonymous:anonymous@svnserver.informatik
          unpack="false"/>
 
    <plugin
-         id="org.palladiosimulator.edp2.dao.localfile"
+         id="org.palladiosimulator.edp2.util"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.palladiosimulator.edp2.util"
+         id="org.palladiosimulator.edp2.repository.local"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.edp2.repository.local.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"

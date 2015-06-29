@@ -19,12 +19,10 @@ import org.jfree.data.xy.XYDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.AbstractXYVisualizationInput;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
-import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
@@ -45,20 +43,6 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
         return XYPlotVisualizationInputFactory.FACTORY_ID;
     }
 
-    public boolean canAccept(IDataSource source) {
-        BaseMetricDescription[] mds = MetricDescriptionUtility.toBaseMetricDescriptions(source.getMetricDesciption());
-        if (mds.length != 2) {
-            return false; // two-dimensional data needed
-        }
-        for (BaseMetricDescription md : mds) {
-            if (!(md instanceof NumericalBaseMetricDescription)) {
-                return false; // only metrics that use real or integer values
-                              // can be plotted
-            }
-        }
-        return true;
-    }
-
     @Override
     protected PropertyConfigurable createConfiguration() {
         return new XYPlotVisualizationInputConfiguration();
@@ -69,10 +53,10 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
      */
     @Override
     protected AbstractDataset generateDataset() {
-        DefaultXYDataset dataset = new DefaultXYDataset();
+        final DefaultXYDataset dataset = new DefaultXYDataset();
 
         int i = 1;
-        for (JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
+        for (final JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
             dataset.addSeries(i + ": " + childInput.getInputName(), getXYData(childInput.getDataSource()));
             i++;
         }
@@ -85,14 +69,14 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
      * @return
      */
     @Override
-    protected Plot generatePlot(PropertyConfigurable config, AbstractDataset dataset) {
-        XYPlotVisualizationInputConfiguration configuration = (XYPlotVisualizationInputConfiguration) config;
-        XYPlot plot = new XYPlot();
-        XYDataset xyDataset = (XYDataset) dataset;
+    protected Plot generatePlot(final PropertyConfigurable config, final AbstractDataset dataset) {
+        final XYPlotVisualizationInputConfiguration configuration = (XYPlotVisualizationInputConfiguration) config;
+        final XYPlot plot = new XYPlot();
+        final XYDataset xyDataset = (XYDataset) dataset;
 
-        ValueAxis domainAxis = new NumberAxis(
+        final ValueAxis domainAxis = new NumberAxis(
                 configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
-        ValueAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel()
+        final ValueAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel()
                 : null);
 
         plot.setRangeAxis(rangeAxis);
@@ -100,9 +84,9 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
 
         plot.setDataset(xyDataset);
 
-        XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        boolean isShowSeriesLine = configuration.isShowSeriesLine();
-        boolean isShowSeriesShape = configuration.isShowSeriesShapes();
+        final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+        final boolean isShowSeriesLine = configuration.isShowSeriesLine();
+        final boolean isShowSeriesShape = configuration.isShowSeriesShapes();
 
         for (int i = 0; i < xyDataset.getSeriesCount(); ++i) {
             renderer.setSeriesLinesVisible(i, isShowSeriesLine);
@@ -120,24 +104,25 @@ public class XYPlotVisualizationInput extends AbstractXYVisualizationInput {
             throw new IllegalArgumentException("XYData has to be a two-dimensional metric set description.");
         }
 
-        IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
-        List<MetricDescription> subsumedMetrics = ((MetricSetDescription) inputStream.getMetricDesciption())
+        final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
+        final List<MetricDescription> subsumedMetrics = ((MetricSetDescription) inputStream.getMetricDesciption())
                 .getSubsumedMetrics();
-        Unit<Quantity> domainUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(getXPos())).getDefaultUnit();
-        Unit<Quantity> rangeUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(getYPos())).getDefaultUnit();
+        final Unit<Quantity> domainUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(getXPos())).getDefaultUnit();
+        final Unit<Quantity> rangeUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(getYPos())).getDefaultUnit();
 
         try {
-            double[][] result = new double[2][inputStream.size()];
+            final double[][] result = new double[2][inputStream.size()];
             int i = 0;
-            for (TupleMeasurement tuple : inputStream) {
+            for (final TupleMeasurement tuple : inputStream) {
 
                 @SuppressWarnings("unchecked")
+                final
                 Measure<?, Quantity>[] measurement = (Measure<?, Quantity>[]) tuple.asArray();
 
                 result[0][i] = measurement[getXPos()].doubleValue(domainUnit); // x
-                                                                               // (domain)
+                // (domain)
                 result[1][i] = measurement[getYPos()].doubleValue(rangeUnit); // y
-                                                                              // (range)
+                // (range)
 
                 i++;
             }

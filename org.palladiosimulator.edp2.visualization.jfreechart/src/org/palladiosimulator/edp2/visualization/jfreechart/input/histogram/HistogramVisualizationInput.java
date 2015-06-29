@@ -64,22 +64,6 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
     /*
      * (non-Javadoc)
      *
-     * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#canAccept
-     * (org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSource)
-     */
-    @Override
-    public boolean canAccept(final IDataSource source) {
-        final boolean result = true;
-        // result = source.getOutput().size() < 1;
-        // result =
-        // (MetricDescriptionUtility.toBaseMetricDescriptions(source.getMeasurementsRange().getMeasurements()
-        // .getMeasure().getMetric())[0] instanceof NumericalBaseMetricDescription);
-        return result;
-    }
-
-    /*
-     * (non-Javadoc)
-     *
      * @see org.eclipse.ui.IPersistableElement#getFactoryId()
      */
     @Override

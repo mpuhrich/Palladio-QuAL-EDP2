@@ -11,6 +11,7 @@ import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.map.MapChangeEvent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
@@ -48,7 +49,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
     private static final String EMPTY_SENSOR_COLOR = "Empty Sensor Color";
 
-    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory();
+    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
     private static final AdapterFactoryLabelProvider LABEL_PROVIDER;
 
@@ -57,6 +58,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
         COMPOSED_FACTORY.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
         COMPOSED_FACTORY.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
         COMPOSED_FACTORY.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+        COMPOSED_FACTORY.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
         LABEL_PROVIDER = new AdapterFactoryLabelProvider(COMPOSED_FACTORY);
     }
 

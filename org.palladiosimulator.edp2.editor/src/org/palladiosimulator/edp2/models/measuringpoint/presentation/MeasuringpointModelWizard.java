@@ -157,12 +157,16 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
      * @generated
      */
     protected Collection<String> getInitialObjectNames() {
-        if (this.initialObjectNames == null) {
+        if (this.initialObjectNames == null)
+        {
             this.initialObjectNames = new ArrayList<String>();
-            for (final EClassifier eClassifier : this.measuringpointPackage.getEClassifiers()) {
-                if (eClassifier instanceof EClass) {
+            for (final EClassifier eClassifier : this.measuringpointPackage.getEClassifiers())
+            {
+                if (eClassifier instanceof EClass)
+                {
                     final EClass eClass = (EClass) eClassifier;
-                    if (!eClass.isAbstract()) {
+                    if (!eClass.isAbstract())
+                    {
                         this.initialObjectNames.add(eClass.getName());
                     }
                 }
@@ -191,25 +195,30 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
      */
     @Override
     public boolean performFinish() {
-        try {
+        try
+        {
             // Remember the file.
             //
             final IFile modelFile = this.getModelFile();
 
             // Do the work within an operation.
             //
-            final WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
-
+            final WorkspaceModifyOperation operation =
+                    new WorkspaceModifyOperation()
+            {
                 @Override
-                protected void execute(final IProgressMonitor progressMonitor) {
-                    try {
+                protected void execute(final IProgressMonitor progressMonitor)
+                {
+                    try
+                    {
                         // Create a resource set
                         //
                         final ResourceSet resourceSet = new ResourceSetImpl();
 
                         // Get the URI of the model file.
                         //
-                        final URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+                        final URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(),
+                                        true);
 
                         // Create a resource for this file.
                         //
@@ -218,7 +227,8 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
                         // Add the initial model object to the contents.
                         //
                         final EObject rootObject = MeasuringpointModelWizard.this.createInitialModel();
-                        if (rootObject != null) {
+                        if (rootObject != null)
+                        {
                             resource.getContents().add(rootObject);
                         }
 
@@ -226,11 +236,15 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
                         //
                         final Map<Object, Object> options = new HashMap<Object, Object>();
                         options.put(XMLResource.OPTION_ENCODING,
-                                MeasuringpointModelWizard.this.initialObjectCreationPage.getEncoding());
+                                        MeasuringpointModelWizard.this.initialObjectCreationPage.getEncoding());
                         resource.save(options);
-                    } catch (final Exception exception) {
+                    }
+                    catch (final Exception exception)
+                    {
                         EDP2EditorPlugin.INSTANCE.log(exception);
-                    } finally {
+                    }
+                    finally
+                    {
                         progressMonitor.done();
                     }
                 }
@@ -243,12 +257,15 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
             final IWorkbenchWindow workbenchWindow = this.workbench.getActiveWorkbenchWindow();
             final IWorkbenchPage page = workbenchWindow.getActivePage();
             final IWorkbenchPart activePart = page.getActivePart();
-            if (activePart instanceof ISetSelectionTarget) {
+            if (activePart instanceof ISetSelectionTarget)
+            {
                 final ISelection targetSelection = new StructuredSelection(modelFile);
-                this.getShell().getDisplay().asyncExec(new Runnable() {
-
+                this.getShell().getDisplay().asyncExec
+                (new Runnable()
+                {
                     @Override
-                    public void run() {
+                    public void run()
+                    {
                         ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
                     }
                 });
@@ -256,17 +273,22 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
             // Open an editor on the new file.
             //
-            try {
-                page.openEditor(new FileEditorInput(modelFile),
-                        this.workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
-            } catch (final PartInitException exception) {
+            try
+            {
+                page.openEditor
+                (new FileEditorInput(modelFile),
+                        this.workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString())
+                        .getId());
+            } catch (final PartInitException exception)
+            {
                 MessageDialog.openError(workbenchWindow.getShell(),
                         EDP2EditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
                 return false;
             }
 
             return true;
-        } catch (final Exception exception) {
+        } catch (final Exception exception)
+        {
             EDP2EditorPlugin.INSTANCE.log(exception);
             return false;
         }
@@ -296,13 +318,15 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
          */
         @Override
         protected boolean validatePage() {
-            if (super.validatePage()) {
+            if (super.validatePage())
+            {
                 final String extension = new Path(this.getFileName()).getFileExtension();
-                if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+                if (extension == null || !FILE_EXTENSIONS.contains(extension))
+                {
                     final String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions"
                             : "_WARN_FilenameExtension";
-                    this.setErrorMessage(EDP2EditorPlugin.INSTANCE.getString(key,
-                            new Object[] { FORMATTED_FILE_EXTENSIONS }));
+                    this.setErrorMessage(EDP2EditorPlugin.INSTANCE
+                            .getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
                     return false;
                 }
                 return true;
@@ -395,11 +419,13 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
                 this.initialObjectField.setLayoutData(data);
             }
 
-            for (final String objectName : MeasuringpointModelWizard.this.getInitialObjectNames()) {
+            for (final String objectName : MeasuringpointModelWizard.this.getInitialObjectNames())
+            {
                 this.initialObjectField.add(this.getLabel(objectName));
             }
 
-            if (this.initialObjectField.getItemCount() == 1) {
+            if (this.initialObjectField.getItemCount() == 1)
+            {
                 this.initialObjectField.select(0);
             }
             this.initialObjectField.addModifyListener(this.validator);
@@ -420,7 +446,8 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
                 this.encodingField.setLayoutData(data);
             }
 
-            for (final String encoding : this.getEncodings()) {
+            for (final String encoding : this.getEncodings())
+            {
                 this.encodingField.add(encoding);
             }
 
@@ -436,10 +463,11 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
          * 
          * @generated
          */
-        protected ModifyListener validator = new ModifyListener() {
-
+        protected ModifyListener validator = new ModifyListener()
+        {
             @Override
-            public void modifyText(final ModifyEvent e) {
+            public void modifyText(final ModifyEvent e)
+            {
                 MeasuringpointModelWizardInitialObjectCreationPage.this
                         .setPageComplete(MeasuringpointModelWizardInitialObjectCreationPage.this.validatePage());
             }
@@ -462,11 +490,15 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
         @Override
         public void setVisible(final boolean visible) {
             super.setVisible(visible);
-            if (visible) {
-                if (this.initialObjectField.getItemCount() == 1) {
+            if (visible)
+            {
+                if (this.initialObjectField.getItemCount() == 1)
+                {
                     this.initialObjectField.clearSelection();
                     this.encodingField.setFocus();
-                } else {
+                }
+                else
+                {
                     this.encodingField.clearSelection();
                     this.initialObjectField.setFocus();
                 }
@@ -481,8 +513,10 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
         public String getInitialObjectName() {
             final String label = this.initialObjectField.getText();
 
-            for (final String name : MeasuringpointModelWizard.this.getInitialObjectNames()) {
-                if (this.getLabel(name).equals(label)) {
+            for (final String name : MeasuringpointModelWizard.this.getInitialObjectNames())
+            {
+                if (this.getLabel(name).equals(label))
+                {
                     return name;
                 }
             }
@@ -505,9 +539,11 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         protected String getLabel(final String typeName) {
-            try {
+            try
+            {
                 return EDP2EditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-            } catch (final MissingResourceException mre) {
+            } catch (final MissingResourceException mre)
+            {
                 EDP2EditorPlugin.INSTANCE.log(mre);
             }
             return typeName;
@@ -519,10 +555,12 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
          * @generated
          */
         protected Collection<String> getEncodings() {
-            if (this.encodings == null) {
+            if (this.encodings == null)
+            {
                 this.encodings = new ArrayList<String>();
                 for (final StringTokenizer stringTokenizer = new StringTokenizer(
-                        EDP2EditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
+                        EDP2EditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();)
+                {
                     this.encodings.add(stringTokenizer.nextToken());
                 }
             }
@@ -550,21 +588,25 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
 
         // Try and get the resource selection to determine a current directory for the file dialog.
         //
-        if (this.selection != null && !this.selection.isEmpty()) {
+        if (this.selection != null && !this.selection.isEmpty())
+        {
             // Get the resource...
             //
             final Object selectedElement = this.selection.iterator().next();
-            if (selectedElement instanceof IResource) {
+            if (selectedElement instanceof IResource)
+            {
                 // Get the resource parent, if its a file.
                 //
                 IResource selectedResource = (IResource) selectedElement;
-                if (selectedResource.getType() == IResource.FILE) {
+                if (selectedResource.getType() == IResource.FILE)
+                {
                     selectedResource = selectedResource.getParent();
                 }
 
                 // This gives us a directory...
                 //
-                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+                if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
+                {
                     // Set this for the container.
                     //
                     this.newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
@@ -575,7 +617,8 @@ public class MeasuringpointModelWizard extends Wizard implements INewWizard {
                             .getString("_UI_MeasuringpointEditorFilenameDefaultBase");
                     final String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
                     String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
+                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i)
+                    {
                         modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
                     }
                     this.newFileCreationPage.setFileName(modelFilename);

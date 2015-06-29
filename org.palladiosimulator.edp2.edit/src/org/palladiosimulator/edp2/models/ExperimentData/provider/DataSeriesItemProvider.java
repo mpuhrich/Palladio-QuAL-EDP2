@@ -32,16 +32,16 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.ExperimentData.DataSeries} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DataSeriesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public DataSeriesItemProvider(final AdapterFactory adapterFactory) {
@@ -51,7 +51,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -68,18 +68,18 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds a property descriptor for the Values Uuid feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addValuesUuidPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_DataSeries_valuesUuid_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_DataSeries_valuesUuid_feature",
-                                        "_UI_DataSeries_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_DataSeries_valuesUuid_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_DataSeries_valuesUuid_feature",
+                                "_UI_DataSeries_type"),
                                 ExperimentDataPackage.Literals.DATA_SERIES__VALUES_UUID,
                                 true,
                                 false,
@@ -111,7 +111,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -133,14 +133,14 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
         final String label = ((DataSeries) object).getValuesUuid();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_DataSeries_type") :
-                    this.getString("_UI_DataSeries_type") + " " + label;
+                this.getString("_UI_DataSeries_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -163,7 +163,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -171,40 +171,40 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createNumericalNominalStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createNumericalNominalStatistics()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createNumericalOrdinalStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createNumericalOrdinalStatistics()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createNumericalIntervalStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createNumericalIntervalStatistics()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createNumericalRatioStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__NUMERICAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createNumericalRatioStatistics()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__TEXTUAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createTextualNominalStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__TEXTUAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createTextualNominalStatistics()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.DATA_SERIES__TEXTUAL_STATISTICS,
-                                ExperimentDataFactory.eINSTANCE.createTextualOrdinalStatistics()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.DATA_SERIES__TEXTUAL_STATISTICS,
+                        ExperimentDataFactory.eINSTANCE.createTextualOrdinalStatistics()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

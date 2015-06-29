@@ -34,7 +34,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RawMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -44,7 +44,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns RawMeasurements.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -110,14 +110,14 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
         final String label = ((RawMeasurements) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_RawMeasurements_type") :
-                    this.getString("_UI_RawMeasurements_type") + " " + label;
+                this.getString("_UI_RawMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -144,30 +144,30 @@ public class RawMeasurementsItemProvider extends IdentifierItemProvider {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.RAW_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

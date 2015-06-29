@@ -58,7 +58,7 @@ public interface NumericalNominalStatistics extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getNumberMeasurements
      * <em>Number Measurements</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Number Measurements</em>' attribute.
      * @see #getNumberMeasurements()
@@ -78,7 +78,7 @@ public interface NumericalNominalStatistics extends Identifier {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Numerical Mass Distribution</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalNominalStatistics_NumericalMassDistribution()
      * @see org.palladiosimulator.edp2.models.ExperimentData.NumericalMassDistribution#getNumericalNominalStatistics
@@ -97,7 +97,7 @@ public interface NumericalNominalStatistics extends Identifier {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Data Series</em>' container reference.
      * @see #setDataSeries(DataSeries)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getNumericalNominalStatistics_DataSeries()
@@ -111,7 +111,7 @@ public interface NumericalNominalStatistics extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.NumericalNominalStatistics#getDataSeries
      * <em>Data Series</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Data Series</em>' container reference.
      * @see #getDataSeries()

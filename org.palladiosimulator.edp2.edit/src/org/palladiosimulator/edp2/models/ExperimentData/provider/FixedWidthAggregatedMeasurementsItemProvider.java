@@ -22,7 +22,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeas
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.ExperimentData.FixedWidthAggregatedMeasurements} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeasurementsItemProvider {
@@ -30,7 +30,7 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public FixedWidthAggregatedMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -40,7 +40,7 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -109,14 +109,14 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
         final String label = ((FixedWidthAggregatedMeasurements) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_FixedWidthAggregatedMeasurements_type") :
-                    this.getString("_UI_FixedWidthAggregatedMeasurements_type") + " " + label;
+                this.getString("_UI_FixedWidthAggregatedMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -144,29 +144,29 @@ public class FixedWidthAggregatedMeasurementsItemProvider extends AggregatedMeas
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
-                                ExperimentDataFactory.eINSTANCE.createFixedIntervals()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__INTERVALS,
+                        ExperimentDataFactory.eINSTANCE.createFixedIntervals()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createDoubleBinaryMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createJSXmlMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createLongBinaryMeasurements()));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
-                                ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.FIXED_WIDTH_AGGREGATED_MEASUREMENTS__DATA_SERIES,
+                        ExperimentDataFactory.eINSTANCE.createIdentifierBasedMeasurements()));
     }
 
 }

@@ -32,7 +32,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NumericalOrdinalStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -42,7 +42,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -61,19 +61,19 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds a property descriptor for the Minimum feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addMinimumPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-        .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalOrdinalStatistics_minimum_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalOrdinalStatistics_minimum_feature",
-                                        "_UI_NumericalOrdinalStatistics_type"),
+                .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalOrdinalStatistics_minimum_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalOrdinalStatistics_minimum_feature",
+                                "_UI_NumericalOrdinalStatistics_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MINIMUM,
                                 true,
                                 false,
@@ -86,19 +86,19 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds a property descriptor for the Maximum feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addMaximumPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-        .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalOrdinalStatistics_maximum_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalOrdinalStatistics_maximum_feature",
-                                        "_UI_NumericalOrdinalStatistics_type"),
+                .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalOrdinalStatistics_maximum_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalOrdinalStatistics_maximum_feature",
+                                "_UI_NumericalOrdinalStatistics_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MAXIMUM,
                                 true,
                                 false,
@@ -111,19 +111,19 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds a property descriptor for the Median feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addMedianPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-        .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalOrdinalStatistics_median_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalOrdinalStatistics_median_feature",
-                                        "_UI_NumericalOrdinalStatistics_type"),
+                .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalOrdinalStatistics_median_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalOrdinalStatistics_median_feature",
+                                "_UI_NumericalOrdinalStatistics_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__MEDIAN,
                                 true,
                                 false,
@@ -154,7 +154,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -167,7 +167,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
 
     /**
      * This returns NumericalOrdinalStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -186,14 +186,14 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
         final String label = ((NumericalOrdinalStatistics) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_NumericalOrdinalStatistics_type") :
-                    this.getString("_UI_NumericalOrdinalStatistics_type") + " " + label;
+                this.getString("_UI_NumericalOrdinalStatistics_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -225,9 +225,9 @@ public class NumericalOrdinalStatisticsItemProvider extends NumericalNominalStat
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
-                                ExperimentDataFactory.eINSTANCE.createNumericalPercentile()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.NUMERICAL_ORDINAL_STATISTICS__PERCENTILES,
+                        ExperimentDataFactory.eINSTANCE.createNumericalPercentile()));
     }
 
 }

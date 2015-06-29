@@ -31,7 +31,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ExperimentRunImpl() {
@@ -40,7 +40,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -50,7 +50,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -61,7 +61,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetExperimentSetting(final ExperimentSetting newExperimentSetting,
@@ -73,7 +73,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -84,7 +84,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -103,7 +103,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -168,7 +168,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -184,7 +184,7 @@ public class ExperimentRunImpl extends RunImpl implements ExperimentRun {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

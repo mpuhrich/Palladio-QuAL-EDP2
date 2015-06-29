@@ -36,12 +36,12 @@ import org.palladiosimulator.edp2.models.ExperimentData.TextualNominalStatistics
  * @generated
  */
 public class TextualNominalStatisticsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public TextualNominalStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -51,7 +51,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -68,18 +68,18 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds a property descriptor for the Number Measurements feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addNumberMeasurementsPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_TextualNominalStatistics_numberMeasurements_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_TextualNominalStatistics_numberMeasurements_feature",
-                                        "_UI_TextualNominalStatistics_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_TextualNominalStatistics_numberMeasurements_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_TextualNominalStatistics_numberMeasurements_feature",
+                                "_UI_TextualNominalStatistics_type"),
                                 ExperimentDataPackage.Literals.TEXTUAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS,
                                 true,
                                 false,
@@ -110,7 +110,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -123,7 +123,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
 
     /**
      * This returns TextualNominalStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,14 +141,14 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     public String getText(final Object object) {
         final TextualNominalStatistics textualNominalStatistics = (TextualNominalStatistics) object;
         return this.getString("_UI_TextualNominalStatistics_type") + " "
-                + textualNominalStatistics.getNumberMeasurements();
+        + textualNominalStatistics.getNumberMeasurements();
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -170,7 +170,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -178,15 +178,15 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
-                                ExperimentDataFactory.eINSTANCE.createTextualMassDistribution()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.TEXTUAL_NOMINAL_STATISTICS__MASS_DISTRIBUTION,
+                        ExperimentDataFactory.eINSTANCE.createTextualMassDistribution()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

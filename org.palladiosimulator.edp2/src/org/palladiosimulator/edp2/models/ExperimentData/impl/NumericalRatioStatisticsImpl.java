@@ -36,7 +36,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NumericalRatioStatisticsImpl() {
@@ -45,7 +45,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -55,7 +55,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -122,7 +122,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -163,7 +163,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -185,7 +185,7 @@ public class NumericalRatioStatisticsImpl extends NumericalIntervalStatisticsImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

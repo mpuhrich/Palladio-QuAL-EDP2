@@ -30,7 +30,7 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public LongBinaryMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -40,7 +40,7 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -57,18 +57,18 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
     /**
      * This adds a property descriptor for the Storage Unit feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addStorageUnitPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_LongBinaryMeasurements_storageUnit_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_LongBinaryMeasurements_storageUnit_feature",
-                                        "_UI_LongBinaryMeasurements_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_LongBinaryMeasurements_storageUnit_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_LongBinaryMeasurements_storageUnit_feature",
+                                "_UI_LongBinaryMeasurements_type"),
                                 ExperimentDataPackage.Literals.LONG_BINARY_MEASUREMENTS__STORAGE_UNIT,
                                 true,
                                 false,
@@ -80,7 +80,7 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
 
     /**
      * This returns LongBinaryMeasurements.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -99,14 +99,14 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
         final String label = ((LongBinaryMeasurements) object).getValuesUuid();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_LongBinaryMeasurements_type") :
-                    this.getString("_UI_LongBinaryMeasurements_type") + " " + label;
+                this.getString("_UI_LongBinaryMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class LongBinaryMeasurementsItemProvider extends DataSeriesItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

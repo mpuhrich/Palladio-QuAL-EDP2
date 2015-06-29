@@ -30,7 +30,7 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public DoubleBinaryMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -40,7 +40,7 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -57,19 +57,19 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
     /**
      * This adds a property descriptor for the Storage Unit feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addStorageUnitPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-        .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_DoubleBinaryMeasurements_storageUnit_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_DoubleBinaryMeasurements_storageUnit_feature",
-                                        "_UI_DoubleBinaryMeasurements_type"),
+                .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_DoubleBinaryMeasurements_storageUnit_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_DoubleBinaryMeasurements_storageUnit_feature",
+                                "_UI_DoubleBinaryMeasurements_type"),
                                 ExperimentDataPackage.Literals.DOUBLE_BINARY_MEASUREMENTS__STORAGE_UNIT,
                                 true,
                                 false,
@@ -81,7 +81,7 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
 
     /**
      * This returns DoubleBinaryMeasurements.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -100,14 +100,14 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
         final String label = ((DoubleBinaryMeasurements<?>) object).getValuesUuid();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_DoubleBinaryMeasurements_type") :
-                    this.getString("_UI_DoubleBinaryMeasurements_type") + " " + label;
+                this.getString("_UI_DoubleBinaryMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public class DoubleBinaryMeasurementsItemProvider extends DataSeriesItemProvider
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

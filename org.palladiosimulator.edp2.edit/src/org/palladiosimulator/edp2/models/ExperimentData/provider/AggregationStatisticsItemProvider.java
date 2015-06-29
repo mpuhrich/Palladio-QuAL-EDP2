@@ -34,7 +34,7 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public AggregationStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -44,7 +44,7 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,14 +67,14 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
      */
     protected void addDistinctValuesBeforeAggregationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-                .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_AggregationStatistics_distinctValuesBeforeAggregation_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_AggregationStatistics_distinctValuesBeforeAggregation_feature",
-                                        "_UI_AggregationStatistics_type"),
+        .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_AggregationStatistics_distinctValuesBeforeAggregation_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_AggregationStatistics_distinctValuesBeforeAggregation_feature",
+                                "_UI_AggregationStatistics_type"),
                                 ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_BEFORE_AGGREGATION,
                                 true,
                                 false,
@@ -92,14 +92,14 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
      */
     protected void addDistinctValuesAfterAggregationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-                .add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_AggregationStatistics_distinctValuesAfterAggregation_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_AggregationStatistics_distinctValuesAfterAggregation_feature",
-                                        "_UI_AggregationStatistics_type"),
+        .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_AggregationStatistics_distinctValuesAfterAggregation_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_AggregationStatistics_distinctValuesAfterAggregation_feature",
+                                "_UI_AggregationStatistics_type"),
                                 ExperimentDataPackage.Literals.AGGREGATION_STATISTICS__DISTINCT_VALUES_AFTER_AGGREGATION,
                                 true,
                                 false,
@@ -111,7 +111,7 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns AggregationStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -130,14 +130,14 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
         final String label = ((AggregationStatistics) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_AggregationStatistics_type") :
-                    this.getString("_UI_AggregationStatistics_type") + " " + label;
+                this.getString("_UI_AggregationStatistics_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public class AggregationStatisticsItemProvider extends IdentifierItemProvider {
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

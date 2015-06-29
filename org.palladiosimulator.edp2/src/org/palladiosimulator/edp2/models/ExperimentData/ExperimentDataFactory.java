@@ -16,7 +16,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each
  * non-abstract class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage
  * @generated
  */
@@ -24,7 +24,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     ExperimentDataFactory eINSTANCE = org.palladiosimulator.edp2.models.ExperimentData.impl.ExperimentDataFactoryImpl
@@ -33,7 +33,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measurement Range</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Measurement Range</em>'.
      * @generated
      */
@@ -42,7 +42,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Raw Measurements</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Raw Measurements</em>'.
      * @generated
      */
@@ -51,7 +51,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Nominal Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Nominal Statistics</em>'.
      * @generated
      */
@@ -60,7 +60,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Mass Distribution</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Mass Distribution</em>'.
      * @generated
      */
@@ -78,7 +78,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Fixed Intervals</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Fixed Intervals</em>'.
      * @generated
      */
@@ -87,7 +87,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Nominal Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Nominal Statistics</em>'.
      * @generated
      */
@@ -96,7 +96,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Mass Distribution</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Mass Distribution</em>'.
      * @generated
      */
@@ -105,7 +105,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Group</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Group</em>'.
      * @generated
      */
@@ -114,7 +114,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Setting</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Setting</em>'.
      * @generated
      */
@@ -123,7 +123,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Run</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Run</em>'.
      * @generated
      */
@@ -132,7 +132,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measurement</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Measurement</em>'.
      * @generated
      */
@@ -141,7 +141,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Measuring Type</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Measuring Type</em>'.
      * @generated
      */
@@ -150,7 +150,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Aggregation Statistics</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Aggregation Statistics</em>'.
      * @generated
      */
@@ -159,7 +159,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Long Binary Measurements</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Long Binary Measurements</em>'.
      * @generated
      */
@@ -168,7 +168,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Double Binary Measurements</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Double Binary Measurements</em>'.
      * @generated
      */
@@ -177,7 +177,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Interval Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Interval Statistics</em>'.
      * @generated
      */
@@ -186,7 +186,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Ordinal Statistics</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Ordinal Statistics</em>'.
      * @generated
      */
@@ -195,7 +195,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Percentile</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Percentile</em>'.
      * @generated
      */
@@ -204,7 +204,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>JS Xml Measurements</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>JS Xml Measurements</em>'.
      * @generated
      */
@@ -213,7 +213,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Identifier Based Measurements</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Identifier Based Measurements</em>'.
      * @generated
      */
@@ -222,7 +222,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Numerical Ratio Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Numerical Ratio Statistics</em>'.
      * @generated
      */
@@ -230,7 +230,7 @@ public interface ExperimentDataFactory extends EFactory {
 
     /**
      * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the package supported by this factory.
      * @generated
      */
@@ -239,7 +239,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Textual Ordinal Statistics</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Textual Ordinal Statistics</em>'.
      * @generated
      */
@@ -248,7 +248,7 @@ public interface ExperimentDataFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Experiment Group Run</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return a new object of class '<em>Experiment Group Run</em>'.
      * @generated
      */

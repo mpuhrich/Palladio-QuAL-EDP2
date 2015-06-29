@@ -56,7 +56,7 @@ public interface Repository extends Identifier, MetaDao {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Repositories</em>' container reference.
      * @see #setRepositories(Repositories)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Repositories()
@@ -70,7 +70,7 @@ public interface Repository extends Identifier, MetaDao {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#getRepositories
      * <em>Repositories</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Repositories</em>' container reference.
      * @see #getRepositories()
@@ -85,7 +85,7 @@ public interface Repository extends Identifier, MetaDao {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Read Only</em>' attribute.
      * @see #setReadOnly(boolean)
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ReadOnly()
@@ -98,7 +98,7 @@ public interface Repository extends Identifier, MetaDao {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.Repository.Repository#isReadOnly <em>Read Only</em>}
      * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Read Only</em>' attribute.
      * @see #isReadOnly()
@@ -114,7 +114,7 @@ public interface Repository extends Identifier, MetaDao {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Descriptions</em>' reference list.
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_Descriptions()
      * @model transient="true" ordered="false"
@@ -133,7 +133,7 @@ public interface Repository extends Identifier, MetaDao {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Groups</em>' reference list.
      * @see org.palladiosimulator.edp2.models.Repository.RepositoryPackage#getRepository_ExperimentGroups()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository
@@ -144,7 +144,7 @@ public interface Repository extends Identifier, MetaDao {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @model
      * @generated
      */

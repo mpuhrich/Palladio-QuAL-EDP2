@@ -60,7 +60,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Experiment Settings</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentGroup_ExperimentSettings()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting#getExperimentGroup
@@ -81,7 +81,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Measuring Types</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentGroup_MeasuringTypes()
      * @see org.palladiosimulator.edp2.models.ExperimentData.MeasuringType#getExperimentGroup
@@ -115,7 +115,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getRepository
      * <em>Repository</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Repository</em>' reference.
      * @see #getRepository()
@@ -135,7 +135,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Reports</em>' containment reference list.
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentGroup_Reports()
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroupRun#getExperimentgroup
@@ -169,7 +169,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Purpose</em>' attribute.
      * @see #setPurpose(String)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getExperimentGroup_Purpose()
@@ -182,7 +182,7 @@ public interface ExperimentGroup extends Identifier, Propertyable {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup#getPurpose
      * <em>Purpose</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Purpose</em>' attribute.
      * @see #getPurpose()

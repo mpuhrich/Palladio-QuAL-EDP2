@@ -30,7 +30,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected LongBinaryMeasurementsImpl() {
@@ -39,7 +39,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -49,7 +49,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -60,7 +60,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -71,7 +71,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -86,7 +86,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -102,7 +102,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public class LongBinaryMeasurementsImpl extends DataSeriesImpl implements LongBi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

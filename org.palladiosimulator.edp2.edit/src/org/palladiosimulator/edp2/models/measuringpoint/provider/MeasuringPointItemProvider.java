@@ -30,12 +30,12 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
  * @generated
  */
 public class MeasuringPointItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MeasuringPointItemProvider(final AdapterFactory adapterFactory) {
@@ -45,7 +45,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -69,13 +69,13 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
      */
     protected void addMeasuringPointRepositoryPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_MeasuringPoint_measuringPointRepository_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_MeasuringPoint_measuringPointRepository_feature",
-                                        "_UI_MeasuringPoint_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_MeasuringPoint_measuringPointRepository_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_MeasuringPoint_measuringPointRepository_feature",
+                                "_UI_MeasuringPoint_type"),
                                 MeasuringpointPackage.Literals.MEASURING_POINT__MEASURING_POINT_REPOSITORY,
                                 true,
                                 false,
@@ -88,17 +88,17 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds a property descriptor for the String Representation feature. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addStringRepresentationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_MeasuringPoint_stringRepresentation_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_MeasuringPoint_stringRepresentation_feature", "_UI_MeasuringPoint_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_MeasuringPoint_stringRepresentation_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_MeasuringPoint_stringRepresentation_feature", "_UI_MeasuringPoint_type"),
                                 MeasuringpointPackage.Literals.MEASURING_POINT__STRING_REPRESENTATION,
                                 false,
                                 false,
@@ -116,13 +116,13 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
      */
     protected void addResourceURIRepresentationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_MeasuringPoint_resourceURIRepresentation_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_MeasuringPoint_resourceURIRepresentation_feature",
-                                        "_UI_MeasuringPoint_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_MeasuringPoint_resourceURIRepresentation_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_MeasuringPoint_resourceURIRepresentation_feature",
+                                "_UI_MeasuringPoint_type"),
                                 MeasuringpointPackage.Literals.MEASURING_POINT__RESOURCE_URI_REPRESENTATION,
                                 false,
                                 false,
@@ -143,14 +143,14 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
         final String label = ((MeasuringPoint) object).getStringRepresentation();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_MeasuringPoint_type") :
-                    this.getString("_UI_MeasuringPoint_type") + " " + label;
+                this.getString("_UI_MeasuringPoint_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -170,7 +170,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, II
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

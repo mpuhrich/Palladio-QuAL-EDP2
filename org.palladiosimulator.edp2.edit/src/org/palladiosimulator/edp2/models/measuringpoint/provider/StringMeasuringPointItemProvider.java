@@ -26,7 +26,7 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public StringMeasuringPointItemProvider(final AdapterFactory adapterFactory) {
@@ -36,7 +36,7 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -53,18 +53,18 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
     /**
      * This adds a property descriptor for the Measuring Point feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addMeasuringPointPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_StringMeasuringPoint_measuringPoint_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_StringMeasuringPoint_measuringPoint_feature",
-                                        "_UI_StringMeasuringPoint_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_StringMeasuringPoint_measuringPoint_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_StringMeasuringPoint_measuringPoint_feature",
+                                "_UI_StringMeasuringPoint_type"),
                                 MeasuringpointPackage.Literals.STRING_MEASURING_POINT__MEASURING_POINT,
                                 true,
                                 false,
@@ -76,7 +76,7 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
 
     /**
      * This returns StringMeasuringPoint.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -95,14 +95,14 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
         final String label = ((StringMeasuringPoint) object).getStringRepresentation();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_StringMeasuringPoint_type") :
-                    this.getString("_UI_StringMeasuringPoint_type") + " " + label;
+                this.getString("_UI_StringMeasuringPoint_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class StringMeasuringPointItemProvider extends MeasuringPointItemProvider
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

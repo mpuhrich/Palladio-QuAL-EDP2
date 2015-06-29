@@ -26,7 +26,7 @@ public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvi
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public IdentifierBasedMeasurementsItemProvider(final AdapterFactory adapterFactory) {
@@ -36,7 +36,7 @@ public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvi
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -51,7 +51,7 @@ public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvi
 
     /**
      * This returns IdentifierBasedMeasurements.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -70,14 +70,14 @@ public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvi
         final String label = ((IdentifierBasedMeasurements) object).getValuesUuid();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_IdentifierBasedMeasurements_type") :
-                    this.getString("_UI_IdentifierBasedMeasurements_type") + " " + label;
+                this.getString("_UI_IdentifierBasedMeasurements_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public class IdentifierBasedMeasurementsItemProvider extends DataSeriesItemProvi
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

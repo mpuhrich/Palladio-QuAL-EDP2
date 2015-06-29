@@ -34,7 +34,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PropertyableImpl() {
@@ -43,7 +43,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -53,7 +53,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -75,7 +75,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public abstract class PropertyableImpl extends CDOObjectImpl implements Property
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

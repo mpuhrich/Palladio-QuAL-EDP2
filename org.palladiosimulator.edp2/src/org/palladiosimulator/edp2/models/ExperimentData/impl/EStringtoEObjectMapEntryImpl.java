@@ -35,7 +35,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
     /**
      * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getTypedKey()
      * @generated
      * @ordered
@@ -54,7 +54,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected EStringtoEObjectMapEntryImpl() {
@@ -63,7 +63,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -73,7 +73,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -83,7 +83,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public String getTypedKey() {
@@ -93,7 +93,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void setTypedKey(final String newKey) {
@@ -103,7 +103,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Object getTypedValue() {
@@ -113,7 +113,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void setTypedValue(final Object newValue) {
@@ -123,7 +123,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -178,7 +178,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -195,14 +195,14 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected int hash = -1;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -227,7 +227,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -237,7 +237,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -247,7 +247,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -257,7 +257,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -269,7 +269,7 @@ public class EStringtoEObjectMapEntryImpl extends CDOObjectImpl implements Basic
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")

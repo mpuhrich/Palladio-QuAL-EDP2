@@ -36,7 +36,7 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NumericalNominalStatisticsItemProvider(final AdapterFactory adapterFactory) {
@@ -46,7 +46,7 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -63,18 +63,18 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
     /**
      * This adds a property descriptor for the Number Measurements feature. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addNumberMeasurementsPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalNominalStatistics_numberMeasurements_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalNominalStatistics_numberMeasurements_feature",
-                                        "_UI_NumericalNominalStatistics_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalNominalStatistics_numberMeasurements_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalNominalStatistics_numberMeasurements_feature",
+                                "_UI_NumericalNominalStatistics_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMBER_MEASUREMENTS,
                                 true,
                                 false,
@@ -99,14 +99,14 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
         {
             super.getChildrenFeatures(object);
             this.childrenFeatures
-            .add(ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION);
+                    .add(ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION);
         }
         return this.childrenFeatures;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
 
     /**
      * This returns NumericalNominalStatistics.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -138,14 +138,14 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
         final String label = ((NumericalNominalStatistics) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_NumericalNominalStatistics_type") :
-                    this.getString("_UI_NumericalNominalStatistics_type") + " " + label;
+                this.getString("_UI_NumericalNominalStatistics_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -167,7 +167,7 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -175,15 +175,15 @@ public class NumericalNominalStatisticsItemProvider extends IdentifierItemProvid
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
-                                ExperimentDataFactory.eINSTANCE.createNumericalMassDistribution()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.NUMERICAL_NOMINAL_STATISTICS__NUMERICAL_MASS_DISTRIBUTION,
+                        ExperimentDataFactory.eINSTANCE.createNumericalMassDistribution()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

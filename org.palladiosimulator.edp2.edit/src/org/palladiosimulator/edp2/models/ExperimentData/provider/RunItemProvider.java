@@ -24,7 +24,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
  * This is the item provider adapter for a
  * {@link org.palladiosimulator.edp2.models.ExperimentData.Run} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RunItemProvider extends IdentifierItemProvider {
@@ -32,7 +32,7 @@ public class RunItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public RunItemProvider(final AdapterFactory adapterFactory) {
@@ -42,7 +42,7 @@ public class RunItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -60,17 +60,17 @@ public class RunItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Duration feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addDurationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_Run_duration_feature"),
-                                this.getString("_UI_PropertyDescriptor_description", "_UI_Run_duration_feature",
-                                        "_UI_Run_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_Run_duration_feature"),
+                        this.getString("_UI_PropertyDescriptor_description", "_UI_Run_duration_feature",
+                                "_UI_Run_type"),
                                 ExperimentDataPackage.Literals.RUN__DURATION,
                                 true,
                                 false,
@@ -83,17 +83,17 @@ public class RunItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Start Time feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addStartTimePropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_Run_startTime_feature"),
-                                this.getString("_UI_PropertyDescriptor_description", "_UI_Run_startTime_feature",
-                                        "_UI_Run_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_Run_startTime_feature"),
+                        this.getString("_UI_PropertyDescriptor_description", "_UI_Run_startTime_feature",
+                                "_UI_Run_type"),
                                 ExperimentDataPackage.Literals.RUN__START_TIME,
                                 true,
                                 false,
@@ -125,7 +125,7 @@ public class RunItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ public class RunItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns Run.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -157,14 +157,14 @@ public class RunItemProvider extends IdentifierItemProvider {
         final String label = ((Run) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_Run_type") :
-                    this.getString("_UI_Run_type") + " " + label;
+                this.getString("_UI_Run_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -188,7 +188,7 @@ public class RunItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -196,21 +196,21 @@ public class RunItemProvider extends IdentifierItemProvider {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
-                                ExperimentDataFactory.eINSTANCE
-                                        .create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.PROPERTYABLE__ADDITIONAL_INFORMATION,
+                        ExperimentDataFactory.eINSTANCE
+                        .create(ExperimentDataPackage.Literals.ESTRINGTO_EOBJECT_MAP_ENTRY)));
 
         newChildDescriptors.add
-        (this.createChildParameter
-                        (ExperimentDataPackage.Literals.RUN__MEASUREMENT,
-                                ExperimentDataFactory.eINSTANCE.createMeasurement()));
+                (this.createChildParameter
+                (ExperimentDataPackage.Literals.RUN__MEASUREMENT,
+                        ExperimentDataFactory.eINSTANCE.createMeasurement()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

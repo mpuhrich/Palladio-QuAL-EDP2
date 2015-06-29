@@ -37,7 +37,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Minimum</em>' reference.
      * @see #setMinimum(Identifier)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualOrdinalStatistics_Minimum()
@@ -50,7 +50,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMinimum
      * <em>Minimum</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Minimum</em>' reference.
      * @see #getMinimum()
@@ -65,7 +65,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Maximum</em>' reference.
      * @see #setMaximum(Identifier)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualOrdinalStatistics_Maximum()
@@ -78,7 +78,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMaximum
      * <em>Maximum</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Maximum</em>' reference.
      * @see #getMaximum()
@@ -93,7 +93,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Median</em>' reference.
      * @see #setMedian(Identifier)
      * @see org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage#getTextualOrdinalStatistics_Median()
@@ -106,7 +106,7 @@ public interface TextualOrdinalStatistics extends TextualNominalStatistics {
      * Sets the value of the '
      * {@link org.palladiosimulator.edp2.models.ExperimentData.TextualOrdinalStatistics#getMedian
      * <em>Median</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Median</em>' reference.
      * @see #getMedian()

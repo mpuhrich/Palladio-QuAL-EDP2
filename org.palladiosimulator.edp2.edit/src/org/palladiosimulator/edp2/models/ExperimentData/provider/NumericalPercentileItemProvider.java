@@ -34,7 +34,7 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NumericalPercentileItemProvider(final AdapterFactory adapterFactory) {
@@ -44,7 +44,7 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -62,18 +62,18 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Percentile feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addPercentilePropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalPercentile_percentile_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalPercentile_percentile_feature",
-                                        "_UI_NumericalPercentile_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalPercentile_percentile_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalPercentile_percentile_feature",
+                                "_UI_NumericalPercentile_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__PERCENTILE,
                                 true,
                                 false,
@@ -86,18 +86,18 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void addValuePropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors.add
-        (this.createItemPropertyDescriptor
-                        (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                                this.getResourceLocator(),
-                                this.getString("_UI_NumericalPercentile_value_feature"),
-                                this.getString("_UI_PropertyDescriptor_description",
-                                        "_UI_NumericalPercentile_value_feature",
-                                        "_UI_NumericalPercentile_type"),
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NumericalPercentile_value_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_NumericalPercentile_value_feature",
+                                "_UI_NumericalPercentile_type"),
                                 ExperimentDataPackage.Literals.NUMERICAL_PERCENTILE__VALUE,
                                 true,
                                 false,
@@ -109,7 +109,7 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns NumericalPercentile.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -128,14 +128,14 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
         final String label = ((NumericalPercentile) object).getId();
         return label == null || label.length() == 0 ?
                 this.getString("_UI_NumericalPercentile_type") :
-                    this.getString("_UI_NumericalPercentile_type") + " " + label;
+                this.getString("_UI_NumericalPercentile_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -166,7 +166,7 @@ public class NumericalPercentileItemProvider extends IdentifierItemProvider {
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

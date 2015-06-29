@@ -55,8 +55,8 @@
    <extension
          point="org.palladiosimulator.edp2.datastream.chainDescription">
       <chainDescription
-            id="utilization"
-            name="Utilization">
+            id="org.palladiosimulator.edp2.visualization.jfreechart.piechart"
+            name="Pie Chart">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
          </datasink>
@@ -65,8 +65,8 @@
    <extension
          point="org.palladiosimulator.edp2.datastream.chainDescription">
       <chainDescription
-            id="XYPlot"
-            name="XYPlot">
+            id="org.palladiosimulator.edp2.visualization.jfreechart.xyplot"
+            name="XY Plot">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
          </datasink>
@@ -75,7 +75,7 @@
    <extension
          point="org.palladiosimulator.edp2.datastream.chainDescription">
       <chainDescription
-            id="histogram"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.histogram"
             name="Histogram">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">

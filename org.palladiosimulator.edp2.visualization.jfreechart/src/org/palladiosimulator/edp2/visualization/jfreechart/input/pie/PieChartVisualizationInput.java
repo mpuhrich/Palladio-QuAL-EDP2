@@ -21,8 +21,11 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationInput;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
+import org.palladiosimulator.metricspec.Scale;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
@@ -69,8 +72,8 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
         final PiePlot3D plot = new PiePlot3D((PieDataset) dataset);
         plot.setNoDataMessage("No data available.");
         plot.setIgnoreNullValues(true);
-        plot.setLabelGenerator(new StandardPieSectionLabelGenerator(configuration.isShowRelativeAmount() ? "{0} ({2})"
-                : "{0} ({1})"));
+        plot.setLabelGenerator(
+                new StandardPieSectionLabelGenerator(configuration.isShowRelativeAmount() ? "{0} ({2})" : "{0} ({1})"));
 
         return plot;
     }
@@ -125,9 +128,8 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
     /*
      * (non-Javadoc)
      *
-     * @see
-     * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#createConfiguration
-     * ()
+     * @see org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#
+     * createConfiguration ()
      */
     @Override
     protected PropertyConfigurable createConfiguration() {
@@ -136,9 +138,17 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     @Override
     public boolean canAccept(final IDataSource dataSource) {
-        // TODO Auto-generated method stub
-        // FIXME Implement right acceptance criteria
-        return true;
+        final BaseMetricDescription[] subMetricDescriptions = MetricDescriptionUtility
+                .toBaseMetricDescriptions(dataSource.getMetricDesciption());
+        if (subMetricDescriptions.length != 2) {
+            return false; // two-dimensional data needed
+        }
+
+        if (subMetricDescriptions[0] != MetricDescriptionConstants.POINT_IN_TIME_METRIC) {
+            return false;
+        }
+
+        return subMetricDescriptions[1].getScale().compareTo(Scale.ORDINAL) <= 0;
     }
 
 }

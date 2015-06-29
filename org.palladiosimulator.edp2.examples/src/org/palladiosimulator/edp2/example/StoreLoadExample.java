@@ -32,7 +32,7 @@ import org.palladiosimulator.metricspec.MetricSetDescription;
 
 /**
  * Contains an example how data can be stored with EDP2.
- * 
+ *
  * @author groenda
  */
 public class StoreLoadExample {
@@ -58,7 +58,7 @@ public class StoreLoadExample {
 
     /**
      * Initializes an instance of this class.
-     * 
+     *
      * @param directory
      *            Directory to be used to store measurements.
      */
@@ -91,7 +91,7 @@ public class StoreLoadExample {
 
     /**
      * Initializes the repository in which the data will be stored.
-     * 
+     *
      * @param directory
      *            Path to directory in which the data should be stored.
      * @return the initialized repository.
@@ -193,7 +193,7 @@ public class StoreLoadExample {
 
     /**
      * Main method to run the example.
-     * 
+     *
      * @param args
      *            Not used.
      */

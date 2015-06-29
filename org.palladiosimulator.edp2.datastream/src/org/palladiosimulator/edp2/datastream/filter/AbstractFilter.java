@@ -7,13 +7,18 @@ public abstract class AbstractFilter extends AbstractAdapter {
 
     public AbstractFilter(final IDataSource datasource, final MetricDescription metricDescription) {
         super(datasource, metricDescription);
-        if (!this.isCompatibleWith(datasource.getMetricDesciption())) {
+        if (!canAccept(datasource)) {
             throw new IllegalArgumentException("Datasource metric does not match filter provided metric");
         }
     }
 
     public AbstractFilter(final MetricDescription metricDescription) {
         super(metricDescription);
+    }
+
+    @Override
+    public boolean canAccept(final IDataSource dataSource) {
+        return this.isCompatibleWith(getDataSource().getMetricDesciption());
     }
 
 }

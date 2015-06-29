@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2.visualization;
 
@@ -8,17 +8,18 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.jface.viewers.ISelection;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.visualization.editors.AbstractEditor;
 
 /**
  * Interface for classes that are being displayed by implementations of {@link AbstractEditor}.
  * Possibly manages multiple inputs as indicated by {@link #supportsMultipleInputs()}
- * 
+ *
  * @author Dominik Ernst
  *
  */
 public abstract class AbstractVisualizationInput<T extends AbstractVisualizationSingleDatastreamInput> extends
-        AbstractInput implements ISelection, IVisualisationInput<T> {
+AbstractInput implements ISelection, IVisualisationInput<T> {
 
     /**
      * The list of inputs managed by this handle.
@@ -63,4 +64,6 @@ public abstract class AbstractVisualizationInput<T extends AbstractVisualization
         newChildInput.setParentInput(null);
         this.getEventDispatcher().visualisationInputChanged(true);
     }
+
+    public abstract boolean canAccept(IDataSource dataSource);
 }

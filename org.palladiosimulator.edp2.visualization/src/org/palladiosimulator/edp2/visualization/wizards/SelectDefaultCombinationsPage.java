@@ -28,6 +28,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.palladiosimulator.edp2.datastream.IDataSink;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
@@ -91,7 +92,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
      * Viewer for the possible choices of Filter/Adapter/Chart combinations.
      */
     private TableViewer choiceViewer;
-    
+
     private final List<ChainDescription> applicableSequences;
 
     /**
@@ -111,7 +112,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
         selectionStatus = new Status(IStatus.INFO, "not_used", 0, "Please select a Visualization to proceed.", null);
     }
 
-     /*
+    /*
      * (non-Javadoc)
      *
      * @see org.eclipse.jface.wizard.WizardPage#canFlipToNextPage()
@@ -130,17 +131,17 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
     @Override
     public void createControl(final Composite parent) {
         // create the composite to hold the widgets
-        Composite composite = new Composite(parent, SWT.NONE);
+        final Composite composite = new Composite(parent, SWT.NONE);
 
         // create the desired layout for this wizard page
-        GridLayout gl = new GridLayout();
+        final GridLayout gl = new GridLayout();
         composite.setLayout(gl);
 
-        Label label = new Label(composite, SWT.NONE);
+        final Label label = new Label(composite, SWT.NONE);
         label.setText("Available Choices:");
 
-        SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
-        GridData gd = new GridData(GridData.FILL_BOTH);
+        final SashForm sashForm = new SashForm(composite, SWT.HORIZONTAL);
+        final GridData gd = new GridData(GridData.FILL_BOTH);
         gd.widthHint = 200;
         sashForm.setLayoutData(gd);
 
@@ -190,7 +191,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
             public String getText(final Object element) {
                 if (element != null) {
                     // the elements in the list are of type ChainDescription
-                    ChainDescription sequenceElement = (ChainDescription) element;
+                    final ChainDescription sequenceElement = (ChainDescription) element;
                     return sequenceElement.getChainName();
                 }
                 return null;
@@ -223,23 +224,31 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
     }
 
     private List<ChainDescription> getApplicableChainDescriptionsFromExtensions() {
-        List<ChainDescription> result = new ArrayList<ChainDescription>();
-        
-        Map<String, AbstractVisualizationInput<?>> charts = getRegisteredVisualizations();
-        IConfigurationElement[] chainDescriptionExtensions = Platform.getExtensionRegistry()
+        final List<ChainDescription> result = new ArrayList<ChainDescription>();
+
+        final Map<String, AbstractVisualizationInput<?>> charts = getRegisteredVisualizations();
+        final IConfigurationElement[] chainDescriptionExtensions = Platform.getExtensionRegistry()
                 .getConfigurationElementsFor(CHAIN_DESCRIPTION_EXTENSION_POINT_ID);
 
-        for (IConfigurationElement e : chainDescriptionExtensions) {
-            
+        for (final IConfigurationElement e : chainDescriptionExtensions) {
+
             IPropertyConfigurable visualization = null;
             IDataSource lastDataSource = null;
             boolean isApplicable = true;
-            for (IConfigurationElement child : e.getChildren()) {
-                IPropertyConfigurable configurable = createAndConfigureChainElement(charts, child);
+            for (final IConfigurationElement child : e.getChildren()) {
+                final IPropertyConfigurable configurable = createAndConfigureChainElement(charts, child);
                 if (child.getName().equals(ELEMENT_ID_DATASINK)) {
                     visualization = configurable;
+                    if (visualization instanceof IDataSink && !((IDataSink)visualization).canAccept(this.selectedSource)) {
+                        isApplicable = false; //filter is not applicable to selected data source
+                        break;
+                    }
+                    if (visualization instanceof AbstractVisualizationInput<?> && !((AbstractVisualizationInput<?>)visualization).canAccept(this.selectedSource)) {
+                        isApplicable = false; //filter is not applicable to selected data source
+                        break;
+                    }
                 } else if (configurable instanceof AbstractAdapter) { //at least one filter in chain
-                    AbstractAdapter adapter = (AbstractAdapter) configurable;
+                    final AbstractAdapter adapter = (AbstractAdapter) configurable;
                     if (!this.selectedSource.isCompatibleWith(adapter.getMetricDesciption())) {
                         isApplicable = false; //filter is not applicable to selected data source
                         break;
@@ -261,7 +270,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
         }
         return result;
     }
-    
+
     private IPropertyConfigurable createAndConfigureChainElement(
             final Map<String, AbstractVisualizationInput<?>> charts, final IConfigurationElement element) {
         final IPropertyConfigurable configurable = createChainElement(charts, element);
@@ -274,7 +283,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
         return configurable;
     }
 
-   private IPropertyConfigurable createChainElement(final Map<String, AbstractVisualizationInput<?>> charts,
+    private IPropertyConfigurable createChainElement(final Map<String, AbstractVisualizationInput<?>> charts,
             final IConfigurationElement element) {
         try {
             if (element.getName().equals(ELEMENT_ID_DATASINK)) {
@@ -291,15 +300,15 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
     }
 
     private Map<String, AbstractVisualizationInput<?>> getRegisteredVisualizations() {
-        Map<String, AbstractVisualizationInput<?>> result = new HashMap<String, AbstractVisualizationInput<?>>();
-        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
+        final Map<String, AbstractVisualizationInput<?>> result = new HashMap<String, AbstractVisualizationInput<?>>();
+        final IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
                 .getConfigurationElementsFor(DATASINK_EXTENSION_POINT_ID);
-        for (IConfigurationElement e : visualizationExtensions) {
+        for (final IConfigurationElement e : visualizationExtensions) {
             try {
-                String id = e.getAttribute(ID_ATTRIBUTE);
-                AbstractVisualizationInput<?> visualization = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
+                final String id = e.getAttribute(ID_ATTRIBUTE);
+                final AbstractVisualizationInput<?> visualization = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
                 result.put(id, visualization);
-            } catch (CoreException e1) {
+            } catch (final CoreException e1) {
                 LOGGER.log(Level.SEVERE, "Error in creating a Visualization referenced in an extension: Respective Id is " + e.getAttribute(ID_ATTRIBUTE) + ".");
                 LOGGER.log(Level.SEVERE, e1.getMessage());
                 throw new RuntimeException();
@@ -307,7 +316,7 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
         }
         return result;
     }
-    
+
     /*
      * (non-Javadoc)
      *

@@ -37,7 +37,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -47,7 +47,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IPersistableElement#getFactoryId()
      */
     @Override
@@ -57,7 +57,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generatePlot
      * (org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable,
@@ -77,7 +77,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#generateDataset
      * ()
@@ -114,7 +114,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.visualization.AbstractInput#getPropertyKeysTriggeringUpdate()
      */
     @Override
@@ -124,7 +124,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.visualization.editors.JFreeChartVisualizationInput#createConfiguration
      * ()
@@ -132,6 +132,13 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
     @Override
     protected PropertyConfigurable createConfiguration() {
         return new PieChartVisualizationConfiguration();
+    }
+
+    @Override
+    public boolean canAccept(final IDataSource dataSource) {
+        // TODO Auto-generated method stub
+        // FIXME Implement right acceptance criteria
+        return true;
     }
 
 }

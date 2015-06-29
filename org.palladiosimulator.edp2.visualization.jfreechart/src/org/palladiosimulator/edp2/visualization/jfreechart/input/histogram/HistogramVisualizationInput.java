@@ -38,9 +38,9 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
  * A HistogramEditorInput displays the input data in a histogram either in absolute or relative
  * frequency. Options include the number of bins into which the data is split and whether axis and
  * values are labeled.
- * 
+ *
  * @author Steffen Becker, Dominik Ernst
- * 
+ *
  */
 public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
@@ -54,7 +54,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
     /**
      * Constructor, with reference on the source. Automatically initiates an update of the
      * {@link #dataset}.
-     * 
+     *
      * @param source
      */
     public HistogramVisualizationInput(final AbstractDataSource source) {
@@ -63,10 +63,11 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSink#canAccept
      * (org.palladiosimulator.edp2.models.ExperimentData.presentation.IDataSource)
      */
+    @Override
     public boolean canAccept(final IDataSource source) {
         final boolean result = true;
         // result = source.getOutput().size() < 1;
@@ -78,7 +79,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IPersistableElement#getFactoryId()
      */
     @Override
@@ -88,7 +89,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IPersistable#saveState(org.eclipse.ui.IMemento)
      */
     @Override
@@ -165,7 +166,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.palladiosimulator.edp2.visualization.AbstractVisualizationInput#firstChildInputAdded(
      * org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput)

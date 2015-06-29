@@ -11,12 +11,12 @@ import org.palladiosimulator.edp2.datastream.IDataSourceListener;
  * Interface used to describe elements that are managed by an {@link AbstractVisualizationInput}. It
  * is important to note that the actual input to an {@link IVisualization} is the
  * {@link AbstractVisualizationInput} and not implementations of this interface.
- * 
+ *
  * @author Dominik Ernst
- * 
+ *
  */
 public abstract class AbstractVisualizationSingleDatastreamInput extends AbstractInput implements
-        IVisualisationSingleDatastreamInput {
+IVisualisationSingleDatastreamInput {
 
     /**
      * The {@link AbstractVisualizationSingleDatastreamInput}'s or rather {@link IDataSink}'s
@@ -59,7 +59,7 @@ public abstract class AbstractVisualizationSingleDatastreamInput extends Abstrac
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.visualization.IVisualisationInput#getDefaultName()
      */
     private String getDefaultName() {
@@ -86,5 +86,14 @@ public abstract class AbstractVisualizationSingleDatastreamInput extends Abstrac
         }
         return (AbstractVisualizationInput<T>) parentInput;
     }
+
+    /* (non-Javadoc)
+     * @see org.palladiosimulator.edp2.datastream.IDataSink#canAccept(org.palladiosimulator.edp2.datastream.IDataSource)
+     */
+    @Override
+    public boolean canAccept(final IDataSource dataSource) {
+        return getParent().canAccept(dataSource);
+    }
+
 
 }

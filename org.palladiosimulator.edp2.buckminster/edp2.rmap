@@ -3,9 +3,7 @@
 
   <rm:property key="resolveFrom" value="release"/>
 
-  <rm:locator searchPathRef="edp2svn" failOnError="false" pattern="^org\.palladiosimulator\.edp2.*" />
-  <rm:locator pattern="^org\.palladiosimulator\.metricspec.*" searchPathRef="metricspec" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.measurementframework.*" searchPathRef="measurementframework" failOnError="false"/>
+  <rm:locator searchPathRef="edp2svn" failOnError="true" pattern="^org\.palladiosimulator\.edp2.*" />
 
   <rm:redirect pattern=".*" href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/MeasurementFramework/trunk/org.palladiosimulator.measurementframework.buckminster/measurementframework.rmap"/>
   

@@ -22,7 +22,7 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated localrepository -->
       <extender
-            uri="http://palladiosimulator.org/EDP2/Repository/0.9.1"
+            uri="http://palladiosimulator.org/EDP2/Repository/1.0"
             class="org.palladiosimulator.edp2.local.provider.localItemProviderAdapterFactory$RepositoryChildCreationExtender"/>
    </extension>
 

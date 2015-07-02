@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.palladiosimulator.edp2.models:ExperimentGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metricspec="http://palladiosimulator.org/MetricSpec/1.0" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/ExperimentData/0.9.1" xmlns:org.palladiosimulator.edp2.models_1="http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1" id="_nvJo0-MSEeOHyI_F8vQlQA" purpose="Exemplary use of EDP2">
+<org.palladiosimulator.edp2.models:ExperimentGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metricspec="http://palladiosimulator.org/MetricSpec/1.0" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/ExperimentData/1.0" xmlns:org.palladiosimulator.edp2.models_1="http://palladiosimulator.org/EDP2/MeasuringPoint/1.0" id="_nvJo0-MSEeOHyI_F8vQlQA" purpose="Exemplary use of EDP2">
   <experimentSettings id="_nvJo1OMSEeOHyI_F8vQlQA" description="Experiment Setting #1" measure="_nvJo0OMSEeOHyI_F8vQlQA _nvJo0eMSEeOHyI_F8vQlQA _nvJo0uMSEeOHyI_F8vQlQA">
     <experimentRuns id="_nvKP4OMSEeOHyI_F8vQlQA" startTime="2014-05-24T09:11:26.734+0200">
       <measurements id="_nvKP4eMSEeOHyI_F8vQlQA" measure="_nvJo0OMSEeOHyI_F8vQlQA">

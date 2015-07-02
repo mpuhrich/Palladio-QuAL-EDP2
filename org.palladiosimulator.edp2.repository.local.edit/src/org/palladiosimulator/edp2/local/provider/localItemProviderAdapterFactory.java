@@ -37,11 +37,11 @@ import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class localItemProviderAdapterFactory extends localAdapterFactory implements ComposeableAdapterFactory,
-        IChangeNotifier, IDisposable
+IChangeNotifier, IDisposable
 {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
@@ -62,14 +62,14 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public localItemProviderAdapterFactory()
@@ -94,7 +94,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
      * This creates an adapter for a
      * {@link org.palladiosimulator.edp2.local.LocalDirectoryRepository}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -123,7 +123,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -177,7 +177,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -188,7 +188,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +231,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
     /**
      * A child creation extender for the {@link RepositoryPackage}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public static class RepositoryChildCreationExtender implements IChildCreationExtender
@@ -246,7 +246,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
         {
             /**
              * The child descriptors being populated. <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             protected List<Object> newChildDescriptors;
@@ -273,23 +273,23 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
             /**
              * <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             @Override
             public Object caseRepositories(final Repositories object)
             {
                 this.newChildDescriptors.add
-                        (this.createChildParameter
-                        (RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
-                                localFactory.eINSTANCE.createLocalDirectoryRepository()));
+                (this.createChildParameter
+                                (RepositoryPackage.Literals.REPOSITORIES__AVAILABLE_REPOSITORIES,
+                                        localFactory.eINSTANCE.createLocalDirectoryRepository()));
 
                 return null;
             }
 
             /**
              * <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             protected CommandParameter createChildParameter(final Object feature, final Object child)
@@ -301,7 +301,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         @Override
@@ -314,7 +314,7 @@ public class localItemProviderAdapterFactory extends localAdapterFactory impleme
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         @Override

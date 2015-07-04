@@ -3,6 +3,7 @@
       id="org.palladiosimulator.edp2.feature"
       label="EDP2 Core Feature"
       version="1.0.0.qualifier"
+      plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 
@@ -108,6 +109,13 @@ Documentation is available via: https://anonymous:anonymous@svnserver.informatik
 
    <plugin
          id="org.palladiosimulator.edp2.repository.local.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"

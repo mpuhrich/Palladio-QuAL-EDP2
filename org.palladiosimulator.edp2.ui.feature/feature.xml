@@ -3,6 +3,7 @@
       id="org.palladiosimulator.edp2.ui.feature"
       label="EDP2 UI Feature"
       version="1.0.0.qualifier"
+      plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 
@@ -39,6 +40,13 @@
 
    <plugin
          id="org.palladiosimulator.edp2.visualization.jfreechart"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"

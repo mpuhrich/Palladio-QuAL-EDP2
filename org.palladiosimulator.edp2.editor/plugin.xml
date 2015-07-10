@@ -12,21 +12,6 @@
    <extension-point id="visualizations" name="Visualizations" schema="schema/visualizations.exsd"/>
    <extension-point id="filters" name="Filters" schema="schema/filters.exsd"/>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataModelWizardID"
-            name="%_UI_ExperimentDataModelWizard_label"
-            class="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ExperimentDataModelFile.gif">
-         <description>%_UI_ExperimentDataModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
    <extension point="org.eclipse.ui.editors">
       <!-- @generated EDP2 -->
       <editor
@@ -42,15 +27,27 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated EDP2 -->
       <editor
+            id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
+            name="%_UI_ExperimentDataEditor_label"
+            icon="icons/full/obj16/ExperimentDataModelFile.gif"
+            extensions="experimentdata"
+            class="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditor"
+            contributorClass="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataActionBarContributor">
+      </editor>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated EDP2 -->
+      <editor
             id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditorID"
             name="%_UI_RepositoryEditor_label"
             icon="icons/full/obj16/RepositoryModelFile.gif"
-            extensions="repository"
+            extensions="edp2repository"
             class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditor"
             contributorClass="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryActionBarContributor">
       </editor>
    </extension>
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated EDP2 -->
       <category
@@ -66,81 +63,5 @@
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
-
-null
-null
-null
-null
-null
-null
-null
-null
-null
-   <extension point="org.eclipse.ui.editors">
-      <editor
-            id="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditorID"
-            name="%_UI_ExperimentDataEditor_label"
-            icon="icons/full/obj16/ExperimentDataModelFile.gif"
-            extensions="edp2"
-            class="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataEditor"
-            contributorClass="org.palladiosimulator.edp2.models.ExperimentData.presentation.ExperimentDataActionBarContributor">
-      </editor>
-      <editor
-            class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditor"
-            contributorClass="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryActionBarContributor"
-            extensions="repository"
-            icon="icons/full/obj16/RepositoryModelFile.gif"
-            id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryEditorID"
-            name="%_UI_RepositoryEditor_label">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated EDP2 -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizardID"
-            name="%_UI_RepositoryModelWizard_label"
-            class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/RepositoryModelFile.gif">
-         <description>%_UI_RepositoryModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-null
-   <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizardID"
-            name="%_UI_RepositoryModelWizard_label"
-            class="org.palladiosimulator.edp2.models.Repository.presentation.RepositoryModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/RepositoryModelFile.gif">
-         <description>%_UI_RepositoryModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
 
 </plugin>

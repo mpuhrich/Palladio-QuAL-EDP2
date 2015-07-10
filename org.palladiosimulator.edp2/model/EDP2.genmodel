@@ -9,9 +9,11 @@
   <foreignModel>EDP2.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Models" basePackage="org.palladiosimulator.edp2" disposableProviderFactory="true"
-      extensibleProviderFactory="true" ecorePackage="EDP2.ecore#/">
+      multipleEditorPages="false" generateModelWizard="false" extensibleProviderFactory="true"
+      ecorePackage="EDP2.ecore#/">
     <nestedGenPackages prefix="ExperimentData" basePackage="org.palladiosimulator.edp2.models"
-        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//ExperimentData">
+        disposableProviderFactory="true" multipleEditorPages="false" generateModelWizard="false"
+        extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//ExperimentData">
       <genDataTypes ecoreDataType="EDP2.ecore#//ExperimentData/EJSMeasure">
         <genTypeParameters ecoreTypeParameter="EDP2.ecore#//ExperimentData/EJSMeasure/V"/>
         <genTypeParameters ecoreTypeParameter="EDP2.ecore#//ExperimentData/EJSMeasure/Q"/>
@@ -178,14 +180,8 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Repository" basePackage="org.palladiosimulator.edp2.models"
-        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="EDP2.ecore#//Repository">
-      <genClasses ecoreClass="EDP2.ecore#//Repository/LocalDirectoryRepository">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//Repository/LocalDirectoryRepository/uri"/>
-        <genOperations ecoreOperation="EDP2.ecore#//Repository/LocalDirectoryRepository/convertUriStringToFile">
-          <genParameters ecoreParameter="EDP2.ecore#//Repository/LocalDirectoryRepository/convertUriStringToFile/uriString"/>
-        </genOperations>
-      </genClasses>
-      <genClasses image="false" ecoreClass="EDP2.ecore#//Repository/File"/>
+        disposableProviderFactory="true" multipleEditorPages="false" generateModelWizard="false"
+        extensibleProviderFactory="true" fileExtensions="edp2repository" ecorePackage="EDP2.ecore#//Repository">
       <genClasses ecoreClass="EDP2.ecore#//Repository/LocalMemoryRepository">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EDP2.ecore#//Repository/LocalMemoryRepository/domain"/>
       </genClasses>

@@ -37,7 +37,6 @@ import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.ui.MarkerHelper;
-import org.eclipse.emf.common.ui.ViewerPane;
 import org.eclipse.emf.common.ui.editor.ProblemEditorPart;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -74,17 +73,13 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.util.LocalSelectionTransfer;
-import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
-import org.eclipse.jface.viewers.TableLayout;
-import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
@@ -95,13 +90,9 @@ import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -187,52 +178,6 @@ IMenuListener, IViewerProvider, IGotoMarker {
      * @generated
      */
     protected TreeViewer selectionViewer;
-
-    /**
-     * This inverts the roll of parent and child in the content provider and show parents as a tree.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected TreeViewer parentViewer;
-
-    /**
-     * This shows how a tree view works. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected TreeViewer treeViewer;
-
-    /**
-     * This shows how a list view works. A list viewer doesn't support icons. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected ListViewer listViewer;
-
-    /**
-     * This shows how a table view works. A table can be used as a list with icons. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected TableViewer tableViewer;
-
-    /**
-     * This shows how a tree view with columns works. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected TreeViewer treeViewerWithColumns;
-
-    /**
-     * This keeps track of the active viewer pane, in the book. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @generated
-     */
-    protected ViewerPane currentViewerPane;
 
     /**
      * This keeps track of the active content viewer, which may be either one of the viewers in the
@@ -917,23 +862,6 @@ IMenuListener, IViewerProvider, IGotoMarker {
      }
 
      /**
-      * <!-- begin-user-doc --> <!-- end-user-doc -->
-      * 
-     * @generated
-      */
-     public void setCurrentViewerPane(final ViewerPane viewerPane) {
-         if (this.currentViewerPane != viewerPane)
-         {
-             if (this.currentViewerPane != null)
-             {
-                 this.currentViewerPane.showFocus(false);
-             }
-             this.currentViewerPane = viewerPane;
-         }
-         this.setCurrentViewer(this.currentViewerPane.getViewer());
-     }
-
-     /**
       * This makes sure that one content viewer, either for the current page or the outline view, if
      * it has focus, is the current one. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
@@ -1100,229 +1028,22 @@ IMenuListener, IViewerProvider, IGotoMarker {
          {
              // Create a page for the selection tree view.
              //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         final Tree tree = new Tree(composite, SWT.MULTI);
-                         final TreeViewer newTreeViewer = new TreeViewer(tree);
-                         return newTreeViewer;
-                     }
+             final Tree tree = new Tree(this.getContainer(), SWT.MULTI);
+             this.selectionViewer = new TreeViewer(tree);
+             this.setCurrentViewer(this.selectionViewer);
 
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
+             this.selectionViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+             this.selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
+             this.selectionViewer.setInput(this.editingDomain.getResourceSet());
+             this.selectionViewer.setSelection(new StructuredSelection(this.editingDomain.getResourceSet()
+                    .getResources().get(0)),
+                     true);
 
-                 this.selectionViewer = (TreeViewer) viewerPane.getViewer();
-                 this.selectionViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+             new AdapterFactoryTreeEditor(this.selectionViewer.getTree(), this.adapterFactory);
 
-                 this.selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-                 this.selectionViewer.setInput(this.editingDomain.getResourceSet());
-                 this.selectionViewer.setSelection(
-                         new StructuredSelection(this.editingDomain.getResourceSet().getResources().get(0)), true);
-                 viewerPane.setTitle(this.editingDomain.getResourceSet());
-
-                 new AdapterFactoryTreeEditor(this.selectionViewer.getTree(), this.adapterFactory);
-
-                 this.createContextMenuFor(this.selectionViewer);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_SelectionPage_label"));
-             }
-
-             // Create a page for the parent tree view.
-             //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         final Tree tree = new Tree(composite, SWT.MULTI);
-                         final TreeViewer newTreeViewer = new TreeViewer(tree);
-                         return newTreeViewer;
-                     }
-
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
-
-                 this.parentViewer = (TreeViewer) viewerPane.getViewer();
-                 this.parentViewer.setAutoExpandLevel(30);
-                 this.parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(this.adapterFactory));
-                 this.parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-
-                 this.createContextMenuFor(this.parentViewer);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_ParentPage_label"));
-             }
-
-             // This is the page for the list viewer
-             //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         return new ListViewer(composite);
-                     }
-
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
-                 this.listViewer = (ListViewer) viewerPane.getViewer();
-                 this.listViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
-                 this.listViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-
-                 this.createContextMenuFor(this.listViewer);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_ListPage_label"));
-             }
-
-             // This is the page for the tree viewer
-             //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         return new TreeViewer(composite);
-                     }
-
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
-                 this.treeViewer = (TreeViewer) viewerPane.getViewer();
-                 this.treeViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
-                 this.treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-
-                 new AdapterFactoryTreeEditor(this.treeViewer.getTree(), this.adapterFactory);
-
-                 this.createContextMenuFor(this.treeViewer);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_TreePage_label"));
-             }
-
-             // This is the page for the table viewer.
-             //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         return new TableViewer(composite);
-                     }
-
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
-                 this.tableViewer = (TableViewer) viewerPane.getViewer();
-
-                 final Table table = this.tableViewer.getTable();
-                 final TableLayout layout = new TableLayout();
-                 table.setLayout(layout);
-                 table.setHeaderVisible(true);
-                 table.setLinesVisible(true);
-
-                 final TableColumn objectColumn = new TableColumn(table, SWT.NONE);
-                 layout.addColumnData(new ColumnWeightData(3, 100, true));
-                 objectColumn.setText(getString("_UI_ObjectColumn_label"));
-                 objectColumn.setResizable(true);
-
-                 final TableColumn selfColumn = new TableColumn(table, SWT.NONE);
-                 layout.addColumnData(new ColumnWeightData(2, 100, true));
-                 selfColumn.setText(getString("_UI_SelfColumn_label"));
-                 selfColumn.setResizable(true);
-
-                 this.tableViewer.setColumnProperties(new String[] { "a", "b" });
-                 this.tableViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
-                 this.tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-
-                 this.createContextMenuFor(this.tableViewer);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_TablePage_label"));
-             }
-
-             // This is the page for the table tree viewer.
-             //
-             {
-                 final ViewerPane viewerPane =
-                         new ViewerPane(this.getSite().getPage(), RepositoryEditor.this)
-                 {
-                     @Override
-                     public Viewer createViewer(final Composite composite)
-                     {
-                         return new TreeViewer(composite);
-                     }
-
-                     @Override
-                     public void requestActivation()
-                     {
-                         super.requestActivation();
-                         RepositoryEditor.this.setCurrentViewerPane(this);
-                     }
-                 };
-                 viewerPane.createControl(this.getContainer());
-
-                 this.treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
-
-                 final Tree tree = this.treeViewerWithColumns.getTree();
-                 tree.setLayoutData(new FillLayout());
-                 tree.setHeaderVisible(true);
-                 tree.setLinesVisible(true);
-
-                 final TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
-                 objectColumn.setText(getString("_UI_ObjectColumn_label"));
-                 objectColumn.setResizable(true);
-                 objectColumn.setWidth(250);
-
-                 final TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
-                 selfColumn.setText(getString("_UI_SelfColumn_label"));
-                 selfColumn.setResizable(true);
-                 selfColumn.setWidth(200);
-
-                 this.treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
-                 this.treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
-                 this.treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
-
-                 this.createContextMenuFor(this.treeViewerWithColumns);
-                 final int pageIndex = this.addPage(viewerPane.getControl());
-                 this.setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
-             }
+             this.createContextMenuFor(this.selectionViewer);
+             final int pageIndex = this.addPage(tree);
+             this.setPageText(pageIndex, getString("_UI_SelectionPage_label"));
 
              this.getSite().getShell().getDisplay().asyncExec
              (new Runnable()
@@ -1562,7 +1283,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
       * @generated
       */
      public void handleContentOutlineSelection(final ISelection selection) {
-         if (this.currentViewerPane != null && !selection.isEmpty() && selection instanceof IStructuredSelection)
+         if (this.selectionViewer != null && !selection.isEmpty() && selection instanceof IStructuredSelection)
          {
              final Iterator<?> selectedElements = ((IStructuredSelection) selection).iterator();
              if (selectedElements.hasNext())
@@ -1571,32 +1292,16 @@ IMenuListener, IViewerProvider, IGotoMarker {
                  //
                  final Object selectedElement = selectedElements.next();
 
-                 // If it's the selection viewer, then we want it to select the same selection as
-                // this selection.
-                 //
-                 if (this.currentViewerPane.getViewer() == this.selectionViewer)
+                 final ArrayList<Object> selectionList = new ArrayList<Object>();
+                 selectionList.add(selectedElement);
+                 while (selectedElements.hasNext())
                  {
-                     final ArrayList<Object> selectionList = new ArrayList<Object>();
-                     selectionList.add(selectedElement);
-                     while (selectedElements.hasNext())
-                     {
-                         selectionList.add(selectedElements.next());
-                     }
+                     selectionList.add(selectedElements.next());
+                 }
 
-                     // Set the selection to the widget.
-                     //
-                     this.selectionViewer.setSelection(new StructuredSelection(selectionList));
-                 }
-                 else
-                 {
-                     // Set the input to the widget.
-                     //
-                     if (this.currentViewerPane.getViewer().getInput() != selectedElement)
-                     {
-                         this.currentViewerPane.getViewer().setInput(selectedElement);
-                         this.currentViewerPane.setTitle(selectedElement);
-                     }
-                 }
+                 // Set the selection to the widget.
+                 //
+                 this.selectionViewer.setSelection(new StructuredSelection(selectionList));
              }
          }
      }
@@ -1798,14 +1503,7 @@ IMenuListener, IViewerProvider, IGotoMarker {
       */
      @Override
      public void setFocus() {
-         if (this.currentViewerPane != null)
-         {
-             this.currentViewerPane.setFocus();
-         }
-         else
-         {
-             this.getControl(this.getActivePage()).setFocus();
-         }
+         this.getControl(this.getActivePage()).setFocus();
      }
 
      /**
@@ -1998,6 +1696,6 @@ IMenuListener, IViewerProvider, IGotoMarker {
      * @generated
       */
      protected boolean showOutlineView() {
-         return true;
+         return false;
      }
 }

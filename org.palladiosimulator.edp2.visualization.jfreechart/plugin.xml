@@ -16,6 +16,10 @@
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory">
       </factory>
       <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.executionresult.ExecutionResultPieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.executionresult.ExecutionResultPieChartVisualizationInputFactory">
+      </factory>
+      <factory
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory"
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory">
       </factory>
@@ -51,6 +55,12 @@
             factory="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
       </datasink>
+      <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.executionresult.ExecutionResultPieChartVisualizationInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.executionresult.ExecutionResultPieChartVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.pie.executionresult.ExecutionResultPieChartVisualizationInput">
+      </datasink>
    </extension>
    <extension
          point="org.palladiosimulator.edp2.datastream.chainDescription">
@@ -59,6 +69,16 @@
             name="Pie Chart">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.PieChartVisualizationInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="org.palladiosimulator.edp2.visualization.jfreechart.piechart.executionresult"
+            name="Execution Result Pie Chart">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.pie.executionresult.ExecutionResultPieChartVisualizationInput">
          </datasink>
       </chainDescription>
    </extension>

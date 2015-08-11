@@ -2,6 +2,7 @@ package org.palladiosimulator.edp2.repository.local.dao;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -12,6 +13,8 @@ import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
@@ -30,7 +33,7 @@ import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
 
 /**
  * This {@link MeasurementsDaoFactory} implementation stores data in file on background storage.
- * 
+ *
  * @author groenda
  */
 public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
@@ -50,55 +53,44 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
     private final MeasurementsDaoRegistry daoRegistry;
 
     /** Map containing the existing FileDaoFactories. */
-    private static ConcurrentMap<String, MeasurementsDaoFactory> existingFileDaoFactories = new ConcurrentHashMap<String, MeasurementsDaoFactory>();
+    private static ConcurrentMap<URI, MeasurementsDaoFactory> existingFileDaoFactories = new ConcurrentHashMap<URI, MeasurementsDaoFactory>();
 
     /** Directory which is handled by this instance of the file dao factory. */
-    private File storageDirectory = null;
+    private URI storageDirectory = null;
 
     /**
      * Creates a new instance of a DaoFactory for files.
-     * 
+     *
      * @param storageDirectory
      *            The directory for which this instance is responsible.
      */
-    public LocalDirectoryMeasurementsDaoFactory(final File storageDirectory) {
-        if (existingFileDaoFactories.containsKey(fileToMapKey(storageDirectory))) {
+    public LocalDirectoryMeasurementsDaoFactory(final URI storageDirectory) {
+        final URI trimmedURI = storageDirectory.hasTrailingPathSeparator() ? storageDirectory.trimSegments(1) : storageDirectory;
+        if (existingFileDaoFactories.containsKey(trimmedURI)) {
             LOGGER.log(Level.SEVERE, "There is already an existing FileDaoFactory instance for "
-                    + fileToMapKey(storageDirectory) + ".");
+                    + trimmedURI + ".");
             throw new IllegalArgumentException();
         } else {
-            existingFileDaoFactories.put(fileToMapKey(storageDirectory), this);
+            existingFileDaoFactories.put(trimmedURI, this);
         }
-        this.storageDirectory = storageDirectory;
+        this.storageDirectory = trimmedURI;
         this.daoRegistry = new MeasurementsDaoRegistryImpl();
     }
 
     /**
-     * Converts a file/directory name to a valid key of the existingFileDaoFactories map.
-     * 
-     * @param directory
-     *            The file to convert.
-     * @return The key for the map.
-     */
-    private static String fileToMapKey(final File directory) {
-        String result = null;
-        try {
-            result = directory.getCanonicalPath();
-        } catch (final IOException e) {
-            LOGGER.log(Level.WARNING, "Could not resolve file name to String.", e);
-        }
-        return result;
-    }
-
-    /**
      * returns the absolute path to a uuid-referenced data file.
-     * 
+     *
      * @param uuid
      *            Identifier of the data (file).
      * @return aboslute path to the file.
      */
     private String getAbsolutePathToUuidFile(final String uuid, final String suffix) {
-        return new File(storageDirectory.getAbsolutePath() + File.separator + uuid).getAbsolutePath() + "." + suffix;
+        final URI resultURI = storageDirectory.appendSegment(uuid+"."+suffix);
+        try {
+            return FileLocator.toFileURL(new URL(resultURI.toString())).getFile();
+        } catch (final IOException e) {
+            throw new RuntimeException("URL not valid for EDP2 repository");
+        }
     }
 
     @Override
@@ -174,14 +166,14 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
 
     /**
      * Returns a registered factory for a given location.
-     * 
+     *
      * @param directory
      *            Local directory for which the factory is requested.
      * @return <code>null</code> if there is no factory registered. The registered factory
      *         otherwise.
      */
-    public static MeasurementsDaoFactory getRegisteredFactory(final File directory) {
-        return existingFileDaoFactories.get(fileToMapKey(directory));
+    public static MeasurementsDaoFactory getRegisteredFactory(final URI directory) {
+        return existingFileDaoFactories.get(directory);
     }
 
     @Override

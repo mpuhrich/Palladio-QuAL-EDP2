@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.palladiosimulator.edp2;
 
@@ -9,13 +9,14 @@ import java.io.File;
 
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.palladiosimulator.edp2.repository.local.dao.LocalDirectoryMeasurementsDaoFactory;
 
 /**
  * JUnit test for file-backed LongBinaryMeasurementsDao.
- * 
+ *
  * @author groenda
  */
 public class IdentifierBinaryMeasurementsDaoTest extends NominalMeasurementsDaoTest {
@@ -26,7 +27,7 @@ public class IdentifierBinaryMeasurementsDaoTest extends NominalMeasurementsDaoT
         final String uuid = EcoreUtil.generateUUID();
         if (tempFile.mkdir() == true) {
             tempFile.deleteOnExit();
-            df = new LocalDirectoryMeasurementsDaoFactory(tempFile.getAbsoluteFile());
+            df = new LocalDirectoryMeasurementsDaoFactory(URI.createURI(tempFile.getAbsoluteFile().toURI().toString()));
             assertNotNull("DaoFactory must not be null.", df);
             dao = this.onmDao = df.createNominalMeasurementsDao(uuid, metric);
             onmDao.setUnit(Unit.ONE);

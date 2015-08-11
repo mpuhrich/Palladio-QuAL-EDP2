@@ -321,19 +321,22 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
         super.open();
         // open directory
         try {
-            final File directory = this.managedRepo.convertUriStringToFile(this.managedRepo.getUri());
             if (this.managedRepo.getRepositories() == null) {
                 final String msg = "Every repository must be attached to an instance of Repositories in order to be opened.";
                 LOGGER.log(Level.SEVERE, msg);
                 throw new DataNotAccessibleException(msg, null);
             }
+
             // load descriptions
-            loadDescriptions(directory);
+            loadDescriptions();
+
             // load experiment groups
-            loadExperimentGroups(directory);
-            this.mmtDaoFactory = LocalDirectoryMeasurementsDaoFactory.getRegisteredFactory(directory);
+            loadExperimentGroups();
+
+            final URI repositoryURI = URI.createURI(this.managedRepo.getId());
+            this.mmtDaoFactory = LocalDirectoryMeasurementsDaoFactory.getRegisteredFactory(repositoryURI);
             if (this.mmtDaoFactory == null) { // DaoFactory not previously initialized
-                this.mmtDaoFactory = new LocalDirectoryMeasurementsDaoFactory(directory);
+                this.mmtDaoFactory = new LocalDirectoryMeasurementsDaoFactory(repositoryURI);
             } else {
                 if (!this.mmtDaoFactory.isActive()) {
                     this.mmtDaoFactory.setActive(true);
@@ -353,16 +356,18 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      *
      * @param directory
      *            The EDP2 data directory
+     * @throws DataNotAccessibleException
      */
-    private void loadDescriptions(final File directory) {
-        final File[] descriptionFiles = directory.listFiles(new FilenameExtensionFiler(
+    private void loadDescriptions() throws DataNotAccessibleException {
+        final File[] descriptionFiles = this.managedRepo.convertUriStringToFile(this.managedRepo.getId()).listFiles(new FilenameExtensionFiler(
                 EmfModelXMIResourceFactoryImpl.EDP2_DESCRIPTIONS_EXTENSION));
         for (final File descriptionFile : descriptionFiles) {
             if (!descriptionFile.isFile()) {
                 final String msg = "Could not load the description file " + descriptionFile.getName();
                 LOGGER.log(Level.WARNING, msg);
             }
-            loadDescription(descriptionFile);
+            final URI descriptionFileUri = URI.createURI(this.managedRepo.getId()).appendSegment(descriptionFile.getName());
+            loadDescription(descriptionFileUri);
         }
     }
 
@@ -488,9 +493,9 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      * @param descriptionFile
      *            The description file containing the EMF model of the description.
      */
-    private void loadDescription(final File descriptionFile) {
+    private void loadDescription(final URI descriptionURI) {
         assert (this.managedRepo.getRepositories() != null);
-        final Resource resource = getResourceForURI(URI.createFileURI(descriptionFile.getAbsolutePath()));
+        final Resource resource = getResourceForURI(descriptionURI);
         String errorMessage = null;
         try {
             resource.load(null);
@@ -508,7 +513,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             errorMessage = "Could not load EMF model. Reason: " + e.getMessage();
         }
         if (errorMessage != null) {
-            LOGGER.log(Level.WARNING, errorMessage + " Filename: " + descriptionFile.getAbsolutePath() + ".");
+            LOGGER.log(Level.WARNING, errorMessage + " URI: " + descriptionURI + ".");
         }
     }
 
@@ -533,16 +538,18 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      *
      * @param directory
      *            The EDP2 data directory
+     * @throws DataNotAccessibleException
      */
-    private void loadExperimentGroups(final File directory) {
-        final File[] expGroupFiles = directory.listFiles(new FilenameExtensionFiler(
+    private void loadExperimentGroups() throws DataNotAccessibleException {
+        final File[] expGroupFiles = this.managedRepo.convertUriStringToFile(this.managedRepo.getId()).listFiles(new FilenameExtensionFiler(
                 EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION));
         for (final File expGroupFile : expGroupFiles) {
             if (!expGroupFile.isFile()) {
                 final String msg = "Could not load the experiment group file " + expGroupFile.getName();
                 LOGGER.log(Level.WARNING, msg);
             }
-            loadExperimentGroup(expGroupFile);
+            final URI descriptionFileUri = URI.createURI(this.managedRepo.getId()).appendSegment(expGroupFile.getName());
+            loadExperimentGroup(descriptionFileUri);
         }
     }
 
@@ -552,8 +559,8 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
      * @param expGroupFile
      *            The experiment group file containing the EMF model of the description.
      */
-    private void loadExperimentGroup(final File expGroupFile) {
-        final Resource resource = getResourceForURI(URI.createFileURI(expGroupFile.getAbsolutePath()));
+    private void loadExperimentGroup(final URI expGroupFile) {
+        final Resource resource = getResourceForURI((expGroupFile));
         String errorMessage = null;
         try {
             resource.load(null);
@@ -586,7 +593,7 @@ public class LocalDirectoryMetaDao extends MetaDaoImpl implements MetaDaoDelegat
             errorMessage = "Could not load EMF model.";
         }
         if (errorMessage != null) {
-            LOGGER.log(Level.WARNING, errorMessage + " Filename: " + expGroupFile.getAbsolutePath() + ".");
+            LOGGER.log(Level.WARNING, errorMessage + " URI: " + expGroupFile + ".");
         }
     }
 

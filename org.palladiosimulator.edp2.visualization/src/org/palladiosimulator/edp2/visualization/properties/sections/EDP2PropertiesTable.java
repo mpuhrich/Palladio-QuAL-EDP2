@@ -96,7 +96,7 @@ class EDP2PropertiesTable {
     }
 
     private MeasureFormat initializeMeasureFormat() {
-        NumberFormat numberFormat = NumberFormat.getInstance(NUMBER_FORMAT_LOCALE);
+        final NumberFormat numberFormat = NumberFormat.getInstance(NUMBER_FORMAT_LOCALE);
         numberFormat.setMinimumFractionDigits(1);
 
         return MeasureFormat.getInstance(numberFormat, UnitFormat.getInstance());
@@ -131,7 +131,7 @@ class EDP2PropertiesTable {
             public void handleEvent(final Event event) {
                 final Rectangle clientArea = myTable.getClientArea();
                 final Point pt = new Point(event.x, event.y);
-                int index = myTable.getTopIndex();
+                int index = myTable.getTopIndex() - 1;
                 while (index < myTable.getItemCount()) {
                     boolean visible = false;
                     final TableItem item = myTable.getItem(index);
@@ -154,7 +154,8 @@ class EDP2PropertiesTable {
                         } else if (ClassUtils.isAssignable(Measure.class, propertyType, true)) {
                             openMeasureDialog(index, myTable);
                         } else {
-                            throw new RuntimeException("Unsupported property type found!");
+                            //  throw new RuntimeException("Unsupported property type found!");
+                            return;
                         }
                         return;
                     }
@@ -201,7 +202,7 @@ class EDP2PropertiesTable {
      * @param shell
      *            the Shell in which the dialog is displayed.
      */
-    protected void openEObjectDialog(final TableItem item, final Table table, Class<?> propertyType,
+    protected void openEObjectDialog(final TableItem item, final Table table, final Class<?> propertyType,
             final Collection<?> filterList, final Collection<EReference> additionalChildReferences) {
         final SelectEObjectDialog selectEObjectDialog = new SelectEObjectDialog(table.getShell(),
                 propertyType.getSimpleName(), new ResourceSetImpl(), new AdapterFactoryContentProvider(
@@ -240,7 +241,7 @@ class EDP2PropertiesTable {
      *            The {@link Table} containing the {@link ConfigurationProperty} to be edited.
      */
     protected void openMeasureDialog(final int index, final Table table) {
-        TableEditor editor = new TableEditor(table);
+        final TableEditor editor = new TableEditor(table);
         editor.horizontalAlignment = SWT.LEFT;
         editor.grabHorizontal = true;
 
@@ -266,11 +267,11 @@ class EDP2PropertiesTable {
             }
 
             private void handleTraverseReturn() {
-                String input = text.getText();
+                final String input = text.getText();
                 Measure<?, ?> result = null;
                 try {
                     result = (Measure<?, ?>) measureFormat.parseObject(input);
-                } catch (ParseException e) {
+                } catch (final ParseException e) {
                     showErrorDialog(e);
                 }
                 if (result != null) {
@@ -279,8 +280,8 @@ class EDP2PropertiesTable {
                 }
             }
 
-            private void showErrorDialog(Exception e) {
-                MessageBox errorDialog = new MessageBox(table.getShell(), SWT.OK | SWT.ICON_ERROR);
+            private void showErrorDialog(final Exception e) {
+                final MessageBox errorDialog = new MessageBox(table.getShell(), SWT.OK | SWT.ICON_ERROR);
                 errorDialog.setText("Error");
                 errorDialog.setMessage(String.format(MEASURE_PARSE_ERROR_MESSAGE, e.getMessage()));
                 errorDialog.open();
@@ -443,8 +444,8 @@ class EDP2PropertiesTable {
 
     }
 
-    private void prettyPrintProperty(TableItem item, Object value) {
-        Class<?> propertyType = value.getClass();
+    private void prettyPrintProperty(final TableItem item, final Object value) {
+        final Class<?> propertyType = value.getClass();
         if (ClassUtils.isAssignable(propertyType, Color.class)) {
             final Color col = (Color) value;
             updateColorCell(item, col);

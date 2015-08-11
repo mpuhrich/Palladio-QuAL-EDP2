@@ -17,6 +17,7 @@ import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardXYItemLabelGenerator;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.StandardXYBarPainter;
 import org.jfree.chart.renderer.xy.XYBarRenderer;
 import org.jfree.data.general.AbstractDataset;
 import org.jfree.data.statistics.HistogramDataset;
@@ -86,6 +87,9 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
         final HistogramVisualizationInputConfiguration configuration = (HistogramVisualizationInputConfiguration) config;
         final XYPlot plot = new XYPlot();
         final XYBarRenderer renderer = new XYBarRenderer();
+        renderer.setShadowVisible(false);
+        renderer.setBarPainter(new StandardXYBarPainter());
+
         final NumberAxis domainAxis = new NumberAxis(
                 configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
         domainAxis.setAutoRangeIncludesZero(configuration.isIncludeZero());
@@ -98,7 +102,7 @@ public class HistogramVisualizationInput extends AbstractXYVisualizationInput {
         plot.setRangeAxis(rangeAxis);
         plot.setDomainAxis(domainAxis);
 
-        this.configureSeriesColors(renderer);
+        configureSeriesColors(renderer);
 
         ((HistogramDataset) dataset).setType(configuration.isAbsoluteFrequency() ? HistogramType.FREQUENCY
                 : HistogramType.RELATIVE_FREQUENCY);

@@ -32,12 +32,12 @@ import org.w3c.dom.Document;
 public class CustomJFreeChartComposite extends ChartComposite {
 
     private File selectFileDialog(final String filter) {
-        final FileDialog dialog = new FileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+        final FileDialog dialog = new FileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), SWT.SAVE);
         dialog.setFilterExtensions(new String[] { filter });
         dialog.setText("Enter the file name");
         final String result = dialog.open();
         if (result != null) {
-            String filename = dialog.getFilterPath() + File.separator + dialog.getFileName();
+            final String filename = dialog.getFilterPath() + File.separator + dialog.getFileName();
             return new File(filename);
         } else {
             return null;
@@ -102,26 +102,27 @@ public class CustomJFreeChartComposite extends ChartComposite {
             super();
             setText("Export Data as CSV...");
         }
-        
+
+        @Override
         public void run() {
-            File f = selectFileDialog("*.csv");
+            final File f = selectFileDialog("*.csv");
             if (f != null) {
-                XYPlot plot = getChart().getXYPlot();
-                XYDataset dataset = plot.getDataset();
-                StringBuilder content = new StringBuilder(String.format(ONE_LINE_FORMAT, plot.getDomainAxis().getLabel(), plot.getRangeAxis()
+                final XYPlot plot = getChart().getXYPlot();
+                final XYDataset dataset = plot.getDataset();
+                final StringBuilder content = new StringBuilder(String.format(ONE_LINE_FORMAT, plot.getDomainAxis().getLabel(), plot.getRangeAxis()
                         .getLabel()));
                 // assume that we export the last (and only) data series
-                int seriesNumber = dataset.getSeriesCount() - 1;
+                final int seriesNumber = dataset.getSeriesCount() - 1;
                 for (int i = 0; i < dataset.getItemCount(seriesNumber); ++i) {
                     content.append(System.lineSeparator());
-                    double x = dataset.getXValue(seriesNumber, i);
-                    double y = dataset.getYValue(seriesNumber, i);
+                    final double x = dataset.getXValue(seriesNumber, i);
+                    final double y = dataset.getYValue(seriesNumber, i);
                     content.append(String.format(ONE_LINE_FORMAT, x, y));
                 }
                 try {
                     Files.write(Paths.get(f.getPath()), content.toString().getBytes());
-                } catch (IOException e) {
-                    StringBuilder errorMessage = new StringBuilder("An error occurred during CSV export: "+ System.lineSeparator());
+                } catch (final IOException e) {
+                    final StringBuilder errorMessage = new StringBuilder("An error occurred during CSV export: "+ System.lineSeparator());
                     errorMessage.append(e.getMessage());
                     MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "Error", errorMessage.toString());
                 }

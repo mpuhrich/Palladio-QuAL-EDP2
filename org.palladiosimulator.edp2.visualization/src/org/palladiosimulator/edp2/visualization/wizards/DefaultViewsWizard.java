@@ -3,6 +3,9 @@
  */
 package org.palladiosimulator.edp2.visualization.wizards;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.Composite;
@@ -68,9 +71,16 @@ public class DefaultViewsWizard extends Wizard implements INewWizard {
 	 * 
 	 * @see org.eclipse.jface.wizard.Wizard#performFinish()
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean performFinish() {
 		if (canFinish()) {
+			// Set title of visualization input to the name of the chain; The direct name of the property is used to prevent dependencies to JFreeChart representation.
+			@SuppressWarnings("rawtypes")
+			Map old = new HashMap();
+			old.putAll(getSelectedDefault().getVisualizationInput().getProperties());
+			old.put("title", selectedDefault.getChainName());
+			getSelectedDefault().getVisualizationInput().setProperties(old);
 			return true;
 		}
 		return false;

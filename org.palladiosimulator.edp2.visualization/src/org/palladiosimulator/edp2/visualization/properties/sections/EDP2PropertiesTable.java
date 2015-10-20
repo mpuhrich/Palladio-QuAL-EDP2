@@ -131,7 +131,7 @@ class EDP2PropertiesTable {
             public void handleEvent(final Event event) {
                 final Rectangle clientArea = myTable.getClientArea();
                 final Point pt = new Point(event.x, event.y);
-                int index = myTable.getTopIndex() - 1;
+                int index = myTable.getTopIndex();
                 while (index < myTable.getItemCount()) {
                     boolean visible = false;
                     final TableItem item = myTable.getItem(index);

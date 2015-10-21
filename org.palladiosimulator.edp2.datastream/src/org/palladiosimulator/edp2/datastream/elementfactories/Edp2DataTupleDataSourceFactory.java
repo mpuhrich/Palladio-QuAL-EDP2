@@ -47,9 +47,12 @@ public class Edp2DataTupleDataSourceFactory extends PropertyConfigurableElementF
         } else {
             throw new IllegalArgumentException("Unknown run type");
         }
-
-        memento.putString(REPOSITORY_UUID, experimentGroup.getRepository().getId());
-        memento.putString(MEASUREMENTS_UUID, measurements.getId());
+        if (experimentGroup != null && experimentGroup.getRepository() != null) {
+            memento.putString(REPOSITORY_UUID, experimentGroup.getRepository().getId());
+        }
+        if (measurements != null) {
+            memento.putString(MEASUREMENTS_UUID, measurements.getId());
+        }
     }
 
 }

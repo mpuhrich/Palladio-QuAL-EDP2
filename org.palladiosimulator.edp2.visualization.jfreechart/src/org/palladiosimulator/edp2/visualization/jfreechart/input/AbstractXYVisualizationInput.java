@@ -7,7 +7,6 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputConfiguration;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
-import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
@@ -26,16 +25,6 @@ public abstract class AbstractXYVisualizationInput extends JFreeChartVisualizati
     protected void firstChildInputAdded(final JFreeChartVisualizationSingleDatastreamInput newChildInput) {
         super.firstChildInputAdded(newChildInput);
 
-        final MetricSetDescription metricSetDescription = ((MetricSetDescription) newChildInput.getDataSource()
-                .getMetricDesciption());
-
-        xPos = 0;
-        if (metricSetDescription.getSubsumedMetrics().get(1).getId()
-                .equals(MetricDescriptionConstants.POINT_IN_TIME_METRIC.getId())) {
-            // TODO Find and use general concept for metric equality.
-            xPos = 1;
-        }
-
         final Map<String, Object> configuration = new HashMap<String, Object>(getConfiguration().getProperties());
         configuration.put(XYPlotVisualizationInputConfiguration.DOMAIN_AXIS_LABEL_KEY, getAxisDefaultLabel(getXPos()));
         configuration.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, getAxisDefaultLabel(getYPos()));
@@ -44,7 +33,8 @@ public abstract class AbstractXYVisualizationInput extends JFreeChartVisualizati
 
     @Override
     public boolean canAccept(final IDataSource source) {
-        final BaseMetricDescription[] mds = MetricDescriptionUtility.toBaseMetricDescriptions(source.getMetricDesciption());
+        final BaseMetricDescription[] mds = MetricDescriptionUtility
+                .toBaseMetricDescriptions(source.getMetricDesciption());
         if (mds.length != 2) {
             return false; // two-dimensional data needed
         }
@@ -54,6 +44,14 @@ public abstract class AbstractXYVisualizationInput extends JFreeChartVisualizati
                 // can be plotted
             }
         }
+
+        // prefer to align POINT_IN_TIME_METRIC to the x-axis
+        this.xPos = 0;
+        if (mds[1].getId().equals(MetricDescriptionConstants.POINT_IN_TIME_METRIC.getId())) {
+            // TODO Find and use general concept for metric equality.
+            this.xPos = 1;
+        }
+
         return true;
     }
 

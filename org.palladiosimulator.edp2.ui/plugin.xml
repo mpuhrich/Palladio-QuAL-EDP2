@@ -99,6 +99,12 @@
                style="push">
          </command>
          <command
+               commandId="org.palladiosimulator.edp2.ui.commands.BatchExporter"
+               icon="icons/batchexport.gif"
+               label="Export to CSV..."
+               style="push">
+         </command>
+         <command
                commandId="org.palladiosimulator.edp2.ui.commands.ExpandDataSources"
                icon="icons/expandall.gif"
                label="Expand All..."
@@ -147,5 +153,18 @@
          </propertySection>
       </propertySections>
    </extension>
-
+     <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+            defaultHandler="org.palladiosimulator.edp2.ui.commands.BatchExportHandler"
+            description="Batch exports all results in a data source."
+            id="org.palladiosimulator.edp2.ui.commands.BatchExporter"
+            name="Export Repository to CSV files">
+      </command>
+      <category
+            id="org.palladiosimulator.edp2.ui.category.dataSources"
+            name="Data Sources">
+      </category>
+   </extension>
 </plugin>

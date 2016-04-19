@@ -145,8 +145,8 @@ public class MeasurementsUtility {
             if (!measuringValue.getMetricDesciption().getId()
                     .equals(measurement.getMeasuringType().getMetric().getId())) {
                 final String msg = "Tried to store measurement with a wrong metric. Expected: "
-                        + measurement.getMeasuringType().getMetric() + ", provided: "
-                        + measuringValue.getMetricDesciption() + ".";
+                        + measurement.getMeasuringType().getMetric().getName() + ", provided: "
+                        + measuringValue.getMetricDesciption().getName() + ".";
                 LOGGER.log(Level.SEVERE, msg);
                 throw new IllegalArgumentException(msg);
             }

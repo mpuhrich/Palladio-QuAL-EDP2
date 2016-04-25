@@ -12,6 +12,10 @@
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInputFactory">
       </factory>
       <factory
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.cdf.CDFVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.jfreechart.input.cdf.CDFVisualizationInputFactory">
+      </factory>
+      <factory
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInputFactory">
       </factory>
@@ -38,16 +42,22 @@
    <extension
          point="org.palladiosimulator.edp2.visualization.datasink">
       <datasink
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
+      </datasink>
+      <datasink
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
             factory="org.palladiosimulator.edp2.visualization.jfreechart.input.histogram.HistogramVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
       </datasink>
       <datasink
-            class="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInput"
+            class="org.palladiosimulator.edp2.visualization.jfreechart.input.cdf.CDFVisualizationInput"
             editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
-            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVisualizationInputFactory"
-            id="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
+            factory="org.palladiosimulator.edp2.visualization.jfreechart.input.cdf.CDFVisualizationInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.CDFEditorInput">
       </datasink>
       <datasink
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.PieChartVisualizationInput"
@@ -99,6 +109,16 @@
             name="Histogram">
          <datasink
                sinkID="org.palladiosimulator.edp2.visualization.inputs.HistogramEditorInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="org.palladiosimulator.edp2.visualization.jfreechart.cdf"
+            name="Cumulative Distribution Function (CDF)">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.CDFEditorInput">
          </datasink>
       </chainDescription>
    </extension>

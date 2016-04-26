@@ -1,9 +1,8 @@
 package org.palladiosimulator.edp2.visualization.jfreechart.input.cdf;
 
-import java.awt.Color;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,18 +11,13 @@ import javax.measure.quantity.Quantity;
 
 import org.eclipse.ui.IMemento;
 import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.labels.ItemLabelAnchor;
-import org.jfree.chart.labels.ItemLabelPosition;
-import org.jfree.chart.labels.StandardXYItemLabelGenerator;
+import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.StandardXYBarPainter;
-import org.jfree.chart.renderer.xy.XYBarRenderer;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.general.AbstractDataset;
-import org.jfree.data.statistics.HistogramDataset;
-import org.jfree.data.statistics.HistogramType;
+import org.jfree.data.xy.DefaultXYDataset;
 import org.jfree.data.xy.XYDataset;
-import org.jfree.ui.TextAnchor;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
@@ -85,66 +79,43 @@ public class CDFVisualizationInput extends AbstractXYVisualizationInput {
     protected Plot generatePlot(final PropertyConfigurable config, final AbstractDataset dataset) {
         final CDFVisualizationInputConfiguration configuration = (CDFVisualizationInputConfiguration) config;
         final XYPlot plot = new XYPlot();
-        final XYBarRenderer renderer = new XYBarRenderer();
-        renderer.setShadowVisible(false);
-        renderer.setBarPainter(new StandardXYBarPainter());
+        final XYDataset xyDataset = (XYDataset) dataset;
 
-        final NumberAxis domainAxis = new NumberAxis(
+        final ValueAxis domainAxis = new NumberAxis(
                 configuration.isShowDomainAxisLabel() ? configuration.getDomainAxisLabel() : null);
-        domainAxis.setAutoRangeIncludesZero(configuration.isIncludeZero());
-        final NumberAxis rangeAxis = new NumberAxis(
-                configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel() : null);
+        final ValueAxis rangeAxis = new NumberAxis(configuration.isShowRangeAxisLabel() ? configuration.getRangeAxisLabel()
+                : null);
 
-        plot.setDataset((XYDataset) dataset);
-
-        plot.setRenderer(renderer);
         plot.setRangeAxis(rangeAxis);
         plot.setDomainAxis(domainAxis);
 
+        plot.setDataset(xyDataset);
+
+        final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+        final boolean isShowSeriesLine = configuration.isShowSeriesLine();
+        final boolean isShowSeriesShape = configuration.isShowSeriesShapes();
+
+        for (int i = 0; i < xyDataset.getSeriesCount(); ++i) {
+            renderer.setSeriesLinesVisible(i, isShowSeriesLine);
+            renderer.setSeriesShapesVisible(i, isShowSeriesShape);
+        }
+
+        plot.setRenderer(renderer);
+
         configureSeriesColors(renderer);
-
-        ((HistogramDataset) dataset).setType(
-                configuration.isAbsoluteFrequency() ? HistogramType.FREQUENCY : HistogramType.RELATIVE_FREQUENCY);
-        renderer.setMargin(configuration.getBarMargin() / 100);
-
-        // show values on each bar in the histogram if the property is set
-        renderer.setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
-        renderer.setBaseItemLabelPaint(Color.BLACK);
-        renderer.setBasePositiveItemLabelPosition(new ItemLabelPosition());
-        renderer.setBaseNegativeItemLabelPosition(
-                new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER));
-        renderer.setBaseItemLabelsVisible(configuration.isShowItemValues());
-
         return plot;
     }
 
     @Override
     protected AbstractDataset generateDataset() {
-        final HistogramDataset result = new HistogramDataset();
-        // add all inputs anew
-        // assume that if the getChart()-Method of this input is called, the
-        // remaining inputs have the same type of data
-        for (int i = 0; i < getInputs().size(); i++) {
-            result.addSeries(getInputs().get(i).getInputName(), generateData(getInputs().get(i).getDataSource()),
-                    ((CDFVisualizationInputConfiguration) getConfiguration()).getNumberOfBins());
-        }
-        return result;
-    }
+        final DefaultXYDataset dataset = new DefaultXYDataset();
 
-    @SuppressWarnings("unchecked")
-    private double[] generateData(final IDataSource dataSource) {
-        final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
-        final double[] data = new double[inputStream.size()];
-        final CDFVisualizationInputConfiguration configuration = getConfiguration();
-
-        int i = 0;
-        for (final TupleMeasurement tuple : inputStream) {
-            final Measure<? extends Number, Quantity> measure = (Measure<? extends Number, Quantity>) tuple
-                    .asArray()[getYPos()];
-            data[i] = measure.doubleValue(configuration.getUnit());
+        int i = 1;
+        for (final JFreeChartVisualizationSingleDatastreamInput childInput : getInputs()) {
+            dataset.addSeries(i + ": " + childInput.getInputName(), computeCDFData(childInput));
             i++;
         }
-        return data;
+        return dataset;
     }
 
     @Override
@@ -169,14 +140,50 @@ public class CDFVisualizationInput extends AbstractXYVisualizationInput {
                 .getSubsumedMetrics().get(getYPos());
         properties.put(CDFVisualizationInputConfiguration.UNIT_KEY, baseMetric.getDefaultUnit());
         properties.put(XYPlotVisualizationInputConfiguration.DOMAIN_AXIS_LABEL_KEY, getAxisDefaultLabel(getYPos()));
-        properties.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, "Frequency [%]");
+        properties.put(XYPlotVisualizationInputConfiguration.RANGE_AXIS_LABEL_KEY, "Summed Probability [%]");
         setProperties(properties);
     }
 
     @Override
     protected Set<String> getPropertyKeysTriggeringUpdate() {
-        return new HashSet<String>(Arrays.asList(CDFVisualizationInputConfiguration.NUMBER_BINS_KEY,
-                CDFVisualizationInputConfiguration.UNIT_KEY));
+        return Collections.emptySet();
+    }
+
+    /**
+     * TODO: These methods need to be refactored in case the value array does not fit into
+     * a double array, i.e., if the measurement count is larger than the maximum allowed index of
+     * java arrays.
+     * @param childInput The child input whose values should be displayed as CDF
+     * @return A two-valued double array. Each entry represents a x,y point. X is the values,
+     * Y the summed probability until this value. Based on a sorting of the data in the childInput.
+     */
+    private double[][] computeCDFData(final JFreeChartVisualizationSingleDatastreamInput childInput) {
+        final double[] rawValues = generateData(childInput.getDataSource());
+        Arrays.sort(rawValues);
+        final double[][] plotData = new double[2][rawValues.length];
+        double sum = 0.0d;
+        for (int j = 0; j < rawValues.length; j++) {
+            plotData[0][j] = rawValues[j];
+            plotData[1][j] = sum;
+            sum += 1.0d / rawValues.length;
+        }
+        return plotData;
+    }
+
+    @SuppressWarnings("unchecked")
+    private double[] generateData(final IDataSource dataSource) {
+        final IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
+        final double[] data = new double[inputStream.size()];
+        final CDFVisualizationInputConfiguration configuration = getConfiguration();
+
+        int i = 0;
+        for (final TupleMeasurement tuple : inputStream) {
+            final Measure<? extends Number, Quantity> measure = (Measure<? extends Number, Quantity>) tuple
+                    .asArray()[getYPos()];
+            data[i] = measure.doubleValue(configuration.getUnit());
+            i++;
+        }
+        return data;
     }
 
 }

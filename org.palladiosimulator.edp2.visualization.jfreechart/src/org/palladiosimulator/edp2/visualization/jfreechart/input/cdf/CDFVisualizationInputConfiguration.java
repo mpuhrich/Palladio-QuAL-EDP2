@@ -11,7 +11,7 @@ import org.palladiosimulator.edp2.visualization.jfreechart.input.xyplot.XYPlotVi
 
 /**
  * Options shown in the Properties View for Cumulative Distribution Functions (CDFs).
- * 
+ *
  * @author Sebastian Lehrig
  */
 public class CDFVisualizationInputConfiguration extends XYPlotVisualizationInputConfiguration {
@@ -19,19 +19,8 @@ public class CDFVisualizationInputConfiguration extends XYPlotVisualizationInput
     /**
      * Keys for persistence of properties
      */
-    public static final String INCLUDE_ZERO_KEY = "includeZero";
-    public final static String NUMBER_BINS_KEY = "numberOfBins";
     public final static String SHOW_ITEM_VALUES_KEY = "showItemValues";
-    public final static String BAR_MARGIN_KEY = "barMargin";
-    public final static String ABSOLUTE_FREQUENCY_KEY = "absoluteFrequency";
     public final static String UNIT_KEY = "unit";
-
-    /**
-     * The number of bins, i.e. the number of intervals of equal length in which the measurements
-     * are counted.
-     */
-    @ConfigurationProperty(description = "Number of Bins")
-    private int numberOfBins;
 
     /**
      * Option to show the value for each bar in the histogram, i.e. the absolute or relative number
@@ -41,49 +30,14 @@ public class CDFVisualizationInputConfiguration extends XYPlotVisualizationInput
     private boolean showItemValues;
 
     /**
-     * Whether to use absolute frequency or relative frequency for the chart. NOTE: this does affect
-     * other input items as well, but is specific for histograms, thus it is located here.
-     */
-    @ConfigurationProperty(description = "Use Absolute Frequency")
-    private boolean absoluteFrequency;
-
-    /**
-     * The width of the whitespace between the bars in percentage of each bar's width.
-     */
-    @ConfigurationProperty(description = "Bar Margin")
-    private double barMargin;
-
-    /**
      * The unit of the horizontal axis as a String.
      */
     @ConfigurationProperty(description = "Domain Unit")
     private Unit<? extends Quantity> unit;
 
-    /**
-     * Always include zero in the diagram?
-     */
-    @ConfigurationProperty(description = "Include Zeros")
-    private boolean includeZero;
-
-    public boolean isIncludeZero() {
-        return this.includeZero;
-    }
-
-    public int getNumberOfBins() {
-        return this.numberOfBins;
-    }
-
     @SuppressWarnings("unchecked")
     public <Q extends Quantity> Unit<Q> getUnit() {
         return (Unit<Q>) this.unit;
-    }
-
-    public boolean isAbsoluteFrequency() {
-        return this.absoluteFrequency;
-    }
-
-    public double getBarMargin() {
-        return this.barMargin;
     }
 
     public boolean isShowItemValues() {
@@ -99,12 +53,10 @@ public class CDFVisualizationInputConfiguration extends XYPlotVisualizationInput
     @Override
     public Map<String, Object> getDefaultConfiguration() {
         final Map<String, Object> result = new HashMap<String, Object>(super.getDefaultConfiguration());
-        result.put(INCLUDE_ZERO_KEY, false);
-        result.put(NUMBER_BINS_KEY, 5);
         result.put(SHOW_ITEM_VALUES_KEY, false);
-        result.put(BAR_MARGIN_KEY, 0.0d);
-        result.put(ABSOLUTE_FREQUENCY_KEY, false);
         result.put(UNIT_KEY, Unit.ONE);
+        result.put(SHOW_SERIES_LINE_LABEL_KEY, true);
+        result.put(SHOW_SERIES_SHAPES_LABEL_KEY, false);
         return result;
     }
 

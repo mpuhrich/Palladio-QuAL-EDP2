@@ -16,9 +16,25 @@ public abstract class AbstractFilter extends AbstractAdapter {
         super(metricDescription);
     }
 
+    /**
+     * Determines whether this instance can handle the given data source.
+     * 
+     * @param dataSource
+     *            The {@link IDataSource} to be processed by this instance.
+     * @return {@code false} iff the metric of the given data source is incompatible, otherwise
+     *         {@code true}.
+     * @throws IllegalArgumentException
+     *             In case {@code dataSource == null}.
+     * @throws IllegalStateException
+     *             In case this instance has not been initialized.
+     * @see #isCompatibleWith(MetricDescription)
+     */
     @Override
     public boolean canAccept(final IDataSource dataSource) {
-        return this.isCompatibleWith(getDataSource().getMetricDesciption());
+        if (dataSource == null) {
+            throw new IllegalArgumentException("Given data source must not be null.");
+        }
+        return this.isCompatibleWith(dataSource.getMetricDesciption());
     }
 
 }

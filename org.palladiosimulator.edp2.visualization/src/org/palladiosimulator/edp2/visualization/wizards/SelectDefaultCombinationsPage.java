@@ -239,18 +239,22 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
                 final IPropertyConfigurable configurable = createAndConfigureChainElement(charts, child);
                 if (child.getName().equals(ELEMENT_ID_DATASINK)) {
                     visualization = configurable;
-                    if (visualization instanceof IDataSink && !((IDataSink)visualization).canAccept(this.selectedSource)) {
-                        isApplicable = false; //filter is not applicable to selected data source
+                    if (visualization instanceof IDataSink
+                            && !((IDataSink) visualization).canAccept(this.selectedSource)) {
+                        isApplicable = false; // filter is not applicable to selected data source
                         break;
                     }
-                    if (visualization instanceof AbstractVisualizationInput<?> && !((AbstractVisualizationInput<?>)visualization).canAccept(this.selectedSource)) {
-                        isApplicable = false; //filter is not applicable to selected data source
+                    if (visualization instanceof AbstractVisualizationInput<?>
+                            && !((AbstractVisualizationInput<?>) visualization).canAccept(this.selectedSource)) {
+                        isApplicable = false; // filter is not applicable to selected data source
                         break;
                     }
-                } else if (configurable instanceof AbstractAdapter) { //at least one filter in chain
+                } else if (configurable instanceof AbstractAdapter) { // at least one filter in
+                                                                      // chain
                     final AbstractAdapter adapter = (AbstractAdapter) configurable;
-                    if (!this.selectedSource.isCompatibleWith(adapter.getMetricDesciption())) {
-                        isApplicable = false; //filter is not applicable to selected data source
+                    if (!this.selectedSource.isCompatibleWith(adapter.getMetricDesciption())
+                            && !adapter.canAccept(this.selectedSource)) {
+                        isApplicable = false; // filter is not applicable to selected data source
                         break;
                     }
                     if (lastDataSource != null) {
@@ -259,12 +263,9 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
                     lastDataSource = adapter;
                 }
             }
-            if (isApplicable) { //only if (optional) filters are applicable to data source
-                final ChainDescription newChainDescription = new ChainDescription(
-                        e.getAttribute(ID_ATTRIBUTE),
-                        e.getAttribute(NAME_ATTRIBUTE),
-                        lastDataSource,
-                        visualization);
+            if (isApplicable) { // only if (optional) filters are applicable to data source
+                final ChainDescription newChainDescription = new ChainDescription(e.getAttribute(ID_ATTRIBUTE),
+                        e.getAttribute(NAME_ATTRIBUTE), lastDataSource, visualization);
                 result.add(newChainDescription);
             }
         }
@@ -306,10 +307,13 @@ public class SelectDefaultCombinationsPage extends WizardPage implements ISelect
         for (final IConfigurationElement e : visualizationExtensions) {
             try {
                 final String id = e.getAttribute(ID_ATTRIBUTE);
-                final AbstractVisualizationInput<?> visualization = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
+                final AbstractVisualizationInput<?> visualization = (AbstractVisualizationInput<?>) e
+                        .createExecutableExtension(CLASS_ATTRIBUTE);
                 result.put(id, visualization);
             } catch (final CoreException e1) {
-                LOGGER.log(Level.SEVERE, "Error in creating a Visualization referenced in an extension: Respective Id is " + e.getAttribute(ID_ATTRIBUTE) + ".");
+                LOGGER.log(Level.SEVERE,
+                        "Error in creating a Visualization referenced in an extension: Respective Id is "
+                                + e.getAttribute(ID_ATTRIBUTE) + ".");
                 LOGGER.log(Level.SEVERE, e1.getMessage());
                 throw new RuntimeException();
             }

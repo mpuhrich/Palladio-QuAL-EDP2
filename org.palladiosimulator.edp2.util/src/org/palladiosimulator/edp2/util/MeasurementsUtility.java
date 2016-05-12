@@ -46,6 +46,9 @@ import org.palladiosimulator.metricspec.TextualBaseMetricDescription;
  */
 public class MeasurementsUtility {
 
+    public static final String SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY = "SLIDING_WINDOW_BASED";
+    public static final Boolean SLIDING_WINDOW_BASED_MEASUREMENT_TAG_VALUE = true;
+
     /** Logger for this class. */
     private static final Logger LOGGER = Logger.getLogger(MeasurementsUtility.class.getCanonicalName());
 
@@ -110,7 +113,8 @@ public class MeasurementsUtility {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to a measure (definition).";
         } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType().getExperimentGroup() == null) {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to an experiment group.";
-        } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType().getExperimentGroup().getRepository() == null) {
+        } else if (rm.getMeasurementRange().getMeasurement().getMeasuringType().getExperimentGroup()
+                .getRepository() == null) {
             errorMsg = "RawMeasuremnts must be (indirectly) assigned to an experiment group which must be assigned to a repository.";
         } else {
             errorMsg = null;
@@ -120,8 +124,8 @@ public class MeasurementsUtility {
             throw new IllegalArgumentException(errorMsg);
         }
         // creation
-        new DataSeriesFromRawMeasurementsSwitch(rm).doSwitch(rm.getMeasurementRange().getMeasurement()
-                .getMeasuringType().getMetric());
+        new DataSeriesFromRawMeasurementsSwitch(rm)
+                .doSwitch(rm.getMeasurementRange().getMeasurement().getMeasuringType().getMetric());
         new DAOFromBelowRawMeasurementSwitch().doSwitch(rm);
     }
 
@@ -209,8 +213,8 @@ public class MeasurementsUtility {
 
                 @Override
                 public MeasurementsDao<?, Q> caseDoubleBinaryMeasurements(final DoubleBinaryMeasurements object) {
-                    final BinaryMeasurementsDao<Double, Q> bmd = daoFactory.createDoubleMeasurementsDao(ds
-                            .getValuesUuid());
+                    final BinaryMeasurementsDao<Double, Q> bmd = daoFactory
+                            .createDoubleMeasurementsDao(ds.getValuesUuid());
                     bmd.setUnit(object.getStorageUnit());
                     return bmd;
                 };

@@ -144,7 +144,7 @@ public class PieChartVisualizationInput extends JFreeChartVisualizationInput {
             return false; // two-dimensional data needed
         }
 
-        if (subMetricDescriptions[0] != MetricDescriptionConstants.POINT_IN_TIME_METRIC) {
+        if (!subMetricDescriptions[0].getId().equals(MetricDescriptionConstants.POINT_IN_TIME_METRIC.getId())) {
             return false;
         }
 

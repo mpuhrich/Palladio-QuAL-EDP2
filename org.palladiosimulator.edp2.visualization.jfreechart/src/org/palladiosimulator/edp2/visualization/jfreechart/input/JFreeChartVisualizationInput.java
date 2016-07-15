@@ -145,10 +145,12 @@ public abstract class JFreeChartVisualizationInput
 		final Plot plot = generatePlot(configuration, currentCachedDataset);
 		// FIXME: SLO Visualizations can not be updated
 		if (plot != null) {
-			return new JFreeChart(
-					configuration.isShowTitle() ? configuration.getTitle()
-							: null, JFreeChart.DEFAULT_TITLE_FONT, plot,
-					configuration.isShowLegend());
+		    JFreeChart chart = new JFreeChart(
+                    configuration.isShowTitle() ? configuration.getTitle()
+                            : null, JFreeChart.DEFAULT_TITLE_FONT, plot,
+                    configuration.isShowLegend());
+		    chart.setAntiAlias(false);
+			return chart;
 		}
 		return null;
 	}

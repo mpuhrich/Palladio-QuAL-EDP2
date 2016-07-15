@@ -12,6 +12,7 @@ public class WarmUpFilterWizard extends Wizard implements IFilterWizard {
 	private AbstractDataSource source;
 	private WarmUpFilterPage filterPage;
 	SelectFilterPage selectFilterPage;
+    private IFilter filter;
 	
 
 	@Override
@@ -22,7 +23,7 @@ public class WarmUpFilterWizard extends Wizard implements IFilterWizard {
 
 	@Override
 	public IFilter getFilter() {
-		return new WarmUpFilter();
+	    return this.filter;
 	}
 
 	@Override
@@ -48,5 +49,14 @@ public class WarmUpFilterWizard extends Wizard implements IFilterWizard {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+    @Override
+    public void setFilterFromCaller(IFilter filter) {
+        this.filter = filter;
+    }
+
+    @Override
+    public void setName(String string) {
+    }
 
 }

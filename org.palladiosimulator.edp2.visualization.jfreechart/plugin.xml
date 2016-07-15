@@ -79,10 +79,11 @@
    <extension
          point="org.palladiosimulator.edp2.visualization.filter">
          <filter
-            class="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
-            factory="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterFactory"
-            id="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
-            wizard="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterWizard">
+               class="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
+               factory="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterFactory"
+               id="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
+               name="Warmup Filter"
+               wizard="org.palladiosimulator.edp2.visualization.DefaultFilterPropertiesWizard">
             
       	</filter>
          

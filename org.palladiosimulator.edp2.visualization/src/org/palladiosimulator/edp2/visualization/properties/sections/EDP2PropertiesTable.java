@@ -46,7 +46,7 @@ import org.palladiosimulator.edp2.datastream.configurable.reflective.Configurati
 import de.uka.ipd.sdq.dialogs.selection.FilteredItemsAdapterFactory;
 import de.uka.ipd.sdq.dialogs.selection.SelectEObjectDialog;
 
-class EDP2PropertiesTable {
+public class EDP2PropertiesTable {
 
     /**
      * Index of the column in the {@link #visualPropertiesTable} containing the properties' editable

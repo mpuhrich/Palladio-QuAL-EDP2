@@ -9,4 +9,8 @@ public interface IFilterWizard extends IWizard {
     public IFilter getFilter();
 
     public void setSourceFromCaller(AbstractDataSource source, SelectFilterPage selectFilterPage);
+
+    public void setFilterFromCaller(IFilter filter);
+    
+    public void setName(String string);
 }

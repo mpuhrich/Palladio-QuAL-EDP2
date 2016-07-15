@@ -47,6 +47,8 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
     private static final String FILTER_CLASS_ATTRIBUTE = "class";
     private static final String FILTER_WIZARD_ATTRIBUTE = "wizard";
 
+    private static final String FILTER_NAME = "name";
+
     private final AbstractDataSource selectedSource;
     private IStatus selectionStatus;
     private final Status statusOK;
@@ -174,6 +176,10 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
                 o = e.createExecutableExtension(FILTER_CLASS_ATTRIBUTE);
                 if (((IFilter) o).canAccept(forSource)) {
                 	IFilterWizard wizard = (IFilterWizard) w;
+                	wizard.setFilterFromCaller((IFilter) o);
+                	if(e.getAttribute(FILTER_NAME) != null) {
+                	    wizard.setName(e.getAttribute(FILTER_NAME));
+                	}
                     availableFilters.add(wizard);
                 }
             } catch (final CoreException e1) {

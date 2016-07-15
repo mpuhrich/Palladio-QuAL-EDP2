@@ -139,15 +139,17 @@ class EDP2PropertiesTable {
                     final Rectangle rect = item.getBounds(editColumn);
                     if (rect.contains(pt)) {
                         final Class<?> propertyType = lastSelectedInput.getPropertyType(item.getText(labelColumn));
-                        if (ClassUtils.isAssignable(Boolean.class, propertyType, true)) {
+                        if (ClassUtils.isAssignable(propertyType, Boolean.class, true)) {
                             openBooleanDialog(index, myTable);
-                        } else if (ClassUtils.isAssignable(String.class, propertyType, true)) {
+                        } else if (ClassUtils.isAssignable(propertyType, String.class, true)) {
                             openTextDialog(index, myTable, String.class);
-                        } else if (ClassUtils.isAssignable(Integer.class, propertyType, true)) {
+                        } else if (ClassUtils.isAssignable(propertyType, Integer.class, true)) {
                             openTextDialog(index, myTable, Integer.class);
-                        } else if (ClassUtils.isAssignable(Float.class, propertyType, true)) {
+                        } else if (ClassUtils.isAssignable(propertyType, Float.class, true)) {
                             openTextDialog(index, myTable, Float.class);
-                        } else if (ClassUtils.isAssignable(Color.class, propertyType, true)) {
+                        } else if (ClassUtils.isAssignable(propertyType, Double.class, true)) {
+                            openTextDialog(index, myTable, Double.class);
+                        } else if (ClassUtils.isAssignable(propertyType, Color.class, true)) {
                             openColorAndTransparencyDialog(item, myTable);
                         } else if (ClassUtils.isAssignable(propertyType, EObject.class, true)) {
                             openEObjectDialog(item, myTable, propertyType, FILTER_LIST, ADDITIONAL_REFERENCES);
@@ -326,6 +328,10 @@ class EDP2PropertiesTable {
                         Object resultValue = null;
                         if (clazz == Float.class) {
                             resultValue = Float.parseFloat(text.getText());
+                        } else if (clazz == Double.class) {
+                            resultValue = Double.parseDouble(text.getText());
+                        } else if (clazz == Long.class) {
+                            resultValue = Long.parseLong(text.getText());
                         } else if (clazz == Integer.class) {
                             resultValue = Integer.parseInt(text.getText());
                         } else if (clazz == String.class) {

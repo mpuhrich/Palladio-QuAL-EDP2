@@ -26,6 +26,7 @@ import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
+import org.palladiosimulator.edp2.datastream.filter.IFilter;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamInput;
 import org.palladiosimulator.edp2.visualization.Activator;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
@@ -140,8 +141,10 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
                                 .getActiveWorkbenchWindow().getShell(), wizard);
                         wdialog.open();
                         if (wdialog.getReturnCode() == Window.OK) {
-                            AbstractFilter filter = wizard.getFilter();
+                            IFilter filter = wizard.getFilter();
                             if (filter != null) {
+                            	
+                            	selectedInput.setDataSource(filter);
                                 // TODO selectedInput.setSource(filter);
                                 refresh();
                                 updateEditorContents = true;
@@ -150,6 +153,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
                     }
                     if (updateEditorContents && editor != null) {
                         editor.updateEditorContents();
+                        editor.visualisationInputChanged(true);
                     }
                 }
             }
@@ -309,6 +313,7 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
             treeViewer.setInput(editor.getEditorInput());
             treeViewer.refresh();
             treeViewer.addSelectionChangedListener(this);
+            
         }
     }
 

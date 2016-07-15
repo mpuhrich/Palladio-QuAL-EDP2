@@ -10,6 +10,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
+import org.palladiosimulator.edp2.datastream.filter.IFilter;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 
 /**
@@ -36,7 +37,7 @@ public class FilterWizard extends Wizard implements INewWizard {
     /**
      * The adapter, which is to be created by the Wizard (passed reference from nested Wizard).
      */
-    AbstractFilter createdFilter;
+    IFilter createdFilter;
 
     public boolean isFinishable() {
         return finishable;
@@ -95,11 +96,11 @@ public class FilterWizard extends Wizard implements INewWizard {
         return finishable;
     }
 
-    public AbstractFilter getFilter() {
+    public IFilter getFilter() {
         return createdFilter;
     }
 
-    public void setFilter(AbstractFilter filter) {
+    public void setFilter(IFilter filter) {
         this.createdFilter = filter;
     }
 

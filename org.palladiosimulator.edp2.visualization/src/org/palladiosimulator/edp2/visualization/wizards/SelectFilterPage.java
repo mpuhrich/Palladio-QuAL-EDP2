@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
+import org.palladiosimulator.edp2.datastream.filter.IFilter;
 
 /**
  * @author Dominik Ernst, Florian Rosenthal
@@ -171,8 +172,9 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
             try {
                 w = e.createExecutableExtension(FILTER_WIZARD_ATTRIBUTE);
                 o = e.createExecutableExtension(FILTER_CLASS_ATTRIBUTE);
-                if (((AbstractFilter) o).getDataSource().isCompatibleWith(forSource.getMetricDesciption())) {
-                    availableFilters.add((IFilterWizard) w);
+                if (((IFilter) o).canAccept(forSource)) {
+                	IFilterWizard wizard = (IFilterWizard) w;
+                    availableFilters.add(wizard);
                 }
             } catch (final CoreException e1) {
                 LOGGER.log(Level.SEVERE, "Error in creating an Object referenced in an extension.");
@@ -244,7 +246,7 @@ public class SelectFilterPage extends WizardPage implements ISelectionChangedLis
         return pageStatus;
     }
 
-    public void setFilter(AbstractFilter filter) {
+    public void setFilter(IFilter filter) {
         LOGGER.log(Level.INFO, "Filter of FilterWizard set");
         FilterWizard wizard = (FilterWizard) getWizard();
         wizard.setFilter(filter);

@@ -27,10 +27,6 @@
             class="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory"
             id="org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInputFactory">
       </factory>
-      <factory
-            class="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterFactory"
-            id="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterFactory">
-      </factory>
    </extension>
 
    <extension
@@ -75,20 +71,7 @@
             factory="org.palladiosimulator.edp2.visualization.jfreechart.input.pie.executionresult.ExecutionResultPieChartVisualizationInputFactory"
             id="org.palladiosimulator.edp2.visualization.inputs.pie.executionresult.ExecutionResultPieChartVisualizationInput">
       </datasink>
-   </extension>
-   <extension
-         point="org.palladiosimulator.edp2.visualization.filter">
-         <filter
-               class="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
-               factory="org.palladiosimulator.edp2.filter.warmup.WarmUpFilterFactory"
-               id="org.palladiosimulator.edp2.filter.warmup.WarmUpFilter"
-               name="Warmup Filter"
-               wizard="org.palladiosimulator.edp2.visualization.DefaultFilterPropertiesWizard">
-            
-      	</filter>
-         
-   </extension>
-   
+   </extension>  
    
    <extension
          point="org.palladiosimulator.edp2.datastream.chainDescription">

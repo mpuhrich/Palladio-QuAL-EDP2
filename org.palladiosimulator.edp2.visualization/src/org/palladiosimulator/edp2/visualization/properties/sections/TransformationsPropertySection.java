@@ -311,8 +311,8 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     public void refresh() {
         if (editorExists()) {
             treeViewer.setInput(editor.getEditorInput());
-            treeViewer.refresh();
             treeViewer.addSelectionChangedListener(this);
+            treeViewer.refresh();
             
         }
     }
@@ -320,6 +320,10 @@ public class TransformationsPropertySection extends AbstractPropertySection impl
     @Override
     public void selectionChanged(final SelectionChangedEvent event) {
         final ITreeSelection selection = (ITreeSelection) event.getSelectionProvider().getSelection();
+        handleNewSelection(selection);
+    }
+
+    private void handleNewSelection(ITreeSelection selection) {
         if (selection.getFirstElement() instanceof IDataSource) {
             selectedAdapter = (IDataSource) selection.getFirstElement();
             this.transformationTable.setLastSelection(selectedAdapter.getConfiguration());

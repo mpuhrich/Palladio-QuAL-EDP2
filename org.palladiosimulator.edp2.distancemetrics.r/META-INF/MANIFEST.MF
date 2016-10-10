@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DistanceMetrics R
+Bundle-SymbolicName: org.palladiosimulator.edp2.distancemetrics.r;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.apache.log4j,
+ org.rosuda.rJavaAndRserve,
+ org.jscience,
+ org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.edp2.distancemetrics,
+ org.palladiosimulator.measurementframework,
+ org.palladiosimulator.edp2.distancemetrics.ui,
+ org.eclipse.swt
+Export-Package: org.palladiosimulator.edp2.distancemetrics.r

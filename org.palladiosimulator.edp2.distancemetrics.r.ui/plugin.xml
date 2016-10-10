@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.palladiosimulator.edp2.distancemetrics.ui">
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.r.ui.EDRDistanceRExtension">
+      </DistanceMetricExtension>
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.r.ui.DTWRExtension">
+      </DistanceMetricExtension>
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.r.ui.EuclideanDistanceRExtension">
+      </DistanceMetricExtension>
+   </extension>
+
+</plugin>

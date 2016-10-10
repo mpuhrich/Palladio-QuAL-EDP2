@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.palladiosimulator.edp2.distancemetrics.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.palladiosimulator.edp2.distancemetrics.ui" id="org.palladiosimulator.edp2.distancemetrics.ui" name="Distance Metrics"/>
+      </appinfo>
+      <documentation>
+         This Extension Point is necessary to integrate your own distance metrics in the UI.
+You have to create your own class e.g. MyDistanceMetricExtension which implements
+the interface DistanceMetricExtension. You can implement your own distance metric
+which implements the interface DistanceMetric and must be returned by your class
+MyDistanceMetricExtension by the method getDistanceMetric().
+All classes which extend this Extension Point will be loaded on start up of a new
+EDP2 instance. Your distance metric algorithm can then be selected in the tab Distance
+Metrics 
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="DistanceMetricExtension"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="DistanceMetricExtension">
+      <complexType>
+         <attribute name="DistanceMetricExtensionClass" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.palladiosimulator.edp2.distancemetrics.ui.DistanceMetricExtension"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         Version 1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         Please check the project org.palladiosimulator.edp2.distancemetrics.ui and org.palladiosimulator.edp2.distancemetrics for examples.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

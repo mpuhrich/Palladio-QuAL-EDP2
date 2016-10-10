@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.palladiosimulator.edp2.distancemetrics.ui" name="Distance Metrics" schema="schema/org.palladiosimulator.edp2.distancemetrics.ui.exsd"/>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.palladiosimulator.edp2.visualization.editors.AbstractEditor">
+         <propertyTab
+               afterTab="org.palladiosimulator.edp2.visualization.propertyTabDisplay"
+               category="sample"
+               id="org.palladiosimulator.edp2.visualization.propertyTabDistanceMetrics"
+               label="Distance Metrics">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.palladiosimulator.edp2.visualization.editors.AbstractEditor">
+         <propertySection
+               class="org.palladiosimulator.edp2.distancemetrics.ui.DistanceMetricsSection"
+               id="org.palladiosimulator.edp2.visualization.propertySectionDistanceMetrics"
+               tab="org.palladiosimulator.edp2.visualization.propertyTabDistanceMetrics">
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.distancemetrics.ui">
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.ui.extensions.EuclideanDistanceExtension">
+      </DistanceMetricExtension>
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.ui.extensions.DynamicTimeWarpingExtension"></DistanceMetricExtension>
+      <DistanceMetricExtension
+            DistanceMetricExtensionClass="org.palladiosimulator.edp2.distancemetrics.ui.extensions.EditDistanceOnRealSequenceExtension">
+      </DistanceMetricExtension>
+   </extension>
+
+</plugin>

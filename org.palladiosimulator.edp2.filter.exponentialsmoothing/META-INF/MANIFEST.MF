@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EDP2 Exponential Smoothing Filter
+Bundle-SymbolicName: org.palladiosimulator.edp2.filter.exponentialsmoothing
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.measurementframework
+Export-Package: org.palladiosimulator.edp2.filter.exponentialsmoothing

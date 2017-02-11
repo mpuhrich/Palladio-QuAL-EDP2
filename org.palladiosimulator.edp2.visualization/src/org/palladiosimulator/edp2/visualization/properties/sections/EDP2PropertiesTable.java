@@ -66,13 +66,10 @@ public class EDP2PropertiesTable {
     private static final ArrayList<EReference> ADDITIONAL_REFERENCES = new ArrayList<EReference>();
 
     static {
-        // FIXME hardcoded reference to SLOs. Remove dependency from EDP2 once fixed.
-
-        // FILTER_LIST.add(ServiceLevelObjectiveRepository.class);
-        // FILTER_LIST.add(ServiceLevelObjective.class);
-        //
-        // ADDITIONAL_REFERENCES.add(ServicelevelObjectivePackage.eINSTANCE
-        // .getServiceLevelObjectiveRepository_Servicelevelobjectives());
+        // FIXME hardcoded so that any EClass object is displayed and no references are filter.
+        // Extend EObject properties so that these information can be read from the property
+        // and then remove this static initializer.
+        FILTER_LIST.add(EObject.class);
     }
 
     private final Table myTable;

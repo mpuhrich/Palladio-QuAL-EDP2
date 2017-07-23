@@ -87,6 +87,9 @@ public class LocalDirectoryMeasurementsDaoFactory extends MeasurementsDaoFactory
     private String getAbsolutePathToUuidFile(final String uuid, final String suffix) {
         final URI resultURI = storageDirectory.appendSegment(uuid+"."+suffix);
         try {
+        	if (resultURI.isFile()) {
+        		return resultURI.toFileString();
+        	}
             return FileLocator.toFileURL(new URL(resultURI.toString())).getFile();
         } catch (final IOException e) {
             throw new RuntimeException("URL not valid for EDP2 repository");

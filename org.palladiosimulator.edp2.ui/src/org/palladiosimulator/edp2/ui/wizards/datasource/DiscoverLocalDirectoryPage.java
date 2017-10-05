@@ -225,7 +225,7 @@ public class DiscoverLocalDirectoryPage extends WizardPage {
         buttonUsage.addSelectionListener(new FileSystemButtonSelectionAdater(getShell(), textFileNameToLoad));
     }
 
-    Repository getRepositoryOnFinish() {
+    public Repository getRepositoryOnFinish() {
         return this.ldRepo;
     }
 }

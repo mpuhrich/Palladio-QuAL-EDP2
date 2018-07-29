@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -130,9 +131,39 @@ public class CustomJFreeChartComposite extends ChartComposite {
         }
     }
 
-    public CustomJFreeChartComposite(final Composite parent, final int style) {
-        super(parent, style);
-    }
+    /*
+     * The patching done in forceOverwriteDeclaredPrivateField and the constructor enables buffering which leads
+     * to a much faster rendering if multiple data rows are drawn simultaneously.
+     * 
+     * We overwrite the minimum/maximum draw widths/heights, because otherwise the image is weirdly scaled
+     * when using buffering. Currently, this is done via reflection which is not the most elegant solution
+     * but does not require us to additionally build and deploy JFreeChart/JFreeChart-SWT ourselves. 
+     */
+    private static final boolean USE_BUFFERS = true;
+	private static void forceOverwriteDeclaredPrivateField(String fieldName, Object object, int newValue) {
+		try {
+			final Field declaredField = ChartComposite.class.getDeclaredField(fieldName);
+			declaredField.setAccessible(true);
+			declaredField.setInt(object, newValue);
+			declaredField.setAccessible(false);
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			// TODO: move to logging
+			System.err.println("Could not force overwrite " + fieldName + " on " + object + " with " + newValue + ". "
+					+ "This is possibly due to a change in the version JFreeChart. If charts are not displayed correctly, "
+					+ "try to disable buffering via " + CustomJFreeChartComposite.class.getName() + ".USE_BUFFERS.");
+			e.printStackTrace();
+		}
+	}
+
+	public CustomJFreeChartComposite(final Composite parent, final int style) {
+		super(parent, style, null, USE_BUFFERS);
+		if (USE_BUFFERS) {
+			forceOverwriteDeclaredPrivateField("minimumDrawWidth", this, 0);
+			forceOverwriteDeclaredPrivateField("maximumDrawWidth", this, Integer.MAX_VALUE);
+			forceOverwriteDeclaredPrivateField("minimumDrawHeight", this, 0);
+			forceOverwriteDeclaredPrivateField("maximumDrawHeight", this, Integer.MAX_VALUE);
+		}
+	}
 
     @Override
     protected Menu createPopupMenu(final boolean arg0, final boolean arg1, final boolean arg2, final boolean arg3) {

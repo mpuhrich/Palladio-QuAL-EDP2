@@ -44,7 +44,6 @@ public class JFreeChartEditor extends AbstractEditor<JFreeChartVisualizationSing
         final JFreeChart chart = ((JFreeChartVisualizationInput) getVisualisationInput()).createChart();
         chart.setNotify(false);
         chartContainer.setChart(chart);
-        chartContainer.forceRedraw();
         chart.setNotify(true);
     }
 

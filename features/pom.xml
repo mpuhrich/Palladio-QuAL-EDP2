@@ -13,7 +13,7 @@
 	
 	<modules>
 		<!--<module>org.palladiosimulator.edp2.distancemetrics.feature</module>-->
-		<module>org.palladiosimulator.edp2.filter.addtional.feature</module>
+		<module>org.palladiosimulator.edp2.filter.additional.feature</module>
 		<module>org.palladiosimulator.edp2.feature</module>
 		<module>org.palladiosimulator.edp2.ui.feature</module>
 	</modules>

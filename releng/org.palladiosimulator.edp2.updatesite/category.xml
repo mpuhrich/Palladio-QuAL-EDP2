@@ -12,10 +12,10 @@
 	<feature url="features/org.palladiosimulator.edp2.ui.feature.source_1.0.1.qualifier.jar" id="org.palladiosimulator.edp2.ui.feature.source" version="1.0.1.qualifier">
 	   <category name="org.palladiosimulator.qual.source.category"/>
 	</feature>
-	<feature url="features/org.palladiosimulator.edp2.filter.addtional.feature_1.0.0.qualifier.jar" id="org.palladiosimulator.edp2.filter.addtional.feature" version="1.0.0.qualifier">
+	<feature url="features/org.palladiosimulator.edp2.filter.additional.feature_1.0.0.qualifier.jar" id="org.palladiosimulator.edp2.filter.additional.feature" version="1.0.0.qualifier">
 	   <category name="org.palladiosimulator.qual.category"/>
 	</feature>
-	<feature url="features/org.palladiosimulator.edp2.filter.addtional.feature.source_1.0.0.qualifier.jar" id="org.palladiosimulator.edp2.filter.addtional.feature.source" version="1.0.0.qualifier">
+	<feature url="features/org.palladiosimulator.edp2.filter.additional.feature.source_1.0.0.qualifier.jar" id="org.palladiosimulator.edp2.filter.additional.feature.source" version="1.0.0.qualifier">
 	   <category name="org.palladiosimulator.qual.source.category"/>
 	</feature>
 	<category-def name="org.palladiosimulator.qual.category" label="Quality Analysis Lab">

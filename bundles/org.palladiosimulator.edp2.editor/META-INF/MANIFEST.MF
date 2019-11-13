@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.edp2.models.ExperimentData.presentation.EDP2EditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.edp2.models.ExperimentData.presentation,
  org.palladiosimulator.edp2.models.Repository.presentation,
  org.palladiosimulator.edp2.models.measuringpoint.presentation

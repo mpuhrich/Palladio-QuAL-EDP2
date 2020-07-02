@@ -30,7 +30,8 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.edp2.visualization;bundle-version="5.0.0",
  org.palladiosimulator.edp2.visualization.jfreechart;bundle-version="1.0.0",
  org.palladiosimulator.edp2.repository.local;bundle-version="5.0.0",
- org.palladiosimulator.edp2.batchexport
+ org.palladiosimulator.edp2.batchexport,
+ org.eclipse.core.expressions;bundle-version="3.6.500"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.palladiosimulator.edp2.ui.EDP2UIPlugin
 Export-Package: org.palladiosimulator.edp2.ui,

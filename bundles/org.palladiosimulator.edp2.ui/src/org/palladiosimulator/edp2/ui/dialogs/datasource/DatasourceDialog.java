@@ -1,5 +1,17 @@
 package org.palladiosimulator.edp2.ui.dialogs.datasource;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.NotEnabledException;
+import org.eclipse.core.commands.NotHandledException;
+import org.eclipse.core.commands.common.NotDefinedException;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -22,7 +34,14 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.handlers.IHandlerService;
+import org.palladiosimulator.edp2.EDP2Plugin;
+import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.ui.commands.AddDataSourceHandler;
+import org.palladiosimulator.edp2.ui.commands.OpenDataSourceHandler;
 
 /**
  * Dialog to manage EDP2 repositories used as data sources.
@@ -34,11 +53,20 @@ public class DatasourceDialog extends TitleAreaDialog {
     private static String DIALOG_TITLE = "Create/Load the data source.";
 
     private Button addButton, removeButton, okButton, openButton;
-    private final Object input;
     private Repository selectedRepository;
+
     private TableViewer viewer;
     private final boolean buttonValidation;
-    private final String dialogTitle;
+    
+    private final Adapter repositoryListener = new AdapterImpl() {
+        @Override
+        public void notifyChanged(Notification msg) {
+            if (msg.getEventType() != Notification.REMOVING_ADAPTER) {
+                viewer.refresh();
+            }
+        }
+    };
+    
 
     /**
      * Create the dialog.
@@ -46,10 +74,8 @@ public class DatasourceDialog extends TitleAreaDialog {
      * @param input
      *            Initial set of EDP2 repositories to show
      * */
-    public DatasourceDialog(Shell parentShell, String dialogTitle, Object input, boolean makeButtonValidation) {
+    public DatasourceDialog(Shell parentShell, boolean makeButtonValidation) {
         super(parentShell);
-        this.dialogTitle = dialogTitle;
-        this.input = input;
         this.buttonValidation = makeButtonValidation;
 
         /**
@@ -67,7 +93,7 @@ public class DatasourceDialog extends TitleAreaDialog {
     @Override
     protected void configureShell(Shell newShell) {
         super.configureShell(newShell);
-        newShell.setText(dialogTitle);
+        newShell.setText(DIALOG_TITLE);
         newShell.addShellListener(new ShellAdapter() {
 
             /*
@@ -104,6 +130,12 @@ public class DatasourceDialog extends TitleAreaDialog {
         fd_addButton.top = new FormAttachment(0, 5);
         addButton.setLayoutData(fd_addButton);
         addButton.setText("Add..");
+        
+        var command = PlatformUI.getWorkbench()
+            .getActiveWorkbenchWindow()
+            .getService(ICommandService.class)
+            .getCommand(AddDataSourceHandler.COMMAND_ID);
+        (new ParameterizedCommandTriggerMenu(command)).registerWith(addButton, addButton::addSelectionListener);
 
         /** 'Remove' button */
         removeButton = new Button(container, SWT.NONE);
@@ -113,6 +145,11 @@ public class DatasourceDialog extends TitleAreaDialog {
         fd_removeButton.top = new FormAttachment(0, 35);
         removeButton.setLayoutData(fd_removeButton);
         removeButton.setText("Remove");
+        
+        removeButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
+            final Repository selectedRepository = (Repository) getResult();
+            RepositoryManager.removeRepository(EDP2Plugin.INSTANCE.getRepositories(), selectedRepository);
+        }));
 
         /** 'Open..' button */
         openButton = new Button(container, SWT.NONE);
@@ -123,6 +160,17 @@ public class DatasourceDialog extends TitleAreaDialog {
         fd_openButton.top = new FormAttachment(0, 65);
         openButton.setLayoutData(fd_openButton);
         openButton.setText("Open..");
+        
+        openButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
+            try {
+                PlatformUI.getWorkbench()
+                    .getActiveWorkbenchWindow()
+                    .getService(IHandlerService.class)
+                    .executeCommand(OpenDataSourceHandler.COMMAND_ID, null);
+            } catch (ExecutionException | NotDefinedException | NotEnabledException | NotHandledException e1) {
+                throw new RuntimeException(e1);
+            }
+        }));
 
         final Label separator = new Label(container, SWT.SEPARATOR | SWT.HORIZONTAL);
         final FormData fd_label = new FormData();
@@ -161,7 +209,9 @@ public class DatasourceDialog extends TitleAreaDialog {
 
             }
         });
-        viewer.setInput(input);
+        viewer.setInput(EDP2Plugin.INSTANCE.getRepositories().getAvailableRepositories());
+        
+        EDP2Plugin.INSTANCE.getRepositories().eAdapters().add(this.repositoryListener);
 
         setTitle(DIALOG_TITLE);
 
@@ -189,17 +239,17 @@ public class DatasourceDialog extends TitleAreaDialog {
             okButton.setEnabled(false);
             setErrorMessage("No Datasource selected!");
         }
-
-        // TODO check whether this code is needed
-        // if (selection instanceof MemoryDAOFactory) {
-        // MemoryDAOFactory memoryDAO = (MemoryDAOFactory) selection;
-        // setTitle("Description:");
-        // setMessage(memoryDAO.getDescription());
-        // }
     }
-
-    protected void setAddButtonAction(SelectionListener listener) {
-        addButton.addSelectionListener(listener);
+    
+    @Override
+    public boolean close() {
+        var closed = super.close();
+        if (closed) {
+            if (EDP2Plugin.INSTANCE.getRepositories().eAdapters().contains(repositoryListener)) {
+                EDP2Plugin.INSTANCE.getRepositories().eAdapters().remove(repositoryListener);
+            }
+        }
+        return closed;
     }
 
     protected void setRemoveButtonAction(SelectionListener listener) {
@@ -220,11 +270,7 @@ public class DatasourceDialog extends TitleAreaDialog {
         return new Point(400, 350);
     }
 
-    public Object getResult() {
+    public Repository getResult() {
         return selectedRepository;
-    }
-
-    protected void refresh() {
-        viewer.refresh();
     }
 }

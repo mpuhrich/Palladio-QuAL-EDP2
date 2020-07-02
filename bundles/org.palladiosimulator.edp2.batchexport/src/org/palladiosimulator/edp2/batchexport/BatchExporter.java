@@ -3,6 +3,8 @@ package org.palladiosimulator.edp2.batchexport;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -11,16 +13,18 @@ import java.util.List;
 import javax.measure.Measure;
 import javax.measure.quantity.Duration;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.URI;
 import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.dao.MeasurementsDao;
-import org.palladiosimulator.edp2.models.Repository.Repository;
-import org.palladiosimulator.edp2.util.MeasurementsUtility;
-import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.util.MeasurementsUtility;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
@@ -44,16 +48,14 @@ public class BatchExporter {
      * @param targetDirectory
      *            The target directory.
      */
-    public static void batchExport(final Repository repo, final String targetDirectory) {
+    public static void batchExport(final Repository repo, final URI targetDirectory) {
         for (ExperimentGroup group : repo.getExperimentGroups()) {
-            String groupDirectory = targetDirectory + File.separator
-                    + removeIllegalChars(group.getPurpose() + " " + group.getId()) + File.separator;
+            final URI groupDirectory = targetDirectory.appendSegment(
+            		removeIllegalChars(group.getPurpose() + " " + group.getId()));
             for (ExperimentSetting setting : group.getExperimentSettings()) {
-                final String settingDirectory = groupDirectory
-                        + removeIllegalChars(setting.getDescription() + setting.getId()) + File.separator;
+                final URI settingDirectory = groupDirectory.appendSegment(removeIllegalChars(setting.getDescription() + setting.getId()));
                 for (ExperimentRun run : setting.getExperimentRuns()) {
-                    final String runDirectory = settingDirectory
-                            + removeIllegalChars(run.getStartTime().toString() + " " + run.getId()) + File.separator;
+                    final URI runDirectory = settingDirectory.appendSegment(removeIllegalChars(run.getStartTime().toString() + " " + run.getId()));
                     for (Measurement measurement : run.getMeasurement()) {
                         measurementToCsv(runDirectory, measurement);
                     }
@@ -71,7 +73,7 @@ public class BatchExporter {
      *            The measurement written to CSV.
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    private static void measurementToCsv(final String directory, Measurement measurement) {
+    private static void measurementToCsv(final URI directory, Measurement measurement) {
         final BaseMetricDescription[] mds = MetricDescriptionUtility
                 .toBaseMetricDescriptions(measurement.getMeasuringType().getMetric());
         int timeIdx = 0;
@@ -91,10 +93,9 @@ public class BatchExporter {
         dataSeriesList = new ArrayList<DataSeries>(dataSeriesList);
         dataSeriesList.add(dataSeriesList.remove(timeIdx));
         try {
-            File file = new File(directory
-                    + removeIllegalChars(measurement.getMeasuringType().getMeasuringPoint().getStringRepresentation()
-                            + " " + measurement.getMeasuringType().getMetric().getName())
-                    + ".csv");
+        	var fileUri = directory.appendSegment(removeIllegalChars(measurement.getMeasuringType().getMeasuringPoint().getStringRepresentation()
+                            + " " + measurement.getMeasuringType().getMetric().getName())).appendFileExtension("csv");
+            var file = urlToFile(FileLocator.toFileURL(new URL(fileUri.toString())));
             file.getParentFile().mkdirs();
             FileWriter writer = new FileWriter(file);
             String cols = "";
@@ -146,4 +147,14 @@ public class BatchExporter {
     private static String removeIllegalChars(String input) {
         return input.replaceAll("[^a-zA-Z0-9\\._]+", "_");
     }
+    
+    private static File urlToFile(URL url) {
+        File file = null;
+        try {
+          file = new File(url.toURI());
+        } catch(URISyntaxException e) {
+          file = new File(url.getPath());
+        }
+        return file;
+    } 
 }

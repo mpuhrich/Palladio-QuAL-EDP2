@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="createdatasourcewizard" name="Create Datasource Wizard" schema="schema/org.palladiosimulator.edp2.ui.createdatasourcewizard.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <category
@@ -29,16 +30,42 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
-            defaultHandler="org.palladiosimulator.edp2.ui.commands.OpenDataSourceHandler"
-            description="Opens or creates a new data source and adds it to the experiment view."
-            id="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
-            name="Add Data Source">
+            defaultHandler="org.palladiosimulator.edp2.ui.commands.AddDataSourceHandler"
+            description="Creates a new data source and adds it to the experiment view."
+            id="org.palladiosimulator.edp2.ui.commands.AddDataSource"
+            name="New Data Source">
+         <commandParameter
+               id="org.palladiosimulator.edp2.ui.commands.AddDataSource.datasourcetype"
+               name="datasourcetype"
+               optional="false"
+               values="org.palladiosimulator.edp2.ui.commands.AddDataSourceHandler">
+         </commandParameter>
       </command>
       <category
             id="org.palladiosimulator.edp2.ui.category.dataSources"
             name="Data Sources">
       </category>
    </extension>
+     <extension
+           point="org.eclipse.ui.commands">
+        <command
+              categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+              defaultHandler="org.palladiosimulator.edp2.ui.commands.OpenDataSourceHandler"
+              description="Opens an existing data source and adds it to the experiment view."
+              id="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
+              name="Open Data Source">
+           <commandParameter
+                 id="org.palladiosimulator.edp2.ui.commands.AddDataSource.datasourcetype"
+                 name="datasourcetype"
+                 optional="false"
+                 values="org.palladiosimulator.edp2.ui.commands.AddDataSourceHandler">
+           </commandParameter>
+        </command>
+        <category
+              id="org.palladiosimulator.edp2.ui.category.dataSources"
+              name="Data Sources">
+        </category>
+     </extension>
    <extension
          point="org.eclipse.ui.commands">
       <command
@@ -81,16 +108,30 @@
             name="Data Sources">
       </category>
    </extension>
+     <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+            defaultHandler="org.palladiosimulator.edp2.ui.commands.BatchExportHandler"
+            description="Batch exports all results in a data source."
+            id="org.palladiosimulator.edp2.ui.commands.BatchExporter"
+            name="Export Repository to CSV files">
+      </command>
+      <category
+            id="org.palladiosimulator.edp2.ui.category.dataSources"
+            name="Data Sources">
+      </category>
+   </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="true"
             locationURI="toolbar:org.palladiosimulator.edp2.ui.views.navigator">
          <command
-               commandId="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
+               commandId="org.palladiosimulator.edp2.ui.toolbar.adddatasource"
                icon="icons/add_datasource.gif"
-               label="Open..."
-               style="push">
+               label="Add..."
+               style="pulldown">
          </command>
          <command
                commandId="org.palladiosimulator.edp2.ui.commands.CloseDataSource"
@@ -116,6 +157,11 @@
                label="Collapse All..."
                style="push">
          </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            class="org.palladiosimulator.edp2.ui.views.navigator.AddDataSourceMenu"
+            locationURI="menu:org.palladiosimulator.edp2.ui.toolbar.adddatasource">
       </menuContribution>
    </extension>
    <extension
@@ -154,17 +200,24 @@
       </propertySections>
    </extension>
      <extension
-         point="org.eclipse.ui.commands">
-      <command
-            categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
-            defaultHandler="org.palladiosimulator.edp2.ui.commands.BatchExportHandler"
-            description="Batch exports all results in a data source."
-            id="org.palladiosimulator.edp2.ui.commands.BatchExporter"
-            name="Export Repository to CSV files">
-      </command>
-      <category
-            id="org.palladiosimulator.edp2.ui.category.dataSources"
-            name="Data Sources">
-      </category>
-   </extension>
+           point="org.eclipse.ui.commands">
+        <command
+              categoryId="org.palladiosimulator.edp2.ui.category.dataSources"
+              defaultHandler="org.palladiosimulator.edp2.ui.commands.AddDataSourceDropDownHandler"
+              description="Select Data Source type to create from drop down menu"
+              id="org.palladiosimulator.edp2.ui.toolbar.adddatasource"
+              name="New Data Source">
+        </command>
+        <category
+              id="org.palladiosimulator.edp2.ui.category.dataSources"
+              name="Data Sources">
+        </category>
+     </extension>
+     <extension
+           point="org.palladiosimulator.edp2.ui.createdatasourcewizard">
+        <datasourcefactory
+              class="org.palladiosimulator.edp2.ui.wizards.datasource.LocalMemoryRepositoryContribution"
+              name="Local Memory Repository">
+        </datasourcefactory>
+     </extension>
 </plugin>

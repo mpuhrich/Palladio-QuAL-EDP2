@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Palladio Local Directory Repository UI Contribution
+Bundle-SymbolicName: org.palladiosimulator.edp2.repository.local.ui;singleton:=true
+Bundle-Version: 4.2.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.edp2.repository.local.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.palladiosimulator.edp2,
+ org.eclipse.jface,
+ org.palladiosimulator.edp2.repository.local,
+ org.eclipse.core.databinding,
+ org.eclipse.jface.databinding,
+ org.eclipse.emf.databinding,
+ org.palladiosimulator.edp2.ui,
+ org.eclipse.core.databinding.property;bundle-version="1.7.100",
+ org.eclipse.core.databinding.beans

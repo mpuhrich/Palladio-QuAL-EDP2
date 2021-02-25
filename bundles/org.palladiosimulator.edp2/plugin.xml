@@ -21,6 +21,13 @@
             genModel="model/EDP2.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated EDP2 -->
+      <parser
+            type="edp2repository"
+            class="org.palladiosimulator.edp2.models.Repository.util.RepositoryResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated EDP2 -->
       <package

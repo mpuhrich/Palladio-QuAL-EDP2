@@ -3,7 +3,7 @@
  */
 package org.palladiosimulator.edp2.repository.local.dao.internal.visitors;
 
-import org.palladiosimulator.edp2.impl.resource.EmfModelXMIResourceFactoryImpl;
+import org.palladiosimulator.edp2.EDP2Constants;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 
@@ -16,6 +16,6 @@ import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitc
 public class EmfmodelExtensionSwitch extends ExperimentDataSwitch<String> {
     @Override
     public String caseExperimentGroup(final ExperimentGroup object) {
-        return EmfModelXMIResourceFactoryImpl.EDP2_EXPERIMENT_GROUP_EXTENSION;
+        return EDP2Constants.EDP2_EXPERIMENT_GROUP_EXTENSION;
     }
 }

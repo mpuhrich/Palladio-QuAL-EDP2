@@ -6,7 +6,7 @@
       <!-- @generated localrepository -->
       <package
             uri="http://org.palladiosimulator.edp2/LocalRepository/1.0"
-            class="org.palladiosimulator.edp2.local.localPackage"
+            class="org.palladiosimulator.edp2.local.LocalPackage"
             genModel="model/localrepository.genmodel"/>
    </extension>
 

@@ -14,5 +14,6 @@ Require-Bundle: org.eclipse.emf.mwe2.launch,
  org.eclipse.emf.codegen.ecore;bundle-version="2.19.0",
  de.uka.ipd.sdq.identifier;bundle-version="4.2.0",
  org.palladiosimulator.metricspec;bundle-version="4.2.0"
-Import-Package: org.apache.commons.logging,
+Import-Package: com.google.common.util.concurrent.internal,
+ org.apache.commons.logging,
  org.apache.log4j

@@ -3,6 +3,9 @@
  */
 package org.palladiosimulator.edp2.dao;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 
 /**
@@ -14,11 +17,22 @@ import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 public interface Edp2Dao {
     /**
      * Opens the connection to the data store and makes it's data accessible.
-     * 
-     * @throws DataNotAccessibleException
-     *             Errors when initializing the data access.
      */
-    public void open() throws DataNotAccessibleException;
+    public void open(DiagnosticChain diagnosticChain);
+    
+    /**
+     * @throws DataNotAccessibleException
+     * 
+     * @deprecated use {@link #open(DiagnosticChain)} instead.
+     */
+    @Deprecated
+    default void open() throws DataNotAccessibleException {
+        var diag = new BasicDiagnostic(); 
+        open(diag);
+        if (diag.getSeverity() > Diagnostic.WARNING) {
+            throw new DataNotAccessibleException(diag.toString(), null);
+        }
+    }
 
     /**
      * Checks if the data store which is accessed by this DAO is available and can be opened using
@@ -26,7 +40,19 @@ public interface Edp2Dao {
      * 
      * @return <code>true</code> if the data store is available, false otherwise.
      */
-    public boolean canOpen();
+    public boolean canOpen(DiagnosticChain diagnosticChain);
+    
+    /**
+     * Checks if the data store which is accessed by this DAO is available and can be opened using
+     * {@link open}.
+     * 
+     * Delegates to {@link #canOpen(DiagnosticChain)}.
+     * 
+     * @return <code>true</code> if the data store is available, false otherwise.
+     */
+    default boolean canOpen() {
+        return canOpen(new BasicDiagnostic());
+    }
 
     /**
      * Closes the connection to the data store. If necessary, data is persisted before closing.

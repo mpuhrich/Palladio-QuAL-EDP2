@@ -7,6 +7,7 @@ import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.AbstractMeasurementsDaoImpl;
@@ -37,8 +38,8 @@ public class MemoryBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends Abst
      * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
      */
     @Override
-    public synchronized void open() throws DataNotAccessibleException {
-        super.open();
+    public synchronized void open(DiagnosticChain diagnosticChain) {
+        super.open(diagnosticChain);
         setOpen();
     }
 

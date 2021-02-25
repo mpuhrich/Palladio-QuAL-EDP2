@@ -12,6 +12,9 @@ import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.net4j.util.io.ExtendedDataInputStream;
 import org.eclipse.net4j.util.io.ExtendedDataOutputStream;
 import org.eclipse.net4j.util.io.ExtendedIOUtil;
@@ -43,32 +46,36 @@ public class FileBinaryMeasurementsDaoImpl<V, Q extends Quantity> extends FileAc
     private Unit<Q> unit;
 
     @Override
-    public void open() throws DataNotAccessibleException {
-        super.open();
+    public void open(DiagnosticChain diagnostics) {
+        super.open(diagnostics);
+        var localDiagnostic = new BasicDiagnostic();
         if (unit == null) {
             final String msg = "A unit must be set before a call to open() is made.";
             LOGGER.log(Level.SEVERE, msg);
-            throw new IllegalStateException(msg, null);
+            localDiagnostic.add(new BasicDiagnostic(getClass().getName(), Diagnostic.ERROR, msg, null));
         }
         if (binaryRepresentation == null) {
             final String msg = "A binary representation must be set before a call to open() is made.";
             LOGGER.log(Level.SEVERE, msg);
-            throw new IllegalStateException(msg, null);
+            localDiagnostic.add(new BasicDiagnostic(getClass().getName(), Diagnostic.ERROR, msg, null));
         }
         if (serializer == null) {
             final String msg = "Initialization must have failed. Serializer is null.";
             LOGGER.log(Level.SEVERE, msg);
-            throw new IllegalStateException(msg, null);
+            localDiagnostic.add(new BasicDiagnostic(getClass().getName(), Diagnostic.ERROR, msg, null));
         }
-        try {
-            this.backgroundMemoryList = new BackgroundMemoryListImpl<V, Q>(resourceFile.getAbsolutePath(), serializer,
-                    binaryRepresentation, unit);
-            setOpen();
-        } catch (final IOException ioe) {
-            final String msg = "Error accessing file on background storage.";
-            LOGGER.log(Level.SEVERE, msg, ioe);
-            throw new DataNotAccessibleException(msg, ioe);
+        if (localDiagnostic.getSeverity() == Diagnostic.OK) {
+            try {
+                this.backgroundMemoryList = new BackgroundMemoryListImpl<V, Q>(resourceFile.getAbsolutePath(), serializer,
+                        binaryRepresentation, unit);
+                setOpen();
+            } catch (final IOException ioe) {
+                final String msg = "Error accessing file on background storage.";
+                LOGGER.log(Level.SEVERE, msg, ioe);
+                localDiagnostic.add(new BasicDiagnostic(getClass().getName(), Diagnostic.ERROR, msg, null));
+            }
         }
+        diagnostics.merge(localDiagnostic);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.palladiosimulator.edp2.models.Repository.impl;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.MetaDaoImpl;
@@ -27,8 +28,8 @@ public class LocalMemoryRepositoryImpl extends LocalMemoryRepositoryImplGen {
              * @see org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl#open()
              */
             @Override
-            public synchronized void open() throws DataNotAccessibleException {
-                super.open();
+            public synchronized void open(DiagnosticChain diagnosticChain) {
+                super.open(diagnosticChain);
                 this.setOpen();
             }
 

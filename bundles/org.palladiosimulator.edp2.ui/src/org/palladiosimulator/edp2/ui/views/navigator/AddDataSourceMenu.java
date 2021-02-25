@@ -22,7 +22,7 @@ public class AddDataSourceMenu extends ExtensionContributionFactory {
 	@Override
 	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
 	    var cmdService = serviceLocator.getService(ICommandService.class);
-	    var cmd = cmdService.getCommand("org.palladiosimulator.edp2.ui.commands.OpenDataSource");
+	    var cmd = cmdService.getCommand("org.palladiosimulator.edp2.ui.commands.AddDataSource");
 	    
 	    IParameter dsTypeParam; 
 	    Set<Object> dsTypes;

@@ -3,7 +3,7 @@
 <schema targetNamespace="org.palladiosimulator.edp2.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.palladiosimulator.edp2.ui" id="createdatasourcewizard" name="Create Datasource Wizard"/>
+         <meta.schema plugin="org.palladiosimulator.edp2.ui" id="org.palladiosimulator.edp2.ui.createdatasourcewizard" name="Create Datasource Wizard"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]

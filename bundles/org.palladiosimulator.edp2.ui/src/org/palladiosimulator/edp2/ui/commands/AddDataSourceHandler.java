@@ -1,7 +1,8 @@
 package org.palladiosimulator.edp2.ui.commands;
 
+import java.io.IOException;
 import java.util.Map;
-import java.util.function.Function;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -9,6 +10,8 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IParameterValues;
+import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -31,15 +34,30 @@ public class AddDataSourceHandler extends AbstractHandler implements IHandler, I
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		var datasourceName = event.getParameter(DATASOURCE_TYPE);
-		var ext = ExtensionHelper.<FactoryWizardContribution<Repository>>getExecutableExtension(
+		
+		@SuppressWarnings("unchecked")
+        var ext = (FactoryWizardContribution<Repository>) ExtensionHelper.getExecutableExtension(
 				EDP2UIPlugin.CREATE_DATASOURCE_WIZARD_EXTENSIONPOINT_ID,
 				EDP2UIPlugin.CREATE_DATASOURCE_WIZARD_EXTENSION_ELEMENT,
 				EDP2UIPlugin.CREATE_DATASOURCE_WIZARD_CLASS_ATTRIBUTE,
-				EDP2UIPlugin.CREATE_DATASOURCE_WIZARD_NAME_ATTRIBUTE, datasourceName);
+				EDP2UIPlugin.CREATE_DATASOURCE_WIZARD_NAME_ATTRIBUTE, datasourceName,
+				FactoryWizardContribution.class);
+		
 		var wizard = ext.getFactoryWizard();
 		if (wizard.isEmpty()
 				|| (new WizardDialog(HandlerUtil.getActiveShell(event), wizard.get()).open() == Dialog.OK)) {
-			RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), ext.createElement());
+		    Optional<Repository> repo;
+            try {
+                repo = ext.createElement(HandlerUtil.getActiveShell(event));
+            } catch (IOException e) {
+                throw new ExecutionException("An error occured during command execution.", e);
+            }
+            repo.ifPresent(r -> {
+                var diag = RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), r);
+                if (diag.getSeverity() > Diagnostic.OK) {
+                    DiagnosticDialog.openProblem(HandlerUtil.getActiveShell(event), "", "", diag);
+                }
+            });
 		}
 		return null;
 	}

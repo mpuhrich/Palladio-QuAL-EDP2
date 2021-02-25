@@ -134,6 +134,12 @@
                style="pulldown">
          </command>
          <command
+               commandId="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
+               icon="icons/data_source_open.gif"
+               label="Open existing..."
+               style="push">
+         </command>
+         <command
                commandId="org.palladiosimulator.edp2.ui.commands.CloseDataSource"
                icon="icons/dellete_datasource.gif"
                label="Close..."

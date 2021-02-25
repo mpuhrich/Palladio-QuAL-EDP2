@@ -10,7 +10,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.edp2,
  org.palladiosimulator.edp2.impl,
- org.palladiosimulator.edp2.impl.resource,
  org.palladiosimulator.edp2.models.ExperimentData,
  org.palladiosimulator.edp2.models.ExperimentData.impl,
  org.palladiosimulator.edp2.models.ExperimentData.util,

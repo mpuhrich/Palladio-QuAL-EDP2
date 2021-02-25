@@ -10,7 +10,7 @@
       <!-- @generated localrepository -->
       <factory
             uri="http://org.palladiosimulator.edp2/LocalRepository/1.0"
-            class="org.palladiosimulator.edp2.local.provider.localItemProviderAdapterFactory"
+            class="org.palladiosimulator.edp2.local.provider.LocalItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,7 +23,6 @@
       <!-- @generated localrepository -->
       <extender
             uri="http://palladiosimulator.org/EDP2/Repository/1.0"
-            class="org.palladiosimulator.edp2.local.provider.localItemProviderAdapterFactory$RepositoryChildCreationExtender"/>
+            class="org.palladiosimulator.edp2.local.provider.LocalItemProviderAdapterFactory$RepositoryChildCreationExtender"/>
    </extension>
-
 </plugin>

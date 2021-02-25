@@ -3,6 +3,7 @@
  */
 package org.palladiosimulator.edp2.dao.impl;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.palladiosimulator.edp2.dao.Edp2Dao;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 
@@ -25,7 +26,7 @@ public abstract class Edp2DaoImpl implements Edp2Dao {
      * 
      * @see org.palladiosimulator.edp2.Edp2Dao#open()
      */
-    public synchronized void open() throws DataNotAccessibleException {
+    public synchronized void open(DiagnosticChain diagnosticChain) {
         if (isDeleted()) {
             throw new IllegalStateException("Data has already been deleted.");
         }
@@ -113,7 +114,7 @@ public abstract class Edp2DaoImpl implements Edp2Dao {
      * @see org.palladiosimulator.edp2.Edp2Dao#canOpen()
      */
     @Override
-    public boolean canOpen() {
+    public boolean canOpen(DiagnosticChain diagnosticChain) {
         if (!open && !deleted) {
             return true;
         }

@@ -52,4 +52,20 @@ Workflow {
             src = "platform:/resource/org.palladiosimulator.edp2/src"
         }
     }   
+    
+    component = EcoreGenerator {
+        generateCustomClasses = false
+        generateEdit = true
+        generateEditor = false
+        genModel = "platform:/resource/org.palladiosimulator.edp2.repository.local/model/localrepository.genmodel"
+        srcPath = "platform:/resource/org.palladiosimulator.edp2.repository.local/src"
+        srcPath = "platform:/resource/org.palladiosimulator.edp2.repository.local/src-gen"
+    }
+    
+    component = GapPatternPostProcessor {
+        folders = {
+            gen = "platform:/resource/org.palladiosimulator.edp2.repository.local/src-gen"
+            src = "platform:/resource/org.palladiosimulator.edp2.repository.local/src"
+        }
+    }   
 }

@@ -6,6 +6,8 @@ package org.palladiosimulator.edp2.impl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.Repository;
@@ -16,7 +18,10 @@ import org.palladiosimulator.edp2.models.Repository.RepositoryFactory;
  *
  * @author groenda, Sebastian Lehrig
  *
+ * @deprecated Please use the service-based {@link org.palladiosimulator.edp2.RepositoryManager}
+ *             instead.
  */
+@Deprecated
 public class RepositoryManager {
     /** Logger for this class. */
     private static final Logger LOGGER = Logger.getLogger(RepositoryManager.class.getCanonicalName());
@@ -33,15 +38,30 @@ public class RepositoryManager {
      * @param newRepo
      *            The new repository to add.
      */
-    public static void addRepository(final Repositories repos, final Repository newRepo) {
-        repos.getAvailableRepositories().add(newRepo);
-        if (newRepo.canOpen()) {
-            try {
-                newRepo.open();
-            } catch (final DataNotAccessibleException e) {
-                LOGGER.log(Level.WARNING, "Could not open repository after adding it to repositories.", e);
+    public static Diagnostic addRepository(final Repositories repos, final Repository newRepo) {
+        var diagnostics = new BasicDiagnostic(RepositoryManager.class.getName(), Diagnostic.OK, "No problems during import", null);
+        if (repos.getAvailableRepositories().stream().noneMatch(repo -> repo.getId().equals(newRepo.getId()))) {
+            repos.getAvailableRepositories().add(newRepo);
+            
+            if (newRepo.canOpen(diagnostics)) {
+                newRepo.open(diagnostics);
             }
+        } else {
+            diagnostics = new BasicDiagnostic(RepositoryManager.class.getName(), Diagnostic.WARNING,
+                    "The repository was not added, as a repository with the same ID already existed.", null);
         }
+        
+        if (diagnostics.getSeverity() == Diagnostic.ERROR) {
+            var result = new BasicDiagnostic(RepositoryManager.class.getName(), Diagnostic.ERROR, "The repository could not be opened.", null);
+            result.merge(diagnostics);
+            return result;
+        } else if (diagnostics.getSeverity() == Diagnostic.WARNING) {
+            var result = new BasicDiagnostic(RepositoryManager.class.getName(), Diagnostic.WARNING, "The repository could be opened. However, there were problems.", null);
+            result.merge(diagnostics);
+            return result;
+        }
+        
+        return diagnostics;
     }
 
     /**

@@ -6,6 +6,7 @@
  */
 package org.palladiosimulator.edp2.models.Repository.impl;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.dao.MetaDao;
@@ -64,8 +65,8 @@ public abstract class RepositoryImpl extends RepositoryImplGen {
     }
 
     @Override
-    public boolean canOpen() {
-    	return (this.metaDao != null) && this.metaDao.canOpen();
+    public boolean canOpen(DiagnosticChain diagnosticChain) {
+    	return (this.metaDao != null) && this.metaDao.canOpen(diagnosticChain);
     }
 
     @Override
@@ -93,9 +94,9 @@ public abstract class RepositoryImpl extends RepositoryImplGen {
     }
 
     @Override
-    public void open() throws DataNotAccessibleException {
+    public void open(DiagnosticChain diagnostics) {
         if (this.metaDao != null) {
-            this.metaDao.open();
+            this.metaDao.open(diagnostics);
         }
     }
 

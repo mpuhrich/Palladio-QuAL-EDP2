@@ -19,5 +19,7 @@ Workflow {
         directory = "platform:/resource/org.palladiosimulator.edp2/src-gen"
         directory = "platform:/resource/org.palladiosimulator.edp2.edit/src-gen"
         directory = "platform:/resource/org.palladiosimulator.edp2.editor/src-gen"
+        directory = "platform:/resource/org.palladiosimulator.edp2.repository.local/src-gen"
+        directory = "platform:/resource/org.palladiosimulator.edp2.repository.local.edit/src-gen"
     }
 }

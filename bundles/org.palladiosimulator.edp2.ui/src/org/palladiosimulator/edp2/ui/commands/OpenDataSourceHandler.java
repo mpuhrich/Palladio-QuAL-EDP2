@@ -51,7 +51,8 @@ public class OpenDataSourceHandler extends AbstractHandler {
                     BasicDiagnostic resultComposite = new BasicDiagnostic();
                     repos.forEach(repo -> resultComposite.add(RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), repo)));
                     if (resultComposite.getSeverity() > Diagnostic.OK) {
-                        DiagnosticDialog.openProblem(HandlerUtil.getActiveShell(event), "", "", resultComposite);
+                        var message = String.format("There were %s opening the selected EDP2 repositories", resultComposite.getSeverity() > Diagnostic.WARNING ? "errors" : "warnings");
+                        DiagnosticDialog.openProblem(HandlerUtil.getActiveShell(event), "EDP2 Repository Manager", message, resultComposite.getChildren().size() > 1 ? resultComposite : resultComposite.getChildren().get(0));
                     }
                     return true;
                 }

@@ -67,5 +67,12 @@ Workflow {
             gen = "platform:/resource/org.palladiosimulator.edp2.repository.local/src-gen"
             src = "platform:/resource/org.palladiosimulator.edp2.repository.local/src"
         }
+    }  
+    
+    component = GapPatternPostProcessor {
+        folders = {
+            gen = "platform:/resource/org.palladiosimulator.edp2.repository.local.edit/src-gen"
+            src = "platform:/resource/org.palladiosimulator.edp2.repository.local.edit/src"
+        }
     }   
 }

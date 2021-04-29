@@ -35,6 +35,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.palladiosimulator.edp2.ui.EDP2UIPlugin
 Export-Package: org.palladiosimulator.edp2.ui,
+ org.palladiosimulator.edp2.ui.commands,
  org.palladiosimulator.edp2.ui.dialogs,
  org.palladiosimulator.edp2.ui.dialogs.datasource,
  org.palladiosimulator.edp2.ui.views.navigator,

@@ -54,12 +54,6 @@
               description="Opens an existing data source and adds it to the experiment view."
               id="org.palladiosimulator.edp2.ui.commands.OpenDataSource"
               name="Open Data Source">
-           <commandParameter
-                 id="org.palladiosimulator.edp2.ui.commands.AddDataSource.datasourcetype"
-                 name="datasourcetype"
-                 optional="false"
-                 values="org.palladiosimulator.edp2.ui.commands.AddDataSourceHandler">
-           </commandParameter>
         </command>
         <category
               id="org.palladiosimulator.edp2.ui.category.dataSources"

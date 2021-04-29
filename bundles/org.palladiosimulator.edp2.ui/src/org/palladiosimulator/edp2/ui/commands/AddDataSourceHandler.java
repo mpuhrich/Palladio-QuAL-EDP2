@@ -52,12 +52,15 @@ public class AddDataSourceHandler extends AbstractHandler implements IHandler, I
             } catch (IOException e) {
                 throw new ExecutionException("An error occured during command execution.", e);
             }
-            repo.ifPresent(r -> {
-                var diag = RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), r);
+            if (repo.isPresent()) {
+                var diag = RepositoryManager.addRepository(EDP2Plugin.INSTANCE.getRepositories(), repo.get());
                 if (diag.getSeverity() > Diagnostic.OK) {
                     DiagnosticDialog.openProblem(HandlerUtil.getActiveShell(event), "", "", diag);
                 }
-            });
+                if (diag.getSeverity() < Diagnostic.ERROR) {
+                    return repo.get();
+                }
+            }
 		}
 		return null;
 	}

@@ -9,15 +9,19 @@ import java.util.logging.Logger;
 import org.eclipse.core.databinding.observable.map.IMapChangeListener;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.map.MapChangeEvent;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider.StyledLabelProvider;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.IStyledLabelProvider;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
@@ -30,13 +34,10 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
-import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.ExperimentData.util.ExperimentDataSwitch;
 import org.palladiosimulator.edp2.models.Repository.Repository;
-import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.util.RepositorySwitch;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
-import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -49,17 +50,8 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
     private static final String EMPTY_SENSOR_COLOR = "Empty Sensor Color";
 
-    private static final ComposedAdapterFactory COMPOSED_FACTORY = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-
-    private static final AdapterFactoryLabelProvider LABEL_PROVIDER;
-
     static {
         JFaceResources.getColorRegistry().put(EMPTY_SENSOR_COLOR, new RGB(150, 150, 150));
-        COMPOSED_FACTORY.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
-        COMPOSED_FACTORY.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
-        COMPOSED_FACTORY.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
-        COMPOSED_FACTORY.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
-        LABEL_PROVIDER = new AdapterFactoryLabelProvider(COMPOSED_FACTORY);
     }
 
     private final IMapChangeListener mapChangeListener = new IMapChangeListener() {
@@ -74,7 +66,9 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
             }
         }
     };
-
+    
+    private AdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+    
     public NavigatorTreeLabelProviderImpl(final IObservableMap[] attributeMaps) {
         for (int i = 0; i < attributeMaps.length; i++) {
             attributeMaps[i].addMapChangeListener(this.mapChangeListener);
@@ -155,9 +149,15 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
 
     @Override
     public void update(final ViewerCell cell) {
-        if (cell.getElement() instanceof EObject) {
+        var styledLabelProvider = new StyledLabelProvider(adapterFactory, getViewer());
+        StyledString styledString = null;
+        var emfStyledLabelProvider = (IItemStyledLabelProvider)adapterFactory.adapt(cell.getElement(), IItemStyledLabelProvider.class);
+        // For legacy reasons, we check wheter a emf styled label provider is registered, if so we
+        // use the JFace adapter, else we use our fallback logic
+        if (emfStyledLabelProvider != null) {
+            styledString = styledLabelProvider.getStyledText(cell.getElement());
+        } else if (cell.getElement() instanceof EObject) {
             final EObject eObject = (EObject) cell.getElement();
-            StyledString styledString = null;
             styledString = new ExperimentDataSwitch<StyledString>() {
 
                 @Override
@@ -309,7 +309,7 @@ public class NavigatorTreeLabelProviderImpl extends StyledCellLabelProvider {
                         "Could not create label for " + eObject);
             } else {
                 cell.setText(styledString.getString());
-                cell.setImage(LABEL_PROVIDER.getImage(eObject));
+                cell.setImage((Image) styledLabelProvider.getImage(eObject));
                 cell.setStyleRanges(styledString.getStyleRanges());
             }
         }

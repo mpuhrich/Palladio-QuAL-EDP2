@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="parquet" nsURI="http://org.palladiosimulator.edp2/ParquetRepository/1.0"
+    nsPrefix="parquet">
+  <eClassifiers xsi:type="ecore:EClass" name="ParquetRepository" eSuperTypes="../../org.palladiosimulator.edp2/model/EDP2.ecore#//Repository/Repository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFolder" ordered="false"
+        lowerBound="1" eType="#//URI" defaultValueLiteral="."/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"/>
+</ecore:EPackage>

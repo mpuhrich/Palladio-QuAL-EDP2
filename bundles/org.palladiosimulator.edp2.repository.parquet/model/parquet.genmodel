@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.palladiosimulator.edp2.repository.parquet/src-gen"
+    creationIcons="false" editDirectory="/org.palladiosimulator.edp2.repository.parquet.edit/src-gen"
+    editorDirectory="/org.palladiosimulator.edp2.repository.parquet.editor/src-gen"
+    modelPluginID="org.palladiosimulator.edp2.repository.parquet" modelName="Parquet"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.palladiosimulator.edp2/model/EDP2.genmodel#//models ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec"
+    importOrganizing="true">
+  <foreignModel>parquet.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Parquet" basePackage="org.palladiosimulator.edp2.repository"
+      disposableProviderFactory="true" ecorePackage="parquet.ecore#/">
+    <genDataTypes ecoreDataType="parquet.ecore#//URI"/>
+    <genClasses ecoreClass="parquet.ecore#//ParquetRepository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute parquet.ecore#//ParquetRepository/uri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute parquet.ecore#//ParquetRepository/dataFolder"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

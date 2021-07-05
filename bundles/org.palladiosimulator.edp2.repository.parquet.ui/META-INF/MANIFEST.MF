@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Palladio Parquet Repository UI Contribution
+Bundle-SymbolicName: org.palladiosimulator.edp2.repository.parquet.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.edp2.repository.parquet.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.palladiosimulator.edp2,
+ org.palladiosimulator.edp2.ui,
+ org.eclipse.jface,
+ org.palladiosimulator.edp2.repository.parquet

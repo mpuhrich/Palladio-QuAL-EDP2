@@ -18,6 +18,7 @@
 	</properties>
 	
 	<modules>
+		<module>releng/org.palladiosimulator.edp2.parquet-library</module>
 		<module>bundles</module>
 		<module>features</module>
 		<module>tests</module>

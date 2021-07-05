@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.edp2.repository.parquet;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.edp2.repository.parquet
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ \lib/parquet-library-0.1.0-SNAPSHOT-jar-with-dependencies.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11

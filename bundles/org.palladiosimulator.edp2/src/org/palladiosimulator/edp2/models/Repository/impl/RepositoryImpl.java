@@ -6,6 +6,8 @@
  */
 package org.palladiosimulator.edp2.models.Repository.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.palladiosimulator.edp2.dao.MeasurementsDaoFactory;
@@ -51,6 +53,13 @@ public abstract class RepositoryImpl extends RepositoryImplGen {
             return this.metaDao.getMeasurementsDaoFactory();
         } else {
             return null;
+        }
+    }
+
+    @Override
+    public void initializeExperimentRun(Map<String, Object> configuration) {
+        if (this.metaDao != null) {
+            this.metaDao.initializeExperimentRun(configuration);
         }
     }
 

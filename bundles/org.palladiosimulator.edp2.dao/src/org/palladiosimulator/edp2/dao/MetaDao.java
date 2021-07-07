@@ -1,5 +1,7 @@
 package org.palladiosimulator.edp2.dao;
 
+import java.util.Map;
+
 /**
  * Interface for the access to any meta data in EDP2.
  * 
@@ -13,4 +15,10 @@ public interface MetaDao extends Edp2Dao {
      * @return The measurements DAO factory.
      */
     public MeasurementsDaoFactory getMeasurementsDaoFactory();
+
+    /**
+     * Called to initialize the repository after a new experiment run has been created.
+     */
+    public default void initializeExperimentRun(final Map<String, Object> configuration) {}
+
 }

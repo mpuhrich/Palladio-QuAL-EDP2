@@ -36,6 +36,38 @@
 			<unit id="org.palladiosimulator.metricspec.feature.feature.group" version="0.0.0" />
 			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-metricspecification/nightly/"/>
 		</location>	
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+			<unit id="org.palladiosimulator.monitorrepository.feature.feature.group" version="0.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+			<unit id="org.palladiosimulator.monitorrepository.feature.feature.group" version="0.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+			<unit id="org.palladiosimulator.pcm.feature.feature.group" version="0.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+			<unit id="org.palladiosimulator.pcm.feature.feature.group" version="0.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+			<unit id="org.palladiosimulator.edp2.feature.feature.group" version="2.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+			<unit id="org.palladiosimulator.edp2.feature.feature.group" version="2.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+			<unit id="org.palladiosimulator.editors.commons.feature.feature.group" version="2.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+			<unit id="org.palladiosimulator.editors.commons.feature.feature.group" version="2.0.0" />
+			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/nightly/"/>
+		</location>
 
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="org.eclipse.nebula.feature.feature.group" version="2.1.0.201907151344" />

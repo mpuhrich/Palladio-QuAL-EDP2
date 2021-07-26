@@ -13,6 +13,7 @@ import org.palladiosimulator.edp2.repository.parquet.ParquetRepository;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextFactory;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
+import org.palladiosimulator.edp2.repository.parquet.internal.metadata.ParquetRepositoryMetaData;
 import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaFactory;
 import org.palladiosimulator.monitorrepository.MonitorRepository;
 
@@ -22,6 +23,7 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
     private ParquetMeasurementsDaoFactory mmtDaoFactory;
     private ExperimentContextFactory contextFactory;
     private ExperimentContext activeExperimentContext;
+    private ParquetRepositoryMetaData metadata;
 
     @Override
     public void setParent(MetaDao parent) {
@@ -44,6 +46,7 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
     public synchronized void open(DiagnosticChain diagnosticChain) {
         super.open(diagnosticChain);
         initialize();
+        metadata.loadMetaData(diagnosticChain);
         setOpen();
     }
 
@@ -56,6 +59,7 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
         mmtDaoFactory = new ParquetMeasurementsDaoFactory();
         mmtDaoFactory.setParquetRepository(managedRepository);
         mmtDaoFactory.setExperimentContextRegistry(registry);
+        metadata = new ParquetRepositoryMetaData(managedRepository, contextFactory);
     }
 
     @Override
@@ -71,6 +75,11 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
     @Override
     public void flush() {
         activeExperimentContext.flush();
+        try {
+            metadata.persistMetaData(true);
+        } catch (DataNotAccessibleException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import java.net.URL;
 import org.apache.hadoop.fs.Path;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.util.URI;
+import org.palladiosimulator.edp2.repository.parquet.internal.context.mode.ExperimentContextReadMode;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.mode.ExperimentContextWriteMode;
 import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaFactory;
 import org.palladiosimulator.monitorrepository.MonitorRepository;
@@ -22,6 +23,16 @@ public class ExperimentContextFactory {
         context.setPath(path);
         final var mode = new ExperimentContextWriteMode(context);
         mode.setSchema(schema);
+        context.setMode(mode);
+        registry.register(experimentId, context);
+        return context;
+    }
+
+    public ExperimentContext loadAndRegisterExperimentContext(final String experimentId) {
+        final var path = new Path(basePath, experimentId + ".parquet");
+        final var context = new ExperimentContext();
+        context.setPath(path);
+        final var mode = new ExperimentContextReadMode(context);
         context.setMode(mode);
         registry.register(experimentId, context);
         return context;

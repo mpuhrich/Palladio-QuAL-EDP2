@@ -15,6 +15,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.repository.parquet.ParquetRepository;
+import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
 import org.palladiosimulator.edp2.repository.parquet.internal.dao.DataSeriesToDaoFactorySwitch;
 import org.palladiosimulator.edp2.repository.parquet.internal.dao.MeasurementsDaoFactory;
 import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaUtility;
@@ -40,6 +41,7 @@ public class ParquetMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
 
     private ParquetRepository parquetRepository;
     private DataSeriesToDaoFactorySwitch factorySwitch;
+    private ExperimentContextRegistry experimentContextRegistry;
 
     public ParquetMeasurementsDaoFactory() {
         this.publicDaoRegistry = new MeasurementsDaoRegistryImpl();
@@ -121,6 +123,7 @@ public class ParquetMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
         for (var dataSeries : rawMeasurements.getDataSeries()) {
             var dao = factorySwitch.doSwitch(dataSeries);
             dao.setDaoTuple(daoTuple);
+            dao.setExperimentContext(experimentContextRegistry.getByExperimentId(getExperimentRunId(rawMeasurements)));
             if (isTimeDao(dataSeries)) {
                 daoTuple.setTimeDao(dao);
                 dao.setFieldName(SchemaUtility.getFieldNameForTimeData());
@@ -180,4 +183,14 @@ public class ParquetMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
             .getMeasuringPoint();
     }
 
+    public void setExperimentContextRegistry(ExperimentContextRegistry registry) {
+        experimentContextRegistry = registry;
+    }
+
+    private String getExperimentRunId(final RawMeasurements rawMeasurements) {
+        return rawMeasurements.getMeasurementRange()
+            .getMeasurement()
+            .getRun()
+            .getId();
+    }
 }

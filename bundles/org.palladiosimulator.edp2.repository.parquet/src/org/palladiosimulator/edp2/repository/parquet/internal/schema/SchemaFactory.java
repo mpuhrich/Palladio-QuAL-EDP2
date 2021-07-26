@@ -2,13 +2,15 @@ package org.palladiosimulator.edp2.repository.parquet.internal.schema;
 
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
+import org.palladiosimulator.edp2.repository.parquet.internal.ParquetRepositoryConstants;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.monitorrepository.MonitorRepository;
 
 public class SchemaFactory {
 
     public Schema createSchemaFromMonitorRepository(final MonitorRepository monitorRepository) {
-        var builder = SchemaBuilder.record("EDP2").namespace("org.palladiosimulator.edp2");
+        var builder = SchemaBuilder.record(ParquetRepositoryConstants.PARQUET_RECORD_NAME)
+                .namespace(ParquetRepositoryConstants.PARQUET_RECORD_NAMESPACE);
         var fieldAssembler = builder.fields();
         fieldAssembler = fieldAssembler.name(SchemaUtility.getFieldNameForTimeData()).type().doubleType().noDefault();
         for (var monitor : monitorRepository.getMonitors()) {

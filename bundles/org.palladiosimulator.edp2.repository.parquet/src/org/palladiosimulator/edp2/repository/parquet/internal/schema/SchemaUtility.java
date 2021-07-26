@@ -1,14 +1,16 @@
 package org.palladiosimulator.edp2.repository.parquet.internal.schema;
 
 import org.apache.avro.Schema;
+import org.apache.avro.Schema.Type;
 import org.apache.avro.SchemaBuilder;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
+import org.palladiosimulator.edp2.repository.parquet.internal.ParquetRepositoryConstants;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
 public class SchemaUtility {
 
     public static String getFieldNameForTimeData() {
-        return "PointInTime";
+        return ParquetRepositoryConstants.PARQUET_TIME_FIELD_NAME;
     }
 
     public static String getFieldNameForValueData(final MeasuringPoint measuringPoint,
@@ -36,6 +38,13 @@ public class SchemaUtility {
             var msg = "CaptureType " + baseMetricDescription.getCaptureType() + " is not supported by parquet repository.";
             throw new IllegalArgumentException(msg);
         }
+    }
+
+    public static Type getTypeFromSchema(final Schema schema) {
+        if (schema.isUnion()) {
+            return schema.getTypes().get(1).getType();
+        }
+        return schema.getType();
     }
 
 }

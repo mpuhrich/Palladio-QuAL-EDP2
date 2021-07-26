@@ -1,5 +1,6 @@
 package org.palladiosimulator.edp2.repository.parquet.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.measure.Measure;
@@ -7,11 +8,13 @@ import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
 import org.apache.avro.Schema;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.net4j.util.io.ExtendedDataInputStream;
 import org.eclipse.net4j.util.io.ExtendedDataOutputStream;
 import org.palladiosimulator.edp2.dao.BinaryMeasurementsDao;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.Edp2DaoImpl;
+import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 
 public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl implements BinaryMeasurementsDao<V, Q> {
 
@@ -19,6 +22,7 @@ public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl i
     private Unit<Q> unit;
     private String fieldName;
     private Schema fieldType;
+    private ExperimentContext experimentContext;
 
     @Override
     public void serialize(ExtendedDataOutputStream output) throws DataNotAccessibleException {
@@ -32,14 +36,31 @@ public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl i
 
     @Override
     public List<Measure<V, Q>> getMeasurements() {
-        // TODO Auto-generated method stub
-        return null;
+        return experimentContext.getBackgroundList(this);
+    }
+
+    @Override
+    public synchronized void open(DiagnosticChain diagnosticChain) {
+        super.open(diagnosticChain);
+        experimentContext.open();
+        setOpen();
     }
 
     @Override
     public void flush() {
-        // TODO Auto-generated method stub
-        
+        if (!isTimeDao()) {
+            final var metadata = new HashMap<String, String>();
+            metadata.put(fieldName + ".size", String.valueOf(getMeasurements().size()));
+            metadata.put(fieldName + ".unit", unit.toString());
+            experimentContext.getMetaData().putAll(metadata);
+        }
+    }
+
+    @Override
+    public synchronized void close() throws DataNotAccessibleException {
+        super.close();
+        experimentContext.getBackgroundList(this).close();
+        setClosed();
     }
 
     public ParquetMeasurementsDaoTuple getDaoTuple() {
@@ -74,6 +95,14 @@ public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl i
 
     public void setFieldType(Schema fieldType) {
         this.fieldType = fieldType;
+    }
+
+    public ExperimentContext getExperimentContext() {
+        return experimentContext;
+    }
+
+    public void setExperimentContext(ExperimentContext experimentContext) {
+        this.experimentContext = experimentContext;
     }
 
     public boolean isTimeDao() {

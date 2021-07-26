@@ -14,7 +14,7 @@
 	<modules>
 		<!--<module>org.palladiosimulator.edp2.distancemetrics.tests</module>-->
 		<module>org.palladiosimulator.edp2.tests</module>
-		<module>org.palladiosimulator.edp2.repository.parquet.tests</module>
+		<!--<module>org.palladiosimulator.edp2.repository.parquet.tests</module>-->
 	</modules>
 	
 </project>

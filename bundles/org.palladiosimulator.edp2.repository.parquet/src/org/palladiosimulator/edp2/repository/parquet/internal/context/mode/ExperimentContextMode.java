@@ -17,10 +17,10 @@ public abstract class ExperimentContextMode {
         this.context = Objects.requireNonNull(context);
     }
 
-    public abstract void open();
+    public abstract <V, Q extends Quantity> void open(final ParquetMeasurementsDao<V, Q> dao);
     public abstract void close();
     public void flush() {};
     public abstract <V, Q extends Quantity> MeasurementsList<V, Q> getBackgroundList(final ParquetMeasurementsDao<V, Q> dao);
-    public abstract Map<String, String> getMetaData();
+    public abstract <V, Q extends Quantity> Map<String, String> getMetaData(final ParquetMeasurementsDao<V, Q> dao);
 
 }

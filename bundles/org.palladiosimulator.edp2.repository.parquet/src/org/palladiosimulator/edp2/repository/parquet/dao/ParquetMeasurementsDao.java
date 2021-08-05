@@ -42,7 +42,7 @@ public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl i
     @Override
     public synchronized void open(DiagnosticChain diagnosticChain) {
         super.open(diagnosticChain);
-        experimentContext.open();
+        experimentContext.open(this);
         setOpen();
     }
 
@@ -52,7 +52,7 @@ public class ParquetMeasurementsDao<V, Q extends Quantity> extends Edp2DaoImpl i
             final var metadata = new HashMap<String, String>();
             metadata.put(fieldName + ".size", String.valueOf(getMeasurements().size()));
             metadata.put(fieldName + ".unit", unit.toString());
-            experimentContext.getMetaData().putAll(metadata);
+            experimentContext.getMetaData(this).putAll(metadata);
         }
     }
 

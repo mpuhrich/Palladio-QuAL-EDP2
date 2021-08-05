@@ -8,4 +8,8 @@ public final class ParquetRepositoryConstants {
 
     public static final String PARQUET_TIME_FIELD_NAME = "PointInTime";
 
+    public static final String PARQUET_FILE_SUFFIX = "parquet";
+
+    public static final String PARQUET_FILE_FRAGMENT_NAME = "_FRAGMENT";
+
 }

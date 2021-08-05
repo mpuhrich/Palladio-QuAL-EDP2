@@ -17,8 +17,8 @@ public class ExperimentContext {
     private ExperimentContextMode mode;
     private Path pathToParquetFile;
 
-    public void open() {
-        mode.open();
+    public <V, Q extends Quantity> void open(final ParquetMeasurementsDao<V, Q> dao) {
+        mode.open(dao);
     }
 
     /**
@@ -48,8 +48,8 @@ public class ExperimentContext {
         this.pathToParquetFile = pathToParquetFile;
     }
 
-    public Map<String, String> getMetaData() {
-        return mode.getMetaData();
+    public <V, Q extends Quantity> Map<String, String> getMetaData(final ParquetMeasurementsDao<V, Q> dao) {
+        return mode.getMetaData(dao);
     }
 
     public <V, Q extends Quantity> MeasurementsList<V, Q> getBackgroundList(final ParquetMeasurementsDao<V, Q> dao) {

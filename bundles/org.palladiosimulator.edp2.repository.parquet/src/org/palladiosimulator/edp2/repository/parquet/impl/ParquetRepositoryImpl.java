@@ -14,7 +14,11 @@ public class ParquetRepositoryImpl extends ParquetRepositoryImplGen {
 
     @Override
     public URI getDataFolder() {
-        return dataFolder.resolve(eResource().getURI());
+        var uri = dataFolder.resolve(eResource().getURI());
+        while (uri.lastSegment().isBlank() && uri.segmentCount() > 0) {
+            uri = uri.trimSegments(1);
+        }
+        return uri;
     }
 
 }

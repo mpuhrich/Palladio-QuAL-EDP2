@@ -1,13 +1,29 @@
 package org.palladiosimulator.edp2.repository.parquet.internal.schema;
 
+import java.util.Collection;
+
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Type;
 import org.apache.avro.SchemaBuilder;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
+import org.palladiosimulator.edp2.repository.parquet.dao.ParquetMeasurementsDao;
 import org.palladiosimulator.edp2.repository.parquet.internal.ParquetRepositoryConstants;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 
 public class SchemaUtility {
+
+    public static Schema createSchemaFromParquetMeasurementsDaos(final Collection<ParquetMeasurementsDao<?, ?>> daos) {
+        var builder = SchemaBuilder.record(ParquetRepositoryConstants.PARQUET_RECORD_NAME)
+                .namespace(ParquetRepositoryConstants.PARQUET_RECORD_NAMESPACE);
+        var fieldAssembler = builder.fields();
+        fieldAssembler = fieldAssembler.name(SchemaUtility.getFieldNameForTimeData()).type().doubleType().noDefault();
+        for (var dao : daos) {
+            if (!dao.isTimeDao()) {
+                fieldAssembler = fieldAssembler.name(dao.getFieldName()).type(dao.getFieldType()).withDefault(null);
+            }
+        }
+        return fieldAssembler.endRecord();
+    }
 
     public static String getFieldNameForTimeData() {
         return ParquetRepositoryConstants.PARQUET_TIME_FIELD_NAME;

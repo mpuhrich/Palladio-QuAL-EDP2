@@ -4,7 +4,6 @@ import java.util.Map;
 
 import javax.measure.quantity.Quantity;
 
-import org.apache.hadoop.fs.Path;
 import org.palladiosimulator.edp2.repository.parquet.dao.ParquetMeasurementsDao;
 import org.palladiosimulator.edp2.repository.parquet.internal.backgroundlist.MeasurementsList;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.mode.ExperimentContextMode;
@@ -15,7 +14,8 @@ import org.palladiosimulator.edp2.repository.parquet.internal.context.mode.Exper
 public class ExperimentContext {
 
     private ExperimentContextMode mode;
-    private Path pathToParquetFile;
+    private String basePath;
+    private String experimentId;
 
     public <V, Q extends Quantity> void open(final ParquetMeasurementsDao<V, Q> dao) {
         mode.open(dao);
@@ -40,20 +40,28 @@ public class ExperimentContext {
         this.mode = mode;
     }
 
-    public Path getPath() {
-        return pathToParquetFile;
-    }
-
-    public void setPath(Path pathToParquetFile) {
-        this.pathToParquetFile = pathToParquetFile;
-    }
-
     public <V, Q extends Quantity> Map<String, String> getMetaData(final ParquetMeasurementsDao<V, Q> dao) {
         return mode.getMetaData(dao);
     }
 
     public <V, Q extends Quantity> MeasurementsList<V, Q> getBackgroundList(final ParquetMeasurementsDao<V, Q> dao) {
         return mode.getBackgroundList(dao);
+    }
+
+    public String getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
+    }
+
+    public String getExperimentId() {
+        return experimentId;
+    }
+
+    public void setExperimentId(String experimentId) {
+        this.experimentId = experimentId;
     }
 
 }

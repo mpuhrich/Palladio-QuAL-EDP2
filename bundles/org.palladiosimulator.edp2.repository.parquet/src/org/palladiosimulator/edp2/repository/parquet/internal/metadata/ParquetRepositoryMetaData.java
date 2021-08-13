@@ -204,7 +204,6 @@ public class ParquetRepositoryMetaData {
         return (new ComposedSwitch<URI>(Arrays.asList(new MetricSpecSwitch<URI>() {
             public URI caseDescription(Description object) {
                 return repository.getDataFolder()
-                    .trimSegments(1)
                     .appendSegment(object.getId())
                     .appendFileExtension(EDP2Constants.EDP2_DESCRIPTIONS_EXTENSION);
             };
@@ -212,7 +211,6 @@ public class ParquetRepositoryMetaData {
             @Override
             public URI caseExperimentGroup(ExperimentGroup object) {
                 return repository.getDataFolder()
-                    .trimSegments(1)
                     .appendSegment(object.getId())
                     .appendFileExtension(EDP2Constants.EDP2_EXPERIMENT_GROUP_EXTENSION);
             }

@@ -9,9 +9,7 @@ import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
-import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
-import org.apache.hadoop.fs.Path;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.junit.jupiter.api.Test;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
@@ -28,10 +26,10 @@ class WriteTest {
     void testDynamicallyAddNewDaoDuringSimulation() throws IOException, DataNotAccessibleException {
         final var context = new ExperimentContext();
         final var file = Files.createTempDirectory("ParquetWriteTest");
-        context.setPath(new Path(file.toString(), "test.parquet"));
+        context.setExperimentId("test");
+        context.setBasePath(file.toString());
         final var writeMode = new ExperimentContextWriteMode(context);
         context.setMode(writeMode);
-        writeMode.setSchema(createTestSchema());
 
         final var staticDao = createTestTuple("static", context);
         final var timeDao = (ParquetMeasurementsDao<Double, Quantity>) staticDao.getTimeDao();
@@ -107,9 +105,9 @@ class WriteTest {
         context.flush();
 
         // dynamically added daos are stored in a separate file
-        assertTrue(Files.exists(file.resolve("test.parquet")));
         assertTrue(Files.exists(file.resolve("test_FRAGMENT0.parquet")));
         assertTrue(Files.exists(file.resolve("test_FRAGMENT1.parquet")));
+        assertTrue(Files.exists(file.resolve("test_FRAGMENT2.parquet")));
 
         final var readListTime = timeDao.getMeasurements();
         final var readListValue = valueDao.getMeasurements();
@@ -175,14 +173,6 @@ class WriteTest {
         valueDao.setDaoTuple(daoTuple);
 
         return daoTuple;
-    }
-
-    private Schema createTestSchema() {
-        return SchemaBuilder.record("ParquetWriteTestRecord")
-                .fields()
-                .name(SchemaUtility.getFieldNameForTimeData()).type().doubleType().noDefault()
-                .name("static").type().optional().doubleType()
-                .endRecord();
     }
 
 }

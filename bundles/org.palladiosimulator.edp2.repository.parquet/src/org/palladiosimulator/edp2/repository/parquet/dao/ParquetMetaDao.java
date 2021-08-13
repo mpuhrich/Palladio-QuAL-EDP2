@@ -14,8 +14,6 @@ import org.palladiosimulator.edp2.repository.parquet.internal.context.Experiment
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextFactory;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
 import org.palladiosimulator.edp2.repository.parquet.internal.metadata.ParquetRepositoryMetaData;
-import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaFactory;
-import org.palladiosimulator.monitorrepository.MonitorRepository;
 
 public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
 
@@ -33,8 +31,7 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
     @Override
     public void initializeExperimentRun(Map<String, Object> configuration) {
         final var experimentRun = (ExperimentRun) configuration.get("experimentRun");
-        final var monitorRepository = (MonitorRepository) configuration.get("monitorRepository");
-        activeExperimentContext = contextFactory.createAndRegisterExperimentContext(experimentRun.getId(), monitorRepository);
+        activeExperimentContext = contextFactory.createAndRegisterExperimentContext(experimentRun.getId());
     }
 
     @Override
@@ -55,7 +52,6 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
         contextFactory = new ExperimentContextFactory();
         contextFactory.setExperimentContextRegistry(registry);
         contextFactory.setBasePath(managedRepository.getDataFolder());
-        contextFactory.setSchemaFactory(new SchemaFactory());
         mmtDaoFactory = new ParquetMeasurementsDaoFactory();
         mmtDaoFactory.setParquetRepository(managedRepository);
         mmtDaoFactory.setExperimentContextRegistry(registry);

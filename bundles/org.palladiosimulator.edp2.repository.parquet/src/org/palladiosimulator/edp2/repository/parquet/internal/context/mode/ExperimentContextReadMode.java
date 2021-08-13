@@ -34,9 +34,7 @@ import static org.apache.parquet.filter2.predicate.FilterApi.notEq;
 
 public class ExperimentContextReadMode extends ExperimentContextMode {
 
-    private ParquetReader.Builder<GenericRecord> parquetReaderBuilder;
     private ReaderFactory readFactory;
-    private ParquetFileReader parquetFileReader;
     private Map<ParquetMeasurementsDao<?, ?>, MeasurementsReadList<?, ?>> readListRegistry;
 
     /**
@@ -54,12 +52,8 @@ public class ExperimentContextReadMode extends ExperimentContextMode {
 
     @Override
     public <V, Q extends Quantity> void open(final ParquetMeasurementsDao<V, Q> dao) {
-        if (Objects.isNull(parquetReaderBuilder)) {
+        if (Objects.isNull(fragmentParquetFileReader)) {
             try {
-                final var file = HadoopInputFile.fromPath(context.getPath(), new Configuration());
-                parquetReaderBuilder = AvroParquetReader.<GenericRecord> builder(file);
-                final var parquetOptions = ParquetReadOptions.builder().build();
-                parquetFileReader = new ParquetFileReader(file, parquetOptions);
                 fragmentParquetFileReader = new HashMap<String, ParquetFileReader>();
                 fragmentParquetReaderBuilder = new HashMap<String, ParquetReader.Builder<GenericRecord>>();
                 loadFragments();
@@ -72,9 +66,8 @@ public class ExperimentContextReadMode extends ExperimentContextMode {
     }
 
     private void loadFragments() throws IOException {
-        var path = Path.of(context.getPath().getParent().toString());
-        var name = context.getPath().getName();
-        var filter = name.substring(0, name.lastIndexOf('.'))
+        var path = Path.of(context.getBasePath());
+        var filter = context.getExperimentId()
                 + ParquetRepositoryConstants.PARQUET_FILE_FRAGMENT_NAME
                 + "*." + ParquetRepositoryConstants.PARQUET_FILE_SUFFIX;
         var directoryStream = Files.newDirectoryStream(path, filter);
@@ -98,11 +91,6 @@ public class ExperimentContextReadMode extends ExperimentContextMode {
     @Override
     public void close() {
         readListRegistry.forEach((k, v) -> {v.close();});
-        try {
-            parquetFileReader.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         fragmentParquetFileReader.values().forEach(r -> {
             try {
                 r.close();
@@ -115,12 +103,9 @@ public class ExperimentContextReadMode extends ExperimentContextMode {
     @Override
     public <V, Q extends Quantity> Map<String, String> getMetaData(final ParquetMeasurementsDao<V, Q> dao) {
         final var valueDaoFieldName = dao.getDaoTuple().getValueDao().getFieldName();
-        if (fragmentParquetFileReader.containsKey(valueDaoFieldName)) {
-            return fragmentParquetFileReader.get(valueDaoFieldName)
-                    .getFileMetaData()
-                    .getKeyValueMetaData();
-        }
-        return parquetFileReader.getFileMetaData().getKeyValueMetaData();
+        return fragmentParquetFileReader.get(valueDaoFieldName)
+                .getFileMetaData()
+                .getKeyValueMetaData();
     }
 
     /**
@@ -175,10 +160,7 @@ public class ExperimentContextReadMode extends ExperimentContextMode {
 
     private <V, Q extends Quantity> ParquetReader.Builder<GenericRecord> getParquetReaderBuilder(final ParquetMeasurementsDao<V, Q> dao) {
         final var valueDaoFieldName = dao.getDaoTuple().getValueDao().getFieldName();
-        if (fragmentParquetReaderBuilder.containsKey(valueDaoFieldName)) {
-            return fragmentParquetReaderBuilder.get(valueDaoFieldName);
-        }
-        return parquetReaderBuilder;
+        return fragmentParquetReaderBuilder.get(valueDaoFieldName);
     }
 
     /**

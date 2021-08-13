@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import javax.measure.quantity.Quantity;
 
-import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.hadoop.fs.Path;
 import org.palladiosimulator.edp2.repository.parquet.dao.ParquetMeasurementsDao;
@@ -18,17 +16,13 @@ import org.palladiosimulator.edp2.repository.parquet.internal.backgroundlist.Mea
 import org.palladiosimulator.edp2.repository.parquet.internal.backgroundlist.MeasurementsWriteList;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 import org.palladiosimulator.edp2.repository.parquet.internal.parquet.EDP2ParquetWriter;
-import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaFactory;
+import org.palladiosimulator.edp2.repository.parquet.internal.schema.SchemaUtility;
 import org.palladiosimulator.edp2.repository.parquet.internal.write.RowWriter;
 import org.palladiosimulator.edp2.repository.parquet.internal.write.WriterFactory;
 
 public class ExperimentContextWriteMode extends ExperimentContextMode {
 
-    private Schema schema;
-    private EDP2ParquetWriter<GenericRecord> parquetWriter;
-    private RowWriter rowWriter;
     private Map<ParquetMeasurementsDao<?, ?>, MeasurementsWriteList<?, ?>> writeListRegistry;
-    private WriterFactory writerFactory;
 
     private List<ParquetMeasurementsDao<?, ?>> daosForNextFragment;
     private Map<ParquetMeasurementsDao<?, ?>, EDP2ParquetWriter<GenericRecord>> fragmentParquetWriters;
@@ -41,39 +35,19 @@ public class ExperimentContextWriteMode extends ExperimentContextMode {
         fragmentParquetWriters = new HashMap<ParquetMeasurementsDao<?,?>, EDP2ParquetWriter<GenericRecord>>();
         fragmentRowWriters = new ArrayList<RowWriter>();
         fragmentWriterFactories = new HashMap<ParquetMeasurementsDao<?,?>, WriterFactory>();
+        writeListRegistry = new HashMap<ParquetMeasurementsDao<?,?>, MeasurementsWriteList<?,?>>();
     }
 
     @Override
     public <V, Q extends Quantity> void open(final ParquetMeasurementsDao<V, Q> dao) {
-        final var isFragmentDao = schema.getField(dao.getDaoTuple().getValueDao().getFieldName()) == null;
-        if (Objects.isNull(parquetWriter) && !isFragmentDao) {
-            try {
-                parquetWriter = (EDP2ParquetWriter<GenericRecord>) EDP2ParquetWriter.<GenericRecord>builder(context.getPath())
-                        .withSchema(schema)
-                        .build();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            rowWriter = new RowWriter(parquetWriter, schema);
-            writeListRegistry = new HashMap<ParquetMeasurementsDao<?,?>, MeasurementsWriteList<?,?>>();
-            writerFactory = new WriterFactory(rowWriter);
-        } else if (isFragmentDao && !fragmentWriterFactories.containsKey(dao) && !daosForNextFragment.contains(dao)) {
-            daosForNextFragment.add(dao);
+        if (!fragmentWriterFactories.containsKey(dao.getDaoTuple().getValueDao()) && !daosForNextFragment.contains(dao.getDaoTuple().getValueDao())) {
+            daosForNextFragment.add(dao.getDaoTuple().getTimeDao());
+            daosForNextFragment.add(dao.getDaoTuple().getValueDao());
         }
     }
 
     @Override
     public void close() {
-        if (Objects.nonNull(parquetWriter)) {
-            try {
-                parquetWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            parquetWriter = null;
-            writeListRegistry = null;
-            writerFactory = null;
-        }
         fragmentParquetWriters.values().forEach(pw -> {
             try {
                 pw.close();
@@ -88,27 +62,15 @@ public class ExperimentContextWriteMode extends ExperimentContextMode {
     }
 
     public <V, Q extends Quantity> Map<String, String> getMetaData(final ParquetMeasurementsDao<V, Q> dao) {
-        if (fragmentParquetWriters.containsKey(dao)) {
-            return fragmentParquetWriters.get(dao).getExtraMetaData();
-        }
-        return parquetWriter.getExtraMetaData();
+        return fragmentParquetWriters.get(dao).getExtraMetaData();
     }
 
     @Override
     public void flush() {
-        rowWriter.flush();
         fragmentRowWriters.forEach(rw -> rw.flush());
         close();
         context.setMode(new ExperimentContextReadMode(context));
         context.open(null);
-    }
-
-    public Schema getSchema() {
-        return schema;
-    }
-
-    public void setSchema(final Schema schema) {
-        this.schema = schema;
     }
 
     /**
@@ -128,26 +90,21 @@ public class ExperimentContextWriteMode extends ExperimentContextMode {
     }
 
     private <V, Q extends Quantity> WriterFactory getWriterFactory(final ParquetMeasurementsDao<V, Q> dao) {
-        if (fragmentWriterFactories.containsKey(dao)) {
-            return fragmentWriterFactories.get(dao);
-        }
         if (daosForNextFragment.contains(dao)) {
             initializeNewFragments();
-            return fragmentWriterFactories.get(dao);
         }
-        return writerFactory;
+        return fragmentWriterFactories.get(dao);
     }
 
     private void initializeNewFragments() {
-        final var schema = SchemaFactory.createSchemaFromParquetMeasurementsDaos(daosForNextFragment);
+        final var schema = SchemaUtility.createSchemaFromParquetMeasurementsDaos(daosForNextFragment);
         final EDP2ParquetWriter<GenericRecord> writer;
         try {
-            var name = context.getPath().getName();
-            var newName = name.substring(0, name.lastIndexOf('.'))
+            var fileName = context.getExperimentId()
                     + ParquetRepositoryConstants.PARQUET_FILE_FRAGMENT_NAME
                     + fragmentRowWriters.size()
                     + "." + ParquetRepositoryConstants.PARQUET_FILE_SUFFIX;
-            var path = new Path(context.getPath().getParent(), newName);
+            var path = new Path(context.getBasePath(), fileName);
             writer = (EDP2ParquetWriter<GenericRecord>) EDP2ParquetWriter.<GenericRecord>builder(path)
                     .withSchema(schema)
                     .build();

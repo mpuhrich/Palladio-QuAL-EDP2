@@ -12,4 +12,6 @@ public final class ParquetRepositoryConstants {
 
     public static final String PARQUET_FILE_FRAGMENT_NAME = "_FRAGMENT";
 
+    public static final String CONFIG_MAP_KEY_EXPERIMENT_RUN_ID = "experimentRunId";
+
 }

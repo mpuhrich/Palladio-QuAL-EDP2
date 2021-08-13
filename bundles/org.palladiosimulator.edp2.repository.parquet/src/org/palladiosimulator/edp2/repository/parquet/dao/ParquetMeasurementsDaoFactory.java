@@ -1,5 +1,6 @@
 package org.palladiosimulator.edp2.repository.parquet.dao;
 
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Stream;
@@ -15,6 +16,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.DataSeries;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.repository.parquet.ParquetRepository;
+import org.palladiosimulator.edp2.repository.parquet.internal.ParquetRepositoryConstants;
+import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
 import org.palladiosimulator.edp2.repository.parquet.internal.dao.DataSeriesToDaoFactorySwitch;
 import org.palladiosimulator.edp2.repository.parquet.internal.dao.MeasurementsDaoFactory;
@@ -123,7 +126,9 @@ public class ParquetMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
         for (var dataSeries : rawMeasurements.getDataSeries()) {
             var dao = factorySwitch.doSwitch(dataSeries);
             dao.setDaoTuple(daoTuple);
-            dao.setExperimentContext(experimentContextRegistry.getByExperimentId(getExperimentRunId(rawMeasurements)));
+            final var experimentRunId = getExperimentRunId(rawMeasurements);
+            final var experimentContext = getExperimentContext(experimentRunId);
+            dao.setExperimentContext(experimentContext);
             if (isTimeDao(dataSeries)) {
                 daoTuple.setTimeDao(dao);
                 dao.setFieldName(SchemaUtility.getFieldNameForTimeData());
@@ -193,4 +198,16 @@ public class ParquetMeasurementsDaoFactory extends MeasurementsDaoFactoryImpl {
             .getRun()
             .getId();
     }
+
+    private ExperimentContext getExperimentContext(final String experimentRunId) {
+        var context = experimentContextRegistry.getByExperimentId(experimentRunId);
+        if (context == null) {
+            final var conf = new HashMap<String, Object>();
+            conf.put(ParquetRepositoryConstants.CONFIG_MAP_KEY_EXPERIMENT_RUN_ID, experimentRunId);
+            parquetRepository.initializeExperimentRun(conf);
+            context = experimentContextRegistry.getByExperimentId(experimentRunId);
+        }
+        return context;
+    }
+
 }

@@ -8,8 +8,8 @@ import org.palladiosimulator.edp2.dao.MetaDao;
 import org.palladiosimulator.edp2.dao.MetaDaoDelegate;
 import org.palladiosimulator.edp2.dao.exception.DataNotAccessibleException;
 import org.palladiosimulator.edp2.dao.impl.MetaDaoImpl;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.repository.parquet.ParquetRepository;
+import org.palladiosimulator.edp2.repository.parquet.internal.ParquetRepositoryConstants;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextFactory;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
@@ -30,8 +30,8 @@ public class ParquetMetaDao extends MetaDaoImpl implements MetaDaoDelegate {
 
     @Override
     public void initializeExperimentRun(Map<String, Object> configuration) {
-        final var experimentRun = (ExperimentRun) configuration.get("experimentRun");
-        activeExperimentContext = contextFactory.createAndRegisterExperimentContext(experimentRun.getId());
+        final var experimentRun = (String) configuration.get(ParquetRepositoryConstants.CONFIG_MAP_KEY_EXPERIMENT_RUN_ID);
+        activeExperimentContext = contextFactory.createAndRegisterExperimentContext(experimentRun);
     }
 
     @Override

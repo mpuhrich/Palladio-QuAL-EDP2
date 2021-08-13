@@ -11,6 +11,7 @@ import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.edp2.repository.parquet.ParquetFactory;
 import org.palladiosimulator.edp2.repository.parquet.ParquetRepository;
 import org.palladiosimulator.edp2.repository.parquet.dao.ParquetMeasurementsDaoFactory;
+import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContext;
 import org.palladiosimulator.edp2.repository.parquet.internal.context.ExperimentContextRegistry;
 import org.palladiosimulator.metricspec.MetricSpecFactory;
 
@@ -81,7 +82,9 @@ class ParquetMeasurementsDaoFactoryTest {
     private ParquetMeasurementsDaoFactory createTestFactory(final ParquetRepository parquetRepository) {
         final var mmtDaofactory = new ParquetMeasurementsDaoFactory();
         mmtDaofactory.setParquetRepository(parquetRepository);
-        mmtDaofactory.setExperimentContextRegistry(new ExperimentContextRegistry());
+        final var contextRegistry =  new ExperimentContextRegistry();
+        contextRegistry.register("testRun", new ExperimentContext());
+        mmtDaofactory.setExperimentContextRegistry(contextRegistry);
         return mmtDaofactory;
     }
 

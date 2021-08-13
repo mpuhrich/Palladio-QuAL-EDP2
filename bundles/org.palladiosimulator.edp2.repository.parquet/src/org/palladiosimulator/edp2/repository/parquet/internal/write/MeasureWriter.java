@@ -7,4 +7,6 @@ public interface MeasureWriter<V> {
 
     public void write(final V measure);
 
+    public int size();
+
 }

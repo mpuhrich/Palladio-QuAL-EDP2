@@ -10,7 +10,6 @@ import org.palladiosimulator.edp2.repository.parquet.internal.write.DaoWriter;
 public class MeasurementsWriteList<V, Q extends Quantity> extends MeasurementsList<V, Q> {
 
     private DaoWriter<V, Q> daoWriter;
-    private int size = 0;
 
     public MeasurementsWriteList(final DaoWriter<V, Q> daoWriter) {
         this.daoWriter = Objects.requireNonNull(daoWriter);
@@ -19,7 +18,6 @@ public class MeasurementsWriteList<V, Q extends Quantity> extends MeasurementsLi
     @Override
     public void add(int index, Measure<V, Q> element) {
         daoWriter.write(element);
-        size++;
     }
 
     @Override
@@ -29,7 +27,7 @@ public class MeasurementsWriteList<V, Q extends Quantity> extends MeasurementsLi
 
     @Override
     public int size() {
-        return size;
+        return daoWriter.size();
     }
 
 }

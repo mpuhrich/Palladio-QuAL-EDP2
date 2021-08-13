@@ -47,4 +47,8 @@ public class TupleWriter {
         this.valueFieldName = valueFieldName;
     }
 
+    public int size() {
+        return rowWriter.size(valueFieldName);
+    }
+
 }

@@ -18,4 +18,9 @@ public class ValueWriter<V> implements MeasureWriter<V> {
         tupleWriter.writeValue(value);
     }
 
+    @Override
+    public int size() {
+        return tupleWriter.size();
+    }
+
 }

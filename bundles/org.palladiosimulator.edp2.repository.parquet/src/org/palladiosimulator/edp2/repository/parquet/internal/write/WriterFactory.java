@@ -40,11 +40,11 @@ public class WriterFactory {
 
     private <V, Q extends Quantity> MeasureWriter<V> createMeasureWriter(final TupleWriter tupleWriter, final ParquetMeasurementsDao<V, Q> dao) {
         MeasureWriter<V> measureWriter;
+        tupleWriter.setTimeFieldName(dao.getDaoTuple().getTimeDao().getFieldName());
+        tupleWriter.setValueFieldName(dao.getDaoTuple().getValueDao().getFieldName());
         if (dao.isTimeDao()) {
-            tupleWriter.setTimeFieldName(dao.getFieldName());
             measureWriter = new TimeWriter<V>(tupleWriter);
         } else {
-            tupleWriter.setValueFieldName(dao.getFieldName());
             measureWriter = new ValueWriter<V>(tupleWriter);
         }
         return measureWriter;

@@ -18,4 +18,9 @@ public class TimeWriter<V> implements MeasureWriter<V> {
         tupleWriter.writeTime(time);
     }
 
+    @Override
+    public int size() {
+        return tupleWriter.size();
+    }
+
 }

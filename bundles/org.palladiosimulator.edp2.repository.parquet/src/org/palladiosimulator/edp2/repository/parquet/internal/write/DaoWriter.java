@@ -22,4 +22,8 @@ public class DaoWriter<V, Q extends Quantity> {
         measureWriter.write(measure.getValue());
     }
 
+    public int size() {
+        return measureWriter.size();
+    }
+
 }
